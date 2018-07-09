@@ -1,6 +1,50 @@
 #!/bin/bash
 
-# remove bloat
+############### NOT INTENDED FOR OTHER USERS. Just me! ########################
+
+# Script is intended to be run immediately after a new installation of Xubuntu.
+#   I found myself frequently doing the same set of commands on every new
+#   install of Xubuntu so I decided to make script to automate the
+#   installation, removal, and setup of packages etc. on a fresh install.
+## CONTENTS:
+# - APT commands:
+#   - apt remove unwanted packages preinstalled
+#   - apt updates and upgrade
+#   - apt install of all necessary libraries and packages:
+#     - essential build and utility packages (curl, make, libreadline, etc.)
+#     - proprietary and extra media formats (exfat, unrar, etc.)
+#     - user packages (guake, chromium, gparted, etc.)
+- setup home dir
+  - additional root dirs: Soft Media Projects Work Data
+    - child dirs of root dirs
+- Installation/setup of apt/git/source repo packages
+  - Oh My Zsh
+  - Sublime Text
+  - ghostwriter (great markdown text editor, use mostly for writing)
+  - z jump
+  - Themes:
+    - GTK3: arc-grey-theme > Arc-dark Grey
+    - Icons: paper
+  -
+  - pyenv:
+    - writes lines to zshrc
+    - install desired python versions: 3.6.*, 3.7.*, miniconda-latest (py2, for mayavi)
+      - 3.6.6: final py 3.6.* version
+      - 3.7.0: most current py3 version, but not all my packages have py3.7 whls yet
+      - miniconda-latest: (py2) entirely for managing MayaVi dependencies
+    - make default virtualenv (currently 3.6.6) and local it at home
+    - upgrade pip and setuptools
+    - install all standard pip packages
+  -
+
+#
+# It has commands to be run by bash, as well as instructions and notes
+# for manual installation/configuration of other things.
+#==============================================================================
+## PACKAGE MANAGER APT ##
+#==============================================================================
+
+#==== Remove Bloat
 apt remove --purge -y firefox
 apt remove --purge -y transmission-common
 apt remove --purge -y pidgin
@@ -8,14 +52,15 @@ apt remove --purge -y parole
 apt remove --purge -y xfburn
 apt remove --purge -y evince
 
-# update, upgrade
-apt update;
-apt upgrade -y;
-# apt full-upgrade # for drivers?
+#==== Update, Upgrade
+apt update
+apt upgrade -y
+update-ca-certificates -f
+# apt full-upgrade # for drivers, but may install ubuntu-sourced nvidia
 apt autoremove -y
 
-## INSTALL LIBRARIES ##
-# Dev
+#==== INSTALL
+# Utils/Dependencies/Libraries
 apt install -y curl
 apt install -y apt-transport-https
 apt install -y cmake
@@ -30,7 +75,6 @@ apt install -y libbz2-dev
 apt install -y libreadline-dev
 apt install -y libsqlite3-dev
 apt install -y wget
-apt install -y curl
 apt install -y llvm
 apt install -y libncurses5-dev
 apt install -y xz-utils
@@ -43,15 +87,13 @@ apt install -y lame
 apt install -y x264
 apt install -y unrar
 
-# Misc
-
+# Checkpoint
 apt update
 apt upgrade -y
 apt autoremove -y
 
-## INSTALL APPS ##
-
-# Dev/Utils
+## APPS ##
+# Terminal/CLI
 apt install -y htop
 apt install -y guake
 apt install -y vim
@@ -59,7 +101,7 @@ apt install -y zsh
 apt install -y tmux
 apt install -y tree
 
-# Essential
+# User/GUI
 apt install -y chromium-browser
 apt install -y psensor
 apt install -y vlc
@@ -75,66 +117,132 @@ apt install -y dictd
 apt install -y dict-gcide
 apt install -y dict-wn
 
-## Make directories ##
-# Make home dirs
+
+#==============================================================================
+## HOME DIR ##
+#==============================================================================
+
+#==== Make home top-level dirs
 cd
 mkdir Soft Media Projects Work Data
 
+#==== Make subdirs
 # Media
 cd ~/Media && mkdir Images Music Videos
-cd Images && mkdir Aes MiscImg Pictures && cd
+cd Images  && mkdir Aes MiscImg Pictures
+cd
 
 # Documents
+mkdir ~/Documents # Documents is default, but for safety
 cd ~/Documents
 mkdir Books Correspondence Course MiscDocs Official Reading Receipts Writing
-cd Books && mkdir Textbooks eBooks && cd ..
-cd Official && mkdir Health Immigration Records && cd ..
-cd Reading && mkdir Papers PaperNotes && cd
+cd Official && mkdir Health Immigration Records && cd ~/Documents
+cd Reading  && mkdir Papers PaperNotes          && cd ~/Documents
+cd Books    && mkdir Textbooks eBooks           && cd ~/Documents
+cd
 
 # Projects
 cd ~/Projects
 mkdir Archived Inactive Interview MiscProj
-cd Interview && mkdir Companies Prep && cd
+cd Interview && mkdir Companies Prep && cd ~/Projects
+cd
 
 # Soft
-cd ~/Soft && mkdir Installed DevStuff
-cd DevStuff && mkdir Misc Py Tools && cd ..
-cd Installed && mkdir Apps MiddleWare Themes Utils && cd
+cd ~/Soft    && mkdir Installed DevStuff
+cd Installed && mkdir Apps MiddleWare Themes Utils && cd ~/Soft
+cd DevStuff  && mkdir Misc Py Tools && cd ~/Soft
+cd
 
 
 
-## Add repo/sources apps ##
+#==============================================================================
+## INSTALL SOURCE/REPO APPS ##
+#==============================================================================
 
-# oh my zsh
+#==== Oh My ZSH
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)";
-cp ~/.zshrc ~/.zshrc.bkp
 
-## sublime stuff
+# Prepare zshrc for user-defined settings
+cp ~/.zshrc ~/.zshrc.bkp
+echo '\n\n\n#==============================================================================' > ~/.zshrc
+echo '#### USER-ADDED ####' > ~/.zshrc
+echo '#==============================================================================\n\n\n' > ~/.zshrc
+
+
+
+#==== Sublime Text 3
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -;
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list;
 apt update;
 apt install -y sublime-text;
 
-# Ghostwriter
+
+
+#==== Ghostwriter
 add-apt-repository ppa:wereturtle/ppa
 apt update
 apt install ghostwriter
 
-# Pyenv
+
+
+#==== z jump around
+git clone https://github.com/rupa/z.git ~/Soft/Installed/Utils/z_jump
+echo '\n#==== z jump around' > ~/.zshrc
+echo '. /home/evan/Soft/Installed/Utils/z_jump/z.sh' > ~/.zshrc
+
+
+
+#==== Themes/Appearance
+## Note: set themes manually in...
+# - Appearance
+#   - /Style/'Arc-Grey-Dark'
+#   - /Icons/'Paper'
+# - Window Manager
+#   - /Style/'Arc-Grey-Dark'
+##
+
+# Arc-grey theme
+cd ~/Soft/Installed/Themes/
+git clone https://github.com/eti0/arc-grey-theme --depth 1 && cd arc-grey-theme
+./autogen.sh --prefix=/usr
+make install
+cd
+
+# Paper icons
+add-apt-repository -u ppa:snwh/ppa
+apt update
+apt install paper-icon-theme
+
+
+
+#==== Pyenv
+## Note: python versions installed
+# - 3.6.6 is default py version for env, (last 3.6.* release)
+# - 3.7.0 is latest py ver, but not default since not supported by all my packages
+# - miniconda-latest is py2, entirely for managing MayaVi
+##
+
+# Curl/install pyenv from source, update zshrc
 curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash;
-echo '# Pyenv stuff' >~/.zshrc
-echo 'export PATH="/home/evan/.pyenv/bin:$PATH"' >~/.zshrc
-echo 'eval "$(pyenv init -)"' >~/.zshrc
-echo 'eval "$(pyenv virtualenv-init -)"' >~/.zshrc
+echo '\n\n#==== PYENV' > ~/.zshrc
+echo 'export PATH="/home/evan/.pyenv/bin:$PATH"' > ~/.zshrc
+echo 'eval "$(pyenv init -)"' > ~/.zshrc
+echo 'eval "$(pyenv virtualenv-init -)"' > ~/.zshrc
 source ~/.zshrc
 
-## pyenv stuff
+# Install python versions
 pyenv update
 pyenv install 3.6.6
+pyenv install 3.7.0
 pyenv install miniconda-latest
+
+# Configure local virtualenv
+# NOT YET CONFIRMED WHETHER YOU CAN SET LOCAL THROUGH THIS SCRIPT
 pyenv virtualenv 3.6.6 ^
 pyenv local ^
 pip install -U pip setuptools
+
+# Install pip packages
 pip install numpy
 pip install scipy
 pip install sklearn
@@ -143,59 +251,92 @@ pip install ipython
 pip install jupyter
 pip install jupyterthemes
 pip install chainer
-#pip install tangent # installs tf-nightly, so do TF first
+#pip install cupy # only for desktop
+#pip install tangent # installs tf-nightly, which disrupts normal TF package
 
-# Z jump around
-cd && cd ~/Soft/Installed/Utils/
-git clone https://github.com/rupa/z.git z_jump
-echo '# z jump around' >~/.zshrc
-echo '. /home/evan/Soft/Installed/Utils/z_jump/z.sh' >~/.zshrc
-cd
+#==============================================================================
+## CUDA, cuDNN, TensorRT, MKL SETUP GUIDE ##
+#==============================================================================
 
-# Themes
-# Arc-grey
-cd ~/Soft/Installed/Themes/
-git clone https://github.com/eti0/arc-grey-theme --depth 1 && cd arc-grey-theme
-./autogen.sh --prefix=/usr
-make install
-cd
+#==== CUDA
 
-# paper icons
-add-apt-repository -u ppa:snwh/ppa
-apt update
-apt install paper-icon-theme
+#==== cuDNN
+
+#==== TensorRT
+# NOT YET DONE BEFORE
+
+#==== MKL
 
 
-#sudo add-apt-repository ppa:xubuntu-dev/extras; # kind of clunky
-#sudo apt update;
-#sudo apt install -y xfdashboard;
+#==============================================================================
+## TENSORFLOW SETUP GUIDE ##
+#==============================================================================
+
+#==============================================================================
+# Based on machine:
+# - Desktop (GTX 1070, CUDA, cuDNN, MKL, TensorRT):
+#   - Install CUDA, cuDNN, MKL, TensorRT first!
+#   - Get latest TF GPU wheel from https://github.com/mind/wheels
+#     - pip install --no-cache-dir <*.whl link>
+# - ThinkPad x201:
+#   - Use TF-cpu whl you built from source from storage (SSE4.1, SSE4.2)
+# - ThinkPad T430:
+#   - Use TF-cpu whl you built from source from storage (AVX, SSE4.1, SSE4.2)
+
+#==============================================================================
+## HOW TO BUILD FROM SOURCE GUIDE:
+# Reference:
+# https://www.tensorflow.org/install/install_sources
+# https://stackoverflow.com/questions/41293077/how-to-compile-tensorflow-with-sse4-2-and-avx-instructions
+#
+# 1 - Install bazel:
+#   - https://docs.bazel.build/versions/master/install-ubuntu.html#install-on-ubuntu
+#     - Note: do not configure for the $USER dir, just install for system (/bin/)
+# 2 - Clone TF repo:
+#     - cd ~/Soft/DevStuff/Py/
+#     - git clone https://github.com/tensorflow/tensorflow && cd tensorflow
+#     - git checkout branch # if you want specific release
+# 3 - ./configure
+#     - Default locations (just press enter)
+#     - "No" for all other options ('Google Cloud', 'Hadoop', etc...)
+#     - At final "Please specify optimization flags to use...":
+#       - enter '-mavx -msse4.2 -msse4.1' or whatever else
+# 4 - Build pip package:
+#     - bazel build -c opt --copt=-mavx --copt=-msse4.2 --copt=-msse4.1 --config=mkl //tensorflow/tools/pip_package:build_pip_package
+#     - bazel-bin/tensorflow/tools/pip_package/build_pip_package ~/
+# 5 - Wait on build (takes at least 15min on i7-7700)
+# 6 - Install built pip wheel! (should be in ~)
+#     - pip install --no-cache-dir tensorflow.*.whl
 
 
-# FINISHING
-update-ca-certificates -f
-apt update
-apt upgrade -y
-apt autoremove -y
-
-echo "FINISHED"
 
 
-# GET TF WHEEL FROM https://github.com/mind/wheels
-#pip install --no-cache-dir <*.whl link>
+#==============================================================================
+## MISC CONFIGURATION ##
+#==============================================================================
+
+#==== jupyterthemes
 #jt -t onedork -fs 12 -f ubuntu -altp -tfs 11 -nfs 115 -cellw 90% -T -N
 
-
-# Keyboard shortcuts:
+#==== Keyboard Shortcuts:
 # amixer set Master 5%+ # Alt + =
 # amixer set Master 5%- # Alt + -
 # subl # super+E
+# ghostwriter # super+G
 # xfce4-screenshooter # print
 # xfce4-popup-whiskermenu # super+R
 
+#==== Window Manager Hotkeys:
+# super+left super+right, tile left, right etc.
+# default (must reenter same thing) move to workspace N
+# alt+5 to minimize window
+
+#==== sshfs
+# How to mount a remote directory to local machine via sshfs
 # sshfs name@server:/path/to/folder /path/to/mount/point
 
 
-
+#==== Japanese IME (mozc)
 # mozc
 #If you have Xubuntu 16.04 installed and want to be able to type Japanese, try the following steps:
 #1. Go to "Settings" and then "Language Support": click the button "install/remove languages" and choose Japanese.
@@ -210,3 +351,17 @@ echo "FINISHED"
 # orage clock format: %x %R
 # https://www.linuxquestions.org/questions/slackware-14/xfce-clock-custom-formatting-codes-753433/
 # previous: %d %b, %H:%M
+
+
+
+#sudo add-apt-repository ppa:xubuntu-dev/extras; # kind of clunky
+#sudo apt update;
+#sudo apt install -y xfdashboard;
+
+
+# FINISHING
+apt update
+apt upgrade -y
+update-ca-certificates -f
+apt autoremove -y
+echo "FINISHED"
