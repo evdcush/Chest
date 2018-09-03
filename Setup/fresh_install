@@ -1,118 +1,98 @@
 #!/bin/bash
 
 ############### NOT INTENDED FOR OTHER USERS. Just me! ########################
-
-# Script is intended to be run immediately after a new installation of Xubuntu.
-#   I found myself frequently doing the same set of commands on every new
-#   install of Xubuntu so I decided to make script to automate the
-#   installation, removal, and setup of packages etc. on a fresh install.
-## CONTENTS:
-# - APT commands:
-#   - apt remove unwanted packages preinstalled
-#   - apt updates and upgrade
-#   - apt install of all necessary libraries and packages:
-#     - essential build and utility packages (curl, make, libreadline, etc.)
-#     - proprietary and extra media formats (exfat, unrar, etc.)
-#     - user packages (guake, chromium, gparted, etc.)
-- setup home dir
-  - additional root dirs: Soft Media Projects Work Data
-    - child dirs of root dirs
-- Installation/setup of apt/git/source repo packages
-  - Oh My Zsh
-  - Sublime Text
-  - ghostwriter (great markdown text editor, use mostly for writing)
-  - z jump
-  - Themes:
-    - GTK3: arc-grey-theme > Arc-dark Grey
-    - Icons: paper
-  -
-  - pyenv:
-    - writes lines to zshrc
-    - install desired python versions: 3.6.*, 3.7.*, miniconda-latest (py2, for mayavi)
-      - 3.6.6: final py 3.6.* version
-      - 3.7.0: most current py3 version, but not all my packages have py3.7 whls yet
-      - miniconda-latest: (py2) entirely for managing MayaVi dependencies
-    - make default virtualenv (currently 3.6.6) and local it at home
-    - upgrade pip and setuptools
-    - install all standard pip packages
-  -
-
-#
-# It has commands to be run by bash, as well as instructions and notes
-# for manual installation/configuration of other things.
 #==============================================================================
 ## PACKAGE MANAGER APT ##
 #==============================================================================
 
 #==== Remove Bloat
-apt remove --purge -y firefox
+sudo apt remove --purge -y firefox transmission-common pidgin parole xfburn thunderbird
 apt remove --purge -y transmission-common
 apt remove --purge -y pidgin
-apt remove --purge -y parole
+apt remove --purge -y
 apt remove --purge -y xfburn
 apt remove --purge -y evince
 
 #==== Update, Upgrade
-apt update
-apt upgrade -y
-update-ca-certificates -f
+sudo apt update && sudo apt upgrade -y && sudo update-ca-certificates -f && sudo apt autoremove
 # apt full-upgrade # for drivers, but may install ubuntu-sourced nvidia
 apt autoremove -y
 
+#==== update GCC/G++
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt update
+sudo apt full-upgrade -y
+sudo apt install gcc-7 g++-7 gcc-8 g++-8 --install-suggests
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 100 --slave /usr/bin/g++ g++ /usr/bin/g++-7
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 100 --slave /usr/bin/g++ g++ /usr/bin/g++-7
+#sudo update-alternatives --config gcc # to select which gcc you want
+sudo apt update
+
+
 #==== INSTALL
 # Utils/Dependencies/Libraries
-apt install -y curl
-apt install -y apt-transport-https
-apt install -y cmake
-apt install -y make
-apt install -y git-core
-apt install -y autoconf
-apt install -y automake
-apt install -y build-essential
-apt install -y libssl-dev
-apt install -y zlib1g-dev
-apt install -y libbz2-dev
-apt install -y libreadline-dev
-apt install -y libsqlite3-dev
-apt install -y wget
-apt install -y llvm
-apt install -y libncurses5-dev
-apt install -y xz-utils
-apt install -y tk-dev
+sudo apt install -y curl apt-transport-https cmake make git-core autoconf automake build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget llvm libncurses5-dev xz-utils tk-dev
+#apt install -y apt-transport-https
+#apt install -y cmake
+#apt install -y make
+#apt install -y git-core
+#apt install -y autoconf
+#apt install -y automake
+#apt install -y build-essential
+#apt install -y libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget llvm libncurses5-dev xz-utils tk-dev
+#apt install -y zlib1g-dev
+#apt install -y libbz2-dev
+#apt install -y libreadline-dev
+#apt install -y libsqlite3-dev
+#apt install -y wget
+#apt install -y llvm
+#apt install -y libncurses5-dev xz-utils tk-dev
+#apt install -y xz-utils
+#apt install -y tk-dev
 
 # Media
-apt install -y exfat-*
+sudo apt install -y exfat-utils flac lame x264 unrar ubuntu-restricted-extras
+sudo apt remove --purge flashplugin-installer
 apt install -y flac
 apt install -y lame
 apt install -y x264
 apt install -y unrar
+apt install -y ubuntu-restricted-extras
 
 # Checkpoint
-apt update
+sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 apt upgrade -y
 apt autoremove -y
 
 ## APPS ##
+sudo apt install -y htop guake vim zsh tmux tree xfce4-timer-plugin chromium-browser psensor vlc okular nomacs gparted tlp deluge mpv dict dictd dict-gcide dict-wn
+
 # Terminal/CLI
+sudo apt install -y htop guake vim zsh tmux tree
+
 apt install -y htop
 apt install -y guake
 apt install -y vim
 apt install -y zsh
 apt install -y tmux
 apt install -y tree
+apt install -y xfce4-timer-plugin
 
 # User/GUI
+sudo apt install -y chromium-browser psensor vlc okular nomacs gparted tlp deluge mpv
 apt install -y chromium-browser
 apt install -y psensor
 apt install -y vlc
+apt install -y mpv
 apt install -y okular
 apt install -y nomacs
 apt install -y gparted
 apt install -y tlp
 apt install -y deluge
 
+
 # Dictionary
-apt install -y dict
+apt install -y dict dictd dict-gcide dict-wn
 apt install -y dictd
 apt install -y dict-gcide
 apt install -y dict-wn
@@ -191,6 +171,10 @@ echo '\n#==== z jump around' > ~/.zshrc
 echo '. /home/evan/Soft/Installed/Utils/z_jump/z.sh' > ~/.zshrc
 
 
+#==============================================================================
+# Copying shit and configs
+#==============================================================================
+
 
 #==== Themes/Appearance
 ## Note: set themes manually in...
@@ -259,11 +243,47 @@ pip install chainer
 #==============================================================================
 
 #==== CUDA
+# download network deb, since local deb does not work with kernel 4.13
+sudo apt remove --purge nvidia* cuda*
+sudo dpkg -i cuda-repo-ubuntu1604_9.1.85-1_amd64.deb;
+sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub
+sudo apt update
+## see troubleshooting first #sudo apt install cuda-9-1 # CRITICAL, DO NOT INSTALL `cuda`
+
+#==== TROUBLESHOOTING CUDA
+
+# simply calling `sudo apt install cuda-9-2` in 18.04 resulted in the following confirmed error:
+`trying to overwrite '/usr/lib/x86_64-linux-gnu/libGLX_indirect.so.0',
+ which is also in package libglx-mesa0:amd64 18.0.5-0ubuntu0~18.04.1`
+
+To avoid this, do the following instead:
+sudo apt -o Dpkg::Options::="--force-overwrite" install cuda-9-2
+# if that doesn't work, or it says cuda-9-2 already installed, than it is missing the drivers, so just call
+sudo apt -o Dpkg::Options::="--force-overwrite" install --fix-broken
+
+
+# add the following lines to your .zshrc
+#export PATH=/usr/local/cuda-9.1/bin${PATH:+:${PATH}}
+#export LD_LIBRARY_PATH=/usr/local/cuda-9.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+#reboot;
 
 #==== cuDNN
+# the .deb installation never works, just do the tar file method:
+tar -xzvf cudnn-9.1-linux-x64-v7.1.tgz;
+sudo cp cuda/include/cudnn.h /usr/local/cuda/include;
+sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64;
+sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*;
+# cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2 # for confirm
+# nvcc -V # for confirm
 
 #==== TensorRT
-# NOT YET DONE BEFORE
+# First install and setup CUDA, verify installation
+sudo dpkg -i nv-tensorrt-repo-ubuntu1604-cuda9.2-ga-trt4.0.1.6-20180612_1-1_amd64.deb
+sudo apt update
+sudo apt install tensorrt
+sudo apt install uff-converter-tf
+# verify:
+dpkg -l | grep TensorRT
 
 #==== MKL
 

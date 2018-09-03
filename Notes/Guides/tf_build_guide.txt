@@ -1,0 +1,264 @@
+# Install bazel, follow instructions here:
+https://docs.bazel.build/versions/master/install-ubuntu.html#install-on-ubuntu
+https://stackoverflow.com/questions/41293077/how-to-compile-tensorflow-with-sse4-2-and-avx-instructions
+
+# clone TF repo:
+git clone https://github.com/tensorflow/tensorflow && cd tensorflow
+./configure
+
+# At the line for "Please specify optimization flags to use..."
+-mavx -msse4.2 -msse4.1
+
+then
+#bazel build -c opt --copt=-mavx --copt=-msse4.2 --copt=-msse4.1 --config=mkl //tensorflow/tools/pip_package:build_pip_package
+bazel build --config=opt --config=cuda --config=mkl //tensorflow/tools/pip_package:build_pip_package
+bazel-bin/tensorflow/tools/pip_package/build_pip_package ~/
+
+
+
+# AT THIS PAGE:
+https://github.com/tensorflow/tensorflow/blob/297ae45a079eedbf4fd32105d7c7ed95b072a0fa/third_party/toolchains/clang6/README.md
+
+x86_64 Microarchitectures
+Intel CPU Line
+2003 P6 M SSE SSE2
+2004 prescott SSE3 SSSE3 (-march=prescott)
+2006 core X64 SSE4.1 (only on 45nm variety) (-march=core2)
+2008 nehalem SSE4.2 VT-x VT-d (-march=nehalem)
+2010 westmere CLMUL AES (-march=westmere)
+2012 sandybridge AVX TXT (-march=sandybridge)
+2012 ivybridge F16C MOVBE (-march=ivybridge)
+2013 haswell AVX2 TSX BMI2 FMA (-march=haswell)
+2014 broadwell RDSEED ADCX PREFETCHW (-march=broadwell - works on trusty gcc4.9)
+2015 skylake SGX ADX MPX AVX-512[xeon-only] (-march=skylake / -march=skylake-avx512 - needs gcc7)
+2018 cannonlake AVX-512 SHA (-march=cannonlake - needs clang5)
+
+
+# can just directly call build without going through configure:
+bazel build -c opt --copt=-march="ivybridge" --config=mkl //tensorflow/tools/pip_package:build_pip_package
+bazel build -c opt --copt=-march="westmere" --config=mkl //tensorflow/tools/pip_package:build_pip_package
+bazel build -c opt --copt=-march="skylake" --config=mkl //tensorflow/tools/pip_package:build_pip_package # CPU
+
+bazel build -c opt --copt=-msse4.1 --copt=-msse4.2 --copt=-mavx --copt=-mavx2 --copt=-mfma --config=mkl //tensorflow/tools/pip_package:build_pip_package
+
+@ltupin Sure! I am assuming you meant my TF build steps, but did you mean my installation steps for building CUDA/cuDNN, or my dev environment?
+
+Since my tf build steps likely depend on my CUDA build and python environment, I'll include those steps as well, for my hardware setup: Core i7-7700, GTX 1070.
+
+## Skip to bottom to see the actual tensorflow `./configure` build steps
+
+### NB: explicitly going through `./configure` steps is generally **not** necessary. If you want to build tensorflow for whatever your optimization flags are, you can simply call `bazel build` with the flags you want. eg:
+**CPU only, with SSE4.1/4.2, AVX, FMA:**
+`bazel build -c opt --copt=-msse4.1 --copt=-msse4.2 --copt=-mavx --copt=-mfma //tensorflow/tools/pip_package:build_pip_package`
+
+Of course, **if you just wanted to optimize for your CPU**, you only need `-c opt --copt=-march="native" ...`
+
+And if you wanted to optimize tf for a different machine than the machine that builds it (in my case, for when I build TF for my ancient thinkpads), you can specify the target intel cpu generation and it will optimize for that hardware:
+**CPU, optimized for ivybridge (SSE4.1/4.2, AVX), with MKL:**
+`bazel build -c opt --copt=-march="ivybridge" --config=mkl //tensorflow/tools/pip_package:build_pip_package`
+
+Now for the nuts and bolts of my environment and build process:
+
+### Here are my installation steps, performed immediately after a fresh install of Xubuntu 16.04 (and zsh shell)
+**Disclaimer:** All steps detailed are from my own personal notes, and not intended to be generalized beyond my needs and assumptions.
+
+### CUDA/cuDNN
+```
+#==== CUDA
+# download network deb, since local deb does not always have latest kernel support
+sudo apt remove --purge nvidia* cuda*
+sudo dpkg -i cuda-repo-ubuntu1604_9.1.85-1_amd64.deb
+sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub
+sudo apt update
+sudo apt install cuda-9-1 # CRITICAL, DO NOT INSTALL `cuda`
+
+# add the following lines to your .zshrc
+export PATH=/usr/local/cuda-9.1/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-9.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+reboot
+
+#==== cuDNN
+# the .deb installation never works, just do the tar file method:
+tar -xzvf cudnn-9.1-linux-x64-v7.1.tgz;
+sudo cp cuda/include/cudnn.h /usr/local/cuda/include;
+sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64;
+sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*;
+
+# Confirm installation:
+# cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2 # for confirm
+# nvcc -V # for confirm
+~ nvcc -V
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2017 NVIDIA Corporation
+Built on Fri_Nov__3_21:07:56_CDT_2017
+Cuda compilation tools, release 9.1, V9.1.85
+```
+
+### Python environment
+```
+#==== Pyenv
+curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash;
+
+# Add the following lines to your .zshrc
+export PATH="/home/evan/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+source ~/.zshrc # may need to open new terminal session
+
+# Install python versions
+pyenv update
+pyenv install 3.6.6
+pyenv virtualenv 3.6.6 ^ # whatever name you want for your env
+
+# Activate virtualenv and install typical pip packages
+pyenv local ^ # executed in home
+pip install numpy scipy sklearn matplotlib ipython jupyter wheel
+```
+
+Now install the stuff needed to build tf from source:
+```
+#==== Bazel
+# Install bazel, follow instructions here:
+https://docs.bazel.build/versions/master/install-ubuntu.html#install-on-ubuntu
+
+#==== TF
+# clone TF repo:
+git clone https://github.com/tensorflow/tensorflow && cd tensorflow
+```
+And finally, here are my notes/steps on building tensorflow (with the successfully installed CUDA 9.1, cuDNN 7.1):
+
+# Tensorflow build steps `./configure`
+```
+./configure
+Extracting Bazel installation...
+WARNING: --batch mode is deprecated. Please instead explicitly shut down your Bazel server using the command "bazel shutdown".
+You have bazel 0.16.0 installed.
+Please specify the location of python. [Default is /home/evan/.pyenv/versions/^/bin/python]:
+
+Found possible Python library paths:
+  /home/evan/.pyenv/versions/^/lib/python3.6/site-packages
+Please input the desired Python library path to use.  Default is [/home/evan/.pyenv/versions/^/lib/python3.6/site-packages]
+
+Do you wish to build TensorFlow with jemalloc as malloc support? [Y/n]: n
+No jemalloc as malloc support will be enabled for TensorFlow.
+
+Do you wish to build TensorFlow with Google Cloud Platform support? [Y/n]: n
+No Google Cloud Platform support will be enabled for TensorFlow.
+
+Do you wish to build TensorFlow with Hadoop File System support? [Y/n]: n
+No Hadoop File System support will be enabled for TensorFlow.
+
+Do you wish to build TensorFlow with Amazon AWS Platform support? [Y/n]: n
+No Amazon AWS Platform support will be enabled for TensorFlow.
+
+Do you wish to build TensorFlow with Apache Kafka Platform support? [Y/n]: n
+No Apache Kafka Platform support will be enabled for TensorFlow.
+
+Do you wish to build TensorFlow with XLA JIT support? [y/N]: n
+No XLA JIT support will be enabled for TensorFlow.
+
+Do you wish to build TensorFlow with GDR support? [y/N]: n
+No GDR support will be enabled for TensorFlow.
+
+Do you wish to build TensorFlow with VERBS support? [y/N]: n
+No VERBS support will be enabled for TensorFlow.
+
+Do you wish to build TensorFlow with OpenCL SYCL support? [y/N]: n
+No OpenCL SYCL support will be enabled for TensorFlow.
+
+Do you wish to build TensorFlow with CUDA support? [y/N]: y
+CUDA support will be enabled for TensorFlow.
+
+Please specify the CUDA SDK version you want to use. [Leave empty to default to CUDA 9.0]: 9.1
+
+
+Please specify the location where CUDA 9.1 toolkit is installed. Refer to README.md for more details. [Default is /usr/local/cuda]:
+
+
+Please specify the cuDNN version you want to use. [Leave empty to default to cuDNN 7.0]: 7.1
+
+
+Please specify the location where cuDNN 7 library is installed. Refer to README.md for more details. [Default is /usr/local/cuda]:
+
+
+Do you wish to build TensorFlow with TensorRT support? [y/N]: n
+No TensorRT support will be enabled for TensorFlow.
+
+Please specify the NCCL version you want to use. If NCCL 2.2 is not installed, then you can use version 1.3 that can be fetched automatically but it may have worse performance with multiple GPUs. [Default is 2.2]: 1.3
+
+
+Please specify a list of comma-separated Cuda compute capabilities you want to build with.
+You can find the compute capability of your device at: https://developer.nvidia.com/cuda-gpus.
+Please note that each additional compute capability significantly increases your build time and binary size. [Default is: 6.1]:
+
+
+Do you want to use clang as CUDA compiler? [y/N]: n
+nvcc will be used as CUDA compiler.
+
+Please specify which gcc should be used by nvcc as the host compiler. [Default is /usr/bin/gcc]:
+
+
+Do you wish to build TensorFlow with MPI support? [y/N]: n
+No MPI support will be enabled for TensorFlow.
+
+Please specify optimization flags to use during compilation when bazel option "--config=opt" is specified [Default is -march=native]:
+
+
+Would you like to interactively configure ./WORKSPACE for Android builds? [y/N]: n
+Not configuring the WORKSPACE for Android builds.
+
+
+Preconfigured Bazel build configs. You can use any of the below by adding "--config=<>" to your build command. See tools/bazel.rc for more details.
+    --config=mkl            # Build with MKL support.
+    --config=monolithic     # Config for mostly static monolithic build.
+Configuration finished
+```
+That's my configuration for the TF version featured here. Some clarifications on certain lines:
+
+**For the CUDA 9.1 location part:**
+`Please specify the location where CUDA 9.1 toolkit is installed. Refer to README.md for more details. [Default is /usr/local/cuda]: `
+If you've installed 9.1, you also have a folder `/usr/local/cuda-9.1` Do not specify this location. `/usr/local/cuda` already links to your cuda 9.1 installation. You can double-check this at `vi /usr/local/cuda/version.txt`
+
+**For the optimization flags line:**
+`Please specify optimization flags to use during compilation when bazel option "--config=opt" is specified [Default is -march=native]:`
+I leave it blank for `-march=native`, which automatically selects the optimization flags based on my CPU's instruction-set (which is skylake).
+
+**Now for the build.**
+```
+# Bazel build/compile. This can take 20 min
+bazel build --config=opt --config=mkl //tensorflow/tools/pip_package:build_pip_package
+
+# Build pip package to the location you want, I choose home dir
+bazel-bin/tensorflow/tools/pip_package/build_pip_package ~/
+```
+**And finally, installing the pip package:**
+```
+# Navigate to output dir of pip build, home for me
+cd
+pip install --no-cache-dir tensorflow-1.10.0-cp36-cp36m-linux_x86_64.whl
+
+# Confirm tf build integrity:
+python
+Python 3.6.6 (default, Jul  4 2018, 09:42:32)
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import tensorflow as tf
+>>> sess = tf.Session()
+2018-08-27 08:53:45.122036: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:964] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2018-08-27 08:53:45.122393: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Found device 0 with properties:
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.7845
+pciBusID: 0000:01:00.0
+totalMemory: 7.93GiB freeMemory: 7.40GiB
+2018-08-27 08:53:45.122405: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1485] Adding visible gpu devices: 0
+2018-08-27 08:53:45.471403: I tensorflow/core/common_runtime/gpu/gpu_device.cc:966] Device interconnect StreamExecutor with strength 1 edge matrix:
+2018-08-27 08:53:45.471428: I tensorflow/core/common_runtime/gpu/gpu_device.cc:972]      0
+2018-08-27 08:53:45.471433: I tensorflow/core/common_runtime/gpu/gpu_device.cc:985] 0:   N
+2018-08-27 08:53:45.471837: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1098] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7135 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0, compute capability: 6.1)
+2018-08-27 08:53:45.532384: I tensorflow/core/common_runtime/process_util.cc:69] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+>>> print('Sucess!!')
+Success!!
+```
+
+
