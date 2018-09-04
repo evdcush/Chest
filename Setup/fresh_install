@@ -7,11 +7,11 @@
 
 #==== Remove Bloat
 sudo apt remove --purge -y firefox transmission-common pidgin parole xfburn thunderbird
-apt remove --purge -y transmission-common
-apt remove --purge -y pidgin
-apt remove --purge -y
-apt remove --purge -y xfburn
-apt remove --purge -y evince
+#apt remove --purge -y transmission-common
+#apt remove --purge -y pidgin
+#apt remove --purge -y
+#apt remove --purge -y xfburn
+#apt remove --purge -y evince
 
 #==== Update, Upgrade
 sudo apt update && sudo apt upgrade -y && sudo update-ca-certificates -f && sudo apt autoremove
@@ -53,49 +53,49 @@ sudo apt install -y curl apt-transport-https cmake make git-core autoconf automa
 # Media
 sudo apt install -y exfat-utils flac lame x264 unrar ubuntu-restricted-extras
 sudo apt remove --purge flashplugin-installer
-apt install -y flac
-apt install -y lame
-apt install -y x264
-apt install -y unrar
-apt install -y ubuntu-restricted-extras
+#apt install -y flac
+#apt install -y lame
+#apt install -y x264
+#apt install -y unrar
+#apt install -y ubuntu-restricted-extras
 
 # Checkpoint
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
-apt upgrade -y
-apt autoremove -y
+#apt upgrade -y
+#apt autoremove -y
 
 ## APPS ##
-sudo apt install -y htop guake vim zsh tmux tree xfce4-timer-plugin chromium-browser psensor vlc okular nomacs gparted tlp deluge mpv dict dictd dict-gcide dict-wn
+sudo apt install -y htop guake vim zsh tmux tree xfce4-timer-plugin anki chromium-browser psensor vlc okular nomacs gparted tlp deluge mpv dict dictd dict-gcide dict-wn
 
 # Terminal/CLI
-sudo apt install -y htop guake vim zsh tmux tree
-
-apt install -y htop
-apt install -y guake
-apt install -y vim
-apt install -y zsh
-apt install -y tmux
-apt install -y tree
-apt install -y xfce4-timer-plugin
+#sudo apt install -y htop guake vim zsh tmux tree
+#apt install -y htop
+#apt install -y guake
+#apt install -y vim
+#apt install -y zsh
+#apt install -y tmux
+#apt install -y tree
+#apt install -y xfce4-timer-plugin
 
 # User/GUI
-sudo apt install -y chromium-browser psensor vlc okular nomacs gparted tlp deluge mpv
-apt install -y chromium-browser
-apt install -y psensor
-apt install -y vlc
-apt install -y mpv
-apt install -y okular
-apt install -y nomacs
-apt install -y gparted
-apt install -y tlp
-apt install -y deluge
+#sudo apt install -y anki chromium-browser psensor vlc okular nomacs gparted tlp deluge mpv
+#apt install -y anki
+#apt install -y chromium-browser
+#apt install -y psensor
+#apt install -y vlc
+#apt install -y mpv
+#apt install -y okular
+#apt install -y nomacs
+#apt install -y gparted
+#apt install -y tlp
+#apt install -y deluge
 
 
 # Dictionary
-apt install -y dict dictd dict-gcide dict-wn
-apt install -y dictd
-apt install -y dict-gcide
-apt install -y dict-wn
+#apt install -y dict dictd dict-gcide dict-wn
+#apt install -y dictd
+#apt install -y dict-gcide
+#apt install -y dict-wn
 
 
 #==============================================================================
@@ -103,35 +103,31 @@ apt install -y dict-wn
 #==============================================================================
 
 #==== Make home top-level dirs
-cd
-mkdir Soft Media Projects Work Data
-
-#==== Make subdirs
-# Media
-cd ~/Media && mkdir Images Music Videos
-cd Images  && mkdir Aes MiscImg Pictures
-cd
-
-# Documents
-mkdir ~/Documents # Documents is default, but for safety
-cd ~/Documents
-mkdir Books Correspondence Course MiscDocs Official Reading Receipts Writing
-cd Official && mkdir Health Immigration Records && cd ~/Documents
-cd Reading  && mkdir Papers PaperNotes          && cd ~/Documents
-cd Books    && mkdir Textbooks eBooks           && cd ~/Documents
-cd
-
-# Projects
-cd ~/Projects
-mkdir Archived Inactive Interview MiscProj
-cd Interview && mkdir Companies Prep && cd ~/Projects
-cd
-
-# Soft
-cd ~/Soft    && mkdir Installed DevStuff
-cd Installed && mkdir Apps MiddleWare Themes Utils && cd ~/Soft
-cd DevStuff  && mkdir Misc Py Tools && cd ~/Soft
-cd
+#cd
+#mkdir Soft Media Projects Work Data
+##==== Make subdirs
+## Media
+#cd ~/Media && mkdir Images Music Videos
+#cd Images  && mkdir Aes MiscImg Pictures
+#cd
+## Documents
+#mkdir ~/Documents # Documents is default, but for safety
+#cd ~/Documents
+#mkdir Books Correspondence Course MiscDocs Official Reading Receipts Writing
+#cd Official && mkdir Health Immigration Records && cd ~/Documents
+#cd Reading  && mkdir Papers PaperNotes          && cd ~/Documents
+#cd Books    && mkdir Textbooks eBooks           && cd ~/Documents
+#cd
+## Projects
+#cd ~/Projects
+#mkdir Archived Inactive Interview MiscProj
+#cd Interview && mkdir Companies Prep && cd ~/Projects
+#cd
+## Soft
+#cd ~/Soft    && mkdir Installed DevStuff
+#cd Installed && mkdir Apps MiddleWare Themes Utils && cd ~/Soft
+#cd DevStuff  && mkdir Misc Py Tools && cd ~/Soft
+#cd
 
 
 
@@ -143,10 +139,10 @@ cd
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)";
 
 # Prepare zshrc for user-defined settings
-cp ~/.zshrc ~/.zshrc.bkp
-echo '\n\n\n#==============================================================================' > ~/.zshrc
-echo '#### USER-ADDED ####' > ~/.zshrc
-echo '#==============================================================================\n\n\n' > ~/.zshrc
+#cp ~/.zshrc ~/.zshrc.bkp
+#echo '\n\n\n#==============================================================================' > ~/.zshrc
+#echo '#### USER-ADDED ####' > ~/.zshrc
+#echo '#==============================================================================\n\n\n' > ~/.zshrc
 
 
 
@@ -161,19 +157,20 @@ apt install -y sublime-text;
 #==== Ghostwriter
 add-apt-repository ppa:wereturtle/ppa
 apt update
-apt install ghostwriter
+apt install -y ghostwriter
 
 
 
 #==== z jump around
-git clone https://github.com/rupa/z.git ~/Soft/Installed/Utils/z_jump
-echo '\n#==== z jump around' > ~/.zshrc
-echo '. /home/evan/Soft/Installed/Utils/z_jump/z.sh' > ~/.zshrc
+#git clone https://github.com/rupa/z.git ~/Soft/Installed/Utils/z_jump
+#echo '\n#==== z jump around' > ~/.zshrc
+#echo '. /home/evan/Soft/Installed/Utils/z_jump/z.sh' > ~/.zshrc
 
 
 #==============================================================================
 # Copying shit and configs
 #==============================================================================
+echo 'keycode 118 =' > .Xmodmap # disable insert key
 
 
 #==== Themes/Appearance
@@ -208,11 +205,11 @@ apt install paper-icon-theme
 
 # Curl/install pyenv from source, update zshrc
 curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash;
-echo '\n\n#==== PYENV' > ~/.zshrc
-echo 'export PATH="/home/evan/.pyenv/bin:$PATH"' > ~/.zshrc
-echo 'eval "$(pyenv init -)"' > ~/.zshrc
-echo 'eval "$(pyenv virtualenv-init -)"' > ~/.zshrc
-source ~/.zshrc
+#echo '\n\n#==== PYENV' > ~/.zshrc
+#echo 'export PATH="/home/evan/.pyenv/bin:$PATH"' > ~/.zshrc
+#echo 'eval "$(pyenv init -)"' > ~/.zshrc
+#echo 'eval "$(pyenv virtualenv-init -)"' > ~/.zshrc
+#source ~/.zshrc
 
 # Install python versions
 pyenv update
