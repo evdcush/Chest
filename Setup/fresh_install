@@ -250,13 +250,12 @@ sudo apt update
 #==== TROUBLESHOOTING CUDA
 
 # simply calling `sudo apt install cuda-9-2` in 18.04 resulted in the following confirmed error:
-`trying to overwrite '/usr/lib/x86_64-linux-gnu/libGLX_indirect.so.0',
- which is also in package libglx-mesa0:amd64 18.0.5-0ubuntu0~18.04.1`
-
-To avoid this, do the following instead:
-sudo apt -o Dpkg::Options::="--force-overwrite" install cuda-9-2
-# if that doesn't work, or it says cuda-9-2 already installed, than it is missing the drivers, so just call
-sudo apt -o Dpkg::Options::="--force-overwrite" install --fix-broken
+#`trying to overwrite '/usr/lib/x86_64-linux-gnu/libGLX_indirect.so.0',
+# which is also in package libglx-mesa0:amd64 18.0.5-0ubuntu0~18.04.1`
+#To avoid this, do the following instead:
+#sudo apt -o Dpkg::Options::="--force-overwrite" install cuda-9-2
+## if that doesn't work, or it says cuda-9-2 already installed, than it is missing the drivers, so just call
+#sudo apt -o Dpkg::Options::="--force-overwrite" install --fix-broken
 
 
 # add the following lines to your .zshrc
