@@ -6,12 +6,18 @@
 #==============================================================================
 
 #==== Remove Bloat
-sudo apt remove --purge -y firefox transmission-common pidgin parole xfburn thunderbird
+sudo apt remove --purge -y firefox transmission-common pidgin parole xfburn thunderbird mousepad
+sudo apt remove --purge -y libreoffice-common
 #apt remove --purge -y transmission-common
 #apt remove --purge -y pidgin
 #apt remove --purge -y
 #apt remove --purge -y xfburn
 #apt remove --purge -y evince
+
+# Extra cruft:
+sudo apt remove --purge -y pidgin-data pidgin-otr
+sudo apt remove --purge -y mousepad
+
 
 #==== Update, Upgrade
 sudo apt update && sudo apt upgrade -y && sudo update-ca-certificates -f && sudo apt autoremove
@@ -65,7 +71,7 @@ sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 #apt autoremove -y
 
 ## APPS ##
-sudo apt install -y htop guake vim zsh tmux tree xfce4-timer-plugin anki chromium-browser psensor vlc okular nomacs gparted tlp deluge mpv dict dictd dict-gcide dict-wn
+sudo apt install -y htop guake vim zsh tmux tree xfce4-timer-plugin anki chromium-browser psensor vlc okular nomacs gparted tlp deluge mpv dict dictd dict-gcide dict-wn retext
 
 # Terminal/CLI
 #sudo apt install -y htop guake vim zsh tmux tree
@@ -89,6 +95,7 @@ sudo apt install -y htop guake vim zsh tmux tree xfce4-timer-plugin anki chromiu
 #apt install -y gparted
 #apt install -y tlp
 #apt install -y deluge
+#apt install -y retext
 
 
 # Dictionary
@@ -128,8 +135,40 @@ sudo apt install -y htop guake vim zsh tmux tree xfce4-timer-plugin anki chromiu
 #cd Installed && mkdir Apps MiddleWare Themes Utils && cd ~/Soft
 #cd DevStuff  && mkdir Misc Py Tools && cd ~/Soft
 #cd
+fonts.google.com/download?family=Sawarabi%20Gothic
+#==============================================================================
+# Install other
+#==============================================================================
+#==== Google fonts package:
+cd Soft/Packages && wget https://github.com/google/fonts/archive/master.zip;
+
+fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Thin.otf
+fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Light.otf
+fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.otf
+fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.otf
+fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Medium.otf
+fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.otf
+fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.otf
+
+wget fonts.gstatic.com/ea/nikukyu/v1/Nikukyu-Regular.ttf
+wget fonts.gstatic.com/ea/nicomoji/v1/NicoMoji-Regular.ttf
+wget fonts.gstatic.com/ea/kokoro/v1/Kokoro-Regular.ttf
+wget fonts.gstatic.com/ea/hannari/v1/Hannari-Regular.ttf
+
+cd /usr/share/fonts && sudo mkdir googlefonts && sudo unzip -d . ~/Soft/Pkgs/fonts-master.zip && sudo chmod -R --reference=opentype googlefonts
+sudo fc-cache -fv
+
+# Newer pip pacakges
 
 
+
+## Run `sudo apt-get install -y nodejs` to install Node.js 8.x LTS Carbon and npm
+## You may also need development tools to build native addons:
+     sudo apt-get install gcc g++ make
+## To install the Yarn package manager, run:
+     curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+     sudo apt-get update && sudo apt-get install yarn
 
 #==============================================================================
 ## INSTALL SOURCE/REPO APPS ##
@@ -166,6 +205,26 @@ apt install -y ghostwriter
 #echo '\n#==== z jump around' > ~/.zshrc
 #echo '. /home/evan/Soft/Installed/Utils/z_jump/z.sh' > ~/.zshrc
 
+#==== Apt-fast
+sudo add-apt-repository ppa:apt-fast/stable
+sudo apt update
+sudo apt -y install apt-fast
+
+# Aliases:
+#alias af="sudo apt-fast"
+#alias afu="sudo apt-fast update"
+#alias afg="sudo apt-fast update && sudo apt-fast upgrade"
+#alias afi="sudo apt-fast install"
+#alias affu="sudo apt-fast full-upgrade"
+#alias afl="apt-fast list"
+#alias afs="apt-fast search"
+#alias afshow="apt-fast show"
+#alias afr="sudo apt-fast remove"
+#alias afrp="sudo apt-fast remove --purge"
+#alias afa="sudo apt-fast autoremove"
+#alias afc="sudo apt-fast clean"
+
+
 
 #==============================================================================
 # Copying shit and configs
@@ -196,6 +255,19 @@ apt install paper-icon-theme
 
 
 
+
+
+
+
+
+#==============================================================================
+# Setting up dev env
+#==============================================================================
+
+#------------------------------------------------------------------------------
+# Python
+#------------------------------------------------------------------------------
+
 #==== Pyenv
 ## Note: python versions installed
 # - 3.6.6 is default py version for env, (last 3.6.* release)
@@ -214,16 +286,17 @@ curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv
 # Install python versions
 pyenv update
 pyenv install 3.6.6
-pyenv install 3.7.0
+#pyenv install 3.7.0
 pyenv install miniconda-latest
 
 # Configure local virtualenv
 # NOT YET CONFIRMED WHETHER YOU CAN SET LOCAL THROUGH THIS SCRIPT
 pyenv virtualenv 3.6.6 ^
 pyenv local ^
-pip install -U pip setuptools
+pip install -U pip setuptools wheel
 
 # Install pip packages
+#pip install numpy scipy sklearn matplotlib ipython jupyterlab jupyterthemes
 pip install numpy
 pip install scipy
 pip install sklearn
@@ -235,9 +308,192 @@ pip install chainer
 #pip install cupy # only for desktop
 #pip install tangent # installs tf-nightly, which disrupts normal TF package
 
+# EXTENDED PACKAGES:
+apt-select # !!!!!!!!!!
+atari-py
+attrs
+bs4
+bibtexparser
+chainer
+chainerrl
+cookiecutter # !!!!!!!!!!!!!
+docutils
+gym
+h5py
+hickle
+html5lib
+neupy
+nose
+pandas
+pandocfilters
+Pillow
+pygame
+PySC2
+pyqt5
+rebound-cli # !!!!!!
+retext
+s2clientprotocol
+sc2
+scbw
+thefuck # !!!!!!!!!!
+pptree
+pipdeptree
+pprintpp
+pip-chill
+
+
+
+
+
+
+#------------------------------------------------------------------------------
+# NPM
+#------------------------------------------------------------------------------
+
 #==============================================================================
 ## CUDA, cuDNN, TensorRT, MKL SETUP GUIDE ##
 #==============================================================================
+
+
+
+
+# Installing CUDA, cuDNN, TensorRT
+Great, now that you have your python environment setup, let's setup your GPU enviroment if you have one. I'd love to include the CUDA, cuDNN, and TensorRT files to this repo as releases, but it would likely violate some legal stuff with Nvidia so you'll have to source those files yourself.
+
+## Cuda
+I am assuming a clean build here (from a fresh install). If you have a preexisting CUDA installation, or nvidia drivers, the process is somewhat more complicated and you should consult the installation guides.
+
+Remember to use your own file names! The ones listed below were simply the current versions at the time of writing.
+
+```bash
+#==== Install CUDA deb
+# Make sure you download the network package, NOT the local!
+#  The local package does not always support the latest kernel!
+
+sudo dpkg -i cuda-repo-ubuntu1604_9.2.148-1_amd64.deb
+sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub
+sudo apt update
+
+# WARNING: if you install the normal `cuda` package instead of the
+#  specific version package, the package manager will automatically
+#  update your CUDA installation. Very rarely do CUDA-accelerated
+#  libraries support new CUDA versions at release, so you want to lock
+#  in your cuda version
+sudo apt install cuda-9-2
+
+# Now, add the following lines to your shell config (.zshrc, etc)
+export PATH=/usr/local/cuda-9.2/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-9.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+# Reboot machine to finish installation
+reboot
+
+# Verify successful installation
+nvcc -V
+# What you should see:
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2018 NVIDIA Corporation
+Built on Tue_Jun_12_23:07:04_CDT_2018
+Cuda compilation tools, release 9.2, V9.2.148
+# nvcc good!
+
+nvidia-smi
+# What you should see:
+Wed Sep  5 13:29:47 2018
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 396.44                 Driver Version: 396.44                    |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  GeForce GTX 1070    Off  | 00000000:01:00.0  On |                  N/A |
+|  0%   33C    P8     7W / 151W |    487MiB /  8116MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|    0      1066      G   /usr/lib/xorg/Xorg                           307MiB |
+|    0      2250      G   ...-token=8A67B2F1EABFF160B8155A812A7C727D    49MiB |
+|    0      2598      G   ...-token=407E46496140809C1A6609D27566E245    70MiB |
++-----------------------------------------------------------------------------+
+```
+Great! CUDA's all set!
+
+## cuDNN
+cuDNN installation always comes **after** you've installed CUDA.
+cuDNN can be a bit trickier than the CUDA installation--I had trouble with this at first--but I think the trick here is to use the tar files instead of the other formats (.deb, .local, or whatever).
+
+You also have to sign up and do a silly survey to get access to the cuDNN (and TensorRT) downloads. After you've done that, grab the cuDNN tar file supporting your CUDA version.
+
+```bash
+#==== cuDNN
+# tar file method:
+tar -xzvf cudnn-9.2-linux-x64-v7.2.1.38.tgz # whatever ver you got
+sudo cp cuda/include/cudnn.h /usr/local/cuda/include
+sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
+sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
+
+# Now verify cuDNN installation was successful
+#  For cuDNN 7.2, you should see CUDNN_MAJOR 7, CUDNN_MINOR 2
+cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
+
+## Should see something like:
+#define CUDNN_MAJOR 7
+#define CUDNN_MINOR 2
+#define CUDNN_PATCHLEVEL 1
+--
+#define CUDNN_VERSION (CUDNN_MAJOR * 1000 + CUDNN_MINOR * 100 + CUDNN_PATCHLEVEL)
+
+#include "driver_types.h"
+```
+cuDNN, Done!
+
+## TensorRT
+While CUDA and cuDNN are required for any GPU-accelerated ML framework, TensorRT is an optional library. But if you've come this far, why not squeeze a little more from your GPU? Plus, it's the easiest installation out of the three.
+```bash
+#==== TensorRT
+# First install CUDA. Then get the latest TensorRT supporting your
+#  CUDA version. eg, at the time of writing:
+sudo dpkg -i nv-tensorrt-repo-ubuntu1604-cuda9.2-ga-trt4.0.1.6-20180612_1-1_amd64.deb
+sudo apt update
+sudo apt install tensorrt
+sudo apt install uff-converter-tf
+
+# verify:
+dpkg -l | grep TensorRT
+## Should see something like:
+ii  graphsurgeon-tf                                            4.1.2-1+cuda9.2                              amd64        GraphSurgeon for TensorRT package
+ii  libnvinfer-dev                                             4.1.2-1+cuda9.2                              amd64        TensorRT development libraries and headers
+ii  libnvinfer-samples                                         4.1.2-1+cuda9.2                              amd64        TensorRT samples and documentation
+ii  libnvinfer4                                                4.1.2-1+cuda9.2                              amd64        TensorRT runtime libraries
+ii  tensorrt                                                   4.0.1.6-1+cuda9.2                            amd64        Meta package of TensorRT
+ii  uff-converter-tf                                           4.1.2-1+cuda9.2                              amd64        UFF converter for TensorRT package
+
+```
+TensorRT is good!
+
+All done with the GPU environment! :clap:
+
+* * *
+
+# Installing MKL
+**The following MKL installation guide was copied, verbatim, from TinyMind (https://github.com/mind) at https://github.com/mind/wheels#mkl. That's where I got my wheels before I started building my own. Make sure to check them out!**
+
+> MKL is [Intel's deep learning kernel library](https://github.com/01org/mkl-dnn), which makes training neural nets on CPU much faster. If you don't have it, install it like the following:
+
+```sh
+# If you don't have cmake
+sudo apt install cmake
+
+git clone https://github.com/01org/mkl-dnn.git
+cd mkl-dnn/scripts && ./prepare_mkl.sh && cd ..
+mkdir -p build && cd build && cmake .. && make
+sudo make install
+
+echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib' >> ~/.bashrc
+```
 
 #==== CUDA
 # download network deb, since local deb does not work with kernel 4.13
