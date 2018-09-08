@@ -2,27 +2,38 @@
 
 ############### NOT INTENDED FOR OTHER USERS. Just me! ########################
 #==============================================================================
-## PACKAGE MANAGER APT ##
+#                    ## PACKAGE MANAGER APT ##
 #==============================================================================
 
-#==== Remove Bloat
-sudo apt remove --purge -y firefox transmission-common pidgin parole xfburn thunderbird mousepad
-sudo apt remove --purge -y libreoffice-common
-#apt remove --purge -y transmission-common
-#apt remove --purge -y pidgin
-#apt remove --purge -y
-#apt remove --purge -y xfburn
-#apt remove --purge -y evince
+SETUP APT-SELECT BEFORE DOING ANYTHING --> GET FASTEST MIRRORS
+SETUP APT-FAST BEFORE DOING ANYTHING
 
-# Extra cruft:
-sudo apt remove --purge -y pidgin-data pidgin-otr
-sudo apt remove --purge -y mousepad
+#------------------------------------------------------------------------------
+#               ## Remove unwanted packages and bloat ##
+#------------------------------------------------------------------------------
+#==== Remove Bloat
+apt remove --purge -y firefox
+apt remove --purge -y transmission-common
+apt remove --purge -y pidgin
+apt remove --purge -y pidgin-data pidgin-otr
+apt remove --purge -y parole
+apt remove --purge -y xfburn
+apt remove --purge -y evince
+apt remove --purge -y libreoffice-common
+apt remove --purge -y mousepad
 
 
 #==== Update, Upgrade
 sudo apt update && sudo apt upgrade -y && sudo update-ca-certificates -f && sudo apt autoremove
 # apt full-upgrade # for drivers, but may install ubuntu-sourced nvidia
 apt autoremove -y
+
+#==== Apt-fast
+sudo add-apt-repository ppa:apt-fast/stable
+sudo apt update
+sudo apt -y install apt-fast
+
+
 
 #==== update GCC/G++
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test
@@ -37,24 +48,89 @@ sudo apt update
 
 #==== INSTALL
 # Utils/Dependencies/Libraries
-sudo apt install -y curl apt-transport-https cmake make git-core autoconf automake build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget llvm libncurses5-dev xz-utils tk-dev
-#apt install -y apt-transport-https
-#apt install -y cmake
-#apt install -y make
-#apt install -y git-core
-#apt install -y autoconf
-#apt install -y automake
-#apt install -y build-essential
-#apt install -y libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget llvm libncurses5-dev xz-utils tk-dev
-#apt install -y zlib1g-dev
-#apt install -y libbz2-dev
-#apt install -y libreadline-dev
-#apt install -y libsqlite3-dev
-#apt install -y wget
-#apt install -y llvm
-#apt install -y libncurses5-dev xz-utils tk-dev
-#apt install -y xz-utils
-#apt install -y tk-dev
+#sudo apt install -y curl apt-transport-https cmake make git-core autoconf automake build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget llvm libncurses5-dev xz-utils tk-dev
+apt install -y curl
+apt install -y apt-transport-https
+apt install -y cmake
+apt install -y make
+apt install -y git-core
+apt install -y autoconf
+apt install -y automake
+apt install -y build-essential
+apt install -y libssl-dev
+apt install -y zlib1g-dev
+apt install -y libbz2-dev
+apt install -y libreadline-dev
+apt install -y libsqlite3-dev
+apt install -y wget
+apt install -y llvm
+apt install -y libncurses5-dev
+apt install -y xz-utils
+apt install -y tk-dev
+apt install -y libatomic1
+apt install -y gfortran
+apt install -y perl
+apt install -y m4
+apt install -y pkg-config
+apt install -y software-properties-common
+apt install -y p7zip-full
+apt install -y p7zip-rar
+
+
+#------------------------------------------------------------------------------
+#                     ## LANGUAGE/LIBRARIES ##
+#------------------------------------------------------------------------------
+
+# Julia
+#=========================
+mkdir ~/.julia && cd ~/.julia && \
+curl -s https://api.github.com/repos/JuliaLang/julia/releases/latest \
+| grep "browser_download_url.*full.tar.gz" \
+| cut -d : -f 2,3 \
+| tr -d \" \
+| wget -qi - #-O - \
+7z x *full.tar.gz && 7z x *full.tar && rm -r *full.tar*
+echo 'export PATH="$(pwd)/julia:$PATH"' >> ~/.zshrc
+
+
+# Guake
+#=========================
+git clone https://github.com/Guake/guake.git && cd guake
+./scripts/bootstrap-dev-[debian, arch, fedora].sh run make
+make
+sudo make install
+
+
+pip install --user guake
+
+
+# Prolog
+#=========================
+apt-add-repository ppa:swi-prolog/stable
+apt update
+apt install -y swi-prolog swi-prolog-doc swi-proloc swi-prolog-odbc swi-prolog-bdb
+
+# extra goodies
+#=========================
+# https://bitbucket.org/ArneBab/wisp/overview
+# https://en.wikipedia.org/wiki/Idris_(programming_language)
+# http://www.ring-lang.net/
+# https://en.wikipedia.org/wiki/Scala_(programming_language)
+# https://en.wikipedia.org/wiki/Go_(programming_language)
+# https://haskell.org/platform/download/8.4.3/haskell-platform-8.4.3-unknown-posix--full-x86_64.tar.gz
+# https://ftp.gnu.org/gnu/guile/guile-2.2.4.tar.gz
+# ftp://gprolog.univ-paris1.fr/pub/gprolog/gprolog-latest.tar.gz
+
+# http://cvs.savannah.gnu.org/viewvc/*checkout*/gneuralnetwork/gneural_network-0.9.1.tar.gz?revision=1.1&root=gneuralnetwork
+https://ring.cx/
+
+# Node, NPM, yarn
+#=========================
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+apt install -y nodejs
+curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+apt update && apt install -y yarn
 
 # Media
 sudo apt install -y exfat-utils flac lame x264 unrar ubuntu-restricted-extras
@@ -162,13 +238,8 @@ sudo fc-cache -fv
 
 
 
-## Run `sudo apt-get install -y nodejs` to install Node.js 8.x LTS Carbon and npm
-## You may also need development tools to build native addons:
-     sudo apt-get install gcc g++ make
-## To install the Yarn package manager, run:
-     curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-     sudo apt-get update && sudo apt-get install yarn
+
+
 
 #==============================================================================
 ## INSTALL SOURCE/REPO APPS ##
@@ -205,10 +276,7 @@ apt install -y ghostwriter
 #echo '\n#==== z jump around' > ~/.zshrc
 #echo '. /home/evan/Soft/Installed/Utils/z_jump/z.sh' > ~/.zshrc
 
-#==== Apt-fast
-sudo add-apt-repository ppa:apt-fast/stable
-sudo apt update
-sudo apt -y install apt-fast
+
 
 # Aliases:
 #alias af="sudo apt-fast"
@@ -349,6 +417,22 @@ pip-chill
 #------------------------------------------------------------------------------
 # NPM
 #------------------------------------------------------------------------------
+
+
+#------------------------------------------------------------------------------
+# Misc
+#------------------------------------------------------------------------------
+
+# Prolog
+#========================
+apt install -y swi-prolog
+apt install -y swi-prolog-doc
+
+# Prolog
+#========================
+
+
+
 
 #==============================================================================
 ## CUDA, cuDNN, TensorRT, MKL SETUP GUIDE ##
