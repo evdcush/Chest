@@ -111,6 +111,18 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 #------------------------------------------------------------------------------
 
+# Shell
+#=========================
+alias md="mkdir -p"
+alias t="touch"
+alias szshrc="source ~/.zshrc"
+
+
+# Package utility
+#=========================
+alias pki="apt-cache show"
+
+
 # Apt-fast
 #=========================
 alias af="sudo apt-fast"
@@ -130,9 +142,9 @@ alias afshow="apt-fast show"
 #=========================
 eval $(thefuck --alias)
 
+
 # Misc/Bookmarks
 #=========================
-alias cdchest="cd /home/evan/Projects/chest"
 
 
 #------------------------------------------------------------------------------
@@ -159,7 +171,9 @@ export LD_LIBRARY_PATH=/usr/local/cuda-9.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY
 #=========================
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
-
+# Julia
+#=========================
+export PATH="$/home/evan/.julia:$PATH"
 
 # StarCraft II
 #=========================
@@ -215,3 +229,43 @@ function duh(){
     du -h --max-depth=1 | sort -h;
 }
 
+
+# Shortcut find
+#========================
+function f(){
+    if [ "$#" -eq 1 ]; then
+        sudo find / -iname "$1"
+    elif [ "$#" -eq 2]; then
+        find "$1" -iname "$2"
+    else
+        echo "too few or too many args for find func"
+    fi
+}
+
+
+# Make dir and go into it
+#========================
+function mcd(){
+    mkdir "$1" && cd "$1"
+}
+
+
+# Reset PATH variable
+#========================
+function reset_path(){
+    echo "Resetting Path...\n--------------------------------------------------"
+    echo "  current path = $PATH\n"
+    PATH=$(getconf PATH)
+    echo "  reset path = $PATH\n"
+    source ~/.zshrc
+    echo "  resourced path = $PATH\n--------------------------------------------------"
+}
+
+
+# Add line to shell config
+#========================
+function expzsh(){
+    echo "\n\n# $1" >> ~/.zshrc
+    echo '#========================' >> ~/.zshrc
+    echo "$2" >> ~/.zshrc
+}
