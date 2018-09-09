@@ -8,6 +8,10 @@
 SETUP APT-SELECT BEFORE DOING ANYTHING --> GET FASTEST MIRRORS
 SETUP APT-FAST BEFORE DOING ANYTHING
 
+https://github.com/nana-4/materia-theme
+
+
+
 #------------------------------------------------------------------------------
 #               ## Remove unwanted packages and bloat ##
 #------------------------------------------------------------------------------
@@ -75,7 +79,11 @@ apt install -y pkg-config
 apt install -y software-properties-common
 apt install -y p7zip-full
 apt install -y p7zip-rar
+apt install -y redis-server redis-tools
 
+
+
+#
 
 #------------------------------------------------------------------------------
 #                     ## LANGUAGE/LIBRARIES ##
@@ -92,16 +100,6 @@ curl -s https://api.github.com/repos/JuliaLang/julia/releases/latest \
 7z x *full.tar.gz && 7z x *full.tar && rm -r *full.tar*
 echo 'export PATH="$(pwd)/julia:$PATH"' >> ~/.zshrc
 
-
-# Guake
-#=========================
-git clone https://github.com/Guake/guake.git && cd guake
-./scripts/bootstrap-dev-[debian, arch, fedora].sh run make
-make
-sudo make install
-
-
-pip install --user guake
 
 
 # Prolog
@@ -215,17 +213,48 @@ fonts.google.com/download?family=Sawarabi%20Gothic
 #==============================================================================
 # Install other
 #==============================================================================
+
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+#==============================================================================
+#                    fonts
+#==============================================================================
+mkdir ~/.fonts
+
+#------------------------------------------------------------------------------
+# From github
+#------------------------------------------------------------------------------
 #==== Google fonts package:
-cd Soft/Packages && wget https://github.com/google/fonts/archive/master.zip;
+git clone --depth 1 https://github.com/google/fonts.git ~/.fonts/google-fonts
 
-fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Thin.otf
-fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Light.otf
-fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.otf
-fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.otf
-fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Medium.otf
-fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.otf
-fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.otf
+#==== Adobe source-code-pro
+git clone --depth 1 --branch release https://github.com/adobe-fonts/source-code-pro.git ~/.fonts/adobe-fonts/source-code-pro
 
+#==== Misc
+
+
+
+#------------------------------------------------------------------------------
+# From github
+#------------------------------------------------------------------------------
+
+sudo fc-cache -fv
+
+mkdir -p ~/.fonts/googlefonts && cd ~/.fonts/googlefonts
+wget https://github.com/google/fonts/archive/master.zip
+
+
+cd Soft/Packages && wget https://github.com/google/fonts/archive/master.zip
+
+wget fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Thin.otf
+wget fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Light.otf
+wget fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.otf
+wget fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.otf
+wget fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Medium.otf
+wget fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.otf
+wget fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.otf
 wget fonts.gstatic.com/ea/nikukyu/v1/Nikukyu-Regular.ttf
 wget fonts.gstatic.com/ea/nicomoji/v1/NicoMoji-Regular.ttf
 wget fonts.gstatic.com/ea/kokoro/v1/Kokoro-Regular.ttf
@@ -408,6 +437,8 @@ pptree
 pipdeptree
 pprintpp
 pip-chill
+afdko # adobe font development kit, ligatures
+pip-check # check package versions and list outdated
 
 
 

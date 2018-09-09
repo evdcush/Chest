@@ -52,7 +52,6 @@ for line in X:
 f.close()
 
 
-
 ##### OPENING FILE,READING LINE BY LINE
 lines = open('file.txt').read().split("\n")
 
