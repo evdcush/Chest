@@ -439,6 +439,8 @@ pprintpp
 pip-chill
 afdko # adobe font development kit, ligatures
 pip-check # check package versions and list outdated
+starred # !!!! : generates starred
+termdown # terminal countdown timer/stopwatch
 
 
 

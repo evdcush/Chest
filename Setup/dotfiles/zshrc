@@ -115,12 +115,12 @@ source $ZSH/oh-my-zsh.sh
 #=========================
 alias md="mkdir -p"
 alias t="touch"
-alias szshrc="source ~/.zshrc"
+#alias szshrc="source ~/.zshrc"
 
 
 # Package utility
 #=========================
-alias pki="apt-cache show"
+alias api="apt-cache show"
 
 
 # Apt-fast
@@ -140,7 +140,7 @@ alias afshow="apt-fast show"
 
 # For correcting output
 #=========================
-eval $(thefuck --alias)
+#eval $(thefuck --alias)
 
 
 # Misc/Bookmarks
@@ -261,6 +261,11 @@ function reset_path(){
     echo "  resourced path = $PATH\n--------------------------------------------------"
 }
 
+# Resource zshrc
+#=======================
+function szshrc(){
+    source ~/.zshrc
+}
 
 # Add line to shell config
 #========================
@@ -269,3 +274,6 @@ function expzsh(){
     echo '#========================' >> ~/.zshrc
     echo "$2" >> ~/.zshrc
 }
+
+eval $(thefuck --alias)
+
