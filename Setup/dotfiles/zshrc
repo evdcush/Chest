@@ -180,7 +180,7 @@ function f(){
 function mc(){mkdir "$1" && cd "$1"}
 function mpc(){mkdir -p "$1" && cd "$1"}
 # cd, list contents
-function cl(){cd "$1" && "lk";}
+function cl(){cd "$1" && lk;}
 
 
 

@@ -414,7 +414,6 @@ bibtexparser
 chainer
 chainerrl
 cookiecutter # !!!!!!!!!!!!!
-docutils
 gym
 h5py
 hickle
@@ -428,7 +427,6 @@ pygame
 PySC2
 pyqt5
 rebound-cli # !!!!!!
-retext
 s2clientprotocol
 sc2
 scbw
@@ -441,9 +439,46 @@ afdko # adobe font development kit, ligatures
 pip-check # check package versions and list outdated
 starred # !!!! : generates starred
 termdown # terminal countdown timer/stopwatch
+cairosvg # converts svg to pdf or png
+python-qtpip # gui manager for pip
+
+#----------
+# RST utils
+#----------
+docutils # rst source
+rst # Module to create reStructuredText documents through code.
 
 
+rstvalidator
+reflowrst # Modify valid rst text to fit within given width
+retext # rst editor with live preview (kind of sucks)
+rstwatch # !!!!!!!!!!!!!!!!!!!! Watch directories for changes to RST files and generate HTML
+rstdiary # Create static HTML diary from single RST input
 
+# Misc
+
+# NOPE rstdoc # support documentation in restructedText (rst)
+# NOT WORKING PY3 rst2pdf
+# NOT WORKING 2lazy2rest # Effortless generation of PDF, HTML & ODT documents from RST (ReStructuredT
+# Eh ... htmlize # tiny utility command, generate html from any formats(e.g. .md, .rst)
+# NOT WORKING: rstviewer # An in-browser RST viewer with live updating
+rstvalidator
+flake8-rst-docstrings # Python docstring reStructuredText (RST) validator
+rst-archiver # Add files to your RST notes more easily.
+# NOT WORKING: instant-rst # Preview Rst Document Instantly
+
+
+# Sphinx
+sphinx # EVERYTHING
+sphinxcontrib-jupyter # Sphinx "Jupyter" extension: Convert your RST files into executable Jupyter notebooks.
+#sphinx-api-any # extract comments from source files into rst files
+#doc8 # Style checker for Sphinx (or other) RST documentation
+#sphinx2rst
+
+
+## Pelican
+pelican # !!!!!!! sphinx for generating articles blog
+pelican_publications # ????? !!!! A Pelican plugin that adds an RST directive for including a BibTeX publication list.
 
 
 

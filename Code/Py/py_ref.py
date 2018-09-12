@@ -14,3 +14,15 @@ def TODO(f):
     def not_implemented(*args, **kwargs):
         print('\n  FUNCTION NOT IMPLEMENTED: <{}>'.format(f.__name__))
     return not_implemented
+
+def INSPECT(f):
+    @wraps(f)
+    def inspector(*args, **kwargs):
+        print('\n Inspecting function: <{}>'.format(f.__name__))
+        x = args
+        y = kwargs
+        z = f(*args, **kwargs)
+        code.interact(local=dict(globals(), **locals())) # DEBUGGING-use
+    return inspector
+
+
