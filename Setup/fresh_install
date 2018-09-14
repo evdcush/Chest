@@ -12,6 +12,13 @@ MIRRORS=( 'http://mirror.picosecond.org/ubuntu/', 'http://ftp://mirror.picosecon
 https://github.com/nana-4/materia-theme
 
 
+# put nativefier stuff in ~/.local/share/
+nativefier "https://blog.openai.com/" -n openai-blog -a x64 -p linux -i ./icons/openai_logo.png
+nativefier "https://github.com/evdcush" -n github -a x64 -p linux -i github_icon.png
+nativefier "https://deepmind.com/blog/" -n deepmind-blog -a x64 -p linux -i ./icons/deepmind_swirl.png
+nativefier "https://medium.com/topic/artificial-intelligence" -n medium-blog -a x64 -p linux -i icons/medium_icon.png
+nativefier "https://keep.google.com" -n google-keep -a x64 -p linux -i icons/google-keep-icon.png
+nativefier "https://drive.google.com" -n google-drive -a x64 -p linux -i google-drive_ico.png
 
 #------------------------------------------------------------------------------
 #               ## Remove unwanted packages and bloat ##
@@ -442,6 +449,9 @@ starred # !!!! : generates starred
 termdown # terminal countdown timer/stopwatch
 cairosvg # converts svg to pdf or png
 python-qtpip # gui manager for pip
+grip # preview github markdown before uploading
+gitsuggest # suggest repos based on your stars
+art # ascii art tool (text -> ascii)
 
 #----------
 # RST utils
