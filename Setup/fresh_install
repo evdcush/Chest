@@ -9,9 +9,33 @@ SETUP APT-SELECT BEFORE DOING ANYTHING --> GET FASTEST MIRRORS
 SETUP APT-FAST BEFORE DOING ANYTHING
 MIRRORS=( 'http://mirror.picosecond.org/ubuntu/', 'http://ftp://mirror.picosecond.org/ubuntu/', 'http://rsync://mirror.picosecond.org/ubuntu/', 'http://ftp://mirror.enzu.com/ubuntu/', 'http://rsync://mirror.enzu.com/ubuntu/', 'http://mirror.enzu.com/ubuntu/', 'http://la-mirrors.evowise.com/ubuntu/', 'http://rsync://mirrors.ocf.berkeley.edu/ubuntu/', 'http://ftp://mirrors.ocf.berkeley.edu/ubuntu/', 'http://mirrors.ocf.berkeley.edu/ubuntu/', 'http://mirror.math.ucdavis.edu/ubuntu/' )
 
-https://github.com/nana-4/materia-theme
 
-bashmarks
+
+
+
+# APT PACKAGES NEW
+#=========================
+apt-fast
+wmctrl # see info about windows manager
+#geeqie # maybe not worth it?
+unar
+go-for-it
+
+#=== possibly PPA or deb:
+zoom
+superproductivity
+slack
+discord
+mendeley
+boostnote
+
+# Github
+#=========================
+bashmarks #  git
+# https://github.com/rsms/inter/releases # interui fonts
+# LINE? # https://github.com/carpedm20/LINE
+
+
 
 
 # put nativefier stuff in ~/.local/share/
@@ -454,6 +478,7 @@ python-qtpip # gui manager for pip
 grip # preview github markdown before uploading
 gitsuggest # suggest repos based on your stars
 art # ascii art tool (text -> ascii)
+betterbib # !!!!!!!!!!!!!!! can fix bibtext from info retrieved onlne
 
 #----------
 # RST utils
