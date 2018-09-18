@@ -478,7 +478,7 @@ python-qtpip # gui manager for pip
 grip # preview github markdown before uploading
 gitsuggest # suggest repos based on your stars
 art # ascii art tool (text -> ascii)
-betterbib # !!!!!!!!!!!!!!! can fix bibtext from info retrieved onlne
+betterbib # !!!!!!!!!!!!!!! can fix bibtext from info retrieved
 
 #----------
 # RST utils
