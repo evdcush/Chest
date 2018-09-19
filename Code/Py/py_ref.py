@@ -8,6 +8,34 @@ from functools import wraps
 code.interact(local=dict(globals(), **locals())) # DEBUGGING-use
 '''
 
+from inspect import signature
+
+
+def auto_args(target):
+    """
+    A decorator for automatically copying constructor arguments to `self`.
+    """
+    # Get a signature object for the target method:
+    sig = signature(target)
+    def replacement(self, *args, **kwargs):
+        # Parse the provided arguments using the target's signature:
+        bound_args = sig.bind(self, *args, **kwargs)
+        # Save away the arguments on `self`:
+        for k, v in bound_args.arguments.items():
+            if k != 'self':
+                setattr(self, k, v)
+        # Call the actual constructor for anything else:
+        target(self, *args, **kwargs)
+    return replacement
+
+
+# Test out the decorator by writing a class and autoarg-ing the constructor:
+class MyClass:
+    @auto_args
+    def __init__(self, a, b, c=None):
+        pass
+
+
 # Nifty decorator to both comment and prevent running unfinished funcs
 def TODO(f):
     """ Serves as a convenient, clear flag for developers and insures

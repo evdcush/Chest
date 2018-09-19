@@ -164,6 +164,7 @@ curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 apt update && apt install -y yarn
 
+
 # Media
 sudo apt install -y exfat-utils flac lame x264 unrar ubuntu-restricted-extras
 sudo apt remove --purge flashplugin-installer
@@ -479,6 +480,7 @@ grip # preview github markdown before uploading
 gitsuggest # suggest repos based on your stars
 art # ascii art tool (text -> ascii)
 betterbib # !!!!!!!!!!!!!!! can fix bibtext from info retrieved
+pyment # !!! format and convert python docstrings
 
 #----------
 # RST utils
