@@ -1,0 +1,66 @@
+
+
+
+chainer
+docutils
+grip
+html5lib
+ipython
+jupyter
+Markdown
+MarkupSafe
+matplotlib
+
+pandocfilters
+Pygments
+sklearn
+thefuck
+#
+pip install -U pip setuptools wheel
+#@
+#======= Science essentials
+numpy
+scipy
+sklearn
+matplotlib
+#@
+#======= Notebook
+ipython
+jupyter
+jupyterthemes
+#@
+#======= AI libraries/frameworks
+chainer
+gym
+chainerrl
+#@
+##=== Starcraft
+pysc2
+sc2
+scbw
+#@
+#======= Utiltities
+##=== Dev
+apt-select
+bs4
+cookiecutter
+h5py
+hickle
+html5lib
+pyqt5
+pillow # might be pil
+
+
+##=== Text
+bibtexparser
+pandocfilters
+retext
+
+##=== CLI/shell
+thefuck
+
+
+
+##=== misc
+art
+buku

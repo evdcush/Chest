@@ -44,6 +44,7 @@ apt autoremove -y
 #sudo apt install apt-fast -y
 sed -i '$ a "MIRRORS=( 'http://mirror.picosecond.org/ubuntu/', 'http://ftp://mirror.picosecond.org/ubuntu/', 'http://rsync://mirror.picosecond.org/ubuntu/', 'http://ftp://mirror.enzu.com/ubuntu/', 'http://rsync://mirror.enzu.com/ubuntu/', 'http://mirror.enzu.com/ubuntu/', 'http://la-mirrors.evowise.com/ubuntu/', 'http://rsync://mirrors.ocf.berkeley.edu/ubuntu/', 'http://ftp://mirrors.ocf.berkeley.edu/ubuntu/', 'http://mirrors.ocf.berkeley.edu/ubuntu/', 'http://mirror.math.ucdavis.edu/ubuntu/' )"' /etc/apt-fast.conf
 # THIS WONT WORK, MAKE A FILE, TEE IT OR WHATEVER
+
 #==============================================================================
 #  Utils
 #==============================================================================
