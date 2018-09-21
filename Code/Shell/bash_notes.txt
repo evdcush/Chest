@@ -1,0 +1,28 @@
+#!/bin/bash
+  # Always have to have to have that at top of script
+
+
+
+#   .g8""8q.                           mm
+# .dP'    `YM.                         MM
+# dM'      `MM `7MM  `7MM   ,pW"Wq.  mmMMmm   .gP"Ya  ,pP"Ybd
+# MM        MM   MM    MM  6W'   `Wb   MM    ,M'   Yb 8I   `"
+# MM.      ,MP   MM    MM  8M     M8   MM    8M"""""" `YMMMa.
+# `Mb.    ,dP'   MM    MM  YA.   ,A9   MM    YM.    , L.   I8
+#   `"bmmd"'     `Mbod"YML. `Ybmd9'    `Mbmo  `Mbmmd' M9mmmP'
+#       MMb
+#        `bood'
+
+
+# Double-quotes "" vs single ''
+#===============================
+# QUICK:
+home_single='/home/$USER/' # single quotes preserve LITERAL value
+home_double="/home/$USER/"
+echo home_single
+# --> /home/$USER/
+echo home_double
+# --> /home/evan/
+
+
+#------------------------------------------------------------------------------
