@@ -37,7 +37,8 @@ bashmarks #  git
 # LINE? # https://github.com/carpedm20/LINE
 
 
-
+# sublime
+sublimeautodocstring
 
 # put nativefier stuff in ~/.local/share/
 nativefier "https://blog.openai.com/" -n openai-blog -a x64 -p linux -i ./icons/openai_logo.png
