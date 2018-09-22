@@ -11,56 +11,50 @@ Markdown
 MarkupSafe
 matplotlib
 
-pandocfilters
-Pygments
-sklearn
-thefuck
-#
-pip install -U pip setuptools wheel
-#@
-#======= Science essentials
-numpy
-scipy
-sklearn
-matplotlib
-#@
-#======= Notebook
-ipython
-jupyter
-jupyterthemes
-#@
-#======= AI libraries/frameworks
-chainer
-gym
-chainerrl
-#@
-##=== Starcraft
-pysc2
-sc2
-scbw
-#@
-#======= Utiltities
-##=== Dev
-apt-select
-bs4
-cookiecutter
-h5py
-hickle
-html5lib
-pyqt5
-pillow # might be pil
-
-
-##=== Text
-bibtexparser
-pandocfilters
-retext
-
-##=== CLI/shell
-thefuck
-
-
-
-##=== misc
-art
-buku
+pip install pandocfilters
+pip install Pygments
+pip install sklearn
+pip install thefuck
+pip install #
+pip install pip install -U pip setuptools wheel
+pip install #@
+pip install #======= Science essentials
+pip install numpy
+pip install scipy
+pip install sklearn
+pip install matplotlib
+pip install #@
+pip install #======= Notebook
+pip install ipython
+pip install jupyter
+pip install jupyterthemes
+pip install #@
+pip install #======= AI libraries/frameworks
+pip install chainer
+pip install gym
+pip install chainerrl
+pip install #@
+pip install ##=== Starcraft
+pip install pysc2
+pip install sc2
+pip install scbw
+pip install #@
+pip install #======= Utiltities
+pip install ##=== Dev
+pip install apt-select
+pip install bs4
+pip install cookiecutter
+pip install h5py
+pip install hickle
+pip install html5lib
+pip install pyqt5
+pip install pillow # might be pil
+pip install ##=== Text
+pip install bibtexparser
+pip install pandocfilters
+pip install retext
+pip install ##=== CLI/shell
+pip install thefuck
+pip install ##=== misc
+pip install art
+pip install buku
