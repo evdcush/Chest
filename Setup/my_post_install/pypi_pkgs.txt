@@ -55,6 +55,7 @@ pip install pandocfilters
 pip install retext
 pip install ##=== CLI/shell
 pip install thefuck
+pip install pip-autoremove
 pip install ##=== misc
 pip install art
 pip install buku
