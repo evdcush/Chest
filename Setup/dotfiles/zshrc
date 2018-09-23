@@ -1,40 +1,36 @@
-#==============================================================================
-## oh-my-zsh config ##
-#==============================================================================
+###############################################################################
+#     ___    _  _         __  __  __   __        ____  ___   _  _      ########
+#    / _ \  | || |  ___  |  \/  | \ \ / /  ___  |_  / / __| | || |     ########
+#   | (_) | | __ | |___| | |\/| |  \ V /  |___|  / /  \__ \ | __ |     ########
+#    \___/  |_||_|       |_|  |_|   |_|         /___| |___/ |_||_|     ########
+#                                                                      ########
+###############################################################################
 
 # Path to oh-my-zsh
 #=========================
 # Path to your oh-my-zsh installation.
 export ZSH=/home/evan/.oh-my-zsh
 
-# Zsh custom config
+# Zsh theme
 #=========================
 ZSH_THEME="robbyrussell"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load? (plugins can
+# be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git,
-  pyenv,
-  pep8,
 )
-
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-
-#==============================================================================
-#                          # Aliases #
-#==============================================================================
-
+###############################################################################
+#      _     _      ___     _     ___   ___   ___                      ########
+#     /_\   | |    |_ _|   /_\   / __| | __| / __|                     ########
+#    / _ \  | |__   | |   / _ \  \__ \ | _|  \__ \                     ########
+#   /_/ \_\ |____| |___| /_/ \_\ |___/ |___| |___/                     ########
+#                                                                      ########
+###############################################################################
 
 #----------------------------------------------------
 # Shell
@@ -42,15 +38,45 @@ source $ZSH/oh-my-zsh.sh
 
 # File & Dir stuff
 #=========================
-alias md="mkdir"
-alias mp="mkdir -p"
-alias th="touch"
+alias md="mkdir -p"
 
 # List stuff
 #=========================
 alias h="history"
-alias ldot="ls -ld.*"
+alias ldot="ls -d --group-directories-first .*"
 alias lk="ls -1FSshX --file-type"
+
+# Package utility
+#=========================
+alias api="apt-cache show"
+
+# Apt-fast
+#=========================
+apf='sudo apt-fast'
+alias af="$apf"
+alias afu="$apf update"
+alias afg="$apf update && $apf upgrade"
+alias afi="$apf install"
+alias afr="$apf remove"
+alias afrp="$apf remove --purge"
+alias afa="$apf autoremove"
+alias afc="$apf clean"
+alias affu="$apf full-upgrade"
+alias afl="apt-fast list"
+alias afs="apt-fast search"
+alias afshow="apt-fast show"
+
+#----------------------------------------------------
+# Other
+#----------------------------------------------------
+
+# Misc/Bookmarks
+#=========================
+
+# Ascii text print
+#=========================
+alias asciifonts="python -m art fonts"
+alias ascii="python -m art text "
 
 # Apps
 #=========================
@@ -59,79 +85,117 @@ alias st="subl" # open file with sublime
 alias stt="st ." # open dir with sublime
 
 
+###############################################################################
+#    ___     _     _____   _  _         ___   _  _  __   __            ########
+#   | _ \   /_\   |_   _| | || |       | __| | \| | \ \ / /            ########
+#   |  _/  / _ \    | |   | __ |  _    | _|  | .` |  \ V /             ########
+#   |_|   /_/ \_\   |_|   |_||_| ( )   |___| |_|\_|   \_/              ########
+#                                |/                                    ########
+###############################################################################
 
-# Package utility
-#=========================
-alias api="apt-cache show"
-
-
-# Apt-fast
-#=========================
-alias af="sudo apt-fast"
-alias afu="sudo apt-fast update"
-alias afg="sudo apt-fast update && sudo apt-fast upgrade"
-alias afi="sudo apt-fast install"
-alias afr="sudo apt-fast remove"
-alias afrp="sudo apt-fast remove --purge"
-alias afa="sudo apt-fast autoremove"
-alias afc="sudo apt-fast clean"
-alias affu="sudo apt-fast full-upgrade"
-alias afl="apt-fast list"
-alias afs="apt-fast search"
-alias afshow="apt-fast show"
-
-# For correcting output
-#=========================
-#eval $(thefuck --alias)
+# Shortcut path vars
+#-------------------
+home="$HOME"
+usr_local='/usr/local'
 
 
-# Misc/Bookmarks
-#=========================
+#******************************************************************************
+
+# Add to path, if not there
+#==========================
+# from: https://superuser.com/users/7778/gordon-davisson
+pathadd() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$1"
+    fi
+}
+
+ld_library_pathadd() {
+    if [ -d "$1" ] && [[ ":$LD_LIBARY_PATH:" != *":$1:"* ]]; then
+        LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+"$LD_LIBRARY_PATH:"}$1"
+    fi
+
+# UNTESTED:
+#PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
+}
+#******************************************************************************
 
 
 #------------------------------------------------------------------------------
-# Pathing and Environment
+# Dev env
 #------------------------------------------------------------------------------
 
 # Pyenv
 #=========================
-export PATH="/home/evan/.pyenv/bin:$PATH"
+#export PATH="/home/evan/.pyenv/bin:$PATH"
+pyenv_path="$HOME/.pyenv/bin"
+pathadd "$pyenv_path"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# CUDA
-#=========================
-export PATH=/usr/local/cuda-9.2/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-9.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-
-# Z jump
-#=========================
-. /home/evan/Soft/Installed/Utils/Z_jump/z.sh
-
-
-# MKL export
-#=========================
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
 # Julia
 #=========================
-export PATH="$/home/evan/.julia:$PATH"
+#julia_path="$HOME/.julia"
+#pathadd "$julia_path"
+#export PATH="$/home/evan/.julia:$PATH"
+
+
+#------------------------------------------------------------------------------
+# Libraries
+#------------------------------------------------------------------------------
+
+
+# CUDA
+#=========================
+cuda_path="$usr_local/cuda-9.2/bin"
+cuda_ld_lib_path="$usr_local/cuda-9.2/lib64"
+if [[ $(uname -n) != *"430T" ]]; then
+    pathadd "$cuda_path"
+    ld_library_pathadd "$cuda_ld_lib_path"
+    #export PATH=/usr/local/cuda-9.2/bin${PATH:+:${PATH}}
+    #export LD_LIBRARY_PATH=/usr/local/cuda-9.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+fi
+
+
+# MKL
+#=========================
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+ld_library_pathadd '/usr/local/lib'
+
 
 # StarCraft II
 #=========================
 #export SC2PATH=/home/evan/Projects/SC/StarCraftII/
 
-# Bashmarks
-#=========================
-source ~/.local/bin/bashmarks.sh
+#------------------------------------------------------------------------------
+# Utils
+#------------------------------------------------------------------------------
 
-# Zeal
+# Z jump
 #=========================
-#export PATH="$/home/evan/.apps/zeal-0.6.0/build/bin/.zeal:$PATH"
+. /home/evan/.Apps/Z_jump/z.sh
 
-#==============================================================================
-#                          # Functions #
-#==============================================================================
+
+# fzf
+#========================
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Fuck
+#========================
+eval $(thefuck --alias)
+
+
+
+###############################################################################
+#    ___   _   _   _  _    ___   _____   ___    ___    _  _   ___      ########
+#   | __| | | | | | \| |  / __| |_   _| |_ _|  / _ \  | \| | / __|     ########
+#   | _|  | |_| | | .` | | (__    | |    | |  | (_) | | .` | \__ \     ########
+#   |_|    \___/  |_|\_|  \___|   |_|   |___|  \___/  |_|\_| |___/     ########
+#                                                                      ########
+###############################################################################
+
+
 
 # Extract many types of compressed packages
 #=========================
@@ -159,30 +223,6 @@ function extract() {
     fi
 }
 
-# View apt history
-### pars for fun: install | remove | rollback
-#=========================
-function apt-history(){
-
-      case "$1" in
-        install)
-              grep 'install ' /var/log/dpkg.log
-              ;;
-        upgrade|remove)
-              grep $1 /var/log/dpkg.log
-              ;;
-        rollback)
-              grep upgrade /var/log/dpkg.log | \
-                  grep "$2" -A10000000 | \
-                  grep "$3" -B10000000 | \
-                  awk '{print $4"="$5}'
-              ;;
-        *)
-              cat /var/log/dpkg.log
-              ;;
-      esac
-}
-
 
 # List sizes of entries at top-level, sorted
 #=========================
@@ -194,12 +234,10 @@ function duh(){
 # Shortcut find
 #========================
 function f(){
-    if [ "$#" -eq 1 ]; then
-        sudo find / -iname "$1"
-    elif [ "$#" -eq 2]; then
-        find "$1" -iname "$2"
+    if [ "$#" -gt 1 ]; then
+        sudo find "$1" -iname "$2"
     else
-        echo "too few or too many args for find func"
+        sudo find / -iname "$1"
     fi
 }
 
@@ -207,11 +245,10 @@ function f(){
 # Directory functions
 #========================
 # mkdir, go into it
-function mc(){mkdir "$1" && cd "$1"}
-function mpc(){mkdir -p "$1" && cd "$1"}
-# cd, list contents
-function cl(){cd "$1" && lk;}
+function mcd(){mkdir -p "$1" && cd "$1"}
 
+# cd, list contents
+function cdl(){cd "$1" && ls -1FSshX --file-type}
 
 
 # Reset PATH variable
@@ -222,24 +259,25 @@ function reset_path(){
     PATH=$(getconf PATH)
     echo "  reset path = $PATH\n"
     source ~/.zshrc
-    echo "  resourced path = $PATH\n--------------------------------------------------"
+    echo "--------------------------------------------------"
 }
 
-# Resource zshrc
+
+#------------------------------------------------------------------------------
+# zshrc funcs
+#------------------------------------------------------------------------------
+
+# Re-source zshrc
 #=======================
-function szshrc(){
+function srcz(){
     source ~/.zshrc
 }
 
 # Add line to shell config
 #========================
 function expzsh(){
+    #expzsh 'My alias' 'alias testalias="echo test passed"'
     echo "\n\n# $1" >> ~/.zshrc
     echo '#========================' >> ~/.zshrc
     echo "$2" >> ~/.zshrc
 }
-
-eval $(thefuck --alias)
-
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
