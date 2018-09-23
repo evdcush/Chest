@@ -1,40 +1,22 @@
 #!/bin/bash
 
+#==============================================================================
+# Setup
+#==============================================================================
 
+#------------------------------------------------------------------------------
+# Directories
+#------------------------------------------------------------------------------
+
+# Make dirs
+#==============
 mkdir -p $HOME/.apps
 mkdir -p $HOME/Projects
 
 # Paths
+#==============
 APPSPATH="$HOME/.apps/"
 PROJPATH="$HOME/Projects/"
-
-#==============================================================================
-#  PRE-ANYTHING
-#==============================================================================
-
-# purge bloat
-# ===============
-apt remove --purge -y firefox
-apt remove --purge -y transmission-common
-apt remove --purge -y pidgin
-apt remove --purge -y pidgin-data
-apt remove --purge -y pidgin-otr
-apt remove --purge -y parole
-apt remove --purge -y xfburn
-apt remove --purge -y evince
-apt remove --purge -y libreoffice-common
-apt remove --purge -y mousepad
-
-
-# Update, Upgrade
-# ===============
-#sudo apt update && sudo apt upgrade -y && sudo update-ca-certificates -f && sudo apt autoremove
-apt update
-apt upgrade -y
-update-ca-certificates -f
-apt autoremove -y
-# apt full-upgrade # for drivers, but may install ubuntu-sourced nvidia
-
 
 # apt-fast
 # ===============
@@ -42,8 +24,66 @@ apt autoremove -y
 #sudo add-apt-repository ppa:apt-fast/stable
 #sudo apt update
 #sudo apt install apt-fast -y
-sed -i '$ a "MIRRORS=( 'http://mirror.picosecond.org/ubuntu/', 'http://ftp://mirror.picosecond.org/ubuntu/', 'http://rsync://mirror.picosecond.org/ubuntu/', 'http://ftp://mirror.enzu.com/ubuntu/', 'http://rsync://mirror.enzu.com/ubuntu/', 'http://mirror.enzu.com/ubuntu/', 'http://la-mirrors.evowise.com/ubuntu/', 'http://rsync://mirrors.ocf.berkeley.edu/ubuntu/', 'http://ftp://mirrors.ocf.berkeley.edu/ubuntu/', 'http://mirrors.ocf.berkeley.edu/ubuntu/', 'http://mirror.math.ucdavis.edu/ubuntu/' )"' /etc/apt-fast.conf
+sed -i "$ a MIRRORS=( 'http://mirror.picosecond.org/ubuntu/', 'http://ftp://mirror.picosecond.org/ubuntu/', 'http://rsync://mirror.picosecond.org/ubuntu/', 'http://ftp://mirror.enzu.com/ubuntu/', 'http://rsync://mirror.enzu.com/ubuntu/', 'http://mirror.enzu.com/ubuntu/', 'http://la-mirrors.evowise.com/ubuntu/', 'http://rsync://mirrors.ocf.berkeley.edu/ubuntu/', 'http://ftp://mirrors.ocf.berkeley.edu/ubuntu/', 'http://mirrors.ocf.berkeley.edu/ubuntu/', 'http://mirror.math.ucdavis.edu/ubuntu/' )" /etc/apt-fast.conf
 # THIS WONT WORK, MAKE A FILE, TEE IT OR WHATEVER
+
+#------------------------------------------------------------------------------
+# Local variable commands
+#------------------------------------------------------------------------------
+# definition : varname='my command'
+#      usage : $varname thing
+
+
+# apt-fast
+#===============
+a="apt-fast"
+
+#----- apt remove
+arp="$a remove --purge -y"
+aar="$a autoremove -y"
+
+#----- apt updating
+au="$a update"
+ag="$a upgrade -y"
+aug="$au && $ag"
+
+#----- apt install
+ai="$a install -y"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+#====== git
+gclone='git clone --depth=1'
+
+
+#==============================================================================
+#  PRE-installation steps
+#==============================================================================
+
+# purge bloat
+# ===============
+$arp firefox
+$arp transmission-common
+$arp pidgin
+$arp pidgin-data
+$arp pidgin-otr
+$arp parole
+$arp xfburn
+$arp evince
+$arp libreoffice-common
+$arp mousepad
+
+
+# Update, Upgrade
+# ===============
+#sudo apt update && sudo apt upgrade -y && sudo update-ca-certificates -f && sudo apt autoremove
+$aug
+update-ca-certificates -f
+$aar
+# apt full-upgrade # for drivers, but may install ubuntu-sourced nvidia
+
+
+
 
 #==============================================================================
 #  Utils
@@ -55,26 +95,20 @@ sed -i '$ a "MIRRORS=( 'http://mirror.picosecond.org/ubuntu/', 'http://ftp://mir
 # Shell & CLI utils
 #------------------------------------------------------------------------------
 
-
-
 # oh-my-zsh
 # ===============
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)";
 
 
-
-
-
-
 # fzf
 # ===============
   # A command line fuzzy finder
-git clone --depth=1 https://github.com/junegunn/fzf.git APPSPATH && cd "$APPSPATH/fzf"
+$gclone https://github.com/junegunn/fzf.git "$APPSPATH" && cd "$APPSPATH/fzf"
 bash install
 
 
 # z
 # ===============
-  # Jump around
-#git clone https://github.com/rupa/z.git ~/Soft/Installed/Utils/z_jump
+# Jump around
+$gclone https://github.com/rupa/z.git "$APPSPATH/z_jump"
 

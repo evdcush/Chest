@@ -32,7 +32,7 @@ sudo add-apt-repository ppa:zeal-developers/ppa
 
 # Github
 #=========================
-bashmarks #  git
+bashmarks # git clone git://github.com/huyng/bashmarks.git
 # https://github.com/rsms/inter/releases # interui fonts
 # LINE? # https://github.com/carpedm20/LINE
 
