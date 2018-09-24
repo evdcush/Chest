@@ -207,7 +207,15 @@ $ai p7zip-full
 $ai p7zip-rar
 $ai redis-server
 $ai redis-tools
-
+$ai qt5-default
+$ai qt5-qmake
+$ai qttools5-dev-tools
+$ai libqt5dbus5 # just $ai "libqt5*" or?
+$ai libqt5network5
+$ai libqt5core5a
+$ai libqt5widgets5
+$ai libqt5gui5
+$ai libqt5svg5-dev
 
 #==============================================================================
 #                                   Dev/env
@@ -388,40 +396,32 @@ $ai superproductivity
 #------------------------------------------------------------------------------
 #                            packages with installers
 #------------------------------------------------------------------------------
-
-# oh-my-zsh
-# ===============
-
-#------------------------------------------------------------------------------
-#                                build from source
-#------------------------------------------------------------------------------
-
-# git
-# ===============
-
-
-
-
-#==============================================================================
-#  Non-apt package/software installation
-#==============================================================================
-
-#------------------------------------------------------------------------------
-# Shell & CLI utils
-#------------------------------------------------------------------------------
-
+# oh-my-zsh, pyenv both above
 
 # fzf
 # ===============
   # A command line fuzzy finder
 $gclone https://github.com/junegunn/fzf.git "$APPSPATH/fzf" && cd "$APPSPATH/fzf"
-bash install
+$"bash install"
+cd
 
 # z
 # ===============
 # Jump around
 $gclone https://github.com/rupa/z.git "$APPSPATH/z_jump"
+@TODO
 
 #------------------------------------------------------------------------------
-# Software
+#                                build from source
 #------------------------------------------------------------------------------
+
+# Flameshot
+# ===============
+$gclone https://github.com/lupoDharkael/flameshot "$APPSPATH/flameshot" && cd "$APPSPATH/flameshot"
+mkdir build && cd build
+qmake ../
+make
+make install # sudo make install
+cd
+
+
