@@ -229,6 +229,8 @@ pyenv update
 pyenv install 3.6.6
 pyenv virtualenv 3.6.6 ^
 pip install -U pip setuptools wheel
+pip completion --zsh >> ~/.zshrc
+source ~/.zshrc
 
 # Node, NPM
 # =================

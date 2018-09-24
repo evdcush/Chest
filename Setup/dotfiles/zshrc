@@ -20,6 +20,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
+    zshmarks
 )
 source $ZSH/oh-my-zsh.sh
 
@@ -45,6 +46,7 @@ alias md="mkdir -p"
 alias h="history"
 alias ldot="ls -d --group-directories-first .*"
 alias lk="ls -1FSshX --file-type"
+alias ll="ls --group-directories-first -X"
 
 # Package utility
 #=========================
@@ -83,6 +85,15 @@ alias ascii="python -m art text "
 # editors
 alias st="subl" # open file with sublime
 alias stt="st ." # open dir with sublime
+
+
+# zshmarks
+#=========================
+alias g="jump"
+alias s="bookmark"
+alias d="deletemark"
+alias p="showmarks"
+
 
 
 ###############################################################################
