@@ -377,7 +377,8 @@ echo 'keycode 118 =' > .Xmodmap # disable insert key
 
 # Arc-grey theme
 cd ~/Soft/Installed/Themes/
-git clone https://github.com/eti0/arc-grey-theme --depth 1 && cd arc-grey-theme
+# archived (but the normal arc theme is WAY better)
+#git clone https://github.com/eti0/arc-grey-theme --depth 1 && cd arc-grey-theme
 ./autogen.sh --prefix=/usr
 make install
 cd
