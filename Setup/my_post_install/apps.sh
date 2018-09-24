@@ -107,7 +107,7 @@ addrep(){
 # ===============
 # The ONLY package you want is 'gnome-themes-standard',
 #  it would be easier to just wildcard gnome, and reinstall that...
-$arp "gnome*"
+$arp "gnome-*"
 #$arp gnome-shell
 #$arp gnome-accessibility-themes
 #$arp gnome-bluetooth
@@ -127,7 +127,8 @@ $aar # autoremove (going to be a lot)
 
 # Purge ubuntu shit
 # =================
-$arp "zenity*"
+#$arp "zenity"
+$arp "xubuntu-desktop" # gets rid of basically EVERYTHING you don't want, including gnome shit
 $aar
 
 # purge bloat
