@@ -40,6 +40,7 @@ source $ZSH/oh-my-zsh.sh
 # File & Dir stuff
 #=========================
 alias md="mkdir -p"
+alias cdb="cd -"
 
 # List stuff
 #=========================
@@ -108,6 +109,7 @@ alias p="showmarks"
 #-------------------
 home="$HOME"
 usr_local='/usr/local'
+APPSPATH="$HOME/.Apps"
 
 
 #******************************************************************************
@@ -206,7 +208,9 @@ eval $(thefuck --alias)
 #                                                                      ########
 ###############################################################################
 
-
+#------------------------------------------------------------------------------
+# Convenience & Utility funcs
+#------------------------------------------------------------------------------
 
 # Extract many types of compressed packages
 #=========================
@@ -234,13 +238,11 @@ function extract() {
     fi
 }
 
-
 # List sizes of entries at top-level, sorted
 #=========================
 function duh(){
     du -h --max-depth=1 | sort -h;
 }
-
 
 # Shortcut find
 #========================
@@ -261,16 +263,23 @@ function mcd(){mkdir -p "$1" && cd "$1"}
 # cd, list contents
 function cdl(){cd "$1" && ls -1FSshX --file-type}
 
+#------------------------------------------------------------------------------
+# Application or directive functions
+#------------------------------------------------------------------------------
 
-# Reset PATH variable
+# Git clone repo to .Apps and cd there??
 #========================
-function reset_path(){
-    echo "Resetting Path...\n--------------------------------------------------"
-    echo "  current path = $PATH\n"
-    PATH=$(getconf PATH)
-    echo "  reset path = $PATH\n"
-    source ~/.zshrc
-    echo "--------------------------------------------------"
+gcd(){
+    REPO_URL=$1
+    REPO_PATH=$2
+
+    if [ -z $REPO_PATH ]
+    then
+        REPO_PATH="$APPSPATH/$(basename $1 .git)"
+    fi
+    git clone --depth=1 $REPO_URL $REPO_PATH
+    cdl $REPO_PATH
+    $cdb
 }
 
 
@@ -284,6 +293,17 @@ function srcz(){
     source ~/.zshrc
 }
 
+# Reset PATH variable
+#========================
+function reset_path(){
+    echo "Resetting Path...\n--------------------------------------------------"
+    echo "  current path = $PATH\n"
+    PATH=$(getconf PATH)
+    echo "  reset path = $PATH\n"
+    source ~/.zshrc
+    echo "--------------------------------------------------"
+}
+
 # Add line to shell config
 #========================
 function expzsh(){
@@ -292,6 +312,10 @@ function expzsh(){
     echo '#========================' >> ~/.zshrc
     echo "$2" >> ~/.zshrc
 }
+
+
+
+
 
 # pip zsh completion start
 function _pip_completion {

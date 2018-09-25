@@ -85,7 +85,12 @@ CLONESPATH="$PROJPATH/Clones-N-Forks"
 
 # git clone
 # ===============
-gclone='git clone --depth=1'
+gclone_to='git clone --depth=1'
+
+gclone(){
+    cd $APPSPATH
+
+}
 
 
 # Functions
@@ -216,6 +221,11 @@ $ai libqt5core5a
 $ai libqt5widgets5
 $ai libqt5gui5
 $ai libqt5svg5-dev
+$ai extra-cmake-modules
+$ai libqt5webkit5-dev
+$ai libqt5x11extras5-dev
+$ai libarchive-dev
+$ai libxcb-keysyms1-dev
 
 #==============================================================================
 #                                   Dev/env
@@ -404,6 +414,10 @@ $ai superproductivity
 $gclone https://github.com/junegunn/fzf.git "$APPSPATH/fzf" && cd "$APPSPATH/fzf"
 $"bash install"
 cd
+# Joplin
+# ===============
+wget -O - https://raw.githubusercontent.com/laurent22/joplin/master/install_ubuntu.sh | bash
+
 
 # z
 # ===============
@@ -425,3 +439,42 @@ make install # sudo make install
 cd
 
 
+
+#                       ______                                                 #
+#                      /\     \                                                #
+#                     /  \     \                                               #
+#                    /    \_____\                                              #
+#                   _\    / ____/_                                             #
+#                  /\ \  / /\     \                                            #
+#                 /  \ \/_/  \     \                                           #
+#                /    \__/    \_____\                                          #
+#               _\    /  \    / ____/_                                         #
+#              /\ \  /    \  / /\     \                                        #
+#             /  \ \/_____/\/_/  \     \                                       #
+#            /    \_____\    /    \_____\                                      #
+#           _\    /     /    \    / ____/_                                     #
+#          /\ \  /     /      \  / /\     \                                    #
+#         /  \ \/_____/        \/_/  \     \                                   #
+#        /    \_____\            /    \_____\                                  #
+#       _\    /     /            \    / ____/_                                 #
+#      /\ \  /     /              \  / /\     \                                #
+#     /  \ \/_____/                \/_/  \     \                               #
+#    /    \_____\                    /    \_____\                              #
+#   _\    /     /_  ______  ______  _\____/ ____/_                             #
+#  /\ \  /     /  \/\     \/\     \/\     \/\     \                            #
+# /  \ \/_____/    \ \     \ \     \ \     \ \     \                           #
+#/    \_____\ \_____\ \_____\ \_____\ \_____\ \_____\                          #
+#\    /     / /     / /     / /     / /     / /     /                          #
+# \  /     / /     / /     / /     / /     / /     /                           #
+#  \/_____/\/_____/\/_____/\/_____/\/_____/\/_____/                            #
+
+                USE THE GCD FUNC IN ZSHRC!
+# Zeal
+# ===============
+$gclone https://github.com/zealdocs/zeal "$APPSPATH/zeal"''
+$gclone https://github.com/lupoDharkael/flameshot "$APPSPATH/flameshot" && cd "$APPSPATH/flameshot"
+mkdir build && cd build
+qmake ../
+make
+make install # sudo make install
+cd
