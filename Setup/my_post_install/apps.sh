@@ -226,6 +226,16 @@ $ai libqt5webkit5-dev
 $ai libqt5x11extras5-dev
 $ai libarchive-dev
 $ai libxcb-keysyms1-dev
+$ai texlive-xetex
+$au libcurl4-openssl-dev
+
+# Printer utils
+# ===============
+$ai printer-driver-cups-pdf
+$ai system-config-printer-gnome
+$ai brother-cups-wrapper-common
+$ai brother-cups-wrapper-extra
+$ai brother-cups-wrapper-laser
 
 #==============================================================================
 #                                   Dev/env
@@ -274,7 +284,6 @@ $ai yarn
 # apt
 # ===============
 $ai alarm-clock-applet
-
 $ai htop
 $ai guake
 $ai vim
@@ -282,7 +291,6 @@ $ai zsh
 $ai tmux
 $ai tree
 $ai xfce4-timer-plugin
-
 $ai anki
 $ai chromium-browser
 $ai psensor
@@ -294,7 +302,6 @@ $ai gparted
 $ai tlp
 $ai deluge
 #$ai retext
-
 %ai exfat-utils
 $ai flac
 $ai lame
@@ -302,7 +309,6 @@ $ai x264
 $ai unrar
 #$ai ubuntu-restricted-extras
 #$arp flashplugin-installer
-
 $ai dictd
 $ai dict-gcide
 $ai dict-wn
@@ -370,6 +376,7 @@ $pi sphinx # EVERYTHING
 $pi sphinxcontrib-jupyter # Sphinx "Jupyter" extension: Convert your RST files into executable Jupyter notebooks.
 $pi pelican # !!!!!!! sphinx for generating articles blog
 $pi pelican_publications # ????? !!!! A Pelican plugin that adds an RST directive for including a BibTeX publication list.
+$pi oh-my-stars # search your github stars locally cli
 
 # npm ?
 # ===============
@@ -385,6 +392,19 @@ https://svgporn.com/
 addrep wereturtle/ppa
 $ai ghostwriter
 
+# Font manager
+# ===============
+addrep font-manager/staging
+$ai font-manager
+
+# Paper icons
+# ===============
+addrep snwh/ppa
+$ai paper-icon-theme
+
+# Sources.list
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 # Sublime Text 3
 # ===============
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add -;
@@ -392,16 +412,15 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.
 $au
 $ai sublime-text
 
-# Paper icons
-# ===============
-addrep snwh/ppa
-$ai paper-icon-theme
-
 # Super productivity
 # ===============
 echo "deb https://dl.bintray.com/johannesjo/super-productivity stable super-productivity" | tee -a /etc/apt/sources.list
 $aug
 $ai superproductivity
+
+
+
+
 
 #------------------------------------------------------------------------------
 #                            packages with installers
@@ -478,3 +497,8 @@ qmake ../
 make
 make install # sudo make install
 cd
+
+
+
+
+nativefier "https://www.hackerrank.com/dashboard" -n hacker-rank -a x64 -p linux --title-bar-style hidden --honest -m -i ./Icons/HackerRank_logo.png

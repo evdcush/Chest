@@ -209,7 +209,15 @@ eval $(thefuck --alias)
 ###############################################################################
 
 #------------------------------------------------------------------------------
-# Convenience & Utility funcs
+# Endemic utils
+#------------------------------------------------------------------------------
+dw(){
+    D_FPATH="$HOME/D"
+    echo "$1" >> "$HOME/D"
+}
+
+#------------------------------------------------------------------------------
+# File and Directory utilities
 #------------------------------------------------------------------------------
 
 # Extract many types of compressed packages
@@ -238,11 +246,22 @@ function extract() {
     fi
 }
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Directory functions
+#========================
+# mkdir, go into it
+function mcd(){mkdir -p "$1" && cd "$1"}
+# cd, list contents
+function cdl(){cd "$1" && ls -1FSshX --file-type}
+
 # List sizes of entries at top-level, sorted
 #=========================
 function duh(){
     du -h --max-depth=1 | sort -h;
 }
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Shortcut find
 #========================
@@ -255,19 +274,20 @@ function f(){
 }
 
 
-# Directory functions
+#------------------------------------------------------------------------------
+# Package acquisition and installation functions
+#------------------------------------------------------------------------------
+
+# Add apt-repo and update
 #========================
-# mkdir, go into it
-function mcd(){mkdir -p "$1" && cd "$1"}
+addrep(){
+    sudo add-apt-repository "ppa:$1" -y
+    sudo apt-fast update
+}
 
-# cd, list contents
-function cdl(){cd "$1" && ls -1FSshX --file-type}
 
-#------------------------------------------------------------------------------
-# Application or directive functions
-#------------------------------------------------------------------------------
 
-# Git clone repo to .Apps and cd there??
+# Git clone repo to .Apps and cd there
 #========================
 gcd(){
     REPO_URL=$1
@@ -281,6 +301,61 @@ gcd(){
     cdl $REPO_PATH
     $cdb
 }
+
+# Nativefier
+#========================
+#------- Create desktop Entry
+#create_generic_desktop(){
+#    # Format name and pathes
+#    #------------------------
+#    APP_FNAME=$1
+#    APP_PATH="$APPSPATH/$APP_FNAME-linux-x64"
+#    DESKTOP_PATH="$APPSPATH/$APP_FNAME.desktop"
+#
+#    # Make desktop entry args
+#    #------------------------
+#    ARG_EXEC="$APP_PATH/./$APP_FNAME"
+#    ARG_NAME="${APP_FNAME^}"
+#    ARG_ICON="$APP_PATH/resources/app/icon.png"
+#
+#    # Create app.desktop
+#    #------------------------
+#    touch "$APPSPATH/$APP_FNAME.desktop"
+#    echo "[Desktop Entry]
+#Type=Application
+#Exec=$ARG_EXEC
+#Name=$ARG_NAME
+#Comment='Natified app'
+#Terminal=false
+#Icon=$ARG_ICON
+#Categories=Network;" >> DESKTOP_PATH
+#}
+##------------ Natify app
+#natify(){
+#    STATIC_OPTS='-a x64 -p linux --single-instance --title-bar-style hidden --honest -m -n'
+#
+#    # Get user URL and additional options
+#    #-----------
+#    APP_URL=$1
+#    APP_NAME=$2
+#    ADD_OPTS=$3
+#    OPTS=" $STATIC_OPTS $APP_NAME"
+#
+#    # Add additional options if exist
+#    if [ -z $ADD_OPTS ]
+#    then
+#        OPTS="$OPTS $ADD_OPTS"
+#    fi
+#
+#    # Natify app
+#    #-----------
+#    cd $APPSPATH
+#    nativefier $APP_URL $OPTS
+#
+#    # Make desktop entry
+#    #--------------------
+#    $(create_generic_desktop $APP_NAME)
+#}
 
 
 #------------------------------------------------------------------------------

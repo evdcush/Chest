@@ -30,9 +30,6 @@ code.interact(local=dict(globals(), **locals())) # DEBUGGING-use
 # YES
 
 
-
-
-
 #   __  __  __   __    ___     ___    ___   ___                            #
 #  |  \/  | \ \ / /   |   \   / _ \  | _ \ | __|                           #
 #  | |\/| |  \ V /    | |) | | (_) | |  _/ | _|                            #
@@ -47,13 +44,18 @@ code.interact(local=dict(globals(), **locals())) # DEBUGGING-use
 Why are ALL the decorator snippets online the same lame shit???
 
 Either tutorials for babies, invariably using examples from official
-documentation, or that tired old "celsius" crap from every tutorial
+documentation, or that tired old "celsius" example from every tutorial
 ever.
 
-That, or ancient Py2 decorators for caching, HTTP, memo, etc.
+That, or ancient decorators in Py2 for caching, HTTP, memo, etc.
 Who uses those?
 
-I don't. So I had to make my own slick decorators.
+I don't. I made the my own decorators from querying different specific needs
+and messing with them until they did what I needed.
+
+I still wish I had more reference online for in-use decorators instead of
+the incredible ubiquity of useless toy decos for learning.
+
 
 """
 
@@ -62,7 +64,7 @@ def TODO(f):
     """ Serves as a convenient, clear flag for developers and insures
         wrapee func will not be called """
     @wraps(f)
-    def not_finished(*args, **kwargs):
+    def not_finished():
         print('\n  {} IS INCOMPLETE'.format(f.__name__))
     return not_finished
 
@@ -137,9 +139,56 @@ def preserve(inputs=True, outputs=True):
         return preserve_args
     return inner_preserve
 
-#==============================================================================
-#------------------------------------------------------------------------------
-#                              OO/inheritance stuff
-#------------------------------------------------------------------------------
-#==============================================================================
 
+#=============================================================================#
+#     ___   _        _     ___   ___     ___   _____   _   _   ___   ___      #
+#    / __| | |      /_\   / __| / __|   / __| |_   _| | | | | | __| | __|     #
+#   | (__  | |__   / _ \  \__ \ \__ \   \__ \   | |   | |_| | | _|  | _|      #
+#    \___| |____| /_/ \_\ |___/ |___/   |___/   |_|    \___/  |_|   |_|       #
+#                                                                             #
+#=============================================================================#
+
+
+#------------------------------------------------------------------------------
+#                           Basic stuff
+#------------------------------------------------------------------------------
+
+
+# `setattr` and `getattr`
+#------------------------------------------------------------------------------
+
+# Iteratively assigning instance vars
+#------------------------
+""" Potential uses:
+* Nice convenience as super().__init__(*args, **kwargs)
+* reducing boiler-plate
+* Handles very long class arg signatures well enough
+* Works VERY well when you have a series of nearly identical
+  attribute names
+
+My uses:
+* I often use this as the init in a parent class
+
+My most significant usage:
+* For a network I had in Chainer, there was a short period, I think sometime
+  after the release of v2, where they removed the add_link function.
+  - It was tremendously useful, both for network extensibility wrt to depth
+    and just so you didn't have to hardcode every network chain/link that
+    was only different by the channel index.
+      eg:
+         R0 = ConvLSTM(kdims[0]),
+         R1 = ConvLSTM(kdims[1]),
+         R2 = ConvLSTM(kdims[2]),
+         R3 = ConvLSTM(kdims[3]),
+         R4 = ConvLSTM(kdims[4]),
+         R5 = ConvLSTM(kdims[5]),
+
+  - luckily add_link had nearly the same functionality as setattr,
+    and I could use getattr to iterate through the layers.
+"""
+class Foo:
+    def __init__(self, *args, **kwargs):
+        for attr, value in kwargs.items():
+            setattr(self, attr, value)
+
+    def __call__(self,)

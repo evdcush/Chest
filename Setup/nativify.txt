@@ -1,0 +1,11 @@
+nativefier "https://blog.openai.com/" -n openai-blog -a x64 -p linux -i ./icons/openai_logo.png
+nativefier "https://github.com/evdcush" -n github -a x64 -p linux -i github_icon.png
+nativefier "https://deepmind.com/blog/" -n deepmind-blog -a x64 -p linux -i ./icons/deepmind_swirl.png
+nativefier "https://medium.com/topic/artificial-intelligence" -n medium-blog -a x64 -p linux -i icons/medium_icon.png
+nativefier "https://keep.google.com" -n google-keep -a x64 -p linux -i icons/google-keep-icon.png
+nativefier "https://drive.google.com" -n google-drive -a x64 -p linux -i google-drive_ico.png
+
+
+
+nativefier_opts=
+nativefier -n Keep -p linux -a x64--single-instance --tray --title-bar-style hidden --honest -m
