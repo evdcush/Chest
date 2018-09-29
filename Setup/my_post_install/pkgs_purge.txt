@@ -1,0 +1,54 @@
+#==============================================================================
+#   ___   _   _   ___    ___   ___     ___    ___   ___  _____  ___    ___    #
+#  | _ \ | | | | | _ \  / __| | __|   |   \  |_ _| / __||_   _|| _ \  / _ \   #
+#  |  _/ | |_| | |   / | (_ | | _|    | |) |  | |  \__ \  | |  |   / | (_) |  #
+#  |_|    \___/  |_|_\  \___| |___|   |___/  |___| |___/  |_|  |_|_\  \___/   #
+#                                                                             #
+#                                                                             #
+#                                                                             #
+#==============================================================================
+#---------------------------------
+"xubuntu-desktop" # gets rid of basically EVERYTHING you don't want, including gnome shit
+"gnome-*"  # 'gnome-themes-standard' is the only package you want, so just wildcard and reinstall
+"yelp*"
+#gnome-shell
+#gnome-accessibility-themes
+#gnome-bluetooth
+#gnome-calculator
+#"gnome-control*"
+#gnome-desktop3-data
+#gnome-keyring
+#gnome-menus
+#gnome-mines
+#gnome-sudoku
+#gnome-software-common
+#gnome-system-tools
+#gnome-user-guide
+#"gnome-icon*"
+
+## AUTOREMOVE
+#---------------------------------
+
+
+
+#==============================================================================
+#     ___   _   _   ___    ___   ___     ___   _      ___     _    _____      #
+#    | _ \ | | | | | _ \  / __| | __|   | _ ) | |    / _ \   /_\  |_   _|     #
+#    |  _/ | |_| | |   / | (_ | | _|    | _ \ | |__ | (_) | / _ \   | |       #
+#    |_|    \___/  |_|_\  \___| |___|   |___/ |____| \___/ /_/ \_\  |_|       #
+#                                                                             #
+#                                                                             #
+#    NB: these tend to have extended supporting packages, so wildcard         #
+#==============================================================================
+#---------------------------------
+"*firefox*"
+"transmission-*"
+"*pidgin*"
+"*parole*"
+"*xfburn*"
+"*libreoffice*"
+"*mousepad*"
+
+## AUTOREMOVE
+#---------------------------------
+
