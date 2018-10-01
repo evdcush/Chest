@@ -123,14 +123,14 @@ pathadd() {
     fi
 }
 
-ld_library_pathadd() {
-    if [ -d "$1" ] && [[ ":$LD_LIBARY_PATH:" != *":$1:"* ]]; then
-        LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+"$LD_LIBRARY_PATH:"}$1"
-    fi
-
-# UNTESTED:
-#PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
-}
+#ld_library_pathadd() {
+#    if [ -d "$1" ] && [[ ":$LD_LIBARY_PATH:" != *":$1:"* ]]; then
+#        LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+"$LD_LIBRARY_PATH:"}$1"
+#    fi
+#
+## UNTESTED:
+##PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
+#}
 #******************************************************************************
 
 
@@ -161,20 +161,22 @@ eval "$(pyenv virtualenv-init -)"
 
 # CUDA
 #=========================
-cuda_path="$usr_local/cuda-9.2/bin"
-cuda_ld_lib_path="$usr_local/cuda-9.2/lib64"
-if [[ $(uname -n) != *"430T" ]]; then
-    pathadd "$cuda_path"
-    ld_library_pathadd "$cuda_ld_lib_path"
-    #export PATH=/usr/local/cuda-9.2/bin${PATH:+:${PATH}}
-    #export LD_LIBRARY_PATH=/usr/local/cuda-9.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-fi
+#cuda_path="$usr_local/cuda-9.2/bin"
+#cuda_ld_lib_path="$usr_local/cuda-9.2/lib64"
+export PATH=/usr/local/cuda-9.2/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-9.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+#if [[ $(uname -n) != *"430T" ]]; then
+#    pathadd "$cuda_path"
+#    ld_library_pathadd "$cuda_ld_lib_path"
+#    #export PATH=/usr/local/cuda-9.2/bin${PATH:+:${PATH}}
+#    #export LD_LIBRARY_PATH=/usr/local/cuda-9.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+#fi
 
 
 # MKL
 #=========================
-#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-ld_library_pathadd '/usr/local/lib'
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+#ld_library_pathadd '/usr/local/lib'
 
 
 # StarCraft II

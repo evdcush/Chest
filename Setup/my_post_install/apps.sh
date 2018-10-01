@@ -411,6 +411,25 @@ wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add -;
 echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.list.d/sublime-text.list;
 $au
 $ai sublime-text
+#  # Dark
+#  #--------
+#  ** piodine **
+#  ** oceanic next**
+#  easyballs
+#  gooey
+#  # Medium & desat
+#  #---------------
+#  mutedrainbow_sky
+#  late_night
+#  koralgreen
+#  # Light
+#  #--------
+#  snappy-light
+#  softly
+#  lazy
+#  spring
+
+
 
 # Super productivity
 # ===============
