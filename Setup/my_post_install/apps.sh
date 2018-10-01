@@ -12,6 +12,38 @@ discord
 zeal
 joplin
 
+###############################################################################
+#                                                                             #
+#                                                                             #
+#   888  888         8888b.  888d888  .d8888b                                 #
+#   `Y8bd8P'            "88b 888P"   d88P"                                    #
+#     X88K   888888 .d888888 888     888                                      #
+#   .d8""8b.        888  888 888     Y88b.                                    #
+#   888  888        "Y888888 888      "Y8888P                                 #
+#                                                                             #
+#       888    888                                                            #
+#       888    888                                                            #
+#       888    888                                                            #
+#       888888 88888b.   .d88b.  88888b.d88b.   .d88b.                        #
+#       888    888 "88b d8P  Y8b 888 "888 "88b d8P  Y8b                       #
+#       888    888  888 88888888 888  888  888 88888888                       #
+#       Y88b.  888  888 Y8b.     888  888  888 Y8b.                           #
+#        "Y888 888  888  "Y8888  888  888  888  "Y8888                        #
+#                                                                             #
+#                                                                             #
+# (/.__.)/ ▂▃▅▇█▓▒░   gitlab.com/LinxGem33/X-Arc-Darker  ░▒▓█▇▅▃▂  \(.__.\)   #
+#                                                                             #
+#                                                                             #
+###############################################################################
+# MAKE SURE TO CLONE TOO: in extras there is the chromium theme *.crx, click
+#  and drag onto browser window
+
+# THEME
+#https://gitlab.com/LinxGem33/X-Arc-Darker
+
+# LOADS OF THEMES HERE:
+# https://www.opendesktop.org/s/XFCE
+
 #==============================================================================
 #                         Package manager: apt-fast
 #==============================================================================
@@ -291,6 +323,22 @@ $ai zsh
 $ai tmux
 $ai tree
 $ai xfce4-timer-plugin
+
+#$ai gitit # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#$ai git-big-picture
+#$ai gitg
+$ai git-repair
+$ai git-crypt #
+ #git-crypt enables transparent encryption and decryption of files in a
+ #git repository.  Files which you choose to protect are encrypted when
+ #committed, and decrypted when checked out.  git-crypt lets you freely
+ #share a repository containing a mix of public and private content.
+ #git-crypt gracefully degrades, so developers without the secret key
+ #can still clone and commit to a repository with encrypted files.
+ #This lets you store your secret material (such as keys or passwords)
+ #in the same repository as your code, without requiring you to lock down
+ #your entire repository.
+
 $ai anki
 $ai chromium-browser
 $ai psensor
