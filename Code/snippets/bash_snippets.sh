@@ -1,6 +1,18 @@
 #!/bin/bash
 
+# Most of my snippets are located in my zshrc file
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#      ___    _   _   ___    ___   _  __  ___   ___   ___                     #
+#     / _ \  | | | | |_ _|  / __| | |/ / | _ \ | __| | __|                    #
+#    | (_) | | |_| |  | |  | (__  | ' <  |   / | _|  | _|                     #
+#     \__\_\  \___/  |___|  \___| |_|\_\ |_|_\ |___| |_|                      #
+#                                                                             #
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+
+# STD:IN and STD:OUT
+#===================================
 
 # read data from user
 #----------------------------
@@ -9,7 +21,7 @@ read userInput
 echo "You just entered $userInput"
 
 
-# Put STD:IN to file 'foo.txt'
+# Write to file
 #----------------------------
 # over-write file
 cat "Hello world" > 'foo.txt'
@@ -18,63 +30,51 @@ cat "Hello world" > 'foo.txt'
 cat "Hello world" >> 'foo.txt'
 
 
-# Directory, file shit
-#---------------------
-# make all dirs in path
-mkdir -p ./thereare/many/subdirs/within/thispath/andthey/areall/made
+# File commands I often reference
+#===================================
+ln -s <filename> <link>       # creates symbolic link to file
+cat <filename>                # prints file raw content (will not be interpreted)
+grep <pattern> <filenames>    # looks for the string in the files
+grep -r <pattern> <dir>       # search recursively for pattern in directory
 
 
 ###############################################################################
-# ____               _          _____  _            _  _
-#|  _ \             (_)        / ____|| |          | || |
-#| |_) |  __ _  ___  _   ___  | (___  | |__    ___ | || |
-#|  _ <  / _` |/ __|| | / __|  \___ \ | '_ \  / _ \| || |
-#| |_) || (_| |\__ \| || (__   ____) || | | ||  __/| || |
-#|____/  \__,_||___/|_| \___| |_____/ |_| |_| \___||_||_|
-#
-# _____                                                          _
-#|  __ \                                                        (_)
-#| |__) | _ __   ___    __ _  _ __   __ _  _ __ ___   _ __ ___   _  _ __    __ _
-#|  ___/ | '__| / _ \  / _` || '__| / _` || '_ ` _ \ | '_ ` _ \ | || '_ \  / _` |
-#| |     | |   | (_) || (_| || |   | (_| || | | | | || | | | | || || | | || (_| |
-#|_|     |_|    \___/  \__, ||_|    \__,_||_| |_| |_||_| |_| |_||_||_| |_| \__, |
-#                       __/ |                                               __/ |
-#                      |___/                                               |___/
+#                        ,,                                                   #
+#                        db                                   mm              #
+#                                                             MM              #
+#  ,pP"Ybd `7MMpMMMb.  `7MM  `7MMpdMAo. `7MMpdMAo.  .gP"Ya  mmMMmm  ,pP"Ybd   #
+#  8I   `"   MM    MM    MM    MM   `Wb   MM   `Wb ,M'   Yb   MM    8I   `"   #
+#  `YMMMa.   MM    MM    MM    MM    M8   MM    M8 8M""""""   MM    `YMMMa.   #
+#  L.   I8   MM    MM    MM    MM   ,AP   MM   ,AP YM.    ,   MM    L.   I8   #
+#  M9mmmP' .JMML  JMML..JMML.  MMbmmd'    MMbmmd'   `Mbmmd'   `Mbmo M9mmmP'   #
+#                              MM         MM                                  #
+#                            .JMML.     .JMML.                                #
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+# Get list of orphaned desktop entries
+#======================================
+for i in {/usr,~/.local}/share/applications/*.desktop; do which $(grep -Poh '(?<=Exec=).*?( |$)' $i) > /dev/null || echo $i; done
 
 
 
 ###############################################################################
-#
-#`7MMF'                 .g8"""bgd
-#  MM                 .dP'     `M
-#  MM         .gP"Ya  dM'       `  ,pW"Wq.  `7MM  `7MM  `7MMpdMAo.  ,6"Yb.
-#  MM        ,M'   Yb MM          6W'   `Wb   MM    MM    MM   `Wb 8)   MM
-#  MM      , 8M"""""" MM.         8M     M8   MM    MM    MM    M8  ,pm9MM
-#  MM     ,M YM.    , `Mb.     ,' YA.   ,A9   MM    MM    MM   ,AP 8M   MM
-#.JMMmmmmMMM  `Mbmmd'   `"bmmmd'   `Ybmd9'    `Mbod"YML.  MMbmmd'  `Moo9^Yo.
-#                                                         MM
-#                                                       .JMML.
-#        _                   _         _                  _
-#       | |                 | |       | |                | |
-#   ___ | |__    ___   __ _ | |_  ___ | |__    ___   ___ | |_
-#  / __|| '_ \  / _ \ / _` || __|/ __|| '_ \  / _ \ / _ \| __|
-# | (__ | | | ||  __/| (_| || |_ \__ \| | | ||  __/|  __/| |_
-#  \___||_| |_| \___| \__,_| \__||___/|_| |_| \___| \___| \__|
-#
+#                                                                             #
+#                 ,,                           ,,                             #
+#                *MM                         `7MM                             #
+#                 MM                           MM                             #
+#                 MM,dMMb.   ,6"Yb.  ,pP"Ybd   MMpMMMb.                       #
+#                 MM    `Mb 8)   MM  8I   `"   MM    MM                       #
+#                 MM     M8  ,pm9MM  `YMMMa.   MM    MM                       #
+#                 MM.   ,M9 8M   MM  L.   I8   MM    MM                       #
+#                 P^YbmdP'  `Moo9^Yo.M9mmmP' .JMML  JMML.                     #
+#                                                                             #
+#         _                      _           _                     _          #
+#        | |                    | |         | |                   | |         #
+#   ___  | |__     ___    __ _  | |_   ___  | |__     ___    ___  | |_        #
+#  / __| | '_ \   / _ \  / _` | | __| / __| | '_ \   / _ \  / _ \ | __|       #
+# | (__  | | | | |  __/ | (_| | | |_  \__ \ | | | | |  __/ |  __/ | |_        #
+#  \___| |_| |_|  \___|  \__,_|  \__| |___/ |_| |_|  \___|  \___|  \__|       #
+#                                                                             #
 # Author: J. Le Coupenec
 # https://github.com/LeCoupa/awesome-cheatsheets
 
