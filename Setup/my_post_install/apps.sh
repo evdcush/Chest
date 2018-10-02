@@ -323,6 +323,7 @@ $ai zsh
 $ai tmux
 $ai tree
 $ai xfce4-timer-plugin
+$ai install formiko
 
 #$ai gitit # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 #$ai git-big-picture
