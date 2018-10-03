@@ -33,8 +33,7 @@ matplotlib
 
 
 """,
-'order': 0,
-}
+'order': 0,}
 
 #------------- Science misc
 
@@ -42,7 +41,7 @@ sci_misc = {'sci_misc':"""
 autograd
 sympy
 scikit-video
-
+pydataset
 
 """,
 'order': 100,
@@ -216,7 +215,6 @@ termdown
 #============= Haven't really tried
 look_into = {'look_into':"""
 buku
-rebound-cli
 gitsuggest
 rstwatch
 rstdiary
@@ -227,7 +225,6 @@ numpydoc
 pelican
 weasyprint
 pybtex
-pyclipper
 grip
 
 """,

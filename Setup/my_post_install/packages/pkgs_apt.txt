@@ -76,6 +76,18 @@ dict-wn
 alarm-clock-applet
 xfce4-timer-plugin
 
+# Fonts
+# ===============
+fonts-hack-otf
+
+fonts-aoyagi-kouzan-t
+fonts-aoyagi-soseki
+fonts-misaki
+fonts-sawarabi-gothic
+fonts-sawarabi-mincho
+fonts-mplus
+
+
 #------------------------------------------------------------------------------
 #                              User "Apps"
 #------------------------------------------------------------------------------
@@ -88,4 +100,6 @@ gparted
 vlc
 mpv
 okular
-# retext
+# retext # just install from source, apt is horribly outdated
+
+

@@ -1,0 +1,23 @@
+
+# Available user docsets
+http://sanfrancisco.kapeli.com/feeds/zzz/user_contributed/build/index.json
+
+# ROOT URL:
+http://sanfrancisco.kapeli.com/feeds/zzz/user_contributed/build/<key name inside json>/<archive name>
+
+
+
+# URLS:
+http://sanfrancisco.kapeli.com/feeds/zzz/user_contributed/build/CUDA/CUDA.tgz
+
+http://sanfrancisco.kapeli.com/feeds/zzz/user_contributed/build/SymPy/SymPy.tgz
+
+
+http://sanfrancisco.kapeli.com/feeds/zzz/user_contributed/build/Linux_Man_Pages/Linux_Man_Pages.tgz
+
+
+http://sanfrancisco.kapeli.com/feeds/zzz/user_contributed/build/PyTorch/PyTorch.tgz
+
+http://sanfrancisco.kapeli.com/feeds/zzz/user_contributed/build/Sphinx/Sphinx.tgz
+
+http://sanfrancisco.kapeli.com/feeds/zzz/user_contributed/build/tldr/tldr_pages.tgz

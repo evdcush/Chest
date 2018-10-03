@@ -17,6 +17,13 @@ https://github.com/Eloston/ungoogled-chromium#download-pre-built-packages
 #
 #-------------------------
 #
+wget https://github.com/zealdocs/zeal/archive/v0.6.1.tar.gz
+extract zeal-0.6.1.tar.gz
+cd zeal-0.6.1
+mkdir build && cd build
+cmake ..
+make
+sudo make install
 
 #
 #-------------------------
