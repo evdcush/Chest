@@ -2,6 +2,41 @@ import os, sys, code, math, random
 from functools import wraps
 
 
+# Difference Between
+#  - newline char "\n"
+#  - carriage return char "\r"
+#=================================================
+"""
+# Both are control characters that control printing/write of text.
+  * They both move the 'cursor' or RW pointer wrt the console,
+    or whatever output device is being used
+BUT
+* '\n' moves the cursor to the *next line* of the console
+* '\r' moves the cursor to the *BEGINNING* of the current line in console
+"""
+NEWLINE = '\n'
+print("Hello \nWorld")
+'Hello'
+'World'
+
+print("Hell\no World")
+'Hell'
+'o World'
+
+
+CARRIAGE_RETURN = '\r'
+print("Hello \rWorld")
+'World'
+
+print("Hell\ro World")
+'o World'
+
+
+
+
+
+
+
 #     __  __  __   __   ___   ___   _  _    ___   _      ___                  #
 #    |  \/  | \ \ / /  / __| |_ _| | \| |  / __| | |    | __|                 #
 #    | |\/| |  \ V /   \__ \  | |  | .` | | (_ | | |__  | _|                  #
@@ -191,4 +226,5 @@ class Foo:
         for attr, value in kwargs.items():
             setattr(self, attr, value)
 
-    def __call__(self,)
+    def __call__(self,):
+        pass
