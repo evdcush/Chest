@@ -148,6 +148,7 @@ D = {'D':"""
 pip_related = {'pip_related':"""
 pypi-cli
 pip-autoremove
+vermin
 
 
 """,
