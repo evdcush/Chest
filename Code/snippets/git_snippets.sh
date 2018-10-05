@@ -100,3 +100,37 @@ git gc --prune=now
 git gc --aggressive --prune=now
 
 
+
+###############################################################################
+#  _____    ______   __  __    ____    _______   ______
+# |  __ \  |  ____| |  \/  |  / __ \  |__   __| |  ____|
+# | |__) | | |__    | \  / | | |  | |    | |    | |__
+# |  _  /  |  __|   | |\/| | | |  | |    | |    |  __|
+# | | \ \  | |____  | |  | | | |__| |    | |    | |____
+# |_|  \_\ |______| |_|  |_|  \____/     |_|    |______|
+#
+###############################################################################
+
+
+#------------------------------------------------------------------------------
+#  ___   ___     _     _  _    ___   _  _
+# | _ ) | _ \   /_\   | \| |  / __| | || |
+# | _ \ |   /  / _ \  | .` | | (__  | __ |
+# |___/ |_|_\ /_/ \_\ |_|\_|  \___| |_||_|
+#
+#------------------------------------------------------------------------------
+
+# push a local branch
+git push <remote-name> <local-branch-name>:<remote-branch-name>
+
+# To pull all new remote branches from remote:
+git remote update
+
+
+https://stackoverflow.com/questions/2765421/how-do-i-push-a-new-local-branch-to-a-remote-git-repository-and-track-it-too
+
+https://stackoverflow.com/questions/1783405/how-do-i-check-out-a-remote-git-branch
+
+https://stackoverflow.com/questions/1519006/how-do-you-create-a-remote-git-branch
+
+https://stackoverflow.com/questions/24301914/git-create-local-branch-from-existing-remote-branch

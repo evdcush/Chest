@@ -131,6 +131,7 @@ cookiecutter
 nose
 pygame
 pycurl
+pyviz
 
 
 """,
@@ -148,8 +149,9 @@ D = {'D':"""
 pip_related = {'pip_related':"""
 pypi-cli
 pip-autoremove
-pipdeptree
 vermin
+pydeps
+pipdeptree
 
 
 """,
