@@ -10,10 +10,9 @@
 #                                                                             #
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
-
-# STD:IN and STD:OUT
-#===================================
-
+#==============================================================================
+#                        STDIN/OUT and FILE STUFF
+#==============================================================================
 # read data from user
 #----------------------------
 echo "Enter a value: "
@@ -23,11 +22,24 @@ echo "You just entered $userInput"
 
 # Write to file
 #----------------------------
-# over-write file
-cat "Hello world" > 'foo.txt'
+#==== over-write file
+echo "Hello world" > 'foo.txt'
 
-# concatenate to end file instead
-cat "Hello world" >> 'foo.txt'
+#==== concatenate to end file instead
+echo "Hello world" >> 'foo.txt'
+
+
+# Sort file
+#----------------------------
+sort input-file > output_file
+#==== sort in-place
+sort -o file file
+
+
+
+#==============================================================================
+
+
 
 
 # File commands I often reference
