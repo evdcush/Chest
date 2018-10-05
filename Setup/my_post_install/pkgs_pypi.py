@@ -93,7 +93,7 @@ scbw
 notebook = {'notebook':"""
 ipython
 jupyter
-jupyter-lab
+jupyterlab
 jupyterthemes
 
 
@@ -148,6 +148,8 @@ D = {'D':"""
 pip_related = {'pip_related':"""
 pypi-cli
 pip-autoremove
+pipdeptree
+vermin
 
 
 """,
@@ -230,3 +232,15 @@ grip
 """,
 'order': 100,
 }
+
+
+#============= experiment with, never installed
+look_into = {'look_into':"""
+""",
+'order': 100,
+}
+python-box
+github-sectory
+astrodash # spectral convolutions deep learning supernovae
+pipsalabim  # guesses your dependencies, no need for req file
+dbcollection # collection of popular ML datasets
