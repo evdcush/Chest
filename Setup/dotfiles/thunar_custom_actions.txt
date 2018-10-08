@@ -9,3 +9,6 @@ subl .
 # Copies full pathname for a file or folder  to clipboard
 echo -n %f | xclip -selection "clipboard"
 
+
+# Create file
+/usr/bin/touch notes.txt
