@@ -44,6 +44,12 @@
 #MIRRORS=( 'http://mirror.picosecond.org/ubuntu/,http://mirror.enzu.com/ubuntu/,http://la-mirrors.evowise.com/ubuntu/,http://mirrors.ocf.berkeley.edu/ubuntu/,http://mirror.math.ucdavis.edu/ubuntu/' )
 
 
+# Remove useless shit from default PATH
+#--------------------------------------
+#===== /usr/games
+sudo vi /etc/environment
+# delete '/usr/games:/usr/local/games' near the end
+
 
 ###############################################################################
 #                                                                             #
