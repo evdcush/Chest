@@ -14,7 +14,7 @@ curl -L https://unpkg.com/@pnpm/self-installer | node
 https://github.com/Eloston/ungoogled-chromium#download-pre-built-packages
 
 
-#
+# Zeal
 #-------------------------
 #
 wget https://github.com/zealdocs/zeal/archive/v0.6.1.tar.gz
