@@ -152,6 +152,7 @@ pip-autoremove
 vermin
 pydeps
 pipdeptree
+johnnydep
 
 
 """,
@@ -171,7 +172,6 @@ bibtexparser
 pandocfilters
 cairosvg
 betterbib
-pyfiglet
 numpydoc
 
 
@@ -187,6 +187,8 @@ cli = {'cli':"""
 docopt
 click
 thefuck
+cheat
+tldr
 
 
 """,
