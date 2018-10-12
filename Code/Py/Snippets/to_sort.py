@@ -26,3 +26,56 @@ def print_inplace(step, err, acc): #.format('STEP', 'ERROR', 'ACCURACY')
     #bar = '\r[{: <40}] | [{: <40}]'.format('@'*e, '@'*a)
     #sys.stdout.write(bar)
     #sys.stdout.flush()
+
+
+
+
+###############################################################################
+#
+#
+#               How to access parent class property
+
+class Foo:
+    def __init__(self):
+        self._cache = None
+
+    @property
+    def cache(self):
+        if self._cache is not None:
+            tmp_obj = self._cache
+            self._cache = None
+            return tmp_obj
+        #return self._cache
+
+    @cache.setter
+    def cache(self, x):
+        self._cache = x
+
+    def boo(self, x):
+        print(f'BOO! haha, got {x} thx')
+        self.cache = x
+
+    def poo(self):
+        print('going poop, you can have your x back')
+        x = self.cache
+        return x
+
+
+
+class Baz(Foo):
+    @property
+    def cache(self):
+        foo_cache = Foo.cache.fget(self)
+        if foo_cache is not None:
+            return foo_cache
+
+    @cache.setter
+    def cache(self, x):
+        Foo.cache.fset(self, x)
+        self.xlen = len(x)
+
+    def bar(self):
+        xlen = self.xlen
+        self.xlen = None
+        print(f'in bar, here is your silly xlen: {xlen}')
+        return xlen
