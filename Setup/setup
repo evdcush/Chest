@@ -1,0 +1,413 @@
+#!/bin/bash
+
+##############################################################################
+#                                                                            #
+#       ad88888ba   88888888888  888888888888  88        88  88888888ba      #
+#      d8"     "8b  88                88       88        88  88      "8b     #
+#      Y8,          88                88       88        88  88      ,8P     #
+#      `Y8aaaaa,    88aaaaa           88       88        88  88aaaaaa8P'     #
+#        `"""""8b,  88"""""           88       88        88  88""""""'       #
+#              `8b  88                88       88        88  88              #
+#      Y8a     a8P  88                88       Y8a.    .a8P  88              #
+#       "Y88888P"   88888888888       88        `"Y8888Y"'   88              #
+#                                                                            #
+##############################################################################
+
+#==============================================================================
+#                     Preinstallation Steps and Notes                         #
+#==============================================================================
+
+# Installation Media
+#-----------------------------
+#===== Bootable ISO
+# Nothing has EVER worked for me in making a bootable USB drive other than
+# "Universal USB Installer, pendrive," which, of course, is Windows only
+
+#===== Troubleshooting
+# If things are failing with the USB, try a different, non-3.0 port, or
+#  not a "hub" port, like the front ones neer power or otherwise joint hubs
+
+
+
+# Installer
+#-----------------------------
+#===== Options
+# - DO NOT CONNECT TO INTERNET/DOWNLOAD DURING INSTALL
+#   - Remove bloat first
+#     ONLY AFTER REMOVING BLOAT, should you even connect to internet
+# - Do not install 3rd party shit (for wifi/video/flash etc)
+#   - you can install what you need later, and flash 2018 lol
+
+
+
+#sed -i "$ a MIRRORS=( 'http://mirror.picosecond.org/ubuntu/,http://mirror.enzu.com/ubuntu/,http://la-mirrors.evowise.com/ubuntu/,http://mirrors.ocf.berkeley.edu/ubuntu/,http://mirror.math.ucdavis.edu/ubuntu/' )" /etc/apt-fast.conf
+#MIRRORS=( 'http://mirror.picosecond.org/ubuntu/,http://mirror.enzu.com/ubuntu/,http://la-mirrors.evowise.com/ubuntu/,http://mirrors.ocf.berkeley.edu/ubuntu/,http://mirror.math.ucdavis.edu/ubuntu/' )
+
+
+# Remove useless shit from default PATH
+#--------------------------------------
+#===== /usr/games
+sudo vi /etc/environment
+# delete '/usr/games:/usr/local/games' near the end
+
+
+
+
+
+# / \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ #
+# \_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\ #
+# / \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ #
+# \_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\ #
+#
+#    _ __    _   _   _ __    __ _    ___
+#   | '_ \  | | | | | '__|  / _` |  / _ \
+#   | |_) | | |_| | | |    | (_| | |  __/
+#   | .__/   \__,_| |_|     \__, |  \___|
+#   | |                      __/ |
+#   |_|                     |___/
+#
+# / \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ #
+# \_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\ #
+# / \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ #
+# \_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\ #
+
+#==============================================================================
+#                               Remove Bloat                                  #
+#==============================================================================
+
+# - During this process, all '*desktop' packages will likely get removed.
+#   - this includes: gnome-desktop, mate-desktop, xubuntu-desktop
+#     * DON'T WORRY! These packages are just the bundles of default apps
+#       That come with those respective desktops
+#
+
+
+# Helpful alias for purging shit
+alias arp="sudo apt remove --purge"
+
+
+# Desktop and Apps
+#-----------------------------
+# Note: there may be some redundancy
+#===== Default desktop shit: Apps, libraries
+arp mate-desktop-common mate-calc-common mate-calc mugshot cheese-common libgnome-games-support-common
+arp gnome-*
+arp "*mate-desktop*"
+arp "*firefox*" "transmission-*" "*pidgin*" "*parole*" "*xfburn*" "*libreoffice*"
+arp "hplip*" "sgt*" "snapd*" simple-scan "thunderbird*" "*yelp*"
+
+
+# Fonts
+#-----------------------------
+# - I like to keep my font directory clean: only the fonts I want
+# - The default font set includes font sets for seemingly every language
+#   on the planet, and it becomes difficult to find the fonts YOU want
+#   and YOU installed.
+
+#===== Purge unwanted and non-English fonts (almost entirely south-Asian btw)
+#  Note: this is the COMPLETE LIST
+arp fonts-tlwg* fonts-thai* fonts-liberation* fonts-smc* fonts-liberation2* fonts-kacst* fonts-samyak* fonts-lao* fonts-deva* fonts-gujr* fonts-knda* fonts-guru* fonts-navilu* fonts-orya* fonts-beng* fonts-freefont* fonts-khmeros* fonts-mlym* fonts-lklug* fonts-sil* fonts-taml* fonts-sahadeva* fonts-sarai* fonts-lohit* fonts-symbola* fonts-gubbi* fonts-nakula* fonts-telu* fonts-tibetan* fonts-opensymbol* fonts-kalapi* fonts-indic* fonts-gargi* fonts-pagul*
+
+#===== Noto is nice, but it also has about 50 extra languages
+#  Instead, I download Noto from source, remove the extra langs from the .db
+arp "fonts-noto*"
+
+
+# Clean
+#------------------------------------------------------------------------------
+sudo apt autoremove
+
+
+
+
+#                 _
+#                | |
+#    ___    ___  | |_   _   _   _ __
+#   / __|  / _ \ | __| | | | | | '_ \
+#   \__ \ |  __/ | |_  | |_| | | |_) |
+#   |___/  \___|  \__|  \__,_| | .__/
+#                              | |
+#                              |_|
+
+#==============================================================================
+#                            Setup and Dependencies
+#==============================================================================
+
+#------------------------------------------------------------------------------
+#                                  GCC
+#------------------------------------------------------------------------------
+
+#========= NOT NECESSARY IF YOU ARE INSTALLING 18.04
+addrep 'ubuntu-toolchain-r/test'
+$ai "gcc-7 g++-7 gcc-8 g++-8 --install-suggests"
+update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 80 --slave /usr/bin/g++ g++ /usr/bin/g++-7
+update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 100 --slave /usr/bin/g++ g++ /usr/bin/g++-8
+update-alternatives --set gcc /usr/bin/gcc-8
+$aug
+
+
+
+
+#        _                            __  _   _   _
+#       | |                          / / | | (_) | |
+#     __| |   ___   _ __    ___     / /  | |  _  | |__    ___
+#    / _` |  / _ \ | '_ \  / __|   / /   | | | | | '_ \  / __|
+#   | (_| | |  __/ | |_) | \__ \  / /    | | | | | |_) | \__ \
+#    \__,_|  \___| | .__/  |___/ /_/     |_| |_| |_.__/  |___/
+#                  | |
+#                  |_|
+#
+#==============================================================================
+#                             Common Dependencies                             #
+#==============================================================================
+python-sphinx texlive-latex-recommended dvipng librsvg2-bin imagemagick docbook2x graphviz
+
+$ai curl
+$ai wget
+$ai apt-transport-https
+$ai cmake
+$ai make
+$ai git-core
+$ai autoconf
+$ai automake
+$ai build-essential
+$ai libssl-dev
+$ai zlib1g-dev
+$ai libbz2-dev
+$ai libreadline-dev
+$ai libsqlite3-dev
+$ai llvm
+$ai libncurses5-dev
+$ai xz-utils
+$ai tk-dev
+$ai libatomic1
+$ai gfortran
+$ai perl
+$ai m4
+$ai pkg-config
+$ai software-properties-common
+$ai p7zip-full
+$ai p7zip-rar
+$ai redis-server
+$ai redis-tools
+$ai qt5-default
+$ai qt5-qmake
+$ai qttools5-dev-tools
+$ai libqt5dbus5 # just $ai "libqt5*" or?
+$ai libqt5network5
+$ai libqt5core5a
+$ai libqt5widgets5
+$ai libqt5gui5
+$ai libqt5svg5-dev
+$ai extra-cmake-modules
+$ai libqt5webkit5-dev
+$ai libqt5x11extras5-dev
+$ai libarchive-dev
+$ai libxcb-keysyms1-dev
+$ai texlive-xetex
+$au libcurl4-openssl-dev
+
+# Printer utils
+# ===============
+$ai printer-driver-cups-pdf
+$ai system-config-printer-gnome
+$ai brother-cups-wrapper-common
+$ai brother-cups-wrapper-extra
+$ai brother-cups-wrapper-laser
+
+
+#
+#     ___   _ __   __   __
+#    / _ \ | '_ \  \ \ / /
+#   |  __/ | | | |  \ V /
+#    \___| |_| |_|   \_/
+#
+
+
+# oh-my-zsh
+# ===============
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)";
+
+
+# pyenv
+# ===============
+curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash;
+#echo 'export PATH="/home/evan/.pyenv/bin:$PATH"' > ~/.zshrc
+#echo 'eval "$(pyenv init -)"' > ~/.zshrc
+#echo 'eval "$(pyenv virtualenv-init -)"' > ~/.zshrc
+
+
+# Node, NPM
+# =================
+curl -sL https://deb.nodesource.com/setup_10.x | -E bash -
+$ai nodejs
+
+
+
+#
+#                   __   _
+#                  / _| | |
+#    ___    ___   | |_  | |_  __      __   __ _   _ __    ___
+#   / __|  / _ \  |  _| | __| \ \ /\ / /  / _` | | '__|  / _ \
+#   \__ \ | (_) | | |   | |_   \ V  V /  | (_| | | |    |  __/
+#   |___/  \___/  |_|    \__|   \_/\_/    \__,_| |_|     \___|
+#
+
+
+
+#
+#                    _
+#                   | |
+#     __ _   _ __   | |_
+#    / _` | | '_ \  | __|
+#   | (_| | | |_) | | |_
+#    \__,_| | .__/   \__|
+#           | |
+#           |_|
+
+#------------------------------------------------------------------------------
+#                            Native apt packages
+#------------------------------------------------------------------------------
+# apt
+# ===============
+$ai alarm-clock-applet
+$ai htop
+$ai guake
+$ai vim
+$ai zsh
+$ai tmux
+$ai tree
+$ai xfce4-timer-plugin
+
+$ai anki
+$ai chromium-browser
+$ai psensor
+$ai vlc
+$ai mpv
+$ai okular
+$ai nomacs
+$ai gparted
+$ai tlp
+$ai deluge
+#$ai retext
+%ai exfat-utils
+$ai flac
+$ai lame
+$ai x264
+$ai unrar
+$ai dictd
+$ai dict-gcide
+$ai dict-wn
+
+
+#------------------------------------------------------------------------------
+#                            PPAs and external
+#------------------------------------------------------------------------------
+
+# Super productivity
+# ===============
+echo "deb https://dl.bintray.com/johannesjo/super-productivity stable super-productivity" | tee -a /etc/apt/sources.list
+$aug
+$ai superproductivity
+
+# Sublime Text 3
+# ===============
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add -;
+echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.list.d/sublime-text.list;
+$au
+$ai sublime-text
+
+# Ghostwriter
+# ===============
+addrep wereturtle/ppa
+$ai ghostwriter
+
+#            _
+#           (_)
+#    _ __    _   _ __
+#   | '_ \  | | | '_ \
+#   | |_) | | | | |_) |
+#   | .__/  |_| | .__/
+#   | |         | |
+#   |_|         |_|
+#
+
+
+
+
+#
+#    _ __    _ __    _ __ ___
+#   | '_ \  | '_ \  | '_ ` _ \
+#   | | | | | |_) | | | | | | |
+#   |_| |_| | .__/  |_| |_| |_|
+#           | |
+#           |_|
+
+#==== pnpm, faster package manager
+sudo npm i -g pnpm
+
+#==== nativefier
+sudo pnpm install -g nativefier
+
+#==== tldr pages
+sudo pnpm install -g tldr
+
+
+
+
+
+#            _     _
+#           | |   | |
+#     ___   | |_  | |__     ___   _ __
+#    / _ \  | __| | '_ \   / _ \ | '__|
+#   | (_) | | |_  | | | | |  __/ | |
+#    \___/   \__| |_| |_|  \___| |_|
+
+
+#
+#
+#     _____   _____    _    _
+#    / ____| |  __ \  | |  | |
+#   | |  __  | |__) | | |  | |
+#   | | |_ | |  ___/  | |  | |
+#   | |__| | | |      | |__| |
+#    \_____| |_|       \____/
+
+
+
+
+#        _                _      _
+#       | |              | |    | |
+#     __| |   ___   ___  | | __ | |_    ___    _ __
+#    / _` |  / _ \ / __| | |/ / | __|  / _ \  | '_ \
+#   | (_| | |  __/ \__ \ |   <  | |_  | (_) | | |_) |
+#    \__,_|  \___| |___/ |_|\_\  \__|  \___/  | .__/
+#                                             | |
+#                                             |_|
+
+
+
+
+
+# Sublime themes
+#======================
+#  # Dark
+#  #--------
+#  ** piodine **
+#  ** oceanic next**
+#  easyballs
+#  gooey
+#  # Medium & desat
+#  #---------------
+#  mutedrainbow_sky
+#  late_night
+#  koralgreen
+#  # Light
+#  #--------
+#  snappy-light
+#  softly
+#  lazy
+#  spring
+
+# Sublime packages
+#=======================

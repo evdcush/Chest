@@ -152,6 +152,7 @@ pip-autoremove
 vermin
 pydeps
 pipdeptree
+johnnydep
 
 
 """,
