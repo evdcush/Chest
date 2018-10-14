@@ -206,6 +206,8 @@ $ai libarchive-dev
 $ai libxcb-keysyms1-dev
 $ai texlive-xetex
 $au libcurl4-openssl-dev
+libcurl3
+fonts-stix
 
 # Printer utils
 # ===============
@@ -216,6 +218,9 @@ $ai brother-cups-wrapper-extra
 $ai brother-cups-wrapper-laser
 
 
+u1D782  - sans bold small sigma
+u1D77B  - sans bold small mu
+u1D77A  - sans bold small lambda
 #
 #     ___   _ __   __   __
 #    / _ \ | '_ \  \ \ / /
@@ -227,6 +232,14 @@ $ai brother-cups-wrapper-laser
 # oh-my-zsh
 # ===============
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)";
+# Plugins
+#--------
+git-open
+zshmarks
+colored-man-pages # available default
+zsh-autosuggestions # this is great!
+
+
 
 
 # pyenv
@@ -253,6 +266,9 @@ $ai nodejs
 #   |___/  \___/  |_|    \__|   \_/\_/    \__,_| |_|     \___|
 #
 
+hub # wrapper for git, with some added github utils #https://github.com/github/hub
+fd
+bat
 
 
 #
@@ -298,6 +314,7 @@ $ai unrar
 $ai dictd
 $ai dict-gcide
 $ai dict-wn
+clocJ
 
 
 #------------------------------------------------------------------------------
@@ -332,8 +349,116 @@ $ai ghostwriter
 #   |_|         |_|
 #
 
-
-
+#==== essentials
+numpy
+scipy
+sklearn
+matplotlib
+#
+#==== science
+#autograd
+sympy
+scikit-video
+pydataset
+primesieve
+#
+#==== AI libraries
+chainer
+gym
+chainerrl
+cupy
+#neupy
+#
+#==== TF dependencies
+keras
+keras-applications
+keras-preprocessing
+protobuf
+#
+#==== Starcraft
+s2clientprotocol
+pysc2
+sc2
+scbw
+#
+#==== Notebook
+ipython
+jupyter
+jupyterlab
+jupyterthemes
+#
+#==== Apps
+retext
+#
+#==== Dev
+apt-select
+bs4
+black
+bidict
+python-box
+binarytree
+cookiecutter
+h5py
+hickle
+html5lib
+pyqt5
+pillow
+cookiecutter
+nose
+pygame
+pycurl
+pyviz
+#
+#==== Pip/python package related
+pypi-cli
+pip-autoremove
+vermin
+pydeps
+pipdeptree
+johnnydep
+#
+#==== Docs
+docutils
+sphinx
+sphinx-rtd-theme
+doc2dash
+pygments
+bibtexparser
+pandocfilters
+cairosvg
+betterbib
+numpydoc
+#
+#==== CLI/Shell
+docopt
+click
+thefuck
+cheat
+tldr
+#
+#===== Misc
+art
+pyfiglet
+starred
+oh-my-stars
+termdown
+#
+#==== Unknown
+buku
+gitsuggest
+rstwatch
+rstdiary
+pelican
+weasyprint
+pybtex
+grip
+#
+#==== Maybe interesting?
+rebound-cli
+github-sectory
+astrodash # spectral convolutions deep learning supernovae
+pipsalabim  # guesses your dependencies, no need for req file
+dbcollection # collection of popular ML datasets
 
 #
 #    _ __    _ __    _ __ ___
@@ -362,6 +487,25 @@ sudo pnpm install -g tldr
 #    / _ \  | __| | '_ \   / _ \ | '__|
 #   | (_) | | |_  | | | | |  __/ | |
 #    \___/   \__| |_| |_|  \___| |_|
+
+
+#===== Google
+nativefier "https://mail.google.com" -n gmail -a x64 -p linux --honest -m --single-instance --tray --counter
+nativefier "https://drive.google.com" -n google-drive -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/google-drive.png
+nativefier "https://keep.google.com" -n google-keep -a x64 -p linux --honest -m --single-instance --tray -i /home/evan/Chest/Resources/Icons/google_keep_icon.png
+
+#====== Blog/read
+nativefier "https://deepmind.com/blog/" -n deepmind-blog -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/deepmind_logo_swirl_blue.png
+nativefier "https://blog.openai.com/" -n openai-blog -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/openai.png
+nativefier "https://ai.google/research/pubs/" -n google-ai -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/googleAi-icon
+
+#====== Job stuff
+nativefier "https://www.simplyhired.com/" -n simply-hired -a x64 -p linux --honest -m -i /home/evan/Chest/Resources/Icons/SimplyHired-icon.png
+nativefier "https://airtable.com/" -n airtable -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/airtable.png
+
+
+#====== Other
+nativefier "https://www.hackerrank.com/dashboard" -n hacker-rank -a x64 -p linux --honest -m -i /home/evan/Chest/Resources/Icons/HackerRank_logo.png
 
 
 #
