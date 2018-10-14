@@ -45,8 +45,8 @@ def getapp():
     # Pathing
     #-----------------------
     # THIS WILL ALL BE DONE BY PARSER
-    apppath=f'{appname.lower()+'/'
-    appsh =
+    #apppath=f'{appname.lower()+'/'}
+    #appsh =
     appsh='/home/'+username+'/webapps/'+appname+'.sh'
     appshort='/home/'+username+'/webapps/'+appname+'.desktop'
     alias="alias NewApp='python3 /home/"+username+"/webapps/NewApp.py'"
