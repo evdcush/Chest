@@ -22,10 +22,14 @@
 #===== Bootable ISO
 # Nothing has EVER worked for me in making a bootable USB drive other than
 # "Universal USB Installer, pendrive," which, of course, is Windows only
+#  * TRIED: Rufus, unetbootin (trash), dd, "bootiso", gparted
+#  * WORKS: UUI, distro-provided tools (tails, kali, etc)
 
 #===== Troubleshooting
-# If things are failing with the USB, try a different, non-3.0 port, or
-#  not a "hub" port, like the front ones neer power or otherwise joint hubs
+# If things are failing with the USB
+#  * try a different, non-3.0 port
+#  * not a "hub" port, like the front ones near power or otherwise joint hubs
+#  * insure USB is FAT32, MBR table (GPR never worked)
 
 
 
@@ -35,13 +39,9 @@
 # - DO NOT CONNECT TO INTERNET/DOWNLOAD DURING INSTALL
 #   - Remove bloat first
 #     ONLY AFTER REMOVING BLOAT, should you even connect to internet
+#
 # - Do not install 3rd party shit (for wifi/video/flash etc)
 #   - you can install what you need later, and flash 2018 lol
-
-
-
-#sed -i "$ a MIRRORS=( 'http://mirror.picosecond.org/ubuntu/,http://mirror.enzu.com/ubuntu/,http://la-mirrors.evowise.com/ubuntu/,http://mirrors.ocf.berkeley.edu/ubuntu/,http://mirror.math.ucdavis.edu/ubuntu/' )" /etc/apt-fast.conf
-#MIRRORS=( 'http://mirror.picosecond.org/ubuntu/,http://mirror.enzu.com/ubuntu/,http://la-mirrors.evowise.com/ubuntu/,http://mirrors.ocf.berkeley.edu/ubuntu/,http://mirror.math.ucdavis.edu/ubuntu/' )
 
 
 # Remove useless shit from default PATH
@@ -133,6 +133,12 @@ sudo apt autoremove
 #                            Setup and Dependencies
 #==============================================================================
 
+# Apt fast
+#------------------------------------------------------------------------------
+
+#sed -i "$ a MIRRORS=( 'http://mirror.picosecond.org/ubuntu/,http://mirror.enzu.com/ubuntu/,http://la-mirrors.evowise.com/ubuntu/,http://mirrors.ocf.berkeley.edu/ubuntu/,http://mirror.math.ucdavis.edu/ubuntu/' )" /etc/apt-fast.conf
+#MIRRORS=( 'http://mirror.picosecond.org/ubuntu/,http://mirror.enzu.com/ubuntu/,http://la-mirrors.evowise.com/ubuntu/,http://mirrors.ocf.berkeley.edu/ubuntu/,http://mirror.math.ucdavis.edu/ubuntu/' )
+
 #------------------------------------------------------------------------------
 #                                  GCC
 #------------------------------------------------------------------------------
@@ -207,7 +213,7 @@ $ai libxcb-keysyms1-dev
 $ai texlive-xetex
 $au libcurl4-openssl-dev
 libcurl3
-fonts-stix
+fonts-stix # math symbols
 
 # Printer utils
 # ===============
@@ -218,9 +224,6 @@ $ai brother-cups-wrapper-extra
 $ai brother-cups-wrapper-laser
 
 
-u1D782  - sans bold small sigma
-u1D77B  - sans bold small mu
-u1D77A  - sans bold small lambda
 #
 #     ___   _ __   __   __
 #    / _ \ | '_ \  \ \ / /
@@ -269,6 +272,9 @@ $ai nodejs
 hub # wrapper for git, with some added github utils #https://github.com/github/hub
 fd
 bat
+fzf
+z
+
 
 
 #
@@ -462,7 +468,7 @@ github-sectory
 astrodash # spectral convolutions deep learning supernovae
 pipsalabim  # guesses your dependencies, no need for req file
 dbcollection # collection of popular ML datasets
->>>>>>> 688ba86fa20356f2954f1c3478699756116be1fb
+
 
 #
 #    _ __    _ __    _ __ ___
