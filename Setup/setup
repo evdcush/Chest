@@ -208,8 +208,7 @@ alias pi="pip install -U"
 #                                GCC                                          #
 #=============================================================================#
 
-#========= NOT NECESSARY IF YOU ARE INSTALLING 18.04
-addrep 'ubuntu-toolchain-r/test'
+addrep 'ubuntu-toolchain-r/test' # Don't need repo if on 18.04
 $afi "gcc-7 g++-7 gcc-8 g++-8 --install-suggests"
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 80 --slave /usr/bin/g++ g++ /usr/bin/g++-7
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 100 --slave /usr/bin/g++ g++ /usr/bin/g++-8
@@ -393,6 +392,9 @@ $afi vlc
 $afi mpv
 $afi deluge
 $afi keepassxc
+$afi aria2
+$afi jq
+$afi deborphan
 
 $afi htop
 $afi tmux
@@ -518,6 +520,7 @@ click
 thefuck
 cheat
 #tldr  # cheat's better
+maybe  # *
 #
 #===== Misc
 art
@@ -558,6 +561,9 @@ sudo npm i -g pnpm
 
 #==== nativefier
 sudo pnpm install -g nativefier
+
+#==== gitbook
+sudo pnpm i -g gitbook-cli
 
 #==== tldr pages
 #sudo pnpm install -g tldr

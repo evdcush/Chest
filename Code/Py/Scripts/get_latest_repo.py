@@ -35,7 +35,7 @@ class Parser:
 
 from json import loads
 import argparse
-from urllib.request import urlopen urlretrieve Request
+from urllib.request import urlopen, urlretrieve, Request
 from pprint import PrettyPrinter
 
 pretty_printer = PrettyPrinter()
@@ -76,11 +76,11 @@ URL_BASE = 'https://api.github.com/repos/{}/{}/releases{}'
 
 # parser for user/repo
 #-----------------------
-P = argparse.ArgumentParser()
-P.add_argument('--user',        '-u', type=str, required=True)
-P.add_argument('--repo',        '-r', type=str, required=True)
-P.add_argument('--pre_release', '-p', type=int, default=0, choices=[0,1])
-parsed = AttrDict(vars(parser.pars_args()))
+parser = argparse.ArgumentParser()
+parser.add_argument('--user',        '-u', type=str, required=True)
+parser.add_argument('--repo',        '-r', type=str, required=True)
+parser.add_argument('--pre_release', '-p', type=int, default=0, choices=[0,1])
+parsed = AttrDict(vars(parser.parse_args()))
 
 # Get url fields
 #-----------------------
@@ -97,6 +97,7 @@ headers = {'Accept': 'application/vnd.github.v3+json'}
 # fGET
 #-------------------
 json = loads(urlopen(Request(URL, headers=headers)).read())
+#pprint(json)
 asset = json[0]['assets'][0]
 pprint('assets: {}'.format(asset))
 urlretrieve(asset['browser_download_url'], asset['name'])
