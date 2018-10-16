@@ -562,6 +562,27 @@ sudo pnpm install -g nativefier
 #==== tldr pages
 #sudo pnpm install -g tldr
 
+# Nativefier
+#--------------------------------------------
+#pnpm install nativefier -g
+#===== Google
+nativefier "https://mail.google.com" -n gmail -a x64 -p linux --honest -m --single-instance --tray --counter
+nativefier "https://drive.google.com" -n google-drive -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/google-drive.png
+nativefier "https://keep.google.com" -n google-keep -a x64 -p linux --honest -m --single-instance --tray -i /home/evan/Chest/Resources/Icons/google_keep_icon.png
+
+#====== Blog/read
+nativefier "https://deepmind.com/blog/" -n deepmind-blog -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/deepmind_logo_swirl_blue.png
+nativefier "https://blog.openai.com/" -n openai-blog -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/openai.png
+nativefier "https://ai.google/research/pubs/" -n google-ai -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/googleAi-icon
+
+#====== Job stuff
+nativefier "https://www.simplyhired.com/" -n simply-hired -a x64 -p linux --honest -m -i /home/evan/Chest/Resources/Icons/SimplyHired-icon.png
+nativefier "https://airtable.com/" -n airtable -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/airtable.png
+
+#====== Other
+nativefier "https://www.hackerrank.com/dashboard" -n hacker-rank -a x64 -p linux --honest -m -i /home/evan/Chest/Resources/Icons/HackerRank_logo.png
+
+
 
 #------------------------------------------------------------------------------
 #                              PPAs/debs/ubuntu rdy
@@ -616,35 +637,10 @@ hub # wrapper for git, with some added github utils #https://github.com/github/h
 fd
 bat
 
-
-
-
-
-
-
 #------------------------------------------------------------------------------
 #                                OTHER
 #------------------------------------------------------------------------------
 
-# Nativefier
-#--------------------------------------------
-#pnpm install nativefier -g
-#===== Google
-nativefier "https://mail.google.com" -n gmail -a x64 -p linux --honest -m --single-instance --tray --counter
-nativefier "https://drive.google.com" -n google-drive -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/google-drive.png
-nativefier "https://keep.google.com" -n google-keep -a x64 -p linux --honest -m --single-instance --tray -i /home/evan/Chest/Resources/Icons/google_keep_icon.png
-
-#====== Blog/read
-nativefier "https://deepmind.com/blog/" -n deepmind-blog -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/deepmind_logo_swirl_blue.png
-nativefier "https://blog.openai.com/" -n openai-blog -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/openai.png
-nativefier "https://ai.google/research/pubs/" -n google-ai -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/googleAi-icon
-
-#====== Job stuff
-nativefier "https://www.simplyhired.com/" -n simply-hired -a x64 -p linux --honest -m -i /home/evan/Chest/Resources/Icons/SimplyHired-icon.png
-nativefier "https://airtable.com/" -n airtable -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/airtable.png
-
-#====== Other
-nativefier "https://www.hackerrank.com/dashboard" -n hacker-rank -a x64 -p linux --honest -m -i /home/evan/Chest/Resources/Icons/HackerRank_logo.png
 
 # MISC
 #--------------------------------------------
@@ -655,6 +651,11 @@ zeal
 # Download latest binary from here >>------>  https://github.com/RadhiFadlillah/shiori/releases
 # mv binary to path folder:
 sudo mv shiori_linux_amd64 ~/.local/bin/shiori
+
+
+
+
+
 
 #
 #
