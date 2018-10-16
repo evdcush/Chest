@@ -52,12 +52,7 @@ sudo vi /etc/environment
 
 
 
-
-
-# / \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ #
-# \_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\ #
-# / \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ #
-# \_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\ #
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #
 #    _ __    _   _   _ __    __ _    ___
 #   | '_ \  | | | | | '__|  / _` |  / _ \
@@ -66,10 +61,8 @@ sudo vi /etc/environment
 #   | |                      __/ |
 #   |_|                     |___/
 #
-# / \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ #
-# \_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\ #
-# / \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ #
-# \_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\ #
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 #==============================================================================
 #                               Remove Bloat                                  #
@@ -80,10 +73,6 @@ sudo vi /etc/environment
 #     * DON'T WORRY! These packages are just the bundles of default apps
 #       That come with those respective desktops
 #
-
-
-# Helpful alias for purging shit
-alias arp="sudo apt remove --purge"
 
 
 # Desktop and Apps
@@ -119,41 +108,117 @@ sudo apt autoremove
 
 
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#             _             _    _
+#            (_)           (_)  | |
+#             _    _ __     _   | |_
+#            | |  | '_ \   | |  | __|
+#            | |  | | | |  | |  | |_
+#            |_|  |_| |_|  |_|   \__|
+#
+#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#                 _
-#                | |
-#    ___    ___  | |_   _   _   _ __
-#   / __|  / _ \ | __| | | | | | '_ \
-#   \__ \ |  __/ | |_  | |_| | | |_) |
-#   |___/  \___|  \__|  \__,_| | .__/
-#                              | |
-#                              |_|
 
-#==============================================================================
-#                            Setup and Dependencies
-#==============================================================================
+#=============================================================================#
+#                  Package manager setup and helpful aliases                  #
+#=============================================================================#
 
 # Apt fast
 #------------------------------------------------------------------------------
+sudo add-apt-repository ppa:apt-fast/stable
+sed -i "$ a MIRRORS=( 'http://mirror.picosecond.org/ubuntu/,http://mirror.enzu.com/ubuntu/,http://la-mirrors.evowise.com/ubuntu/,http://mirrors.ocf.berkeley.edu/ubuntu/,http://mirror.math.ucdavis.edu/ubuntu/' )" /etc/apt-fast.conf
 
-#sed -i "$ a MIRRORS=( 'http://mirror.picosecond.org/ubuntu/,http://mirror.enzu.com/ubuntu/,http://la-mirrors.evowise.com/ubuntu/,http://mirrors.ocf.berkeley.edu/ubuntu/,http://mirror.math.ucdavis.edu/ubuntu/' )" /etc/apt-fast.conf
-#MIRRORS=( 'http://mirror.picosecond.org/ubuntu/,http://mirror.enzu.com/ubuntu/,http://la-mirrors.evowise.com/ubuntu/,http://mirrors.ocf.berkeley.edu/ubuntu/,http://mirror.math.ucdavis.edu/ubuntu/' )
 
-#------------------------------------------------------------------------------
-#                                  GCC
-#------------------------------------------------------------------------------
+
+#                    Helpful setup aliases and funcs
+#-----------------------------------------------------------------------------#
+
+# Package manager and sudo
+#-------------------------------------
+#==== DEB
+alias di="sudo dpkg -i"
+
+# APT
+#-------
+apf='sudo apt-fast'
+#==== install/update
+alias af="$apf"
+alias afu="$apf update"
+alias afg="$apf upgrade"
+alias afug="$apf update && $apf upgrade"
+alias affu="$apf full-upgrade"
+alias afi="$apf install"
+#==== purge shit
+alias afr="$apf remove"
+alias afrp="$apf remove --purge"
+alias afa="$apf autoremove"
+alias afc="$apf clean"
+#==== package info
+alias afl="apt-fast list"
+alias afs="apt-fast search"
+alias afshow="apt-fast show"
+
+#==== APT-REPO
+addrep(){
+    sudo add-apt-repository "ppa:$1" -y
+    sudo apt-fast update
+}
+
+#==== EDIT
+alias svi="sudo vi"
+
+# Home, user, shell
+#---------------------------------------
+#==== dirs
+alias mdp="mkdir -p"
+alias cdb="cd -"
+#==== mkdir & cd into it
+function mcd(){mkdir -p "$1" && cd "$1"}
+#==== cd & list contents
+function cdl(){cd "$1" && ls -1FSshX --file-type}
+
+#==== list stuff
+alias ldot="ls -d --group-directories-first .*"
+alias lk="ls -1FSshX --file-type"
+alias l="ls --group-directories-first -X"
+
+
+# misc
+#---------------------------------------
+#==== GIT
+alias gc="git clone --depth=1"
+function gcd(){
+    REPO_URL=$1
+    git clone --depth=1 $REPO_URL
+    cdl "$(basename $1 .git)"
+}
+function gcto(){
+    REPO=$1
+    REPO_DEST=$2
+    git clone --depth=1 "https://github.com/$REPO" $REPO_DEST
+}
+
+
+#==== PIP
+alias pi="pip install -U"
+
+
+#=============================================================================#
+#                                GCC                                          #
+#=============================================================================#
 
 #========= NOT NECESSARY IF YOU ARE INSTALLING 18.04
 addrep 'ubuntu-toolchain-r/test'
-$ai "gcc-7 g++-7 gcc-8 g++-8 --install-suggests"
+$afi "gcc-7 g++-7 gcc-8 g++-8 --install-suggests"
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 80 --slave /usr/bin/g++ g++ /usr/bin/g++-7
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 100 --slave /usr/bin/g++ g++ /usr/bin/g++-8
 update-alternatives --set gcc /usr/bin/gcc-8
-$aug
+$afug
 
 
 
-
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #        _                            __  _   _   _
 #       | |                          / / | | (_) | |
 #     __| |   ___   _ __    ___     / /  | |  _  | |__    ___
@@ -163,94 +228,97 @@ $aug
 #                  | |
 #                  |_|
 #
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #==============================================================================
 #                             Common Dependencies                             #
 #==============================================================================
-python-sphinx texlive-latex-recommended dvipng librsvg2-bin imagemagick docbook2x graphviz
 
-$ai curl
-$ai wget
-$ai apt-transport-https
-$ai cmake
-$ai make
-$ai git-core
-$ai autoconf
-$ai automake
-$ai build-essential
-$ai libssl-dev
-$ai zlib1g-dev
-$ai libbz2-dev
-$ai libreadline-dev
-$ai libsqlite3-dev
-$ai llvm
-$ai libncurses5-dev
-$ai xz-utils
-$ai tk-dev
-$ai libatomic1
-$ai gfortran
-$ai perl
-$ai m4
-$ai pkg-config
-$ai software-properties-common
-$ai p7zip-full
-$ai p7zip-rar
-$ai redis-server
-$ai redis-tools
-$ai qt5-default
-$ai qt5-qmake
-$ai qttools5-dev-tools
-$ai libqt5dbus5 # just $ai "libqt5*" or?
-$ai libqt5network5
-$ai libqt5core5a
-$ai libqt5widgets5
-$ai libqt5gui5
-$ai libqt5svg5-dev
-$ai extra-cmake-modules
-$ai libqt5webkit5-dev
-$ai libqt5x11extras5-dev
-$ai libarchive-dev
-$ai libxcb-keysyms1-dev
-$ai texlive-xetex
-$au libcurl4-openssl-dev
-libcurl3
-fonts-stix # math symbols
+$afi curl
+$afi wget
+$afi apt-transport-https
+$afi cmake
+$afi make
+$afi git-core
+$afi autoconf
+$afi automake
+$afi build-essential
+$afi libssl-dev
+$afi zlib1g-dev
+$afi libbz2-dev
+$afi libreadline-dev
+$afi libsqlite3-dev
+$afi llvm
+$afi libncurses5-dev
+$afi xz-utils
+$afi tk-dev
+$afi libatomic1
+$afi gfortran
+$afi perl
+$afi xclip
+$afi m4
+$afi pkg-config
+$afi software-properties-common
+$afi p7zip-full
+$afi p7zip-rar
+$afi redis-server
+$afi redis-tools
+$afi qt5-default
+$afi qt5-qmake
+$afi qttools5-dev-tools
+$afi libqt5dbus5 # just $ai "libqt5*" or?
+$afi libqt5network5
+$afi libqt5core5a
+$afi libqt5widgets5
+$afi libqt5gui5
+$afi libqt5svg5-dev
+$afi extra-cmake-modules
+$afi libqt5webkit5-dev
+$afi libqt5x11extras5-dev
+$afi libarchive-dev
+$afi libxcb-keysyms1-dev
+$afi texlive-xetex
+$afi libcurl4-openssl-dev
+$afi libcurl3
+$afi fonts-stix # math symbols
+$afi python-sphinx
+$afi texlive-latex-recommended
+$afi dvipng
+$afi librsvg2-bin
+$afi imagemagick
+$afi docbook2x
+$afi graphviz
 
 # Printer utils
 # ===============
-$ai printer-driver-cups-pdf
-$ai system-config-printer-gnome
-$ai brother-cups-wrapper-common
-$ai brother-cups-wrapper-extra
-$ai brother-cups-wrapper-laser
+$afi printer-driver-brlaser
 
-
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #
-#     ___   _ __   __   __
-#    / _ \ | '_ \  \ \ / /
-#   |  __/ | | | |  \ V /
-#    \___| |_| |_|   \_/
+#               ___    _ __   __   __
+#              / _ \  | '_ \  \ \ / /
+#             |  __/  | | | |  \ V /
+#              \___|  |_| |_|   \_/
 #
-
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # oh-my-zsh
 # ===============
+$afi zsh
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)";
-# Plugins
-#--------
-git-open
-zshmarks
-colored-man-pages # available default
-zsh-autosuggestions # this is great!
-
-
+#==== Plugins:
+#colored-man-pages # available default
+gcto paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
+gcto jocelynmallon/zshmarks.git $ZSH_CUSTOM/plugins/zshmarks
+gcto zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 
 
 # pyenv
 # ===============
 curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash;
-#echo 'export PATH="/home/evan/.pyenv/bin:$PATH"' > ~/.zshrc
-#echo 'eval "$(pyenv init -)"' > ~/.zshrc
-#echo 'eval "$(pyenv virtualenv-init -)"' > ~/.zshrc
+echo 'export PATH="/home/evan/.pyenv/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
 
 
 # Node, NPM
@@ -260,91 +328,93 @@ $ai nodejs
 
 
 
-#
-#                   __   _
-#                  / _| | |
-#    ___    ___   | |_  | |_  __      __   __ _   _ __    ___
-#   / __|  / _ \  |  _| | __| \ \ /\ / /  / _` | | '__|  / _ \
-#   \__ \ | (_) | | |   | |_   \ V  V /  | (_| | | |    |  __/
-#   |___/  \___/  |_|    \__|   \_/\_/    \__,_| |_|     \___|
+
+###############################################################################
+#                                                                             #
+#                                                                             #
+#                                                                             #
+#    ███████╗ ██████╗ ███████╗████████╗██╗    ██╗ █████╗ ██████╗ ███████╗     #
+#    ██╔════╝██╔═══██╗██╔════╝╚══██╔══╝██║    ██║██╔══██╗██╔══██╗██╔════╝     #
+#    ███████╗██║   ██║█████╗     ██║   ██║ █╗ ██║███████║██████╔╝█████╗       #
+#    ╚════██║██║   ██║██╔══╝     ██║   ██║███╗██║██╔══██║██╔══██╗██╔══╝       #
+#    ███████║╚██████╔╝██║        ██║   ╚███╔███╔╝██║  ██║██║  ██║███████╗     #
+#    ╚══════╝ ╚═════╝ ╚═╝        ╚═╝    ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝     #
+#                                                                             #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#                                         __     _             __
+#    ___    _____   _____  ___    ____   / /_   (_)  ____ _   / /
+#   / _ \  / ___/  / ___/ / _ \  / __ \ / __/  / /  / __ `/  / /
+#  /  __/ (__  )  (__  ) /  __/ / / / // /_   / /  / /_/ /  / /
+#  \___/ /____/  /____/  \___/ /_/ /_/ \__/  /_/   \__,_/  /_/
 #
 
-hub # wrapper for git, with some added github utils #https://github.com/github/hub
-fd
-bat
+guake
+# pip-packages, ALL
+joplin
+sublimetext
+nativefier
+superproductivity
 fzf
 z
+zshmarks
+shiori
+flameshot
+ghostwriter
+mendeley
 
 
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#                               _
+#                              | |
+#                __ _   _ __   | |_
+#               / _` | | '_ \  | __|
+#              | (_| | | |_) | | |_
+#               \__,_| | .__/   \__|
+#                      | |
+#                      |_|
 #
-#                    _
-#                   | |
-#     __ _   _ __   | |_
-#    / _` | | '_ \  | __|
-#   | (_| | | |_) | | |_
-#    \__,_| | .__/   \__|
-#           | |
-#           |_|
-
-#------------------------------------------------------------------------------
-#                            Native apt packages
-#------------------------------------------------------------------------------
-# apt
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# "utils"
 # ===============
-$ai alarm-clock-applet
-$ai htop
-$ai guake
-$ai vim
-$ai zsh
-$ai tmux
-$ai tree
-$ai xfce4-timer-plugin
+$afi guake
+$afi vim
+$afi anki
+$afi chromium-browser
+$afi flameshot
+$afi go-for-it
 
-$ai anki
-$ai chromium-browser
-$ai psensor
-$ai vlc
-$ai mpv
-$ai okular
-$ai nomacs
-$ai gparted
-$ai tlp
-$ai deluge
-#$ai retext
-%ai exfat-utils
-$ai flac
-$ai lame
-$ai x264
-$ai unrar
-$ai dictd
-$ai dict-gcide
-$ai dict-wn
+
+$afi vlc
+$afi mpv
+$afi deluge
+$afi keepassxc
+
+$afi htop
+$afi tmux
+$afi tree
+$afi xfce4-timer-plugin
+$afi gparted
+$afi psensor
+$afi okular
+$afi nomacs
+$afi tlp
+$afi exfat-utils
+$afi flac
+$afi lame
+$afi x264
+$afi alarm-clock-applet
+$afi unrar
+$afi dictd
+$afi dict-gcide
+$afi dict-wn
 clocJ
 
-
-#------------------------------------------------------------------------------
-#                            PPAs and external
-#------------------------------------------------------------------------------
-
-# Super productivity
-# ===============
-echo "deb https://dl.bintray.com/johannesjo/super-productivity stable super-productivity" | tee -a /etc/apt/sources.list
-$aug
-$ai superproductivity
-
-# Sublime Text 3
-# ===============
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add -;
-echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.list.d/sublime-text.list;
-$au
-$ai sublime-text
-
-# Ghostwriter
-# ===============
-addrep wereturtle/ppa
-$ai ghostwriter
-
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #            _
 #           (_)
 #    _ __    _   _ __
@@ -354,9 +424,11 @@ $ai ghostwriter
 #   | |         | |
 #   |_|         |_|
 #
-
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#----- SORT THESE:
 pygithub
 github3.py
+#-------
 
 #==== essentials
 numpy
@@ -398,6 +470,8 @@ jupyterthemes
 #
 #==== Apps
 retext
+buku
+jrnl
 #
 #==== Dev
 apt-select
@@ -443,7 +517,7 @@ docopt
 click
 thefuck
 cheat
-tldr
+#tldr  # cheat's better
 #
 #===== Misc
 art
@@ -453,7 +527,6 @@ oh-my-stars
 termdown
 #
 #==== Unknown
-buku
 gitsuggest
 rstwatch
 rstdiary
@@ -464,20 +537,22 @@ grip
 #
 #==== Maybe interesting?
 rebound-cli
-github-sectory
+github-sectory # never wokrs, but supposed downloads parts of git repo
 astrodash # spectral convolutions deep learning supernovae
 pipsalabim  # guesses your dependencies, no need for req file
 dbcollection # collection of popular ML datasets
 
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #
-#    _ __    _ __    _ __ ___
-#   | '_ \  | '_ \  | '_ ` _ \
-#   | | | | | |_) | | | | | | |
-#   |_| |_| | .__/  |_| |_| |_|
-#           | |
-#           |_|
-
+#           _ __    _ __    _ __ ___
+#          | '_ \  | '_ \  | '_ ` _ \
+#          | | | | | |_) | | | | | | |
+#          |_| |_| | .__/  |_| |_| |_|
+#                  | |
+#                  |_|
+#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #==== pnpm, faster package manager
 sudo npm i -g pnpm
 
@@ -485,20 +560,75 @@ sudo npm i -g pnpm
 sudo pnpm install -g nativefier
 
 #==== tldr pages
-sudo pnpm install -g tldr
+#sudo pnpm install -g tldr
+
+
+#------------------------------------------------------------------------------
+#                              PPAs/debs/ubuntu rdy
+#------------------------------------------------------------------------------
+# Super productivity
+# ===============
+echo "deb https://dl.bintray.com/johannesjo/super-productivity stable super-productivity" | tee -a /etc/apt/sources.list
+$afu
+$afi superproductivity
+
+# Sublime Text 3
+# ===============
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add -;
+echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.list.d/sublime-text.list;
+$afu
+$afi sublime-text
+
+# Ghostwriter
+# ===============
+addrep wereturtle/ppa
+$afi ghostwriter
+
+# Neovim
+#================
+addrep neovim-ppa/stable
+$afi neovim
+
+# Mendeley
+#================
+# DL:
+https://www.mendeley.com/repositories/ubuntu/stable/amd64/mendeleydesktop-latest
+
+
+#------------------------------------------------------------------------------
+#                                Installer & simple
+#------------------------------------------------------------------------------
+
+#==== Joplin
+wget -O - https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_install_and_update.sh | bash
+
+#==== Z jump
+mkdir -p ~/.Z_jump
+wget -O ~/.Z_jump/z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh && echo ". $HOME/Z_jump/z.sh" >> ~/.zshrc
+
+#==== fzf
+gcto junegunn/fzf.git ~/.fzf
+
+
+# INBOX:
+#================================
+hub # wrapper for git, with some added github utils #https://github.com/github/hub
+fd
+bat
 
 
 
 
 
-#            _     _
-#           | |   | |
-#     ___   | |_  | |__     ___   _ __
-#    / _ \  | __| | '_ \   / _ \ | '__|
-#   | (_) | | |_  | | | | |  __/ | |
-#    \___/   \__| |_| |_|  \___| |_|
 
 
+#------------------------------------------------------------------------------
+#                                OTHER
+#------------------------------------------------------------------------------
+
+# Nativefier
+#--------------------------------------------
+#pnpm install nativefier -g
 #===== Google
 nativefier "https://mail.google.com" -n gmail -a x64 -p linux --honest -m --single-instance --tray --counter
 nativefier "https://drive.google.com" -n google-drive -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/google-drive.png
@@ -513,10 +643,18 @@ nativefier "https://ai.google/research/pubs/" -n google-ai -a x64 -p linux --hon
 nativefier "https://www.simplyhired.com/" -n simply-hired -a x64 -p linux --honest -m -i /home/evan/Chest/Resources/Icons/SimplyHired-icon.png
 nativefier "https://airtable.com/" -n airtable -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/airtable.png
 
-
 #====== Other
 nativefier "https://www.hackerrank.com/dashboard" -n hacker-rank -a x64 -p linux --honest -m -i /home/evan/Chest/Resources/Icons/HackerRank_logo.png
 
+# MISC
+#--------------------------------------------
+zeal
+
+# Shiori
+#========
+# Download latest binary from here >>------>  https://github.com/RadhiFadlillah/shiori/releases
+# mv binary to path folder:
+sudo mv shiori_linux_amd64 ~/.local/bin/shiori
 
 #
 #
