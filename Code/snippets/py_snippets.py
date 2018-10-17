@@ -1,6 +1,3 @@
-
-
-
 ######################    Numpy, restore shape      ###########################
 
 def restore_axis_shape(x, ax, d):

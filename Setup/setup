@@ -208,8 +208,7 @@ alias pi="pip install -U"
 #                                GCC                                          #
 #=============================================================================#
 
-#========= NOT NECESSARY IF YOU ARE INSTALLING 18.04
-addrep 'ubuntu-toolchain-r/test'
+addrep 'ubuntu-toolchain-r/test' # Don't need repo if on 18.04
 $afi "gcc-7 g++-7 gcc-8 g++-8 --install-suggests"
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 80 --slave /usr/bin/g++ g++ /usr/bin/g++-7
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 100 --slave /usr/bin/g++ g++ /usr/bin/g++-8
@@ -396,6 +395,9 @@ $afi vlc
 $afi mpv
 $afi deluge
 $afi keepassxc
+$afi aria2
+$afi jq
+$afi deborphan
 
 $afi htop
 $afi tmux
@@ -531,6 +533,7 @@ thefuck
 cheat
 maybe
 #tldr  # cheat's better
+maybe  # *
 #
 #===== Misc
 starred
@@ -578,8 +581,32 @@ sudo npm i -g pnpm
 #==== nativefier
 sudo pnpm install -g nativefier
 
+#==== gitbook
+sudo pnpm i -g gitbook-cli
+
 #==== tldr pages
 #sudo pnpm install -g tldr
+
+# Nativefier
+#--------------------------------------------
+#pnpm install nativefier -g
+#===== Google
+nativefier "https://mail.google.com" -n gmail -a x64 -p linux --honest -m --single-instance --tray --counter
+nativefier "https://drive.google.com" -n google-drive -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/google-drive.png
+nativefier "https://keep.google.com" -n google-keep -a x64 -p linux --honest -m --single-instance --tray -i /home/evan/Chest/Resources/Icons/google_keep_icon.png
+
+#====== Blog/read
+nativefier "https://deepmind.com/blog/" -n deepmind-blog -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/deepmind_logo_swirl_blue.png
+nativefier "https://blog.openai.com/" -n openai-blog -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/openai.png
+nativefier "https://ai.google/research/pubs/" -n google-ai -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/googleAi-icon
+
+#====== Job stuff
+nativefier "https://www.simplyhired.com/" -n simply-hired -a x64 -p linux --honest -m -i /home/evan/Chest/Resources/Icons/SimplyHired-icon.png
+nativefier "https://airtable.com/" -n airtable -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/airtable.png
+
+#====== Other
+nativefier "https://www.hackerrank.com/dashboard" -n hacker-rank -a x64 -p linux --honest -m -i /home/evan/Chest/Resources/Icons/HackerRank_logo.png
+
 
 
 #------------------------------------------------------------------------------
@@ -635,35 +662,10 @@ hub # wrapper for git, with some added github utils #https://github.com/github/h
 fd
 bat
 
-
-
-
-
-
-
 #------------------------------------------------------------------------------
 #                                OTHER
 #------------------------------------------------------------------------------
 
-# Nativefier
-#--------------------------------------------
-#pnpm install nativefier -g
-#===== Google
-nativefier "https://mail.google.com" -n gmail -a x64 -p linux --honest -m --single-instance --tray --counter
-nativefier "https://drive.google.com" -n google-drive -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/google-drive.png
-nativefier "https://keep.google.com" -n google-keep -a x64 -p linux --honest -m --single-instance --tray -i /home/evan/Chest/Resources/Icons/google_keep_icon.png
-
-#====== Blog/read
-nativefier "https://deepmind.com/blog/" -n deepmind-blog -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/deepmind_logo_swirl_blue.png
-nativefier "https://blog.openai.com/" -n openai-blog -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/openai.png
-nativefier "https://ai.google/research/pubs/" -n google-ai -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/googleAi-icon
-
-#====== Job stuff
-nativefier "https://www.simplyhired.com/" -n simply-hired -a x64 -p linux --honest -m -i /home/evan/Chest/Resources/Icons/SimplyHired-icon.png
-nativefier "https://airtable.com/" -n airtable -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/airtable.png
-
-#====== Other
-nativefier "https://www.hackerrank.com/dashboard" -n hacker-rank -a x64 -p linux --honest -m -i /home/evan/Chest/Resources/Icons/HackerRank_logo.png
 
 # MISC
 #--------------------------------------------
@@ -674,6 +676,11 @@ zeal
 # Download latest binary from here >>------>  https://github.com/RadhiFadlillah/shiori/releases
 # mv binary to path folder:
 sudo mv shiori_linux_amd64 ~/.local/bin/shiori
+
+
+
+
+
 
 #
 #
