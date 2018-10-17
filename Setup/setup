@@ -352,6 +352,7 @@ $ai nodejs
 #  \___/ /____/  /____/  \___/ /_/ /_/ \__/  /_/   \__,_/  /_/
 #
 
+
 guake
 # pip-packages, ALL
 joplin
@@ -366,6 +367,7 @@ flameshot
 ghostwriter
 mendeley
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -387,6 +389,7 @@ $afi anki
 $afi chromium-browser
 $afi flameshot
 $afi go-for-it
+$afi figlet toilet
 
 
 $afi vlc
@@ -424,11 +427,17 @@ clocJ
 #   | |         | |
 #   |_|         |_|
 #
+#
+# TOP:
+#=======
+# Standard: numpy scipy sklearn chainer ipython jupyter
+# App/misc: apt-select jrnl
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #----- SORT THESE:
-pygithub
-github3.py
+
 #-------
+
 
 #==== essentials
 numpy
@@ -473,12 +482,15 @@ retext
 buku
 jrnl
 #
-#==== Dev
-apt-select
-bs4
-black
+#==== Enhancements/lib
 bidict
 python-box
+
+#
+#==== Dev/dep
+apt-select
+bs4
+black # only for other peep's gross code
 binarytree
 cookiecutter
 h5py
@@ -517,14 +529,18 @@ docopt
 click
 thefuck
 cheat
+maybe
 #tldr  # cheat's better
 #
 #===== Misc
-art
-pyfiglet
 starred
 oh-my-stars
 termdown
+#
+#==== ascii
+pyfiglet
+toilet
+art
 #
 #==== Unknown
 gitsuggest
@@ -535,9 +551,12 @@ weasyprint
 pybtex
 grip
 #
+#==== git utils
+#pygithub   # not in use
+#github3.py # not in use
+#
 #==== Maybe interesting?
 rebound-cli
-github-sectory # never wokrs, but supposed downloads parts of git repo
 astrodash # spectral convolutions deep learning supernovae
 pipsalabim  # guesses your dependencies, no need for req file
 dbcollection # collection of popular ML datasets
