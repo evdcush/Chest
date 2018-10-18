@@ -358,6 +358,7 @@ joplin
 sublimetext
 nativefier
 superproductivity
+git-extras
 fzf
 z
 zshmarks
@@ -389,6 +390,7 @@ $afi chromium-browser
 $afi flameshot
 $afi go-for-it
 $afi figlet toilet
+$afi git-extras
 
 
 $afi vlc
@@ -398,6 +400,7 @@ $afi keepassxc
 $afi aria2
 $afi jq
 $afi deborphan
+$afi httpie
 
 $afi htop
 $afi tmux
@@ -433,9 +436,10 @@ clocJ
 # TOP:
 #=======
 # Standard: numpy scipy sklearn chainer ipython jupyter
-# App/misc: apt-select jrnl
+# App/misc:
+#  apt-select jrnl pypi-cli pip-autoremove maybe cookiecutter termdown
+#  johnnydeps
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 #----- SORT THESE:
 
 #-------
@@ -505,6 +509,7 @@ nose
 pygame
 pycurl
 pyviz
+coverage
 #
 #==== Pip/python package related
 pypi-cli
@@ -513,6 +518,7 @@ vermin
 pydeps
 pipdeptree
 johnnydep
+pip-licenses
 #
 #==== Docs
 docutils
@@ -531,9 +537,9 @@ docopt
 click
 thefuck
 cheat
-maybe
 #tldr  # cheat's better
 maybe  # *
+howdoi
 #
 #===== Misc
 starred
