@@ -51,6 +51,9 @@ sandbox
 
 # GA <---- dataset
 #=======================
+
+#!!!!!!!!!!!!!! NOTE: sys.insert APPROACH ONLY WORKS WHEN CALLER IN SAME DIR
+#   SAME AS REST OF BULLSHIT, STICK WITH DIRNAME __FILE__ APPROACh
 sys.insert(1, '..')
 from data.dataset import IrisDataset
 # OR

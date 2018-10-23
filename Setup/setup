@@ -282,6 +282,7 @@ $afi libcurl3
 $afi fonts-stix # math symbols
 $afi python-sphinx
 $afi texlive-latex-recommended
+$afi texlive-fonts-recommended
 $afi dvipng
 $afi librsvg2-bin
 $afi imagemagick
@@ -398,6 +399,7 @@ $afi keepassxc
 $afi aria2
 $afi jq
 $afi deborphan
+$afi rst2pdf
 
 $afi htop
 $afi tmux
