@@ -2,8 +2,7 @@ import os, sys, code, math, random
 from functools import wraps
 
 
-py_lits = {'Bell a':'\a', 'Backspace b':'\b', 'Formfeed f':'\f', 'Linefeed n':'\n', 'Carriage Return r':'\r', 'Horizontal tab t':'\t', 'V
-    ...: ertical tab v':'\v'}
+py_lits = {'Bell a':'\a', 'Backspace b':'\b', 'Formfeed f':'\f', 'Linefeed n':'\n', 'Carriage Return r':'\r', 'Horizontal tab t':'\t', 'Vertical tab v':'\v'}
 
 # Difference Between
 #  - newline char "\n"

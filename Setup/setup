@@ -357,6 +357,7 @@ guake
 joplin
 sublimetext
 nativefier
+croc
 superproductivity
 git-extras
 fzf
@@ -391,6 +392,7 @@ $afi flameshot
 $afi go-for-it
 $afi figlet toilet
 $afi git-extras
+$afi pdfsam  # install from deb; apt outdated
 
 
 $afi vlc
@@ -401,6 +403,8 @@ $afi aria2
 $afi jq
 $afi deborphan
 $afi httpie
+$afi img2pdf
+$afi wkhtmltopdf
 
 $afi htop
 $afi tmux
@@ -524,6 +528,7 @@ pip-licenses
 docutils
 sphinx
 sphinx-rtd-theme
+sphinxcontrib-jupyter
 doc2dash
 pygments
 bibtexparser
@@ -531,13 +536,14 @@ pandocfilters
 cairosvg
 betterbib
 numpydoc
+pypandoc
+rst2html5-tools # *
 #
 #==== CLI/Shell
 docopt
 click
 thefuck
 cheat
-#tldr  # cheat's better
 maybe  # *
 howdoi
 #
@@ -545,6 +551,8 @@ howdoi
 starred
 oh-my-stars
 termdown
+# rstwatch # rst2html better
+rstdiary
 #
 #==== ascii
 pyfiglet
@@ -553,10 +561,8 @@ art
 #
 #==== Unknown
 gitsuggest
-rstwatch
-rstdiary
 pelican
-weasyprint
+# weasyprint # kind of bad, never gotten good render
 pybtex
 grip
 #
@@ -650,6 +656,9 @@ https://www.mendeley.com/repositories/ubuntu/stable/amd64/mendeleydesktop-latest
 #------------------------------------------------------------------------------
 #                                Installer & simple
 #------------------------------------------------------------------------------
+
+#==== croc
+curl https://getcroc.schollz.com | bash
 
 #==== Joplin
 wget -O - https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_install_and_update.sh | bash

@@ -1,0 +1,20 @@
+#-----------------------------------------------------------------------------
+#   Convert....
+#-----------------------------------------------------------------------------
+
+############ PDF
+tldr: convert to html, then wkhtmltopdf   (1-step converters kind of suck)
+
+# .ipynb ----> pdf?
+#=======================
+# cleanest I've found:
+jupyter nbconvert --to html my_notebook.ipynb
+wktmltopdf my_notebook.html my_notebook.pdf
+
+
+# .rst ----> pdf?
+#=======================
+# pip install rst2html5-tools
+rst2html5 README.rst > README.html
+wkhtmltopdf README.html README.pdf
+
