@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Most of my snippets are located in my zshrc file
+sed 's/.*private.*$//ig' m.txt
+
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 #      ___    _   _   ___    ___   _  __  ___   ___   ___                     #
