@@ -322,10 +322,9 @@ echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
 
 
-# Node, NPM
+# Node, NPM, n
 # =================
-curl -sL https://deb.nodesource.com/setup_10.x | -E bash -
-$ai nodejs
+curl -L https://git.io/n-install | N_PREFIX=~/.n bash -s -- -y
 
 
 
@@ -645,10 +644,7 @@ $afi sublime-text
 addrep wereturtle/ppa
 $afi ghostwriter
 
-# Neovim
-#================
-addrep neovim-ppa/stable
-$afi neovim
+
 
 # Mendeley
 #================
@@ -677,7 +673,6 @@ gcto junegunn/fzf.git ~/.fzf
 # INBOX:
 #================================
 hub # wrapper for git, with some added github utils #https://github.com/github/hub
-fd
 bat
 
 #------------------------------------------------------------------------------
