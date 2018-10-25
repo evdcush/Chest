@@ -84,6 +84,7 @@ arp gnome-*
 arp "*mate-desktop*"
 arp "*firefox*" "transmission-*" "*pidgin*" "*parole*" "*xfburn*" "*libreoffice*"
 arp "hplip*" "sgt*" "snapd*" simple-scan "thunderbird*" "*yelp*"
+arp catfish devhelp glade
 
 
 # Fonts
@@ -721,9 +722,6 @@ sudo mv shiori_linux_amd64 ~/.local/bin/shiori
 #                                             |_|
 
 
-
-
-
 # Sublime themes
 #======================
 #  # Dark
@@ -739,6 +737,7 @@ sudo mv shiori_linux_amd64 ~/.local/bin/shiori
 #  koralgreen
 #  # Light
 #  #--------
+#  Github-v2  ***
 #  snappy-light
 #  softly
 #  lazy
@@ -746,3 +745,36 @@ sudo mv shiori_linux_amd64 ~/.local/bin/shiori
 
 # Sublime packages
 #=======================
+
+#==============================================================================
+#                    _    _    _
+#                   | |  | |  (_)
+#         ___   ___ | |_ | |_  _  _ __    __ _  ___
+#        / __| / _ \| __|| __|| || '_ \  / _` |/ __|
+#        \__ \|  __/| |_ | |_ | || | | || (_| |\__ \
+#        |___/ \___| \__| \__||_||_| |_| \__, ||___/
+#                                         __/ |
+#                                        |___/
+#
+#==============================================================================
+
+
+# Keyboard
+#-------------------------
+#==== Volume
+amixer set Master 5%-  # Alt+-
+amixer set Master 5%+  # Alt+=
+#==== misc/app
+flameshot gui    # Print
+
+
+# Thunar custom actions:
+#-------------------------
+#==== open guake at current location
+guake -n '%d%f ' -r "%f " --show -e "cd '%f' && ls -1FSshX --file-type"
+#==== open sublime here
+/usr/bin/subl .
+#==== copy full path
+echo -n %f | xclip -selection "clipboard"
+#==== make notes
+/usr/bin/touch notes.txt
