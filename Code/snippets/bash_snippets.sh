@@ -78,7 +78,19 @@ grep -r <pattern> <dir>       # search recursively for pattern in directory
 #======================================
 for i in {/usr,~/.local}/share/applications/*.desktop; do which $(grep -Poh '(?<=Exec=).*?( |$)' $i) > /dev/null || echo $i; done
 
-
+# Remove all items from output of `find`
+#======================================
+# Find and delete: CAREFUL
+function find_and_remove_all(){
+    sudo find / -iname "*$1*"
+    echo -n "Do you want to proceed (y/n)? "
+    read answer
+    if [ "$answer" != "${answer#[Yy]}" ] ;then
+        sudo find / -iname "*$1*" -exec rm -rf "{}" \;
+    else
+        echo Aborted
+    fi
+}
 
 ###############################################################################
 #                                                                             #
