@@ -134,3 +134,28 @@ https://stackoverflow.com/questions/1783405/how-do-i-check-out-a-remote-git-bran
 https://stackoverflow.com/questions/1519006/how-do-you-create-a-remote-git-branch
 
 https://stackoverflow.com/questions/24301914/git-create-local-branch-from-existing-remote-branch
+
+
+
+###############################################################################
+#    __  __               _____    _____    _____
+#   |  \/  |     /\      / ____|  |_   _|  / ____|
+#   | \  / |    /  \    | |  __     | |   | |
+#   | |\/| |   / /\ \   | | |_ |    | |   | |
+#   | |  | |  / ____ \  | |__| |   _| |_  | |____
+#   |_|  |_| /_/    \_\  \_____|  |_____|  \_____|
+#
+###############################################################################
+
+
+# Get list of largest objects in git repo
+#-----------------------------------------
+# > Credit:
+#   User: https://stackoverflow.com/users/380229/raphinesse
+#   Link: https://stackoverflow.com/a/42544963/6880404
+git rev-list --objects --all \
+| git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' \
+| sed -n 's/^blob //p' \
+| sort --numeric-sort --key=2 \
+| cut -c 1-12,41- \
+| numfmt --field=2 --to=iec-i --suffix=B --padding=7 --round=nearest
