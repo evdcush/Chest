@@ -486,7 +486,7 @@ scbw
 #==== Notebook
 ipython
 jupyter
-jupyterlab
+notebook
 jupyterthemes
 #
 #==== Apps
@@ -527,10 +527,6 @@ johnnydep
 pip-licenses
 #
 #==== Docs
-docutils
-sphinx
-sphinx-rtd-theme
-sphinxcontrib-jupyter
 doc2dash
 pygments
 bibtexparser
@@ -539,7 +535,18 @@ cairosvg
 betterbib
 numpydoc
 pypandoc
+cursive_re
+#---- RST
+docutils
+sphinx
+sphinx-rtd-theme
+sphinxcontrib-jupyter
 rst2html5-tools # *
+
+#---- Scrape/parse/Arxiv
+pybtex
+
+
 #
 #==== CLI/Shell
 docopt
@@ -548,6 +555,7 @@ thefuck
 cheat
 maybe  # *
 howdoi
+glances
 #
 #===== Misc
 starred
@@ -565,7 +573,6 @@ art
 gitsuggest
 pelican
 # weasyprint # kind of bad, never gotten good render
-pybtex
 grip
 #
 #==== git utils
