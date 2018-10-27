@@ -74,6 +74,15 @@ git push origin pull_request_yourname
 ###############################################################################
 # reference: https://stackoverflow.com/q/2100907/6880404
 
+# Use this to check for large files or dirs
+#-------------------------------------------
+git rev-list --objects --all \
+| git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' \
+| sed -n 's/^blob //p' \
+| sort --numeric-sort --key=2 \
+| cut -c 1-12,41- \
+| numfmt --field=2 --to=iec-i --suffix=B --padding=7 --round=nearest
+
 # WARNING: I have only done this as the sole user of a private repo, YMMV
 
 # Removing files from git history
@@ -92,12 +101,15 @@ git filter-branch --tree-filter 'rm -f topics.rst glossary.rst itinerary.md reso
 
 # AFTER EACH filter-branch
 rm -rf .git/refs/original
-git push --force origin master
 
 # FINALLY
 git reflog expire --expire=now --all
 git gc --prune=now
 git gc --aggressive --prune=now
+#git push --force origin master
+git push --all --prune --force  # will delete all branches not in local
+# MUST CLONE UPDATED REPO
+
 
 
 
