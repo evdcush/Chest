@@ -5,6 +5,9 @@
 export ZSH="/home/evan/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -19,6 +22,8 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+# Source functions
+source /home/evan/.dots/functions/git-extras-completion.zsh
 
 ###############################################################################
 #       ___    _    _____  _  _                                        ########
@@ -133,8 +138,8 @@ alias gs="git status"
 alias gd="git diff"
 alias ga="git add"
 alias gcm="git commit -m"
-alias gpl="git pull"
-alias gpu="git push"
+alias gpull="git pull"
+alias gpush="git push"
 alias grh="git reset HEAD --hard"
 alias gch="git checkout"
 
@@ -200,8 +205,10 @@ dw(){
 
 #==== write line to G log
 gw(){
-    G_FPATH="$HOME/G"
-    echo "$1" >> "$HOME/G"
+    G_FPATH="$HOME/Documents/G"
+    C_FPATH="$HOME/Chest/MY_look_into.txt"
+    echo "$1" >> "$G_FPATH"
+    echo "$1" >> "$C_FPATH"
 }
 
 
@@ -311,3 +318,7 @@ function gcd(){
 
 
 
+
+eval $(thefuck --alias)
+
+export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
