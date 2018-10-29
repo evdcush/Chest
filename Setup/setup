@@ -451,6 +451,8 @@ clocJ
 #-------
 
 
+
+
 #==== essentials
 numpy
 scipy
@@ -458,7 +460,7 @@ sklearn
 matplotlib
 #
 #==== science
-#autograd
+autograd
 sympy
 scikit-video
 pydataset
@@ -502,7 +504,7 @@ python-box
 #==== Dev/dep
 apt-select
 bs4
-black # only for other peep's gross code
+black # only for other peep's gross code; MIND YOUR LINE WIDTHS PEEPL, < 80!
 binarytree
 cookiecutter
 h5py
@@ -546,6 +548,8 @@ rst2html5-tools # *
 #---- Scrape/parse/Arxiv
 pybtex
 
+#---- Text
+textdistance[extras]
 
 #
 #==== CLI/Shell
