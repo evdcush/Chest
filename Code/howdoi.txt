@@ -18,3 +18,20 @@ wktmltopdf my_notebook.html my_notebook.pdf
 rst2html5 README.rst > README.html
 wkhtmltopdf README.html README.pdf
 
+#-----------------------------------------------------------------------------
+#   Installation
+#-----------------------------------------------------------------------------
+
+# Install py package from source
+#=======================
+python setup.py install --prefix=/home/$USER/.local/bin
+
+
+#-----------------------------------------------------------------------------
+#   REMOTE, ssh etc
+#-----------------------------------------------------------------------------
+
+# How to mount a remote dir to local machine?
+#=======================
+#----> sshfs
+# sshfs name@server:/path/to/folder /path/to/mount/point
