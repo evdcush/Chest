@@ -24,6 +24,7 @@
 # "Universal USB Installer, pendrive," which, of course, is Windows only
 #  * TRIED: Rufus, unetbootin (trash), dd, "bootiso", gparted
 #  * WORKS: UUI, distro-provided tools (tails, kali, etc)
+#  * TO TRY: etcher looks promising
 
 #===== Troubleshooting
 # If things are failing with the USB
@@ -84,7 +85,11 @@ arp gnome-*
 arp "*mate-desktop*"
 arp "*firefox*" "transmission-*" "*pidgin*" "*parole*" "*xfburn*" "*libreoffice*"
 arp "hplip*" "sgt*" "snapd*" simple-scan "thunderbird*" "*yelp*"
-arp catfish devhelp glade
+arp catfish devhelp glade xul-ext-ubufox
+
+# Printer shit
+#--------------
+arp printer-driver-splix printer-driver-sag-gdi printer-driver-pxljr printer-driver-ptouch printer-driver-pnm2ppa printer-driver-min12xxw printer-driver-m2300w printer-driver-foo2zjs-common printer-driver-foo2zjs printer-driver-c2esp
 
 
 # Fonts
@@ -662,15 +667,15 @@ nativefier "https://airtable.com/" -n airtable -a x64 -p linux --honest -m --sin
 nativefier "https://www.hackerrank.com/dashboard" -n hacker-rank -a x64 -p linux --honest -m -i /home/evan/Chest/Resources/Icons/HackerRank_logo.png
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#                _     _                  
-#               | |   | |                 
-#         ___   | |_  | |__    ___   _ __ 
+#                _     _
+#               | |   | |
+#         ___   | |_  | |__    ___   _ __
 #        / _ \  | __| | '_ \  / _ \ | '__|
-#       | (_) | | |_  | | | ||  __/ | |   
-#        \___/   \__| |_| |_| \___| |_|   
-#                                     
-#       
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                       
+#       | (_) | | |_  | | | ||  __/ | |
+#        \___/   \__| |_| |_| \___| |_|
+#
+#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
