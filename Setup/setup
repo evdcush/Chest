@@ -666,8 +666,9 @@ sudo pnpm i -g gitbook-cli
 #pnpm install nativefier -g
 #===== Google
 nativefier "https://mail.google.com" -n gmail -a x64 -p linux --honest -m --single-instance --tray --counter
-nativefier "https://drive.google.com" -n google-drive -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/google-drive.png
+nativefier "https://drive.google.com" -n google-drive -a x64 -p linux --honest -m --single-instance --internal-url 3 -i /home/evan/Chest/Resources/Icons/google-drive.png
 nativefier "https://keep.google.com" -n google-keep -a x64 -p linux --honest -m --single-instance --tray -i /home/evan/Chest/Resources/Icons/google_keep_icon.png
+nativefier "https://calendar.google.com" -n google-calendar -a x64 -p linux --honest -m --single-instance --tray -i /home/evan/Chest/Resources/Icons/google-calendar.png
 
 #====== Blog/read
 nativefier "https://deepmind.com/blog/" -n deepmind-blog -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/deepmind_logo_swirl_blue.png
@@ -676,6 +677,7 @@ nativefier "https://ai.google/research/pubs/" -n google-ai -a x64 -p linux --hon
 
 #====== Job stuff
 nativefier "https://www.simplyhired.com/" -n simply-hired -a x64 -p linux --honest -m -i /home/evan/Chest/Resources/Icons/SimplyHired-icon.png
+nativefier "https://www.linkedin.com/uas/login" -p linux -a x64 -n linkedin --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/linkedin.png
 nativefier "https://airtable.com/" -n airtable -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/airtable.png
 
 #====== Other
@@ -712,11 +714,6 @@ wget -O ~/.Z_jump/z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh && e
 gcto junegunn/fzf.git ~/.fzf
 
 
-# INBOX:
-#================================
-hub # wrapper for git, with some added github utils #https://github.com/github/hub
-bat
-
 #------------------------------------------------------------------------------
 #                                OTHER
 #------------------------------------------------------------------------------
@@ -728,12 +725,68 @@ zeal
 
 # Shiori
 #========
-# Download latest binary from here >>------>  https://github.com/RadhiFadlillah/shiori/releases
+# Download latest binary from: https://github.com/RadhiFadlillah/shiori/releases
 # mv binary to path folder:
-sudo mv shiori_linux_amd64 ~/.local/bin/shiori
+mv shiori_linux_amd64 ~/.local/bin/shiori
 
 
+# Reminiscence
+#=============
+# need ---> venv (pyenv), wkhtmltopdf, redis-server (optional)
+mkdir reminiscence
+cd reminiscence
+pyenv virtualenv 3.7.0 reminiscence
+pyenv local reminiscence
+git clone --depth=1 https://github.com/kanishka-linux/reminiscence.git
+cd reminiscence
+pip install -r requirements.txt
+mkdir logs archive tmp
+python manage.py generatesecretkey
+python manage.py nltkdownload
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver 127.0.0.1:8000
+# open 127.0.0.1:8000 using any browser, login and start adding links
 
+#**Note:** replace localhost address with local ip address of your server
+#          to access web-interface from anywhere on the local network
+
+
+# Chromium extensions
+#====================
+"Joplin Web Clipper"
+"uBlock Origin"
+"py3redirect"
+"Archiveror"
+"Dark Reader"
+"WikiMapper"
+"Close Tabs to the Left"
+"Black Menu for Wikipedia"
+"Refined GitHub"
+"Lovely forks"
+"Arc Dark"
+"Github Original Streak"
+"View Image"
+"Wide Github"
+"Awesome Stars"
+"Redirectify"
+"Tab Ahead"
+"Wikipedia Reading Lists"
+"uBlock Origin Extra"
+"Privacy Badger"
+"Better Bookmark"
+
+# Openssh (local) server
+#=======================
+sudo apt install openssh-server;
+sudo service ssh status;
+sudo vi /etc/ssh/sshd_config; # change port from 22 to 2501
+sudo systemctl restart sshd.service;
+hostname -I; # get ip
+# copy ssh-id from non-server machine
+ssh-copy-id evan@remotehost;
+sudo vi /etc/ssh/sshd_config; # disable password auth
+sudo systemctl restart sshd.service;
 
 
 
