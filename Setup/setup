@@ -481,10 +481,17 @@ https://www.mendeley.com/repositories/ubuntu/stable/amd64/mendeleydesktop-latest
 #  johnnydeps
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #----- SORT THESE:
-
+bibcure
+scihub2pdf
+arxivcheck
+arxivscraper
+arxiv
+pyarxiv
 #-------
 
-
+#==============================
+# Standard install for new venv
+#==============================
 
 
 #==== essentials
@@ -572,6 +579,9 @@ betterbib
 numpydoc
 pypandoc
 cursive_re
+#---- linting
+flake8
+mccabe
 #---- RST
 docutils
 sphinx
