@@ -72,7 +72,7 @@ Acknowledgements
 
 License
 -------
-Except where noted otherwise, this project is licensed under the `SPDX-License-Name`_.
+Except where noted otherwise, this project is licensed under the |SPDX-License-Name|_.
 
 
 .. Substitutions:
@@ -83,6 +83,7 @@ Except where noted otherwise, this project is licensed under the `SPDX-License-N
 
 .. LOCAL FILES:
 .. _SPDX-License-Name: LICENSE
+.. |SPDX-License-Name| replace:: the spdx license name
 
 
 .. EXTERNAL:
