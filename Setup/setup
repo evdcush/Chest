@@ -294,6 +294,11 @@ librsvg2-bin
 imagemagick
 docbook2x
 graphviz
+postgresql
+postgresql-server-dev-all
+phantomjs
+supervisor
+# rabbitmq-server # only needed by one package (crestify)
 
 # Printer utils
 # ===============
