@@ -73,9 +73,9 @@ git push origin pull_request_yourname
 #
 ###############################################################################
 # reference: https://stackoverflow.com/q/2100907/6880404
-
+#------------------------------------------------------------------------------
 # Use this to check for large files or dirs
-#-------------------------------------------
+#------------------------------------------------------------------------------
 git rev-list --objects --all \
 | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' \
 | sed -n 's/^blob //p' \
@@ -85,8 +85,9 @@ git rev-list --objects --all \
 
 # WARNING: I have only done this as the sole user of a private repo, YMMV
 
+#------------------------------------------------------------------------------
 # Removing files from git history
-#--------------------------------
+#------------------------------------------------------------------------------
 # Removing a file, or directory contents from history completely
 
 #===== Removing a file:
@@ -110,7 +111,17 @@ git gc --aggressive --prune=now
 git push --all --prune --force  # will delete all branches not in local
 # MUST CLONE UPDATED REPO
 
+#------------------------------------------------------------------------------
+# Delete misc:
+#------------------------------------------------------------------------------
+#===== Delete a tag on github
+git fetch # if you do not see the tag on local
+git tag -d <tag-name>
+git push origin :<tag-name>
 
+# if tag name is same as branch:
+git tag -d <tag-name>
+git push origin :refs/tags/<tag-name>
 
 
 ###############################################################################
