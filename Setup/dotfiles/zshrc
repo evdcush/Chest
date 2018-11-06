@@ -8,6 +8,10 @@ ZSH_THEME="robbyrussell"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+HISTIGNORE="$HISTIGNORE:jrnl *"
+setopt HIST_IGNORE_SPACE
+alias jrnl=" jrnl"
+
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -147,6 +151,11 @@ alias gch="git checkout"
 #-----------------------------------------------------------------------------#
 #                       Shell & Package managers                              #
 #-----------------------------------------------------------------------------#
+
+# py env
+#=========================
+alias pipstd="pip install -U numpy scipy sklearn matplotlib chainer sympy pip-autoremove ipython jupyter notebook jupyter_contrib_nbextensions bs4 jrnl thefuck docutils rst2html5-tools sphinx sphinx-rtd-theme johnnydep bidict art termdown cheat cookiecutter"
+alias pipupdate="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 
 
 # Shell
@@ -297,6 +306,20 @@ function expzsh(){
     echo "$2" >> ~/.zshrc
 }
 
+# Find and delete: CAREFUL
+#========================
+function find_and_remove_all(){
+    matches=$(sudo find / -iname "*$1*")
+    echo matches
+    echo -n "Do you want to proceed (y/n)? "
+    read answer
+    if [ "$answer" != "${answer#[Yy]}" ] ;then
+        sudo find / -iname "*$1*" -exec rm -rf "{}" \;
+    else
+        echo Aborted
+    fi
+}
+
 
 #-----------------------------------------------------------------------------#
 #                             Package Utils                                   #
@@ -314,6 +337,19 @@ function gcd(){
     REPO_URL=$1
     git clone --depth=1 $REPO_URL
     cdl "$(basename $1 .git)"
+}
+
+# Make new pyenv virtualenv
+#========================
+pvenv(){
+    PY_VER=$1
+    VENV_NAME=$2
+
+    # Make venv
+    pyenv virtualenv "$PY_VER" "$VENV_NAME"
+    pyenv local "$VENV_NAME"
+    # Update base packages
+    pip install -U pip setuptools wheel
 }
 
 

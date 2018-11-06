@@ -531,6 +531,7 @@ ipython
 jupyter
 notebook
 jupyterthemes
+jupyter-contrib-nbextensions
 #
 #==== Apps
 retext
