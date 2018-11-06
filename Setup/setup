@@ -239,66 +239,61 @@ $afug
 #                             Common Dependencies                             #
 #==============================================================================
 
-curl
 wget
-apt-transport-https
-cmake
-make
+curl
 git-core
+apt-transport-https
 autoconf
 automake
 build-essential
-libssl-dev
-zlib1g-dev
-libbz2-dev
-libreadline-dev
-libsqlite3-dev
-llvm
-libncurses5-dev
-xz-utils
-tk-dev
-libatomic1
+cmake
+docbook2x
+dvipng
+extra-cmake-modules
+fonts-stix # math symbols
 gfortran
-perl
-xclip
+graphviz
+imagemagick
+libarchive-dev
+libatomic1
+libbz2-dev
+libcurl3
+libcurl4-openssl-dev
+libncurses5-dev
+libqt5core5a
+libqt5dbus5 # just $ai "libqt5*" or?
+libqt5gui5
+libqt5network5
+libqt5svg5-dev
+libqt5webkit5-dev
+libqt5widgets5
+libqt5x11extras5-dev
+libreadline-dev
+librsvg2-bin
+libsqlite3-dev
+libssl-dev
+libxcb-keysyms1-dev
+llvm
 m4
-pkg-config
-software-properties-common
+make
 p7zip-full
 p7zip-rar
-redis-server
-redis-tools
+perl
+pkg-config
+python-sphinx
 qt5-default
 qt5-qmake
 qttools5-dev-tools
-libqt5dbus5 # just $ai "libqt5*" or?
-libqt5network5
-libqt5core5a
-libqt5widgets5
-libqt5gui5
-libqt5svg5-dev
-extra-cmake-modules
-libqt5webkit5-dev
-libqt5x11extras5-dev
-libarchive-dev
-libxcb-keysyms1-dev
-texlive-xetex
-libcurl4-openssl-dev
-libcurl3
-fonts-stix # math symbols
-python-sphinx
-texlive-latex-recommended
+redis-server
+redis-tools
+software-properties-common
 texlive-fonts-recommended
-dvipng
-librsvg2-bin
-imagemagick
-docbook2x
-graphviz
-postgresql
-postgresql-server-dev-all
-phantomjs
-supervisor
-# rabbitmq-server # only needed by one package (crestify)
+texlive-latex-recommended
+texlive-xetex
+tk-dev
+xclip
+xz-utils
+zlib1g-dev
 
 # Printer utils
 # ===============
