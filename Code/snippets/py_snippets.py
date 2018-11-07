@@ -229,7 +229,9 @@ def preserve(inputs=True, outputs=True):
 ###############################################################################
 ########################       Special chars       ############################
 
-py_lits = {'Bell a':'\a', 'Backspace b':'\b', 'Formfeed f':'\f', 'Linefeed n':'\n', 'Carriage Return r':'\r', 'Horizontal tab t':'\t', 'Vertical tab v':'\v'}
+py_lits = {'Bell a':'\a', 'Backspace b':'\b', 'Formfeed f':'\f',
+           'Linefeed n':'\n', 'Carriage Return r':'\r',
+           'Horizontal tab t':'\t', 'Vertical tab v':'\v'}
 
 # Difference Between
 #  - newline char "\n"
@@ -260,6 +262,7 @@ print("Hello \rWorld")
 print("Hell\ro World")
 'o World'
 
+#========== Using '\r' to make a simple animation
 
 import time
 import sys
@@ -320,3 +323,32 @@ class Baz(Foo):
         self.xlen = None
         print(f'in bar, here is your silly xlen: {xlen}')
         return xlen
+
+
+###############################################################################
+#######################     f-string formatting     ###########################
+""" In general, f-string format specifiers are the same as '{}'.format() """
+
+# Floating-point
+#------------------
+my_float = 2**(1/2)
+print(f'{my_float}')
+# 1.4142135623730951
+
+print(f'{my_float: .3f}')
+# 1.414
+
+
+# Strings
+#----------------
+hw = 'Hello world'
+w  = 'world'
+#==== no formatting
+print(f'{hw}\n{w}')
+'Hello world'
+'world'
+
+#==== with formatting
+print(f'{hw:>12}\n{w:>12}')
+' Hello world'
+'       world'
