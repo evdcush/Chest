@@ -1,0 +1,147 @@
+
+#-----------------------------------------------------------------------------#
+#                                Endemic                                      #
+#-----------------------------------------------------------------------------#
+#==== write line to D log
+dw(){
+    D_FPATH="$HOME/D"
+    echo "$1" >> "$HOME/D"
+}
+
+#==== write line to look n2 log
+n2(){
+    N2_FPATH="$HOME/Documents/n2.log"
+    echo "$1" >> "$N2_FPATH"
+}
+
+
+#-----------------------------------------------------------------------------#
+#                        Shell Utils & Shortcuts                              #
+#-----------------------------------------------------------------------------#
+
+#==== reset PATH to default
+function reset_path(){
+    echo "Resetting Path...\n--------------------------------------------------"
+    echo "  current path = $PATH\n"
+    PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+    #PATH=$(getconf PATH)
+    echo "  reset path = $PATH\n"
+    source ~/.zshrc
+    echo "--------------------------------------------------"
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+#==== Extract many types of compressed packages
+function extract() {
+    if [ -f "$1" ] ; then
+        case "$1" in
+            *.tar.bz2)   tar xvjf "$1"                    ;;
+            *.tar.gz)    tar xvzf "$1"                    ;;
+            *.bz2)       bunzip2 "$1"                     ;;
+            *.rar)       unrar x "$1"                     ;;
+            *.gz)        gunzip "$1"                      ;;
+            *.tar)       tar xvf "$1"                     ;;
+            *.tbz2)      tar xvjf "$1"                    ;;
+            *.tgz)       tar xvzf "$1"                    ;;
+            *.zip)       unzip "$1"                       ;;
+            *.ZIP)       unzip "$1"                       ;;
+            *.pax)       cat "$1" | pax -r                ;;
+            *.pax.Z)     uncompress "$1" —stdout | pax -r ;;
+            *.Z)         uncompress "$1"                  ;;
+            *.7z)        7z x "$1"                        ;;
+            *)           echo "don't know how to extract '$1'..." ;;
+        esac
+    else
+        echo "extract: error: $1 is not valid"
+    fi
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Directory functions
+#--------------------
+#==== mkdir & cd into it
+function mcd(){mkdir -p "$1" && cd "$1"}
+
+#==== cd & list contents
+function cdl(){cd "$1" && ls -1FSshX --file-type}
+
+#==== list top-level file-sizes, sorted
+function duh(){
+    du -h --max-depth=1 | sort -h;
+}
+
+# Find and delete: CAREFUL
+#========================
+function find_and_remove_all(){
+    matches=$(sudo find / -iname "*$1*")
+    echo matches
+    echo -n "Do you want to proceed (y/n)? "
+    read answer
+    if [ "$answer" != "${answer#[Yy]}" ] ;then
+        sudo find / -iname "*$1*" -exec rm -rf "{}" \;
+    else
+        echo Aborted
+    fi
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Bash func modifiers
+#--------------------
+#==== shortcut find
+function f(){
+    if [ "$#" -gt 1 ]; then
+        sudo find "$1" -iname "$2"
+    else
+        sudo find / -iname "$1"
+    fi
+}
+
+# zsh stuff
+#----------
+#==== source zshrc
+function srcz(){
+    reset_path
+    #source ~/.zshrc
+}
+
+#==== add line to shell config
+function expzsh(){
+    #expzsh 'My alias' 'alias testalias="echo test passed"'
+    echo "\n\n#==== $1" >> ~/.zshrc
+    echo "$2" >> ~/.zshrc
+}
+
+
+#-----------------------------------------------------------------------------#
+#                             Package Utils                                   #
+#-----------------------------------------------------------------------------#
+
+#==== add apt-repo
+addrep(){
+    sudo add-apt-repository "ppa:$1" -y
+    sudo apt-fast update
+}
+
+
+#==== git clone repo & cd
+function gcd(){
+    REPO_URL=$1
+    git clone --depth=1 $REPO_URL
+    cdl "$(basename $1 .git)"
+}
+
+# Make new pyenv virtualenv
+#========================
+pvenv(){
+    PY_VER=$1
+    VENV_NAME=$2
+
+    # Make venv
+    pyenv virtualenv "$PY_VER" "$VENV_NAME"
+    pyenv local "$VENV_NAME"
+    # Update base packages
+    pip install -U pip setuptools wheel
+}
