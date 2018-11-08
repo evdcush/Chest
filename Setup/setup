@@ -709,6 +709,11 @@ wget -O ~/.Z_jump/z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh && e
 #==== fzf
 gcto junegunn/fzf.git ~/.fzf
 
+#==== cheat sheet
+#https://github.com/chubin/cheat.sh
+curl https://cht.sh/:cht.sh > ~/.local/bin/cht.sh
+chmod +x ~/.local/bin/cht.sh
+
 
 #------------------------------------------------------------------------------
 #                                OTHER

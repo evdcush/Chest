@@ -1,3 +1,0 @@
-*misc_project_ideals.py* filter=git-crypt diff=git-crypt
-*.key filter=git-crypt diff=git-crypt
-
