@@ -250,7 +250,6 @@ cmake
 docbook2x
 dvipng
 extra-cmake-modules
-fonts-stix # math symbols
 gfortran
 graphviz
 imagemagick
@@ -287,8 +286,6 @@ qttools5-dev-tools
 redis-server
 redis-tools
 software-properties-common
-texlive-fonts-recommended
-texlive-latex-recommended
 texlive-xetex
 tk-dev
 xclip
@@ -299,6 +296,21 @@ zlib1g-dev
 # ===============
 printer-driver-brlaser
 
+
+# Fonts
+# ===============
+fonts-stix # math symbols
+texlive-fonts-recommended
+texlive-latex-recommended
+fonts-umeplus
+fonts-hanazono
+fonts-mplus
+fonts-mikachan
+
+###################################################################################################################################################################################################
+
+# INCLUDE NOTES ON SETTING UP FONTS
+################################################################################################################################################################################################################
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #
 #               ___    _ __   __   __
