@@ -1,0 +1,123 @@
+
+
+
+#==============================================================================
+#
+#        ███████╗  ██╗  ██╗  ███████╗  ██╗      ██╗
+#        ██╔════╝  ██║  ██║  ██╔════╝  ██║      ██║
+#        ███████╗  ███████║  █████╗    ██║      ██║
+#        ╚════██║  ██╔══██║  ██╔══╝    ██║      ██║
+#        ███████║  ██║  ██║  ███████╗  ███████╗ ███████╗
+#        ╚══════╝  ╚═╝  ╚═╝  ╚══════╝  ╚══════╝ ╚══════╝
+#
+#==============================================================================
+
+# Shell
+#-------------------------------------
+#==== file and dir stuff
+alias md="mkdir -p"
+alias cdb="cd -"
+
+#==== list stuff
+alias h="history"
+alias ldot="ls -d --group-directories-first .*"
+alias lk="ls -1FSshX --file-type"
+alias l="ls --group-directories-first -X"
+
+#==============================================================================
+#
+#  ██████╗  ██╗  ██╗  ██████╗     ███╗   ███╗   ██████╗   ███╗   ███╗ ████████╗
+#  ██╔══██╗ ██║ ██╔╝ ██╔════╝     ████╗ ████║  ██╔════╝   ████╗ ████║ ╚══██╔══╝
+#  ██████╔╝ █████╔╝  ██║  ███╗    ██╔████╔██║  ██║  ███╗  ██╔████╔██║    ██║
+#  ██╔═══╝  ██╔═██╗  ██║   ██║    ██║╚██╔╝██║  ██║   ██║  ██║╚██╔╝██║    ██║
+#  ██║      ██║  ██╗ ╚██████╔╝    ██║ ╚═╝ ██║  ╚██████╔╝  ██║ ╚═╝ ██║    ██║
+#  ╚═╝      ╚═╝  ╚═╝  ╚═════╝     ╚═╝     ╚═╝   ╚═════╝   ╚═╝     ╚═╝    ╚═╝
+#
+#==============================================================================
+#==== package info
+alias api="apt-cache show"
+
+# Apt-fast
+#=========================
+apf='sudo apt-fast'
+alias af="$apf"
+alias afu="$apf update"
+alias afg="$apf upgrade"
+alias afug="$apf update && $apf upgrade"
+alias afi="$apf install"
+alias afr="$apf remove"
+alias afrp="$apf remove --purge"
+alias afa="$apf autoremove"
+alias afc="$apf clean"
+alias affu="$apf full-upgrade"
+alias afl="apt-fast list"
+alias afs="apt-fast search"
+alias afshow="apt-fast show"
+
+
+# Pip packages
+#=========================
+alias pipistd="pip install -U numpy scipy sklearn matplotlib chainer gym \
+chainerrl sympy pip-autoremove ipython jupyter notebook \
+jupyter_contrib_nbextensions bs4 jrnl thefuck docutils rst2html5-tools \
+sphinx sphinx-rtd-theme johnnydep bidict art termdown cheat cookiecutter"
+
+alias pipupdate="pip list --outdated --format=freeze \
+| grep -v '^\-e' \
+| cut -d = -f 1  \
+| xargs -n1 pip install -U"
+
+#==============================================================================
+#
+#        █████╗   ██████╗  ██████╗
+#       ██╔══██╗  ██╔══██╗ ██╔══██╗
+#       ███████║  ██████╔╝ ██████╔╝
+#       ██╔══██║  ██╔═══╝  ██╔═══╝
+#       ██║  ██║  ██║      ██║
+#       ╚═╝  ╚═╝  ╚═╝      ╚═╝
+#
+#==============================================================================
+
+# zsh-marks
+# =======================
+alias g="jump"
+alias s="bookmark"
+alias d="deletemark"
+alias p="showmarks"
+
+
+# Ascii text print
+#=========================
+alias ascf="python -m art fonts"
+alias asc="python -m art text"
+
+# Misc apps
+#=========================
+#---- editors
+alias st="subl" # open file with sublime
+alias stt="subl ." # open dir with sublime
+
+#---- journal
+alias jrnl=" jrnl"
+
+
+# git
+#=========================
+alias gs="git status"
+alias gd="git diff"
+alias ga="git add"
+alias gau="git add -u"
+alias gaa="git add -A"
+alias gcm="git commit -m"
+alias gcam="git commit -a -m"
+alias gcampu="git commit -a -m $1 origin master"
+alias gcamd="git commit --amend --no-edit"
+alias gcn="git clone"
+alias gpull="git pull"
+alias gpush="git push"
+alias gsize="git rev-list --objects --all \
+| git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' \
+| sed -n 's/^blob //p' \
+| sort --numeric-sort --key=2 \
+| cut -c 1-12,41- \
+| numfmt --field=2 --to=iec-i --suffix=B --padding=7 --round=nearest"
