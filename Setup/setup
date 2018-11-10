@@ -499,6 +499,9 @@ arxivcheck
 arxivscraper
 arxiv
 pyarxiv
+pybtex-docutils
+arxiv_download
+arxiv2txt
 #-------
 
 #==============================
@@ -585,25 +588,33 @@ pip-licenses
 #==== Docs
 doc2dash
 pygments
-bibtexparser
 pandocfilters
 cairosvg
-betterbib
 numpydoc
 pypandoc
 cursive_re
+#---- Sphinx
+sphinx
+sphinx-rtd-theme
+sphinxcontrib-jupyter
+sphinxcontrib-websupport
+sphinxcontrib-bibtex # allows bibtex to be inserted into sphinx doc
+
+
+
 #---- linting
 flake8
 mccabe
 #---- RST
 docutils
-sphinx
-sphinx-rtd-theme
-sphinxcontrib-jupyter
 rst2html5-tools # *
 
 #---- Scrape/parse/Arxiv
 pybtex
+bibtexparser
+bibcure
+betterbib
+pybtex-docutils
 
 #---- Text
 textdistance[extras]
