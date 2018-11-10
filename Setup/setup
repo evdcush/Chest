@@ -514,6 +514,9 @@ github-trending-cli # View Github Trending and repository README from the comman
 github-traffic-stats2 # A project to pull and store traffic stats for GitHub projects using GitHub API
 github-traffic-stats  # Differe? Get statistics on web traffic to your GitHub repositories
 
+pybtex-docutils
+arxiv_download
+arxiv2txt
 #-------
 
 #==============================
@@ -600,25 +603,33 @@ pip-licenses
 #==== Docs
 doc2dash
 pygments
-bibtexparser
 pandocfilters
 cairosvg
-betterbib
 numpydoc
 pypandoc
 cursive_re
+#---- Sphinx
+sphinx
+sphinx-rtd-theme
+sphinxcontrib-jupyter
+sphinxcontrib-websupport
+sphinxcontrib-bibtex # allows bibtex to be inserted into sphinx doc
+
+
+
 #---- linting
 flake8
 mccabe
 #---- RST
 docutils
-sphinx
-sphinx-rtd-theme
-sphinxcontrib-jupyter
 rst2html5-tools # *
 
 #---- Scrape/parse/Arxiv
 pybtex
+bibtexparser
+bibcure
+betterbib
+pybtex-docutils
 
 #---- Text
 textdistance[extras]
