@@ -55,9 +55,10 @@ alias afs="apt-fast search"
 alias afshow="apt-fast show"
 
 
-# Pip packages
+# Python stuff
 #=========================
-alias pipistd="pip install -U numpy scipy sklearn matplotlib chainer gym \
+alias pipistd="pip install -U pip setuptools wheel && \
+pip install -U numpy scipy sklearn matplotlib chainer gym \
 chainerrl sympy pip-autoremove ipython jupyter notebook \
 jupyter_contrib_nbextensions bs4 jrnl thefuck docutils rst2html5-tools \
 sphinx sphinx-rtd-theme johnnydep bidict art termdown cheat cookiecutter"
@@ -66,6 +67,8 @@ alias pipupdate="pip list --outdated --format=freeze \
 | grep -v '^\-e' \
 | cut -d = -f 1  \
 | xargs -n1 pip install -U"
+
+alias pyenv-uninstall="pyenv uninstall $1 -y && rm .python-version"
 
 #==============================================================================
 #
