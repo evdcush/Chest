@@ -57,6 +57,8 @@ function extract() {
     fi
 }
 
+function gdiff () { diff -u $@ | colordiff | less -R; }
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Directory functions

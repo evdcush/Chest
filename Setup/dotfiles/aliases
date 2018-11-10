@@ -24,6 +24,9 @@ alias ldot="ls -d --group-directories-first .*"
 alias lk="ls -1FSshX --file-type"
 alias l="ls --group-directories-first -X"
 
+#==== replacements
+#alias diff="colordiff -u"
+
 #==============================================================================
 #
 #  ██████╗  ██╗  ██╗  ██████╗     ███╗   ███╗   ██████╗   ███╗   ███╗ ████████╗
