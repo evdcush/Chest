@@ -127,3 +127,10 @@ alias gsize="git rev-list --objects --all \
 | sort --numeric-sort --key=2 \
 | cut -c 1-12,41- \
 | numfmt --field=2 --to=iec-i --suffix=B --padding=7 --round=nearest"
+
+
+# git hoarding
+#=========================
+alias hurl="echo $1 >> $HOME/Projects/Hoarded/inbox.txt"
+alias hoard_now="python $HOME/Projects/Hoarded/clone_urls.py"
+

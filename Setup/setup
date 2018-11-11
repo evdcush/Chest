@@ -500,6 +500,8 @@ arxivscraper
 arxiv
 pyarxiv
 
+pampy  # pattern matching
+
 gitstars # django app to manage your stars
 starred
 

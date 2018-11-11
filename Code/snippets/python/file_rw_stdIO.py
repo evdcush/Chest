@@ -23,7 +23,7 @@ rst_files = []
 for file in glob.glob("*.rst"):
     rst_files.append(file)
 # Or simply:
-rst_files = [f for f in glob.glob("*.rst")]
+rst_files = [myfile for myfile in glob.glob("*.rst")]
 '''
 print(rst_files)
 # Now only files with .rst extension:
@@ -53,35 +53,49 @@ print(rst_files)
 lines = open('file.txt').read().split('\n')
 
 # OR
-with open('file.txt') as f:
-    lines = f.read().split("\n")
+with open('file.txt') as myfile:
+    lines = myfile.read().split("\n")
 
 # OR
-with open('file.txt', -r) as f:
-    lines = f.readlines()
+with open('file.txt', -r) as myfile:
+    lines = myfile.readlines()
 
 # OR
 lines = []
-with open('file.txt', -r) as f:
-    for line in f.readlines():
+with open('file.txt', -r) as myfile:
+    for line in myfile.readlines():
         lines.append(line)
 
 # OR
-f = open('file.txt') # Open file on read mode
-lines = f.read().split("\n") # Create a list containing all lines
-f.close() # Close file
+myfile = open('file.txt') # Open file on read mode
+lines = myfile.read().split("\n") # Create a list containing all lines
+myfile.close() # Close file
 
 
 # Write to a file
 #--------------------------
-f = open('file_to_write', 'x')
+myfile = open('file_to_write', 'x')
 for line in lines:
-    f.write(line + '\n')
-f.close()
+    myfile.write(line + '\n')
+myfile.close()
 
 # or
-with open('file_to_write', 'w') as f:
-    f.write('file contents')
+with open('file_to_write', 'w') as myfile:
+    myfile.write('file contents')
+
+# To append:
+with open('file_to_write', 'a') as myfile:
+    myfile.write("appended text")
+
+
+# Clear file
+#---------------
+# exploiting close()
+open('file_to_clear.txt', 'w').close()
+
+# If file already opened, eg with 'r+'
+myfile = open('file.txt', 'r+')
+myfile.truncate(0) # need '0' when using r+
 
 
 
