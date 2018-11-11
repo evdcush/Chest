@@ -361,3 +361,13 @@ print(f'{hw:>12}\n{w:>12}')
 #-------------------
 import datetime
 datetime.datetime.now().date()
+
+
+# Handy dict
+#------------------
+class AttrDict(dict):
+    # just a dict mutated/accessed by attribute instead index
+    # NB: not pickleable
+    __getattr__ = dict.__getitem__
+    __setattr__ = dict.__setitem__
+    __delattr__ = dict.__delitem__

@@ -1,33 +1,139 @@
 import os
-import getpass
-import shutil
-import sys
+import subprocess
 from argparse import ArgumentParser
 
-username = getpass.getuser() # returns $USER
 
-APPSDIR = '.apps'
-APPPATH = f'/home/{username}/{APPSDIR}/'
+#==============================================================================
+# Constants & Utils -
+#    pathing and formatting mostly
+#==============================================================================
 
-#nativefier "https://keep.google.com" -n google-keep -a x64 -p linux -i icons/google-keep-icon.png
-# nativefy https://keep.google.com google-keep
+# Utility classes
+#------------------
+class AttrDict(dict):
+    # just a dict mutated/accessed by attribute instead index
+    # NB: not pickleable
+    __getattr__ = dict.__getitem__
+    __setattr__ = dict.__setitem__
+    __delattr__ = dict.__delitem__
 
+
+# Constants
+#------------------
+PWD   = os.environ["PWD"] # default installation dir
+HOME  = os.environ["HOME"]
+LOCAL = f'{HOME}/.local'
+LOCAL_BIN  = f'{LOCAL}/bin'
+LOCAL_APPS = f'{LOCAL}/share/applications'
+DEFAULT_ARGS = '--file-download-options \'{"saveAs": true}\' -m'
+
+DESKTOP_ENTRY = f"""
+[Desktop Entry]
+Name={{title}}
+Comment=Nativefied {{name}}
+Exec={LOCAL_BIN}/{{name}}
+Terminal=false
+Type=Application
+Icon={{path}}/{{name}}/resources/app/icon.png
+Categories=Network;
+"""
+#==============================================================================
+# Argparser -
+#    supports subset of nativefier flags
+#==============================================================================
+
+# Argparser
+#------------------
 P = ArgumentParser()
 adg = P.add_argument
-adg('url', type=str)
-adg('-n','--name', type=str, required=True)
-adg('-i', '--icon', type=str)
-adg('-t', '--tray', function='store_true')
-adg('--single', function='store_true')
+#==== parser args
+adg('url', type=str,
+    help='url of target webapp')
+
+adg('-n','--name', type=str, required=True,
+    help='name of the app; determines directory name as well as binary')
+
+adg('-i', '--icon', type=str,
+    help='.png icon for app')
+
+adg('-p', '--path', type=str, default=PWD,
+    help='full-path to installation directory, (default = pwd)')
+
+adg('-a', '--auth', type=str, nargs=2,
+    help=('<auth user-name> <auth user-password>; ',
+        'WARNING: cleartext password will be logged by your shell history'))
+
+adg('-u', '--user-agent', type=str,
+    help='user-agent; defaults to chrome-browser')
+
+adg('--internal-urls', type=int,
+    help="apparently regex? I used int before and that worked") # nativefier ex: --internal-urls ".*?\.google\.*?" (but I just use num?)
+
+adg('-t', '--tray', function='store_true',
+    help='whether the app remains in tray when closed')
+
+adg('--single', function='store_true',
+    help='only allow single instance of app')
+
+adg('--counter', function='store_true',
+    help='X number attached to window label for apps that support count, such as gmail')
+
+# Parse user args
+#----------------
+args = AttrDict(P.parse_args())
 
 
-DEFAULT_ARGS = '-a x64 -p linux --honest -m'
-#--honest -m -i ./Icons/HackerRank_logo.png
-#
+#==============================================================================
+# Nativefy -
+#    build nativefied app, app desktop entry, and symlink binary
+#==============================================================================
 
-# nativefier "https://www.hackerrank.com/dashboard" -n hacker-rank -a x64 -p linux --title-bar-style hidden --honest -m -i ./Icons/HackerRank_logo.png
+# Nativefy
+#---------------
+def nativefy(opts):
+    """ function that calls nativefier
+    - cd to desired app path if different from current
+    - call nativefier
+
+    Params
+    ------
+    opts : AttrDict
+        the parsed args, contains all relevant nativefier flags
+    """
+    pass
 
 
+def make_desktop_entry(name, app_path):
+    app_title = name.title()
+    file_name = f'{name}.desktop'
+    de = DESKTOP_ENTRY.format(title=app_title, name=name, path=app_path)
+    with open(f'{LOCAL_APPS}/{file_name}', 'w') as entry:
+        entry.write(de)
+        print(f'\n{file_name} written to {LOCAL_APPS}')
+
+
+def symlink_binary(from_path, to_path=LOCAL_BIN):
+    subprocess.run(f'ln -s {from_path} {to_path}', shell=True)
+    print(f'\nsymlinked binary -\nFROM: {from_path}\n  TO: {to_path}')
+
+
+def make_binary_exec(bin_file_path):
+    subprocess.run(f'chmod +x {bin_file_path}', shell=True)
+    print('\nMade binary executable')
+
+
+
+
+
+
+
+
+
+
+
+
+
+# REFERNCE GIST
 def getapp():
     os.system('clear')
 
@@ -80,4 +186,3 @@ def getapp():
     os.system('echo "'+alias+'">>~/.bash_aliases')
     os.system('source ~/.bash_aliases')
     os.system('source ~/.bashrc')
-getapp()
