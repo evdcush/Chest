@@ -623,8 +623,6 @@ sphinxcontrib-jupyter
 sphinxcontrib-websupport
 sphinxcontrib-bibtex # allows bibtex to be inserted into sphinx doc
 
-
-
 #---- linting
 flake8
 mccabe
@@ -672,8 +670,9 @@ pelican
 grip
 #
 #==== git utils
+gitup # $$$$$ manage multiple git repos
 #pygithub   # not in use
-#github3.py # not in use
+github3.py # not in use
 #
 #==== Maybe interesting?
 rebound-cli

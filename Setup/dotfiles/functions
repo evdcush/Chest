@@ -10,8 +10,9 @@ dw(){
 
 #==== write line to look n2 log
 n2(){
-    N2_FPATH="$HOME/Documents/n2.log"
-    echo "$1" >> "$N2_FPATH"
+    N2_FPATH="$HOME/Documents/n2.md"
+    #echo " * $1" >> "$N2_FPATH"
+    echo " * $@" >> "$N2_FPATH"
 }
 
 

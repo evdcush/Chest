@@ -64,7 +64,8 @@ alias pipistd="pip install -U pip setuptools wheel && \
 pip install -U numpy scipy sklearn matplotlib chainer gym \
 chainerrl sympy pip-autoremove ipython jupyter notebook \
 jupyter_contrib_nbextensions bs4 jrnl thefuck docutils rst2html5-tools \
-sphinx sphinx-rtd-theme johnnydep bidict art termdown cheat cookiecutter"
+sphinx sphinx-rtd-theme johnnydep bidict art termdown cheat cookiecutter \
+gitup archivenow"
 
 alias pipupdate="pip list --outdated --format=freeze \
 | grep -v '^\-e' \
