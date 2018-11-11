@@ -95,13 +95,18 @@ arp printer-driver-splix printer-driver-sag-gdi printer-driver-pxljr printer-dri
 # Fonts
 #-----------------------------
 # - I like to keep my font directory clean: only the fonts I want
-# - The default font set includes font sets for seemingly every language
-#   on the planet, and it becomes difficult to find the fonts YOU want
-#   and YOU installed.
 
-#===== Purge unwanted and non-English fonts (almost entirely south-Asian btw)
-#  Note: this is the COMPLETE LIST
-arp fonts-tlwg* fonts-thai* fonts-liberation* fonts-smc* fonts-liberation2* fonts-kacst* fonts-samyak* fonts-lao* fonts-deva* fonts-gujr* fonts-knda* fonts-guru* fonts-navilu* fonts-orya* fonts-beng* fonts-freefont* fonts-khmeros* fonts-mlym* fonts-lklug* fonts-sil* fonts-taml* fonts-sahadeva* fonts-sarai* fonts-lohit* fonts-symbola* fonts-gubbi* fonts-nakula* fonts-telu* fonts-tibetan* fonts-opensymbol* fonts-kalapi* fonts-indic* fonts-gargi* fonts-pagul*
+#===== Purge unwanted and non-English fonts (almost entirely south-Asian)
+#  Note:
+#    - this is the COMPLETE LIST
+#    - you will get tofu sometimes
+arp fonts-tlwg* fonts-thai* fonts-liberation* fonts-smc* fonts-liberation2* fonts-kacst* fonts-samyak* fonts-lao* fonts-deva* fonts-gujr* fonts-knda* fonts-guru* fonts-navilu* fonts-orya* fonts-beng* fonts-khmeros* fonts-mlym* fonts-lklug* fonts-sil* fonts-taml* fonts-sahadeva* fonts-sarai* fonts-lohit* fonts-gubbi* fonts-nakula* fonts-telu* fonts-tibetan* fonts-kalapi* fonts-indic* fonts-gargi* fonts-pagul*
+
+# Desired fonts that may get removed or scheduled for autoremove
+afi fonts-opensymbol
+afi fonts-symbola
+afi fonts-sil-gentiumplus
+afi fonts-freefont-ttf
 
 #===== Noto is nice, but it also has about 50 extra languages
 #  Instead, I download Noto from source, remove the extra langs from the .db
@@ -269,6 +274,7 @@ libqt5widgets5
 libqt5x11extras5-dev
 libreadline-dev
 librsvg2-bin
+libre2-dev
 libsqlite3-dev
 libssl-dev
 libxcb-keysyms1-dev
@@ -645,6 +651,7 @@ cheat
 maybe  # *
 howdoi
 glances
+archivenow # archives urls (WARC, all the archiving sites)
 #
 #===== Misc
 starred
@@ -792,6 +799,11 @@ python manage.py runserver 127.0.0.1:8000
 #**Note:** replace localhost address with local ip address of your server
 #          to access web-interface from anywhere on the local network
 
+# grab-site
+#=============
+sudo apt update
+sudo apt install --no-install-recommends git build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libffi-dev libxml2-dev libxslt1-dev libre2-dev pkg-config
+pip install --process-dependency-links --no-binary --upgrade git+https://github.com/ludios/grab-site
 
 # Chromium extensions
 #====================
