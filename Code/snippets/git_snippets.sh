@@ -123,6 +123,10 @@ git push origin :<tag-name>
 git tag -d <tag-name>
 git push origin :refs/tags/<tag-name>
 
+#==== Delete all local untracked files in repo
+git clean -n # to see what will be deleted
+git clean -f # to delete
+
 
 ###############################################################################
 #  _____    ______   __  __    ____    _______   ______
