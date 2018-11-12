@@ -455,6 +455,14 @@ wmctrl
 #------------------------------------------------------------------------------
 #                              PPAs/debs/ubuntu rdy
 #------------------------------------------------------------------------------
+
+
+# git
+# ===============
+addrep it-core/ppa
+$afug
+# $afi git (in case afug doesnt wokr)
+
 # Super productivity
 # ===============
 echo "deb https://dl.bintray.com/johannesjo/super-productivity stable super-productivity" | tee -a /etc/apt/sources.list

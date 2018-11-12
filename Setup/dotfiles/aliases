@@ -37,8 +37,9 @@ alias l="ls --group-directories-first -X"
 #  ╚═╝      ╚═╝  ╚═╝  ╚═════╝     ╚═╝     ╚═╝   ╚═════╝   ╚═╝     ╚═╝    ╚═╝
 #
 #==============================================================================
-#==== package info
+#==== package stuff
 alias api="apt-cache show"
+alias dpkgi="sudo dpkg -i "
 
 # Apt-fast
 #=========================
@@ -65,7 +66,22 @@ pip install -U numpy scipy sklearn matplotlib chainer gym \
 chainerrl sympy pip-autoremove ipython jupyter notebook \
 jupyter_contrib_nbextensions bs4 jrnl thefuck docutils rst2html5-tools \
 sphinx sphinx-rtd-theme johnnydep bidict art termdown cheat cookiecutter \
-gitup archivenow"
+gitup archivenow pypi-cli arxiv"
+
+alias pipibare="pip install -U pip setuptools wheel && pip install -U \
+numpy scipy sklearn ipython pip-autoremove"
+
+alias pipigpu="$pipistd && pip install -U pycuda cupy"
+
+# For all things related to text and documentation
+alias pipidocs="$pipistd && pip install -U \
+
+"
+
+# ALL PACKAGES, not recommended due to dependency conflicts
+alias pipifull="$pipistd && pip install -U \
+"
+
 
 alias pipupdate="pip list --outdated --format=freeze \
 | grep -v '^\-e' \
