@@ -114,6 +114,9 @@ alias stt="subl ." # open dir with sublime
 #---- journal
 alias jrnl=" jrnl"
 
+#---- rst
+alias r2h="rst2html5 $1 > sample.html"
+
 
 # git
 # ===

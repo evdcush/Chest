@@ -30,3 +30,4 @@ https://github.com/BachiLi/redner
 https://github.com/basveeling/pcam
 https://github.com/sepandhaghighi/pycm
 https://github.com/Kolkir/mlcpp
+https://github.com/thombashi/pytablewriter

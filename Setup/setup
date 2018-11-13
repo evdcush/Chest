@@ -638,7 +638,6 @@ flake8
 mccabe
 #---- RST
 docutils
-rst2html5-tools # *
 
 #---- Scrape/parse/Arxiv
 pybtex
