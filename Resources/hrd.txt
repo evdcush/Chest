@@ -25,3 +25,8 @@ https://github.com/ANNetGPGPU/ANNetGPGPU
 https://github.com/tiny-dnn/tiny-dnn
 https://github.com/tkarras/progressive_growing_of_gans
 https://github.com/dmlc/minerva
+https://github.com/nasa/openmct
+https://github.com/BachiLi/redner
+https://github.com/basveeling/pcam
+https://github.com/sepandhaghighi/pycm
+https://github.com/Kolkir/mlcpp
