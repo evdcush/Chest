@@ -1,6 +1,3 @@
-
-
-
 #==============================================================================
 #
 #        ███████╗  ██╗  ██╗  ███████╗  ██╗      ██╗
@@ -25,7 +22,7 @@ alias lk="ls -1FSshX --file-type"
 alias l="ls --group-directories-first -X"
 
 #==== replacements
-#alias diff="colordiff -u"
+#alias diff="colordiff -u" # SEE functions.gdiff
 
 #==============================================================================
 #
@@ -74,14 +71,7 @@ numpy scipy sklearn ipython pip-autoremove"
 alias pipigpu="$pipistd && pip install -U pycuda cupy"
 
 # For all things related to text and documentation
-alias pipidocs="$pipistd && pip install -U \
-
-"
-
-# ALL PACKAGES, not recommended due to dependency conflicts
-alias pipifull="$pipistd && pip install -U \
-"
-
+#alias pipidocs="$pipistd && pip install -U "
 
 alias pipupdate="pip list --outdated --format=freeze \
 | grep -v '^\-e' \
@@ -89,6 +79,7 @@ alias pipupdate="pip list --outdated --format=freeze \
 | xargs -n1 pip install -U"
 
 alias pyenv-uninstall="pyenv uninstall $1 -y && rm .python-version"
+
 
 #==============================================================================
 #
@@ -102,7 +93,7 @@ alias pyenv-uninstall="pyenv uninstall $1 -y && rm .python-version"
 #==============================================================================
 
 # zsh-marks
-# =======================
+# =========
 alias g="jump"
 alias s="bookmark"
 alias d="deletemark"
@@ -110,12 +101,12 @@ alias p="showmarks"
 
 
 # Ascii text print
-#=========================
+# ================
 alias ascf="python -m art fonts"
 alias asc="python -m art text"
 
 # Misc apps
-#=========================
+# =========
 #---- editors
 alias st="subl" # open file with sublime
 alias stt="subl ." # open dir with sublime
@@ -125,9 +116,9 @@ alias jrnl=" jrnl"
 
 
 # git
-#=========================
+# ===
 alias gs="git status"
-alias gd="git diff"
+alias gd="git diff --compact-summary --ignore-all-space --minimal"
 alias ga="git add"
 alias gau="git add -u"
 alias gaa="git add -A"
@@ -148,7 +139,13 @@ alias gsize="git rev-list --objects --all \
 
 
 # git hoarding
-#=========================
-alias hurl="echo $1 >> $HOME/Projects/Hoarded/inbox.txt"
+# ============
+alias hurl="echo $1 >> $HOME/Chest/Resources/hrd.txt" # symlinked to /Hoarded
 alias hoard_now="python $HOME/Projects/Hoarded/clone_urls.py"
 
+# PaperNotes
+# ==========
+alias ibx="echo $1 >> $HOME/Chest/Resources/inbox.txt" # symlinked to PaperNotes
+alias readnow="cd ~/Projects/ReadingNotes \
+&&
+"

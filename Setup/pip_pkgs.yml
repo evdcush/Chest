@@ -1,0 +1,186 @@
+#----- SORT THESE:
+bibcure
+scihub2pdf
+arxivcheck
+arxivscraper
+arxiv
+pyarxiv
+
+pampy  # pattern matching
+
+gitstars # django app to manage your stars
+starred
+
+github-backup   # backup repos from user or organization
+github-sync     # download /pull from all your git repos
+github-trending # trending repos and users on github
+clone-github    # clone github repos in bulk
+replicate-github # tool for maintaining mirrors of github repos
+github-trending-cli # View Github Trending and repository README from the command line
+
+
+github-traffic-stats2 # A project to pull and store traffic stats for GitHub projects using GitHub API
+github-traffic-stats  # Differe? Get statistics on web traffic to your GitHub repositories
+
+pybtex-docutils
+arxiv_download
+arxiv2txt
+#-------
+
+#==============================
+# Standard install for new venv
+#==============================
+
+
+essentials : placeholder
+
+essentials:
+- numpy
+- scipy
+- sklearn
+- matplotlib
+- chainer
+- ipython
+- jupyter
+- notebook
+
+science-math:
+- autograd
+- sympy
+- scikit-video
+- pydataset
+- primesieve
+
+AI-frameworks:
+- gym
+- chainerrl
+- neupy
+#
+#==== TF dependencies
+keras
+keras-applications
+keras-preprocessing
+protobuf
+#
+#==== Starcraft
+s2clientprotocol
+pysc2
+sc2
+scbw
+#
+#==== Notebook
+ipython
+jupyter
+notebook
+jupyterthemes
+jupyter-contrib-nbextensions
+#
+#==== Apps
+retext
+buku
+jrnl
+#
+#==== Enhancements/lib
+bidict
+python-box
+
+#
+#==== Dev/dep
+apt-select
+bs4
+black # only for other peep's gross code; MIND YOUR LINE WIDTHS PEEPL, < 80!
+binarytree
+cookiecutter
+h5py
+hickle
+html5lib
+pyqt5
+pillow
+cookiecutter
+nose
+pygame
+pycurl
+pyviz
+coverage
+#
+#==== Pip/python package related
+pypi-cli
+pip-autoremove
+vermin
+pydeps
+pipdeptree
+johnnydep
+pip-licenses
+#
+#==== Docs
+doc2dash
+pygments
+pandocfilters
+cairosvg
+numpydoc
+pypandoc
+cursive_re
+#---- Sphinx
+sphinx
+sphinx-rtd-theme
+sphinxcontrib-jupyter
+sphinxcontrib-websupport
+sphinxcontrib-bibtex # allows bibtex to be inserted into sphinx doc
+
+#---- linting
+flake8
+mccabe
+#---- RST
+docutils
+rst2html5-tools # *
+
+#---- Scrape/parse/Arxiv
+pybtex
+bibtexparser
+bibcure
+betterbib
+pybtex-docutils
+
+#---- Text
+textdistance[extras]
+
+#
+#==== CLI/Shell
+docopt
+click
+thefuck
+cheat
+maybe  # *
+howdoi
+glances
+archivenow # archives urls (WARC, all the archiving sites)
+#
+#===== Misc
+starred
+oh-my-stars
+termdown
+# rstwatch # rst2html better
+rstdiary
+#
+#==== ascii
+pyfiglet
+toilet
+art
+#
+#==== Unknown
+gitsuggest
+pelican
+# weasyprint # kind of bad, never gotten good render
+grip
+#
+#==== git utils
+gitup # $$$$$ manage multiple git repos
+#pygithub   # not in use
+github3.py # not in use
+#
+#==== Maybe interesting?
+rebound-cli
+astrodash # spectral convolutions deep learning supernovae
+pipsalabim  # guesses your dependencies, no need for req file
+dbcollection # collection of popular ML datasets
+

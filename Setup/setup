@@ -157,7 +157,7 @@ apf='sudo apt-fast'
 alias af="$apf"
 alias afu="$apf update"
 alias afg="$apf upgrade"
-alias afug="$apf update && $apf upgrade"
+alias afug="$apf update && $apf upgrade -y"
 alias affu="$apf full-upgrade"
 alias afi="$apf install"
 #==== purge shit
@@ -391,6 +391,8 @@ shiori
 flameshot
 ghostwriter
 mendeley
+git-hoard
+
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -815,25 +817,34 @@ pip install --process-dependency-links --no-binary --upgrade git+https://github.
 # Chromium extensions
 #====================
 "Joplin Web Clipper"
+"Gibbon Tabs"
 "uBlock Origin"
 "py3redirect"
 "Archiveror"
+"Copy All Urls"
+"Old Reddit Redirect"
 "Dark Reader"
-"WikiMapper"
+"Sight"
+"Like on GitHub"
+"HTTPS Everywhere"
+"Math Anywhere"
 "Close Tabs to the Left"
-"Black Menu for Wikipedia"
 "Refined GitHub"
 "Lovely forks"
 "Arc Dark"
-"Github Original Streak"
+"rikaikun"
 "View Image"
 "Wide Github"
+"WARCreate"
+"uBlock Origin Extra"
+"Privacy Badger"
+"WikiMapper"
+"Black Menu for Wikipedia"
+"Github Original Streak"
 "Awesome Stars"
 "Redirectify"
 "Tab Ahead"
 "Wikipedia Reading Lists"
-"uBlock Origin Extra"
-"Privacy Badger"
 "Better Bookmark"
 
 # Openssh (local) server

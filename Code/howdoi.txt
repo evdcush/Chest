@@ -5,24 +5,25 @@
 ############ PDF
 tldr: convert to html, then wkhtmltopdf   (1-step converters kind of suck)
 
-# .ipynb ----> pdf?
+>? convert .ipynb ----> pdf?
 #=======================
 # cleanest I've found:
 jupyter nbconvert --to html my_notebook.ipynb
 wktmltopdf my_notebook.html my_notebook.pdf
 
 
-# .rst ----> pdf?
+>? convert .rst ----> pdf?
 #=======================
 # pip install rst2html5-tools
 rst2html5 README.rst > README.html
 wkhtmltopdf README.html README.pdf
 
+
 #-----------------------------------------------------------------------------
 #   Installation
 #-----------------------------------------------------------------------------
 
-# Install py package from source
+>? Install py package from source?
 #=======================
 python setup.py install --prefix=/home/$USER/.local/bin
 
@@ -31,7 +32,17 @@ python setup.py install --prefix=/home/$USER/.local/bin
 #   REMOTE, ssh etc
 #-----------------------------------------------------------------------------
 
-# How to mount a remote dir to local machine?
+>? How to mount a remote dir to local machine?
 #=======================
 #----> sshfs
-# sshfs name@server:/path/to/folder /path/to/mount/point
+sshfs name@server:/path/to/folder /path/to/mount/point
+
+
+
+#-----------------------------------------------------------------------------
+# Chrome / web / extensions
+#-----------------------------------------------------------------------------
+
+>? How to see all installed extensions in Chrome?
+#=======================
+chrome://system
