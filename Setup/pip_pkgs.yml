@@ -1,38 +1,5 @@
-#----- SORT THESE:
-bibcure
-scihub2pdf
-arxivcheck
-arxivscraper
-arxiv
-pyarxiv
+INBOX:
 
-pampy  # pattern matching
-
-gitstars # django app to manage your stars
-starred
-
-github-backup   # backup repos from user or organization
-github-sync     # download /pull from all your git repos
-github-trending # trending repos and users on github
-clone-github    # clone github repos in bulk
-replicate-github # tool for maintaining mirrors of github repos
-github-trending-cli # View Github Trending and repository README from the command line
-
-
-github-traffic-stats2 # A project to pull and store traffic stats for GitHub projects using GitHub API
-github-traffic-stats  # Differe? Get statistics on web traffic to your GitHub repositories
-
-pybtex-docutils
-arxiv_download
-arxiv2txt
-#-------
-
-#==============================
-# Standard install for new venv
-#==============================
-
-
-essentials : placeholder
 
 essentials:
 - numpy
@@ -49,140 +16,146 @@ science-math:
 - sympy
 - scikit-video
 - pydataset
-- primesieve
+#- primesieve # always freezes install
+
+GPU:
+- pycuda
+- cupy
 
 AI-frameworks:
 - gym
 - chainerrl
 - neupy
 #
-#==== TF dependencies
-keras
-keras-applications
-keras-preprocessing
-protobuf
+
+TF-dependencies:
+- keras
+- keras-applications
+- keras-preprocessing
+- protobuf
 #
 #==== Starcraft
-s2clientprotocol
-pysc2
-sc2
-scbw
+starcraft:
+- s2clientprotocol
+- pysc2
+- sc2
+- scbw
 #
 #==== Notebook
-ipython
-jupyter
-notebook
-jupyterthemes
-jupyter-contrib-nbextensions
-jupyter_nbextensions_configurator
+notebook:
+- ipython
+- jupyter
+- notebook
+- jupyterthemes
+- jupyter-contrib-nbextensions
+- jupyter_nbextensions_configurator
 # Then activate: $ jupyter nbextensions_configurator enable --user
-#
-#==== Apps
-retext
-buku
-jrnl
-#
-#==== Enhancements/lib
-bidict
-python-box
 
-#
-#==== Dev/dep
-apt-select
-bs4
-black # only for other peep's gross code; MIND YOUR LINE WIDTHS PEEPL, < 80!
-binarytree
-cookiecutter
-h5py
-hickle
-html5lib
-pyqt5
-pillow
-cookiecutter
-nose
-pygame
-pycurl
-pyviz
-coverage
-#
-#==== Pip/python package related
-pypi-cli
-pip-autoremove
-vermin
-pydeps
-pipdeptree
-johnnydep
-pip-licenses
-#
-#==== Docs
-doc2dash
-pygments
-pandocfilters
-cairosvg
-numpydoc
-pypandoc
-cursive_re
-#---- Sphinx
-sphinx
-sphinx-rtd-theme
-sphinxcontrib-jupyter
-sphinxcontrib-websupport
-sphinxcontrib-bibtex # allows bibtex to be inserted into sphinx doc
+apps:
+- retext
+- buku
+- jrnl
+- termdown
 
-#---- linting
-flake8
-mccabe
-#---- RST
-docutils
-rst2html5-tools # *
+lib-enhancements:
+- bidict
+- python-box
+- pygame
 
-#---- Scrape/parse/Arxiv
-pybtex
-bibtexparser
-bibcure
-betterbib
-pybtex-docutils
+dev:
+- cookiecutter
 
-#---- Text
-textdistance[extras]
+deps-utils:
+- apt-select
+- bs4
+- black
+- binarytree
+- h5py
+- hickle
+- html5lib
+- pyqt5
+- pillow
+- nose
+- pycurl
+- coverage
+- pygments
+- flake8
+#
+pypi-python:
+- pypi-cli
+- pip-autoremove
+- vermin
+- pydeps
+- pipdeptree
+- johnnydep
 
-#
-#==== CLI/Shell
-docopt
-click
-thefuck
-cheat
-maybe  # *
-howdoi
-glances
-archivenow # archives urls (WARC, all the archiving sites)
-#
-#===== Misc
-starred
-oh-my-stars
-termdown
-# rstwatch # rst2html better
-rstdiary
-#
-#==== ascii
-pyfiglet
-toilet
-art
-#
-#==== Unknown
-gitsuggest
-pelican
-# weasyprint # kind of bad, never gotten good render
-grip
-#
-#==== git utils
-gitup # $$$$$ manage multiple git repos
-#pygithub   # not in use
-github3.py # not in use
-#
-#==== Maybe interesting?
-rebound-cli
-astrodash # spectral convolutions deep learning supernovae
-pipsalabim  # guesses your dependencies, no need for req file
-dbcollection # collection of popular ML datasets
+
+# DOCUMENTATION & TEXT PACKAGES
+docs-text:
+- docutils
+- doc2dash # making zeal datasets
+- numpydoc # sphinx extension for numpydoc support
+- pypandoc
+- textdistance[extras]
+- rstwatch
+- rstdiary
+
+sphinx:
+- sphinx
+- sphinx-rtd-theme
+- sphinxcontrib-jupyter
+- sphinxcontrib-websupport
+- sphinxcontrib-bibtex # allows bibtex to be inserted into sphinx doc
+- pelican
+
+reading:
+- pybtex
+- bibtexparser
+- bibcure
+- betterbib
+- pybtex-docutils
+- bibcure
+- scihub2pdf
+- arxivcheck
+- arxivscraper
+- arxiv # main python source for arxiv.py API
+- arxiv_download
+- arxiv2txt  # SCRIPT not pypi?
+
+CLI-shell:
+- docopt
+- click
+- thefuck
+- cheat
+- maybe
+- glances # better top/htop
+- archivenow # archives urls (WARC, all the archiving sites)
+
+git-github:
+- gitup # $$$$$ manage multiple git repos
+- github3.py
+- starred
+- oh-my-stars
+- gitsuggest # ***
+- grip # preview md rendering on github before publishing
+- gitstars # django app to manage your stars
+- starred
+- github-backup   # backup repos from user or organization
+- github-sync     # download /pull from all your git repos
+- github-trending # trending repos and users on github
+- clone-github    # clone github repos in bulk
+- replicate-github # tool for maintaining mirrors of github repos
+- github-trending-cli # View Github Trending and repository README from the command line
+
+ascii-art:
+- pyfiglet
+- toilet
+- art
+
+UNDETERMINED:
+- rebound-cli
+- pyviz
+- astrodash # spectral convolutions deep learning supernovae
+- pipsalabim  # guesses your dependencies, no need for req file
+- dbcollection # collection of popular ML datasets
 

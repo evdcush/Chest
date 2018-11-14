@@ -1,4 +1,3 @@
-
 # Available user docsets
 http://sanfrancisco.kapeli.com/feeds/zzz/user_contributed/build/index.json
 
@@ -7,17 +6,18 @@ http://sanfrancisco.kapeli.com/feeds/zzz/user_contributed/build/<key name inside
 
 
 
-# URLS:
+# Docset URLS
+#==== CUDA
 http://sanfrancisco.kapeli.com/feeds/zzz/user_contributed/build/CUDA/CUDA.tgz
 
+#==== SymPy
 http://sanfrancisco.kapeli.com/feeds/zzz/user_contributed/build/SymPy/SymPy.tgz
 
-
+#==== Linux man
 http://sanfrancisco.kapeli.com/feeds/zzz/user_contributed/build/Linux_Man_Pages/Linux_Man_Pages.tgz
 
-
+#==== PyTorch
 http://sanfrancisco.kapeli.com/feeds/zzz/user_contributed/build/PyTorch/PyTorch.tgz
 
+#==== Sphinx
 http://sanfrancisco.kapeli.com/feeds/zzz/user_contributed/build/Sphinx/Sphinx.tgz
-
-http://sanfrancisco.kapeli.com/feeds/zzz/user_contributed/build/tldr/tldr_pages.tgz
