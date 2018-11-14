@@ -11,6 +11,7 @@ essentials:
 - jupyter
 - notebook
 
+
 science-math:
 - autograd
 - sympy
@@ -18,30 +19,33 @@ science-math:
 - pydataset
 #- primesieve # always freezes install
 
+
 GPU:
 - pycuda
 - cupy
+
 
 AI-frameworks:
 - gym
 - chainerrl
 - neupy
-#
+
 
 TF-dependencies:
 - keras
 - keras-applications
 - keras-preprocessing
 - protobuf
-#
-#==== Starcraft
-starcraft:
+
+
+starcraft-games:
 - s2clientprotocol
 - pysc2
 - sc2
 - scbw
-#
-#==== Notebook
+- pygame
+
+
 notebook:
 - ipython
 - jupyter
@@ -51,43 +55,49 @@ notebook:
 - jupyter_nbextensions_configurator
 # Then activate: $ jupyter nbextensions_configurator enable --user
 
+
 apps:
 - retext
 - buku
 - jrnl
 - termdown
+- apt-select
+
 
 lib-enhancements:
 - bidict
 - python-box
-- pygame
+
 
 dev:
 - cookiecutter
+- nose
+- flake8
+- coverage
+- black
+
+
+net:
+- html5lib
+- bs4
 
 deps-utils:
-- apt-select
-- bs4
-- black
 - binarytree
 - h5py
 - hickle
-- html5lib
 - pyqt5
 - pillow
-- nose
 - pycurl
-- coverage
 - pygments
-- flake8
-#
-pypi-python:
-- pypi-cli
-- pip-autoremove
 - vermin
 - pydeps
 - pipdeptree
 - johnnydep
+
+
+pypi-python:
+- pypi-cli
+- pip-autoremove
 
 
 # DOCUMENTATION & TEXT PACKAGES
@@ -100,6 +110,7 @@ docs-text:
 - rstwatch
 - rstdiary
 
+
 sphinx:
 - sphinx
 - sphinx-rtd-theme
@@ -107,6 +118,7 @@ sphinx:
 - sphinxcontrib-websupport
 - sphinxcontrib-bibtex # allows bibtex to be inserted into sphinx doc
 - pelican
+
 
 reading:
 - pybtex
@@ -122,6 +134,7 @@ reading:
 - arxiv_download
 - arxiv2txt  # SCRIPT not pypi?
 
+
 CLI-shell:
 - docopt
 - click
@@ -130,6 +143,7 @@ CLI-shell:
 - maybe
 - glances # better top/htop
 - archivenow # archives urls (WARC, all the archiving sites)
+
 
 git-github:
 - gitup # $$$$$ manage multiple git repos
@@ -147,10 +161,11 @@ git-github:
 - replicate-github # tool for maintaining mirrors of github repos
 - github-trending-cli # View Github Trending and repository README from the command line
 
+
 ascii-art:
 - pyfiglet
-- toilet
 - art
+
 
 UNDETERMINED:
 - rebound-cli
@@ -158,4 +173,3 @@ UNDETERMINED:
 - astrodash # spectral convolutions deep learning supernovae
 - pipsalabim  # guesses your dependencies, no need for req file
 - dbcollection # collection of popular ML datasets
-
