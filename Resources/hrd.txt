@@ -31,3 +31,9 @@ https://github.com/basveeling/pcam
 https://github.com/sepandhaghighi/pycm
 https://github.com/Kolkir/mlcpp
 https://github.com/thombashi/pytablewriter
+https://github.com/earwig/git-repo-updater
+https://github.com/erikbern/git-of-theseus
+https://github.com/tensorspace-team/tensorspace
+https://github.com/google/uis-rnn
+https://github.com/sebastianruder/NLP-progress
+https://github.com/soimort/you-get

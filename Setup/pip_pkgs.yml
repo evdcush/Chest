@@ -74,6 +74,8 @@ jupyter
 notebook
 jupyterthemes
 jupyter-contrib-nbextensions
+jupyter_nbextensions_configurator
+# Then activate: $ jupyter nbextensions_configurator enable --user
 #
 #==== Apps
 retext
