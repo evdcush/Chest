@@ -37,3 +37,10 @@ https://github.com/tensorspace-team/tensorspace
 https://github.com/google/uis-rnn
 https://github.com/sebastianruder/NLP-progress
 https://github.com/soimort/you-get
+https://github.com/mxgmn/WaveFunctionCollapse
+https://github.com/marian42/wavefunctioncollapse
+https://github.com/lukasz-madon/awesome-remote-job
+https://github.com/ydlan/ML-OpenSource-Projects
+https://github.com/Kamik423/cutie
+https://github.com/SummitKwan/transparent_latent_gan
+https://bitbucket.org/ned/cog

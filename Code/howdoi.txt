@@ -14,8 +14,8 @@ wktmltopdf my_notebook.html my_notebook.pdf
 
 >? convert .rst ----> pdf?
 #=======================
-# pip install rst2html5-tools
-rst2html5 README.rst > README.html
+# From docutils rst2*
+rst2html README.rst > README.html
 wkhtmltopdf README.html README.pdf
 
 
@@ -26,6 +26,11 @@ wkhtmltopdf README.html README.pdf
 >? Install py package from source?
 #=======================
 python setup.py install --prefix=/home/$USER/.local/bin
+
+
+>? Install apt package without recommended/suggested?
+#=======================
+sudo apt --no-install-recommends --no-install-suggests install MY_PACKAGE
 
 
 #-----------------------------------------------------------------------------
