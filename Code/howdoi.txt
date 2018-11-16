@@ -51,3 +51,13 @@ sshfs name@server:/path/to/folder /path/to/mount/point
 >? How to see all installed extensions in Chrome?
 #=======================
 chrome://system
+
+
+
+#-----------------------------------------------------------------------------
+# System packages
+#-----------------------------------------------------------------------------
+
+>? Check what dependees a package has?
+#========================
+apt-cache rdepends packagename

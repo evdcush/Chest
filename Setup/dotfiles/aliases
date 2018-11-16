@@ -118,7 +118,7 @@ alias stt="subl ." # open  dir with sublime
 alias jrnl=" jrnl"
 
 #---- rst
-alias r2h="rst2html $1 > sample.T.html"
+alias r2h="rst2html $1 > sample.T.html && chromium-browser sample.T.html"
 
 #---- cookiecutter proj
 alias new_proj="cookiecutter \
@@ -155,7 +155,7 @@ alias hoard_now="python $HOME/Projects/Hoarded/clone_urls.py"
 
 # PaperNotes
 # ==========
-alias ibx="echo $1 >> $HOME/Chest/Resources/inbox.txt" # symlinked to PaperNotes
+alias ibx="echo '  - $1' >> $HOME/Chest/Resources/inbox.yml" # symlinked to PaperNotes
 alias readnow="cd ~/Projects/ReadingNotes \
 &&
 "
