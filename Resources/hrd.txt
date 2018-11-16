@@ -45,3 +45,11 @@ https://github.com/Kamik423/cutie
 https://github.com/SummitKwan/transparent_latent_gan
 https://bitbucket.org/ned/cog
 https://github.com/yenchenlin/awesome-adversarial-machine-learning
+https://github.com/BVLC/caffe
+https://github.com/Microsoft/AirSim
+https://github.com/Anniepoo/prolog-examples
+https://github.com/SWI-Prolog/swish
+https://github.com/mcsoto/cosmos
+https://github.com/dragonwasrobot/learn-prolog-now-exercises
+https://github.com/gooofy/zamia-ai
+https://github.com/wouterbeek/Prolog-Library-Collection

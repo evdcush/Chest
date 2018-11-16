@@ -1,3 +1,4 @@
+CHEST="$HOME/Chest"
 #-----------------------------------------------------------------------------#
 #                                Endemic                                      #
 #-----------------------------------------------------------------------------#
@@ -12,6 +13,11 @@ n2(){
     N2_FPATH="$HOME/Documents/n2.md"
     #echo " * $1" >> "$N2_FPATH"
     echo " * $@" >> "$N2_FPATH"
+}
+
+#==== call nativefy.py
+nativefy(){
+    python "$CHEST/Code/Scripts/nativefy.py" "$@"
 }
 
 

@@ -1,5 +1,31 @@
 #!/bin/bash
 
+
+# git diff files from different branches
+# --------------------------------------
+git diff branch_a branch_b -- my_file.py # can remove -- if compare work tree
+
+# Undo last merge
+# ---------------
+git reset --hard ORIG_HEAD
+
+
+# -------------------------------------
+# "Merge" single file from other_branch
+# -------------------------------------
+#==== Stage files that would be merged by git, without committing yet
+#     choose which ones you want
+git merge --no-ff --no-commit other_branch
+
+# if you dont want one of the files from the above command:
+git checkout HEAD file1
+# ---------------------------------------
+
+#==== Just want the version from other_branch (overwrites)
+git checkout other_branch file1
+
+
+
 #  __  __   _____   _____    _____     ____    _____
 # |  \/  | |_   _| |  __ \  |  __ \   / __ \  |  __ \
 # | \  / |   | |   | |__) | | |__) | | |  | | | |__) |

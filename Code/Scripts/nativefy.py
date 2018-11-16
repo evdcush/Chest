@@ -185,7 +185,7 @@ def make_desktop_entry(name, app_path):
 
 
 def symlink_binary(from_path, to_path=LOCAL_BIN):
-    subprocess.run(f'ln -s {from_path} {to_path}', shell=True)
+    subprocess.run(f'ln -sf {from_path} {to_path}', shell=True)
     print(f'\nsymlinked binary -\nFROM: {from_path}\n  TO: {to_path}')
 
 
