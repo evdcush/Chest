@@ -10,19 +10,18 @@
 #==============================================================================
 
 # Shell
-#-------------------------------------
-#==== file and dir stuff
+# =====
+#---- file and dir stuff
 alias md="mkdir -p"
-alias cdb="cd -"
+alias cdd="cd -"
 
-#==== list stuff
+#---- list stuff
 alias h="history"
 alias ldot="ls -d --group-directories-first .*"
-alias lk="ls -1FSshX --file-type"
+alias lk="ls -1FSshX --file-type --group-directories-first"
 alias l="ls --group-directories-first -X"
 
-#==== replacements
-#alias diff="colordiff -u" # SEE functions.gdiff
+
 
 #==============================================================================
 #
@@ -39,7 +38,7 @@ alias api="apt-cache show"
 alias dpkgi="sudo dpkg -i "
 
 # Apt-fast
-#=========================
+# ========
 apf='sudo apt-fast'
 alias af="$apf"
 alias afu="$apf update"
@@ -57,13 +56,17 @@ alias afshow="apt-fast show"
 
 
 # Python stuff
-#=========================
+# ============
 alias pipistd="pip install -U pip setuptools wheel && \
 pip install -U numpy scipy sklearn matplotlib chainer gym \
-chainerrl sympy pip-autoremove ipython jupyter notebook \
-jupyter_contrib_nbextensions bs4 jrnl thefuck docutils rst2html5-tools \
-sphinx sphinx-rtd-theme johnnydep bidict art termdown cheat cookiecutter \
-gitup archivenow pypi-cli arxiv"
+chainerrl sympy pip-autoremove ipython jupyter notebook gitup bs4 thefuck \
+jupyter_contrib_nbextensions jupyter_nbextensions_configurator jrnl \
+docutils sphinx sphinx-rtd-theme johnnydep bidict art termdown cheat \
+cookiecutter archivenow pypi-cli arxiv && \
+$nbext_init"
+
+alias nbext_init="pip install -U jupyter_nb_extensions_configurator && \
+jupyter nbextensions_configurator enable --user"
 
 alias pipibare="pip install -U pip setuptools wheel && pip install -U \
 numpy scipy sklearn ipython pip-autoremove"
@@ -108,28 +111,32 @@ alias asc="python -m art text"
 # Misc apps
 # =========
 #---- editors
-alias st="subl" # open file with sublime
-alias stt="subl ." # open dir with sublime
+alias st="subl"    # open file with sublime
+alias stt="subl ." # open  dir with sublime
 
 #---- journal
 alias jrnl=" jrnl"
 
 #---- rst
-alias r2h="rst2html5 $1 > sample.html"
+alias r2h="rst2html $1 > sample.T.html"
+
+#---- cookiecutter proj
+alias new_proj="cookiecutter \
+https://github.com/kragniz/cookiecutter-pypackage-minimal.git"
 
 
 # git
 # ===
 alias gs="git status"
-alias gd="git diff --compact-summary --ignore-all-space --minimal"
+alias gd="git diff --ignore-all-space"
 alias ga="git add"
 alias gau="git add -u"
 alias gaa="git add -A"
 alias gcm="git commit -m"
 alias gcam="git commit -a -m"
 alias gcampu="git commit -a -m $1 && git push"
-alias gcamd="git commit --amend --no-edit"
-alias gcaamd="git add -u && git commit --amend --no-edit"
+alias gcmd="git commit --amend --no-edit"
+alias gacmd="git add -u && git commit --amend --no-edit"
 alias gcn="git clone"
 alias gpull="git pull"
 alias gpush="git push"
