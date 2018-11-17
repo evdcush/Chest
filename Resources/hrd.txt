@@ -53,3 +53,5 @@ https://github.com/mcsoto/cosmos
 https://github.com/dragonwasrobot/learn-prolog-now-exercises
 https://github.com/gooofy/zamia-ai
 https://github.com/wouterbeek/Prolog-Library-Collection
+https://github.com/Kickball/awesome-selfhosted
+https://github.com/tfbogdan/mc
