@@ -22,6 +22,9 @@ alias lk="ls -1FSshX --file-type --group-directories-first"
 alias l="ls --group-directories-first -X"
 
 
+# Bookmarks
+# =========
+alias sbk="python3 /home/evan/.Bookmarks/sync_bookmark.py"
 
 #==============================================================================
 #
@@ -134,12 +137,20 @@ alias gau="git add -u"
 alias gaa="git add -A"
 alias gcm="git commit -m"
 alias gcam="git commit -a -m"
-alias gcampu="git commit -a -m $1 && git push"
+#alias gcampu="git commit -am "$1" && git push"
+gcampu(){
+    msg="$@"
+    git add -u
+    git commit -m "$msg"
+    git push
+}
+
 alias gcmd="git commit --amend --no-edit"
 alias gacmd="git add -u && git commit --amend --no-edit"
 alias gcn="git clone"
 alias gpull="git pull"
 alias gpush="git push"
+
 alias gsize="git rev-list --objects --all \
 | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' \
 | sed -n 's/^blob //p' \

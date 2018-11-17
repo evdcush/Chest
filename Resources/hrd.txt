@@ -55,3 +55,5 @@ https://github.com/gooofy/zamia-ai
 https://github.com/wouterbeek/Prolog-Library-Collection
 https://github.com/Kickball/awesome-selfhosted
 https://github.com/tfbogdan/mc
+https://github.com/Rochester-NRT/RocAlphaGo
+https://github.com/ChristosChristofidis/awesome-deep-learning
