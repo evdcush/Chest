@@ -75,6 +75,7 @@ dev:
 - flake8
 - coverage
 - black
+- luigi # <------
 
 
 net:
@@ -153,7 +154,6 @@ git-github:
 - gitsuggest # ***
 - grip # preview md rendering on github before publishing
 - gitstars # django app to manage your stars
-- starred
 - github-backup   # backup repos from user or organization
 - github-sync     # download /pull from all your git repos
 - github-trending # trending repos and users on github

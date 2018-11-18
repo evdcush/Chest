@@ -1,4 +1,10 @@
+
+#-----------------------------------------------------------------------------#
+#                                PATHS                                        #
+#-----------------------------------------------------------------------------#
 CHEST="$HOME/Chest"
+HOARD_INBOX_PATH="$CHEST/Resources/hoard_inbox.json"
+
 #-----------------------------------------------------------------------------#
 #                                Endemic                                      #
 #-----------------------------------------------------------------------------#
@@ -15,17 +21,55 @@ n2(){
     echo " * $@" >> "$N2_FPATH"
 }
 
+#-----------------------------------------------------------------------------#
+#                            Apps & Scripts                                   #
+#-----------------------------------------------------------------------------#
+
 #==== call nativefy.py
 nativefy(){
     python "$CHEST/Code/Scripts/nativefy.py" "$@"
 }
+
+#==== Hoarding
+function hurl {
+KEY="$1" VAL="$2" HPATH="$HOARD_INBOX_PATH" python - <<END
+import os
+import json
+key_short = str(os.environ['KEY'])
+keys = dict(r="repos", o="orgs", u="users")
+key = keys[key_short]
+val = str(os.environ['VAL'])
+inbox_path = str(os.environ['HPATH'])
+#==== Read hoard JSON file
+with open(inbox_path, 'r') as ibx_file:
+    ibx = json.load(ibx_file)
+
+#==== Update values and write to hoard json file
+if val in ibx[key]:
+    print(f'{val} already in {key}!')
+else:
+    ibx[key].append(val)
+    with open(inbox_path, 'w') as ibx_file:
+        json.dump(ibx, ibx_file)
+END
+}
+
+
+# git hoarding
+# ============
+#alias hurl="echo $1 >> $HOME/Chest/Resources/hrd.txt" # symlinked to /Hoarded
+#alias hoard_now="python $HOME/Projects/Hoarded/clone_urls.py"
 
 
 #-----------------------------------------------------------------------------#
 #                        Shell Utils & Shortcuts                              #
 #-----------------------------------------------------------------------------#
 
-#==== reset PATH to default
+
+# PATH & shell config
+# ===================
+
+#---- reset PATH to default
 function reset_path(){
     echo "Resetting Path...\n--------------------------------------------------"
     echo "  current path = $PATH\n"
@@ -35,6 +79,21 @@ function reset_path(){
     source ~/.zshrc
     echo "--------------------------------------------------"
 }
+
+
+#---- source zshrc
+function srcz(){
+    reset_path # sourcing can duplicate parts of PATH anyway, so just reset
+    #source ~/.zshrc
+}
+
+#---- add line to shell config
+function expzsh(){
+    #expzsh 'My alias' 'alias testalias="echo test passed"'
+    echo "\n\n#==== $1" >> ~/.zshrc
+    echo "$2" >> ~/.zshrc
+}
+
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -107,20 +166,6 @@ function f(){
     fi
 }
 
-# zsh stuff
-#----------
-#==== source zshrc
-function srcz(){
-    reset_path
-    #source ~/.zshrc
-}
-
-#==== add line to shell config
-function expzsh(){
-    #expzsh 'My alias' 'alias testalias="echo test passed"'
-    echo "\n\n#==== $1" >> ~/.zshrc
-    echo "$2" >> ~/.zshrc
-}
 
 
 #-----------------------------------------------------------------------------#

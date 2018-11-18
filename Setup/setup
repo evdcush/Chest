@@ -568,6 +568,10 @@ gcto junegunn/fzf.git ~/.fzf
 curl https://cht.sh/:cht.sh > ~/.local/bin/cht.sh
 chmod +x ~/.local/bin/cht.sh
 
+#==== borg
+wget https://github.com/ok-borg/borg/releases/download/v0.0.3/borg_linux_amd64 -O /usr/local/bin/borg
+chmod 755 /usr/local/bin/borg
+
 
 #------------------------------------------------------------------------------
 #                                OTHER
@@ -614,36 +618,40 @@ pip install --process-dependency-links --no-binary --upgrade git+https://github.
 
 # Chromium extensions
 #====================
-"Joplin Web Clipper"
-"Gibbon Tabs"
-"uBlock Origin"
-"py3redirect"
-"Archiveror"
-"Copy All Urls"
-"Old Reddit Redirect"
-"Dark Reader"
-"Sight"
-"Like on GitHub"
-"HTTPS Everywhere"
-"Math Anywhere"
-"Close Tabs to the Left"
-"Refined GitHub"
-"Lovely forks"
 "Arc Dark"
-"rikaikun"
-"View Image"
-"Wide Github"
-"WARCreate"
-"uBlock Origin Extra"
-"Privacy Badger"
-"WikiMapper"
-"Black Menu for Wikipedia"
-"Github Original Streak"
+"Archiveror"
+"arXiv bib overlay"
 "Awesome Stars"
-"Redirectify"
-"Tab Ahead"
-"Wikipedia Reading Lists"
 "Better Bookmark"
+"Bookmarks clean up"
+"Close Tabs to the Left"
+"Copy All Urls"
+"Dark Reader"
+"Gibbon Tabs"
+"GitHub Downloader"
+"Github Original Streak"
+"HTTPS Everywhere"
+"Joplin Web Clipper"
+"Like on GitHub"
+"Lovely forks"
+"Math Anywhere"
+"Old Reddit Redirect"
+"Privacy Badger"
+"py3redirect"
+"Redirectify"
+"Refined GitHub"
+"rikaikun"
+"Sight"
+"Tab Ahead"
+"Tab Save"
+"uBlock Origin Extra"
+"uBlock Origin"
+"View Image"
+"WARCreate"
+"Wide Github"
+"WikiMapper"
+"Wikipedia Reading Lists"
+"xBrowserSync"
 
 # Openssh (local) server
 #=======================
@@ -694,6 +702,8 @@ sudo systemctl restart sshd.service;
 #  mutedrainbow_sky
 #  late_night
 #  koralgreen
+#  seafoam-pastel-dark # plaintext better
+#  nouba # plaintext
 #  # Light
 #  #--------
 #  Github-v2  ***
@@ -755,3 +765,197 @@ echo -n %f | xclip -selection "clipboard"
 # orage clock format: %x %R
 # https://www.linuxquestions.org/questions/slackware-14/xfce-clock-custom-formatting-codes-753433/
 # previous: %d %b, %H:%M
+
+
+
+#=============================================================================#
+#                                                                             #
+#        .d8888b.      8888888b.     888     888                              #
+#       d88P  Y88b     888   Y88b    888     888                              #
+#       888    888     888    888    888     888                              #
+#       888            888   d88P    888     888                              #
+#       888  88888     8888888P"     888     888                              #
+#       888    888     888           888     888                              #
+#       Y88b  d88P     888           Y88b. .d88P                              #
+#        "Y8888P88     888            "Y88888P"                               #
+#                                                                             #
+#        .d8888b.     8888888888   88888888888   888     888    8888888b.     #
+#       d88P  Y88b    888              888       888     888    888   Y88b    #
+#       Y88b.         888              888       888     888    888    888    #
+#        "Y888b.      8888888          888       888     888    888   d88P    #
+#           "Y88b.    888              888       888     888    8888888P"     #
+#             "888    888              888       888     888    888           #
+#       Y88b  d88P    888              888       Y88b. .d88P    888           #
+#        "Y8888P"     8888888888       888        "Y88888P"     888           #
+#                                                                             #
+#=============================================================================#
+
+
+#=============================================================================#
+#                     ___   _   _   ___      _                                #
+#                    / __| | | | | |   \    /_\                               #
+#                   | (__  | |_| | | |) |  / _ \                              #
+#                    \___|  \___/  |___/  /_/ \_\                             #
+#               ======================================                        #
+
+#------------------------------------------------------------------------------
+#   __ ___       __  ___
+#  (_   |   /\  |__)  |
+#  __)  |  /--\ | \   |
+
+#==== Install from network deb (downloaded)
+sudo dpkg -i cuda-repo-ubuntu1804_10.0.130-1_amd64.deb
+#sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+
+sudo apt update
+sudo apt install cuda-10-0
+
+
+# "Recommended Packages"
+#libnvidia-compute-410:i386 libnvidia-decode-410:i386 libnvidia-encode-410:i386 libnvidia-ifr1-410:i386 libnvidia-fbc1-410:i386 libnvidia-gl-410:i386
+
+
+#==== Update path
+# Now, add the following lines to your shell config (.zshrc, etc)
+export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+#==== Reboot to finish installation
+reboot
+
+#==== Verify installation
+nvcc -V
+nvidia-smi
+
+#==== If nouveau is an issue:
+# Create a file at /etc/modprobe.d/blacklist-nouveau.conf with the following contents:
+blacklist nouveau
+options nouveau modeset=0
+
+# Regenerate the kernel initramfs:
+sudo update-initramfs -u
+
+#   __       __
+#  |_  |\ | |  \
+#  |__ | \| |__/
+#------------------------------------------------------------------------------
+
+
+
+
+
+#=============================================================================#
+#                               ___    _  _   _  _                            #
+#                   __   _  _  |   \  | \| | | \| |                           #
+#                  / _| | || | | |) | | .` | | .` |                           #
+#                  \__|  \_,_| |___/  |_|\_| |_|\_|                           #
+#               ======================================                        #
+
+#------------------------------------------------------------------------------
+#   __ ___       __  ___
+#  (_   |   /\  |__)  |
+#  __)  |  /--\ | \   |
+
+#==== cuDNN
+# tar file method:
+tar -xzvf cudnn-10.0-linux-x64-v7.3.1.20.tgz # whatever ver you got
+sudo cp cuda/include/cudnn.h /usr/local/cuda/include
+sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
+sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
+
+#==== Verify cuDNN installation
+#  For cuDNN 7.3, you should see CUDNN_MAJOR 7, CUDNN_MINOR 3
+cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
+
+#   __       __
+#  |_  |\ | |  \
+#  |__ | \| |__/
+#------------------------------------------------------------------------------
+
+
+
+
+
+#=============================================================================#
+#           _____                                 ___   _____                 #
+#          |_   _|  ___   _ _    ___  ___   _ _  | _ \ |_   _|                #
+#            | |   / -_) | ' \  (_-< / _ \ | '_| |   /   | |                  #
+#            |_|   \___| |_||_| /__/ \___/ |_|   |_|_\   |_|                  #
+#               ======================================                        #
+
+
+#------------------------------------------------------------------------------
+#   __ ___       __  ___
+#  (_   |   /\  |__)  |
+#  __)  |  /--\ | \   |
+
+#==== TensorRT
+sudo dpkg -i nv-tensorrt-repo-ubuntu1804-cuda10.0-trt5.0.0.10-rc-20180906_1-1_amd64.deb
+sudo apt update
+sudo apt install tensorrt
+sudo apt install uff-converter-tf
+
+#==== Verify installation
+dpkg -l | grep TensorRT
+
+
+#   __       __
+#  |_  |\ | |  \
+#  |__ | \| |__/
+#------------------------------------------------------------------------------
+
+
+
+
+
+
+#=============================================================================#
+#                      _  _    ___    ___   _                                 #
+#                     | \| |  / __|  / __| | |                                #
+#                     | .` | | (__  | (__  | |__                              #
+#                     |_|\_|  \___|  \___| |____|                             #
+#               ======================================                        #
+
+
+
+
+
+
+#=============================================================================#
+#                                                                             #
+#     88                        88  88           88                  ad88     #
+#     88                        ""  88           88        ,d       d8"       #
+#     88                            88           88        88       88        #
+#     88,dPPYba,   88       88  88  88   ,adPPYb,88      MM88MMM  MM88MMM     #
+#     88P'    "8a  88       88  88  88  a8"    `Y88        88       88        #
+#     88       d8  88       88  88  88  8b       88        88       88        #
+#     88b,   ,a8"  "8a,   ,a88  88  88  "8a,   ,d88        88,      88        #
+#     8Y"Ybbd8"'    `"YbbdP'Y8  88  88   `"8bbdP"Y8        "Y888    88        #
+#                                                                             #
+#=============================================================================#
+
+
+#                ___   _____   ___   ___     _                                #
+#               / __| |_   _| | __| | _ \   / |                               #
+#               \__ \   | |   | _|  |  _/   | |                               #
+#               |___/   |_|   |___| |_|     |_|                               #
+#            =====================================                            #
+#             ---> Install bazel
+
+#==== Install the JDK:
+sudo apt install openjdk-8-jdk
+
+#==== Add Bazel distribution URI as a package source:
+echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
+curl https://bazel.build/bazel-release.pub.gpg | sudo apt-key add -
+
+#==== Install Bazel
+sudo apt update && sudo apt install bazel
+
+
+#  .bazelrc:
+#==== startup args come before commands like "build"
+# Now outputs to /tmp/bazel INSTEAD of ~/.cache
+startup --output_user_root=/tmp/bazel
+

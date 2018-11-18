@@ -21,10 +21,9 @@ alias ldot="ls -d --group-directories-first .*"
 alias lk="ls -1FSshX --file-type --group-directories-first"
 alias l="ls --group-directories-first -X"
 
+#---- Copy
+alias xclip="xclip -selection clipboard"
 
-# Bookmarks
-# =========
-alias sbk="python3 /home/evan/.Bookmarks/sync_bookmark.py"
 
 #==============================================================================
 #
@@ -161,8 +160,8 @@ alias gsize="git rev-list --objects --all \
 
 # git hoarding
 # ============
-alias hurl="echo $1 >> $HOME/Chest/Resources/hrd.txt" # symlinked to /Hoarded
-alias hoard_now="python $HOME/Projects/Hoarded/clone_urls.py"
+#alias hurl="echo $1 >> $HOME/Chest/Resources/hrd.txt" # symlinked to /Hoarded
+#alias hoard_now="python $HOME/Projects/Hoarded/clone_urls.py"
 
 # PaperNotes
 # ==========
