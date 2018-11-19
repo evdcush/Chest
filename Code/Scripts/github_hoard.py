@@ -1,8 +1,4 @@
-#!/usr/bin/env python3
-# coding=utf-8
-
 # Modules
-import argparse
 import git
 import json
 import os

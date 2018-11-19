@@ -61,3 +61,15 @@ chrome://system
 >? Check what dependees a package has?
 #========================
 apt-cache rdepends packagename
+
+
+
+#-----------------------------------------------------------------------------
+# System
+#-----------------------------------------------------------------------------
+
+>? Check my public IP?
+#======================
+inxi -i
+OR
+wget -O - -q icanhazip.com
