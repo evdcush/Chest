@@ -61,10 +61,6 @@ class HoardJSON:
         return obj
 
 
-
-
-
-
 def checkResponse(response):
     """
     Validates whether there an error in the response.

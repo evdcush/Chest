@@ -19,11 +19,17 @@ git merge --no-ff --no-commit other_branch
 
 # if you dont want one of the files from the above command:
 git checkout HEAD file1
-# ---------------------------------------
 
 #==== Just want the version from other_branch (overwrites)
 git checkout other_branch file1
 
+#========================================
+
+
+# Keep a file in git, but do not track history
+# --------------------------------------------
+git update-index --skip-worktree <file_name>
+# it will read as up to date, and changes will not be flagged as changes
 
 
 #  __  __   _____   _____    _____     ____    _____
