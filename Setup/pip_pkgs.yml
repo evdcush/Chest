@@ -1,5 +1,3 @@
-INBOX:
-
 
 essentials:
 - numpy
@@ -10,28 +8,48 @@ essentials:
 - ipython
 - jupyter
 - notebook
+- gitup
+
+
+# science-math:  # pkgs['science-math'] = {'autograd': 'poop', 'sympy':poop,...}
+#   autograd: poop
+#   sympy: poop
+#   scikit-video: poop
+#   pydataset: poop
+
+# IS EQUIVALENT TO:
+
+# science-math:  # pkgs['science-math'] = {'autograd': 'poop', 'sympy':poop,...}
+#   autograd:
+#     poop
+#   sympy:
+#     poop
+#   scikit-video:
+#     poop
+#   pydataset:
+#     poop
 
 
 science-math:
-- autograd
-- sympy
+- autograd  # easier to use than sympy; less powerful though
+- sympy  # learning curve, but amazingly powerful and featured
 - scikit-video
 - pydataset
 #- primesieve # always freezes install
 
 
 GPU:
-- pycuda
+- pycuda  # unofficial cython-like embedded cuda code
 - cupy
 
 
 AI-frameworks:
 - gym
 - chainerrl
-- neupy
+- neupy  # ANN library, TF backend, lib has some cool stuff
 
 
-TF-dependencies:
+TF-dependencies:  # don't actually use any of it, just to build TF
 - keras
 - keras-applications
 - keras-preprocessing
@@ -39,11 +57,11 @@ TF-dependencies:
 
 
 starcraft-games:
-- s2clientprotocol
-- pysc2
-- sc2
-- scbw
-- pygame
+- s2clientprotocol  # linux sc2 client (headless)
+- pysc2   # "official" deepmind sc2 api, fairly verbose and buggy, no documentation
+- sc2     # user-made sc2 api, (python-sc2), popular, also no documentation
+- scbw    # bw on linux
+- pygame  # dependency for every game-related thign
 
 
 notebook:
@@ -51,55 +69,55 @@ notebook:
 - jupyter
 - notebook
 - jupyterthemes
-- jupyter-contrib-nbextensions
+- jupyter-contrib-nbextensions  # HUGE enhancements to notebook capabilities
 - jupyter_nbextensions_configurator
 # Then activate: $ jupyter nbextensions_configurator enable --user
 
 
 apps:
-- retext
-- buku
-- jrnl
-- termdown
-- apt-select
+- retext  # RST and MD editor, best desktop editor for RST, still kinda bad
+- buku  # CLI bookmark manager, havent used
+- jrnl  # *** CLI journaling/notes app, supports encryption,
+- termdown  # simple countdown/timer terminal, ncurses
+- apt-select  # pings apt mirrors, gives list fastest
 
 
 lib-enhancements:
+- attrs  # manages a few dunders (mostly init), not that big of a deal
 - bidict
-- python-box
+- python-box  # has surprising amount of different "boxes" or dict-classes
 
 
 dev:
-- cookiecutter
-- nose
-- flake8
-- coverage
-- black
-- luigi # <------
+- cookiecutter  #*** project boilerplate
+- nose  # tests
+- flake8  # linting/static code, better than pylint
+- coverage  # code-coverage
+- black  # auto-format code to style, ONLY used on othre people's gross code
+- luigi  # manages task pipeline
 
 
 net:
-- html5lib
-- bs4
+- html5lib  # dep
+- bs4  # scrape
 
 
 deps-utils:
-- binarytree
-- h5py
-- hickle
+- binarytree  # make arbitrary binary trees to work/study/play with
+- h5py    # h5 serialization
+- hickle  # ..another serialization, no noticed benefits over pickle yet
 - pyqt5
 - pillow
 - pycurl
 - pygments
-- vermin
-- pydeps
-- pipdeptree
-- johnnydep
+- vermin      # AWESOME, automatically test python version support in project
+- pipdeptree  # shows deps like tree cmd
+- johnnydep   # awesome, lists dependencies of a package
 
 
 pypi-python:
-- pypi-cli
-- pip-autoremove
+- pypi-cli  # decent utils in `pypi info <pkg>` and `pypi search`
+- pip-autoremove  #*** remove a package and the packages it installed as deps
 
 
 docs-text:
@@ -107,9 +125,9 @@ docs-text:
 - doc2dash # making zeal datasets
 - numpydoc # sphinx extension for numpydoc support
 - pypandoc
-- textdistance[extras]
-- rstwatch
-- rstdiary
+- textdistance[extras]  # bunch of different text diff algos
+- rstwatch  # automatically makes html conversions when change detected
+- rstdiary  # duno?
 
 
 sphinx:
@@ -125,9 +143,8 @@ reading:
 - pybtex
 - bibtexparser
 - bibcure
-- betterbib
+- betterbib  # fetches info to try and correct/format your bib
 - pybtex-docutils
-- bibcure
 - scihub2pdf
 - arxivcheck
 - arxivscraper
@@ -135,41 +152,43 @@ reading:
 - arxiv_download
 - arxiv2txt  # SCRIPT not pypi?
 
+arg-parsers: # I prefer argparse/argv in general, to keep dependencies down
+- fire   # IF I opt for diff argparser, fire is the shit (args req'd tho)
+- docopt # more work than you think
+- click  # fuck that stack of decorators, why peep like
+
 
 CLI-shell:
-- docopt
-- click
-- thefuck
-- cheat
-- maybe
-- glances # better top/htop
-- archivenow # archives urls (WARC, all the archiving sites)
+- thefuck     # AWESOME, correct previous command
+- cheat       # decent man examples for queried cmd
+- maybe       # hit-or-miss, test out what command will do
+- glances     # better top/htop
+- archivenow  # archives urls (WARC, all the archiving sites)
 
 
 git-github:
-- gitup # $$$$$ manage multiple git repos
 - github3.py
-- starred
+- starred  # dope
 - oh-my-stars
 - gitsuggest # ***
-- grip # preview md rendering on github before publishing
-- gitstars # django app to manage your stars
-- github-backup   # backup repos from user or organization
-- github-sync     # download /pull from all your git repos
-- github-trending # trending repos and users on github
-- clone-github    # clone github repos in bulk
-- replicate-github # tool for maintaining mirrors of github repos
-- github-trending-cli # View Github Trending and repository README from the command line
+- grip               # preview md rendering on github before publishing
+- gitstars           # django app to manage your stars
+- github-backup      # backup repos from user or organization
+- github-sync        # download /pull from all your git repos
+- github-trending    # trending repos and users on github
+- clone-github       # clone github repos in bulk
+- replicate-github   # tool for maintaining mirrors of github repos
+- github-trending-cli # View Github Trending and README from the command line
 
 
 ascii-art:
-- pyfiglet
-- art
+- pyfiglet  # same as figlet, just implemented in python
+- art       # decent 1-liner and text art ascii (text is figlet)
 
 
-UNDETERMINED:
-- rebound-cli
-- pyviz
-- astrodash # spectral convolutions deep learning supernovae
-- pipsalabim  # guesses your dependencies, no need for req file
+misc-untested:
+- rebound-cli  # hasn't ever worked, always f'n broken
+- pyviz        # visualization lib i think
+- astrodash    # spectral convolutions deep learning supernovae
+- pipsalabim   # guesses your dependencies, no need for req file
 - dbcollection # collection of popular ML datasets
