@@ -1,0 +1,141 @@
+# Load zgen
+# =========
+source "${HOME}/.zgen/zgen.zsh"
+
+# Initialize plugins
+# ==================
+if ! zgen saved; then
+    echo "Creating a zgen save"
+
+    # Base packages
+    zgen oh-my-zsh
+
+    # Plugins
+    # =======
+    zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/colored-man-pages
+    zgen oh-my-zsh plugins/command-not-found
+    zgen oh-my-zsh plugins/copyfile
+    zgen oh-my-zsh plugins/history
+    zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh themes/robbyrussell
+
+    #---- non-packaged
+    zgen load jocelynmallon/zshmarks
+    zgen load b4b4r07/enhancd
+    zgen load zsh-users/zsh-syntax-highlighting
+
+    # Generate init script for plugins
+    # ================================
+    zgen save
+fi
+
+
+# Make sure shell history does not record jrnl
+HISTIGNORE="$HISTIGNORE:jrnl *"
+setopt HIST_IGNORE_SPACE
+
+# Source my dots
+# ==============
+source $HOME/.Aliases
+source $HOME/.Functions
+
+
+###############################################################################                                                                     ########
+#    ___     _     _____   _  _         ___   _  _  __   __            ########
+#   | _ \   /_\   |_   _| | || |       | __| | \| | \ \ / /            ########
+#   |  _/  / _ \    | |   | __ |  _    | _|  | .` |  \ V /             ########
+#   |_|   /_/ \_\   |_|   |_||_| ( )   |___| |_|\_|   \_/              ########
+#                                |/                                    ########
+###############################################################################
+
+# Shortcut path vars
+#-------------------
+home="$HOME"
+usr_local='/usr/local'
+APPSPATH="$HOME/.Apps"
+
+
+#******************************************************************************
+
+# Add to path, if not there
+#==========================
+# from: https://superuser.com/users/7778/gordon-davisson
+pathadd() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$1"
+    fi
+}
+
+ld_library_pathadd() {
+    if [ -d "$1" ] && [[ ":$LD_LIBARY_PATH:" != *":$1:"* ]]; then
+        LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+"$LD_LIBRARY_PATH:"}$1"
+    fi
+
+# UNTESTED:
+#PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
+}
+#******************************************************************************
+
+
+#------------------------------------------------------------------------------
+# Dev env
+#------------------------------------------------------------------------------
+
+# Pyenv
+#=========================
+pyenv_path="$HOME/.pyenv/bin"
+pathadd "$pyenv_path"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+
+# Julia
+#=========================
+#julia_path="$HOME/.julia"
+#pathadd "$julia_path"
+#export PATH="$/home/evan/.julia:$PATH"
+
+
+#------------------------------------------------------------------------------
+# Libraries
+#----------
+
+
+# Z jump
+#=========================
+. "$HOME/.Apps/Z_jump/z.sh"
+
+
+# fzf
+#========================
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Fuck
+#========================
+eval $(thefuck --alias)
+
+
+
+#------------------------------------------------------------------------------
+# shit added automatically by software
+#------------------------------------------------------------------------------
+
+# pip zsh completion start
+function _pip_completion {
+  local words cword
+  read -Ac words
+  read -cn cword
+  reply=( $( COMP_WORDS="$words[*]" \
+             COMP_CWORD=$(( cword-1 )) \
+             PIP_AUTO_COMPLETE=1 $words[1] ) )
+}
+compctl -K _pip_completion pip
+# pip zsh completion end
+
+
+
+
+
+
+export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).

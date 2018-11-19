@@ -1,1 +1,2 @@
 Resources/gh_pub_token.json filter=git-crypt diff=git-crypt
+projects.py filter=git-crypt diff=git-crypt
