@@ -11,10 +11,58 @@ import code
 import sys
 from pprint import pprint
 
-#user_agent = "GithubCloner (https://github.com/mazen160/GithubCloner)"
-#headers = {'User-Agent': user_agent, 'Accept': '*/*'}
-headers = {'Accept': '*/*'}
-timeout = 3
+# Constants
+HOME = os.environ["HOME"]
+RESOURCE_PATH = f'{HOME}/Chest/Resources'
+HOARD_PATH = f'{HOME}/Projects/Hoard'
+HOARD_CLONES_PATH = f'{HOARD_PATH}/Clones'
+HEADERS = {'Accept': '*/*'}
+TIMEOUT = 3
+
+
+
+class HoardJSON:
+    """ Wraps pathing and json files related to hoard """
+    keys = ['repos', 'users', 'orgs']
+    hoard_inbox_path   = f'{RESOURCE_PATH}/hoard_inbox.json'
+    hoard_archive_path = f'{RESOURCE_PATH}/hoard_archive.json'
+    hoard_auth_path    = f'{RESOURCE_PATH}/gh_pub_token.json'
+
+    def __init__(self):
+        self.inbox   = self.read_json(self.hoard_inbox_path)
+        self.archive = self.read_json(self.hoard_archive_path)
+        self.auth    = self.read_json(self.hoard_auth_path)
+
+    def update_archive(self, key, val, write=False):
+        archive_set = set(self.archive[key])
+        if isinstance(val, list):
+            archive_set.update(val)
+        else: # it's a single, string val url
+            assert isinstance(val, str)
+            archive_set.add(val)
+        updated = list(archive_set)
+        self.archive[key] = updated
+        if write:
+            self.write_json(self.hoard_archive_path, self.archive)
+
+    def clear_inbox(self):
+        cleared_inbox = {key: [] for key in self.keys}
+        self.write_json(self.hoard_inbox_path, cleared_inbox)
+
+    @staticmethod
+    def write_json(file_path, obj):
+        with open(file_path, 'w') as file:
+            json.dump(obj, file)
+
+    @staticmethod
+    def read_json(file_path):
+        with open(file_path, 'r') as file:
+            obj = json.load(file)
+        return obj
+
+
+
+
 
 
 def checkResponse(response):
@@ -55,9 +103,9 @@ def fromUser(user, username=None, token=None, include_gists=True):
     while (len(resp) != 0 or current_page == 1):
         API = "https://api.github.com/users/{0}/repos?per_page=40000000&page={1}".format(user, current_page)
         if (username or token) is None:
-            resp = requests.get(API, headers=headers, timeout=timeout).text
+            resp = requests.get(API, headers=HEADERS, timeout=TIMEOUT).text
         else:
-            resp = requests.get(API, headers=headers, timeout=timeout, auth=(username, token)).text
+            resp = requests.get(API, headers=HEADERS, timeout=TIMEOUT, auth=(username, token)).text
         resp = json.loads(resp)
         if checkResponse(resp) != 0:
             return([])
@@ -88,9 +136,9 @@ def fromOrg(_org_name, username=None, token=None):
         #code.interact(local=dict(globals(), **locals())) # DEBUGGING-use
         API = "https://api.github.com/orgs/{0}/repos?per_page=40000000&page={1}".format(org_name, current_page)
         if (username or token) is None:
-            resp = requests.get(API, headers=headers, timeout=timeout).text
+            resp = requests.get(API, headers=HEADERS, timeout=TIMEOUT).text
         else:
-            resp = requests.get(API, headers=headers, timeout=timeout, auth=(username, token)).text
+            resp = requests.get(API, headers=HEADERS, timeout=TIMEOUT, auth=(username, token)).text
         resp = json.loads(resp)
         if checkResponse(resp) != 0:
             return([])
@@ -165,71 +213,16 @@ def cloneBulkRepos(URLs, cloningPath, threads_limit=5, username=None, token=None
 
 #==============================================================================
 
-# Read/Write Paths
-# ================
-#---- Write
-hoard_dir     = '/home/evan/Projects/Hoarded'
-clone_path    = f'{hoard_dir}/clones'
-user_org_path = f'{hoard_dir}/UserOrg'
-archive_file  = f'{hoard_dir}/archive.json'
-
-#---- Read
-repo_inbox = f'{hoard_dir}/inbox.txt'
-user_inbox = f'{hoard_dir}/users.txt'
-org_inbox  = f'{hoard_dir}/orgs.txt'
-
-
-KEYS = {repo_inbox: 'repos', org_inbox: 'orgs', user_inbox: 'users'}
-
-# Read --> Write map
-RW = {repo_inbox: clone_path,
-      user_inbox: user_org_path,
-      org_inbox:  user_org_path,}
-
-# Formatting
-# ==========
-cur_date = str(dt.datetime.now().date())
-start_tag_archive = f"# START {cur_date}\n"
-end_tag_archive   = f"# END {cur_date}\n"
 
 
 
-
-# Functions
-# =========
-def archive_urls(urls, key):
-    with open(archive_file, 'r') as afile:
-        archive_dict = json.load(afile)
-    chive_set = set(archive_dict[key])
-    chive_set.update(urls)
-    chive_updated = list(chive_set)
-    archive_dict[key] = chive_updated
-    #archive_dict[key].extend(urls)
-
-    with open(archive_file, 'w') as afile:
-        json.dump(archive_dict, afile)
-        #archive.write(start_tag_archive)
-        #archive.write(urls)
-        #archive.write(end_tag_archive)
-    #code.interact(local=dict(globals(), **locals())) # DEBUGGING-use
+JSON_files = HoardJSON()
+username, token = list(JSON_FILES.auth.items()).pop()
 
 
-'''
-def get_urls_from_file(txt=repo_inbox, archive=True):
-    with open(txt, 'r+') as txt_urls:
-        url_list = txt_urls.read().split('\n')[:-1]
-        #url_list = url_string.split('\n')[:-1]
-        if archive:
-            #archive_urls(url_string)
-            archive_urls(url_list, KEYS[txt])
-            # clear inbox
-            #txt_urls.truncate(0) # need '0' when using r+
-        # Convert string to list
-        url_list = url_string.split('\n')[:-1]
-    return url_list
-'''
 
-
+################## STOPPED HERE, UPDATE LATER
+##########################################################
 def get_urls(txt=repo_inbox, archive=True, username=None, token=None):
     with open(txt, 'r+') as txt_urls:
         url_list = txt_urls.read().split('\n')[:-1]
