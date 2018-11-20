@@ -2,22 +2,21 @@
 #-----------------------------------------------------------------------------#
 #                                PATHS                                        #
 #-----------------------------------------------------------------------------#
-CHEST="$HOME/Chest"
-HOARD_INBOX_PATH="$CHEST/Resources/hoard_inbox.json"
+
 
 #-----------------------------------------------------------------------------#
 #                                Endemic                                      #
 #-----------------------------------------------------------------------------#
 #==== write line to D log
-dw(){
-    D_FPATH="$HOME/D"
-    echo "$1" >> "$HOME/D"
-}
+#  DEPRECATED; using jrnl now instead
+#dw(){
+#    D_FPATH="$HOME/D"
+#    echo "$1" >> "$HOME/D"
+#}
 
 #==== write line to look n2 log
 n2(){
-    N2_FPATH="$HOME/Documents/n2.md"
-    #echo " * $1" >> "$N2_FPATH"
+    N2_FPATH="$DIR_DOCS/n2.md"
     echo " * $@" >> "$N2_FPATH"
 }
 
@@ -25,21 +24,28 @@ n2(){
 #                            Apps & Scripts                                   #
 #-----------------------------------------------------------------------------#
 
-#==== call nativefy.py
+# Nativefier
+# ==========
 nativefy(){
     python "$CHEST/Code/Scripts/nativefy.py" "$@"
 }
 
-#==== Hoarding
+# GIT/GITHUB
+# ==========
+
+# Hoarding
+# --------
 function hurl {
-KEY="$1" VAL="$2" HPATH="$HOARD_INBOX_PATH" python - <<END
+KEY="$1" VAL="$2" HPATH="$PATH_HOARD_INBOX" python - <<END
 import os
 import json
+
 key_short = str(os.environ['KEY'])
 keys = dict(r="repos", o="orgs", u="users")
 key = keys[key_short]
 val = str(os.environ['VAL'])
 inbox_path = str(os.environ['HPATH'])
+
 #==== Read hoard JSON file
 with open(inbox_path, 'r') as ibx_file:
     ibx = json.load(ibx_file)
@@ -54,12 +60,12 @@ else:
 END
 }
 
-
-# git hoarding
-# ============
-#alias hurl="echo $1 >> $HOME/Chest/Resources/hrd.txt" # symlinked to /Hoarded
-#alias hoard_now="python $HOME/Projects/Hoarded/clone_urls.py"
-
+#
+getstars(){
+    USER="$1"
+    TOKEN="$TOKEN_GH_PUB"
+    starred --username "$USER" --sort --token "$TOKEN" > "$USER.stars.md"
+}
 
 #-----------------------------------------------------------------------------#
 #                        Shell Utils & Shortcuts                              #
