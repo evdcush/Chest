@@ -9,8 +9,8 @@ Dots, snippets, notes, scripts, assets...all stuff I wanted to keep, stuff I upd
 Contents
 ********
 
-Setup
-=====
+Config
+======
 :pip_pkgs.yml: list of pip packages
 :setup: aggregation of many different setup and environment stuff
 
@@ -40,6 +40,7 @@ Snippets
 --------
 collection of different snippets for bash/shell stuff, git/github, python-general, python-specific packages.
 
+
 Templates
 =========
 Some txt copies of licenses I use, and true templates for copying to projects (like a README).
@@ -48,7 +49,13 @@ Some txt copies of licenses I use, and true templates for copying to projects (l
 
 Acknowledgements
 ================
-Most content in the repo is original. Snippets are mostly experience for python, mostly SO copy-paste for git and bash. Scripts are generally copied from another user, and Acknowledgements/source are provided in each.
+Most content in the repo is original. Snippets are mostly experience for python, mostly SO copy-paste for git and bash.
+
+
+Scripts
+-------
+Scripts are generally modified from another user's original, and acknowledgements/licenses are provided in each.
+
 
 License
 -------

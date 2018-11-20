@@ -65,6 +65,7 @@ starcraft-games:
 
 
 notebook:
+- jupyter-parser  # <<<<< LOOK INTO
 - ipython
 - jupyter
 - notebook
@@ -187,7 +188,7 @@ ascii-art:
 
 
 misc-untested:
-- SetSimilaritySearch
+- SetSimilaritySearch # python, similarity score between sets
 - rebound-cli  # hasn't ever worked, always f'n broken
 - pyviz        # visualization lib i think
 - astrodash    # spectral convolutions deep learning supernovae

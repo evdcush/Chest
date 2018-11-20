@@ -64,16 +64,21 @@ alias afshow="apt-fast show"
 
 # Python stuff
 # ============
-alias pipistd="pip install -U pip setuptools wheel && \
-pip install -U numpy scipy sklearn matplotlib chainer gym \
+alias pipiu="pip install -U "
+
+alias nbext_init="pip install -U jupyter_nb_extensions_configurator; \
+jupyter nbextensions_configurator enable --user"
+
+alias pipistd="pip install -U pip setuptools wheel; pip \
+install -U numpy scipy sklearn matplotlib chainer gym \
 chainerrl sympy pip-autoremove ipython jupyter notebook gitup bs4 thefuck \
 jupyter_contrib_nbextensions jupyter_nbextensions_configurator jrnl \
 docutils sphinx sphinx-rtd-theme johnnydep bidict art termdown cheat \
-cookiecutter archivenow pypi-cli arxiv && \
-$nbext_init"
+cookiecutter archivenow pypi-cli autograd binarytree h5py starred \
+glances dbcollection; $nbext_init"
 
-alias nbext_init="pip install -U jupyter_nb_extensions_configurator && \
-jupyter nbextensions_configurator enable --user"
+alias pipidocs="pip install -U pybtex bibtexparser bibcure betterbib \
+pybtex-docutils scihub2pdf arxivscraper arxivcheck"
 
 alias pipibare="pip install -U pip setuptools wheel && pip install -U \
 numpy scipy sklearn ipython pip-autoremove"
