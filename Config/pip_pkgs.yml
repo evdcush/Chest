@@ -187,6 +187,7 @@ ascii-art:
 
 
 misc-untested:
+- SetSimilaritySearch
 - rebound-cli  # hasn't ever worked, always f'n broken
 - pyviz        # visualization lib i think
 - astrodash    # spectral convolutions deep learning supernovae
