@@ -38,6 +38,38 @@ sort input-file > output_file
 sort -o file file
 
 
+# Get set intersection/difference
+# between to text files
+#----------------------------
+# use `comm`
+
+#==== vanilla comm
+# tab-separated cols:
+# [lines unique to F1] [lines unique to F2] [lines in common]
+comm file1 file2
+
+#==== only common to both
+comm -12 file1 file2
+cat file1 | comm -12 - file2  # where file1 is read from STDIN
+
+#==== lines only found in F1
+comm -23 file1 file2
+
+#==== only lines found in F2, when files arent sorted
+comm -13 <(sort file1) <(sort file2)
+
+
+# Get unique lines in file (no dups)
+#-----------------------------
+#==== de-duplicated, single lines
+sort file | uniq
+sort file | uniq -i  # ignore case
+
+#==== unique and duplicate
+sort file | uniq -u  # unique lines only
+sort file | uniq -d  # duplicates only
+
+
 
 #==============================================================================
 #                           __  __  __  __
