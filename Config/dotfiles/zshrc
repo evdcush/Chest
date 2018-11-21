@@ -32,7 +32,7 @@ DIR_MEDIA="$HOME/Media"
 DIR_PROJECTS="$HOME/Projects"
 
 #---- Files
-PATH_HOARD_INBOX="$CHEST/Resources/hoard_inbox.json"
+PATH_HOARD_INBOX="$DIR_CHEST/Resources/hoard_inbox.json"
 TOKEN_GH_PUB=$(cat "$DIR_KEY/gh_pub_token")
 
 #---- Crypt keys
@@ -129,7 +129,7 @@ if ! zgen saved; then
     zgen oh-my-zsh themes/robbyrussell
 
     #---- non-packaged
-    zgen load jocelynmallon/zshmarks
+    zgen load jocelynmallon/zshmarks.git
     zgen load b4b4r07/enhancd
     zgen load zsh-users/zsh-syntax-highlighting
 
@@ -156,7 +156,7 @@ source "$DIR_DOTS/functions/git-extras-completion.zsh"
 
 # Z jump
 # ======
-. "$DIR_APPS/.Z_jump/z.sh"
+. "$DIR_APPS/Z_jump/z.sh"
 
 # fzf
 # ===

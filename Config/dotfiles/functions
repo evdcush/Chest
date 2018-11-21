@@ -32,18 +32,21 @@ nativefy(){
 
 # GIT/GITHUB
 # ==========
-
 # Hoarding
 # --------
 function hurl {
-KEY="$1" VAL="$2" HPATH="$PATH_HOARD_INBOX" python - <<END
+ARGS="$@" HPATH="$PATH_HOARD_INBOX" python - <<END
 import os
 import json
 
-key_short = str(os.environ['KEY'])
+ku = os.environ['ARGS'].split(' ')
+if len(ku) > 1:
+    key_short, url = ku
+else:
+    url = ku.pop()
+    key_short = 'r'
 keys = dict(r="repos", o="orgs", u="users")
 key = keys[key_short]
-val = str(os.environ['VAL'])
 inbox_path = str(os.environ['HPATH'])
 
 #==== Read hoard JSON file
@@ -51,10 +54,10 @@ with open(inbox_path, 'r') as ibx_file:
     ibx = json.load(ibx_file)
 
 #==== Update values and write to hoard json file
-if val in ibx[key]:
-    print(f'{val} already in {key}!')
+if url in ibx[key]:
+    print(f'{url} already in {key}!')
 else:
-    ibx[key].append(val)
+    ibx[key].append(url)
     with open(inbox_path, 'w') as ibx_file:
         json.dump(ibx, ibx_file)
 END
@@ -195,8 +198,13 @@ function gcd(){
 # Make new pyenv virtualenv
 #========================
 pvenv(){
-    PY_VER=$1
-    VENV_NAME=$2
+    if [ "$#" -gt 1 ]; then
+        PY_VER=$1
+        VENV_NAME=$2
+    else
+        PY_VER='3.7.1'
+        VENV_NAME="$1"
+    fi
 
     # Make venv
     pyenv virtualenv "$PY_VER" "$VENV_NAME"
