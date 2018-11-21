@@ -142,6 +142,7 @@ alias gacmd="git add -u && git commit --amend --no-edit"
 alias gcn="git clone"
 alias gpull="git pull"
 alias gpush="git push"
+alias gcryu="git-crypt unlock $GCK_CHEST"
 gcampu(){
     msg="$@"
     git add -u
