@@ -63,6 +63,9 @@ starcraft-games:
 - scbw    # bw on linux
 - pygame  # dependency for every game-related thign
 
+visualization:
+- ipyvolume    # <-------<< WOW! looks comparable to mayavi ###########################
+- bokeh
 
 notebook:
 - jupyter-parser  # <<<<< LOOK INTO
@@ -165,6 +168,7 @@ CLI-shell:
 - maybe       # hit-or-miss, test out what command will do
 - glances     # better top/htop
 - archivenow  # archives urls (WARC, all the archiving sites)
+- halo        # spinners for terminal, ipython, notebook
 
 
 git-github:
