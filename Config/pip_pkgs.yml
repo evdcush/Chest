@@ -133,6 +133,8 @@ docs-text:
 - rstwatch  # automatically makes html conversions when change detected
 - rstdiary  # duno?
 
+media:
+- scdl  # soundcloud downloader
 
 sphinx:
 - sphinx
