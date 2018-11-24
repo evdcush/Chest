@@ -14,7 +14,7 @@
 PATH_DEFAULT="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 PATH_USR_LOCAL="/usr/local"
 PATH_OPT="/opt"
-PATH_USER_BIN="$HOME/evan/.local/bin"
+PATH_USER_BIN="$HOME/.local/bin"
 
 # Lib/Env stuff
 PATH_PYENV="$HOME/.pyenv/bin"
@@ -22,9 +22,9 @@ PATH_CUDA="$PATH_USR_LOCAL/cuda-10.0"
 
 
 #---- Directories
-DIR_KEY="$HOME/.Keys"
 DIR_DATA="$HOME/.Data"  # only for datasets!
 DIR_DOTS="$HOME/.Dots"
+DIR_KEY="$DIR_DOTS/Keys"
 DIR_APPS="$HOME/.Apps"
 DIR_DOCS="$HOME/Documents"
 DIR_CHEST="$HOME/Chest"
@@ -93,7 +93,8 @@ export PATH="${PATH:+${PATH}:}$PATH_USER_BIN"
 # =========
 # Preferred editor
 # ---------------
-export VISUAL=vim
+#export VISUAL=vim
+export VISUAL=subl
 export EDITOR="$VISUAL"
 
 # jrnl prevent hist
@@ -122,7 +123,7 @@ if ! zgen saved; then
     # =======
     zgen oh-my-zsh plugins/git
     zgen oh-my-zsh plugins/colored-man-pages
-    zgen oh-my-zsh plugins/command-not-found
+    #zgen oh-my-zsh plugins/command-not-found
     zgen oh-my-zsh plugins/copyfile
     zgen oh-my-zsh plugins/history
     zgen oh-my-zsh plugins/git
