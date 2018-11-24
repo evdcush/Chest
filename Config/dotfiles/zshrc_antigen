@@ -37,7 +37,7 @@ PATH_HOARD_INBOX="$DIR_CHEST/Resources/hoard_inbox.json"
 TOKEN_GH_PUB=$(cat "$DIR_KEY/gh_pub_token")
 
 #---- Crypt keys
-GCK_CHEST=$(cat "$DIR_KEY/chest_key")
+GCK_CHEST="$DIR_KEY/chest_key"
 
 #------------------------------------------------------------------------------
 #     ___         __    __    _
