@@ -33,11 +33,10 @@ DIR_PROJECTS="$HOME/Projects"
 
 #---- Files
 PATH_HOARD_INBOX="$DIR_CHEST/Resources/hoard_inbox.json"
-TOKEN_GH_PUB=$(cat "$DIR_KEY/gh_pub_token")
+#TOKEN_GH_PUB=$(cat "$DIR_KEY/gh_pub_token")
 
 #---- Crypt keys
-GCK_CHEST=$(cat "$DIR_KEY/chest_key")
-
+GCK_CHEST="$DIR_KEY/chest_key"
 
 #------------------------------------------------------------------------------
 #     ___         __    __    _
@@ -49,8 +48,7 @@ GCK_CHEST=$(cat "$DIR_KEY/chest_key")
 
 # Path functions
 # ==============
-# from: https://superuser.com/users/7778/gordon-davisson
-pathadd() {
+path_append() {
     if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
         PATH="${PATH:+"$PATH:"}$1"
     fi
@@ -69,7 +67,7 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 #---- CUDA, cuDNN
-pathadd "$PATH_CUDA/bin"
+path_append "$PATH_CUDA/bin"
 export LD_LIBRARY_PATH="$PATH_CUDA/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
 
 #---- User path
@@ -93,8 +91,8 @@ export PATH="${PATH:+${PATH}:}$PATH_USER_BIN"
 # =========
 # Preferred editor
 # ---------------
-#export VISUAL=vim
-export VISUAL=subl
+export VISUAL=vim
+#export VISUAL=subl
 export EDITOR="$VISUAL"
 
 # jrnl prevent hist
@@ -105,39 +103,39 @@ setopt HIST_IGNORE_SPACE
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# ZSH ZGEN CONFIG
+# Antigen config
 
-# Load zgen
-# =========
-source "${HOME}/.zgen/zgen.zsh"
+# Load antigen
+# ============
+source $DIR_DOTS/antigen.zsh
 
 # Initialize plugins
 # ==================
-if ! zgen saved; then
-    echo "Creating a zgen save"
 
-    # Base packages
-    zgen oh-my-zsh
+# Library
+# -------
+antigen use oh-my-zsh
 
-    # Plugins
-    # =======
-    zgen oh-my-zsh plugins/git
-    zgen oh-my-zsh plugins/colored-man-pages
-    #zgen oh-my-zsh plugins/command-not-found
-    zgen oh-my-zsh plugins/copyfile
-    zgen oh-my-zsh plugins/history
-    zgen oh-my-zsh plugins/git
-    zgen oh-my-zsh themes/robbyrussell
+# Plugins
+# -------
+#~~~~ oh-my-zsh:
+antigen bundle colored-man-pages
+antigen bundle copyfile
+antigen bundle history
+antigen bundle copydir
+antigen bundle compleat
+#antigen bundle dircycle
+antigen bundle z
+#~~~~ repo:
+antigen bundle jocelynmallon/zshmarks
+antigen bundle zdharma/fast-syntax-highlighting
+antigen bundle b4b4r07/enhancd
+#~~~~ Themes
+antigen theme robbyrussell
 
-    #---- non-packaged
-    zgen load jocelynmallon/zshmarks.git
-    zgen load b4b4r07/enhancd
-    zgen load zsh-users/zsh-syntax-highlighting
+# FINISH
+antigen apply
 
-    # Generate init script for plugins
-    # ================================
-    zgen save
-fi
 
 ###############################################################################
 #                                                                      ########
@@ -148,43 +146,28 @@ fi
 #   ██████  ███████ ███████ ██   ██     ███████ ██   ████   ████       ########
 #                                                                      ########
 ###############################################################################
-
-# Source my dots
-# ==============
-source $HOME/.Aliases
-source $HOME/.Functions
-source "$DIR_DOTS/functions/git-extras-completion.zsh"
-
-# Z jump
-# ======
-. "$DIR_APPS/Z_jump/z.sh"
+# >>----> For configuring all other stuff
 
 # fzf
 # ===
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Fuck
-# ====
+
+# Z jump
+# ======
+#. /home/evan/.Apps/Z_jump/z.sh
+
+
+# Source aliases and funcs
+# ========================
+source $DIR_DOTS/aliases
+source $DIR_DOTS/functions
 eval $(thefuck --alias)
 
-
-#------------------------------------------------------------------------------
-# shit added automatically by software
-#------------------------------------------------------------------------------
-
-# pip zsh completion start
-function _pip_completion {
-  local words cword
-  read -Ac words
-  read -cn cword
-  reply=( $( COMP_WORDS="$words[*]" \
-             COMP_CWORD=$(( cword-1 )) \
-             PIP_AUTO_COMPLETE=1 $words[1] ) )
-}
-compctl -K _pip_completion pip
-# pip zsh completion end
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
+# Stuff automatically added by other software:
 
-# n
-export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+# Added by n-install (see http://git.io/n-install-repo).
+export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
