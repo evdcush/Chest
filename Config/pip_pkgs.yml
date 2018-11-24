@@ -133,6 +133,8 @@ docs-text:
 - rstwatch  # automatically makes html conversions when change detected
 - rstdiary  # duno?
 
+media:
+- scdl  # soundcloud downloader
 
 sphinx:
 - sphinx
@@ -199,3 +201,57 @@ misc-untested:
 - astrodash    # spectral convolutions deep learning supernovae
 - pipsalabim   # guesses your dependencies, no need for req file
 - dbcollection # collection of popular ML datasets
+- smmap2       # pure python sliding window
+- snowballstemmer # 16 stemmer algos (15 + poerter english stemmer) gen from snowball algo
+- archivenow  # too little time to eval each one at te moment
+- arxivcheck  # too little time to eval each one at te moment
+- arxivscraper  # too little time to eval each one at te moment
+- autograd  # too little time to eval each one at te moment
+- betterbib  # too little time to eval each one at te moment
+- bibcure  # too little time to eval each one at te moment
+- bibtexparser  # too little time to eval each one at te moment
+- bidict  # too little time to eval each one at te moment
+- binaryornot  # too little time to eval each one at te moment
+- binarytree  # too little time to eval each one at te moment
+- chainerrl  # too little time to eval each one at te moment
+- dbcollection  # too little time to eval each one at te moment
+- docopt  # too little time to eval each one at te moment
+- docutils  # too little time to eval each one at te moment
+- doi2bib  # too little time to eval each one at te moment
+- entrypoints  # too little time to eval each one at te moment
+- feedparser  # too little time to eval each one at te moment
+- fire  # too little time to eval each one at te moment
+- gitdb2  # too little time to eval each one at te moment
+- github3.py  # too little time to eval each one at te moment
+- GitPython  # too little time to eval each one at te moment
+- ipykernel  # too little time to eval each one at te moment
+- ipython  # too little time to eval each one at te moment
+- jupyter  # too little time to eval each one at te moment
+- jupyter-client  # too little time to eval each one at te moment
+- jupyter-console  # too little time to eval each one at te moment
+- jupyter-contrib-core  # too little time to eval each one at te moment
+- jupyter-contrib-nbextensions  # too little time to eval each one at te moment
+- jupyter-core  # too little time to eval each one at te moment
+- jupyter-highlight-selected-word  # too little time to eval each one at te moment
+- jupyter-latex-envs  # too little time to eval each one at te moment
+- jupyter-nbextensions-configurator  # too little time to eval each one at te moment
+- jupyter-parser  # too little time to eval each one at te moment
+- mistune  # too little time to eval each one at te moment
+- nbformat  # too little time to eval each one at te moment
+- oyaml  # too little time to eval each one at te moment
+- Pillow  # too little time to eval each one at te moment
+- poyo  # too little time to eval each one at te moment
+- ptyprocess  # too little time to eval each one at te moment
+- pybtex  # too little time to eval each one at te moment
+- pybtex-docutils  # too little time to eval each one at te moment
+- scihub2pdf  # too little time to eval each one at te moment
+- scikit-learn  # too little time to eval each one at te moment
+- scipy  # too little time to eval each one at te moment
+- sklearn  # too little time to eval each one at te moment
+- smmap2  # too little time to eval each one at te moment
+- snowballstemmer  # too little time to eval each one at te moment
+- starred  # too little time to eval each one at te moment
+- tabulate  # too little time to eval each one at te moment
+- title2bib  # too little time to eval each one at te moment
+- widgetsnbextension  # too little time to eval each one at te moment
+
