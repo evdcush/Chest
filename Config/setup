@@ -102,7 +102,7 @@ arp printer-driver-splix printer-driver-sag-gdi printer-driver-pxljr printer-dri
 #  Note:
 #    - this is the COMPLETE LIST
 #    - you will get tofu sometimes
-arp fonts-tlwg* fonts-thai* fonts-liberation* fonts-smc* fonts-liberation2* fonts-kacst* fonts-samyak* fonts-lao* fonts-deva* fonts-gujr* fonts-knda* fonts-guru* fonts-navilu* fonts-orya* fonts-beng* fonts-khmeros* fonts-mlym* fonts-lklug* fonts-sil* fonts-taml* fonts-sahadeva* fonts-sarai* fonts-lohit* fonts-gubbi* fonts-nakula* fonts-telu* fonts-tibetan* fonts-kalapi* fonts-indic* fonts-gargi* fonts-pagul*
+arp fonts-tlwg* fonts-thai* fonts-liberation* fonts-smc* fonts-liberation2* fonts-kacst* fonts-samyak* fonts-lao* fonts-deva* fonts-gujr* fonts-knda* fonts-guru* fonts-navilu* fonts-orya* fonts-beng* fonts-khmeros* fonts-mlym* fonts-lklug* fonts-sil* fonts-taml* fonts-sahadeva* fonts-sarai* fonts-lohit* fonts-gubbi* fonts-nakula* fonts-telu* fonts-kalapi* fonts-indic* fonts-gargi* fonts-pagul*
 
 # Desired fonts that may get removed or scheduled for autoremove
 afi fonts-opensymbol
@@ -187,7 +187,7 @@ alias svi="sudo vi"
 alias mdp="mkdir -p"
 alias cdb="cd -"
 #==== mkdir & cd into it
-function mcd(){mkdir -p "$1" && cd "$1"}
+function mcd(){ mkdir -p "$1" && cd "$1" }
 #==== cd & list contents
 function cdl(){cd "$1" && ls -1FSshX --file-type}
 
@@ -222,7 +222,7 @@ alias pi="pip install -U"
 #=============================================================================#
 
 addrep 'ubuntu-toolchain-r/test' # Don't need repo if on 18.04
-"gcc-7 g++-7 gcc-8 g++-8 --install-suggests"
+gcc-7 g++-7 gcc-8 g++-8 --install-suggests
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 80 --slave /usr/bin/g++ g++ /usr/bin/g++-7
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 100 --slave /usr/bin/g++ g++ /usr/bin/g++-8
 update-alternatives --set gcc /usr/bin/gcc-8
@@ -263,15 +263,11 @@ imagemagick
 libarchive-dev
 libatomic1
 libbz2-dev
-libcurl3
 libcurl4-openssl-dev
 libncurses5-dev
 libqt5core5a
-libqt5dbus5 # just $ai "libqt5*" or?
-libqt5gui5
-libqt5network5
+libqt5dbus5
 libqt5svg5-dev
-libqt5webkit5-dev
 libqt5widgets5
 libqt5x11extras5-dev
 libreadline-dev
@@ -463,7 +459,7 @@ wmctrl
 
 # git
 # ===============
-addrep it-core/ppa
+addrep git-core/ppa
 $afug
 # $afi git (in case afug doesnt wokr)
 

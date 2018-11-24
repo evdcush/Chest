@@ -70,7 +70,7 @@ chainerrl sympy pip-autoremove ipython jupyter notebook gitup bs4 thefuck \
 jupyter_contrib_nbextensions jupyter_nbextensions_configurator jrnl \
 docutils sphinx sphinx-rtd-theme johnnydep bidict art termdown cheat \
 cookiecutter archivenow pypi-cli autograd binarytree h5py starred \
-glances dbcollection; $nbext_init"
+glances dbcollection buku; $nbext_init"
 
 alias pipidocs="pip install -U pybtex bibtexparser bibcure betterbib \
 pybtex-docutils scihub2pdf arxivscraper arxivcheck"
@@ -105,11 +105,6 @@ alias g="jump"
 alias s="bookmark"
 alias d="deletemark"
 alias p="showmarks"
-
-# Ascii text print
-# ================
-alias ascf="python -m art fonts"
-alias asc="python -m art text"
 
 # Misc apps
 # =========

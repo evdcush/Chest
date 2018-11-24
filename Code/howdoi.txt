@@ -42,7 +42,15 @@ sudo apt --no-install-recommends --no-install-suggests install MY_PACKAGE
 #----> sshfs
 sshfs name@server:/path/to/folder /path/to/mount/point
 
+>? Generate SSH key?
+#=======================
+mkdir ~/.ssh
+chmod 700 ~/.ssh
+ssh-keygen -t rsa
 
+>? Send my client SSH key to server?
+#=======================
+ssh-copy-id <username>@<host>
 
 #-----------------------------------------------------------------------------
 # Chrome / web / extensions
@@ -61,6 +69,10 @@ chrome://system
 >? Check what dependees a package has?
 #========================
 apt-cache rdepends packagename
+
+>? Apt install packages from text file?
+#========================
+cat pkg_list.txt | xargs sudo apt install
 
 
 
