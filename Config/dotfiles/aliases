@@ -127,6 +127,9 @@ alias r2h="rst2html $1 > sample.T.html; chromium-browser sample.T.html"
 alias mk_pyproj="cookiecutter \
 https://github.com/kragniz/cookiecutter-pypackage-minimal.git"
 
+#---- buku
+alias b='buku --suggest'
+
 
 # git
 # ===
