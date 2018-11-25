@@ -38,6 +38,11 @@ PATH_HOARD_INBOX="$DIR_CHEST/Resources/hoard_inbox.json"
 #---- Crypt keys
 GCK_CHEST="$DIR_KEY/chest_key"
 
+# Misc
+# ====
+T430_HNAME="T4"
+LOCAL_HNAME=$(hostname) # for determining whether to path to CUDA
+
 #------------------------------------------------------------------------------
 #     ___         __    __    _
 #    / _ \ ___ _ / /_  / /   (_)  ___   ___ _
@@ -67,10 +72,13 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 #---- CUDA, cuDNN
-path_append "$PATH_CUDA/bin"
-export LD_LIBRARY_PATH="$PATH_CUDA/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
+if [ "$LOCAL_HNAME" != "$T430_HNAME" ] ;then
+    # You are on GPU machine, path exists
+    path_append "$PATH_CUDA/bin"
+    export LD_LIBRARY_PATH="$PATH_CUDA/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
+fi
 
-#---- User path
+#---- User bin path
 export PATH="${PATH:+${PATH}:}$PATH_USER_BIN"
 
 
@@ -125,11 +133,10 @@ antigen bundle history
 antigen bundle copydir
 antigen bundle compleat
 #antigen bundle dircycle
-antigen bundle z
 #~~~~ repo:
 antigen bundle jocelynmallon/zshmarks
 antigen bundle zdharma/fast-syntax-highlighting
-antigen bundle b4b4r07/enhancd
+#antigen bundle b4b4r07/enhancd
 #~~~~ Themes
 antigen theme robbyrussell
 

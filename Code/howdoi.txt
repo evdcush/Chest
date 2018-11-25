@@ -85,3 +85,12 @@ cat pkg_list.txt | xargs sudo apt install
 inxi -i
 OR
 wget -O - -q icanhazip.com
+
+>? Disable the insert key?
+#=========================
+# Step 1) what key is mapped to insert?
+xmodmap -pke | grep -i insert
+
+# Step 2) map ins key to null in ~/.Xmodmap
+echo "keycode 90 =" >> ~/.Xmodmap
+

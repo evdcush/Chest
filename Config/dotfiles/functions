@@ -155,10 +155,6 @@ function mcd(){mkdir -p "$1" && cd "$1"}
 #==== cd & list contents
 function cdl(){cd "$1" && ls -1FSshX --file-type}
 
-#==== list top-level file-sizes, sorted
-function duh(){
-    du -h --max-depth=1 | sort -h;
-}
 
 # Find and delete: CAREFUL
 #========================
@@ -167,7 +163,8 @@ function find_and_remove_all(){
     echo matches
     echo -n "Do you want to proceed (y/n)? "
     read answer
-    if [ "$answer" != "${answer#[Yy]}" ] ;then
+    if [ "$answer" = "${answer#[Yy]}" ] ;then
+        echo ""
         sudo find / -iname "*$1*" -exec rm -rf "{}" \;
     else
         echo Aborted
@@ -186,7 +183,6 @@ function f(){
         sudo find / -iname "$1"
     fi
 }
-
 
 
 #-----------------------------------------------------------------------------#
@@ -217,7 +213,6 @@ pvenv(){
         PY_VER='3.7.1'
         VENV_NAME="$1"
     fi
-
     # Make venv
     pyenv virtualenv "$PY_VER" "$VENV_NAME"
     pyenv local "$VENV_NAME"

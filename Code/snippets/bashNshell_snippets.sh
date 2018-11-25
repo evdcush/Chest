@@ -69,6 +69,11 @@ sort file | uniq -i  # ignore case
 sort file | uniq -u  # unique lines only
 sort file | uniq -d  # duplicates only
 
+# Get name of machine
+# -------------------
+# `hostnamectl` and `cat /proc/sys/kernel/hostname`, also good
+hostname
+#-----> T4
 
 
 #==============================================================================
@@ -87,7 +92,7 @@ mv very/long/path/to/filename.old very/long/path/to/filename.new
 
 # File commands I often reference
 #===================================
-ln -s <filename> <link>       # creates symbolic link to file
+ln -s <filename> <link>       # creates symbolic link to file, -sf to overwrite
 cat <filename>                # prints file raw content (will not be interpreted)
 grep <pattern> <filenames>    # looks for the string in the files
 grep -r <pattern> <dir>       # search recursively for pattern in directory
@@ -117,7 +122,7 @@ function find_and_remove_all(){
     sudo find / -iname "*$1*"
     echo -n "Do you want to proceed (y/n)? "
     read answer
-    if [ "$answer" != "${answer#[Yy]}" ] ;then
+    if [ "$answer" = "${answer#[Yy]}" ] ;then
         sudo find / -iname "*$1*" -exec rm -rf "{}" \;
     else
         echo Aborted

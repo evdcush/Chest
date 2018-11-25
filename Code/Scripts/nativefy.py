@@ -28,6 +28,8 @@ certain things and make desktop entries is tedious work.
 """
 
 import os
+from glob import glob
+import sys
 import subprocess
 from argparse import ArgumentParser
 
@@ -49,7 +51,8 @@ LOCAL_APPS = f'{LOCAL}/share/applications'
 DEFAULT_ARGS = '--file-download-options \'{"saveAs": true}\' -m'
 #==== User-specific paths
 APP_PATH  = f'{HOME}/.Apps/natified'
-ICON_PATH = f'{HOME}/Chest/Resources/Icons/{{name}}.png'
+ICON_DIR  = f'{HOME}/Chest/Resources/Icons'
+ICON_PATH = f'{ICON_DIR}/{{name}}.png'
 
 # Desktop entry format
 DESKTOP_ENTRY = f"""
@@ -82,11 +85,11 @@ adg('-i', '--icon', type=str,
     help='.png icon for app')
 
 adg('-p', '--path', type=str, default=APP_PATH,
-    help='full-path to installation directory, (default="~/.apps")')
+    help='full-path to installation directory, (default="~/.Apps")')
 
-adg('-a', '--auth', type=str, nargs=2,
-    help=('<auth user-name> <auth user-password>; ',
-        'WARNING: cleartext password will be logged by your shell history'))
+#adg('-a', '--auth', type=str, nargs=2,
+#    help=('<auth user-name> <auth user-password>; ',
+#        'WARNING: cleartext password will be logged by your shell history'))
 
 adg('-u', '--internal-urls', type=int,
     help="apparently regex? I used int before and that worked") # nativefier ex: --internal-urls ".*?\.google\.*?" (but I just use num?)
@@ -100,66 +103,124 @@ adg('-s', '--single-instance', action='store_false',
 adg('-c', '--counter', action='store_true',
     help='X number attached to window label for apps that support count, such as gmail')
 
+def get_icon(name):
+    """
+    handles edge cases where name != icon-name
+    name of format:
+        app-name
+    """
+    if 'blog' in name:
+        icon_name = name.split('-')[0]
+    else:
+        icon_name = name
+    return icon_name
+
+
 # Parse user args
 #----------------
-args = vars(P.parse_args())
+#args = vars(P.parse_args())
+def parse_args():
+    """ Interprets argparse args for nativefier commands
+    """
+    args = vars(P.parse_args())
+    name = args['name']
+    url  = args['url']
+    print(f'parse_args: name = {name}; url = {url}')
 
+    # Helper
+    # ------
+    def _decode_flag(key):
+        val = args[key]
+        if val:
+            args[key] = f'--{key}'
+        else:
+            args.pop(key, None)
+
+    # Bool flags
+    # ----------
+    _decode_flag('tray')
+    _decode_flag('counter')
+    _decode_flag('single_instance')
+
+    # Interpreted args
+    # ----------------
+    #==== icon
+    if args['icon'] is None:
+        #if '-' not in name:
+        #icon_name = ''.join(name.lower().split('-'))
+        #icon_name = name.lower()
+        icon_name = get_icon(name.lower())
+        icon_path = ICON_PATH.format(name=icon_name)
+        args['icon'] = f'-i {icon_path}'
+    #==== internal-urls
+    if args['internal_urls'] is None:
+        args.pop('internal_urls', None)
+    else:
+        internal_urls = args['internal_urls']
+        args['internal_urls'] = f'--internal_urls {internal_urls}'
+    #==== name
+    args['name'] = f'-n {name}'
+    #==== url
+    args['url'] = f'"{url}"'
+    return args
 
 #==============================================================================
 # Nativefy -
 #    build nativefied app, app desktop entry, and symlink binary
 #==============================================================================
-
+from code import interact
+#nativefier "https://www.hackerrank.com/dashboard" -n hacker-rank -a x64 -p linux --honest -m -i /home/evan/Chest/Resources/Icons/HackerRank_logo.png
 # Nativefy
 #---------------
-def nativefy(opts):
+def nativefy():
     """ function that calls nativefier
-    1. parse user args
-    2. build nativefier command
-    3. call nativefier
-    4. make app binaries executable
-    5. symlink binaries to local bin
-    6. make desktop entry
+    1. build nativefier command
+    2. call nativefier
+    3. make app binaries executable
+    4. symlink binaries to local bin
+    5. make desktop entry
 
     Params
     ------
     opts : dict
         the parsed args, contains all relevant nativefier flags
     """
-    # Target url
-    url  = opts['url']
-    name = opts['name']
+    opts = parse_args()
+    name = opts['name'].split(' ')[-1]
+    nativefier_commands = []
+    add_arg = lambda k: nativefier_commands.append(opts.pop(k))
 
-    # dest dir
+    # Targets
+    # -------
+    add_arg('url')
+    add_arg('name')
+
+    # Destination
+    # -----------
     dest = opts['path']
     if not os.path.exists(dest): os.makedirs(dest)
+    opts.pop('path', None) # remove non-native cmd
 
-    # icon
-    icon_path = ICON_PATH.format(name=name)
-    if os.path.exists(icon_path):
-        opts['icon'] = icon_path
+    # Default args
+    nativefier_commands.append(DEFAULT_ARGS)
 
-    # check authentication arg
-    if opts['auth'] is not None:
-        auth_usr, auth_pw = opts['auth']
-        opts['basic-auth-username'] = auth_usr
-        opts['basic-auth-password'] = auth_pw
+    # Variable args
+    # -------------
+    var_args = dict(opts)
+    for k in var_args:
+        print(f'key: {k}')
+        add_arg(k)
 
-    # Remove non-nativefier args
-    del opts['url']
-    del opts['path']
-    del opts['auth']
+    # Format nativefier command string
+    # --------------------------------
+    nativefier_cmd = ' '.join(nativefier_commands)
+    nativefier_cmd = 'nativefier ' + nativefier_cmd
 
-    # Build nativefier command
-    nativefier_cmd = "nativefier "
-    for k, v in opts.items():
-        if v:
-            nativefier_cmd += f' --{k} {v}'
-    nativefier_cmd += f' {url} {dest}'
-
-    # Call nativefier
-    # ---------------
-    subprocess.run(nativefier_cmd, shell=True)
+    # Execute
+    # -------
+    print(nativefier_cmd)
+    #interact(local=dict(globals(), **locals()))
+    subprocess.run(nativefier_cmd, cwd=dest, shell=True)
     print('\nFinished nativefier command')
 
     # Link binaries
@@ -171,8 +232,8 @@ def nativefy(opts):
 
     # Make desktop entry
     make_desktop_entry(name, app_file_path)
-
     print('Finished nativefication process')
+
 
 
 def make_desktop_entry(name, app_path):
@@ -197,4 +258,4 @@ def make_binary_exec(bin_file_path):
 
 # Nativefy a web app
 # ------------------
-nativefy(args)
+nativefy()

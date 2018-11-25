@@ -158,3 +158,22 @@ Install:
     PPA:
         - git-core/ppa
         - wereturtle/ppa
+
+
+NPM:
+- nativefier
+- gitbook-cli
+- tldr
+
+Nativefier:
+    Gmail: https://mail.google.com
+    Google-Drive: https://drive.google.com
+    Google-Keep: https://keep.google.com
+    Google-Calendar: https://calendar.google.com
+    Deepmind: https://deepmind.com/blog/
+    OpenAI: https://blog.openai.com/
+    Google-AI: https://ai.google/research/pubs/
+    SimplyHired: https://www.simplyhired.com/
+    LinkedIn: https://www.linkedin.com/uas/login
+    Airtable: https://airtable.com/
+    HackerRank: https://www.hackerrank.com/dashboard

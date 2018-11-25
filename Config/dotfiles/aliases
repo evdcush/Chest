@@ -12,17 +12,30 @@
 # Shell
 # =====
 #---- file and dir stuff
+# Navigation
 alias md="mkdir -p"
 alias cdd="cd -"
+
+# File mod
+alias srt="sort -o $1 $1"
+alias unq="sort $1 | uniq -i"  # ignore case
 
 #---- list stuff
 alias h="history"
 alias ldot="ls -d --group-directories-first .*"
 alias lk="ls -1FSshX --file-type --group-directories-first"
 alias l="ls --group-directories-first -X"
+alias duh="du -h --max-depth=1 | sort -h;"
 
 #---- Copy
 alias xclip="xclip -selection clipboard"
+
+# User stuff
+# ==========
+#---- IP
+alias myip="inxi -i"
+
+
 
 
 #==============================================================================
@@ -38,6 +51,7 @@ alias xclip="xclip -selection clipboard"
 #==== package stuff
 alias api="apt-cache show"
 alias dpkgi="sudo dpkg -i "
+
 
 # Apt-fast
 # ========
@@ -140,14 +154,19 @@ alias gacmd="git add -u && git commit --amend --no-edit"
 alias gcn="git clone"
 alias gpull="git pull"
 alias gpush="git push"
+
+# unlock chest with shared chest key
 alias gcu="git-crypt unlock $GCK_CHEST"
+
 gcampu(){
+    # add modified --> commit --> push
     msg="$@"
     git add -u
     git commit -m "$msg"
     git push
 }
 
+# Returns sorted size objects tracked in git tree
 alias gsize="git rev-list --objects --all \
 | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' \
 | sed -n 's/^blob //p' \
