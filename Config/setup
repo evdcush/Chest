@@ -725,9 +725,28 @@ sudo systemctl restart sshd.service;
 #
 #==============================================================================
 
+# Fix slow-start debian bug
+# =========================
+
+# apt-daily
+# ---------
+sudo systemctl edit apt-daily.timer
+# Paste into edit:
+# apt-daily timer configuration override
+[Timer]
+OnBootSec=15min
+OnUnitActiveSec=1d
+AccuracySec=1h
+RandomizedDelaySec=30min
+
+# Network manager
+# ---------------
+sudo systemctl disable NetworkManager-wait-online.service
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Keyboard
-#-------------------------
+# ========
 #==== Volume
 amixer set Master 5%-  # Alt+-
 amixer set Master 5%+  # Alt+=

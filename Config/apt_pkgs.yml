@@ -1,7 +1,7 @@
 
 
 Bloat:
-- "*mate-desktop*"
+- "*mate-*"
 - mugshot
 - cheese-common
 - libgnome-games-support-common
@@ -25,4 +25,136 @@ Bloat:
 - printer-driver-foo2zjs-common
 - printer-driver-foo2zjs
 - printer-driver-c2esp
+- fonts-tlwg*
+- fonts-thai*
+- fonts-liberation*
+- fonts-smc*
+- fonts-liberation2*
+- fonts-kacst*
+- fonts-samyak*
+- fonts-lao*
+- fonts-deva*
+- fonts-gujr*
+- fonts-knda*
+- fonts-guru*
+- fonts-navilu*
+- fonts-orya*
+- fonts-beng*
+- fonts-khmeros*
+- fonts-mlym*
+- fonts-lklug*
+- fonts-sil*
+- fonts-taml*
+- fonts-sahadeva*
+- fonts-sarai*
+- fonts-lohit*
+- fonts-gubbi*
+- fonts-nakula*
+- fonts-telu*
+- fonts-kalapi*
+- fonts-indic*
+- fonts-gargi*
+- fonts-pagul*
+- fonts-noto*
 
+Install:
+    deps:
+        GCC:
+            - gcc-7 # GCC should trigger
+            - g++-7
+            - gcc-8
+            - g++-8
+        utils:
+            - wget
+            - curl
+            - git-core
+            - apt-transport-https
+            - autoconf
+            - automake
+            - build-essential
+            - cmake
+            - docbook2x
+            - dvipng
+            - extra-cmake-modules
+            - gfortran
+            - graphviz
+            - imagemagick
+            - libarchive-dev
+            - libatomic1
+            - libbz2-dev
+            - libcurl4-openssl-dev
+            - libncurses5-dev
+            - libreadline-dev
+            - librsvg2-bin
+            - libre2-dev
+            - libsqlite3-dev
+            - libssl-dev
+            - libxcb-keysyms1-dev
+            - llvm
+            - m4
+            - make
+            - p7zip-full
+            - p7zip-rar
+            - perl
+            - pkg-config
+            - python-sphinx
+            - qt5-default
+            - qt5-qmake
+            - redis-server
+            - redis-tools
+            - texlive-xetex
+            - tk-dev
+            - xclip
+            - xz-utils
+            - zlib1g-dev
+
+    Apps:
+        - vim
+        - anki
+        - chromium-browser
+        - flameshot
+        - git-extras
+        - pdfsam  # install from deb; apt outdated
+        - vlc
+        - mpv
+        - gparted
+        - deborphan
+        - aria2
+        - deluge
+        - git-crypt
+        - img2pdf
+        - wkhtmltopdf
+        - xsensors
+        - xfce4-timer-plugin
+        - xfce4-sensors-plugin
+        - gedit
+        - htop
+        - tree
+        - nomacs
+        - tlp
+        - printer-driver-brlaser
+        - exfat-utils
+        - flac
+        - lame
+        - sshfs
+        - openssh-client
+        - x264
+        - unrar
+        - dictd
+        - dict-gcide
+        - dict-wn
+        - fonts-hack
+        - fonts-opensymbol
+        - fonts-symbola
+        - fonts-sil-gentiumplus
+        - fonts-freefont-ttf
+        - fonts-stix # math symbols
+        - texlive-latex-recommended
+        - fonts-umeplus
+        - fonts-hanazono
+        - fonts-mplus
+        - fonts-mikachan
+
+    PPA:
+        - git-core/ppa
+        - wereturtle/ppa
