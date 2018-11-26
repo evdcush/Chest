@@ -11,30 +11,11 @@ essentials:
 - gitup
 
 
-# science-math:  # pkgs['science-math'] = {'autograd': 'poop', 'sympy':poop,...}
-#   autograd: poop
-#   sympy: poop
-#   scikit-video: poop
-#   pydataset: poop
-
-# IS EQUIVALENT TO:
-
-# science-math:  # pkgs['science-math'] = {'autograd': 'poop', 'sympy':poop,...}
-#   autograd:
-#     poop
-#   sympy:
-#     poop
-#   scikit-video:
-#     poop
-#   pydataset:
-#     poop
-
-
 science-math:
 - autograd  # easier to use than sympy; less powerful though
 - sympy  # learning curve, but amazingly powerful and featured
 - scikit-video
-- pydataset
+- pydataset  # access to many datasets, in dataframe format
 #- primesieve # always freezes install
 
 

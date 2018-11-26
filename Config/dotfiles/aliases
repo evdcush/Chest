@@ -73,6 +73,8 @@ alias afshow="apt-fast show"
 
 # Python stuff
 # ============
+
+#---- pip stuff
 alias pipi="pip install -U "
 
 alias nbext_init="pip install -U jupyter_nb_extensions_configurator; \
