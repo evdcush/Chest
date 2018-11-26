@@ -8,53 +8,7 @@
 #                                                                      ########
 ###############################################################################
 
-# Base PATH
-# =========
-PATH_DEFAULT="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-PATH_USR_LOCAL="/usr/local"
-PATH_OPT="/opt"
-PATH_USER_BIN="$HOME/.local/bin"
-
-# env/library Paths
-# =================
-PATH_PYENV="$HOME/.pyenv/bin"
-PATH_CUDA="$PATH_USR_LOCAL/cuda-10.0"
-
-
-# Directories
-# ===========
-#---- HOME dirs
-DIR_DATA="$HOME/.Data"  # only for datasets!
-DIR_DOTS="$HOME/.Dots"
-DIR_APPS="$HOME/.Apps"
-DIR_DOCS="$HOME/Documents"
-DIR_MEDIA="$HOME/Media"
-DIR_PROJECTS="$HOME/Projects"
-#---- Nested dirs
-DIR_KEY="$DIR_DOTS/Keys"
-
-# Chest paths
-# ===========
-DIR_CHEST="$HOME/Chest"
-DIR_CHEST_RESOURCES="$DIR_CHEST/Resources"
-DIR_CHEST_CONFIG="$DIR_CHEST/Config"
-DIR_CHEST_DOTS="$DIR_CONFIG/dotfiles"
-
-
-
-# File paths
-# ==========
-PATH_INBOX_HOARD="$DIR_RESOURCES/inbox_hoard.json"
-PATH_INBOX_READ="$DIR_RESOURCES/inbox_read.yml"
-#TOKEN_GH_PUB=$(cat "$DIR_KEY/gh_pub_token")
-
-#---- Crypt keys
-GCK_CHEST="$DIR_KEY/chest_key"
-
-# Misc
-# ====
-T430_HNAME="T4"
-LOCAL_HNAME=$(hostname) # for determining whether to path to CUDA
+source $HOME/.Dots/paths
 
 #------------------------------------------------------------------------------
 #     ___         __    __    _

@@ -16,6 +16,7 @@ science-math:
 - sympy  # learning curve, but amazingly powerful and featured
 - scikit-video
 - pydataset  # access to many datasets, in dataframe format
+- pandas
 #- primesieve # always freezes install
 
 
@@ -36,12 +37,16 @@ TF-dependencies:  # don't actually use any of it, just to build TF
 - keras-preprocessing
 - protobuf
 
+NLP-stuff:
+- nltk  # de-jure natural language library
+- spacy # NLP library
+- snowballstemmer # library of stemming algs
 
 starcraft-games:
 - s2clientprotocol  # linux sc2 client (headless)
 - pysc2   # "official" deepmind sc2 api, fairly verbose and buggy, no documentation
 - sc2     # user-made sc2 api, (python-sc2), popular, also no documentation
-- scbw    # bw on linux
+- scbw    # bw on linux (in docker container)
 - pygame  # dependency for every game-related thign
 
 visualization:
@@ -49,7 +54,6 @@ visualization:
 - bokeh
 
 notebook:
-- jupyter-parser  # <<<<< LOOK INTO
 - ipython
 - jupyter
 - notebook
@@ -70,23 +74,25 @@ apps:
 
 
 lib-enhancements:
-- attrs  # manages a few dunders (mostly init), not that big of a deal
-- bidict
+- attrs       # manages a few dunders (mostly init), not that big of a deal
+- bidict      # exactly what it sounds like
 - python-box  # has surprising amount of different "boxes" or dict-classes
 
 
 dev:
 - cookiecutter  #*** project boilerplate
-- nose  # tests
-- flake8  # linting/static code, better than pylint
-- coverage  # code-coverage
-- black  # auto-format code to style, ONLY used on othre people's gross code
-- luigi  # manages task pipeline
+- nose     # tests
+- flake8   # linting/static code, better than pylint
+- radon    # linting/code metrics, better than flake8
+- coverage # code-coverage
+- black    # auto-format code to style, ONLY used on othre people's gross code
+- luigi    # manages task pipeline
 
 
 net:
 - html5lib  # dep
-- bs4  # scrape
+- bs4       # scrape
+- you-get   # scrape for dummies
 
 
 deps-utils:
@@ -110,11 +116,15 @@ pypi-python:
 docs-text:
 - docutils
 - doc2dash # making zeal datasets
-- numpydoc # sphinx extension for numpydoc support
-- pypandoc
+- pypandoc # pandoc wrapper
 - textdistance[extras]  # bunch of different text diff algos
 - rstwatch  # automatically makes html conversions when change detected
 - rstdiary  # duno?
+
+parsers:
+- feedparser      #$ universal feed parser
+- jupyter-parser  # CLI tool for parsing jupyter notebooks
+- mistune         # markdown
 
 media:
 - scdl  # soundcloud downloader
@@ -125,26 +135,30 @@ sphinx:
 - sphinxcontrib-jupyter
 - sphinxcontrib-websupport
 - sphinxcontrib-bibtex # allows bibtex to be inserted into sphinx doc
-- pelican
+- numpydoc  # sphinx extension to support docstrings in numpy format
+- pelican   # static site generator for blog; py api, rst, django
 
 
 reading:
-- pybtex
-- bibtexparser
-- bibcure
-- betterbib  # fetches info to try and correct/format your bib
-- pybtex-docutils
-- scihub2pdf
-- arxivcheck
-- arxivscraper
-- arxiv # main python source for arxiv.py API
-- arxiv_download
-- arxiv2txt  # SCRIPT not pypi?
+    bibtex:
+        - pybtex
+        - bibtexparser
+        - bibcure
+        - doi2bib    # exactly what it sounds like
+        - betterbib  # fetches info to try and correct/format your bib
+        - pybtex-docutils
+    arxiv:
+        - scihub2pdf
+        - arxivcheck
+        - arxivscraper
+        - arxiv # main python source for arxiv.py API
+        - arxiv_download
+        - arxiv2txt  # SCRIPT not pypi?
 
 arg-parsers: # I prefer argparse/argv in general, to keep dependencies down
 - fire   # IF I opt for diff argparser, fire is the shit (args req'd tho)
 - docopt # more work than you think
-- click  # fuck that stack of decorators, why peep like
+- click  # fuck that stack of decorators, why peep like???
 
 
 CLI-shell:
@@ -157,17 +171,19 @@ CLI-shell:
 
 
 git-github:
-- github3.py
-- starred  # dope
-- oh-my-stars
-- gitsuggest # ***
-- grip               # preview md rendering on github before publishing
-- gitstars           # django app to manage your stars
-- github-backup      # backup repos from user or organization
-- github-sync        # download /pull from all your git repos
-- github-trending    # trending repos and users on github
-- clone-github       # clone github repos in bulk
-- replicate-github   # tool for maintaining mirrors of github repos
+- GitPython           # python git library
+- pygithub            # github API v3, unofficial
+#- github3.py         # github API, official (i think)
+- starred             # dope (make your own awesome list from your stars)
+- oh-my-stars         # cli tool to search your stars
+- gitsuggest          # suggest repos of interest based on your stars
+- grip                # preview md rendering on github before publishing
+- gitstars            # django app to manage your stars
+- github-backup       # backup repos from user or organization
+- github-sync         # download /pull from all your git repos
+- github-trending     # trending repos and users on github
+- clone-github        # clone github repos in bulk
+- replicate-github    # tool for maintaining mirrors of github repos
 - github-trending-cli # View Github Trending and README from the command line
 
 
@@ -185,56 +201,5 @@ misc-untested:
 - pipsalabim   # guesses your dependencies, no need for req file
 - dbcollection # collection of popular ML datasets
 - smmap2       # pure python sliding window
-- snowballstemmer # 16 stemmer algos (15 + poerter english stemmer) gen from snowball algo
-- archivenow  # too little time to eval each one at te moment
-- arxivcheck  # too little time to eval each one at te moment
-- arxivscraper  # too little time to eval each one at te moment
-- autograd  # too little time to eval each one at te moment
-- betterbib  # too little time to eval each one at te moment
-- bibcure  # too little time to eval each one at te moment
-- bibtexparser  # too little time to eval each one at te moment
-- bidict  # too little time to eval each one at te moment
-- binaryornot  # too little time to eval each one at te moment
-- binarytree  # too little time to eval each one at te moment
-- chainerrl  # too little time to eval each one at te moment
-- dbcollection  # too little time to eval each one at te moment
-- docopt  # too little time to eval each one at te moment
-- docutils  # too little time to eval each one at te moment
-- doi2bib  # too little time to eval each one at te moment
-- entrypoints  # too little time to eval each one at te moment
-- feedparser  # too little time to eval each one at te moment
-- fire  # too little time to eval each one at te moment
-- gitdb2  # too little time to eval each one at te moment
-- github3.py  # too little time to eval each one at te moment
-- GitPython  # too little time to eval each one at te moment
-- ipykernel  # too little time to eval each one at te moment
-- ipython  # too little time to eval each one at te moment
-- jupyter  # too little time to eval each one at te moment
-- jupyter-client  # too little time to eval each one at te moment
-- jupyter-console  # too little time to eval each one at te moment
-- jupyter-contrib-core  # too little time to eval each one at te moment
-- jupyter-contrib-nbextensions  # too little time to eval each one at te moment
-- jupyter-core  # too little time to eval each one at te moment
-- jupyter-highlight-selected-word  # too little time to eval each one at te moment
-- jupyter-latex-envs  # too little time to eval each one at te moment
-- jupyter-nbextensions-configurator  # too little time to eval each one at te moment
-- jupyter-parser  # too little time to eval each one at te moment
-- mistune  # too little time to eval each one at te moment
-- nbformat  # too little time to eval each one at te moment
-- oyaml  # too little time to eval each one at te moment
-- Pillow  # too little time to eval each one at te moment
-- poyo  # too little time to eval each one at te moment
-- ptyprocess  # too little time to eval each one at te moment
-- pybtex  # too little time to eval each one at te moment
-- pybtex-docutils  # too little time to eval each one at te moment
-- scihub2pdf  # too little time to eval each one at te moment
-- scikit-learn  # too little time to eval each one at te moment
-- scipy  # too little time to eval each one at te moment
-- sklearn  # too little time to eval each one at te moment
-- smmap2  # too little time to eval each one at te moment
-- snowballstemmer  # too little time to eval each one at te moment
-- starred  # too little time to eval each one at te moment
-- tabulate  # too little time to eval each one at te moment
-- title2bib  # too little time to eval each one at te moment
-- widgetsnbextension  # too little time to eval each one at te moment
+- title2bib    # generate bibtex given title
 
