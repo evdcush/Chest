@@ -175,7 +175,7 @@ antigen apply
 
 # Z jump
 # ======
-#. /home/evan/.Apps/Z_jump/z.sh
+. /home/evan/.Apps/Z_jump/z.sh
 
 
 # Source aliases and funcs
