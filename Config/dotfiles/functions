@@ -30,45 +30,78 @@ nativefy(){
     python "$CHEST/Code/Scripts/nativefy.py" "$@"
 }
 
-# GIT/GITHUB
-# ==========
-# Hoarding
-# --------
-function hurl {
-ARGS="$@" HPATH="$PATH_HOARD_INBOX" python - <<END
-import os
-import json
-
-ku = os.environ['ARGS'].split(' ')
-if len(ku) > 1:
-    key_short, url = ku
-else:
-    url = ku.pop()
-    key_short = 'r'
-keys = dict(r="repos", o="orgs", u="users")
-key = keys[key_short]
-inbox_path = str(os.environ['HPATH'])
-
-#==== Read hoard JSON file
-with open(inbox_path, 'r') as ibx_file:
-    ibx = json.load(ibx_file)
-
-#==== Update values and write to hoard json file
-if url in ibx[key]:
-    print(f'{url} already in {key}!')
-else:
-    ibx[key].append(url)
-    with open(inbox_path, 'w') as ibx_file:
-        json.dump(ibx, ibx_file)
-END
-}
-
-#
+# Grab stars from user
+# ====================
 getstars(){
     USER="$1"
     TOKEN="$TOKEN_GH_PUB"
     starred --username "$USER" --sort --token "$TOKEN" > "$USER.stars.md"
 }
+
+
+# INBOXING FUNCTIONS
+# ==================
+
+#---- Github repo hoarding (cloning)
+function hurl {
+ARGS="$@" IPATH="$PATH_INBOX_HOARD" python - <<END
+import os
+import yaml
+
+#==== Read STDIN
+path_inbox = str(os.environ['IPATH'])
+args_input = os.environ['ARGS'].split(' ')
+
+#==== Process args
+has_flag  = len(args_input) > 1
+flag, url = args_input if has_flag else ('r', args_input.pop())
+
+#==== Get key
+key_map = dict(r="repos", o="orgs", u="users")
+key = key_map[flag]
+
+#==== Get inbox file
+with open(path_inbox, 'r') as file_inbox:
+    inbox = yaml.load(file_inbox)
+
+#==== Update inbox
+inbox[key].append(url) # NB: duplicate entries managed by hoarding script
+with open(path_inbox, 'w') as file_inbox:
+    yaml.dump(file_inbox, inbox, default_flow_style=False)
+END
+}
+
+#----- Add papers/literature to reading inbox
+function rurl {
+ARGS="$@" IPATH="$PATH_INBOX_READ" python - <<END
+import os
+import yaml
+
+#==== Read STDIN
+path_inbox = str(os.environ['IPATH'])
+url = os.environ['ARGS']
+
+#==== Process args
+if 'arxiv.org' in url:
+    key = 'arxiv'
+    val = url.strip('htps:/arxiv.ogbdf')   # extracts arxiv ID
+else:
+    key = 'other'
+    val = url
+
+#==== Get inbox file
+with open(path_inbox, 'r') as file_inbox:
+    inbox = yaml.load(file_inbox)
+
+#==== Update inbox
+inbox[key].append(val)
+with open(path_inbox, 'w') as file_inbox:
+    yaml.dump(file_inbox, inbox, default_flow_style=False)
+END
+}
+
+
+#
 
 
 # Chrome stuff

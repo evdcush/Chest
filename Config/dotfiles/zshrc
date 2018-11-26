@@ -8,31 +8,44 @@
 #                                                                      ########
 ###############################################################################
 
-# PATH VARS
+# Base PATH
 # =========
-# Base paths
 PATH_DEFAULT="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 PATH_USR_LOCAL="/usr/local"
 PATH_OPT="/opt"
 PATH_USER_BIN="$HOME/.local/bin"
 
-# Lib/Env stuff
+# env/library Paths
+# =================
 PATH_PYENV="$HOME/.pyenv/bin"
 PATH_CUDA="$PATH_USR_LOCAL/cuda-10.0"
 
 
-#---- Directories
+# Directories
+# ===========
+#---- HOME dirs
 DIR_DATA="$HOME/.Data"  # only for datasets!
 DIR_DOTS="$HOME/.Dots"
-DIR_KEY="$DIR_DOTS/Keys"
 DIR_APPS="$HOME/.Apps"
 DIR_DOCS="$HOME/Documents"
-DIR_CHEST="$HOME/Chest"
 DIR_MEDIA="$HOME/Media"
 DIR_PROJECTS="$HOME/Projects"
+#---- Nested dirs
+DIR_KEY="$DIR_DOTS/Keys"
 
-#---- Files
-PATH_HOARD_INBOX="$DIR_CHEST/Resources/hoard_inbox.json"
+# Chest paths
+# ===========
+DIR_CHEST="$HOME/Chest"
+DIR_CHEST_RESOURCES="$DIR_CHEST/Resources"
+DIR_CHEST_CONFIG="$DIR_CHEST/Config"
+DIR_CHEST_DOTS="$DIR_CONFIG/dotfiles"
+
+
+
+# File paths
+# ==========
+PATH_INBOX_HOARD="$DIR_RESOURCES/inbox_hoard.json"
+PATH_INBOX_READ="$DIR_RESOURCES/inbox_read.yml"
 #TOKEN_GH_PUB=$(cat "$DIR_KEY/gh_pub_token")
 
 #---- Crypt keys
