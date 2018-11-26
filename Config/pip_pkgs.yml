@@ -114,6 +114,7 @@ pypi-python:
 
 
 docs-text:
+- json2yaml  # lifesaver
 - docutils
 - doc2dash # making zeal datasets
 - pypandoc # pandoc wrapper

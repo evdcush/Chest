@@ -27,7 +27,7 @@
 # Nativefier
 # ==========
 nativefy(){
-    python "$CHEST/Code/Scripts/nativefy.py" "$@"
+    python "$DIR_CHEST_CODE/Scripts/nativefy.py" "$@"
 }
 
 
@@ -76,6 +76,7 @@ path_inbox = str(os.environ['IPATH'])
 url = os.environ['ARGS']
 
 #==== Process args
+# ==========
 if 'arxiv.org' in url:
     key = 'arxiv'
     val = url.strip('htps:/arxiv.ogbdf')   # extracts arxiv ID
