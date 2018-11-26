@@ -56,7 +56,9 @@ notebook:
 - jupyterthemes
 - jupyter-contrib-nbextensions  # HUGE enhancements to notebook capabilities
 - jupyter_nbextensions_configurator
-# Then activate: $ jupyter nbextensions_configurator enable --user
+# Then activate:
+# $ jupyter contrib nbextension install --user
+# $ jupyter nbextensions_configurator enable --user
 
 
 apps:
