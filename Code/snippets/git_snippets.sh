@@ -28,8 +28,11 @@ git checkout other_branch file1
 
 # Keep a file in git, but do not track history
 # --------------------------------------------
-git update-index --skip-worktree <file_name>
+git update-index --skip-worktree <file_name>  # MORE TROUBLE THAN ITS WORTH
+git update-index --no-skip-worktree <file_name> # opposite
 # it will read as up to date, and changes will not be flagged as changes
+#==== How to list files ignored via --skip-worktree
+git ls-files -v . | grep ^S
 
 
 #  __  __   _____   _____    _____     ____    _____

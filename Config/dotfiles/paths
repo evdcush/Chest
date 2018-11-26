@@ -39,18 +39,23 @@ DIR_CHEST="$HOME/Chest"
 DIR_CHEST_CODE="$DIR_CHEST/Code"
 DIR_CHEST_RESOURCES="$DIR_CHEST/Resources"
 DIR_CHEST_CONFIG="$DIR_CHEST/Config"
-DIR_CHEST_DOTS="$DIR_CONFIG/dotfiles"
+DIR_CHEST_DOTS="$DIR_CHEST_CONFIG/dotfiles"
 
 # File paths
 # ==========
-PATH_INBOX_HOARD="$DIR_RESOURCES/inbox_hoard.json"
-PATH_INBOX_READ="$DIR_RESOURCES/inbox_read.yml"
-#TOKEN_GH_PUB=$(cat "$DIR_KEY/gh_pub_token")
+PATH_INBOX_HOARD="$DIR_CHEST_RESOURCES/inbox_hoard.yml"
+PATH_INBOX_READ="$DIR_CHEST_RESOURCES/inbox_read.yml"
 
 #---- Crypt keys
-#GCK_CHEST="$DIR_KEY/chest_key"
+GCK_CHEST="$DIR_KEY/chest_key"
 
 # Misc
 # ====
 T430_HNAME="T4"
 LOCAL_HNAME=$(hostname) # for determining whether to path to CUDA
+
+
+# Git auth tokens
+# ===============
+# FILE MUST BE UNLOCKED BY git-crypt FIRST
+TOKEN_GH_SCRAPE=$(cat $DIR_CHEST_DOTS/gh_tokens.yml | grep token | tail -1 | awk '{print $2}')

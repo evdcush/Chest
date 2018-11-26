@@ -60,8 +60,9 @@ with open(path_inbox, 'r') as file_inbox:
 
 #==== Update inbox
 inbox[key].append(url) # NB: duplicate entries managed by hoarding script
+print(f'SAVED: inbox[{key}].append({url})')
 with open(path_inbox, 'w') as file_inbox:
-    yaml.dump(file_inbox, inbox, default_flow_style=False)
+    yaml.dump(inbox, file_inbox, default_flow_style=False)
 END
 }
 
@@ -91,7 +92,7 @@ with open(path_inbox, 'r') as file_inbox:
 #==== Update inbox
 inbox[key].append(val)
 with open(path_inbox, 'w') as file_inbox:
-    yaml.dump(file_inbox, inbox, default_flow_style=False)
+    yaml.dump(inbox, file_inbox, default_flow_style=False)
 END
 }
 
@@ -257,7 +258,8 @@ function gcd(){
 # Grab stars from user
 # ====================
 getstars(){
-    USER="$1"
-    TOKEN="$TOKEN_GH_PUB"
+    # if user specified, get their stars, else get mine
+    USER=${1:-'evdcush'}   # slickkkkkkkkkkkkkkkkkkkkkkk, love this "parameter expansion" op
+    TOKEN="$TOKEN_GH_SCRAPE"
     starred --username "$USER" --sort --token "$TOKEN" > "$USER.stars.md"
 }
