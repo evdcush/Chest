@@ -192,10 +192,10 @@ function cdl(){cd "$1" && ls -1FSshX --file-type}
 #=========================
 function find_and_remove_all(){
     matches=$(sudo find / -iname "*$1*")
-    echo matches
+    echo "$matches"
     echo -n "Do you want to proceed (y/n)? "
     read answer
-    if [ "$answer" = "${answer#[Yy]}" ] ;then
+    if [ "$answer" != "${answer#[Yy]}" ] ;then
         echo ""
         sudo find / -iname "*$1*" -exec rm -rf "{}" \;
     else

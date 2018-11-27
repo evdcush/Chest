@@ -2,7 +2,7 @@
 essentials:
 - numpy
 - scipy
-- sklearn
+- sklearn   # have to install "cloudpickle" too, as a workaround for the annoying deprecation warning on import
 - matplotlib
 - chainer
 - ipython
