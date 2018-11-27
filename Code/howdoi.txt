@@ -28,9 +28,10 @@ wkhtmltopdf README.html README.pdf
 python setup.py install --prefix=/home/$USER/.local/bin
 
 
->? Install apt package without recommended/suggested?
+>? Install apt package without recommended|suggested?
 #=======================
 sudo apt --no-install-recommends --no-install-suggests install MY_PACKAGE
+
 
 
 #-----------------------------------------------------------------------------
@@ -42,15 +43,19 @@ sudo apt --no-install-recommends --no-install-suggests install MY_PACKAGE
 #----> sshfs
 sshfs name@server:/path/to/folder /path/to/mount/point
 
+
 >? Generate SSH key?
 #=======================
 mkdir ~/.ssh
 chmod 700 ~/.ssh
 ssh-keygen -t rsa
 
+
 >? Send my client SSH key to server?
 #=======================
 ssh-copy-id <username>@<host>
+
+
 
 #-----------------------------------------------------------------------------
 # Chrome / web / extensions
@@ -63,6 +68,20 @@ chrome://system
 
 
 #-----------------------------------------------------------------------------
+# Sessions / services
+#-----------------------------------------------------------------------------
+
+>? Save ipython session history|log?
+#=======================
+#-----> for current session
+%history -f history.py
+
+#-----> for all sessions:
+%history -g -f full_history.py
+
+
+
+#-----------------------------------------------------------------------------
 # System packages
 #-----------------------------------------------------------------------------
 
@@ -70,9 +89,21 @@ chrome://system
 #========================
 apt-cache rdepends packagename
 
+
 >? Apt install packages from text file?
 #========================
 cat pkg_list.txt | xargs sudo apt install
+
+
+>? Remove|Uninstall list of files|packages from STDIN|txt?
+#========================
+#-----> For packages:
+cat pkg_list.txt | xargs sudo apt remove --purge -y
+EG:
+sudo deborphan | xargs sudo apt remove --purge -y  # to remove all orphaned dependencies
+
+#-----> For files:
+cat stuff_i_dont_want.txt | xargs rm -rf -y
 
 
 
@@ -85,6 +116,7 @@ cat pkg_list.txt | xargs sudo apt install
 inxi -i
 OR
 wget -O - -q icanhazip.com
+
 
 >? Disable the insert key?
 #=========================

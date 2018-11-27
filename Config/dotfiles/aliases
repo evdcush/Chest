@@ -9,12 +9,12 @@
 #
 #==============================================================================
 
-# Shell
-# =====
-#---- file and dir stuff
-# Navigation
+# File|Dir stuff
+# ==============
+# NB: oh-my-zsh defines useful aliases '..'|'...'|'....'
 alias md="mkdir -p"
-alias cdd="cd -"
+alias cdd="cd -"  # NOTE: `cd -` broken by enhanced file jumping utils
+alias t
 
 # File mod
 alias srt="sort -o $1 $1"
@@ -26,6 +26,9 @@ alias ldot="ls -d --group-directories-first .*"
 alias lk="ls -1FSshX --file-type --group-directories-first"
 alias l="ls --group-directories-first -X"
 alias duh="du -h --max-depth=1 | sort -h;"
+# Delete from list
+alias rmlines="cat $1 | xargs rm -rf"
+
 
 #---- Copy
 alias xclip="xclip -selection clipboard"
@@ -51,6 +54,9 @@ alias myip="inxi -i"
 #==== package stuff
 alias api="apt-cache show"
 alias dpkgi="sudo dpkg -i "
+
+#==== deborphan
+alias rmorph="sudo deborphan | xargs sudo apt remove --purge -y"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -99,12 +105,6 @@ glances dbcollection buku; $nbext_init"
 alias pipilib="pip install -U pybtex bibtexparser bibcure betterbib \
 pybtex-docutils scihub2pdf arxivscraper arxivcheck"
 
-# INSTALL BARE MIN PACKAGES
-alias pipibare="pip install -U pip setuptools wheel; \
-pip install -U numpy scipy sklearn ipython pip-autoremove docutils"
-
-# INSTALL GPU RELATED PACKAGES
-alias pipigpu="$pipistd && pip install -U pycuda cupy"
 
 # UPDATE PIP PACKAGES
 alias pipupdate="pip list --outdated --format=freeze \
@@ -143,7 +143,7 @@ alias st="subl"    # open file with sublime
 alias stt="subl ." # open  dir with sublime
 
 #---- journal
-alias jr=" jrnl"
+alias jrnl=" jrnl"
 
 #---- rst
 alias r2h="rst2html $1 > sample.T.html; chromium-browser sample.T.html"
