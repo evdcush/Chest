@@ -41,6 +41,7 @@ alias myip="inxi -i"
 
 
 
+
 #==============================================================================
 #
 #  ██████╗  ██╗  ██╗  ██████╗     ███╗   ███╗   ██████╗   ███╗   ███╗ ████████╗
@@ -207,3 +208,22 @@ alias hoard_now="python $DIR_PROJECTS/Hoarded/clone_urls.py"
 # PaperNotes
 # ==========
 #alias update_inbox="echo $1 >> $DIR_PROJECTS/PaperNotes/Literature/inbox.txt"
+
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Handy project aliases
+# =====================
+template_dir="$DIR_CHEST/Templates"
+#==== Licenses
+alias BSD3="cp $template_dir/Licenses/BSD-3-Clause.txt $PWD/LICENSE"
+alias LGPL="cp $template_dir/Licenses/LGPL-3.0.txt     $PWD/LICENSE"
+alias APGL="cp $template_dir/Licenses/AGPL-3.0.txt     $PWD/LICENSE"
+
+#==== Readme
+alias RDME="cp $template_dir/README.rst $PWD"
+
+
+
+
+

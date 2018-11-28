@@ -353,6 +353,24 @@ print(f'{hw:>12}\n{w:>12}')
 ' Hello world'
 '       world'
 
+###############################################################################
+#######################        arg parsers          ###########################
+
+# Fire
+# ====
+from fire import Fire
+
+def neg(num):
+    return -num
+
+def poop(location='floor'):
+    return f'poop on the {location}'
+
+if __name__ == '__main__':
+  # Fire()      # both neg and poop available at CLI, but can only use one :[
+  # Fire(poop)  # 'fire_example.py airplane' ---> `poop on the airplane`
+
+#====
 
 ###############################################################################
 #######################             Misc            ###########################
