@@ -114,13 +114,16 @@ pypi-python:
 
 
 docs-text:
+- restview  # READS rst
 - json2yaml  # lifesaver
 - docutils
+- rstcloth # API to programatically generate RST # <<<<<<<<<<<<<<<<
 - doc2dash # making zeal datasets
 - pypandoc # pandoc wrapper
 - textdistance[extras]  # bunch of different text diff algos
 - rstwatch  # automatically makes html conversions when change detected
 - rstdiary  # duno?
+
 
 parsers:
 - feedparser      #$ universal feed parser

@@ -1,16 +1,12 @@
 #####
 Chest
 #####
-A place I keep all my stuff.
+A place I keep stuff.
+#####################
 
-Dots, snippets, notes, scripts, assets...all stuff I wanted to keep, stuff I update and reference frequently, that was maybe not suitable for a dedicated repo, or was more sensible to be in one place.
-
-********
-Contents
-********
 
 Config
-======
+******
 :pip_pkgs.yml: list of pip packages
 :setup: aggregation of many different setup and environment stuff
 
@@ -59,7 +55,7 @@ Scripts are generally modified from another user's original, and acknowledgement
 
 License
 -------
-Except where noted, original written content of the repo is licensed under `CC-BY-NC-ND-4.0`, while any software/code is licensed as `LGPL-3.0`. See LICENSE.
+Except where noted, original written content of the repo is licensed under `CC-BY-NC-ND-4.0`, while any software/code is licensed as `LGPL-3.0`. See LICENSE_.
 
 .. Substitutions:
 
@@ -68,9 +64,7 @@ Except where noted, original written content of the repo is licensed under `CC-B
 
 
 .. LOCAL FILES:
-.. _SPDX-License-Name: LICENSE
-.. |SPDX-License-Name| replace:: the spdx license name
-
+.. _LICENSE: LICENSE
 
 .. EXTERNAL:
 .. _pyenv: https://github.com/pyenv/pyenv

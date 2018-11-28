@@ -1,12 +1,14 @@
+
+
+# Zeal Contributor Docsets
+# ========================
 # Available user docsets
 http://sanfrancisco.kapeli.com/feeds/zzz/user_contributed/build/index.json
 
-# ROOT URL:
+# To get desired docset:
 http://sanfrancisco.kapeli.com/feeds/zzz/user_contributed/build/<key name inside json>/<archive name>
 
-
-
-# Docset URLS
+# Docsets:
 #==== CUDA
 http://sanfrancisco.kapeli.com/feeds/zzz/user_contributed/build/CUDA/CUDA.tgz
 

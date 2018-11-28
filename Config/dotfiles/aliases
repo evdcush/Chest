@@ -41,6 +41,7 @@ alias myip="inxi -i"
 
 
 
+
 #==============================================================================
 #
 #  ██████╗  ██╗  ██╗  ██████╗     ███╗   ███╗   ██████╗   ███╗   ███╗ ████████╗
@@ -99,7 +100,7 @@ chainerrl sympy pip-autoremove ipython jupyter notebook gitup bs4 thefuck \
 jupyter_contrib_nbextensions jupyter_nbextensions_configurator jrnl \
 docutils sphinx sphinx-rtd-theme johnnydep bidict art termdown cheat \
 cookiecutter archivenow pypi-cli autograd binarytree h5py starred \
-glances dbcollection buku cloudpickle; $nbext_init"
+glances dbcollection buku cloudpickle restview rstcloth; $nbext_init"
 
 # INSTALL PACKAGES RELATED TO LIBRARY
 alias pipilib="pip install -U pybtex bibtexparser bibcure betterbib \
@@ -146,7 +147,7 @@ alias stt="subl ." # open  dir with sublime
 alias jrnl=" jrnl"
 
 #---- rst
-alias r2h="rst2html $1 > sample.T.html; chromium-browser sample.T.html"
+alias r2h="rst2html $1 > sample.T.html && wkhtmltopdf sample.T.html README.T.pdf"
 
 #---- cookiecutter proj
 alias mk_pyproj="cookiecutter \
@@ -207,3 +208,22 @@ alias hoard_now="python $DIR_PROJECTS/Hoarded/clone_urls.py"
 # PaperNotes
 # ==========
 #alias update_inbox="echo $1 >> $DIR_PROJECTS/PaperNotes/Literature/inbox.txt"
+
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Handy project aliases
+# =====================
+template_dir="$DIR_CHEST_RESOURCES/Templates"
+#==== Licenses
+alias BSD3="cp $template_dir/Licenses/BSD-3-Clause.txt $PWD/LICENSE"
+alias LGPL="cp $template_dir/Licenses/LGPL-3.0.txt     $PWD/LICENSE"
+alias APGL="cp $template_dir/Licenses/AGPL-3.0.txt     $PWD/LICENSE"
+
+#==== Readme
+alias RDME="cp $template_dir/README.rst $PWD"
+
+
+
+
+
