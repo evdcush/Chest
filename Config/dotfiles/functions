@@ -7,14 +7,17 @@
 #-----------------------------------------------------------------------------#
 #                                Endemic                                      #
 #-----------------------------------------------------------------------------#
-#==== write line to D log
+
 #  DEPRECATED; using jrnl now instead
+#==== write line to D log
 #dw(){
 #    D_FPATH="$HOME/D"
 #    echo "$1" >> "$HOME/D"
 #}
 
-#==== write line to look n2 log # UNUSED
+# UNUSED *****NEED BETTER SOLUTION******
+#   >>----> Consider echoing a list? Just use jrnl tags? Look into goog Keep API?
+#==== write line to look n2 log
 # n2(){
 #     N2_FPATH="$DIR_DOCS/n2.md"
 #     echo " * $@" >> "$N2_FPATH"

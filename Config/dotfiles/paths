@@ -11,14 +11,12 @@
 # Base PATH
 # =========
 PATH_DEFAULT="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-PATH_USR_LOCAL="/usr/local"
-PATH_OPT="/opt"
 PATH_USER_BIN="$HOME/.local/bin"
 
 # env/library Paths
 # =================
 PATH_PYENV="$HOME/.pyenv/bin"
-PATH_CUDA="$PATH_USR_LOCAL/cuda-10.0"
+PATH_CUDA="/usr/local/cuda-10.0"
 
 
 # Directories
