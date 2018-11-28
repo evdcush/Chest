@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Most of my snippets are located in my zshrc file
-sed 's/.*private.*$//ig' m.txt
-
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 #      ___    _   _   ___    ___   _  __  ___   ___   ___                     #
@@ -135,6 +132,14 @@ pip install -U doc2dash
 git clone git@github.com:chainer/chainer.git && cd chainer/docs
 git checkout doc-fusion && make html
 doc2dash -n Chainer -i chainer_icon_red.png -j build/html
+
+
+
+
+# don't remember what this went to, but keeping it because it must have
+# felt like a cmd worth saving
+#sed 's/.*private.*$//ig' m.txt
+
 
 ###############################################################################
 #                                                                             #
