@@ -754,14 +754,16 @@ echo 'keycode 118 = ' > ~/.Xmodmap # disable insert key
 
 # Thunar custom actions:
 #-------------------------
-#==== open guake at current location
-guake -n '%d%f ' -r "%f " --show -e "cd '%f' && ls -1FSshX --file-type"
-#==== open sublime here
+#==== Replace spaces, format name to all lower
+for file in %N; do mv "$file" "$(echo "$file" | tr -s ' ' | tr ' A-Z' '-a-z' | tr -s '-' | tr -c '[:alnum:][:cntrl:].' '-')"; done
+#==== Open directory in sublime
 /usr/bin/subl .
-#==== copy full path
+#==== Copies full pathname for a file or folder  to clipboard
 echo -n %f | xclip -selection "clipboard"
-#==== make notes
+#==== Touch .txt
 /usr/bin/touch notes.txt
+#==== Open guake here
+guake -n '%d%f ' -r "%f " --show -e "cd '%f' && ls -1FSshX --file-type"
 
 
 #==== Japanese IME (mozc)
@@ -779,6 +781,10 @@ echo -n %f | xclip -selection "clipboard"
 # orage clock format: %x %R
 # https://www.linuxquestions.org/questions/slackware-14/xfce-clock-custom-formatting-codes-753433/
 # previous: %d %b, %H:%M
+
+
+
+
 
 
 
