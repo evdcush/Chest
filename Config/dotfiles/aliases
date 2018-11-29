@@ -100,7 +100,7 @@ chainerrl sympy pip-autoremove ipython jupyter notebook gitup bs4 thefuck \
 jupyter_contrib_nbextensions jupyter_nbextensions_configurator jrnl \
 docutils sphinx sphinx-rtd-theme johnnydep bidict art termdown cheat \
 cookiecutter archivenow pypi-cli autograd binarytree h5py starred \
-glances dbcollection buku cloudpickle restview rstcloth; $nbext_init"
+glances dbcollection buku cloudpickle restview rstcloth landslide; $nbext_init"
 
 # INSTALL PACKAGES RELATED TO LIBRARY
 alias pipilib="pip install -U pybtex bibtexparser bibcure betterbib \

@@ -10,6 +10,10 @@ essentials:
 - notebook
 - gitup
 
+# Stuff that looks useful or interesting, but haven't used yet
+promising:
+- pygal  # visualization lib, looks clean af
+- networkx  # lib whole bag of stuff for networks (create, manip, vis)
 
 science-math:
 - autograd  # easier to use than sympy; less powerful though
@@ -67,9 +71,9 @@ notebook:
 
 apps:
 - retext  # RST and MD editor, best desktop editor for RST, still kinda bad
-- buku  # CLI bookmark manager, havent used
+- buku  # CLI bookmark manager, excellent, fast, searchable, but not what i need
 - jrnl  # *** CLI journaling/notes app, supports encryption,
-- termdown  # simple countdown/timer terminal, ncurses
+- termdown  # simple countdown/timer terminal
 - apt-select  # pings apt mirrors, gives list fastest
 
 
@@ -77,6 +81,7 @@ lib-enhancements:
 - attrs       # manages a few dunders (mostly init), not that big of a deal
 - bidict      # exactly what it sounds like
 - python-box  # has surprising amount of different "boxes" or dict-classes
+- sh          # subprocess replacement; let you call any program as if it were func
 
 
 dev:
@@ -87,6 +92,7 @@ dev:
 - coverage # code-coverage
 - black    # auto-format code to style, ONLY used on othre people's gross code
 - luigi    # manages task pipeline
+- algorithms # simple implementations of algorithms in python
 
 
 net:
@@ -99,13 +105,14 @@ deps-utils:
 - binarytree  # make arbitrary binary trees to work/study/play with
 - h5py    # h5 serialization
 - hickle  # ..another serialization, no noticed benefits over pickle yet
-- pyqt5
-- pillow
+- pyqt5   # dep
+- pillow  # PIL
 - pycurl
-- pygments
+- pygments  # syntax highlighting
 - vermin      # AWESOME, automatically test python version support in project
 - pipdeptree  # shows deps like tree cmd
 - johnnydep   # awesome, lists dependencies of a package
+- pydeps   # call graph for package, not bad.
 
 
 pypi-python:
@@ -114,21 +121,21 @@ pypi-python:
 
 
 docs-text:
-- restview  # READS rst
-- json2yaml  # lifesaver
+- restview  # lifesaver
+- json2yaml
 - docutils
 - rstcloth # API to programatically generate RST # <<<<<<<<<<<<<<<<
-- doc2dash # making zeal datasets
+- doc2dash # making zeal datasets. Cool, but zeal itself still kinda bad
 - pypandoc # pandoc wrapper
 - textdistance[extras]  # bunch of different text diff algos
 - rstwatch  # automatically makes html conversions when change detected
-- rstdiary  # duno?
+- landslide  # Easy generator for HTML5 slides from rST
 
 
 parsers:
 - feedparser      #$ universal feed parser
 - jupyter-parser  # CLI tool for parsing jupyter notebooks
-- mistune         # markdown
+- mistune         # markdown parser
 
 media:
 - scdl  # soundcloud downloader
@@ -200,10 +207,17 @@ misc-untested:
 - birdseye    # graphical debugger, easily evaluat values
 - SetSimilaritySearch # python, similarity score between sets
 - rebound-cli  # hasn't ever worked, always f'n broken
-- pyviz        # visualization lib i think
-- astrodash    # spectral convolutions deep learning supernovae
+- pyviz        # "how to solve visualization problems with python tools" ??
 - pipsalabim   # guesses your dependencies, no need for req file
 - dbcollection # collection of popular ML datasets
 - smmap2       # pure python sliding window
 - title2bib    # generate bibtex given title
+
+
+hmmm-cool:
+- rstdiary  # generates html from rst file. looks good, wayyyyyy too much to ask of end user
+- astrodash    # spectral convolutions deep learning supernovae
+- python-patterns # design-patterns library for python
+- eel # python lib for making offline electron/JS like gui apps
+- pychievements # framework for creating/tracking achievements in python file
 
