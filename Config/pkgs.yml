@@ -1,4 +1,16 @@
+---
 
+ORDER_OF_OPS:
+    - Bloat
+    - apt:
+        - setup
+        - deps:
+            - GCC
+            - utils
+        - Apps
+        - PPA
+    - NPM
+    - Nativefier
 
 Bloat:
 - "*mate-*"
@@ -57,7 +69,10 @@ Bloat:
 - fonts-pagul*
 - fonts-noto*
 
-Install:
+apt:
+    setup:
+        - apt-fast
+        - zsh
     deps:
         GCC:
             - gcc-7 # GCC should trigger
@@ -109,12 +124,13 @@ Install:
             - zlib1g-dev
 
     Apps:
+        - zsh-antigen
         - vim
         - anki
         - chromium-browser
         - flameshot
         - git-extras
-        - pdfsam  # install from deb; apt outdated
+        #- pdfsam  # install from deb; apt outdated
         - vlc
         - mpv
         - gparted
@@ -127,6 +143,9 @@ Install:
         - xsensors
         - xfce4-timer-plugin
         - xfce4-sensors-plugin
+        - xdotool
+        - redshift
+        - zstd
         - gedit
         - htop
         - tree
@@ -136,9 +155,11 @@ Install:
         - exfat-utils
         - flac
         - lame
+        - x264
         - sshfs
         - openssh-client
-        - x264
+        - autossh
+        - unar
         - unrar
         - dictd
         - dict-gcide
@@ -159,11 +180,31 @@ Install:
         - git-core/ppa
         - wereturtle/ppa
 
+Config:
+    - mkdir ~/.Dots
+    - mv ~/antigen.zsh ~/.Dots/antigen.zsh
+
+pyenv:
+    setup:
+        - "curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash;"
+        - echo 'export PATH="$USER/.pyenv/bin:$PATH"' >> ~/.zshrc
+        - echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+        - echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
+        - source ~./zshrc
+        - pyenv install 3.7.1
+        - cd ~
+        - pyenv virtualenv 3.7.1 ^
+        - pyenv local ^
+
 
 NPM:
-- nativefier
-- gitbook-cli
-- tldr
+    setup:
+        - "curl -L https://git.io/n-install | N_PREFIX=~/.n bash -s -- -y"
+        - "n lts"
+    next:
+        - nativefier
+        - tldr
+
 
 Nativefier:
     Gmail: https://mail.google.com

@@ -497,9 +497,6 @@ https://www.mendeley.com/repositories/ubuntu/stable/amd64/mendeleydesktop-latest
 #                  |_|
 #
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#==== pnpm, faster package manager
-#  sudo npm i -g pnpm # eh
-
 #==== nativefier
 sudo npm i -g nativefier
 
@@ -507,7 +504,7 @@ sudo npm i -g nativefier
 sudo npm i -g gitbook-cli
 
 #==== tldr pages
-#sudo pnpm install -g tldr
+#sudo npm install -g tldr
 
 # Nativefier
 #--------------------------------------------
