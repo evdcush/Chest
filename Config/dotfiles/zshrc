@@ -78,37 +78,33 @@ setopt HIST_IGNORE_SPACE
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Antigen config
+# oh-my-zsh config
 
-# Load antigen
-# ============
-source $DIR_DOTS/antigen.zsh
-
-# Initialize plugins
-# ==================
-
-# Library
-# -------
-antigen use oh-my-zsh
+# Source ZSH constants
+# ====================
+export ZSH="/home/evan/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
+COMPLETION_WAITING_DOTS="true"
 
 # Plugins
-# -------
-#~~~~ oh-my-zsh:
-antigen bundle colored-man-pages
-antigen bundle copyfile
-antigen bundle history
-antigen bundle copydir
-antigen bundle compleat
-#antigen bundle dircycle
-#~~~~ repo:
-antigen bundle jocelynmallon/zshmarks
-antigen bundle zdharma/fast-syntax-highlighting
-#antigen bundle b4b4r07/enhancd
-#~~~~ Themes
-antigen theme robbyrussell
+# =======
+plugins=(
+    history
+    copyfile
+    colored-man-pages
+    compleat
+    zshmarks
+    zsh-syntax-highlighting
+    pip
+)
 
-# FINISH
-antigen apply
+# Source zsh
+# ==========
+source $ZSH/oh-my-zsh.sh
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
 
 
 ###############################################################################
