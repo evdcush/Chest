@@ -1,32 +1,5 @@
 """ Automate most of the nativefier process
-
-# Why?
-It's easy enough to nativefy something, but having to explicitly path
-certain things and make desktop entries is tedious work.
-
-# What is interpreted/automated?
-- Most of the pathing is handled by the script: the app save dir, the binary
-  path, the desktop entry path
-  - NOTE: change the defaults to your specs (especially icons dir)
-
-- Most of the core nativefier options are supported and simplified here,
-  which, in combination with the pathing, significantly reduces the length of
-  a normal nativefier call
-
-- Automatically generates a default desktop entry for the nativefied app,
-  and puts it in the correct location
-
-# ASSUMED:
-- you have adjusted the constants in the script to your setup
-- you have the icon (png) for the app of interest
-#===== Icon
-- You must download/prepare the icon used before calling on this script.
-- Icon name must be formatted to match 'appname.png'--the single-word,
-  lower-case name of the app, which is the same as the "name" argument
-  passed to this script
-
 """
-
 import os
 from glob import glob
 import sys
@@ -235,7 +208,6 @@ def nativefy():
     print('Finished nativefication process')
 
 
-
 def make_desktop_entry(name, app_path):
     app_title = name.title()
     file_name = f'{name}.desktop'
@@ -244,16 +216,13 @@ def make_desktop_entry(name, app_path):
         entry.write(de)
         print(f'\n{file_name} written to {LOCAL_APPS}')
 
-
 def symlink_binary(from_path, to_path=LOCAL_BIN):
     subprocess.run(f'ln -sf {from_path} {to_path}', shell=True)
     print(f'\nsymlinked binary -\nFROM: {from_path}\n  TO: {to_path}')
 
-
 def make_binary_exec(bin_file_path):
     subprocess.run(f'chmod +x {bin_file_path}', shell=True)
     print('\nMade binary executable')
-
 
 
 # Nativefy a web app

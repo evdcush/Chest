@@ -3,27 +3,33 @@
 The MIT License (MIT): Copyright (c) 2016 maguowei
 ACKNOWLEDGEMENT: Source script from github.com/maguowei
 """
-
+import os
 import sys
+import yaml
 from io import BytesIO
 from collections import OrderedDict
 import click
 from github3 import GitHub
 from github3.exceptions import NotFoundError
-import code
-import os
-
-def read_json(path):
-    assert os.path.exists(path)
-    with open(path, 'rb') as file:
-        return json.load(file)
+from argparse import ArgumentParser
 
 HOME = os.environ["HOME"]
-RESOURCE_PATH = f'{HOME}/Chest/Resources'
-AUTH_PATH = f'{RESOURCE_PATH}/gh_pub_token.json'
-auth = read_json(AUTH_PATH)
+token_path = f'{HOME}/Chest/Config/dotfiles/gh_tokens.yml'
 
-USERNAME, TOKEN = list(auth.items()).pop()
+with open(token_path) as tpath:
+    _tokens = yaml.load(tpath)
+    TOKEN = _tokens['public']['Scrape']['token']
+
+
+P = ArgumentParser()
+adg = P.add_argument
+adg('-u', '--username', default='evdcush')
+adg('-s', '--sort', action='store_true', help='sort stars by language')
+adg('-t', '--token', default=TOKEN)
+
+# starred --username "$USER" --sort --token "$TOKEN" > "$USER.stars.md"
+
+
 
 """
 desc = '''# Awesome Stars [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d730\
@@ -66,7 +72,6 @@ def html_escape(text):
 @click.option('--username', envvar='USER', help='GitHub username')
 @click.option('--token', envvar='GITHUB_TOKEN', help='GitHub token')
 @click.option('--sort',  is_flag=True, help='sort by language')
-@click.option('--repository', default='', help='repository name')
 @click.option('--message', default='update stars', help='commit message')
 @click.version_option(version='2.0.3', prog_name='starred')
 def starred():
@@ -77,15 +82,6 @@ def starred():
     example:
         starred --username maguowei --sort > README.md
     """
-    if repository:
-        if not token:
-            click.secho('Error: create repository need set --token', fg='red')
-            return
-        file = BytesIO()
-        sys.stdout = file
-    else:
-        file = None
-
     gh = GitHub(token=token)
     stars = gh.starred_by(username)
     click.echo(desc)
@@ -114,18 +110,6 @@ def starred():
         click.echo('')
 
     click.echo(license_.format(username=username))
-
-    if file:
-        try:
-            rep = gh.repository(username, repository)
-            readme = rep.readme()
-            readme.update(message, file.getvalue())
-        except NotFoundError:
-            rep = gh.create_repository(repository, 'A curated list of my GitHub stars!')
-            rep.create_file('README.md', 'starred initial commit', file.getvalue())
-        click.launch(rep.html_url)
-
-
 
 poo = starred()
 

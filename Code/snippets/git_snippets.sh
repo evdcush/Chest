@@ -162,6 +162,9 @@ git push origin :refs/tags/<tag-name>
 git clean -n # to see what will be deleted
 git clean -f # to delete
 
+#==== Delete branch
+git push --delete <remote_name> <branch_name> # remote
+git branch -d <branch_name> # local
 
 ###############################################################################
 #  _____    ______   __  __    ____    _______   ______
@@ -183,7 +186,9 @@ git clean -f # to delete
 #------------------------------------------------------------------------------
 
 # push a local branch
-git push <remote-name> <local-branch-name>:<remote-branch-name>
+#git push <remote-name> <local-branch-name>:<remote-branch-name>
+git checkout -b <branch>
+git push -u <remote> <branch>
 
 # To pull all new remote branches from remote:
 git remote update
