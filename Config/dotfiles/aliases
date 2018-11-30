@@ -25,7 +25,9 @@ alias h="history"
 alias ldot="ls -d --group-directories-first .*"
 alias lk="ls -1FSshX --file-type --group-directories-first"
 alias l="ls --group-directories-first -X"
+alias lo="ls -lhSr"
 alias duh="du -h --max-depth=1 | sort -h;"
+
 # Delete from list
 alias rmlines="cat $1 | xargs rm -rf"
 
