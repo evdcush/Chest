@@ -210,9 +210,9 @@ function find_and_remove_all(){
 # =============
 function f(){
     if [ "$#" -gt 1 ]; then
-        sudo find "$1" -iname "$2"
+        sudo find "$1" -iname "*$2*"
     else
-        sudo find / -iname "$1"
+        sudo find / -iname "*$1*"
     fi
 }
 
