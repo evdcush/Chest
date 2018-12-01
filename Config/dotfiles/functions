@@ -80,10 +80,10 @@ path_inbox = str(os.environ['IPATH'])
 url = os.environ['ARGS']
 
 #==== Process args
-# ==========
 if 'arxiv.org' in url:
     key = 'arxiv'
     val = url.strip('htps:/arxiv.ogbdf')   # extracts arxiv ID
+    print(f'Input: {url}, Stripped-ID: {val}')
 else:
     key = 'other'
     val = url
