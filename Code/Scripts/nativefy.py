@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 """ Automate most of the nativefier process
 """
 import os
@@ -92,7 +94,6 @@ def get_dir_name_from_nativefiers_weird_ass_slug_logic(name):
 
 # Parse user args
 #----------------
-#args = vars(P.parse_args())
 def parse_args():
     """ Interprets argparse args for nativefier commands
     """
