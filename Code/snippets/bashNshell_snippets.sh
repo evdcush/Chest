@@ -89,18 +89,6 @@ grep <pattern> <filenames>    # looks for the string in the files
 grep -r <pattern> <dir>       # search recursively for pattern in directory
 
 
-###############################################################################
-#                        ,,                                                   #
-#                        db                                   mm              #
-#                                                             MM              #
-#  ,pP"Ybd `7MMpMMMb.  `7MM  `7MMpdMAo. `7MMpdMAo.  .gP"Ya  mmMMmm  ,pP"Ybd   #
-#  8I   `"   MM    MM    MM    MM   `Wb   MM   `Wb ,M'   Yb   MM    8I   `"   #
-#  `YMMMa.   MM    MM    MM    MM    M8   MM    M8 8M""""""   MM    `YMMMa.   #
-#  L.   I8   MM    MM    MM    MM   ,AP   MM   ,AP YM.    ,   MM    L.   I8   #
-#  M9mmmP' .JMML  JMML..JMML.  MMbmmd'    MMbmmd'   `Mbmmd'   `Mbmo M9mmmP'   #
-#                              MM         MM                                  #
-#                            .JMML.     .JMML.                                #
-
 
 # Get list of orphaned desktop entries
 #======================================
@@ -110,10 +98,12 @@ for i in {/usr,~/.local}/share/applications/*.desktop; do which $(grep -Poh '(?<
 #======================================
 # Find and delete: CAREFUL
 function find_and_remove_all(){
-    sudo find / -iname "*$1*"
+    matches=$(sudo find / -iname "*$1*")
+    echo "$matches"
     echo -n "Do you want to proceed (y/n)? "
     read answer
-    if [ "$answer" = "${answer#[Yy]}" ] ;then
+    if [ "$answer" != "${answer#[Yy]}" ] ;then
+        echo ""
         sudo find / -iname "*$1*" -exec rm -rf "{}" \;
     else
         echo Aborted
@@ -543,7 +533,7 @@ cd; nano .bash_profile
 # to quickly go to a specific directory
 cd; nano .bashrc
 > shopt -s cdable_vars
-> export websites="/Users/mac/Documents/websites"
+> export websites="/Users/poo/Documents/websites"
 
 source .bashrc
 cd $websites

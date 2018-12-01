@@ -266,3 +266,19 @@ getstars(){
     TOKEN="$TOKEN_GH_SCRAPE"
     starred --username "$USER" --sort --token "$TOKEN" > "$USER.stars.md"
 }
+
+
+# Full git delete flow
+# ====================
+function git-nuke(){
+    #==== Delete specified files from hist
+    TARGETS=$@
+    git-obliterate $TARGETS
+
+    #==== Delete commit traces
+    rm -rf .git/refs/original
+    git reflog expire --expire=now --all
+    git gc --prune=now
+    git gc --aggressive --prune=now
+    git push --all --prune --force  # will delete all branches not in local
+}
