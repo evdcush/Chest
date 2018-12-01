@@ -12,16 +12,16 @@ essentials:
 
 # Stuff that looks useful or interesting, but haven't used yet
 promising:
-- pygal  # visualization lib, looks clean af
+- pygal     # visualization lib, looks clean af
 - networkx  # lib whole bag of stuff for networks (create, manip, vis)
 
 science-math:
-- autograd  # easier to use than sympy; less powerful though
-- sympy  # learning curve, but amazingly powerful and featured
+- autograd      # easier to use than sympy; less powerful though
+- sympy         # learning curve, but amazingly powerful and featured
 - scikit-video
-- pydataset  # access to many datasets, in dataframe format
+- pydataset     # access to many datasets, in dataframe format
 - pandas
-#- primesieve # always freezes install
+#- primesieve   # always freezes on install
 
 
 GPU:
@@ -35,15 +35,15 @@ AI-frameworks:
 - neupy  # ANN library, TF backend, lib has some cool stuff
 
 
-TF-dependencies:  # don't actually use any of it, just to build TF
+TF-dependencies:  # don't actually use any of it; it's just to build TF
 - keras
 - keras-applications
 - keras-preprocessing
 - protobuf
 
 NLP-stuff:
-- nltk  # de-jure natural language library
-- spacy # NLP library
+- nltk            # de-jure natural language library
+- spacy           # NLP library
 - snowballstemmer # library of stemming algs
 
 starcraft-games:
@@ -61,7 +61,7 @@ notebook:
 - ipython
 - jupyter
 - notebook
-- jupyterthemes
+- jupyterthemes  # not updated much anymore, some annoying CSS bugs
 - jupyter-contrib-nbextensions  # HUGE enhancements to notebook capabilities
 - jupyter_nbextensions_configurator
 # Then activate:
@@ -70,10 +70,10 @@ notebook:
 
 
 apps:
-- retext  # RST and MD editor, best desktop editor for RST, still kinda bad
-- buku  # CLI bookmark manager, excellent, fast, searchable, but not what i need
-- jrnl  # *** CLI journaling/notes app, supports encryption,
-- termdown  # simple countdown/timer terminal
+- retext  # RST and MD editor; best desktop editor for RST, still kinda bad
+- buku    # CLI bookmark manager, excellent, fast, searchable, but not what i need
+- jrnl    # *** CLI journaling/notes app, supports encryption,
+- termdown    # simple countdown/timer terminal
 - apt-select  # pings apt mirrors, gives list fastest
 
 
@@ -86,13 +86,13 @@ lib-enhancements:
 
 dev:
 - cookiecutter  #*** project boilerplate
-- nose     # tests
-- flake8   # linting/static code, better than pylint
-- radon    # linting/code metrics, better than flake8
-- coverage # code-coverage
-- black    # auto-format code to style, ONLY used on othre people's gross code
-- luigi    # manages task pipeline
-- algorithms # simple implementations of algorithms in python
+- nose          # tests
+- flake8        # linting/static code, better than pylint
+- radon         # linting/code metrics, better than flake8
+- coverage      # code-coverage
+- black         # auto-format code; only used for other peoples gross code
+- luigi         # manages task pipeline
+
 
 
 net:
@@ -100,11 +100,14 @@ net:
 - bs4       # scrape
 - you-get   # scrape for dummies
 
+compsci-assets: # packages to help study/learn compsci stuff
+- algorithms      # simple implementations of algorithms in python
+- binarytree      # make arbitrary binary trees to work/study/play with
+- python-patterns # design-patterns library for python
+
 
 deps-utils:
-- binarytree  # make arbitrary binary trees to work/study/play with
 - h5py    # h5 serialization
-- hickle  # ..another serialization, no noticed benefits over pickle yet
 - pyqt5   # dep
 - pillow  # PIL
 - pycurl
@@ -122,13 +125,13 @@ pypi-python:
 
 docs-text:
 - restview  # lifesaver
-- json2yaml
+- json2yaml # not really necessary lol, saves you 8 lines of code
 - docutils
-- rstcloth # API to programatically generate RST # <<<<<<<<<<<<<<<<
-- doc2dash # making zeal datasets. Cool, but zeal itself still kinda bad
+- rstcloth # API to programatically generate RST
+- doc2dash # making zeal datasets. Cool util, but zeal itself still kinda bad
 - pypandoc # pandoc wrapper
 - textdistance[extras]  # bunch of different text diff algos
-- rstwatch  # automatically makes html conversions when change detected
+- rstwatch   # live rendering of rst file; automatically updates HTML on changes
 - landslide  # Easy generator for HTML5 slides from rST
 
 
@@ -137,8 +140,10 @@ parsers:
 - jupyter-parser  # CLI tool for parsing jupyter notebooks
 - mistune         # markdown parser
 
+
 media:
-- scdl  # soundcloud downloader
+- scdl  # soundcloud downloader, worked well one time i used
+
 
 sphinx:
 - sphinx
@@ -148,6 +153,7 @@ sphinx:
 - sphinxcontrib-bibtex # allows bibtex to be inserted into sphinx doc
 - numpydoc  # sphinx extension to support docstrings in numpy format
 - pelican   # static site generator for blog; py api, rst, django
+- nbsphinx  # do sphinx stuff with notebooks instead of rst
 
 
 reading:
@@ -166,6 +172,7 @@ reading:
         - arxiv_download
         - arxiv2txt  # SCRIPT not pypi?
 
+
 arg-parsers: # I prefer argparse/argv in general, to keep dependencies down
 - fire   # IF I opt for diff argparser, fire is the shit (args req'd tho)
 - docopt # more work than you think
@@ -175,8 +182,8 @@ arg-parsers: # I prefer argparse/argv in general, to keep dependencies down
 CLI-shell:
 - thefuck     # AWESOME, correct previous command
 - cheat       # decent man examples for queried cmd
-- maybe       # hit-or-miss, test out what command will do
-- glances     # better top/htop
+- maybe       # hit-or-miss so far; test out what command will do
+- glances     # wayyyyy better top/htop
 - archivenow  # archives urls (WARC, all the archiving sites)
 - halo        # spinners for terminal, ipython, notebook
 
@@ -204,9 +211,8 @@ ascii-art:
 
 
 misc-untested:
-- birdseye    # graphical debugger, easily evaluat values
 - SetSimilaritySearch # python, similarity score between sets
-- rebound-cli  # hasn't ever worked, always f'n broken
+- birdseye     # graphical debugger, easily evaluat values
 - pyviz        # "how to solve visualization problems with python tools" ??
 - pipsalabim   # guesses your dependencies, no need for req file
 - dbcollection # collection of popular ML datasets
@@ -216,8 +222,11 @@ misc-untested:
 
 hmmm-cool:
 - rstdiary  # generates html from rst file. looks good, wayyyyyy too much to ask of end user
-- astrodash    # spectral convolutions deep learning supernovae
-- python-patterns # design-patterns library for python
+- astrodash # spectral convolutions deep learning supernovae
 - eel # python lib for making offline electron/JS like gui apps
 - pychievements # framework for creating/tracking achievements in python file
 
+
+its-there-i-guess:
+- hickle  # another h5 based serialization, no noticed benefits over pickle yet
+- rebound-cli  # hasn't ever worked, always f'n broken

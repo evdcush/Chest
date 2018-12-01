@@ -100,13 +100,18 @@ alias pipistd="pip install -U pip setuptools wheel; \
 pip install -U numpy scipy sklearn matplotlib chainer gym \
 chainerrl sympy pip-autoremove ipython jupyter notebook gitup bs4 thefuck \
 jupyter_contrib_nbextensions jupyter_nbextensions_configurator jrnl \
-docutils sphinx sphinx-rtd-theme johnnydep art termdown cheat \
-cookiecutter archivenow pypi-cli autograd binarytree h5py starred \
-glances buku cloudpickle restview rstcloth landslide; $nbext_init"
+docutils sphinx sphinx-rtd-theme johnnydep termdown cheat \
+cookiecutter pypi-cli autograd h5py glances buku \
+cloudpickle restview rstcloth landslide; $nbext_init"
 
 # INSTALL PACKAGES RELATED TO LIBRARY
-alias pipilib="pip install -U pybtex bibtexparser bibcure betterbib \
-pybtex-docutils scihub2pdf arxivscraper arxivcheck"
+alias pipilib="pip install -U pip \
+pybtex bibtexparser bibcure betterbib pybtex-docutils \
+scihub2pdf arxivscraper arxivcheck \
+landslide \
+nbsphinx"
+
+#
 
 
 # UPDATE PIP PACKAGES

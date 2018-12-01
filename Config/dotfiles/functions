@@ -199,8 +199,9 @@ function find_and_remove_all(){
     echo -n "Do you want to proceed (y/n)? "
     read answer
     if [ "$answer" != "${answer#[Yy]}" ] ;then
-        echo ""
+        echo "Proceeding to remove all matches..."
         sudo find / -iname "*$1*" -exec rm -rf "{}" \;
+        echo "Finished removal"
     else
         echo Aborted
     fi
@@ -210,8 +211,10 @@ function find_and_remove_all(){
 # =============
 function f(){
     if [ "$#" -gt 1 ]; then
-        sudo find "$1" -iname "*$2*"
+        #=== find location specified
+        find "$1" -iname "*$2*"
     else
+        #==== find from root
         sudo find / -iname "*$1*"
     fi
 }
@@ -221,7 +224,8 @@ function f(){
 #                             Package Utils                                   #
 #-----------------------------------------------------------------------------#
 
-#==== add apt-repo
+# Add apt repo
+# ============
 addrep(){
     sudo add-apt-repository "ppa:$1" -y
     sudo apt-fast update
@@ -229,19 +233,25 @@ addrep(){
 
 
 # Make new pyenv virtualenv
-#========================
-pvenv(){
+# =========================
+# $ pvenv build_docs # converts to the following commands
+#     pyenv virtualenv 3.7.1 build_docs;
+#     local build_docs;
+#     pip install -U pip setuptools wheel
+function pvenv(){
     if [ "$#" -gt 1 ]; then
-        PY_VER=$1
-        VENV_NAME=$2
+        #==== python version specified
+        PY_VER="$1"
+        VENV_NAME="$2"
     else
+        #==== default latest python ver (3.7)
         PY_VER='3.7.1'
         VENV_NAME="$1"
     fi
-    # Make venv
+    #==== Make virtualenv
     pyenv virtualenv "$PY_VER" "$VENV_NAME"
     pyenv local "$VENV_NAME"
-    # Update base packages
+    #==== Update base packages
     pip install -U pip setuptools wheel
 }
 
