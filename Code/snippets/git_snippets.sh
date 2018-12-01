@@ -28,11 +28,18 @@ git checkout other_branch file1
 
 # Keep a file in git, but do not track history
 # --------------------------------------------
-git update-index --skip-worktree <file_name>  # MORE TROUBLE THAN ITS WORTH
-git update-index --no-skip-worktree <file_name> # opposite
+# MORE TROUBLE THAN IT WORTH, DONT
+#git update-index --skip-worktree <file_name>
+#git update-index --no-skip-worktree <file_name> # opposite
 # it will read as up to date, and changes will not be flagged as changes
 #==== How to list files ignored via --skip-worktree
 git ls-files -v . | grep ^S
+
+
+# See what files are tracked in git history
+# (even deleted files)
+# -----------------------------------------
+git log --pretty=format: --name-only --diff-filter=A | sort - | sed '/^$/d'
 
 
 #  __  __   _____   _____    _____     ____    _____
@@ -126,14 +133,19 @@ git rev-list --objects --all \
 # Removing a file, or directory contents from history completely
 
 #===== Removing a file:
-git filter-branch --force --index-filter 'git rm -rf --ignore-unmatch my_file' --prune-empty --tag-name-filter cat -- --all
+#git filter-branch --force --index-filter 'git rm -rf --ignore-unmatch my_file' --prune-empty --tag-name-filter cat -- --all
 
 #===== Removing all files in my_dir:
-git filter-branch --force --index-filter 'git rm -rf --ignore-unmatch my_dir/*' --prune-empty --tag-name-filter cat -- --all
+#git filter-branch --force --index-filter 'git rm -rf --ignore-unmatch my_dir/*' --prune-empty --tag-name-filter cat -- --all
 
-#===== (What I have actually used:)
-git filter-branch --tree-filter 'rm -rf my_dir/*' --prune-empty  -- --all
-git filter-branch --tree-filter 'rm -f topics.rst glossary.rst itinerary.md resources.rst *.pdf README.md' --prune-empty  -- --all
+#===== (What I have actually used):
+#git filter-branch --tree-filter 'rm -rf my_dir/*' --prune-empty  -- --all
+#git filter-branch --tree-filter 'rm -f stuff.rst more_stuff.md resources.yml *.pdf' --prune-empty  -- --all
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# NOTE: THE ABOVE COMMANDS WILL WORK HOWEVER...
+#  I just use `git-obliterate` now from the `git-extras` package
+#  much simpler. Still follow the commands below
 
 # AFTER EACH filter-branch
 rm -rf .git/refs/original
@@ -166,6 +178,7 @@ git clean -f # to delete
 git push --delete <remote_name> <branch_name> # remote
 git branch -d <branch_name> # local
 
+
 ###############################################################################
 #  _____    ______   __  __    ____    _______   ______
 # |  __ \  |  ____| |  \/  |  / __ \  |__   __| |  ____|
@@ -194,16 +207,6 @@ git push -u <remote> <branch>
 git remote update
 
 
-https://stackoverflow.com/questions/2765421/how-do-i-push-a-new-local-branch-to-a-remote-git-repository-and-track-it-too
-
-https://stackoverflow.com/questions/1783405/how-do-i-check-out-a-remote-git-branch
-
-https://stackoverflow.com/questions/1519006/how-do-you-create-a-remote-git-branch
-
-https://stackoverflow.com/questions/24301914/git-create-local-branch-from-existing-remote-branch
-
-
-
 ###############################################################################
 #    __  __               _____    _____    _____
 #   |  \/  |     /\      / ____|  |_   _|  / ____|
@@ -217,6 +220,10 @@ https://stackoverflow.com/questions/24301914/git-create-local-branch-from-existi
 
 # Get list of largest objects in git repo
 #-----------------------------------------
+# great for pruning git tree when it becomes bloated with all those
+#  notebooks with cell outputs of high-dpi pyplot 3D mplots you
+#  forgot to clear
+#
 # > Credit:
 #   User: https://stackoverflow.com/users/380229/raphinesse
 #   Link: https://stackoverflow.com/a/42544963/6880404

@@ -25,7 +25,7 @@ wkhtmltopdf README.html README.pdf
 
 >? Install py package from source?
 #=======================
-python setup.py install --prefix=/home/$USER/.local/bin
+python setup.py install --prefix=$HOME/.local/bin
 
 
 >? Install apt package without recommended|suggested?
