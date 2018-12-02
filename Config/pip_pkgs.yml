@@ -203,6 +203,7 @@ git-github:
 - clone-github        # clone github repos in bulk
 - replicate-github    # tool for maintaining mirrors of github repos
 - github-trending-cli # View Github Trending and README from the command line
+- git-of-theseus      # plot stats on git repositories
 
 
 ascii-art:

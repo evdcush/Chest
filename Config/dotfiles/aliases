@@ -19,6 +19,7 @@ alias t
 # File mod
 alias srt="sort -o $1 $1"
 alias unq="sort $1 | uniq -i"  # ignore case
+alias dups="sort $1 | uniq -d"
 
 #---- list stuff
 alias h="history"
@@ -33,12 +34,13 @@ alias rmlines="cat $1 | xargs rm -rf"
 
 
 #---- Copy
-alias xclip="xclip -selection clipboard"
+alias clip="xclip -selection clipboard"
 
 # User stuff
 # ==========
 #---- IP
 alias myip="inxi -i"
+
 
 
 
@@ -99,19 +101,16 @@ jupyter nbextensions_configurator enable --user"
 alias pipistd="pip install -U pip setuptools wheel; \
 pip install -U numpy scipy sklearn matplotlib chainer gym \
 chainerrl sympy pip-autoremove ipython jupyter notebook gitup bs4 thefuck \
-jupyter_contrib_nbextensions jupyter_nbextensions_configurator jrnl \
 docutils sphinx sphinx-rtd-theme johnnydep termdown cheat \
-cookiecutter pypi-cli autograd h5py glances buku \
-cloudpickle restview rstcloth landslide; $nbext_init"
+cookiecutter pypi-cli autograd glances buku jrnl \
+cloudpickle restview rstcloth landslide"
 
 # INSTALL PACKAGES RELATED TO LIBRARY
 alias pipilib="pip install -U pip \
 pybtex bibtexparser bibcure betterbib pybtex-docutils \
 scihub2pdf arxivscraper arxivcheck \
-landslide \
-nbsphinx"
+landslide nbsphinx"
 
-#
 
 
 # UPDATE PIP PACKAGES

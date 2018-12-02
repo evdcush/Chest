@@ -270,12 +270,13 @@ function gcd(){
 
 # Grab stars from user
 # ====================
-getstars(){
-    # if user specified, get their stars, else get mine
-    USER=${1:-'evdcush'}   # slickkkkkkkkkkkkkkkkkkkkkkk, love this "parameter expansion" op
-    TOKEN="$TOKEN_GH_SCRAPE"
-    starred --username "$USER" --sort --token "$TOKEN" > "$USER.stars.md"
-}
+#>>>>>>> NOTE: Just made my own version of starred.py script a binary
+#getstars(){
+#    # if user specified, get their stars, else get mine
+#    USER=${1:-'evdcush'}   # slickkkkkkkkkkkkkkkkkkkkkkk, love this "parameter expansion" op
+#    TOKEN="$TOKEN_GH_SCRAPE"
+#    getstars -u "$USER" -t "$TOKEN" -s > "GH-Stars_$USER.md"
+#}
 
 
 # Full git delete flow
