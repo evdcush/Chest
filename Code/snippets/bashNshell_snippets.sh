@@ -9,9 +9,7 @@
 #                                                                             #
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
-#==============================================================================
-#                        STDIN/OUT and FILE STUFF
-#==============================================================================
+
 # read data from user
 #----------------------------
 echo "Enter a value: "
@@ -73,10 +71,22 @@ hostname
 #-----> T4
 
 
+# mv stuff
+# -------------------
 #====== Rename file, without retyping dir path:
 mv very/long/path/to/filename.{old,new}
 #----  vs
 mv very/long/path/to/filename.old very/long/path/to/filename.new
+
+#==== move multiple things
+# of course, typical wildcard match
+mv *.ipynb notebook_dir/
+# but for non-matching...
+mv -t DESTINATION file1 file2 file3 ...
+mv file1 file2 file3 -t DESTINATION
+
+
+
 
 
 #==============================================================================
@@ -118,12 +128,17 @@ git checkout doc-fusion && make html
 doc2dash -n Chainer -i chainer_icon_red.png -j build/html
 
 
-
-
 # don't remember what this went to, but keeping it because it must have
 # felt like a cmd worth saving
 #sed 's/.*private.*$//ig' m.txt
 
+
+# Get latest release from GitHub API
+# ==================================
+curl --silent "https://api.github.com/repos/USER/REPO/releases/latest" |
+    grep '"tag_name":' |
+    sed -E 's/.*"([^"]+)".*/\1/' |
+    xargs -I {} curl -sOL "https://github.com/USER/REPO/archive/"{}'.tar.gz'
 
 ###############################################################################
 #                                                                             #

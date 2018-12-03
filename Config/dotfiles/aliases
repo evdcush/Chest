@@ -41,10 +41,6 @@ alias clip="xclip -selection clipboard"
 alias myip="inxi -i"
 
 
-
-
-
-
 ################################################################################
 #
 #     █████  ██████  ████████ 
@@ -188,6 +184,7 @@ alias b='buku --suggest'
 # git
 # ===
 alias gs="git status"
+alias gm="git mv -v"
 alias gd="git diff --ignore-all-space"
 alias ga="git add"
 alias gls="git ls-files"
@@ -197,6 +194,7 @@ alias gcm="git commit -m"
 alias gcam="git commit -a -m"
 alias gcmd="git commit --amend --no-edit"
 alias gacmd="git add -u && git commit --amend --no-edit"
+alias gk="git checkout"
 alias gcn="git clone"
 alias gpull="git pull"
 alias gpush="git push"

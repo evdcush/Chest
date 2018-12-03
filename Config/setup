@@ -22,15 +22,16 @@
 #===== Bootable ISO
 # Nothing has EVER worked for me in making a bootable USB drive other than
 # "Universal USB Installer, pendrive," which, of course, is Windows only
-#  * TRIED: Rufus, unetbootin (trash), dd, "bootiso", gparted
-#  * WORKS: UUI, distro-provided tools (tails, kali, etc)
-#  * TO TRY: etcher looks promising
+#  * TRIED: Rufus, unetbootin (trash), dd, "bootiso" (trash), gparted
+#  * WORKS: UUI, distro-provided tools (tails, kali, etc), etcher
+#  * etcher : etcher is a potential, platform-invariant solution; install
+#             worked on my laptop, but UEFI installation is unconfirmed
 
 #===== Troubleshooting
 # If things are failing with the USB
 #  * try a different, non-3.0 port
 #  * not a "hub" port, like the front ones near power or otherwise joint hubs
-#  * insure USB is FAT32, MBR table (GPR never worked)
+#  * insure USB is FAT32, MBR table (GPR never works)
 
 
 
@@ -101,7 +102,7 @@ arp printer-driver-splix printer-driver-sag-gdi printer-driver-pxljr printer-dri
 #===== Purge unwanted and non-English fonts (almost entirely south-Asian)
 #  Note:
 #    - this is the COMPLETE LIST
-#    - you will get tofu sometimes
+#    - you WILL get tofu sometimes
 arp fonts-tlwg* fonts-thai* fonts-liberation* fonts-smc* fonts-liberation2* fonts-kacst* fonts-samyak* fonts-lao* fonts-deva* fonts-gujr* fonts-knda* fonts-guru* fonts-navilu* fonts-orya* fonts-beng* fonts-khmeros* fonts-mlym* fonts-lklug* fonts-sil* fonts-taml* fonts-sahadeva* fonts-sarai* fonts-lohit* fonts-gubbi* fonts-nakula* fonts-telu* fonts-kalapi* fonts-indic* fonts-gargi* fonts-pagul*
 
 # Desired fonts that may get removed or scheduled for autoremove
