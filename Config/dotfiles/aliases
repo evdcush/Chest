@@ -14,7 +14,6 @@
 # NB: oh-my-zsh defines useful aliases '..'|'...'|'....'
 alias md="mkdir -p"
 alias cdd="cd -"  # NOTE: `cd -` broken by enhanced file jumping utils
-alias t
 
 # File mod
 alias srt="sort -o $1 $1"
@@ -40,10 +39,6 @@ alias clip="xclip -selection clipboard"
 # ==========
 #---- IP
 alias myip="inxi -i"
-
-
-
-
 
 
 #==============================================================================
@@ -176,6 +171,7 @@ alias b='buku --suggest'
 # git
 # ===
 alias gs="git status"
+alias gm="git mv -v"
 alias gd="git diff --ignore-all-space"
 alias ga="git add"
 alias gau="git add -u"
@@ -184,6 +180,7 @@ alias gcm="git commit -m"
 alias gcam="git commit -a -m"
 alias gcmd="git commit --amend --no-edit"
 alias gacmd="git add -u && git commit --amend --no-edit"
+alias gk="git checkout"
 alias gcn="git clone"
 alias gpull="git pull"
 alias gpush="git push"
