@@ -698,7 +698,6 @@ sudo systemctl restart sshd.service;
 #  mutedrainbow_sky
 #  late_night
 #  koralgreen
-#  seafoam-pastel-dark # plaintext better
 #  nouba # plaintext
 #  # Light
 #  #--------

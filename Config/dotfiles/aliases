@@ -30,7 +30,7 @@ alias duh="du -h --max-depth=1 | sort -h;"
 
 # Delete from list
 alias rmlines="cat $1 | xargs rm -rf"
-
+alias cm="python $HOME/Projects/fart/render.py"
 
 #---- Copy
 alias clip="xclip -selection clipboard"
