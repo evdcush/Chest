@@ -91,14 +91,12 @@ dev:
 - radon         # linting/code metrics, better than flake8
 - coverage      # code-coverage
 - black         # auto-format code; only used for other peoples gross code
-- luigi         # manages task pipeline
-
-
 
 net:
 - html5lib  # dep
 - bs4       # scrape
 - you-get   # scrape for dummies
+
 
 compsci-assets: # packages to help study/learn compsci stuff
 - algorithms      # simple implementations of algorithms in python
@@ -183,10 +181,14 @@ CLI-shell:
 - thefuck     # AWESOME, correct previous command
 - cheat       # decent man examples for queried cmd
 - maybe       # hit-or-miss so far; test out what command will do
-- glances     # wayyyyy better top/htop
+
 - archivenow  # archives urls (WARC, all the archiving sites)
 - halo        # spinners for terminal, ipython, notebook
 
+
+system:
+- glances  # wayyyyy better top/htop
+- s-tui    # CPU monitoring, pretty nice; couple with 'stress': `afi stress`
 
 git-github:
 - GitPython           # python git library
@@ -219,6 +221,7 @@ misc-untested:
 - dbcollection # collection of popular ML datasets
 - smmap2       # pure python sliding window
 - title2bib    # generate bibtex given title
+- luigi         # manages task pipeline
 
 
 hmmm-cool:

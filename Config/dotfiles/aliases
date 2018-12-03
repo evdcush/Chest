@@ -14,7 +14,6 @@
 # NB: oh-my-zsh defines useful aliases '..'|'...'|'....'
 alias md="mkdir -p"
 alias cdd="cd -"  # NOTE: `cd -` broken by enhanced file jumping utils
-alias t
 
 # File mod
 alias srt="sort -o $1 $1"
@@ -26,7 +25,7 @@ alias h="history"
 alias ldot="ls -d --group-directories-first .*"
 alias lk="ls -1FSshX --file-type --group-directories-first"
 alias l="ls --group-directories-first -X"
-alias lo="ls -lhSr"
+alias sl="ls -lhSr"
 alias duh="du -h --max-depth=1 | sort -h;"
 
 # Delete from list
@@ -46,16 +45,17 @@ alias myip="inxi -i"
 
 
 
-#==============================================================================
+################################################################################
 #
-#  ██████╗  ██╗  ██╗  ██████╗     ███╗   ███╗   ██████╗   ███╗   ███╗ ████████╗
-#  ██╔══██╗ ██║ ██╔╝ ██╔════╝     ████╗ ████║  ██╔════╝   ████╗ ████║ ╚══██╔══╝
-#  ██████╔╝ █████╔╝  ██║  ███╗    ██╔████╔██║  ██║  ███╗  ██╔████╔██║    ██║
-#  ██╔═══╝  ██╔═██╗  ██║   ██║    ██║╚██╔╝██║  ██║   ██║  ██║╚██╔╝██║    ██║
-#  ██║      ██║  ██╗ ╚██████╔╝    ██║ ╚═╝ ██║  ╚██████╔╝  ██║ ╚═╝ ██║    ██║
-#  ╚═╝      ╚═╝  ╚═╝  ╚═════╝     ╚═╝     ╚═╝   ╚═════╝   ╚═╝     ╚═╝    ╚═╝
-#
-#==============================================================================
+#     █████  ██████  ████████ 
+#    ██   ██ ██   ██    ██    
+#    ███████ ██████     ██ 
+#    ██   ██ ██         ██ 
+#    ██   ██ ██         ██ 
+#                          
+################################################################################
+
+
 #==== package stuff
 alias api="apt-cache show"
 alias dpkgi="sudo dpkg -i "
@@ -84,8 +84,21 @@ alias afshow="apt-fast show"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Python stuff
-# ============
+
+
+################################################################################
+#
+#    ██████  ██    ██     ███████ ███    ██ ██    ██ 
+#    ██   ██  ██  ██      ██      ████   ██ ██    ██ 
+#    ██████    ████       █████   ██ ██  ██ ██    ██ 
+#    ██         ██        ██      ██  ██ ██  ██  ██  
+#    ██         ██        ███████ ██   ████   ████  
+#                                                  
+################################################################################
+
+
+
+
 
 #---- pip stuff
 alias pipi="pip install -U "
@@ -110,7 +123,6 @@ alias pipilib="pip install -U pip \
 pybtex bibtexparser bibcure betterbib pybtex-docutils \
 scihub2pdf arxivscraper arxivcheck \
 landslide nbsphinx"
-
 
 
 # UPDATE PIP PACKAGES
