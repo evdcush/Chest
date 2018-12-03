@@ -43,7 +43,9 @@ sudo apt --no-install-recommends --no-install-suggests install MY_PACKAGE
 #----> sshfs
 sshfs name@server:/path/to/folder /path/to/mount/point
 OR
-sshfs -o reconnect name@server:/path/to/folder /path/to/mount/point  # ** automatically reconnnects
+sshfs -o reconnect name@server:/path/to/folder /path/to/mount/point  # auto reconnect
+OR
+sshfs -o ssh_command='ssh -p <customport>' name@server:/path/to/folder /path/to/mount/point
 
 
 >? Generate SSH key?
