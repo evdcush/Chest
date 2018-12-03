@@ -19,6 +19,11 @@ rst2html README.rst > README.html
 wkhtmltopdf README.html README.pdf
 
 
+>? convert .svg ----> .png?
+#=======================
+inkscape -z -e test.png -w 1024 -h 1024 test.svg
+
+
 #-----------------------------------------------------------------------------
 #   Installation
 #-----------------------------------------------------------------------------

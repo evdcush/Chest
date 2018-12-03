@@ -129,6 +129,7 @@ apt:
         - anki
         - chromium-browser
         - flameshot
+        - inkscape
         - git-extras
         #- pdfsam  # install from deb; apt outdated
         - vlc
