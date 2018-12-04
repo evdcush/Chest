@@ -291,5 +291,7 @@ function git-nuke(){
     git reflog expire --expire=now --all
     git gc --prune=now
     git gc --aggressive --prune=now
-    git push --all --prune --force  # will delete all branches not in local
+
+    # Double check this func works before you force push shit
+    #git push --all --prune --force  # will delete all branches not in local
 }
