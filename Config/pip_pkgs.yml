@@ -33,6 +33,7 @@ AI-frameworks:
 - gym
 - chainerrl
 - neupy  # ANN library, TF backend, lib has some cool stuff
+- optuna
 
 
 TF-dependencies:  # don't actually use any of it; it's just to build TF

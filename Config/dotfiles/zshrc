@@ -139,5 +139,4 @@ eval $(thefuck --alias)
 
 # Stuff automatically added by other software:
 
-# Added by n-install (see http://git.io/n-install-repo).
-export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
+export N_PREFIX="$HOME/.Apps/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).

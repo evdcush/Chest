@@ -141,6 +141,29 @@ P.add_args('-d', '--use_dropout', action='store_true')
 # >>> vars(P.parse_args(['--use_dropout']))
 #    {'foo': None, 'use_dropout': True}
 
+#------------------------------------------------------------------------------
+#                   ARGPARSE FROM A CONFIG FILE
+#           get args and defaults from a yaml or json file
+#------------------------------------------------------------------------------
+
+class Parser:
+    def __init__(self, config_path=config_path):
+        self.argparser = argparse.ArgumentParser()
+        self.config_path = config_path
+        self.process_config()
+
+    def process_config(self):
+        with open(self.config_path) as conf:
+            config = yaml.load(conf)
+            for key, val in config.items():
+                self.argparser.add_argument(f'--{key}', default=val)
+
+    def parse(self):
+        self.args = self.argparser.parse_args()
+        return self.args
+
+
+
 
 ###############################################################################
 ########################       MY DECORATORS       ############################
