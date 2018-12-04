@@ -109,8 +109,9 @@ END
 get_crx(){
     CRXNAME="$1.crx"
     CRXID="$2"
-    CRX_PATH="$DIR_SOFTWARE/CRX/$CRXNAME"
-    wget "https://clients2.google.com/service/update2/crx?response=redirect&acceptformat=crx2,crx3&prodversion=69&x=id%3D$CRXID%26installsource%3Dondemand%26uc -O $CRX_PATH"
+    CRX_PATH="$DIR_MEDIA/Software/CRX"
+    echo $CRX_PATH
+    wget -O "$CRXNAME" "https://clients2.google.com/service/update2/crx?response=redirect&acceptformat=crx2,crx3&prodversion=69&x=id%3D$CRXID%26installsource%3Dondemand%26uc"
 }
 
 #-----------------------------------------------------------------------------#
