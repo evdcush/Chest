@@ -14,6 +14,7 @@ essentials:
 promising:
 - pygal     # visualization lib, looks clean af
 - networkx  # lib whole bag of stuff for networks (create, manip, vis)
+- prince    # nice visualization stuff for factor analysis
 
 science-math:
 - autograd      # easier to use than sympy; less powerful though
