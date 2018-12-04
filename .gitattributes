@@ -1,3 +1,2 @@
-Resources/gh_pub_token.json filter=git-crypt diff=git-crypt
-Config/dotfiles/gh_tokens.yml filter=git-crypt diff=git-crypt
+*gh_tokens.yml filter=git-crypt diff=git-crypt
 projects.* filter=git-crypt diff=git-crypt
