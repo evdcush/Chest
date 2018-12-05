@@ -165,7 +165,7 @@ alias stt="subl ." # open  dir with sublime
 alias jrnl=" jrnl"
 
 #---- rst
-alias r2h="rst2html $1 > sample.T.html && wkhtmltopdf sample.T.html README.T.pdf"
+alias r2h="rst2html $1 > sample.T.html"
 
 #---- cookiecutter proj
 alias mk_pyproj="cookiecutter \
@@ -233,17 +233,6 @@ alias hoard_now="python $DIR_PROJECTS/Hoarded/clone_urls.py"
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-# Handy project aliases
-# =====================
-template_dir="$DIR_CHEST_RESOURCES/Templates"
-#==== Licenses
-alias BSD3="cp $template_dir/Licenses/BSD-3-Clause.txt $PWD/LICENSE"
-alias LGPL="cp $template_dir/Licenses/LGPL-3.0.txt     $PWD/LICENSE"
-alias APGL="cp $template_dir/Licenses/AGPL-3.0.txt     $PWD/LICENSE"
-
-#==== Readme
-alias RDME="cp $template_dir/README.rst $PWD"
 
 
 

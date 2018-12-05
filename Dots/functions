@@ -23,6 +23,12 @@
 #     echo " * $@" >> "$N2_FPATH"
 # }
 
+
+function RDME {
+    SRC_DIR="$DIR_CHEST_RESOURCES/Templates/README.rst"
+    DEST_DIR="$PWD/README.rst"
+    cp $SRC_DIR $DEST_DIR
+}
 #-----------------------------------------------------------------------------#
 #                            Apps & Scripts                                   #
 #-----------------------------------------------------------------------------#
