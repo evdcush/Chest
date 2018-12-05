@@ -78,9 +78,9 @@ adg('-c', '--counter', action='store_true',
     help='X number attached to window label for apps that support count, such as gmail')
 
 
-def get_dir_name_from_nativefiers_weird_ass_slug_logic(name):
-    """ So nativefier will split camel-cased names with a dash '-'
-        Here's the stupid workaround
+def nativefier_slug_workaround(name):
+    """ nativefier splits camelCased names with a dash '-'
+    which is unfortunate for camelCased services
     """
     if name.istitle() or name.islower() or name.isupper() or '-' in name:
         return name.lower()

@@ -293,6 +293,13 @@ function git-nuke(){
     git gc --prune=now
     git gc --aggressive --prune=now
 
-    # Double check this func works before you force push shit
-    #git push --all --prune --force  # will delete all branches not in local
+    #==== Double-check rewrites before final step
+    echo -n "Do you want to push (y/n)? "
+    read answer
+    if [ "$answer" != "${answer#[Yy]}" ] ;then
+        git push --all --prune --force  # will delete all branches not in local
+    else
+        echo "push aborted; local git changes persist"
+    fi
+
 }
