@@ -1,27 +1,8 @@
-
-#-----------------------------------------------------------------------------#
-#                                PATHS                                        #
-#-----------------------------------------------------------------------------#
-
-
 #-----------------------------------------------------------------------------#
 #                                Endemic                                      #
 #-----------------------------------------------------------------------------#
 
-#  DEPRECATED; using jrnl now instead
-#==== write line to D log
-#dw(){
-#    D_FPATH="$HOME/D"
-#    echo "$1" >> "$HOME/D"
-#}
 
-# UNUSED *****NEED BETTER SOLUTION******
-#   >>----> Consider echoing a list? Just use jrnl tags? Look into goog Keep API?
-#==== write line to look n2 log
-# n2(){
-#     N2_FPATH="$DIR_DOCS/n2.md"
-#     echo " * $@" >> "$N2_FPATH"
-# }
 
 #-----------------------------------------------------------------------------#
 #                            Apps & Scripts                                   #
@@ -117,6 +98,20 @@ get_crx(){
 #-----------------------------------------------------------------------------#
 #                        Shell Utils & Shortcuts                              #
 #-----------------------------------------------------------------------------#
+
+function lnbin(){
+    # make thing executable
+    chmod +x "$1"
+    # Set paths
+    SRC="$PWD/$1"
+    DEST="$PATH_USER_BIN"
+    if [ "$#" -gt 1 ]; then
+        # rename link endpoint
+        DEST="$PATH_USER_BIN/$2"
+    fi
+    # link it up
+    ln -sf $SRC $DEST
+}
 
 
 # PATH & shell config
