@@ -4,6 +4,10 @@
 """
 import os
 import subprocess
+
+# import favicon  <--------<<<< Library to find favicon from a site
+#   it would be far simpler if you could scrape the favicon, svg --> png it, and use that
+
 from argparse import ArgumentParser
 
 
