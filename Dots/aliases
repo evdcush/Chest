@@ -164,9 +164,6 @@ alias stt="subl ." # open  dir with sublime
 #---- journal
 alias jrnl=" jrnl"
 
-#---- rst
-alias r2h="rst2html $1 > sample.T.html"
-
 #---- cookiecutter proj
 alias mk_pyproj="cookiecutter \
 https://github.com/kragniz/cookiecutter-pypackage-minimal.git"
@@ -222,19 +219,3 @@ alias gsize="git rev-list --objects --all \
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-# git hoarding
-# ============
-alias hoard_now="python $DIR_PROJECTS/Hoarded/clone_urls.py"
-
-# PaperNotes
-# ==========
-#alias update_inbox="echo $1 >> $DIR_PROJECTS/PaperNotes/Literature/inbox.txt"
-
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-
-
-
-

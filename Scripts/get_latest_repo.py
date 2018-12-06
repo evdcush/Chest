@@ -36,16 +36,14 @@ class Parser:
 from json import loads
 import argparse
 from urllib.request import urlopen, urlretrieve, Request
-from pprint import PrettyPrinter
-
-pretty_printer = PrettyPrinter()
-pprint = pretty_printer.pprint
+from pprint import pprint
 
 # Attribute dict (dot access)
 #-----------------------
 class AttrDict(dict): # just a dict mutated/accessed by attribute instead index
     __getattr__ = dict.__getitem__
     __setattr__ = dict.__setitem__
+    __delattr__ = dict.__delitem__
 
 ###############################################################################
 #                                                                             #
@@ -79,8 +77,8 @@ URL_BASE = 'https://api.github.com/repos/{}/{}/releases{}'
 parser = argparse.ArgumentParser()
 parser.add_argument('--user',        '-u', type=str, required=True)
 parser.add_argument('--repo',        '-r', type=str, required=True)
-parser.add_argument('--pre_release', '-p', type=int, default=0, choices=[0,1])
-parsed = AttrDict(vars(parser.parse_args()))
+parser.add_argument('--pre_release', '-p', action="store_true")
+parsed = parser.parse_args()
 
 # Get url fields
 #-----------------------

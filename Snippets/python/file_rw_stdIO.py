@@ -122,32 +122,6 @@ class Pickle:
         else:
             return self.unpickle(*args)
 
-class PickleJSON:
-    def __init__(self, path=''):
-        self.path = path
-
-    def update_pickle(self, fname, k, val):
-        my_dict = self.unpickle(fname)
-        my_dict[k].append(val)
-        self.pickle_this(fname, my_dict)
-
-    def pickle_this(self, file_name, obj):
-        file_path = self.path + file_name
-        with open(file_path, 'w') as file:
-            json.dump(obj, file)
-        #print(f'{file_path} pickled!')
-
-    def unpickle(self, file_name):
-        file_path = self.path + file_name
-        with open(file_path, 'r') as file:
-            obj = json.load(file)
-        return obj
-
-    def __call__(self, *args):
-        if len(args) > 1:
-            self.pickle_this(*args)
-        else:
-            return self.unpickle(*args)
 
 #==============================================================================
 # STD:IN, STD:OUT examples
