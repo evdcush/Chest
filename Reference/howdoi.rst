@@ -1,9 +1,18 @@
-#-----------------------------------------------------------------------------
-#   Convert....
-#-----------------------------------------------------------------------------
+############
+How Do I....
+############
 
-############ PDF
-tldr: convert to html, then wkhtmltopdf   (1-step converters kind of suck)
+
+**********
+Conversion
+**********
+
+===
+PDF
+===
+**tl;dr :** convert to html, then to pdf through wkhtmltopdf ("1-step" converters kind of suck)
+
+
 
 >? convert .ipynb ----> pdf?
 #=======================

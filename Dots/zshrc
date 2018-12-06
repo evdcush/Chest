@@ -84,7 +84,6 @@ setopt HIST_IGNORE_SPACE
 # ====================
 export ZSH="/home/evan/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
-COMPLETION_WAITING_DOTS="true"
 
 # Plugins
 # =======
@@ -92,10 +91,10 @@ plugins=(
     history
     copyfile
     colored-man-pages
-    compleat
+    #compleat
     zshmarks
     zsh-syntax-highlighting
-    pip
+    #pip
 )
 
 # Source zsh

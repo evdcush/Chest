@@ -17,7 +17,7 @@ function RDME {
 # Nativefier
 # ==========
 nativefy(){
-    python "$DIR_CHEST_CODE/Scripts/nativefy.py" "$@"
+    python "$DIR_CHEST/Scripts/nativefy.py" "$@"
 }
 
 

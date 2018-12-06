@@ -34,7 +34,6 @@ DIR_KEY="$DIR_DOTS/Keys"
 # Chest paths
 # ===========
 DIR_CHEST="$HOME/Chest"
-DIR_CHEST_CODE="$DIR_CHEST/Code"
 DIR_CHEST_RESOURCES="$DIR_CHEST/Resources"
 DIR_CHEST_SETUP="$DIR_CHEST/Setup"
 DIR_CHEST_DOTS="$DIR_CHEST/Dots"
@@ -58,13 +57,3 @@ LOCAL_HNAME=$(hostname) # for determining whether to path to CUDA
 # FILE MUST BE UNLOCKED BY git-crypt FIRST
 TOKEN_GH_SCRAPE=$(cat $DIR_CHEST_RESOURCES/gh_tokens.yml | grep token | tail -1 | awk '{print $2}')
 
-
-# =========================================
-# Maybe make a function for these symlinks?
-# =========================================
-# ln -sf "/home/evan/Chest/Setup/dotfiles/zshrc"     "/home/evan/.zshrc"
-# ln -sf "/home/evan/Chest/Setup/dotfiles/aliases"   "/home/evan/.Dots/.Aliases"
-# ln -sf "/home/evan/Chest/Setup/dotfiles/functions" "/home/evan/.Dots/.Functions"
-# ln -sf /home/evan/Chest/Resources/Icons /home/evan/.Apps/Icons
-# ln -sf /home/evan/Chest/Code/Scripts/nativefy.py /home/evan/.local/bin/nativefy
-# ln -sf /home/evan/Chest/Code/Scripts/starred.py /home/evan/.local/bin/getstars
