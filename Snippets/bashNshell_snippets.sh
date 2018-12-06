@@ -140,6 +140,41 @@ curl --silent "https://api.github.com/repos/USER/REPO/releases/latest" |
     sed -E 's/.*"([^"]+)".*/\1/' |
     xargs -I {} curl -sOL "https://github.com/USER/REPO/archive/"{}'.tar.gz'
 
+
+
+# Python embedded in sh function
+# ==============================
+function hurl {
+ARGS="$@" IPATH="$PATH_INBOX_HOARD" python - <<END
+import os
+import yaml
+
+#==== Read STDIN
+path_inbox = str(os.environ['IPATH'])
+args_input = os.environ['ARGS'].split(' ')
+
+#==== Process args
+has_flag  = len(args_input) > 1
+flag, url = args_input if has_flag else ('r', args_input.pop())
+
+#==== Get key
+key_map = dict(r="repos", o="orgs", u="users")
+key = key_map[flag]
+
+#==== Get inbox file
+with open(path_inbox) as file_inbox:
+    inbox = yaml.load(file_inbox)
+
+#==== Update inbox
+# > NB: duplicate entries managed by hoarding script
+inbox[key].append(url)
+with open(path_inbox, 'w') as file_inbox:
+    yaml.dump(inbox, file_inbox, default_flow_style=False)
+print(f'SAVED: inbox[{key}].append({url})')
+END
+}
+
+
 ###############################################################################
 #                                                                             #
 #                 ,,                           ,,                             #

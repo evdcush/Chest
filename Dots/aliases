@@ -112,7 +112,7 @@ jupyter nbextensions_configurator enable --user;"
 
 # INSTALL PACKAGES ALWAYS USED
 alias pipistd="pip install -U pip setuptools wheel; \
-pip install -U numpy scipy sklearn matplotlib chainer gym \
+pip install -U numpy scipy sklearn matplotlib chainer cython gym \
 chainerrl sympy pip-autoremove ipython jupyter notebook gitup bs4 thefuck \
 docutils sphinx sphinx-rtd-theme johnnydep termdown cheat \
 cookiecutter pypi-cli glances buku jrnl \

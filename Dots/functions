@@ -4,15 +4,23 @@
 
 
 
-
+# Copy README template to a project dir
 function RDME {
     SRC_DIR="$DIR_CHEST_RESOURCES/Templates/README.rst"
     DEST_DIR="$PWD/README.rst"
     cp $SRC_DIR $DEST_DIR
 }
-#-----------------------------------------------------------------------------#
-#                            Apps & Scripts                                   #
-#-----------------------------------------------------------------------------#
+
+
+################################################################################
+#
+#     ██████  █████  ██      ██ 
+#    ██      ██   ██ ██      ██ 
+#    ██      ███████ ██      ██ 
+#    ██      ██   ██ ██      ██ 
+#     ██████ ██   ██ ███████ ███████ 
+#                                    
+################################################################################
 
 # Nativefier
 # ==========
@@ -20,77 +28,51 @@ nativefy(){
     python "$DIR_CHEST/Scripts/nativefy.py" "$@"
 }
 
+# Grab stars from user
+# ====================
+#>>>>>>> NOTE: Just made my own version of starred.py script a binary
+#getstars(){
+#    # if user specified, get their stars, else get mine
+#    USER=${1:-'evdcush'}   # slickkkkkkkkkkkkkkkkkkkkkkk, love this "parameter expansion" op
+#    TOKEN="$TOKEN_GH_SCRAPE"
+#    getstars -u "$USER" -t "$TOKEN" -s > "GH-Stars_$USER.md"
+#}
+
+
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # INBOXING FUNCTIONS
 # ==================
-
-#---- Github repo hoarding (cloning)
+#---- git repo hoarding (cloning)
 function hurl {
-ARGS="$@" IPATH="$PATH_INBOX_HOARD" python - <<END
-import os
-import yaml
-
-#==== Read STDIN
-path_inbox = str(os.environ['IPATH'])
-args_input = os.environ['ARGS'].split(' ')
-
-#==== Process args
-has_flag  = len(args_input) > 1
-flag, url = args_input if has_flag else ('r', args_input.pop())
-
-#==== Get key
-key_map = dict(r="repos", o="orgs", u="users")
-key = key_map[flag]
-
-#==== Get inbox file
-with open(path_inbox, 'r') as file_inbox:
-    inbox = yaml.load(file_inbox)
-
-#==== Update inbox
-inbox[key].append(url) # NB: duplicate entries managed by hoarding script
-with open(path_inbox, 'w') as file_inbox:
-    yaml.dump(inbox, file_inbox, default_flow_style=False)
-print(f'SAVED: inbox[{key}].append({url})')
-END
+    TARGET='repos'
+    URL="$1"
+    if [ "$#" -gt 1 ]; then
+        #==== "orgs" or "users" specified
+        TARGET="$1"
+        URL="$2"
+    fi
+    yq w -i $PATH_INBOX_HOARD "$TARGET"'[+]' $URL
 }
 
 #----- Add papers/literature to reading inbox
 function rurl {
-ARGS="$@" IPATH="$PATH_INBOX_READ" python - <<END
-import os
-import yaml
-
-#==== Read STDIN
-path_inbox = str(os.environ['IPATH'])
-url = os.environ['ARGS']
-
-#==== Process args
-if 'arxiv.org' in url:
-    key = 'arxiv'
-    val = url.strip('htps:/arxiv.ogbdf')   # extracts arxiv ID
-    print(f'Input: {url}, Stripped-ID: {val}')
-else:
-    key = 'other'
-    val = url
-
-#==== Get inbox file
-with open(path_inbox, 'r') as file_inbox:
-    inbox = yaml.load(file_inbox)
-
-#==== Update inbox
-inbox[key].append(val)
-with open(path_inbox, 'w') as file_inbox:
-    yaml.dump(inbox, file_inbox, default_flow_style=False)
-END
+    TARGET='arxiv'
+    URL="$1"
+    if [ "$#" -gt 1 ]; then
+        #==== "orgs" or "users" specified
+        TARGET="$1"
+        URL="$2"
+    fi
+    yq w -i $PATH_INBOX_READ "$TARGET"'[+]' $URL
 }
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Chrome stuff
-# ============
+# misc
+# ====
 
 # Get chrome extension
 get_crx(){
@@ -101,58 +83,9 @@ get_crx(){
     wget -O "$CRXNAME" "https://clients2.google.com/service/update2/crx?response=redirect&acceptformat=crx2,crx3&prodversion=69&x=id%3D$CRXID%26installsource%3Dondemand%26uc"
 }
 
-#-----------------------------------------------------------------------------#
-#                        Shell Utils & Shortcuts                              #
-#-----------------------------------------------------------------------------#
-
-function lnbin(){
-    # make thing executable
-    chmod +x "$1"
-    # Set paths
-    SRC="$PWD/$1"
-    DEST="$PATH_USER_BIN"
-    if [ "$#" -gt 1 ]; then
-        # rename link endpoint
-        DEST="$PATH_USER_BIN/$2"
-    fi
-    # link it up
-    ln -sf $SRC $DEST
-}
-
-
-# PATH & shell config
-# ===================
-
-#---- reset PATH to default
-function reset_path(){
-    echo "Resetting Path...\n--------------------------------------------------"
-    echo "  current path = $PATH\n"
-    PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-    #PATH=$(getconf PATH)
-    echo "  reset path = $PATH\n"
-    source ~/.zshrc
-    echo "--------------------------------------------------"
-}
-
-
-#---- source zshrc
-function srcz(){
-    reset_path # sourcing can duplicate parts of PATH anyway, so just reset
-    #source ~/.zshrc
-}
-
-#---- add line to shell config
-function expzsh(){
-    #expzsh 'My alias' 'alias testalias="echo test passed"'
-    echo "\n\n#==== $1" >> ~/.zshrc
-    echo "$2" >> ~/.zshrc
-}
-
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-#==== Extract many types of compressed packages
+# unar is preferable if u have
 function extract() {
+    #==== Extract many types of compressed packages
     if [ -f "$1" ] ; then
         case "$1" in
             *.tar.bz2)   tar xvjf "$1"                    ;;
@@ -176,25 +109,124 @@ function extract() {
     fi
 }
 
-# Diff files in the matter of git diff
-function gdiff () { diff -u $@ | colordiff | less -R; }
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Add apt repo
+# ============
+addrep(){
+    sudo add-apt-repository "ppa:$1" -y
+    sudo apt-fast update
+}
+
+
+
+################################################################################
+#
+#    ███████ ███    ██ ██    ██ 
+#    ██      ████   ██ ██    ██ 
+#    █████   ██ ██  ██ ██    ██ 
+#    ██      ██  ██ ██  ██  ██  
+#    ███████ ██   ████   ████  
+#                             
+################################################################################
+
+# PATH & shell config
+# ===================
+
+#---- reset PATH to default
+function reset_path(){
+    echo "Resetting Path...\n--------------------------------------------------"
+    echo "  current path = $PATH\n"
+    PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+    #PATH=$(getconf PATH)
+    echo "  reset path = $PATH\n"
+    source ~/.zshrc
+    echo "--------------------------------------------------"
+}
+
+#---- source zshrc
+function srcz(){
+    reset_path # sourcing can duplicate parts of PATH anyway, so just reset
+    #source ~/.zshrc
+}
+
+#---- add line to shell config
+function expzsh(){
+    #expzsh 'My alias' 'alias testalias="echo test passed"'
+    echo "\n\n#==== $1" >> ~/.zshrc
+    echo "$2" >> ~/.zshrc
+}
+
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Directory functions
-#--------------------
+# Make new pyenv virtualenv
+# =========================
+# $ pvenv build_docs # converts to the following commands
+#     pyenv virtualenv 3.7.1 build_docs;
+#     local build_docs;
+#     pip install -U pip setuptools wheel
+function pvenv(){
+    if [ "$#" -gt 1 ]; then
+        #==== python version specified
+        PY_VER="$1"
+        VENV_NAME="$2"
+    else
+        #==== default latest python ver (3.7)
+        PY_VER='3.7.1'
+        VENV_NAME="$1"
+    fi
+    #==== Make virtualenv
+    pyenv virtualenv "$PY_VER" "$VENV_NAME"
+    pyenv local "$VENV_NAME"
+    #==== Update base packages
+    pip install -U pip setuptools wheel
+}
+
+
+################################################################################
+#
+#    ███████ ██   ██       ██    ██ ████████ ██ ██      ███████ 
+#    ██      ██   ██       ██    ██    ██    ██ ██      ██      
+#    ███████ ███████ █████ ██    ██    ██    ██ ██      ███████ 
+#         ██ ██   ██       ██    ██    ██    ██ ██           ██ 
+#    ███████ ██   ██        ██████     ██    ██ ███████ ███████ 
+#                                                               
+################################################################################
+
+# dir and file stuff
+# ==================
+
+# Diff files in the manner of git diff
+function gdiff () { diff -u $@ | colordiff | less -R; }
+
 #==== mkdir & cd into it
 function mcd(){mkdir -p "$1" && cd "$1"}
 
 #==== cd & list contents
 function cdl(){cd "$1" && ls -1FSshX --file-type}
 
+# symlink something to ~/.local/bin
+function lnbin(){
+    # make thing executable
+    chmod +x "$1"
+    # Set paths
+    SRC="$PWD/$1"
+    DEST="$PATH_USER_BIN"
+    if [ "$#" -gt 1 ]; then
+        # rename link endpoint
+        DEST="$PATH_USER_BIN/$2"
+    fi
+    # link it up
+    ln -sf $SRC $DEST
+}
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 # Finding stuff
+# =============
 
 # Find and delete: CAREFUL
-#=========================
 function find_and_remove_all(){
     matches=$(sudo find / -iname "*$1*")
     echo "$matches"
@@ -222,67 +254,29 @@ function f(){
 }
 
 
-#-----------------------------------------------------------------------------#
-#                             Package Utils                                   #
-#-----------------------------------------------------------------------------#
-
-# Add apt repo
-# ============
-addrep(){
-    sudo add-apt-repository "ppa:$1" -y
-    sudo apt-fast update
-}
-
-
-# Make new pyenv virtualenv
-# =========================
-# $ pvenv build_docs # converts to the following commands
-#     pyenv virtualenv 3.7.1 build_docs;
-#     local build_docs;
-#     pip install -U pip setuptools wheel
-function pvenv(){
-    if [ "$#" -gt 1 ]; then
-        #==== python version specified
-        PY_VER="$1"
-        VENV_NAME="$2"
-    else
-        #==== default latest python ver (3.7)
-        PY_VER='3.7.1'
-        VENV_NAME="$1"
-    fi
-    #==== Make virtualenv
-    pyenv virtualenv "$PY_VER" "$VENV_NAME"
-    pyenv local "$VENV_NAME"
-    #==== Update base packages
-    pip install -U pip setuptools wheel
-}
-
-
-#-----------------------------------------------------------------------------#
-#                            git related                                      #
-#-----------------------------------------------------------------------------#
+################################################################################
+#
+#     ██████  ██ ████████ 
+#    ██       ██    ██    
+#    ██   ███ ██    ██ 
+#    ██    ██ ██    ██ 
+#     ██████  ██    ██ 
+#                      
+################################################################################
 
 # git clone && cd
-# ===============
 function gcd(){
     REPO_URL=$1
     git clone --depth=1 $REPO_URL
     cdl "$(basename $1 .git)"
 }
 
-# Grab stars from user
-# ====================
-#>>>>>>> NOTE: Just made my own version of starred.py script a binary
-#getstars(){
-#    # if user specified, get their stars, else get mine
-#    USER=${1:-'evdcush'}   # slickkkkkkkkkkkkkkkkkkkkkkk, love this "parameter expansion" op
-#    TOKEN="$TOKEN_GH_SCRAPE"
-#    getstars -u "$USER" -t "$TOKEN" -s > "GH-Stars_$USER.md"
-#}
 
 
 # Full git delete flow
 # ====================
+# Uses `git-obliterate` from git-extras package
+#  git-obliterate itself wraps the filter-branch 'git rm -rf ...
 function git-nuke(){
     #==== Delete specified files from hist
     TARGETS=$@
@@ -304,3 +298,7 @@ function git-nuke(){
     fi
 
 }
+
+
+
+

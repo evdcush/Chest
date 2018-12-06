@@ -8,6 +8,7 @@ essentials:
 - ipython
 - jupyter
 - notebook
+- cython
 - gitup
 
 # Stuff that looks useful or interesting, but haven't used yet
@@ -17,8 +18,8 @@ promising:
 - prince    # nice visualization stuff for factor analysis
 
 science-math:
-- autograd      # easier to use than sympy; less powerful though
-- sympy         # learning curve, but amazingly powerful and featured
+- autograd      # simple, somewat restrictive, numpy-based autodiff lib
+- sympy
 - scikit-video
 - pydataset     # access to many datasets, in dataframe format
 - pandas
