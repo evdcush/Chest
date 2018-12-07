@@ -109,6 +109,9 @@ jupyter_nbextensions_configurator; \
 jupyter contrib nbextension install --user; \
 jupyter nbextensions_configurator enable --user;"
 
+alias pipi_nb_pdf='pip install -U ipython jupyter notebook nb_pdf_template; \
+python -m nb_pdf_template.install;'
+
 
 # INSTALL PACKAGES ALWAYS USED
 alias pipistd="pip install -U pip setuptools wheel; \
@@ -157,6 +160,9 @@ alias p="showmarks"
 
 # Misc apps
 # =========
+#---- notebook conversion to pdf
+alias nbc="jupyter nbconvert --to pdf $1 --template classicm"
+
 #---- editors
 alias st="subl"    # open file with sublime
 alias stt="subl ." # open  dir with sublime

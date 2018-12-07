@@ -64,13 +64,16 @@ notebook:
 - ipython
 - jupyter
 - notebook
+- jupyter_dashboards  # slick customizable layout for notebook
 - jupyterthemes  # not updated much anymore, some annoying CSS bugs
 - jupyter-contrib-nbextensions  # HUGE enhancements to notebook capabilities
 - jupyter_nbextensions_configurator
 # Then activate:
 # $ jupyter contrib nbextension install --user
 # $ jupyter nbextensions_configurator enable --user
-
+- nb_pdf_template  # Provides a FAR better latex template for nb2pdf conversions
+# python -m nb_pdf_template.install  # called after installation
+# `jupyter nbconvert --to pdf example.ipynb --template classicm` # usage
 
 apps:
 - retext  # RST and MD editor; best desktop editor for RST, still kinda bad

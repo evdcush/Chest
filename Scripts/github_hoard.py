@@ -17,13 +17,10 @@ from pprint import pprint
 HOME = os.environ["HOME"]
 RESOURCE_PATH = f'{HOME}/Chest/Resources'
 DEST_PATH = f'{HOME}/Projects/Hoard/Clones'
-#HEADERS = {'Accept': '*/*'}
-#TIMEOUT = 3
 
-API = "https://api.github.com/orgs/{}/repos?per_page=40000000&page={}"
-API = "https://api.github.com/users/{0}/repos?per_page=40000000&page={1}"
+with open(f'{HOME}/.gitconfig') as gc:
+    USERNAME = [s for s in gc.readlines() if '@' in s][0].split(' = ')[1].split('@')[0]
 
-API = "https://api.github.com/{usr_type}/{target}/repos?per_page=40000000&page={{pg}}"
 
 class Cloner:
     API = ("https://api.github.com/{usr_type}/{target}/"
@@ -107,6 +104,9 @@ class Cloner:
             idx = repo_path.index('@') + 1
             repo_path = repo_path.replace(repo_path[:idx], "")
         write_path = f'{self.clone_path}/{repo_path}'
+
+        # Clone repo
+        # ========
         try:
             with threading.Lock():
                 print(write_path)
@@ -122,13 +122,8 @@ class Cloner:
         threads_state = []
         while URLs:
             if (threading.active_count() < (threads_limit + 1)):
-                # aggregate threading arguments
-                args = (URLs.pop(), self.cone_path)
-                kwargs = dict(username=self.username, token=self.token)
-                t_kwargs = dict(target=clone_repo, args=args, kwargs=kwargs)
-
                 # thread
-                t = threading.Thread(**t_kwargs)
+                t = threading.Thread(target=clone_repo, args=URLs.pop())
                 t.daemon = True
                 t.start()
             else:
@@ -139,8 +134,18 @@ class Cloner:
 
 #==============================================================================
 
-yaml_files = Hoardyaml()
-username, token = list(yaml_FILES.auth.items()).pop()
+
+# Interfacing code
+# ================
+
+#==== Loaders
+yml_ld = lambda fpath: with open(f'{fpath}.yml') as fp: yaml.load(fp)
+
+# Read file
+def read_conf(fname, loader=yml_ld):
+    file_path = f'{RESOURCE_PATH}/{fname}'
+    return loader(file_path)
+
 
 
 
