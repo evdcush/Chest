@@ -1,4 +1,26 @@
 ###############################################################################
+#####################   make script executable bin   ##########################
+"""
+# How to make your 'poop.py' script executable bin
+
+1. put this at the top of script:
+    #!/usr/bin/env python
+
+2. `chmod +x poop.py`  # you are already finished at this step
+
+3. ln -sf poop.py dir/thats/in/PATH/poop
+
+# Call like you would other bins from cli:
+$ poop
+"pooping in the toilet"
+
+$ poop airplane
+"pooping in the airplane"
+
+"""
+
+
+###############################################################################
 ######################    Numpy, restore shape      ###########################
 
 def restore_axis_shape(x, ax, d):
