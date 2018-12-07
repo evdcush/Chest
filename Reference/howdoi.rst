@@ -1,6 +1,8 @@
 ############
 How Do I....
 ############
+do that 'thing'...again?
+########################
 
 
 **********
@@ -10,27 +12,41 @@ Conversion
 ===
 PDF
 ===
-**tl;dr :** convert to html, then to pdf through wkhtmltopdf ("1-step" converters kind of suck)
+| **tl;dr :**
+| 1. **convert to html**
+| 2. **then to pdf** (through wkhtmltopdf)
+| (somehow things get messed up in the intermediate latex conversion step)
 
 
+- **convert .ipynb to pdf?**::
 
->? convert .ipynb ----> pdf?
-#=======================
-# cleanest I've found:
-jupyter nbconvert --to html my_notebook.ipynb
-wktmltopdf my_notebook.html my_notebook.pdf
+    # 2-step: nbconvert & wkhtmltopdf
+    # -------------------------------
+    jupyter nbconvert --to html my_notebook.ipynb
+    wktmltopdf my_notebook.html my_notebook.pdf
 
+    # 1-step: nbconvert with custom latex
+    #    template through nb_pdf_template
+    # -----------------------------------
+    jupyter nbconvert --to pdf example.ipynb --template classicm
+    # (to install nb_pdf_template):
+    'pip install nb_pdf_template; python -m nb_pdf_template.install'
 
->? convert .rst ----> pdf?
-#=======================
-# From docutils rst2*
-rst2html README.rst > README.html
-wkhtmltopdf README.html README.pdf
+- **convert .rst to pdf?** (Still trying to find a good solution)::
 
+    # Using docutils' rst2
+    # --------------------
+    rst2html README.rst > README.html
+    wkhtmltopdf README.html README.pdf
 
->? convert .svg ----> .png?
-#=======================
-inkscape -z -e test.png -w 1024 -h 1024 test.svg
+======
+Images
+======
+
+- **convert svg to png?** : ::
+
+    inkscape -z -e test.png -w 1024 -h 1024 test.svg
+
 
 
 #-----------------------------------------------------------------------------
