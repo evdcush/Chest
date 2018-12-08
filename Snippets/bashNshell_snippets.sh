@@ -136,12 +136,6 @@ function find_and_remove_all(){
     fi
 }
 
-# Get chainer docset
-#===================================
-pip install -U doc2dash
-git clone git@github.com:chainer/chainer.git && cd chainer/docs
-git checkout doc-fusion && make html
-doc2dash -n Chainer -i chainer_icon_red.png -j build/html
 
 
 # Fix broken symlinks

@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 # -*- coding: utf-8 -*-
 
 """
@@ -15,13 +14,8 @@ from github3 import GitHub
 from github3.exceptions import NotFoundError
 
 
-# Pathing and Token
-# -----------------
-HOME = os.environ["HOME"]
-token_path = f'{HOME}/.Dots/gh_tokens.yml'
-
 # Grab token
-with open(token_path) as tpath:
+with open(f'{os.environ["HOME"]}/.Dots/gh_tokens.yml') as tpath:
     _tokens = yaml.load(tpath) # <----<< MUST GIT-CRYPT UNLOCK FIRST
     TOKEN = _tokens['public']['Scrape']['token']
 
