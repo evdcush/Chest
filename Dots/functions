@@ -66,7 +66,7 @@ function rurl {
     TARGET='arxiv'
     URL="$1"
     if [ "$#" -gt 1 ]; then
-        #==== "orgs" or "users" specified
+        #==== 'other'
         TARGET="$1"
         URL="$2"
     fi
@@ -84,8 +84,10 @@ get_crx(){
     CRXNAME="$1.crx"
     CRXID="$2"
     CRX_PATH="$DIR_MEDIA/Software/CRX"
+    A2="crx?response=redirect&acceptformat=crx2,crx3&prodversion=69"
+    A3="&x=id%3D$CRXID%26installsource%3Dondemand%26uc"
     echo $CRX_PATH
-    wget -O "$CRXNAME" "https://clients2.google.com/service/update2/crx?response=redirect&acceptformat=crx2,crx3&prodversion=69&x=id%3D$CRXID%26installsource%3Dondemand%26uc"
+    wget -O "$CRXNAME" "https://clients2.google.com/service/update2/$A2$A3"
 }
 
 # unar is preferable if u have
@@ -246,14 +248,14 @@ function lnbin(){
 function find_and_remove_all(){
     matches=$(sudo find / -iname "*$1*")
     echo "$matches"
-    echo -n "Do you want to proceed (y/n)? "
+    echo -n "Do you want to proceed (y/N)? "
     read answer
     if [ "$answer" != "${answer#[Yy]}" ] ;then
         echo "Proceeding to remove all matches..."
         sudo find / -iname "*$1*" -exec rm -rf "{}" \;
         echo "Finished removal"
     else
-        echo Aborted
+        echo "ABORTED"
     fi
 }
 
@@ -283,8 +285,6 @@ function f(){
 #
 ################################################################################
 
-
-
 # git clone && cd
 function gcd(){
     REPO_URL=$1
@@ -293,11 +293,10 @@ function gcd(){
 }
 
 
-
 # Full git delete flow
 # ====================
 # Uses `git-obliterate` from git-extras package
-#  git-obliterate itself wraps the filter-branch 'git rm -rf ...
+#  git-obliterate itself wraps the "git filter-branch 'git rm -rf ...
 function git-nuke(){
     #==== Delete specified files from hist
     TARGETS=$@
@@ -315,7 +314,7 @@ function git-nuke(){
     if [ "$answer" != "${answer#[Yy]}" ] ;then
         git push --all --prune --force  # will delete all branches not in local
     else
-        echo "push aborted; local git changes persist"
+        echo "PUSH ABORTED; local git changes persist"
     fi
 
 }
