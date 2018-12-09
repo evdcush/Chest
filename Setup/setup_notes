@@ -72,4 +72,3 @@ gem env home  # should show rbenv
 
 # 6 - install gems
 gem install bundler
-gem install gollum

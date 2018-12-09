@@ -64,7 +64,7 @@ notebook:
 - ipython
 - jupyter
 - notebook
-- jupyter_dashboards  # slick customizable layout for notebook
+- jupyter_dashboards  # slick customizable layout for notebook; after install: jupyter dashboards quick-setup --sys-prefix
 - jupyterthemes  # not updated much anymore, some annoying CSS bugs
 - jupyter-contrib-nbextensions  # HUGE enhancements to notebook capabilities
 - jupyter_nbextensions_configurator
