@@ -34,6 +34,7 @@ alias cm="python $HOME/Projects/fart/render.py"
 #---- Copy
 alias clip="xclip -selection clipboard"
 
+
 # User stuff
 # ==========
 #---- IP
@@ -201,6 +202,7 @@ alias gcam="git commit -a -m"
 alias gcmd="git commit --amend --no-edit"
 alias gacmd="git add -u && git commit --amend --no-edit"
 alias gk="git checkout"
+alias glog="git log --graph --decorate --oneline --all"
 alias gcn="git clone"
 alias gpull="git pull"
 alias gpush="git push"

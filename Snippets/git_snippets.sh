@@ -1,6 +1,10 @@
 #!/bin/bash
 
 
+# Prettier git log, with graphical branching
+# ------------------------------------------
+git log --graph --decorate --oneline --all
+
 # git diff files from different branches
 # --------------------------------------
 git diff branch_a branch_b -- my_file.py # can remove -- if compare work tree
@@ -32,6 +36,11 @@ git checkout other_branch file1
 #git update-index --skip-worktree <file_name>
 #git update-index --no-skip-worktree <file_name> # opposite
 # it will read as up to date, and changes will not be flagged as changes
+
+#==== to keep a file in a git repo, but will not update and do not want updates:
+# git update-index --assume-unchanged <file_name>
+# git update-index --no-assume-unchanged <file_name> # opposite
+
 #==== How to list files ignored via --skip-worktree
 git ls-files -v . | grep ^S
 
