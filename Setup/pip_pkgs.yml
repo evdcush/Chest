@@ -81,6 +81,7 @@ apps:
 - jrnl    # *** CLI journaling/notes app, supports encryption,
 - termdown    # simple countdown/timer terminal
 - apt-select  # pings apt mirrors, gives list fastest
+- speedtest-cli  # speedtest on the cli
 
 
 lib-enhancements:
@@ -229,6 +230,7 @@ misc-untested:
 - smmap2       # pure python sliding window
 - title2bib    # generate bibtex given title
 - luigi         # manages task pipeline
+- simiki       # simple wiki platform
 
 
 hmmm-cool:

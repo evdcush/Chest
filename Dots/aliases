@@ -134,8 +134,6 @@ alias pipupdate="pip list --outdated --format=freeze \
 | cut -d = -f 1  \
 | xargs -n1 pip install -U"
 
-#---- pyenv stuff
-alias pyenv-rm="pyenv uninstall $1 -y && rm .python-version"
 
 
 #==============================================================================
@@ -175,7 +173,7 @@ alias mk_pyproj="cookiecutter \
 https://github.com/kragniz/cookiecutter-pypackage-minimal.git"
 
 #---- buku
-alias b='buku --suggest'
+#alias b='buku --suggest'
 
 
 #==============================================================================

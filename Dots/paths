@@ -24,10 +24,10 @@ PATH_CUDA="/usr/local/cuda-10.0"
 #---- HOME dirs
 DIR_DATA="$HOME/.Data"  # only for datasets!
 DIR_DOTS="$HOME/.Dots"
-DIR_APPS="$HOME/.Apps"
-DIR_DOCS="$HOME/Documents"
-DIR_MEDIA="$HOME/Media"
-DIR_PROJECTS="$HOME/Projects"
+#DIR_APPS="$HOME/.Apps"
+#DIR_DOCS="$HOME/Documents"
+#DIR_MEDIA="$HOME/Media"
+#DIR_PROJECTS="$HOME/Projects"
 #---- Nested dirs
 DIR_KEY="$DIR_DOTS/Keys"
 
@@ -35,7 +35,7 @@ DIR_KEY="$DIR_DOTS/Keys"
 # ===========
 DIR_CHEST="$HOME/Chest"
 DIR_CHEST_RESOURCES="$DIR_CHEST/Resources"
-DIR_CHEST_SETUP="$DIR_CHEST/Setup"
+#DIR_CHEST_SETUP="$DIR_CHEST/Setup"
 DIR_CHEST_DOTS="$DIR_CHEST/Dots"
 
 # File paths
