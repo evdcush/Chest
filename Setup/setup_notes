@@ -1,0 +1,75 @@
+#!/bin/bash
+
+################################################################################
+#
+#   _  _         _                                            _
+#  | \| |  ___  | |_   ___   ___    ___   _ _      ___  ___  | |_   _  _   _ __
+#  | .` | / _ \ |  _| / -_) (_-<   / _ \ | ' \    (_-< / -_) |  _| | || | | '_ \
+#  |_|\_| \___/  \__| \___| /__/   \___/ |_||_|   /__/ \___|  \__|  \_,_| | .__/
+#                                                                         |_|
+#
+################################################################################
+
+
+
+
+#   __       ___
+#  |__)  /\   |  |__|
+#  |    /~~\  |  |  |
+#  ------------------
+
+
+
+# Smarter path add funcs
+# ======================
+# These functions will only add something to path IF it
+#  is not present in path already
+path_append() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$1"
+    fi
+}
+path_prepend() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="$1${PATH:+:${PATH}}"
+    fi
+}
+
+
+################################################################################
+#
+#    ██████╗  ██████╗  ███████╗ ███╗   ██╗ ██╗   ██╗
+#    ██╔══██╗ ██╔══██╗ ██╔════╝ ████╗  ██║ ██║   ██║
+#    ██████╔╝ ██████╔╝ █████╗   ██╔██╗ ██║ ██║   ██║
+#    ██╔══██╗ ██╔══██╗ ██╔══╝   ██║╚██╗██║ ╚██╗ ██╔╝
+#    ██║  ██║ ██████╔╝ ███████╗ ██║ ╚████║  ╚████╔╝
+#    ╚═╝  ╚═╝ ╚═════╝  ╚══════╝ ╚═╝  ╚═══╝   ╚═══╝
+################################################################################
+
+# INSTALLATION
+# ============
+
+# 1 - Use the installer
+wget -q https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer -O- | bash
+
+# 2 - Update shell config for rbenv path and init
+#---- Path
+PATH="${PATH:+"$PATH:"}$HOME/.rbenv/bin"
+# The "official" way:
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
+#---- init
+eval "$(rbenv init -)"
+
+
+# 4 - Install a ruby version
+rbenv install -l   # list all ruby versions available
+rbenv install 2.5.3
+
+# 5 - Local your rbenv ver and check gems path
+rbenv local 2.5.3
+gem env home  # should show rbenv
+#  /home/evan/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0
+
+# 6 - install gems
+gem install bundler
+gem install gollum

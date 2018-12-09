@@ -45,6 +45,10 @@ if [ "$LOCAL_HNAME" != "$T430_HNAME" ] ;then
     export LD_LIBRARY_PATH="$PATH_CUDA/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
 fi
 
+#---- rbenv
+path_append "$PATH_RBENV"
+eval "$(rbenv init -)"
+
 #---- User bin path
 export PATH="${PATH:+${PATH}:}$PATH_USER_BIN"
 
@@ -54,7 +58,7 @@ export PATH="${PATH:+${PATH}:}$PATH_USER_BIN"
 
 ###############################################################################
 #                                                                      ########
-#  ███████ ███████ ██   ██      ██████  ██████  ███    ██ ███████      ########
+#  ███████ █████PATH="$1${PATH:+:${PATH}}"██ ██   ██      ██████  ██████  ███    ██ ███████      ########
 #     ███  ██      ██   ██     ██      ██    ██ ████   ██ ██           ########
 #    ███   ███████ ███████     ██      ██    ██ ██ ██  ██ █████        ########
 #   ███         ██ ██   ██     ██      ██    ██ ██  ██ ██ ██           ########
@@ -136,4 +140,4 @@ eval $(thefuck --alias)
 
 # Stuff automatically added by other software:
 
-export N_PREFIX="$HOME/.Apps/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
