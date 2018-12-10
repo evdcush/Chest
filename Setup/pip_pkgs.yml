@@ -64,7 +64,6 @@ notebook:
 - ipython
 - jupyter
 - notebook
-- jupyter_dashboards  # slick customizable layout for notebook; after install: jupyter dashboards quick-setup --sys-prefix
 - jupyterthemes  # not updated much anymore, some annoying CSS bugs
 - jupyter-contrib-nbextensions  # HUGE enhancements to notebook capabilities
 - jupyter_nbextensions_configurator
@@ -74,6 +73,9 @@ notebook:
 - nb_pdf_template  # Provides a FAR better latex template for nb2pdf conversions
 # python -m nb_pdf_template.install  # called after installation
 # `jupyter nbconvert --to pdf example.ipynb --template classicm` # usage
+- jupyter_dashboards  # slick customizable layout for notebook
+#  then to load: jupyter nbextension enable jupyter_dashboards --py --sys-prefix
+
 
 apps:
 - retext  # RST and MD editor; best desktop editor for RST, still kinda bad
