@@ -226,6 +226,10 @@ git remote update
 #
 ###############################################################################
 
+# Squash/drop all commits to one commit
+# -------------------------------------
+git rebase --root -i  # squash or drop for all commits save first
+
 
 # Get list of largest objects in git repo
 #-----------------------------------------

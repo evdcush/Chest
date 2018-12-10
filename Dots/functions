@@ -293,32 +293,29 @@ function gcd(){
 }
 
 
-# Full git delete flow
-# ====================
-# Uses `git-obliterate` from git-extras package
-#  git-obliterate itself wraps the "git filter-branch 'git rm -rf ...
+# Scorched earth
+# ==============
 function git-nuke(){
-    #==== Delete specified files from hist
+    #=== Delete specified files from hist
     TARGETS=$@
-    git-obliterate $TARGETS
+    git filter-branch --force --index-filter \
+    "git rm --cached --ignore-unmatch $TARGETS" \
+    --prune-empty --tag-name-filter cat -- --all
 
-    #==== Delete commit traces
-    rm -rf .git/refs/original
-    git reflog expire --expire=now --all
-    git gc --prune=now
+    #=== Cleanup refs
+    git for-each-ref --format='delete %(refname)' refs/original | git update-ref --stdin
+    git reflog --expire=now --all
     git gc --aggressive --prune=now
 
-    #==== Double-check rewrites before final step
-    echo -n "Do you want to push (y/n)? "
+    #=== Push changes
+    echo -n "Do you want to push (y/N)? "
     read answer
     if [ "$answer" != "${answer#[Yy]}" ] ;then
         git push --all --prune --force  # will delete all branches not in local
     else
-        echo "PUSH ABORTED; local git changes persist"
+        echo "REMOTE PUSH ABORTED; LOCAL GIT CHANGES WILL PERSIST"
     fi
 
 }
-
-
 
 
