@@ -58,6 +58,7 @@ alias myip="inxi -i"
 #==== package stuff
 alias api="apt-cache show"
 alias dpkgi="sudo dpkg -i "
+alias dependees='apt-cache rdepends packagename'
 
 #==== deborphan
 alias rmorph="sudo deborphan | xargs sudo apt remove --purge -y"
