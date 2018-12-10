@@ -15,7 +15,7 @@
 alias md="mkdir -p"
 alias cdd="cd -"  # NOTE: `cd -` broken by enhanced file jumping utils
 
-# File mod
+#---- file stuff
 alias srt="sort -o $1 $1"
 alias unq="sort $1 | uniq -i"  # ignore case
 alias dups="sort $1 | uniq -d"
@@ -28,8 +28,10 @@ alias l="ls --group-directories-first -X"
 alias sl="ls -lhSr"
 alias duh="du -h --max-depth=1 | sort -h;"
 
-# Delete from list
+#---- delete
+alias plz='sudo $(fc -ln -1)'
 alias cm="python $HOME/Projects/fart/render.py"
+
 
 #---- Copy
 alias clip="xclip -selection clipboard"
