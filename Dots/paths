@@ -1,12 +1,3 @@
-###############################################################################
-#                                                                      ########
-#  ██████   █████  ████████ ██   ██                                    ########
-#  ██   ██ ██   ██    ██    ██   ██                                    ########
-#  ██████  ███████    ██    ███████                                    ########
-#  ██      ██   ██    ██    ██   ██                                    ########
-#  ██      ██   ██    ██    ██   ██                                    ########
-#                                                                      ########
-###############################################################################
 
 # Base PATH
 # =========
@@ -19,41 +10,47 @@ PATH_PYENV="$HOME/.pyenv/bin"
 PATH_RBENV="$HOME/.rbenv/bin"
 PATH_CUDA="/usr/local/cuda-10.0"
 
-
 # Directories
 # ===========
 #---- HOME dirs
 DIR_DATA="$HOME/.Data"  # only for datasets!
 DIR_DOTS="$HOME/.Dots"
-#DIR_APPS="$HOME/.Apps"
-#DIR_DOCS="$HOME/Documents"
-#DIR_MEDIA="$HOME/Media"
-#DIR_PROJECTS="$HOME/Projects"
-#---- Nested dirs
-DIR_KEY="$DIR_DOTS/Keys"
 
 # Chest paths
 # ===========
 DIR_CHEST="$HOME/Chest"
-DIR_CHEST_RESOURCES="$DIR_CHEST/Resources"
-#DIR_CHEST_SETUP="$DIR_CHEST/Setup"
 DIR_CHEST_DOTS="$DIR_CHEST/Dots"
+DIR_CHEST_RESOURCES="$DIR_CHEST/Resources"
 
 # File paths
 # ==========
-PATH_INBOX_HOARD="$DIR_CHEST_RESOURCES/inbox_hoard.yml"
 PATH_INBOX_READ="$DIR_CHEST_RESOURCES/inbox_read.yml"
-
+PATH_INBOX_HOARD="$DIR_CHEST_RESOURCES/inbox_hoard.yml"
 #---- Crypt keys
-GCK_CHEST="$DIR_KEY/chest_key"
+GCKEY_CHEST="$DIR_DOTS/Keys/chest_key"
 
 # Misc
 # ====
+#---- vars for whether to source for CUDA
 T430_HNAME="T4"
-LOCAL_HNAME=$(hostname) # for determining whether to path to CUDA
+LOCAL_HNAME=$(hostname)
 
 
-# Git auth tokens
+# GH auth tokens
 # ===============
 # FILE MUST BE UNLOCKED BY git-crypt FIRST
-TOKEN_GH_SCRAPE=$(cat $DIR_CHEST_RESOURCES/gh_tokens.yml | grep token | tail -1 | awk '{print $2}')
+GH_TOKENS="$DIR_CHEST_RESOURCES/gh_tokens.yml"
+
+#=== pure sh utils only:
+#TOKEN_GH_SCRAPE="$(cat $GH_TOKENS \
+#| grep token \
+#| awk '{print $2}' \
+#| tail -1)"
+
+#=== utilizing yq:
+TOKEN_GH_CRX="$(yq r $GH_TOKENS public.crx.token)"
+TOKEN_GH_SCRAPE="$(yq r $GH_TOKENS public.scrape.token)"
+
+
+
+

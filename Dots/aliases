@@ -208,7 +208,7 @@ alias gcn="git clone"
 alias gpull="git pull"
 alias gpush="git push"
 # unlock chest with shared chest key
-alias gcu="git-crypt unlock $GCK_CHEST"
+alias gcu="git-crypt unlock $GCKEY_CHEST"
 gcampu(){
     # add modified --> commit --> push
     msg="$@"
