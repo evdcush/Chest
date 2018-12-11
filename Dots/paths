@@ -42,14 +42,14 @@ LOCAL_HNAME=$(hostname)
 GH_TOKENS="$DIR_CHEST_RESOURCES/gh_tokens.yml"
 
 #=== pure sh utils only:
-#TOKEN_GH_SCRAPE="$(cat $GH_TOKENS \
-#| grep token \
-#| awk '{print $2}' \
-#| tail -1)"
+TOKEN_GH_SCRAPE="$(cat $GH_TOKENS \
+| grep token \
+| awk '{print $2}' \
+| tail -1)"
 
 #=== utilizing yq:
-TOKEN_GH_CRX="$(yq r $GH_TOKENS public.crx.token)"
-TOKEN_GH_SCRAPE="$(yq r $GH_TOKENS public.scrape.token)"
+#TOKEN_GH_CRX="$(yq r $GH_TOKENS public.crx.token)"
+#TOKEN_GH_SCRAPE="$(yq r $GH_TOKENS public.scrape.token)"
 
 
 
