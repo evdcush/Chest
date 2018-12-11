@@ -74,7 +74,8 @@ notebook:
 # python -m nb_pdf_template.install  # called after installation
 # `jupyter nbconvert --to pdf example.ipynb --template classicm` # usage
 - jupyter_dashboards  # slick customizable layout for notebook
-#  then to load: jupyter nbextension enable jupyter_dashboards --py --sys-prefix
+#   |---> jupyter dashboards quick-setup --sys-prefix
+#   |---> jupyter nbextension enable jupyter_dashboards --py --sys-prefix
 
 
 apps:

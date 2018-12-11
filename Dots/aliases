@@ -99,21 +99,26 @@ alias afshow="apt-fast show"
 ################################################################################
 
 
-
-
-
 #---- pip stuff
 alias pipi="pip install -U "
 alias ipyp="pypi info"
 
 # INSTALL NOTEBOOK EXTENSIONS
+# ===========================
+#  - jupyter_contrib_nbextensions
+#  - jupyter_nbextensions_configurator
+#  - jupyter_dashboards
 alias nbext_init="pip install -U jupyter_contrib_nbextensions \
 jupyter_nbextensions_configurator; \
 jupyter contrib nbextension install --user; \
-jupyter nbextensions_configurator enable --user;"
+jupyter nbextensions_configurator enable --user; \
+pip install -U jupyter_dashboards; \
+jupyter dashboards quick-setup --sys-prefix; \
+jupyter nbextension enable jupyter_dashboards --py --sys-prefix"
 
-alias pipi_nb_pdf='pip install -U ipython jupyter notebook nb_pdf_template; \
-python -m nb_pdf_template.install;'
+#---- better nbconvert ---> pdf
+alias pipi_nb_pdf="pip install -U ipython jupyter notebook nb_pdf_template; \
+python -m nb_pdf_template.install;"
 
 
 # INSTALL PACKAGES ALWAYS USED
@@ -122,7 +127,8 @@ pip install -U numpy scipy sklearn matplotlib chainer cython gym \
 chainerrl sympy pip-autoremove ipython jupyter notebook gitup bs4 thefuck \
 docutils sphinx sphinx-rtd-theme johnnydep termdown cheat \
 cookiecutter pypi-cli glances buku jrnl \
-cloudpickle restview"
+cloudpickle restview; \
+$pipi_nb_pdf"
 
 # INSTALL PACKAGES RELATED TO LIBRARY
 alias pipilib="pip install -U pip \
