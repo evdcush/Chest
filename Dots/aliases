@@ -123,9 +123,9 @@ python -m nb_pdf_template.install;"
 
 # INSTALL PACKAGES ALWAYS USED
 alias pipistd="pip install -U pip setuptools wheel; \
-pip install -U numpy scipy sklearn matplotlib chainer cython gym \
-chainerrl sympy pip-autoremove ipython jupyter notebook gitup bs4 thefuck \
-docutils sphinx sphinx-rtd-theme johnnydep termdown cheat \
+pip install -U numpy scipy sklearn matplotlib chainer cython gym pandas \
+chainerrl sympy pip-autoremove ipython jupyter notebook gitup nltk \
+docutils sphinx sphinx-rtd-theme johnnydep termdown cheat bs4 thefuck \
 cookiecutter pypi-cli glances buku jrnl \
 cloudpickle restview; \
 $pipi_nb_pdf"
