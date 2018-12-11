@@ -36,15 +36,16 @@ path_prepend() {
 }
 
 
-################################################################################
-#
-#    ██████╗  ██████╗  ███████╗ ███╗   ██╗ ██╗   ██╗
-#    ██╔══██╗ ██╔══██╗ ██╔════╝ ████╗  ██║ ██║   ██║
-#    ██████╔╝ ██████╔╝ █████╗   ██╔██╗ ██║ ██║   ██║
-#    ██╔══██╗ ██╔══██╗ ██╔══╝   ██║╚██╗██║ ╚██╗ ██╔╝
-#    ██║  ██║ ██████╔╝ ███████╗ ██║ ╚████║  ╚████╔╝
-#    ╚═╝  ╚═╝ ╚═════╝  ╚══════╝ ╚═╝  ╚═══╝   ╚═══╝
-################################################################################
+###############################################################################
+#                                                                             #
+#                 ██████╗ ██████╗ ███████╗███╗   ██╗██╗   ██╗                 #
+#                 ██╔══██╗██╔══██╗██╔════╝████╗  ██║██║   ██║                 #
+#                 ██████╔╝██████╔╝█████╗  ██╔██╗ ██║██║   ██║                 #
+#                 ██╔══██╗██╔══██╗██╔══╝  ██║╚██╗██║╚██╗ ██╔╝                 #
+#                 ██║  ██║██████╔╝███████╗██║ ╚████║ ╚████╔╝                  #
+#                 ╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═══╝  ╚═══╝                   #
+###############################################################################
+
 
 # INSTALLATION
 # ============
@@ -72,3 +73,70 @@ gem env home  # should show rbenv
 
 # 6 - install gems
 gem install bundler
+
+
+###############################################################################
+#                                                                             #
+#                      ███████╗ ██████╗██████╗ ██╗    ██╗                     #
+#                      ██╔════╝██╔════╝██╔══██╗██║    ██║                     #
+#                      ███████╗██║     ██████╔╝██║ █╗ ██║                     #
+#                      ╚════██║██║     ██╔══██╗██║███╗██║                     #
+#                      ███████║╚██████╗██████╔╝╚███╔███╔╝                     #
+#                      ╚══════╝ ╚═════╝╚═════╝  ╚══╝╚══╝                      #
+###############################################################################
+
+
+#    __   __   __        ___  __
+#   |  \ /  \ /  ` |__/ |__  |__)
+#   |__/ \__/ \__, |  \ |___ |  \
+#
+
+# Instructions from SCBW
+#   github.com/Games-and-Simulations/sc-docker
+# =======================
+sudo apt update
+sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+
+#=== add docker repository
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+#=== install docker
+sudo apt update
+sudo apt install -y docker-ce=17.09.0~ce-0~ubuntu # NB: this ver pkg was UNAVAILABLE
+
+#=== Make sure you can run docker without sudo
+sudo usermod -aG docker $USER
+# Restart shell
+docker run hello-world
+
+#    __      ___       __           __   ___ ___       __
+#   |__) \ /  |  |__| /  \ |\ |    /__` |__   |  |  | |__)
+#   |     |   |  |  | \__/ | \|    .__/ |___  |  \__/ |
+#
+
+# Steps here different, assuming you have pyenv
+pip install scbw
+scbw.play --install  # This can take awhile, download n install
+
+
+#    __             __   ___ ___       __                 __
+#   / _` |  | |    /__` |__   |  |  | |__) .   \  / |\ | /  `
+#   \__> \__/ |    .__/ |___  |  \__/ |    .    \/  | \| \__,
+#
+
+#=== Download VNC Viewer @   https://www.realvnc.com/en/connect/download/viewer/linux/
+# eg: https://www.realvnc.com/download/file/viewer.files/VNC-Viewer-6.18.907-Linux-x64.deb
+
+#######    IF YOU DOWNLOADED THE .deb,  INSTEAD OF BINARY             #########
+
+#  VNC viewer is launched via 'vncviewer' through the deb install
+#  However, scbw launches through 'vnc-viewer', so you need to symlink to same dir
+#   >>-----> ln -s /usr/bin/vncviewer /usr/bin/vnc-viewer
+#   * the scbw instructions say to symlink the binary to /usr/bin as 'vnc-viewer'
+#   * the .deb is actually launched by 'vncviewer'
+
+
+# FINALLY: watch a match between two bots!
+#  (in headful mode, you must select the map, wait in lobby for bots to join, and start)
+scbw.play --bots "krasi0" "CherryPi" --show_all
