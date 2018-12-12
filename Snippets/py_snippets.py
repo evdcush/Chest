@@ -420,6 +420,14 @@ if __name__ == '__main__':
 ###############################################################################
 #######################             Misc            ###########################
 
+# Handling decode errors in response
+# ----------------------------------
+page_response.decode('utf-8')
+# ---> UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa0 in position 103997: invalid start byte
+# JUST ADD 'ignore' to decode errors
+page_response.decode('utf-u', 'ignore')
+# allll gooood
+
 # Get current date
 #-------------------
 import datetime
