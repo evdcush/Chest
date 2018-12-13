@@ -5,6 +5,9 @@ do that 'thing'...again?
 ########################
 
 
+.. contents:: Table of Contents
+.. section-numbering::
+
 **********
 Conversion
 **********
@@ -38,6 +41,12 @@ PDF
     # --------------------
     rst2html README.rst > README.html
     wkhtmltopdf README.html README.pdf
+
+- **crop PDF?**::
+    
+    sudo apt install --no-install-recommends --no-install-suggests texlive-extra-utils
+    pdfcrop my_doc.pdf cropped_my_doc.pdf
+
 
 ======
 Images

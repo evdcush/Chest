@@ -17,13 +17,14 @@ promising:
 - networkx  # lib whole bag of stuff for networks (create, manip, vis)
 - prince    # nice visualization stuff for factor analysis
 
+
 science-math:
 - autograd      # simple, somewat restrictive, numpy-based autodiff lib
 - sympy
+- jax jaxlib  # google's autodiff, GPU-optimized library supporting numpy; looks like they finished tangent
 - scikit-video
 - pydataset     # access to many datasets, in dataframe format
 - pandas
-#- primesieve   # always freezes on install
 
 
 GPU:
@@ -93,10 +94,13 @@ lib-enhancements:
 - python-box  # has surprising amount of different "boxes" or dict-classes
 - sh          # subprocess replacement; let you call any program as if it were func
 
+testing:
+- nose
+- pytest
+- sniffer
 
 dev:
 - cookiecutter  #*** project boilerplate
-- nose          # tests
 - flake8        # linting/static code, better than pylint
 - radon         # linting/code metrics, better than flake8
 - coverage      # code-coverage
@@ -108,18 +112,19 @@ net:
 - you-get   # scrape for dummies
 - favicon   # library to find favicon from a url
 
+filesystem:
+- pyinotify   # Linux filesystem event monitoring
+
 
 compsci-assets: # packages to help study/learn compsci stuff
 - algorithms      # simple implementations of algorithms in python
 - binarytree      # make arbitrary binary trees to work/study/play with
 - python-patterns # design-patterns library for python
 
-
 deps-utils:
 - h5py    # h5 serialization
 - pyqt5   # dep
 - pillow  # PIL
-- pycurl
 - pygments  # syntax highlighting
 - vermin      # AWESOME, automatically test python version support in project
 - pipdeptree  # shows deps like tree cmd
@@ -133,15 +138,15 @@ pypi-python:
 
 
 docs-text:
-- restview  # lifesaver
+- restview  # lifesaver, live rendering of rst in browser, updates for change
 - json2yaml # not really necessary lol, saves you 8 lines of code
 - docutils
 - rstcloth # API to programatically generate RST
 - doc2dash # making zeal datasets. Cool util, but zeal itself still kinda bad
 - pypandoc # pandoc wrapper
 - textdistance[extras]  # bunch of different text diff algos
-- rstwatch   # live rendering of rst file; automatically updates HTML on changes
-- landslide  # Easy generator for HTML5 slides from rST
+- hovercraft  # generates slide.js slides from rst
+- landslide   # Another generator for slides from rst, but HTML5 slides
 
 
 parsers:
@@ -192,7 +197,6 @@ CLI-shell:
 - thefuck     # AWESOME, correct previous command
 - cheat       # decent man examples for queried cmd
 - maybe       # hit-or-miss so far; test out what command will do
-
 - archivenow  # archives urls (WARC, all the archiving sites)
 - halo        # spinners for terminal, ipython, notebook
 

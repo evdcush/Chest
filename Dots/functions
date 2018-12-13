@@ -11,6 +11,18 @@ function RDME {
     cp $SRC_DIR $DEST_DIR
 }
 
+asc() {
+    SCRIPT="$HOME/Projects/fart/render.py"
+    FNT=""
+    TXT="$1"
+    if [ "$#" -gt 1 ]; then
+        #==== 'other'
+        FNT="$1"
+        TXT="$2"
+    fi
+    python $SCRIPT $FNT $TXT | xclip -selection clipboard
+}
+
 
 ################################################################################
 #

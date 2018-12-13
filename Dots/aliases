@@ -75,6 +75,7 @@ alias afu="$apf update"
 alias afg="$apf upgrade"
 alias afug="$apf update && $apf upgrade"
 alias afi="$apf install"
+alias afiNO="$apf --no-install-recommends --no-install-suggests install"
 alias afr="$apf remove"
 alias afrp="$apf remove --purge"
 alias afa="$apf autoremove"
@@ -126,7 +127,7 @@ alias pipistd="pip install -U pip setuptools wheel; \
 pip install -U numpy scipy sklearn matplotlib chainer cython gym pandas \
 chainerrl sympy pip-autoremove ipython jupyter notebook gitup nltk \
 docutils sphinx sphinx-rtd-theme johnnydep termdown cheat bs4 thefuck \
-cookiecutter pypi-cli glances buku jrnl \
+jax jaxlibs cookiecutter pypi-cli glances buku jrnl \
 cloudpickle restview; \
 $pipi_nb_pdf"
 
