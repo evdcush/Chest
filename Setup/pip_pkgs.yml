@@ -9,6 +9,7 @@ essentials:
 - jupyter
 - notebook
 - cython
+- scihub2pdf
 - gitup
 
 # Stuff that looks useful or interesting, but haven't used yet
@@ -25,6 +26,7 @@ science-math:
 - scikit-video
 - pydataset     # access to many datasets, in dataframe format
 - pandas
+- cvxpy   # python embedded modeling lang for convex opt problems; intuitive
 
 
 GPU:
@@ -38,6 +40,8 @@ AI-frameworks:
 - neupy  # ANN library, TF backend, lib has some cool stuff
 - optuna
 
+Recommenders:
+- surprise   # recommender scikit
 
 TF-dependencies:  # don't actually use any of it; it's just to build TF
 - keras
@@ -135,6 +139,7 @@ deps-utils:
 pypi-python:
 - pypi-cli  # decent utils in `pypi info <pkg>` and `pypi search`
 - pip-autoremove  #*** remove a package and the packages it installed as deps
+- pyinstaller #*********** bundles a python app and all dependencies into a single package,
 
 
 docs-text:
@@ -147,6 +152,8 @@ docs-text:
 - textdistance[extras]  # bunch of different text diff algos
 - hovercraft  # generates slide.js slides from rst
 - landslide   # Another generator for slides from rst, but HTML5 slides
+- pdfminer.six  # tool for extracting info from pdf
+- pypdf2        # splitting, merging, cropping, and transforming the pages of PDF files. can do ANYTHINH
 
 
 parsers:
@@ -171,6 +178,7 @@ sphinx:
 
 
 reading:
+    # scihub2pdf, really it's incredible
     bibtex:
         - pybtex
         - bibtexparser
@@ -179,7 +187,6 @@ reading:
         - betterbib  # fetches info to try and correct/format your bib
         - pybtex-docutils
     arxiv:
-        - scihub2pdf
         - arxivcheck
         - arxivscraper
         - arxiv # main python source for arxiv.py API
@@ -229,6 +236,8 @@ ascii-art:
 
 
 misc-untested:
+- libgen.py  #  A script to download books from gen.lib.rus.ec, libgen.io, libgen.pw, b-ok.org and bookfi.ne
+- pylibgen  # python interface to libgen/sci-tech
 - SetSimilaritySearch # python, similarity score between sets
 - birdseye     # graphical debugger, easily evaluat values
 - pyviz        # "how to solve visualization problems with python tools" ??
