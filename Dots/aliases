@@ -35,6 +35,7 @@ alias cm="python $HOME/Projects/fart/render.py"
 
 #---- Copy
 alias clip="xclip -selection clipboard"
+alias rem_from_clip="$clip -o | xargs sudo rm -rf "
 
 
 # User stuff

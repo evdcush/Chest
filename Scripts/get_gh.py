@@ -2,12 +2,19 @@
 
 import os
 import sys
+import yaml
 import subprocess as sbp
 
-# dest dirs
+# Load conf
 HOME = os.environ['HOME']
-readme_dest = f"{HOME}/.Nextcloud/READMEs"
-file_dest = f'{HOME}/Projects'
+
+with open('conf.yml') as yml:
+    conf = yaml.load(yml)
+nsync_path = conf['nsync']['path'].replace('~', HOME)
+
+# dest dirs
+readme_dest = f"{nsync_path}{conf['nsync']['readme_dir']}"
+file_dest = f"{HOME}/Projects"
 
 def check_dup(file_path):
     if os.path.exists(file_path):

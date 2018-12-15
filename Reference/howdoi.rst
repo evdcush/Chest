@@ -8,14 +8,10 @@ do that 'thing'...again?
 .. contents:: Table of Contents
 .. section-numbering::
 
-**********
-Conversion
-**********
 
-===
 PDF
 ===
-| **tl;dr :**
+| **For most .thing --> .pdf :**
 | 1. **convert to html**
 | 2. **then to pdf** (through wkhtmltopdf)
 | (somehow things get messed up in the intermediate latex conversion step)
@@ -35,6 +31,7 @@ PDF
     # (to install nb_pdf_template):
     'pip install nb_pdf_template; python -m nb_pdf_template.install'
 
+
 - **convert .rst to pdf?** (Still trying to find a good solution)::
 
     # Using docutils' rst2
@@ -42,20 +39,64 @@ PDF
     rst2html README.rst > README.html
     wkhtmltopdf README.html README.pdf
 
+
 - **crop PDF?**::
     
     sudo apt install --no-install-recommends --no-install-suggests texlive-extra-utils
     pdfcrop my_doc.pdf cropped_my_doc.pdf
 
 
-======
 Images
 ======
 
-- **convert svg to png?** : ::
+- **convert svg to png?**::
 
     inkscape -z -e test.png -w 1024 -h 1024 test.svg
 
+
+Keys
+====
+
+SSH
+---
+
+- **generate ssh key?**::
+
+    ssh-keygen -t rsa -b 4096 -C "my_email@abc.com"
+    # just accept defaults
+
+- **add SSH key to ssh-agent?**::
+    
+    eval "$(ssh-agent -s)"
+    # Should see print of agent PID
+    ssh-add ~/.ssh/id_rsa
+
+- **add my SSH key to...?**::
+
+    #=== add to server (from local)
+    ssh-copy-id <username>@<host>
+
+    #=== copy ssh pubkey
+    cat ~/.ssh/id_rsa.pub | xclip -selection clipboard
+
+
+GPG
+---
+
+- **generate gpg key?**::
+    
+    #  Part of the process involves "generating enough 
+    #  bits of entropy" for random seed, so best to first
+    #  install some helpful utils for that
+    sudo apt install rng-tools
+
+    # Now go through gpg setup, selecting what you want
+    gpg --full-generate-key
+
+    # Now it may say to do stuff for entropy, try this:
+    sudo rngd -r /dev/urandom
+
+    # you should now have your key
 
 
 #-----------------------------------------------------------------------------

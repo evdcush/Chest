@@ -490,3 +490,27 @@ class array(builtins.object)
 #  Obviously faster ops for certain things, such as arr.count
 
 """
+
+###############################################################################
+#######################    namespace-like dict      ###########################
+"""
+Source:
+  - SO post: https://stackoverflow.com/a/2597440
+  - SO user: https://stackoverflow.com/users/95810/alex-martelli
+
+If you have a dictionary `d` and want access behavior like namespace or
+class attributes, such as my_dict.foo instead of my_dict['foo'],
+simply do my_dict = Bunch(d)
+"""
+class Bunch:
+    def __init__(self, dict_):
+        self.__dict__.update(dict_)
+
+class BunchInception: # assumes no dicts are elements of list
+    def __init__(self, dict_ : dict):
+        for k,v in dict_.items():
+            if not isinstance(v, dict):
+                self.__dict__[k] = v
+            else:
+                self.__dict__[k] = BunchInception(v)
+
