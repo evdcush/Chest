@@ -39,13 +39,13 @@ LOCAL_HNAME=$(hostname)
 # GH auth tokens
 # ===============
 # FILE MUST BE UNLOCKED BY git-crypt FIRST
-GH_TOKENS="$DIR_CHEST_RESOURCES/gh_tokens.yml"
+#GH_TOKENS="$DIR_CHEST_RESOURCES/gh_tokens.yml"
 
 #=== pure sh utils only:
-TOKEN_GH_SCRAPE="$(cat $GH_TOKENS \
-| grep token \
-| awk '{print $2}' \
-| tail -1)"
+#TOKEN_GH_SCRAPE="$(cat $GH_TOKENS \
+#| grep token \
+#| awk '{print $2}' \
+#| tail -1)"
 
 #=== utilizing yq:
 #TOKEN_GH_CRX="$(yq r $GH_TOKENS public.crx.token)"

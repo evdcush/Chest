@@ -6,18 +6,22 @@ The MIT License (MIT): Copyright (c) 2016 maguowei
 ACKNOWLEDGEMENT: Source script from github.com/maguowei
 """
 import os
-import yaml
+#import yaml
 from argparse import ArgumentParser
 from collections import OrderedDict
 
 from github3 import GitHub
 from github3.exceptions import NotFoundError
 
+from conf import PUBLIC_TOKENS
+
 
 # Grab token
-with open(f'{os.environ["HOME"]}/.Dots/gh_tokens.yml') as tpath:
-    _tokens = yaml.load(tpath) # <----<< MUST GIT-CRYPT UNLOCK FIRST
-    TOKEN = _tokens['public']['Scrape']['token']
+#with open(f'{os.environ["HOME"]}/.Dots/gh_tokens.yml') as tpath:
+#    _tokens = yaml.load(tpath) # <----<< MUST GIT-CRYPT UNLOCK FIRST
+#    TOKEN = _tokens['public']['Scrape']['token']
+TOKEN = PUBLIC_TOKENS['Scrape']['token']
+
 
 # Argparse for user
 # -----------------
@@ -36,6 +40,8 @@ desc = ("# :stars: Star Map\n"
 CC0_button = ('http://mirrors.creativecommons.org'
              '/presskit/buttons/88x31/svg/cc-zero.svg')
 LINE_BREAK = '\n\n---\n\n'
+
+'''
 ffi.write("\n")
         # repo stars
         for lng, projs in sorted(data.items(), key=lambda data: data[0]):
@@ -54,6 +60,7 @@ ffi.write("\n")
                 #ffi.write(f"  * Open issues: {proj['open_issues_count']}\n")
                 ffi.write("  * Last pushed: {} ({} days)\n\n".format(
                     pushed_at.strftime("%Y-%m-%d"), last_code_push))
+'''
 
 license_ = (LINE_BREAK
             "## Licence\n"
@@ -73,7 +80,7 @@ html_escape_table = {">": "&gt;",
 def html_escape(text):
     """Produce entities within text."""
     return "".join(html_escape_table.get(c, c) for c in text)
-
+WFILE = "starmap.md"
 # Stars
 # -----
 def starred(user, token, sort_results=False):

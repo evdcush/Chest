@@ -2,8 +2,10 @@
 
 import os
 import sys
-import yaml
+#import yaml
 import subprocess as sbp
+
+from conf import READMES, PROJECTS
 
 # Load conf
 HOME = os.environ['HOME']
@@ -12,20 +14,14 @@ with open('conf.yml') as yml:
 nsync_path = conf['nsync']['path'].replace('~', HOME)
 
 # dest dirs
-readme_dest = f"{nsync_path}{conf['nsync']['readme_dir']}"
-file_dest = f"{HOME}/Projects"
-
-def check_dup(file_path):
-    if os.path.exists(file_path):
-        print(f'Duplicate existent for {file_path}\nMoving previous to .cache')
-        sbp.run(f'mv {file_path} {HOME}/.cache', shell=True)
+readme_dest = READMES
+file_dest   = PROJECTS
 
 
 def wget_raw(url, fname, dest=file_dest):
     # Format endpoints
     u = url.replace('github', 'raw.githubusercontent', 1) + f'/master/{fname}'
     fpath = f'{dest}/{fname}'
-    check_dup(fpath)
 
     # wget and symlink
     sbp.run(f'wget {u} -O {fpath}', shell=True)
@@ -55,10 +51,11 @@ def wget_readme(url, dest=readme_dest):
         if ext != correct_rdme_name:
             fname += '.' + ext
         #=== append true readme name to url
+
         u = u + correct_rdme_name
         #=== append file write name to dest
         dest = f'{dest}/{fname}'
-        check_dup(dest)
+
         #=== Get readme
         sbp.run(f'wget {u} -O {dest}', shell=True)
 
