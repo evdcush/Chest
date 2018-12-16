@@ -443,6 +443,13 @@ class AttrDict(dict):
     __setattr__ = dict.__setitem__
     __delattr__ = dict.__delitem__
 
+# Get $USER
+# -------------------------
+import os
+user = os.environ['USER'] # easiest
+# OR
+import getpass
+getpass.getuser()
 
 
 # It turns out Python actually...has an array?

@@ -1,9 +1,0 @@
----
-
-nsync:
-    path: '~/.NSync'
-    readme_dir: '/READMEs'
-    bib_file: '/library.bib'
-    resources_dir: '/Resources'
-
-

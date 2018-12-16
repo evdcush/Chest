@@ -7,7 +7,6 @@ import subprocess as sbp
 
 # Load conf
 HOME = os.environ['HOME']
-
 with open('conf.yml') as yml:
     conf = yaml.load(yml)
 nsync_path = conf['nsync']['path'].replace('~', HOME)
