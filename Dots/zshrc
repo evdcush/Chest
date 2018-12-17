@@ -85,7 +85,7 @@ setopt HIST_IGNORE_SPACE
 
 # Source ZSH constants
 # ====================
-export ZSH="/home/evan/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
 # Plugins
@@ -125,7 +125,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Z jump
 # ======
-. /home/evan/.Apps/Z_jump/z.sh
+. "$HOME/.Apps/Z_jump/z.sh"
 
 # ROS
 # ===

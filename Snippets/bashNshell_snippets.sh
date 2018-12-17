@@ -1,16 +1,17 @@
 #!/bin/bash
 
-################################################################################
-#                      _          _                     __
-#                     (_)        | |                   / _|
-#       __ _   _   _   _    ___  | | __  _ __    ___  | |_
-#      / _` | | | | | | |  / __| | |/ / | '__|  / _ \ |  _|
-#     | (_| | | |_| | | | | (__  |   <  | |    |  __/ | |
-#      \__, |  \__,_| |_|  \___| |_|\_\ |_|     \___| |_|
-#         | |
-#         |_|
-#
-################################################################################
+#=============================================================================#
+#                                                                             #
+#                             _          _                     __             #
+#                            (_)        | |                   / _|            #
+#              __ _   _   _   _    ___  | | __  _ __    ___  | |_             #
+#             / _` | | | | | | |  / __| | |/ / | '__|  / _ \ |  _|            #
+#            | (_| | | |_| | | | | (__  |   <  | |    |  __/ | |              #
+#             \__, |  \__,_| |_|  \___| |_|\_\ |_|     \___| |_|              #
+#                | |                                                          #
+#                |_|                                                          #
+#                                                                             #
+#=============================================================================#
 
 # read data from user
 #----------------------------
@@ -39,7 +40,6 @@ sort -o file file
 # between to text files
 #----------------------------
 # use `comm`
-
 #==== vanilla comm
 # tab-separated cols:
 # [lines unique to F1] [lines unique to F2] [lines in common]
@@ -88,33 +88,18 @@ mv -t DESTINATION file1 file2 file3 ...
 mv file1 file2 file3 -t DESTINATION
 
 
-
-
-
-#==============================================================================
-
-# File commands I often reference
-#===================================
-ln -s <filename> <link>       # creates symbolic link to file, -sf to overwrite
-cat <filename>                # prints file raw content (will not be interpreted)
-grep <pattern> <filenames>    # looks for the string in the files
-grep -r <pattern> <dir>       # search recursively for pattern in directory
-
-
-################################################################################
-#
-#                    _                          _
-#                   (_)                        | |
-#      ___   _ __    _   _ __    _ __     ___  | |_   ___
-#     / __| | '_ \  | | | '_ \  | '_ \   / _ \ | __| / __|
-#     \__ \ | | | | | | | |_) | | |_) | |  __/ | |_  \__ \
-#     |___/ |_| |_| |_| | .__/  | .__/   \___|  \__| |___/
-#                       | |     | |
-#                       |_|     |_|
-#
-################################################################################
-
-
+#=============================================================================#
+#                                                                             #
+#                            _                          _                     #
+#                           (_)                        | |                    #
+#              ___   _ __    _   _ __    _ __     ___  | |_   ___             #
+#             / __| | '_ \  | | | '_ \  | '_ \   / _ \ | __| / __|            #
+#             \__ \ | | | | | | | |_) | | |_) | |  __/ | |_  \__ \            #
+#             |___/ |_| |_| |_| | .__/  | .__/   \___|  \__| |___/            #
+#                               | |     | |                                   #
+#                               |_|     |_|                                   #
+#                                                                             #
+#=============================================================================#
 
 # Get list of orphaned desktop entries
 #======================================
@@ -135,8 +120,6 @@ function find_and_remove_all(){
         echo Aborted
     fi
 }
-
-
 
 # Fix broken symlinks
 # ===================
@@ -191,16 +174,40 @@ END
 }
 
 
-###############################################################################
+# MISC/deprec. cmds useful for reference
+# ======================================
+
+# Reading GH auth tokens from structured plain text (yaml)
+#=== pure sh utils only:
+TOKEN_GH_SCRAPE="$(cat $GH_TOKENS \
+| grep token \
+| awk '{print $2}' \
+| tail -1)"
+
+#=== utilizing yq:
+TOKEN_GH_CRX="$(yq r $GH_TOKENS public.crx.token)"
+TOKEN_GH_SCRAPE="$(yq r $GH_TOKENS public.scrape.token)"
+
+#=== "ternary" type check on stdin args
+deprec_getstars(){ # DEPRECATED; just made my own script an executable
+    # if user specified, get their stars, else get mine
+    USER=${1:-'evdcush'}   # slickkkkkkkkkkkk, love this usage of param exp.
+    TOKEN="$TOKEN_GH_SCRAPE"
+    getstars -u "$USER" -t "$TOKEN" -s > "GH-Stars_$USER.md"
+}
+
+
+
+#=============================================================================#
 #                                                                             #
-#                 ,,                           ,,                             #
-#                *MM                         `7MM                             #
-#                 MM                           MM                             #
-#                 MM,dMMb.   ,6"Yb.  ,pP"Ybd   MMpMMMb.                       #
-#                 MM    `Mb 8)   MM  8I   `"   MM    MM                       #
-#                 MM     M8  ,pm9MM  `YMMMa.   MM    MM                       #
-#                 MM.   ,M9 8M   MM  L.   I8   MM    MM                       #
-#                 P^YbmdP'  `Moo9^Yo.M9mmmP' .JMML  JMML.                     #
+#                    888                        888                           #
+#                    888                        888                           #
+#                    888                        888                           #
+#                    88888b.   8888b.  .d8888b  88888b.                       #
+#                    888 "88b     "88b 88K      888 "88b                      #
+#                    888  888 .d888888 "Y8888b. 888  888                      #
+#                    888 d88P 888  888      X88 888  888                      #
+#                    88888P"  "Y888888  88888P' 888  888                      #
 #                                                                             #
 #         _                      _           _                     _          #
 #        | |                    | |         | |                   | |         #

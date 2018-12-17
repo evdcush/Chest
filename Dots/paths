@@ -1,19 +1,20 @@
 
 # Base PATH
 # =========
+#---- default path, minus the "games" crap
 PATH_DEFAULT="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 PATH_USER_BIN="$HOME/.local/bin"
 
 # env/library Paths
 # =================
 PATH_PYENV="$HOME/.pyenv/bin"
-PATH_RBENV="$HOME/.rbenv/bin"
+PATH_RBENV="$HOME/.rbenv/bin" # unused!
 PATH_CUDA="/usr/local/cuda-10.0"
 
 # Directories
 # ===========
 #---- HOME dirs
-DIR_DATA="$HOME/.Data"  # only for datasets!
+DIR_DATA="$HOME/.Data" # datasets & model experiment outputs
 DIR_DOTS="$HOME/.Dots"
 
 # Nextcloud
@@ -29,6 +30,7 @@ DIR_CHEST_RESOURCES="$DIR_CHEST/Resources"
 
 # File paths
 # ==========
+#---- Inbox files
 PATH_INBOX_READ="$NSYNC_RESOURCES/inbox_read.yml"
 PATH_INBOX_HOARD="$NSYNC_RESOURCES/inbox_hoard.yml"
 #---- Crypt keys
@@ -36,26 +38,6 @@ GCKEY_CHEST="$DIR_DOTS/Keys/chest_key"
 
 # Misc
 # ====
-#---- vars for whether to source for CUDA
+#---- hostname local; used for whether CUDA should be sourced
 T430_HNAME="T4"
 LOCAL_HNAME=$(hostname)
-
-
-# GH auth tokens
-# ===============
-# FILE MUST BE UNLOCKED BY git-crypt FIRST
-#GH_TOKENS="$DIR_CHEST_RESOURCES/gh_tokens.yml"
-
-#=== pure sh utils only:
-#TOKEN_GH_SCRAPE="$(cat $GH_TOKENS \
-#| grep token \
-#| awk '{print $2}' \
-#| tail -1)"
-
-#=== utilizing yq:
-#TOKEN_GH_CRX="$(yq r $GH_TOKENS public.crx.token)"
-#TOKEN_GH_SCRAPE="$(yq r $GH_TOKENS public.scrape.token)"
-
-
-
-

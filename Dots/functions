@@ -44,18 +44,6 @@ nativefy(){
     python "$DIR_CHEST/Scripts/nativefy.py" "$@"
 }
 
-# Grab stars from user
-# ====================
-#>>>>>>> NOTE: Just made my own version of starred.py script a binary
-#getstars(){
-#    # if user specified, get their stars, else get mine
-#    USER=${1:-'evdcush'}   # slickkkkkkkkkkkkkkkkkkkkkkk, love this "parameter expansion" op
-#    TOKEN="$TOKEN_GH_SCRAPE"
-#    getstars -u "$USER" -t "$TOKEN" -s > "GH-Stars_$USER.md"
-#}
-
-
-
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # INBOXING FUNCTIONS
@@ -87,10 +75,11 @@ function rurl {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# misc
-# ====
+# ============= #
+# miscellaneous #
+# ============= #
 
-# Get chrome extension
+# Get chrome extension file
 get_crx(){
     CRXNAME="$1.crx"
     CRXID="$2"
@@ -101,7 +90,7 @@ get_crx(){
     wget -O "$CRXNAME" "https://clients2.google.com/service/update2/$A2$A3"
 }
 
-# unar is preferable if u have
+# `unar` is preferable; this func no longer used
 function extract() {
     #==== Extract many types of compressed packages
     if [ -f "$1" ] ; then
@@ -218,14 +207,10 @@ function pvenv(){
 #                                                                             #
 #=============================================================================#
 
-
-
-
-
 # dir and file stuff
 # ==================
 
-# Diff files in the manner of git diff
+#==== Diff files in the manner of git diff
 function gdiff () { diff -u $@ | colordiff | less -R; }
 
 #==== mkdir & cd into it

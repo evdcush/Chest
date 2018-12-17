@@ -2,7 +2,7 @@
 essentials:
 - numpy
 - scipy
-- sklearn   # have to install "cloudpickle" too, as a workaround for the annoying deprecation warning on import
+- sklearn   # have to install "cloudpickle"; workaround for annoying deprecation warning on import
 - matplotlib
 - chainer
 - ipython
@@ -21,6 +21,7 @@ promising:
 science-math:
 - autograd      # simple, somewat restrictive, numpy-based autodiff lib
 - sympy
+- opencv
 - jax jaxlib  # google's autodiff, GPU-optimized library supporting numpy; looks like they finished tangent
 - scikit-video
 - pydataset     # access to many datasets, in dataframe format
@@ -77,24 +78,24 @@ notebook:
 - nb_pdf_template  # Provides a FAR better latex template for nb2pdf conversions
 # python -m nb_pdf_template.install  # called after installation
 # `jupyter nbconvert --to pdf example.ipynb --template classicm` # usage
-- jupyter_dashboards  # slick customizable layout for notebook
+- jupyter_dashboards  # slick customizable layout for notebook; HAS NOT WORKED
 #   |---> jupyter dashboards quick-setup --sys-prefix
 #   |---> jupyter nbextension enable jupyter_dashboards --py --sys-prefix
 
 
 apps:
 - retext  # RST and MD editor; best desktop editor for RST, still kinda bad
-- buku    # CLI bookmark manager, excellent, fast, searchable, but not what i need
-- jrnl    # *** CLI journaling/notes app, supports encryption,
+- buku    # CLI bookmark manager, fast, searchable. best for ALREADY organized bmarks
+- jrnl    # *** CLI journaling/notes app, supports encryption, dope
 - termdown    # simple countdown/timer terminal
 - apt-select  # pings apt mirrors, gives list fastest
 - speedtest-cli  # speedtest on the cli
 
 
 lib-enhancements:
-- attrs       # manages a few dunders (mostly init), not that big of a deal
+- attrs       # manages a few dunders (mostly init); honestly not that big of a deal
 - bidict      # exactly what it sounds like
-- python-box  # has surprising amount of different "boxes" or dict-classes
+- python-box  # has surprising amount of different "boxes"; allow attr-like dotaccess to dicts
 - sh          # subprocess replacement; let you call any program as if it were func
 
 testing:
@@ -103,7 +104,7 @@ testing:
 - sniffer
 
 dev:
-- cookiecutter  #*** project boilerplate
+- cookiecutter  #*** project boilerplate, multiple langs; kragniz/cookiecutter-pypackage-minimal for py
 - flake8        # linting/static code, better than pylint
 - radon         # linting/code metrics, better than flake8
 - coverage      # code-coverage
@@ -114,6 +115,7 @@ net:
 - bs4       # scrape
 - you-get   # scrape for dummies
 - favicon   # library to find favicon from a url
+- feedparser #$ universal feed parser; this shit's MONEY
 
 filesystem:
 - pyinotify   # Linux filesystem event monitoring
@@ -125,45 +127,44 @@ compsci-assets: # packages to help study/learn compsci stuff
 - python-patterns # design-patterns library for python
 
 deps-utils:
-- h5py    # h5 serialization
-- pyqt5   # dep
-- pillow  # PIL
-- pygments  # syntax highlighting
+- h5py        # h5 serialization
+- pyqt5       # dep
+- pillow      # PIL
+- pygments    # syntax highlighting (no need to install; ALWAYS installed as dep)
 - vermin      # AWESOME, automatically test python version support in project
 - pipdeptree  # shows deps like tree cmd
-- johnnydep   # awesome, lists dependencies of a package
-- pydeps   # call graph for package, not bad.
+- johnnydep   # noooyyyce, lists dependencies of a package
+- pydeps      # call graph for package, not bad.
 
 
 pypi-python:
 - pypi-cli  # decent utils in `pypi info <pkg>` and `pypi search`
-- pip-autoremove  #*** remove a package and the packages it installed as deps
-- pyinstaller #*********** bundles a python app and all dependencies into a single package,
+- pip-autoremove  # rm package and it's deps; used to be GREAT, no longer supported seems like
+- pyinstaller #***** bundles a python app and all dependencies into a single package,
 
 
 docs-text:
 - restview  # lifesaver, live rendering of rst in browser, updates for change
-- json2yaml # not really necessary lol, saves you 8 lines of code
+- json2yaml # not really necessary lol, saves you ~8 lines of code
 - docutils
 - rstcloth # API to programatically generate RST
 - doc2dash # making zeal datasets. Cool util, but zeal itself still kinda bad
 - pypandoc # pandoc wrapper
-- textdistance[extras]  # bunch of different text diff algos
-- hovercraft  # generates slide.js slides from rst
-- landslide   # Another generator for slides from rst, but HTML5 slides
+- textdistance[extras]  # bunch of different text dist algos
+- hovercraft  # generates slide.js slides from rst, looks G
+- landslide   # Another generator for slides from rst, but HTML5 slides; DATED deps, annoying
 - pdfminer.six  # tool for extracting info from pdf
 - pypdf2        # splitting, merging, cropping, and transforming the pages of PDF files. can do ANYTHINH
 
 
 parsers:
-- feedparser      #$ universal feed parser
 - jupyter-parser  # CLI tool for parsing jupyter notebooks
 - mistune         # markdown parser
 
 
 media:
 - scdl  # soundcloud downloader, worked well one time i used
-- scihub2pdf  # what it says: it downloads pdfs from scihub
+- scihub2pdf  # (bibcure proj) very nice, still hit-or-miss compared to site
 
 
 sphinx:
@@ -172,22 +173,21 @@ sphinx:
 - sphinxcontrib-jupyter
 - sphinxcontrib-websupport
 - sphinxcontrib-bibtex # allows bibtex to be inserted into sphinx doc
-- numpydoc  # sphinx extension to support docstrings in numpy format
+- numpydoc  # sphinx extension to support docstrings in numpy format yeeeeeeeeeeeee
 - pelican   # static site generator for blog; py api, rst, django
 - nbsphinx  # do sphinx stuff with notebooks instead of rst
 
 
 reading:
-    # scihub2pdf, really it's incredible
     bibtex:
         - pybtex
         - bibtexparser
-        - bibcure
-        - doi2bib    # exactly what it sounds like
+        - bibcure    # keeps bibtex up to date n downloads paps
+        - doi2bib    # exactly what it sounds like (bibcure proj)
         - betterbib  # fetches info to try and correct/format your bib
         - pybtex-docutils
     arxiv:
-        - arxivcheck
+        - arxivcheck # (bibcure proj): arxiv id/title --> updated bibtex
         - arxivscraper
         - arxiv # main python source for arxiv.py API
         - arxiv_download

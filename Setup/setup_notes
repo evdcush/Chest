@@ -143,6 +143,33 @@ scbw.play --install  # This can take awhile, download n install
 #  (in headful mode, you must select the map, wait in lobby for bots to join, and start)
 scbw.play --bots "krasi0" "CherryPi" --show_all
 
+#=============================================================================#
+#                                                                             #
+#               ____   __          __             _____    _____              #
+#              |  _ \  \ \        / /     /\     |  __ \  |_   _|             #
+#              | |_) |  \ \  /\  / /     /  \    | |__) |   | |               #
+#              |  _ <    \ \/  \/ /     / /\ \   |  ___/    | |               #
+#              | |_) |    \  /\  /     / ____ \  | |       _| |_              #
+#              |____/      \/  \/     /_/    \_\ |_|      |_____|             #
+#                                                                             #
+#=============================================================================#
+git clone https://github.com/openbw/openbw
+git clone https://github.com/openbw/bwapi
+cd bwapi
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release -DOPENBW_DIR=../../openbw -DOPENBW_ENABLE_UI=1
+make
+
+# for gui
+sudo apt install libsdl2-dev
+
+# OpenBW needs the usual 3 mpq files in the working directory when it starts
+# (Stardat.mpq, Broodat.mpq and Patch_rt.mpq). These can be copied from
+# StarCraft: BroodWar 1.16.1 or 1.18, or you can just start BWAPILauncher from the StarCraft directory.
+
+# I remember this being a HUGE PITA before sourcing these files
+#  you probably have on ext hdd, CHECK
 
 #=============================================================================#
 #                           _____     ____     _____                          #
