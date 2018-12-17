@@ -9,7 +9,6 @@ essentials:
 - jupyter
 - notebook
 - cython
-- scihub2pdf
 - gitup
 
 # Stuff that looks useful or interesting, but haven't used yet
@@ -164,6 +163,7 @@ parsers:
 
 media:
 - scdl  # soundcloud downloader, worked well one time i used
+- scihub2pdf  # what it says: it downloads pdfs from scihub
 
 
 sphinx:
