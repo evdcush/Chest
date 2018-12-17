@@ -70,7 +70,7 @@ PREP  = f"{PROJECTS}/Prep"
 #==== resources
 PUBLIC_TOKENS = R_yml(f"{RESOURCES_N}/gh_tokens.yml")['public']
 GH_HOARD  = R_yml(f"{RESOURCES_N}/inbox_hoard.yml")
-HOARD_ARC = R_yml(f"{RESOURCES_N}/archive_hoard.ym")
+HOARD_ARC = R_yml(f"{RESOURCES_N}/archive_hoard.yml")
 
 #==== projects
 BIB = f"{DOCUMENTS_N}/library.bib"
