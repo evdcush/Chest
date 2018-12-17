@@ -11,6 +11,10 @@ do that 'thing'...again?
 
 PDF
 ===
+
+conversion
+----------
+
 | **For most .thing --> .pdf :**
 | 1. **convert to html**
 | 2. **then to pdf** (through wkhtmltopdf)
@@ -40,10 +44,21 @@ PDF
     wkhtmltopdf README.html README.pdf
 
 
+Manipulation
+------------
+
 - **crop PDF?**::
     
     sudo apt install --no-install-recommends --no-install-suggests texlive-extra-utils
     pdfcrop my_doc.pdf cropped_my_doc.pdf
+
+- **remove a watermark?**::
+    
+    #=== cut watermark text from pdf code
+    sed -e "s/watermarktextstring/ /g" <input.pdf >unwatermarked.pdf
+    #=== fix modified pdf
+    pdftk unwatermarked.pdf output fixed.pdf && mv fixed.pdf unwatermarked.pdf
+
 
 
 Images

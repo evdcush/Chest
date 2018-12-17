@@ -16,6 +16,11 @@ PATH_CUDA="/usr/local/cuda-10.0"
 DIR_DATA="$HOME/.Data"  # only for datasets!
 DIR_DOTS="$HOME/.Dots"
 
+# Nextcloud
+# =========
+DIR_NSYNC="$HOME/.NSync"
+NSYNC_RESOURCES="$DIR_NSYNC/Resources"
+
 # Chest paths
 # ===========
 DIR_CHEST="$HOME/Chest"
@@ -24,8 +29,8 @@ DIR_CHEST_RESOURCES="$DIR_CHEST/Resources"
 
 # File paths
 # ==========
-PATH_INBOX_READ="$DIR_CHEST_RESOURCES/inbox_read.yml"
-PATH_INBOX_HOARD="$DIR_CHEST_RESOURCES/inbox_hoard.yml"
+PATH_INBOX_READ="$NSYNC_RESOURCES/inbox_read.yml"
+PATH_INBOX_HOARD="$NSYNC_RESOURCES/inbox_hoard.yml"
 #---- Crypt keys
 GCKEY_CHEST="$DIR_DOTS/Keys/chest_key"
 

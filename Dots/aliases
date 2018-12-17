@@ -60,6 +60,7 @@ alias myip="inxi -i"
 
 #==== package stuff
 alias api="apt-cache show"
+alias apu="apt list --upgradable"
 alias dpkgi="sudo dpkg -i "
 alias dependees='apt-cache rdepends packagename'
 
@@ -129,7 +130,7 @@ pip install -U numpy scipy sklearn matplotlib chainer cython gym pandas \
 chainerrl sympy pip-autoremove ipython jupyter notebook gitup nltk \
 docutils sphinx sphinx-rtd-theme johnnydep termdown cheat bs4 thefuck \
 jax jaxlibs cookiecutter surprise pypi-cli glances buku jrnl \
-cloudpickle restview; \
+cloudpickle restview feedparser; \
 $pipi_nb_pdf"
 
 # INSTALL PACKAGES RELATED TO LIBRARY

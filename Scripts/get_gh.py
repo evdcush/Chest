@@ -7,12 +7,6 @@ import subprocess as sbp
 
 from conf import READMES, PROJECTS
 
-# Load conf
-HOME = os.environ['HOME']
-with open('conf.yml') as yml:
-    conf = yaml.load(yml)
-nsync_path = conf['nsync']['path'].replace('~', HOME)
-
 # dest dirs
 readme_dest = READMES
 file_dest   = PROJECTS
