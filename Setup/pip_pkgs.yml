@@ -2,7 +2,7 @@
 essentials:
 - numpy
 - scipy
-- sklearn   # have to install "cloudpickle"; workaround for annoying deprecation warning on import
+- sklearn cloudpickle # have to install "cloudpickle"; workaround for annoying deprecation warning on import
 - matplotlib
 - chainer
 - ipython
@@ -10,6 +10,7 @@ essentials:
 - notebook
 - cython
 - gitup
+
 
 # Stuff that looks useful or interesting, but haven't used yet
 promising:
@@ -21,9 +22,10 @@ promising:
 science-math:
 - autograd      # simple, somewat restrictive, numpy-based autodiff lib
 - sympy
-- opencv
+- opencv-python  # python wrapper to opencv (i think it might only be subset tho, at least docu wise)
 - jax jaxlib  # google's autodiff, GPU-optimized library supporting numpy; looks like they finished tangent
 - scikit-video
+- scikit-image
 - pydataset     # access to many datasets, in dataframe format
 - pandas
 - cvxpy   # python embedded modeling lang for convex opt problems; intuitive
@@ -52,7 +54,10 @@ TF-dependencies:  # don't actually use any of it; it's just to build TF
 NLP-stuff:
 - nltk            # de-jure natural language library
 - spacy           # NLP library
+- gensim     # topic modeling, indexing, similarity
+- flashtext  # keywords extraction
 - snowballstemmer # library of stemming algs
+- scattertext  # great looking vis of lang/text diff between docs
 
 starcraft-games:
 - s2clientprotocol  # linux sc2 client (headless)

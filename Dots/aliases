@@ -108,10 +108,10 @@ alias ipyp="pypi info"
 alias nbext_init="pip install -U jupyter_contrib_nbextensions \
 jupyter_nbextensions_configurator; \
 jupyter contrib nbextension install --user; \
-jupyter nbextensions_configurator enable --user; \
-pip install -U jupyter_dashboards; \
-jupyter dashboards quick-setup --sys-prefix; \
-jupyter nbextension enable jupyter_dashboards --py --sys-prefix"
+jupyter nbextensions_configurator enable --user;"
+# pip install -U jupyter_dashboards; \
+# jupyter dashboards quick-setup --sys-prefix; \
+# jupyter nbextension enable jupyter_dashboards --py --sys-prefix"
 
 #---- better nbconvert ---> pdf
 alias pipi_nb_pdf="pip install -U ipython jupyter notebook nb_pdf_template; \
@@ -134,10 +134,14 @@ ipython jupyter notebook cloudpickle" # cloudpickle ONLY for sklearn
 
 # INSTALL PACKAGES RELATED TO LIBRARY
 alias pipilib="pip install -U pip \
-docutils sphinx sphinx-rtd-theme
+docutils sphinx sphinx-rtd-theme \
 pybtex bibtexparser bibcure betterbib pybtex-docutils \
-scihub2pdf arxivscraper arxivcheck \
-landslide nbsphinx"
+scihub2pdf arxivscraper arxivcheck nbsphinx"
+
+# INSTALL TEXT STUFF
+alias pipitxt="pip install -U pip \
+nltk sklearn cloudpickle spacy gensim flashtext \
+snowballstemmer scattertext pdfminer.six textdistance[extras]"
 
 
 # UPDATE PIP PACKAGES

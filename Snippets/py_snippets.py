@@ -398,6 +398,15 @@ print(f'{hw:>12}\n{w:>12}')
 ' Hello world'
 '       world'
 
+# Pad string/num with zeros
+# -------------------------
+num = 7
+print(f'{num} padded with 3 leading zeros: {num:03}')
+# ---> 007
+
+print(f'{11:03}') # it properly interprets length of str
+# ---> 011
+
 ###############################################################################
 #######################        arg parsers          ###########################
 
