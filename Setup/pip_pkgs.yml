@@ -52,10 +52,10 @@ TF-dependencies:  # don't actually use any of it; it's just to build TF
 - protobuf
 
 NLP-stuff:
-- nltk            # de-jure natural language library
-- spacy           # NLP library
+- nltk       # de-jure natural language library
+- spacy      # NLP library, remember to `python -m spacy download en`
 - gensim     # topic modeling, indexing, similarity
-- flashtext  # keywords extraction
+- sumy       # auto summ
 - snowballstemmer # library of stemming algs
 - scattertext  # great looking vis of lang/text diff between docs
 
@@ -185,6 +185,7 @@ sphinx:
 
 reading:
     bibtex:
+        - arxiv2bib  # BEST OF ALL
         - pybtex
         - bibtexparser
         - bibcure    # keeps bibtex up to date n downloads paps

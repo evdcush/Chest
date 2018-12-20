@@ -37,13 +37,6 @@ asc() {
 #                                                                             #
 #=============================================================================#
 
-
-# Nativefier
-# ==========
-nativefy(){
-    python "$DIR_CHEST/Scripts/nativefy.py" "$@"
-}
-
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # INBOXING FUNCTIONS
@@ -148,7 +141,8 @@ addrep(){
 function reset_path(){
     echo "Resetting Path...\n--------------------------------------------------"
     echo "  current path = $PATH\n"
-    PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+    PATH="$PATH_DEFAULT"  # in 'path' dots
+    #PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
     #PATH=$(getconf PATH)
     echo "  reset path = $PATH\n"
     source ~/.zshrc
@@ -163,7 +157,6 @@ function srcz(){
 
 #---- add line to shell config
 function expzsh(){
-    #expzsh 'My alias' 'alias testalias="echo test passed"'
     echo "\n\n#==== $1" >> ~/.zshrc
     echo "$2" >> ~/.zshrc
 }
@@ -173,10 +166,6 @@ function expzsh(){
 
 # Make new pyenv virtualenv
 # =========================
-# $ pvenv build_docs # converts to the following commands
-#     pyenv virtualenv 3.7.1 build_docs;
-#     local build_docs;
-#     pip install -U pip setuptools wheel
 function pvenv(){
     if [ "$#" -gt 1 ]; then
         #==== python version specified
@@ -238,8 +227,6 @@ function lnbin(){
 
 # Finding stuff
 # =============
-
-# Find and delete: CAREFUL
 function find_and_remove_all(){
     matches=$(sudo find / -iname "*$1*")
     echo "$matches"

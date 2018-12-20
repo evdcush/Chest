@@ -8,9 +8,9 @@
 .. Above is the document title, and below is the subtitle.
    They are transformed from section titles after parsing.
 
-==============================================
+
 GOOD COLOR SCHEMES FOR RST IMPROVED IN SUBLIME
-==============================================
+
 
 --------
 TOP-TIER
