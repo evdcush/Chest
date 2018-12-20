@@ -15,7 +15,6 @@ essentials:
 # Stuff that looks useful or interesting, but haven't used yet
 promising:
 - pygal     # visualization lib, looks clean af
-- networkx  # lib whole bag of stuff for networks (create, manip, vis)
 - prince    # nice visualization stuff for factor analysis
 
 
@@ -56,7 +55,7 @@ NLP-stuff:
 - spacy      # NLP library, remember to `python -m spacy download en`
 - gensim     # topic modeling, indexing, similarity
 - sumy       # auto summ
-- snowballstemmer # library of stemming algs
+- snowballstemmer # library of snowball stemming algs
 - scattertext  # great looking vis of lang/text diff between docs
 
 starcraft-games:
@@ -67,8 +66,9 @@ starcraft-games:
 - pygame  # dependency for every game-related thign
 
 visualization:
-- ipyvolume    # <-------<< WOW! looks comparable to mayavi ###########################
+- ipyvolume    # <-------<< WOW! looks comparable to mayavi ##############
 - bokeh
+- networkx  # lib whole bag of stuff for networks (create, manip, vis)
 
 notebook:
 - ipython
@@ -114,6 +114,9 @@ dev:
 - radon         # linting/code metrics, better than flake8
 - coverage      # code-coverage
 - black         # auto-format code; only used for other peoples gross code
+- faker         # generate all kinds of fake data
+- isort         # sorts script imports; meh, good for other peep code i guess
+- semver        # semantic versioning helper
 
 net:
 - html5lib  # dep
@@ -122,8 +125,9 @@ net:
 - favicon   # library to find favicon from a url
 - feedparser #$ universal feed parser; this shit's MONEY
 
-filesystem:
+filesystem-sh:
 - pyinotify   # Linux filesystem event monitoring
+- pyperclip   # copies plaintext to clipboard
 
 
 compsci-assets: # packages to help study/learn compsci stuff
@@ -141,6 +145,8 @@ deps-utils:
 - johnnydep   # noooyyyce, lists dependencies of a package
 - pydeps      # call graph for package, not bad.
 
+db-docs:
+- tinydb
 
 pypi-python:
 - pypi-cli  # decent utils in `pypi info <pkg>` and `pypi search`
@@ -157,9 +163,11 @@ docs-text:
 - pypandoc # pandoc wrapper
 - textdistance[extras]  # bunch of different text dist algos
 - hovercraft  # generates slide.js slides from rst, looks G
-- landslide   # Another generator for slides from rst, but HTML5 slides; DATED deps, annoying
+- landslide   # liked hovercraft, but HTML5 slides; DONT, super annoying dep conflicts, really outdated
 - pdfminer.six  # tool for extracting info from pdf
-- pypdf2        # splitting, merging, cropping, and transforming the pages of PDF files. can do ANYTHINH
+- pypdf2        # splitting, merging, cropping, and transforming the pages of
+- python-slugify
+- fuzzywuzzy  # string-match fuzzer
 
 
 parsers:
@@ -203,7 +211,7 @@ reading:
 arg-parsers: # I prefer argparse/argv in general, to keep dependencies down
 - fire   # IF I opt for diff argparser, fire is the shit (args req'd tho)
 - docopt # more work than you think
-- click  # fuck that stack of decorators, why peep like???
+- click  # that (inexpressive, boiler) stack of decorators, why peep like???
 
 
 CLI-shell:
@@ -253,6 +261,7 @@ misc-untested:
 - title2bib    # generate bibtex given title
 - luigi         # manages task pipeline
 - simiki       # simple wiki platform
+- argcomplete  # bash autocompletion for argparse
 
 
 hmmm-cool:
