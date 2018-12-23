@@ -15,20 +15,22 @@ essentials:
 # Stuff that looks useful or interesting, but haven't used yet
 promising:
 - pygal     # visualization lib, looks clean af
-- prince    # nice visualization stuff for factor analysis
+
 
 
 science-math:
 - autograd      # simple, somewat restrictive, numpy-based autodiff lib
 - sympy
-- opencv-python  # python wrapper to opencv (i think it might only be subset tho, at least docu wise)
 - jax jaxlib  # google's autodiff, GPU-optimized library supporting numpy; looks like they finished tangent
-- scikit-video
-- scikit-image
 - pydataset     # access to many datasets, in dataframe format
 - pandas
 - cvxpy   # python embedded modeling lang for convex opt problems; intuitive
 
+vision:
+- opencv-python
+- scikit-video
+- scikit-image
+- chainercv
 
 GPU:
 - pycuda  # unofficial cython-like embedded cuda code
@@ -57,6 +59,7 @@ NLP-stuff:
 - sumy       # auto summ
 - snowballstemmer # library of snowball stemming algs
 - scattertext  # great looking vis of lang/text diff between docs
+- summa      # summarizer/keyword extractor LOOKS GOOD/SIMPLE
 
 starcraft-games:
 - s2clientprotocol  # linux sc2 client (headless)
@@ -69,6 +72,7 @@ visualization:
 - ipyvolume    # <-------<< WOW! looks comparable to mayavi ##############
 - bokeh
 - networkx  # lib whole bag of stuff for networks (create, manip, vis)
+- prince    # nice visualization stuff for factor analysis
 
 notebook:
 - ipython
@@ -83,7 +87,7 @@ notebook:
 - nb_pdf_template  # Provides a FAR better latex template for nb2pdf conversions
 # python -m nb_pdf_template.install  # called after installation
 # `jupyter nbconvert --to pdf example.ipynb --template classicm` # usage
-- jupyter_dashboards  # slick customizable layout for notebook; HAS NOT WORKED
+- jupyter_dashboards  # slick customizable layout for notebook; ***HAS NOT WORKED***
 #   |---> jupyter dashboards quick-setup --sys-prefix
 #   |---> jupyter nbextension enable jupyter_dashboards --py --sys-prefix
 
@@ -177,8 +181,6 @@ parsers:
 
 media:
 - scdl  # soundcloud downloader, worked well one time i used
-- scihub2pdf  # (bibcure proj) very nice, still hit-or-miss compared to site
-
 
 sphinx:
 - sphinx
@@ -193,19 +195,30 @@ sphinx:
 
 reading:
     bibtex:
-        - arxiv2bib  # BEST OF ALL
         - pybtex
         - bibtexparser
-        - bibcure    # keeps bibtex up to date n downloads paps
-        - doi2bib    # exactly what it sounds like (bibcure proj)
         - betterbib  # fetches info to try and correct/format your bib
         - pybtex-docutils
-    arxiv:
+    papers:
+        arxiv:
+            - arxiv2bib  # **********BEST OF ALL*************
+            - arxivscraper  # looks super convenient, but has bugs; wont work
+            - arxiv.py # main python source for arxiv api interface
+        other:
+            - scirate   #  NICE Python wrapper for extracting information from Scirate
+            - newspaper3k  # articles from allllllll over, can summarize too
+
+    # most "pkgs" are just modules of the full bibcure pkg,
+    # but can also be installed independently
+    #   CURRENTLY: only really use scihub2pdf, which is really convenient
+    bibcure-proj:
+        - bibcure    # keeps bibtex up to date n downloads paps
+        - title2bib  # generate bibtex given title (bibcure module)
+        - doi2bib    # exactly what it sounds like (bibcure module)
         - arxivcheck # (bibcure proj): arxiv id/title --> updated bibtex
-        - arxivscraper
-        - arxiv # main python source for arxiv.py API
-        - arxiv_download
-        - arxiv2txt  # SCRIPT not pypi?
+        - scihub2pdf  # (bibcure proj) very nice, still hit-or-miss compared to site
+
+
 
 
 arg-parsers: # I prefer argparse/argv in general, to keep dependencies down
@@ -258,14 +271,13 @@ misc-untested:
 - pipsalabim   # guesses your dependencies, no need for req file
 - dbcollection # collection of popular ML datasets
 - smmap2       # pure python sliding window
-- title2bib    # generate bibtex given title
 - luigi         # manages task pipeline
-- simiki       # simple wiki platform
+- simiki       # simple wiki platform; **appears unmaintained
 - argcomplete  # bash autocompletion for argparse
 
 
 hmmm-cool:
-- rstdiary  # generates html from rst file. looks good, wayyyyyy too much to ask of end user
+- rstdiary  # generates html from rst file. cool concept, wayyyyyy too much to ask of end user
 - astrodash # spectral convolutions deep learning supernovae
 - eel # python lib for making offline electron/JS like gui apps
 - pychievements # framework for creating/tracking achievements in python file

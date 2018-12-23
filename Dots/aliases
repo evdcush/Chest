@@ -97,8 +97,15 @@ alias afshow="apt-fast show"
 #=============================================================================#
 
 #---- pip stuff
-alias pipi="pip install -U "
+#alias pipi="pip install -U "
 alias ipyp="pypi info"
+
+# Install/upgrade pip pkgs and save pkg names
+function pipi(){
+    TARGETS=$@
+    pip install -U $TARGETS
+    echo "$TARGETS" >> "$DIR_DOTS/pip_pkgs.txt"
+}
 
 # INSTALL NOTEBOOK EXTENSIONS
 # ===========================
