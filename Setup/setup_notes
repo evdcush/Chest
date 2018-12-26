@@ -13,7 +13,9 @@
 #                                                                             #
 #                                                                             #
 
-
+# Disable CDROM Eject Buttom
+# ==========================
+eject -i 1 /dev/sr0  # assign as app autostart
 
 
 #   __       ___

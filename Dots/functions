@@ -39,6 +39,16 @@ asc() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+
+
+# Get bib info
+# ============
+function arxbib {
+    arxiv2bib $1 | xclip -selection clipboard
+}
+
+
+
 # INBOXING FUNCTIONS
 # ==================
 #---- git repo hoarding (cloning)
