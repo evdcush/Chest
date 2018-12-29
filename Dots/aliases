@@ -137,7 +137,7 @@ $pipi_nb_pdf"
 # INSTALL BARE MINIMUM PKGS
 alias pipibare="pip install -U pip setuptools wheel;\
 pip install -U numpy scipy sklearn matplotlib chainer cython \
-ipython jupyter notebook cloudpickle" # cloudpickle ONLY for sklearn
+ipython jupyter notebook cloudpickle myougiden" # cloudpickle ONLY for sklearn
 
 # INSTALL PACKAGES RELATED TO LIBRARY
 alias pipilib="pip install -U pip \

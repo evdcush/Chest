@@ -2,8 +2,6 @@
 #                                Endemic                                      #
 #-----------------------------------------------------------------------------#
 
-
-
 # Copy README template to a project dir
 function RDME {
     SRC_DIR="$DIR_CHEST_RESOURCES/Templates/README.rst"
@@ -22,6 +20,8 @@ asc() {
     fi
     python $SCRIPT $FNT $TXT | xclip -selection clipboard
 }
+
+
 
 
 #=============================================================================#
