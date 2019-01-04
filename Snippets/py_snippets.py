@@ -427,6 +427,58 @@ if __name__ == '__main__':
 #====
 
 ###############################################################################
+#######################           tinydb            ###########################
+# document-oriented database that stores data in dict-like form in
+#  json
+
+# Example usage (from docs)
+# =============
+from tinydb import TinyDB, Query
+db = TinyDB('db.json') # akin to open('db.json', 'x')
+
+# insert some data # NB: insert also returns id
+db.insert({'type': 'apple', 'count': 7})
+db.insert({'type': 'peach', 'count': 3})
+
+# See all docs stored
+db.all()
+[{'count': 7, 'type': 'apple'}, {'count': 3, 'type': 'peach'}]
+
+# Iterate over docs in db
+for item in db:
+    print(item)
+{'count': 7, 'type': 'apple'}
+{'count': 3, 'type': 'peach'}
+
+# Query for specific documents
+# ============================
+Fruit = Query()
+db.search(Fruit.type == 'peach')
+[{'count': 3, 'type': 'peach'}]
+db.search(Fruit.count > 5)
+[{'count': 7, 'type': 'apple'}]
+
+# To update certain fields
+# ------------------------
+db.update({'count': 10}, Fruit.type == 'apple')
+db.all()
+[{'count': 10, 'type': 'apple'}, {'count': 3, 'type': 'peach'}]
+
+# To remove documents
+# -------------------
+db.remove(Fruit.count < 5)
+db.all()
+[{'count': 10, 'type': 'apple'}]
+
+# And to remove ALL data
+db.purge()
+db.all()
+[]
+
+# To save db.json, simply
+db.close()
+
+###############################################################################
 #######################             Misc            ###########################
 
 # Handling decode errors in response
