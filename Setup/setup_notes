@@ -13,9 +13,106 @@
 #                                                                             #
 #                                                                             #
 
+
+#                           /\                                                #
+#                          /  \     _ __    _ __    ___                       #
+#                         / /\ \   | '_ \  | '_ \  / __|                      #
+#                        / ____ \  | |_) | | |_) | \__ \                      #
+#                       /_/    \_\ | .__/  | .__/  |___/                      #
+#                                  | |     | |                                #
+#                                  |_|     |_|                                #
+#                                                                             #
+
+
+#-----------------------------------------------------------------------------#
+#                                apt packages                                 #
+#-----------------------------------------------------------------------------#
+
+# Apps
+# ====
+sudo apt install -y chromium-browser flameshot anki vim guake git-extras
+sudo apt install -y deluge nomacs font-manager redshift
+
+# Utils
+# =====
+sudo apt install -y htop tree tlp unar unrar psensor aria2 poppler-utils
+sudo apt install -y wkhtmltopdf img2pdf deborphan
+
+# Media
+# =====
+sudo apt install -y exfat-utils flac lame x264 vlc mpv
+
+# Fonts
+# =====
+sudo apt install -y fonts-hack fonts-oxygen fonts-noto-cjk-extra "fonts-sawarabi*" \
+fonts-mplus fonts-mononoki "fonts-moe*" fonts-umeplus \
+fonts-woowa-hanna "fonts-wqy*" fonts-ebgaramond-extra fonts-cantarell \
+"fonts-aoyagi*" fonts-ipafont fonts-seto fonts-misaki fonts-mikachan \
+"fonts-takao*" fonts-lato fonts-stix \
+texlive-fonts-recommended texlive-latex-recommended \
+fonts-umeplus fonts-hanazono
+
+# Dictionaries
+# ============
+sudo apt install -y dictd dict-gcide dict-wn dict-moby-thesaurus
+
+
+
+
+#-----------------------------------------------------------------------------#
+#                            Indepedent Installers                            #
+#-----------------------------------------------------------------------------#
+
+# Joplin
+# ======
+wget -O - https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_install_and_update.sh | bash
+
+# n (node manager)
+# ================
+curl -L https://git.io/n-install | N_PREFIX=~/.n bash -s -- -y
+
+# npm
+# ---
+npm i -g electron
+npm i -g nativefier
+npm i -g tldr
+
+
+# Pyenv
+# =====
+curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash;
+
+# Oh-my-zsh
+# =========
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)";
+
+# croc
+# ====
+curl https://getcroc.schollz.com | bash
+
+# fzf
+# ===
+git clone --depth=1 junegunn/fzf.git ~/.Apps/utils/fzf
+
+# Z jump
+# ======
+wget -O ~/.Apps/utils/Z_jumpz.sh https://raw.githubusercontent.com/rupa/z/master/z.sh
+
+
+
+#-----------------------------------------------------------------------------#
+#                           __  __   ___   ___    ___                         #
+#                          |  \/  | |_ _| / __|  / __|                        #
+#                          | |\/| |  | |  \__ \ | (__                         #
+#                          |_|  |_| |___| |___/  \___|                        #
+#                                                                             #
+#-----------------------------------------------------------------------------#
+
 # Disable CDROM Eject Buttom
 # ==========================
 eject -i 1 /dev/sr0  # assign as app autostart
+
+
 
 
 #   __       ___
@@ -39,6 +136,7 @@ path_prepend() {
         PATH="$1${PATH:+:${PATH}}"
     fi
 }
+
 
 #=============================================================================#
 #                            _                                                #
@@ -90,10 +188,9 @@ gem install bundler
 #                                                                             #
 #=============================================================================#
 
-#    __   __   __        ___  __
-#   |  \ /  \ /  ` |__/ |__  |__)
-#   |__/ \__/ \__, |  \ |___ |  \
-#
+#-----------------------------------------------------------------------------#
+#                                   DOCKER                                    #
+#-----------------------------------------------------------------------------#
 
 # Instructions from SCBW
 #   github.com/Games-and-Simulations/sc-docker
@@ -114,21 +211,18 @@ sudo usermod -aG docker $USER
 # Restart shell
 docker run hello-world
 
-#    __      ___       __           __   ___ ___       __
-#   |__) \ /  |  |__| /  \ |\ |    /__` |__   |  |  | |__)
-#   |     |   |  |  | \__/ | \|    .__/ |___  |  \__/ |
-#
+#-----------------------------------------------------------------------------#
+#                                Python Setup                                 #
+#-----------------------------------------------------------------------------#
 
 # Steps here different, assuming you have pyenv
 pip install scbw
 scbw.play --install  # This can take awhile, download n install
 
 
-#    __             __   ___ ___       __                 __
-#   / _` |  | |    /__` |__   |  |  | |__) .   \  / |\ | /  `
-#   \__> \__/ |    .__/ |___  |  \__/ |    .    \/  | \| \__,
-#
-
+#-----------------------------------------------------------------------------#
+#                            GUI setup: VNC Viewer                            #
+#-----------------------------------------------------------------------------#
 #=== Download VNC Viewer @   https://www.realvnc.com/en/connect/download/viewer/linux/
 # eg: https://www.realvnc.com/download/file/viewer.files/VNC-Viewer-6.18.907-Linux-x64.deb
 
@@ -155,6 +249,9 @@ scbw.play --bots "krasi0" "CherryPi" --show_all
 #              |____/      \/  \/     /_/    \_\ |_|      |_____|             #
 #                                                                             #
 #=============================================================================#
+
+# Clone and make
+# ==============
 git clone https://github.com/openbw/openbw
 git clone https://github.com/openbw/bwapi
 cd bwapi
@@ -163,7 +260,8 @@ cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release -DOPENBW_DIR=../../openbw -DOPENBW_ENABLE_UI=1
 make
 
-# for gui
+# GUI setup
+# =========
 sudo apt install libsdl2-dev
 
 # OpenBW needs the usual 3 mpq files in the working directory when it starts
@@ -202,14 +300,16 @@ source /opt/ros/melodic/setup.zsh
 # for rosinstall (only need python-rosinstall I think, other shit may be bloat)
 sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential
 
-
-#    ___                     _
-#   / __|  __ _   ___  ___  | |__   ___
-#  | (_ | / _` | |_ / / -_) | '_ \ / _ \
-#   \___| \__,_| /__| \___| |_.__/ \___/
-#
+#                               _
+#   __ _    __ _   ____   ___  | |__     ___
+#  / _` |  / _` | |_  /  / _ \ | '_ \   / _ \
+# | (_| | | (_| |  / /  |  __/ | |_) | | (_) |
+#  \__, |  \__,_| /___|  \___| |_.__/   \___/
+#  |___/
 
 # Install and run
 # ---------------
 curl -sSL http://get.gazebosim.org | sh
 gazebo
+
+
