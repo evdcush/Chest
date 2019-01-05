@@ -171,6 +171,7 @@ docs-text:
 - landslide   # liked hovercraft, but HTML5 slides; DONT, super annoying dep conflicts, really outdated
 - pdfminer.six  # tool for extracting info from pdf
 - pypdf2        # splitting, merging, cropping, and transforming the pages of
+- pdfplumber   # probably best API for doing shit with pdfs
 - python-slugify
 - fuzzywuzzy  # string-match fuzzer
 
@@ -204,10 +205,11 @@ reading:
         - pybtex-docutils
     papers:
         arxiv:
-            - arxiv2bib  # **********BEST OF ALL*************
+            - arxiv2bib  # **********BEST OF ALL ARXIV PKGS*************
             - arxivscraper  # looks super convenient, but has bugs; wont work
             - arxiv.py # main python source for arxiv api interface
         other:
+            - habanero  # low-level crossref API
             - scirate   #  NICE Python wrapper for extracting information from Scirate
             - newspaper3k  # articles from allllllll over, can summarize too
 

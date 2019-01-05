@@ -121,35 +121,42 @@ jupyter nbextensions_configurator enable --user;"
 # jupyter dashboards quick-setup --sys-prefix; \
 # jupyter nbextension enable jupyter_dashboards --py --sys-prefix"
 
-#---- better nbconvert ---> pdf
-alias pipi_nb_pdf="pip install -U ipython jupyter notebook nb_pdf_template; \
+# Misc extra setup
+# ================
+_inst_myougiden="pip install -U myougiden; updatedb-myougiden -f"
+_inst_nb_pdf="pip install -U ipython jupyter notebook nb_pdf_template; \
 python -m nb_pdf_template.install;"
 
-
-# INSTALL PACKAGES ALWAYS USED
-alias pipistd="pip install -U pip setuptools wheel; \
-pip install -U numpy scipy sklearn matplotlib chainer cython gym pandas \
-chainerrl sympy pip-autoremove ipython jupyter notebook gitup nltk \
-docutils sphinx sphinx-rtd-theme johnnydep termdown cheat bs4 thefuck \
-jax jaxlib cookiecutter pypi-cli glances jrnl \
-cloudpickle restview feedparser; \
-$pipi_nb_pdf"
-
-# INSTALL BARE MINIMUM PKGS
+# Bare minimum packages
+# =====================  # (Packages always used)
 alias pipibare="pip install -U pip setuptools wheel;\
 pip install -U numpy scipy sklearn matplotlib chainer cython \
-ipython jupyter notebook cloudpickle myougiden" # cloudpickle ONLY for sklearn
+ipython jupyter notebook cloudpickle gitup jrnl;\
+$_inst_myougiden" # cloudpickle ONLY for sklearn
 
-# INSTALL PACKAGES RELATED TO LIBRARY
-alias pipilib="pip install -U pip \
-docutils sphinx sphinx-rtd-theme \
-pybtex bibtexparser bibcure betterbib pybtex-docutils \
-scihub2pdf arxivscraper arxivcheck nbsphinx"
 
-# INSTALL TEXT STUFF
-alias pipitxt="pip install -U pip \
-nltk sklearn cloudpickle spacy gensim flashtext \
-snowballstemmer scattertext pdfminer.six textdistance[extras]"
+# Standard-use packages
+# =====================  # (Packages often used)
+alias pipistd="$pipibare; \
+pip install -U sympy numba pandas chainerrl gym jax jaxlib pydataset keras \
+docutils restview sphinx sphinx-rtd-theme sphinxcontrib-websupport numpydoc \
+pyyaml bibtexparser arxiv2bib tinydb pyperclip pdfminer.six pdfplumber \
+nltk gensim spacy snowballstemmer scattertext fuzzywuzzy surprise summa \
+glances apt-select thefuck cheat s-tui pyinstaller termdown speedtest-cli \
+fire pypi-cli cookiecutter faker radon johnnydep \
+feedparser requests urllib3 bs4 gitsuggest github3.py grip;\
+$_inst_nb_pdf"
+
+# Spec-use pkgs
+# =============
+# starcraft
+alias pipsc="pip install -U pygame scbw pysc2 sc2 s2clientprotocol"
+
+# visual tasks
+alias pipvis="pip install -U opencv-python scikit-video scikit-image chainercv"
+
+# GPU
+alias pipgpu="pip install -U pycuda cupy"
 
 
 # UPDATE PIP PACKAGES

@@ -424,7 +424,16 @@ if __name__ == '__main__':
   # Fire()      # both neg and poop available at CLI, but can only use one :[
   # Fire(poop)  # 'fire_example.py airplane' ---> `poop on the airplane`
 
-#====
+
+###############################################################################
+#######################        pdfminer.six         ###########################
+
+# NB: next to know API documentation; appears to be CLI-only?
+
+pdf2txt.py a_pdf_file.pdf
+# returns decent representation of extracted text
+
+
 
 ###############################################################################
 #######################           tinydb            ###########################

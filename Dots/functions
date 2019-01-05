@@ -186,7 +186,7 @@ function pvenv(){
         VENV_NAME="$2"
     else
         #==== default latest python ver (3.7)
-        PY_VER='3.7.1'
+        PY_VER='3.7.2'
         VENV_NAME="$1"
     fi
     #==== Make virtualenv
