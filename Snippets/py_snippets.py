@@ -48,34 +48,11 @@ import sys
 
 # TO GET TRUE FILE DIRECTORY PATH, USE:
 os.path.abspath(os.path.dirname(__file__))
-#----> EVERYTHING ELSE FUCKED, does pathing from caller path
-
-"""
-sandbox
-├── data
-│   ├── dataset.py
-│   └── Iris
-│       ├── iris_info.txt
-│       ├── iris.npy
-│       ├── iris_test.npy
-│       └── iris_train.npy
-│  
-├── deep_learning
-│   ├── CrossVal.ipynb
-│   ├── functions.py
-│   ├── initializers.py
-│   ├── layers.py
-│   ├── network.py
-│   ├── optimizers.py
-│   ├── train.py
-│   └── utils.py
-└── nature
-    └── GA.py
-"""
+#----> EVERYTHING ELSE does pathing from caller path
 
 # GA <---- dataset
 #=======================
-fpath = os.path.abspath(os.path.dirname(__file__)) # /home/evan/Projects/AI-Sandbox/sandbox/nature
+fpath = os.path.abspath(os.path.dirname(__file__))
 path_to_dataset = fpath.rstrip(fpath.split('/')[-1]) + 'data'
 sys.path.append(path_to_dataset)
 

@@ -143,7 +143,7 @@ docutils restview sphinx sphinx-rtd-theme sphinxcontrib-websupport numpydoc \
 pyyaml bibtexparser arxiv2bib tinydb pyperclip pdfminer.six pdfplumber \
 nltk gensim spacy snowballstemmer scattertext fuzzywuzzy surprise summa \
 glances apt-select thefuck cheat s-tui pyinstaller termdown speedtest-cli \
-fire pypi-cli cookiecutter faker radon johnnydep \
+fire pypi-cli cookiecutter faker johnnydep \
 feedparser requests urllib3 bs4 gitsuggest github3.py grip;\
 $_inst_nb_pdf"
 
