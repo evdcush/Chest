@@ -31,18 +31,16 @@ alias duh="du -h --max-depth=1 | sort -h;"
 
 #---- delete
 alias plz='sudo $(fc -ln -1)'
-alias cm="python $HOME/Projects/fart/render.py"
-
 
 #---- Copy
 alias clip="xclip -selection clipboard"
-alias mrc="xclip -selection clipboard -o | xargs sudo rm -rf"
-
+alias delclip="xclip -selection clipboard -o | xargs sudo rm -rf"
 
 # User stuff
 # ==========
 #---- IP
 alias myip="inxi -i"
+
 
 #=============================================================================#
 #                                                                             #
@@ -129,9 +127,9 @@ python -m nb_pdf_template.install;"
 
 # Bare minimum packages
 # =====================  # (Packages always used)
-alias pipibare="pip install -U pip setuptools wheel;\
+alias pipibare="pip install -U pip setuptools wheel; \
 pip install -U numpy scipy sklearn matplotlib chainer cython \
-ipython jupyter notebook cloudpickle gitup jrnl;\
+ipython jupyter notebook cloudpickle restview gitup jrnl; \
 $_inst_myougiden" # cloudpickle ONLY for sklearn
 
 
@@ -139,7 +137,7 @@ $_inst_myougiden" # cloudpickle ONLY for sklearn
 # =====================  # (Packages often used)
 alias pipistd="$pipibare; \
 pip install -U sympy numba pandas chainerrl gym jax jaxlib pydataset keras \
-docutils restview sphinx sphinx-rtd-theme sphinxcontrib-websupport numpydoc \
+docutils sphinx sphinx-rtd-theme sphinxcontrib-websupport numpydoc pypandoc \
 pyyaml bibtexparser arxiv2bib tinydb pyperclip pdfminer.six pdfplumber \
 nltk gensim spacy snowballstemmer scattertext fuzzywuzzy surprise summa \
 glances apt-select thefuck cheat s-tui pyinstaller termdown speedtest-cli \
@@ -202,9 +200,6 @@ alias jrnl=" jrnl"
 alias mk_pyproj="cookiecutter \
 https://github.com/kragniz/cookiecutter-pypackage-minimal.git"
 
-#---- buku
-#alias b='buku --suggest'
-
 
 
 #=============================================================================#
@@ -218,24 +213,40 @@ https://github.com/kragniz/cookiecutter-pypackage-minimal.git"
 #                                                                             #
 #=============================================================================#
 
-# git
-# ===
+# Status
+# ======
 alias gs="git status"
-alias gm="git mv -v"
 alias gd="git diff --ignore-all-space"
-alias ga="git add"
 alias gls="git ls-files"
+alias glog="git log --graph --decorate --oneline --all"
+
+# Navigation
+# ==========
+alias gm="git mv -v"
+alias gk="git checkout"
+alias gb="git checkout -b"
+
+# Add & Committing
+# ================
+alias ga="git add"
 alias gau="git add -u"
 alias gaa="git add -A"
 alias gcm="git commit -m"
+alias gucm="git add -u && git commit -m"
 alias gcam="git commit -a -m"
 alias gcmd="git commit --amend --no-edit"
 alias gacmd="git add -u && git commit --amend --no-edit"
-alias gk="git checkout"
-alias glog="git log --graph --decorate --oneline --all"
+
+# Remote
+# ======
 alias gcn="git clone"
+alias gcn1="git clone --depth=1"
+alias gf="git fetch"
 alias gpull="git pull"
 alias gpush="git push"
+
+
+
 # unlock chest with shared chest key
 alias gcu="git-crypt unlock $GCKEY_CHEST"
 gcampu(){
@@ -253,6 +264,21 @@ alias gsize="git rev-list --objects --all \
 | sort --numeric-sort --key=2 \
 | cut -c 1-12,41- \
 | numfmt --field=2 --to=iec-i --suffix=B --padding=7 --round=nearest"
+
+
+
+#=============================================================================#
+#                                                                             #
+#                      ██╗   ██╗███████╗███████╗██████╗                       #
+#                      ██║   ██║██╔════╝██╔════╝██╔══██╗                      #
+#                      ██║   ██║███████╗█████╗  ██████╔╝                      #
+#                      ██║   ██║╚════██║██╔══╝  ██╔══██╗                      #
+#                      ╚██████╔╝███████║███████╗██║  ██║                      #
+#                       ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝                      #
+#                                                                             #
+#=============================================================================#
+
+
 
 #=== license copies
 alias bsd3="cp $DIR_CHEST_TEMPLATES/Licenses/BSD-3-Clause.txt ./LICENSE"

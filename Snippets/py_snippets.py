@@ -58,6 +58,54 @@ sys.path.append(path_to_dataset)
 
 
 ###############################################################################
+######################           DOWNLOADING        ###########################
+import os
+import urllib.request
+
+urls = ["http://www.irs.gov/pub/irs-pdf/f1040.pdf",
+        "http://www.irs.gov/pub/irs-pdf/f1040a.pdf",
+        "http://www.irs.gov/pub/irs-pdf/f1040ez.pdf",
+        "http://www.irs.gov/pub/irs-pdf/f1040es.pdf",
+        "http://www.irs.gov/pub/irs-pdf/f1040sb.pdf"]
+
+def download_uo(url):
+    """
+    A coroutine to download the specified url
+    """
+    request = urllib.request.urlopen(url)
+    filename = os.path.basename(url)
+    with open(filename, 'wb') as file_handle:
+        while True:
+            chunk = request.read(1024)
+            if not chunk:
+                break
+            file_handle.write(chunk)
+    msg = 'Finished downloading {filename}'.format(filename=filename)
+    return msg
+
+def download_ur(url):
+    """
+    A coroutine to download the specified url
+    """
+    #request = urllib.request.urlopen(url)
+    filename = os.path.basename(url)
+    req = urllib.request.urlretrieve(url, filename)
+    msg = 'Finished downloading {filename}'.format(filename=filename)
+    return msg
+
+import time
+
+def runner(fn):
+    tstart = time.time()
+    for u in urls:
+        fn(u)
+    #print(f"time elapsed: {time.time() - tstart}s")
+
+# time diff is trivial for sample urls, but urlretrieve slightly faster
+
+
+
+###############################################################################
 ########################         ARGPARSE          ############################
 
 
@@ -361,24 +409,29 @@ print(f'{my_float: .3f}')
 # 1.414
 
 
-# Strings
-#----------------
-hw = 'Hello world'
-w  = 'world'
-#==== no formatting
-print(f'{hw}\n{w}')
-'Hello world'
-'world'
+# String justification
+#---------------------
+b = 'baz'
 
-#==== with formatting
-print(f'{hw:>12}\n{w:>12}')
-' Hello world'
-'       world'
+# left
+print(f'|{b:<12}|') # ---> |baz         |
+
+# center
+print(f'|{b:^12}|') # ---> |    baz     |
+
+# right
+print(f'|{b:>12}|') # ---> |         baz|
+
+# fill empty space with char
+print(f'|{b:*<12}|') # ---> |baz*********|
+print(f'|{b:0^12}|') # ---> |0000baz00000|
+print(f'|{b:^>12}|') # ---> |^^^^^^^^^baz|
+
 
 # Pad string/num with zeros
 # -------------------------
 num = 7
-print(f'{num} padded with 3 leading zeros: {num:03}')
+print(f'{num:03}') # fill to 3 leading zeros
 # ---> 007
 
 print(f'{11:03}') # it properly interprets length of str
