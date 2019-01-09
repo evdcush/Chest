@@ -201,7 +201,6 @@ alias mk_pyproj="cookiecutter \
 https://github.com/kragniz/cookiecutter-pypackage-minimal.git"
 
 
-
 #=============================================================================#
 #                                                                             #
 #                             ██████╗ ██╗████████╗                            #

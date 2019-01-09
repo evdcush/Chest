@@ -76,6 +76,7 @@ curl -L https://git.io/n-install | N_PREFIX=~/.n bash -s -- -y
 npm i -g electron
 npm i -g nativefier
 npm i -g tldr
+npm i -g lorem-ipsum
 
 
 # Pyenv

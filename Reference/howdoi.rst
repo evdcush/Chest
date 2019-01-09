@@ -16,8 +16,8 @@ Conversion to pdf often involves an intermediate step where the document is conv
 I've found it's easier to first convert to html, then pdf.
 
 
-.ipynb to pdf
-^^^^^^^^^^^^^
+``.ipynb`` to pdf
+^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
@@ -36,7 +36,9 @@ I've found it's easier to first convert to html, then pdf.
 
 rst to pdf
 ^^^^^^^^^^
-(Still trying to find a good solution)::
+(Still trying to find a good solution)
+
+.. code-block:: bash
 
     # Using docutils' rst2
     # --------------------
@@ -106,8 +108,9 @@ add SSH key to ssh-agent
     # Should see print of agent PID
     ssh-add ~/.ssh/id_rsa
 
-add my SSH key to...
-^^^^^^^^^^^^^^^^^^^^
+
+add my SSH key to server
+^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: bash
 
     #=== add to server (from local)
@@ -242,6 +245,64 @@ remove list of files or packages from STDIN or txt
 
     #-----> For files:
     cat stuff_i_dont_want.txt | xargs rm -rf -y
+
+Troubleshooting
+===============
+
+Ubuntu/Linux
+------------
+
+Slow boot
+^^^^^^^^^
+This has been a persistent problem for **all** my machines with xubuntu 18.04. None had slow-boot issues with 16.04.
+
+After hours of googling and trying out a bunch of stuff (including a disastrous modification to lightdm/wayland that was only meant for ubuntu and not xubuntu), **I still have not found a solution.** 
+
+This is probably the only issue I've ever had where I have not found a solution online, and there doesn't seem to be much discussion, despite it's **consistent** behavior across different machines and hardware.
+
+I had a boot time < 4s on 16.04. With 18.04, boot-times are consistently around 15~20s.
+
+**HOW TO REDUCE BOOT TIME**:
+
+1. See what processes are taking the longest:
+
+.. code-block:: bash
+
+    systemd-analyze blame
+
+2. Find the slowest processes, and disable them or modify their start processes. If there is a specific thing taking significantly longer than other processes, it's best to google that process to see how other users handled it first.
+
+
+3. ``apt-daily.service``. This is a known bug with 18.04; this process is not supposed to run during boot. The "workaround" involves editing the timer via ``sudo systemctl edit apt-daily.timer``, but this only worked temporarily, I'm not sure why. I was able to get a persistent fix by instead directly editing the timer file:
+
+
+.. code-block:: bash
+
+    # first backup
+    sudo cp /lib/systemd/system/apt-daily{,.bkp}.timer
+
+    # now replace the following [Timer] settings
+    sudo vi /lib/systemd/system/apt-daily.timer
+    [Timer]
+    OnBootSec=15min
+    OnUnitActiveSec=1d
+    AccuracySec=1h
+    RandomizedDelaySec=30min
+
+
+
+Black screen on boot
+""""""""""""""""""""
+The primary issue is a **hanging black screen** on boot. This phenomenon is apparently **NOT** logged by any of the typical system processes--eg ``systemd-analyze`` won't register this boot lag for any process.
+
+The system boots, normally then hangs on a blank, black screen for approximately 15~20s, and it seems like it can persist longer *if* you do not spam the keyboard (which seems to interrupt it).
+
+**WHAT I'VE TRIED**:
+
+- ANYTHING involving grub2. Yes, really. Everything
+- doing something with lightdm and wayland, as suggested by https://askubuntu.com/a/1053697. This literally broke my system, and took me all day to recover. Turns out xubuntu doesnt use gdm3 or wayland or whatever.
+- Tinkering with nouveau, nvidia, mesa stuff
+
 
 
 

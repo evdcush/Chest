@@ -42,6 +42,10 @@ asc() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Lorem ipsum
+# ===========
+li(){lorem-ipsum $@ | xclip -selection clipboard}
+
 
 
 # Get bib info
