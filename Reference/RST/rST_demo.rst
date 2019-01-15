@@ -137,7 +137,7 @@ Paragraphs
 A paragraph.
 
 Inline Markup
-`````````````
+-------------
 
 Paragraphs contain text and may contain inline markup: *emphasis*,
 **strong emphasis**, ``inline literals``, standalone hyperlinks
@@ -434,14 +434,14 @@ Here's a `hyperlink reference without a target`_, which generates an
 error.
 
 Duplicate Target Names
-``````````````````````
+----------------------
 
 Duplicate names in section headers or other implicit targets will
 generate "info" (level-1) system messages.  Duplicate names in
 explicit targets will generate "warning" (level-2) system messages.
 
 Duplicate Target Names
-``````````````````````
+----------------------
 
 Since there are two "Duplicate Target Names" section headers, we
 cannot uniquely refer to either of them by name.  If we try to (like
@@ -457,14 +457,14 @@ others, please see
 http://docutils.sourceforge.net/docs/ref/rst/directives.html.
 
 Document Parts
-``````````````
+--------------
 
 An example of the "contents" directive can be seen above this section
 (a local, untitled table of contents_) and at the beginning of the
 document (a document-wide `table of contents`_).
 
 Images
-``````
+------
 
 An image directive (also clickable -- a hyperlink reference):
 
@@ -489,7 +489,7 @@ A figure directive:
    This paragraph is also part of the legend.
 
 Admonitions
-```````````
+-----------
 
 .. Attention:: Directives at large.
 
@@ -521,7 +521,7 @@ Admonitions
    You can make up your own admonition too.
 
 Topics, Sidebars, and Rubrics
-`````````````````````````````
+-----------------------------
 
 .. sidebar:: Sidebar Title
    :subtitle: Optional Subtitle
@@ -541,19 +541,19 @@ Topics, Sidebars, and Rubrics
 .. rubric:: This is a rubric
 
 Target Footnotes
-````````````````
+----------------
 
 .. target-notes::
 
 Replacement Text
-````````````````
+----------------
 
 I recommend you try |Python|_.
 
 .. |Python| replace:: Python, *the* best language around
 
 Compound Paragraph
-``````````````````
+------------------
 
 .. compound::
 
