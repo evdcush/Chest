@@ -37,6 +37,7 @@ sudo apt install -y deluge nomacs font-manager redshift
 # =====
 sudo apt install -y htop tree tlp unar unrar psensor aria2 poppler-utils
 sudo apt install -y wkhtmltopdf img2pdf deborphan
+sudo apt install -y copyq # xfce4-clipman is good too
 
 # Media
 # =====
