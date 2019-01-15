@@ -41,19 +41,21 @@ BIN = f"{LOCAL}/bin"
 DESKTOPS = f"{LOCAL}/share/applications"
 
 #==== .apps
+ICONS = F"{APPS}/Icons"
 NATIVEFIED = f"{APPS}/Nativefied"
 BINARIES   = f"{APPS}/Binaries"
-ICONS = F"{APPS}/Icons"
+
 
 #==== .nsync
-RESOURCES_N = f"{NSYNC}/Resources"
 READMES = f"{NSYNC}/READMEs"
+RESOURCES_N = f"{NSYNC}/Resources"
 DOCUMENTS_N = f"{NSYNC}/Documents"
 
 
 #==== chest
-RESOURCES_C = f"{CHEST}/Resources"
 DOTS_C = f"{CHEST}/Dots"
+RESOURCES_C = f"{CHEST}/Resources"
+
 
 #==== Projects
 HOARD = f"{PROJECTS}/Hoard/Archive"
@@ -68,9 +70,9 @@ PREP  = f"{PROJECTS}/Prep"
 #
 
 #==== resources
-PUBLIC_TOKENS = R_yml(f"{RESOURCES_N}/gh_tokens.yml")['public']
 GH_HOARD  = R_yml(f"{RESOURCES_N}/inbox_hoard.yml")
 HOARD_ARC = R_yml(f"{RESOURCES_N}/archive_hoard.yml")
+PUBLIC_TOKENS = R_yml(f"{RESOURCES_N}/gh_tokens.yml")['public']
 
 #==== projects
 BIB = f"{DOCUMENTS_N}/library.bib"
