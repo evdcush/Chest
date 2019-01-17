@@ -1,1 +1,4 @@
-_*
+*_build*
+*_static*
+*_templates*
+
