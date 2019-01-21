@@ -13,25 +13,29 @@ def W_yml(fname, obj):
         yaml.dump(obj, file, default_flow_style=False)
 
 
-#                 _     _
-#   _ __   __ _  | |_  | |_    ___
-#  | '_ \ / _` | |  _| | ' \  (_-<
-#  | .__/ \__,_|  \__| |_||_| /__/
-#  |_|
-
-HOME  = os.environ['HOME']
+#=============================================================================#
+#                                       _     _                               #
+#                       _ __     __ _  | |_  | |__    ___                     #
+#                      | '_ \   / _` | | __| | '_ \  / __|                    #
+#                      | |_) | | (_| | | |_  | | | | \__ \                    #
+#                      | .__/   \__,_|  \__| |_| |_| |___/                    #
+#                      |_|                                                    #
+#                                                                             #
+#=============================================================================#
 
 ###  BASE LEVEL  ###
+HOME  = os.environ['HOME']
+
 #==== hidden
 LOCAL = f"{HOME}/.local"
-NSYNC = f"{HOME}/.NSync"
 DOTS  = f"{HOME}/.Dots"
 APPS  = f"{HOME}/.Apps"
 
 #==== home dirs
 CHEST = f"{HOME}/Chest"
+CLOUD = f"{HOME}/Cloud"
 MEDIA = f"{HOME}/Media"
-PROJECTS = f"{HOME}/Projects"
+PROJECTS  = f"{HOME}/Projects"
 DOCUMENTS = f"{HOME}/Documents"
 
 
@@ -46,15 +50,15 @@ NATIVEFIED = f"{APPS}/Nativefied"
 BINARIES   = f"{APPS}/Binaries"
 
 
-#==== .nsync
-READMES = f"{NSYNC}/READMEs"
-RESOURCES_N = f"{NSYNC}/Resources"
-DOCUMENTS_N = f"{NSYNC}/Documents"
+#==== CLOUD
+READMES = f"{CLOUD}/READMEs"
+RESOURCES_CLOUD = f"{CLOUD}/Resources"
+DOCUMENTS_CLOUD = f"{CLOUD}/Documents"
 
 
 #==== chest
-DOTS_C = f"{CHEST}/Dots"
-RESOURCES_C = f"{CHEST}/Resources"
+DOTS_CHEST = f"{CHEST}/Dots"
+RESOURCES_CHEST = f"{CHEST}/Resources"
 
 
 #==== Projects
@@ -63,11 +67,14 @@ PAPER = f"{PROJECTS}/PaperNotes/Literature"
 PREP  = f"{PROJECTS}/Prep"
 
 
-#   __   _   _
-#  / _| (_) | |  ___   ___
-# |  _| | | | | / -_) (_-<
-# |_|   |_| |_| \___| /__/
-#
+#=============================================================================#
+#                            __   _   _                                       #
+#                           / _| (_) | |   ___   ___                          #
+#                          | |_  | | | |  / _ \ / __|                         #
+#                          |  _| | | | | |  __/ \__ \                         #
+#                          |_|   |_| |_|  \___| |___/                         #
+#                                                                             #
+#=============================================================================#
 
 #==== resources
 GH_HOARD  = R_yml(f"{RESOURCES_N}/inbox_hoard.yml")

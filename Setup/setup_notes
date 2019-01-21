@@ -174,6 +174,28 @@ curl -L https://git.io/n-install | N_PREFIX=~/.n bash -s -- -y
 #                                                                             #
 #=============================================================================#
 
+####### BINARIES, APPIMAGES, ELECTRON ######
+code-notes.AppImage
+draw.io.AppImage
+
+####### LOOK INTO & EXTRA #######
+koreader.AppImage         # kobo software
+p3x-onenote-2019.AppImage # onenote clone
+polar-bookshelf.AppImage  # ebook progress library manager thign
+raven-reader.AppImage     # clean feed reader
+stencila-desktop.AppImage # scholarly all-in-one office thing, has potential
+themer-gui.AppImage       # select a colorset, and it generates CSS for everything
+
+vym # "view your mind", concept mapping n stuff
+TiddlyDesktop
+
+
+# bookstack (docker)
+
+# GROBID
+wget https://github.com/kermitt2/grobid/archive/0.5.3.zip
+
+
 
 #-----------------------------------------------------------------------------#
 #                                apt packages                                 #

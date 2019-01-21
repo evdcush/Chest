@@ -13,6 +13,10 @@ git diff branch_a branch_b -- my_file.py # can remove -- if compare work tree
 # ---------------
 git reset --hard ORIG_HEAD
 
+# Change commit date
+# ------------------
+git commit --amend --date "Wed Jan 7 11:21:46 2019 -0800"
+
 
 # -------------------------------------
 # "Merge" single file from other_branch

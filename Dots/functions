@@ -72,14 +72,15 @@ function hurl {
 
 #----- Add papers/literature to reading inbox
 function rurl {
-    TARGET='arxiv'
-    URL="$1"
-    if [ "$#" -gt 1 ]; then
-        #==== 'other'
-        TARGET="$1"
-        URL="$2"
-    fi
-    yq w -i $PATH_INBOX_READ "$TARGET"'[+]' $URL
+    #TARGET='arxiv'
+    #URL="$1"
+    #if [ "$#" -gt 1 ]; then
+    #    #==== 'other'
+    #    TARGET="$1"
+    #    URL="$2"
+    #fi
+    #yq w -i $PATH_INBOX_READ "$TARGET"'[+]' $URL
+    echo $1 >> "$HOME/Cloud/Reading/inbox.txt"
 }
 
 
@@ -239,6 +240,7 @@ function lnbin(){
     # link it up
     ln -sf $SRC $DEST
 }
+
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

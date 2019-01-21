@@ -2,10 +2,8 @@
 
 import os
 import sys
-#import yaml
-import subprocess as sbp
-
-from conf import READMES, PROJECTS
+import subprocess
+from utils import READMES, PROJECTS
 
 # dest dirs
 readme_dest = READMES
