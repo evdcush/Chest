@@ -107,16 +107,111 @@ def runner(fn):
 
 ###############################################################################
 ########################         ARGPARSE          ############################
-
-
+###############################################################################
 import argparse
 
-P = argparse.ArgumentParser()
+# To use arg as bool flag AND possible value variable:
+parser.add_argument('-s', '--save',
+                    nargs='?',
+                    default='',
+                    const='~')
+"""
+# NO SAVE (interpretted from default)
+$ python aparse.py
+Namespace(save='')
+
+# SAVE DEFAULT, but to the specified "default" (const) location
+$ python aparse.py -s
+Namespace(save='~')
+
+# SAVE CUSTOM
+$ python aparse.py -s "$PWD"
+Namespace(save='/home/user/path/to/current_dir')
+"""
+
+# At a glance
+# -----------
+# in a script aparse.py:
+parser = argparse.ArgumentParser(description='Processing integers.') # description of program
+parser.add_argument('integers',  # arg name
+                    metavar='N', # how the arg is referred in help msg
+                    type=int,    # type conversion
+                    nargs='+',   # indicates 1 or more vals to be passed to arg
+                    help='integer args') # help msg
+
+if __name__ == '__main__':
+    print(parser.parse_args())
+
+"""
+>>> python aparse.py -h
+usage: aparse.py [-h] N [N ...]
+
+Processing integers.
+
+positional arguments:
+  N           integer args
+
+optional arguments:
+  -h, --help  show this help message and exit
+
+>>> python aparse.py
+usage: aparse.py [-h] N [N ...]
+aparse.py: error: the following arguments are required: N
+
+>>> python aparse.py 14
+Namespace(integers=[14])
+
+>>> python aparse.py 3 4 5 1 2
+Namespace(integers=[3, 4, 5, 1, 2])
+
+"""
+
+# On the 'nargs' argument
+# -----------------------
+"""
+- '?' and '*' can both fall back on a default if not values
+- '*' and '+' always store elements in a list; '?' is not a list
+"""
+nargs='?' # means 1 or None values
+# >>> python aparse.py
+# Namespace(integers=None)
+
+nargs='+' # means 1 or more values
+# >>> python aparse.py
+# aparse.py: error: the following arguments are required: N
+
+nargs='*' # means 0 or more values
+# >>> python aparse.py
+# Namespace(integers=[])
+
+
+# Actions
+# =======
+# STORE CONSTANT
+parser.add_argument('-f', '--foo',
+                    action='store_constant',
+                    const='Bar')
+# >>> python aparse.py
+# Namespace(foo=None)
+# >>> python aparse.py -f
+# Namespace(foo='Bar')
+# >>> python aparse.py -f 'Hello World'
+# aparse.py: error: unrecognized arguments: Hello World
+
+# APPEND
+parser.add_argument('--baz', action='append')
+# >>> python aparse.py
+# aparse.py: error: argument -b/--baz: expected one argument
+# >>> python aparse.py --baz 'hello'
+# Namespace(baz=['hello'])
+# >>> python aparse.py --baz 'hello' --baz 'there' --baz 'friend'
+# Namespace(baz=['hello', 'there', 'friend'])
 
 #==============================================================================
 # add_args : the rules, the format
 #==============================================================================
 
+P = argparse.ArgumentParser()
 
 #------------------------------------------------------------------------------
 #                           Optional args: '-arg'
@@ -144,29 +239,29 @@ P.add_args('-f', '--foo', help='my_foo') # -f, --foo are optional, help position
 # receive a value. They cannot follow optional args either.
 
 P.add_args('-f', '--foo', help='my_foo')
-P.add_args('poop')
+P.add_args('salamander')
 
 #===== BAD
 # >>> P.parse_args([])
-#   usage: aparse.py [-h] [-f FOO] poop
-#   aparse.py: error: the following arguments are required: poop
+#   usage: aparse.py [-h] [-f FOO] salamander
+#   aparse.py: error: the following arguments are required: salamander
 #   An exception has occurred, use %tb to see the full traceback.
 #===== BAD
 # >>> P.parse_args(['-f', 'bar'])
-#   usage: aparse.py [-h] [-f FOO] poop
-#   aparse.py: error: the following arguments are required: poop
+#   usage: aparse.py [-h] [-f FOO] salamander
+#   aparse.py: error: the following arguments are required: salamander
 #   An exception has occurred, use %tb to see the full traceback.
 
 #==== OKAY:
-# >>> P.parse_args(['diarrhea'])
-# Namespace(poop='diarrhea')
+# >>> P.parse_args(['green'])
+# Namespace(salamander='green')
 #==== OKAY:
-# >>> P.parse_args(['smells graet', '--foo', '80085'])
-# Namespace(poop='smells graet', foo='80085')
+# >>> P.parse_args(['is amphibian', '--foo', '80085'])
+# Namespace(poop='is amphibian', foo='80085')
 
 
 #------------------------------------------------------------------------------
-#                   Booleans in argparse:
+#                     Booleans in argparse:
 #                      action='store_true'
 #------------------------------------------------------------------------------
 # Arparse does not really support type=bool,

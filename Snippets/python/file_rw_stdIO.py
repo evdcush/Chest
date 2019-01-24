@@ -6,6 +6,7 @@ import glob
 #==============================================================================
 # SEE MORE METHODS: https://stackoverflow.com/a/41447012/6880404
 
+if not os.path.exists(out_dir): os.makedirs(out_dir)
 
 # Everything in that dir
 # ========================================
