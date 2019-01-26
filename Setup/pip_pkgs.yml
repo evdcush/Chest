@@ -80,6 +80,7 @@ notebook:
 - jupyter
 - notebook
 - jupyterthemes  # not updated much anymore, some annoying CSS bugs
+- nbmerge
 - jupyter-contrib-nbextensions  # HUGE enhancements to notebook capabilities
 - jupyter_nbextensions_configurator
 # Then activate:

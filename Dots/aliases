@@ -8,6 +8,7 @@
 #                  ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝                   #
 #                                                                             #
 #=============================================================================#
+# All aliases that use coreutils stuff is in this section
 
 # File|Dir stuff
 # ==============
@@ -29,17 +30,12 @@ alias l="ls --group-directories-first -X"
 alias sl="ls -lhSr"
 alias duh="du -h --max-depth=1 | sort -h;"
 
-#---- delete
-alias plz='sudo $(fc -ln -1)'
 
-#---- Copy
-alias clip="xclip -selection clipboard"
-alias delclip="xclip -selection clipboard -o | xargs sudo rm -rf"
-
-# User stuff
-# ==========
-#---- IP
+#---- misc
+alias plz='sudo $(fc -ln -1)' # mmm inconsistent
 alias myip="inxi -i"
+alias tjp="TZ='Asia/Tokyo' date"
+
 
 
 #=============================================================================#
@@ -52,6 +48,7 @@ alias myip="inxi -i"
 #                          ╚═╝  ╚═╝╚═╝        ╚═╝                             #
 #                                                                             #
 #=============================================================================#
+# apt aliases
 
 #==== package stuff
 alias api="apt-cache show"
@@ -82,7 +79,6 @@ alias afl="apt-fast list"
 alias afs="apt-fast search"
 alias afshow="apt-fast show"
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 #=============================================================================#
 #                                                                             #
@@ -94,6 +90,7 @@ alias afshow="apt-fast show"
 #              ╚═╝        ╚═╝       ╚══════╝╚═╝  ╚═══╝  ╚═══╝                 #
 #                                                                             #
 #=============================================================================#
+# all aliases related to python stuff
 
 #---- pip stuff
 #alias pipi="pip install -U "
@@ -138,7 +135,7 @@ $_inst_myougiden" # cloudpickle ONLY for sklearn
 alias pipistd="$pipibare; \
 pip install -U sympy numba pandas chainerrl gym jax jaxlib pydataset keras \
 docutils sphinx sphinx-rtd-theme sphinxcontrib-websupport numpydoc pypandoc \
-pyyaml bibtexparser arxiv2bib tinydb pyperclip pdfminer.six pdfplumber \
+pyyaml bibtexparser arxiv2bib tinydb pyperclip pdfplumber \
 nltk gensim spacy snowballstemmer scattertext fuzzywuzzy surprise summa \
 glances apt-select thefuck cheat s-tui pyinstaller termdown speedtest-cli \
 fire pypi-cli cookiecutter faker johnnydep \
@@ -174,31 +171,36 @@ alias pipupdate="pip list --outdated --format=freeze \
 #                          ╚═╝  ╚═╝╚═╝     ╚═╝                                #
 #                                                                             #
 #=============================================================================#
+# All aliases that use installed packages
 
-# zsh-marks
+# Dev stuff
 # =========
-alias g="jump"
-alias s="bookmark"
-alias d="deletemark"
-alias p="showmarks"
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-# Misc apps
-# =========
-#---- notebook conversion to pdf
-alias nbc="jupyter nbconvert --to pdf $1 --template classicm"
+#---- notebook
+alias nbc="jupyter nbconvert --to pdf $1 --template classicm" # pdf conversion
+alias nb="jupyter notebook"
 
 #---- editors
 alias st="subl"    # open file with sublime
 alias stt="subl ." # open  dir with sublime
 
-#---- journal
-alias jrnl=" jrnl"
-
-#---- cookiecutter proj
+#---- cookiecutter project
 alias mk_pyproj="cookiecutter \
 https://github.com/kragniz/cookiecutter-pypackage-minimal.git"
+
+# CLI stuff
+# =========
+#---- journal
+alias jrnl=" jrnl" # alias for preventing hist from logging jrnl
+
+#---- zsh-marks
+alias g="jump"
+alias s="bookmark"
+alias d="deletemark"
+alias p="showmarks"
+
+#---- Copy
+alias clip="xclip -selection clipboard"
+alias delclip="xclip -selection clipboard -o | xargs sudo rm -rf"
 
 
 #=============================================================================#
@@ -244,10 +246,10 @@ alias gf="git fetch"
 alias gpull="git pull"
 alias gpush="git push"
 
+# git extras stuff
+# ================
+alias gcu="git-crypt unlock $GCKEY_CHEST" # unlock encrypted stuff in chest
 
-
-# unlock chest with shared chest key
-alias gcu="git-crypt unlock $GCKEY_CHEST"
 gcampu(){
     # add modified --> commit --> push
     msg="$@"
@@ -276,6 +278,8 @@ alias gsize="git rev-list --objects --all \
 #                       ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝                      #
 #                                                                             #
 #=============================================================================#
+#
+
 
 
 
