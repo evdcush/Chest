@@ -6,6 +6,16 @@ How Do I....
 .. section-numbering::
 
 
+Shell
+=====
+
+permissions
+-----------
+``sudo chown -R $USER:$USER <thing>``
+``chmod a+x <thing>``
+
+
+
 PDF
 ===
 

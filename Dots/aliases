@@ -200,7 +200,7 @@ alias p="showmarks"
 
 #---- Copy
 alias clip="xclip -selection clipboard"
-alias delclip="xclip -selection clipboard -o | xargs sudo rm -rf"
+alias delclip="xclip -o | xargs sudo rm -rf"
 
 
 #=============================================================================#
