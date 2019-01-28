@@ -43,6 +43,7 @@ AI-frameworks:
 - chainerrl
 - neupy  # ANN library, TF backend, lib has some cool stuff
 - optuna
+- niapy  # framework for building nature-inspired algos
 
 Recommenders:
 - surprise   # recommender scikit
@@ -158,7 +159,7 @@ pypi-python:
 - pypi-cli  # decent utils in `pypi info <pkg>` and `pypi search`
 - pip-autoremove  # rm package and it's deps; used to be GREAT, no longer supported seems like
 - pyinstaller #***** bundles a python app and all dependencies into a single package,
-
+    # REQUIRES pip=18.1, WILL NOT WORK ON LATEST PIP
 
 docs-text:
 - restview  # lifesaver, live rendering of rst in browser, updates for change

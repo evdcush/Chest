@@ -126,8 +126,7 @@ python -m nb_pdf_template.install;"
 # =====================  # (Packages always used)
 alias pipibare="pip install -U pip setuptools wheel; \
 pip install -U numpy scipy sklearn matplotlib chainer cython \
-ipython jupyter notebook cloudpickle restview gitup jrnl; \
-$_inst_myougiden" # cloudpickle ONLY for sklearn
+ipython jupyter notebook cloudpickle restview gitup jrnl;"
 
 
 # Standard-use packages
@@ -138,7 +137,7 @@ docutils sphinx sphinx-rtd-theme sphinxcontrib-websupport numpydoc pypandoc \
 pyyaml bibtexparser arxiv2bib tinydb pyperclip pdfplumber \
 nltk gensim spacy snowballstemmer scattertext fuzzywuzzy surprise summa \
 glances apt-select thefuck cheat s-tui pyinstaller termdown speedtest-cli \
-fire pypi-cli cookiecutter faker johnnydep \
+fire pypi-cli cookiecutter faker johnnydep black \
 feedparser requests urllib3 bs4 gitsuggest github3.py grip;\
 $_inst_nb_pdf"
 

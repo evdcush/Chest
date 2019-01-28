@@ -19,8 +19,8 @@ DIR_DOTS="$HOME/.Dots"
 
 # Nextcloud
 # =========
-DIR_NSYNC="$HOME/.NSync"
-NSYNC_RESOURCES="$DIR_NSYNC/Resources"
+DIR_CLOUD="$HOME/Cloud"
+CLOUD_RESOURCES="$DIR_CLOUD/Resources"
 
 # Chest paths
 # ===========
@@ -32,8 +32,8 @@ DIR_CHEST_TEMPLATES="$DIR_CHEST_RESOURCES/Templates"
 # File paths
 # ==========
 #---- Inbox files
-PATH_INBOX_READ="$NSYNC_RESOURCES/inbox_read.yml"
-PATH_INBOX_HOARD="$NSYNC_RESOURCES/inbox_hoard.yml"
+PATH_INBOX_READ="$CLOUD_RESOURCES/inbox_read.yml"
+PATH_INBOX_HOARD="$CLOUD_RESOURCES/hoard_inbox.yml"
 #---- Crypt keys
 GCKEY_CHEST="$DIR_DOTS/Keys/chest_key"
 
