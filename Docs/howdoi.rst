@@ -5,6 +5,7 @@ How Do I....
 .. contents:: Table of Contents
 .. section-numbering::
 
+----
 
 Shell
 =====
@@ -14,14 +15,14 @@ permissions
 ``sudo chown -R $USER:$USER <thing>``
 ``chmod a+x <thing>``
 
-
+----
 
 PDF
 ===
 
 conversion
 ----------
-Conversion to pdf often involves an intermediate step where the document is converted to latex before pdf. This often messes things up. 
+Conversion to pdf often involves an intermediate step where the document is converted to latex before pdf. This often messes things up.
 
 I've found it's easier to first convert to html, then pdf.
 
@@ -84,7 +85,7 @@ extract a range of pages
     # eg:
     pdfjam original.pdf 3-8 -o out.pdf
 
-31-41 67-68 
+31-41 67-68
 79-86 GA
 90-97 diff evo
 99-109 PSO
@@ -96,8 +97,8 @@ extract a range of pages
 70-77 SA
 
 
+----
 
-pdfjam book_yang2014__nature-inspired-optimization-algorithms.pdf 67-68,79-86,90-97,99-109,111-124,128-136,139-150,153-170 -o yang2014_snippets.pdf
 
 Images
 ======
@@ -109,6 +110,8 @@ convert svg to png
 ^^^^^^^^^^^^^^^^^^
 ``inkscape -z -e test.png -w 1024 -h 1024 test.svg``
 
+
+----
 
 Keys
 ====
@@ -126,7 +129,7 @@ generate ssh key
 add SSH key to ssh-agent
 ^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: bash
-    
+
     eval "$(ssh-agent -s)"
     # Should see print of agent PID
     ssh-add ~/.ssh/id_rsa
@@ -149,8 +152,8 @@ GPG
 generate gpg key
 ^^^^^^^^^^^^^^^^
 .. code-block:: bash
-    
-    #  Part of the process involves "generating enough 
+
+    #  Part of the process involves "generating enough
     #  bits of entropy" for random seed, so best to first
     #  install some helpful utils for that
     sudo apt install rng-tools
@@ -197,7 +200,7 @@ via ssh
 mount remote dir to local
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: bash
-    
+
     # basic connection
     sshfs name@server:/path/to/folder /path/to/mount/point
 
@@ -211,7 +214,7 @@ mount remote dir to local
 Send my client SSH key to server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: bash
-    
+
     ssh-copy-id <username>@<host>
 
 
@@ -279,7 +282,7 @@ Slow boot
 ^^^^^^^^^
 This has been a persistent problem for **all** my machines with xubuntu 18.04. None had slow-boot issues with 16.04.
 
-After hours of googling and trying out a bunch of stuff (including a disastrous modification to lightdm/wayland that was only meant for ubuntu and not xubuntu), **I still have not found a solution.** 
+After hours of googling and trying out a bunch of stuff (including a disastrous modification to lightdm/wayland that was only meant for ubuntu and not xubuntu), **I still have not found a solution.**
 
 This is probably the only issue I've ever had where I have not found a solution online, and there doesn't seem to be much discussion, despite it's **consistent** behavior across different machines and hardware.
 
@@ -292,6 +295,9 @@ I had a boot time < 4s on 16.04. With 18.04, boot-times are consistently around 
 .. code-block:: bash
 
     systemd-analyze blame
+    systemd-analyze critical-chain
+    systemd-analyze time
+
 
 2. Find the slowest processes, and disable them or modify their start processes. If there is a specific thing taking significantly longer than other processes, it's best to google that process to see how other users handled it first.
 
@@ -312,6 +318,9 @@ I had a boot time < 4s on 16.04. With 18.04, boot-times are consistently around 
     AccuracySec=1h
     RandomizedDelaySec=30min
 
+4. ``NetworkManager-wait-online.service`` is another  usual suspect. You can just disable it::
+
+    sudo systemctl disable NetworkManager-wait-online.service
 
 
 Black screen on boot
@@ -346,7 +355,7 @@ Disable the ins key
 1. figure out what key is mapped to insert
 
 .. code-block:: bash
-    
+
     xmodmap -pke | grep -i insert
 
 2. map ins key to null in ~/.Xmodmap

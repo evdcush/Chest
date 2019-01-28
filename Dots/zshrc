@@ -129,7 +129,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Z jump
 # ======
-. "$HOME/.Apps/Z_jump/z.sh"
+. "$HOME/.Apps/utils/Z_jump.sh"
 
 # ROS
 # ===

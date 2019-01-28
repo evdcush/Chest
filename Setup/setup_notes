@@ -1,18 +1,21 @@
 #!/bin/bash
 #=============================================================================#
 #                                                                             #
-#                                  __                                         #
-#                                 /\ \__                                      #
-#                   ____     __   \ \ ,_\   __  __   _____                    #
-#                  /',__\  /'__`\  \ \ \/  /\ \/\ \ /\ '__`\                  #
-#                 /\__, `\/\  __/   \ \ \_ \ \ \_\ \\ \ \L\ \                 #
-#                 \/\____/\ \____\   \ \__\ \ \____/ \ \ ,__/                 #
-#                  \/___/  \/____/    \/__/  \/___/   \ \ \/                  #
-#                                                      \ \_\                  #
-#                                                       \/_/                  #
+#           .d8888b.  8888888888 88888888888 888     888 8888888b.            #
+#          d88P  Y88b 888            888     888     888 888   Y88b           #
+#          Y88b.      888            888     888     888 888    888           #
+#           "Y888b.   8888888        888     888     888 888   d88P           #
+#              "Y88b. 888            888     888     888 8888888P"            #
+#                "888 888            888     888     888 888                  #
+#          Y88b  d88P 888            888     Y88b. .d88P 888                  #
+#           "Y8888P"  8888888888     888      "Y88888P"  888                  #
 #                                                                             #
-#                                                                             #
-#=============================================================================#
+###############################################################################
+# This script details my post-install process, and is mostly in order of ops  #
+# There are as many notes as there are commands, and it is NOT designed       #
+#  to be run, but rather copied and referenced after a fresh-install          #
+###############################################################################
+
 
 #=============================================================================#
 #                     Preinstallation Steps and Notes                         #
@@ -129,7 +132,7 @@ update-alternatives --set gcc /usr/bin/gcc-8
 addrep git-core/ppa
 sudo apt update && sudo apt upgrade -y
 sudo apt install git-core
-
+~
 # Deps
 sudo apt install -y wget curl git-core apt-transport-https autoconf automake \
 build-essential cmake docbook2x dvipng extra-cmake-modules gfortran graphviz \
@@ -142,16 +145,21 @@ printer-driver-brlaser
 
 
 #=============================================================================#
-#                              ___   _ __   __   __                           #
-#                             / _ \ | '_ \  \ \ / /                           #
-#                            |  __/ | | | |  \ V /                            #
-#                             \___| |_| |_|   \_/                             #
+#                                                                             #
+#                         888888  88b 88  Yb    dP                            #
+#                         88__    88Yb88   Yb  dP                             #
+#                         88""    88 Y88    YbdP                              #
+#                         888888  88  Y8     YP                               #
 #                                                                             #
 #=============================================================================#
+
+
 
 # Oh-my-zsh
 # =========
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)";
+cd ~/.oh-my-zsh/custom/plugins
+git clone https://github.com/jocelynmallon/zshmarks.git
 
 # Pyenv
 # =====
@@ -184,13 +192,16 @@ curl -L https://git.io/n-install | N_PREFIX=~/.n bash -s -- -y
 
 #=============================================================================#
 #                                                                             #
-#                           /\                                                #
-#                          /  \     _ __    _ __    ___                       #
-#                         / /\ \   | '_ \  | '_ \  / __|                      #
-#                        / ____ \  | |_) | | |_) | \__ \                      #
-#                       /_/    \_\ | .__/  | .__/  |___/                      #
-#                                  | |     | |                                #
-#                                  |_|     |_|                                #
+#                  db                                                         #
+#                 d88b                                                        #
+#                d8'`8b                                                       #
+#               d8'  `8b      8b,dPPYba,   8b,dPPYba,   ,adPPYba,             #
+#              d8YaaaaY8b     88P'    "8a  88P'    "8a  I8[    ""             #
+#             d8""""""""8b    88       d8  88       d8   `"Y8ba,              #
+#            d8'        `8b   88b,   ,a8"  88b,   ,a8"  aa    ]8I             #
+#           d8'          `8b  88`YbbdP"'   88`YbbdP"'   `"YbbdP"'             #
+#                             88           88                                 #
+#                             88           88                                 #
 #                                                                             #
 #=============================================================================#
 
@@ -216,10 +227,18 @@ TiddlyDesktop
 wget https://github.com/kermitt2/grobid/archive/0.5.3.zip
 
 
+#-----------------------------------------------------------------------------#
+#                                              dP                             #
+#                                              88                             #
+#                          .d8888b. 88d888b. d8888P                           #
+#                          88'  `88 88'  `88   88                             #
+#                          88.  .88 88.  .88   88                             #
+#                          `88888P8 88Y888P'   dP                             #
+#                                   88                                        #
+#                                   dP                                        #
+#-----------------------------------------------------------------------------#
 
-#-----------------------------------------------------------------------------#
-#                                apt packages                                 #
-#-----------------------------------------------------------------------------#
+
 
 # Apps
 # ====
@@ -236,7 +255,7 @@ sudo apt-fast install -y htop tree tlp unar unrar psensor aria2 poppler-utils wk
 
 # Media
 # =====
-sudo apt install -y exfat-utils flac lame x264 vlc mpv
+sudo apt install -y exfat-utils flac lame x264 vlc mpv inkscape
 
 # Fonts
 # =====
@@ -314,40 +333,6 @@ sudo dpkg -i bat_0.9.0_amd64.deb
 
 
 
-# Sublime themes
-#======================
-#  # Dark
-#  #--------
-#  ** piodine **
-#  ** oceanic next**
-#  easyballs
-#  gooey
-#  # Medium & desat
-#  #---------------
-#  mutedrainbow_sky
-#  late_night
-#  koralgreen
-#  nouba # plaintext
-#  # Light
-#  #--------
-#  Github-v2  ***
-#  snappy-light
-#  softly
-#  lazy
-#  spring
-
-# Sublime packages
-# ================
-# A File Icon
-# Colorsublime
-# Cython+
-# Material Theme
-# Package Control
-# PackageResourceViewer
-# RestructuredText Improved
-# SidebarEnhancements
-
-
 #=============================================================================#
 #                                                                             #
 #         88888888888                                                         #
@@ -376,19 +361,17 @@ sudo dpkg -i bat_0.9.0_amd64.deb
 
 
 
-
-
 #=============================================================================#
-#                            _                                                #
-#                           | |                                               #
-#                     _ __  | |__     ___   _ __   __   __                    #
-#                    | '__| | '_ \   / _ \ | '_ \  \ \ / /                    #
-#                    | |    | |_) | |  __/ | | | |  \ V /                     #
-#                    |_|    |_.__/   \___| |_| |_|   \_/                      #
+#                       ,,                                                    #
+#                      *MM                                                    #
+#                       MM                                                    #
+#             `7Mb,od8  MM,dMMb.   .gP"Ya  `7MMpMMMb.  `7M'   `MF'            #
+#               MM' "'  MM    `Mb ,M'   Yb   MM    MM    VA   ,V              #
+#               MM      MM     M8 8M""""""   MM    MM     VA ,V               #
+#               MM      MM.   ,M9 YM.    ,   MM    MM      VVV                #
+#             .JMML.    P^YbmdP'   `Mbmmd' .JMML  JMML.     W                 #
 #                                                                             #
 #=============================================================================#
-
-
 
 # INSTALLATION
 # ============
@@ -419,15 +402,16 @@ gem install bundler
 
 
 #=============================================================================#
-#                     _____    _____   ____   __          __                  #
-#                    / ____|  / ____| |  _ \  \ \        / /                  #
-#                   | (___   | |      | |_) |  \ \  /\  / /                   #
-#                    \___ \  | |      |  _ <    \ \/  \/ /                    #
-#                    ____) | | |____  | |_) |    \  /\  /                     #
-#                   |_____/   \_____| |____/      \/  \/                      #
+#                                  ,,                                         #
+#                                 *MM                                         #
+#                                  MM                                         #
+#               ,pP"Ybd   ,p6"bo   MM,dMMb.  `7M'    ,A    `MF'               #
+#               8I   `"  6M'  OO   MM    `Mb   VA   ,VAA   ,V                 #
+#               `YMMMa.  8M        MM     M8    VA ,V  VA ,V                  #
+#               L.   I8  YM.    ,  MM.   ,M9     VVV    VVV                   #
+#               M9mmmP'   YMbmd'   P^YbmdP'       W      W                    #
 #                                                                             #
 #=============================================================================#
-
 #-----------------------------------------------------------------------------#
 #                                   DOCKER                                    #
 #-----------------------------------------------------------------------------#
@@ -479,17 +463,20 @@ scbw.play --install  # This can take awhile, download n install
 #  (in headful mode, you must select the map, wait in lobby for bots to join, and start)
 scbw.play --bots "krasi0" "CherryPi" --show_all
 
-#=============================================================================#
-#                                                                             #
-#               ____   __          __             _____    _____              #
-#              |  _ \  \ \        / /     /\     |  __ \  |_   _|             #
-#              | |_) |  \ \  /\  / /     /  \    | |__) |   | |               #
-#              |  _ <    \ \/  \/ /     / /\ \   |  ___/    | |               #
-#              | |_) |    \  /\  /     / ____ \  | |       _| |_              #
-#              |____/      \/  \/     /_/    \_\ |_|      |_____|             #
-#                                                                             #
-#=============================================================================#
 
+#=============================================================================#
+#            ,,                                                ,,             #
+#           *MM                                                db             #
+#            MM                                                               #
+#            MM,dMMb.  `7M'    ,A    `MF' ,6"Yb.  `7MMpdMAo. `7MM             #
+#            MM    `Mb   VA   ,VAA   ,V  8)   MM    MM   `Wb   MM             #
+#            MM     M8    VA ,V  VA ,V    ,pm9MM    MM    M8   MM             #
+#            MM.   ,M9     VVV    VVV    8M   MM    MM   ,AP   MM             #
+#            P^YbmdP'       W      W     `Moo9^Yo.  MMbmmd'  .JMML.           #
+#                                                   MM                        #
+#                                                 .JMML.                      #
+#                                                                             #
+#=============================================================================#
 # Clone and make
 # ==============
 git clone https://github.com/openbw/openbw
@@ -511,13 +498,17 @@ sudo apt install libsdl2-dev
 # I remember this being a HUGE PITA before sourcing these files
 #  you probably have on ext hdd, CHECK
 
+
+
 #=============================================================================#
-#                           _____     ____     _____                          #
-#                          |  __ \   / __ \   / ____|                         #
-#                          | |__) | | |  | | | (___                           #
-#                          |  _  /  | |  | |  \___ \                          #
-#                          | | \ \  | |__| |  ____) |                         #
-#                          |_|  \_\  \____/  |_____/                          #
+#                                                                             #
+#                     `7MM"""Mq.    .g8""8q.    .M"""bgd                      #
+#                       MM   `MM. .dP'    `YM. ,MI    "Y                      #
+#                       MM   ,M9  dM'      `MM `MMb.                          #
+#                       MMmmdM9   MM        MM   `YMMNq.                      #
+#                       MM  YM.   MM.      ,MP .     `MM                      #
+#                       MM   `Mb. `Mb.    ,dP' Mb     dM                      #
+#                     .JMML. .JMM.  `"bmmd"'   P"Ybmmd"                       #
 #                                                                             #
 #=============================================================================#
 
@@ -547,6 +538,8 @@ sudo apt install python-rosinstall python-rosinstall-generator python-wstool bui
 #  \__, |  \__,_| /___|  \___| |_.__/   \___/
 #  |___/
 
+# ****NB**** Gazebo may already be installed if you do ros-full
+
 # Install and run
 # ---------------
 curl -sSL http://get.gazebosim.org | sh
@@ -554,26 +547,31 @@ gazebo
 
 
 
-#=========================================================#
-#    _____                 _                              #
-#   / ____|               | |                             #
-#  | (___    _   _   ___  | |_    ___   _ __ ___          #
-#   \___ \  | | | | / __| | __|  / _ \ | '_ ` _ \         #
-#   ____) | | |_| | \__ \ | |_  |  __/ | | | | | |        #
-#  |_____/   \__, | |___/  \__|  \___| |_| |_| |_|        #
-#             __/ |                                       #
-#            |___/                                        #
-#                                                         #
-#    _____          _     _     _                         #
-#   / ____|        | |   | |   (_)                        #
-#  | (___     ___  | |_  | |_   _   _ __     __ _   ___   #
-#   \___ \   / _ \ | __| | __| | | | '_ \   / _` | / __|  #
-#   ____) | |  __/ | |_  | |_  | | | | | | | (_| | \__ \  #
-#  |_____/   \___|  \__|  \__| |_| |_| |_|  \__, | |___/  #
-#                                            __/ |        #
-#                                           |___/         #
-#                                                         #
-# ========================================================#
+
+#=======================================================================================#
+#      ad88888ba                                                                        #
+#     d8"     "8b                            ,d                                         #
+#     Y8,                                    88                                         #
+#     `Y8aaaaa,    8b       d8  ,adPPYba,  MM88MMM   ,adPPYba,  88,dPYba,,adPYba,       #
+#       `"""""8b,  `8b     d8'  I8[    ""    88     a8P_____88  88P'   "88"    "8a      #
+#             `8b   `8b   d8'    `"Y8ba,     88     8PP"""""""  88      88      88      #
+#     Y8a     a8P    `8b,d8'    aa    ]8I    88,    "8b,   ,aa  88      88      88      #
+#      "Y88888P"       Y88'     `"YbbdP"'    "Y888   `"Ybbd8"'  88      88      88      #
+#                      d8'                                                              #
+#                     d8'                                                               #
+#                                                                                       #
+#   ad88888ba                                 88                                        #
+#  d8"     "8b                ,d       ,d     ""                                        #
+#  Y8,                        88       88                                               #
+#  `Y8aaaaa,     ,adPPYba,  MM88MMM  MM88MMM  88  8b,dPPYba,    ,adPPYb,d8  ,adPPYba,   #
+#    `"""""8b,  a8P_____88    88       88     88  88P'   `"8a  a8"    `Y88  I8[    ""   #
+#          `8b  8PP"""""""    88       88     88  88       88  8b       88   `"Y8ba,    #
+#  Y8a     a8P  "8b,   ,aa    88,      88,    88  88       88  "8a,   ,d88  aa    ]8I   #
+#   "Y88888P"    `"Ybbd8"'    "Y888    "Y888  88  88       88   `"YbbdP"Y8  `"YbbdP"'   #
+#                                                               aa,    ,88              #
+#                                                                "Y8bbdP"               #
+#                                                                                       #
+#=======================================================================================#
 
 # Fix slow-start debian bug
 # =========================
@@ -959,3 +957,104 @@ pip install --process-dependency-links --no-binary --upgrade git+https://github.
 "WikiMapper"
 "Wikipedia Reading Lists"
 "xBrowserSync"
+
+
+#-----------------------------#
+#                 _       _   #
+#   ___   _   _  | |__   | |  #
+#  / __| | | | | | '_ \  | |  #
+#  \__ \ | |_| | | |_) | | |  #
+#  |___/  \__,_| |_.__/  |_|  #
+#                             #
+#-----------------------------#
+
+# user settings
+# =============
+#{
+#    "always_show_minimap_viewport": true,
+#    "auto_find_in_selection": true,
+#    "bold_folder_labels": true,
+#    "caret_extra_width": 2,
+#    "caret_style": "smooth",
+#    "color_scheme": "Packages/Colorsublime - Themes/cache/Colorsublime-Themes-master/themes/Piodine.tmTheme",
+#    "detect_indentation": false,
+#    "draw_minimap_border": true,
+#    "ensure_newline_at_eof_on_save": true,
+#    "font_face": "Hack",
+#    "font_size": 12,
+#    "highlight_line": true,
+#    "hot_exit": false,
+#    "ignored_packages":
+#    [
+#        "RestructuredText",
+#        "Vintage"
+#    ],
+#    "index_files": false,
+#    "material_theme_accent_bright-teal": true,
+#    "material_theme_accent_scrollbars": true,
+#    "material_theme_accent_titlebar": true,
+#    "material_theme_bold_tab": true,
+#    "material_theme_bright_scrollbars": true,
+#    "material_theme_compact_panel": true,
+#    "material_theme_contrast_mode": true,
+#    "material_theme_panel_separator": true,
+#    "material_theme_small_statusbar": true,
+#    "material_theme_small_tab": true,
+#    "material_theme_tabs_autowidth": true,
+#    "material_theme_tabs_separator": true,
+#    "material_theme_titlebar": true,
+#    "preview_on_click": false,
+#    "rulers":
+#    [
+#        79
+#    ],
+#    "tab_size": 4,
+#    "theme": "Material-Theme.sublime-theme",
+#    "translate_tabs_to_spaces": true,
+#    "trim_trailing_white_space_on_save": true
+#}
+
+
+# Sublime themes
+#======================
+#  # Dark
+#  #--------
+#  ** piodine **
+#  oceanic next
+#  Bijan
+#  Foggy-Evening
+#  gooey
+#  Easyballs
+#  Material-Theme-Palenight
+
+#  # Medium & desat
+#  #---------------
+#  mutedrainbow_sky
+#  late_night
+#  koralgreen
+#  nouba # plaintext
+#  Atomic - Light(Soft)
+
+#  # Light
+#  #--------
+#  Github-v2  **
+#  Atomic - Light(Hard) ***
+#  ArtSchool **
+#  snappy-light *
+#  Celeste **
+#  Butterfly
+#  EditPlus
+#  softly
+#  lazy
+#  spring
+
+# Sublime packages
+# ================
+# A File Icon
+# Colorsublime
+# Cython+
+# Material Theme
+# Package Control
+# PackageResourceViewer
+# RestructuredText Improved
+# SidebarEnhancements
