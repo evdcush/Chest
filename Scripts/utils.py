@@ -26,12 +26,20 @@ def W_yml(fname, obj):
 ###  BASE LEVEL  ###
 HOME  = os.environ['HOME']
 
-#==== hidden
-LOCAL = f"{HOME}/.local"
+# Primary dests
+# =============
 DOTS  = f"{HOME}/.Dots"
 APPS  = f"{HOME}/.Apps"
 
-#==== home dirs
+
+# Local
+# =====
+BIN      = f"{HOME}/.local/bin"
+DESKTOPS = f"{HOME}/.local/share/applications"
+
+
+# Homedirs
+# ========
 CHEST = f"{HOME}/Chest"
 CLOUD = f"{HOME}/Cloud"
 MEDIA = f"{HOME}/Media"
@@ -39,31 +47,23 @@ PROJECTS  = f"{HOME}/Projects"
 DOCUMENTS = f"{HOME}/Documents"
 
 
-###  SUBDIRS  ###
-#==== .local
-BIN = f"{LOCAL}/bin"
-DESKTOPS = f"{LOCAL}/share/applications"
-
 #==== .apps
-ICONS = F"{APPS}/Icons"
+ICONS = f"{APPS}/Icons"
 NATIVEFIED = f"{APPS}/Nativefied"
 BINARIES   = f"{APPS}/Binaries"
-
 
 #==== CLOUD
 READMES = f"{CLOUD}/READMEs"
 RESOURCES_CLOUD = f"{CLOUD}/Resources"
-DOCUMENTS_CLOUD = f"{CLOUD}/Documents"
-
+DOCUMENTS_CLOUD = f"{CLOUD}/Reading"
 
 #==== chest
 DOTS_CHEST = f"{CHEST}/Dots"
 RESOURCES_CHEST = f"{CHEST}/Resources"
 
-
 #==== Projects
 HOARD = f"{PROJECTS}/Hoard/Archive"
-PAPER = f"{PROJECTS}/PaperNotes/Literature"
+PAPER = f"{PROJECTS}/DocHub/Literature"
 PREP  = f"{PROJECTS}/Prep"
 
 
@@ -77,9 +77,9 @@ PREP  = f"{PROJECTS}/Prep"
 #=============================================================================#
 
 #==== resources
-GH_HOARD  = R_yml(f"{RESOURCES_N}/inbox_hoard.yml")
-HOARD_ARC = R_yml(f"{RESOURCES_N}/archive_hoard.yml")
-PUBLIC_TOKENS = R_yml(f"{RESOURCES_N}/gh_tokens.yml")['public']
+GH_HOARD  = R_yml(f"{RESOURCES_CLOUD}/inbox_hoard.yml")
+HOARD_ARC = R_yml(f"{RESOURCES_CLOUD}/archive_hoard.yml")
+PUBLIC_TOKENS = R_yml(f"{RESOURCES_CLOUD}/gh_tokens.yml")['public']
 
 #==== projects
-BIB = f"{DOCUMENTS_N}/library.bib"
+READ_INBOX = f"{CLOUD}/Reading/inbox.txt"

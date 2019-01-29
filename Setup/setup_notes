@@ -859,23 +859,32 @@ startup --output_user_root=/tmp/bazel
 # NATIVEFIER
 # ==========
 #===== Google
-nativefier "https://mail.google.com" -n gmail -a x64 -p linux --honest -m --single-instance --tray --counter
-nativefier "https://drive.google.com" -n google-drive -a x64 -p linux --honest -m --single-instance --internal-url 3 -i /home/evan/Chest/Resources/Icons/google-drive.png
-nativefier "https://keep.google.com" -n google-keep -a x64 -p linux --honest -m --single-instance --tray -i /home/evan/Chest/Resources/Icons/google_keep_icon.png
-nativefier "https://calendar.google.com" -n google-calendar -a x64 -p linux --honest -m --single-instance --tray -i /home/evan/Chest/Resources/Icons/google-calendar.png
+nativefy "https://mail.google.com" -n gmail -t -c
+nativefy "https://drive.google.com" -n google-drive
+nativefy "https://keep.google.com" -n google-keep -u 3
+nativefy "https://www.simplyhired.com/" -n simply-hired
+nativefy "https://calendar.google.com" -n google-calendar
+nativefy "https://airtable.com/" -n airtable
+nativefy "https://www.hackerrank.com/dashboard" -n hacker-rank
+nativefy "https://www.semanticscholar.org/" -n semantic-scholar
+#nativefier "https://mail.google.com" -n gmail -a x64 -p linux --honest -m --single-instance --tray --counter
+#nativefier "https://drive.google.com" -n google-drive -a x64 -p linux --honest -m --single-instance --internal-url 3 -i /home/evan/Chest/Resources/Icons/google-drive.png
+#nativefier "https://keep.google.com" -n google-keep -a x64 -p linux --honest -m --single-instance --tray -i /home/evan/Chest/Resources/Icons/google_keep_icon.png
+#nativefier "https://calendar.google.com" -n google-calendar -a x64 -p linux --honest -m --single-instance --tray -i /home/evan/Chest/Resources/Icons/google-calendar.png
 
 #====== Blog/read
-nativefier "https://deepmind.com/blog/" -n deepmind-blog -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/deepmind_logo_swirl_blue.png
-nativefier "https://blog.openai.com/" -n openai-blog -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/openai.png
-nativefier "https://ai.google/research/pubs/" -n google-ai -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/googleAi-icon
+# ...just use a damn rss reader
+# nativefier "https://deepmind.com/blog/" -n deepmind-blog -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/deepmind_logo_swirl_blue.png
+# nativefier "https://blog.openai.com/" -n openai-blog -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/openai.png
+# nativefier "https://ai.google/research/pubs/" -n google-ai -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/googleAi-icon
 
 #====== Job stuff
-nativefier "https://www.simplyhired.com/" -n simply-hired -a x64 -p linux --honest -m -i /home/evan/Chest/Resources/Icons/SimplyHired-icon.png
-nativefier "https://www.linkedin.com/uas/login" -p linux -a x64 -n linkedin --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/linkedin.png
-nativefier "https://airtable.com/" -n airtable -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/airtable.png
-
-#====== Other
-nativefier "https://www.hackerrank.com/dashboard" -n hacker-rank -a x64 -p linux --honest -m -i /home/evan/Chest/Resources/Icons/HackerRank_logo.png
+#nativefier "https://www.simplyhired.com/" -n simply-hired -a x64 -p linux --honest -m -i /home/evan/Chest/Resources/Icons/SimplyHired-icon.png
+#nativefier "https://www.linkedin.com/uas/login" -p linux -a x64 -n linkedin --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/linkedin.png
+#nativefier "https://airtable.com/" -n airtable -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/airtable.png
+#
+##====== Other
+#nativefier "https://www.hackerrank.com/dashboard" -n hacker-rank -a x64 -p linux --honest -m -i /home/evan/Chest/Resources/Icons/HackerRank_logo.png
 
 # Openssh (local) server
 #=======================
@@ -1017,36 +1026,32 @@ pip install --process-dependency-links --no-binary --upgrade git+https://github.
 
 # Sublime themes
 #======================
-#  # Dark
-#  #--------
-#  ** piodine **
-#  oceanic next
-#  Bijan
-#  Foggy-Evening
-#  gooey
-#  Easyballs
-#  Material-Theme-Palenight
+# Almost all themes come from the ColorSublime package
+#  (which, in turn, sources from textmate themes I believe)
 
-#  # Medium & desat
-#  #---------------
-#  mutedrainbow_sky
-#  late_night
-#  koralgreen
-#  nouba # plaintext
-#  Atomic - Light(Soft)
+#==== Dark
+#  ** piodine **          # The one, the only. Awesome, clear, colors. everything looks good!
+#  oceanic-reef/next *    # reef better, but comments nearly unreadable; next is a litte too desat
+#  Bijan **               # clean, readable, softish colors, slate background
+#  Foggy-Evening *        # vibrant colors, really pops, not great syntax for py
+#  gooey **               # very clear, nice colors (bit boring), nice slate dark
+#  Easyballs *            # simple, clean, readable
+#  Wildlife-Night */*     # (RST) very clear, comment highlighting
 
-#  # Light
-#  #--------
-#  Github-v2  **
-#  Atomic - Light(Hard) ***
-#  ArtSchool **
-#  snappy-light *
-#  Celeste **
-#  Butterfly
-#  EditPlus
-#  softly
-#  lazy
-#  spring
+#==== Medium & desat (or weird)
+#  mutedrainbow_sky **    # nice "adventure-time"-esque scheme, syntax supp could be better
+#  nouba *                # (PLAINTEXT) HEAVY contrast, very strong highlight
+#  Atomic - Light(Soft) * # similar to github-v2
+#  wild-cherry *          # good contrast, colors are a bit soft, purple-base, very strong highlight
+
+#==== Light
+#  Github-v2  ***         # Favorite light; syntax supp could be better, but love the yellowish/offwhite scheme
+#  ArtSchool *            # Almost too bright; very clear easy to read, white bkgrd, bright colors
+#  Celeste *              # very bright, light colors, clear, white
+#  Butterfly **           # like a better celeste, clearer, more sat colors
+#  softly **              # nice off-white, good highlight, overall clear
+#  spring ***             # uses bold!, off-white, good color, highlighting, very nice
+#  eiffel **              # off-white, great contrast, could have better syn supp
 
 # Sublime packages
 # ================

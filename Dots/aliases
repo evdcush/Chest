@@ -134,7 +134,7 @@ ipython jupyter notebook cloudpickle restview gitup jrnl;"
 alias pipistd="$pipibare; \
 pip install -U sympy numba pandas chainerrl gym jax jaxlib pydataset keras \
 docutils sphinx sphinx-rtd-theme sphinxcontrib-websupport numpydoc pypandoc \
-pyyaml bibtexparser arxiv2bib tinydb pyperclip pdfplumber \
+pyyaml bibtexparser arxiv2bib tinydb pyperclip pdfplumber python-slugify \
 nltk gensim spacy snowballstemmer scattertext fuzzywuzzy surprise summa \
 glances apt-select thefuck cheat s-tui pyinstaller termdown speedtest-cli \
 fire pypi-cli cookiecutter faker johnnydep black \

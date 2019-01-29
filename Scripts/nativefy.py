@@ -9,6 +9,7 @@ import subprocess
 #   it would be far simpler if you could scrape the favicon, svg --> png it, and use that
 
 from argparse import ArgumentParser
+from slugify import slugify
 
 
 #==============================================================================
@@ -77,24 +78,6 @@ adg('-s', '--single-instance', action='store_false',
 adg('-c', '--counter', action='store_true',
     help='X number attached to window label for apps that support count, such as gmail')
 
-
-def nativefier_slug_workaround(name):
-    """ nativefier splits camelCased names with a dash '-'
-    which is unfortunate for camelCased services
-    """
-    if name.istitle() or name.islower() or name.isupper() or '-' in name:
-        return name.lower()
-    else:
-        upper_range = range(ord('A'), ord('Z') + 1)
-        lower_range = range(ord('a'), ord('z') + 1)
-        slug = ''
-        for i, c in enumerate(name[:-1]):
-            if ord(c) in lower_range and ord(name[i+1]) in upper_range:
-                slug += c + '-'
-                continue
-            slug += c
-        slug += name[-1]
-        return slug.lower()
 
 # Parse user args
 #----------------
@@ -204,7 +187,7 @@ def nativefy():
 
     # Link binaries
     # -------------
-    slug_name = get_dir_name_from_nativefiers_weird_ass_slug_logic(name)
+    slug_name = slugify(name)
     app_file_path = f'{dest}/{slug_name}-linux-x64'
     bin_file_path = f'{app_file_path}/{slug_name}'
     make_binary_exec(bin_file_path)
