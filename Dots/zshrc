@@ -68,8 +68,10 @@ export PATH="${PATH:+${PATH}:}$PATH_USER_BIN"
 # MISC CONF
 # =========
 
-# hist ignore
+# hist
 HISTORY_IGNORE="(ls|cd|pwd|exit|cd ..|..|...|l|lk)"
+export HISTSIZE=-1
+export HISTFILESIZE=-1
 
 # Preferred editor
 # ---------------

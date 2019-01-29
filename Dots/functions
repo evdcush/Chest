@@ -272,6 +272,17 @@ function f(){
     fi
 }
 
+# Timezone diff
+# =============
+function jst2pst(){
+    # *** ASSUMES SYSTEM tz IS PST ***
+    _TIME="$1"
+    _DATE="$2"
+    JST='TZ="Asia/Tokyo"'
+    # Sample call:
+    # date --date='TZ="Asia/Tokyo" 09:00 2/1'
+    date --date="$JST $_TIME $_DATE"
+}
 
 #=============================================================================#
 #                                                                             #
