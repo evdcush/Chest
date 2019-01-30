@@ -280,6 +280,11 @@ sudo apt install -y dict dictd dict-gcide dict-wn dict-moby-thesaurus
 addrep wereturtle/ppa
 ghostwriter
 
+# yq
+# ==
+sudo add-apt-repository ppa:rmescandon/yq
+sudo apt update
+sudo apt install yq -y
 
 #-----------------------------------------------------------------------------#
 #                           Independent Installers                            #
