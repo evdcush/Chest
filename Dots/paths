@@ -8,7 +8,7 @@ PATH_USER_BIN="$HOME/.local/bin"
 # env/library Paths
 # =================
 PATH_PYENV="$HOME/.pyenv/bin"
-PATH_RBENV="$HOME/.rbenv/bin" # unused!
+#PATH_RBENV="$HOME/.rbenv/bin" # unused!
 PATH_CUDA="/usr/local/cuda-10.0"
 
 # Directories
@@ -28,12 +28,13 @@ DIR_CHEST="$HOME/Chest"
 DIR_CHEST_DOTS="$DIR_CHEST/Dots"
 DIR_CHEST_RESOURCES="$DIR_CHEST/Resources"
 DIR_CHEST_TEMPLATES="$DIR_CHEST_RESOURCES/Templates"
+#CHEAT_PATH="$DIR_CHEST/Cheat"
 
 # File paths
 # ==========
 #---- Inbox files
 PATH_INBOX_READ="$CLOUD_RESOURCES/inbox_read.yml"
-PATH_INBOX_HOARD="$CLOUD_RESOURCES/hoard_inbox.yml"
+PATH_INBOX_HOARD="$CLOUD_RESOURCES/inbox_hoard.yml"
 #---- Crypt keys
 GCKEY_CHEST="$DIR_DOTS/Keys/chest_key"
 

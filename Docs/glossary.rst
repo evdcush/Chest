@@ -1,5 +1,5 @@
 Glossary
-========
+********
 
 .. Admonition:: Todos
 
@@ -71,7 +71,7 @@ DBNs are a type of probabilistic graphical model that learn a hierarchical repre
 
 differential evolution (DE)
 ===========================
-**EXPAND**. A vector-based evolutionary algorithm published in 1996. 
+**EXPAND**. A vector-based evolutionary algorithm published in 1996.
 
 ------
 

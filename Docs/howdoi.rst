@@ -85,17 +85,6 @@ extract a range of pages
     # eg:
     pdfjam original.pdf 3-8 -o out.pdf
 
-31-41 67-68
-79-86 GA
-90-97 diff evo
-99-109 PSO
-111-124 FA
-128-137 CS
-139-150 BA
-153-170 flower
-209-224 others
-70-77 SA
-
 
 ----
 

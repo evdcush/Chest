@@ -248,6 +248,7 @@ sudo apt install -y deluge nomacs font-manager redshift
 
 # Utils
 # =====
+# poppler-utils installs pdftoppm, and several other pdf ops
 sudo apt-fast install -y htop tree tlp unar unrar psensor aria2 poppler-utils wkhtmltopdf img2pdf deborphan xclip copyq pandoc
 #sudo apt install -y htop tree tlp unar unrar psensor aria2 poppler-utils
 #sudo apt install -y wkhtmltopdf img2pdf deborphan

@@ -131,15 +131,14 @@ ipython jupyter notebook cloudpickle restview gitup jrnl;"
 
 # Standard-use packages
 # =====================  # (Packages often used)
-alias pipistd="$pipibare; \
-pip install -U sympy numba pandas chainerrl gym jax jaxlib pydataset keras \
+alias pipistd="pip install -U sympy numba pandas chainerrl gym jax jaxlib pydataset keras \
 docutils sphinx sphinx-rtd-theme sphinxcontrib-websupport numpydoc pypandoc \
 pyyaml bibtexparser arxiv2bib tinydb pyperclip pdfplumber python-slugify \
 nltk gensim spacy snowballstemmer scattertext fuzzywuzzy surprise summa \
-glances apt-select thefuck cheat s-tui pyinstaller termdown speedtest-cli \
+glances apt-select thefuck cheat s-tui termdown speedtest-cli \
 fire pypi-cli cookiecutter faker johnnydep black \
-feedparser requests urllib3 bs4 gitsuggest github3.py grip;\
-$_inst_nb_pdf"
+feedparser requests urllib3 bs4 gitsuggest github3.py grip;"
+
 
 # Spec-use pkgs
 # =============

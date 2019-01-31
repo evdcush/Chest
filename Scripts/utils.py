@@ -76,10 +76,15 @@ PREP  = f"{PROJECTS}/Prep"
 #                                                                             #
 #=============================================================================#
 
+# fpaths
+inbox_hoard_path   = f"{RESOURCES_CLOUD}/inbox_hoard.yml"
+archive_hoard_path = f"{RESOURCES_CLOUD}/archive_hoard.yml"
+inbox_read_path    = f"{CLOUD}/Reading/inbox.txt"
+
 #==== resources
 GH_HOARD  = R_yml(f"{RESOURCES_CLOUD}/inbox_hoard.yml")
 HOARD_ARC = R_yml(f"{RESOURCES_CLOUD}/archive_hoard.yml")
 PUBLIC_TOKENS = R_yml(f"{RESOURCES_CLOUD}/gh_tokens.yml")['public']
 
 #==== projects
-READ_INBOX = f"{CLOUD}/Reading/inbox.txt"
+READ_INBOX = open(inbox_read_path, 'a')

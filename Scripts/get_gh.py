@@ -3,7 +3,8 @@
 import os
 import sys
 import subprocess
-from utils import READMES, PROJECTS
+import utils
+from utils import READMES, PROJECTS, HOARD_ARC
 
 # dest dirs
 readme_dest = READMES
@@ -16,14 +17,20 @@ def wget_raw(url, fname, dest=file_dest):
     fpath = f'{dest}/{fname}'
 
     # wget and symlink
-    sbp.run(f'wget {u} -O {fpath}', shell=True)
+    subprocess.run(f'wget {u} -O {fpath}', shell=True)
 
 # Potential readme file names:
 rdme = ['README.md', 'README', 'README.rst', 'README.txt',
         'readme.md', 'readme', 'readme.txt']
 
+def add_list_to_archive(fname, url):
+    entry = dict(fname=fname, url=url)
+    HOARD_ARC['awesome_lists'].append(entry)
+    utils.W_yml(utils.archive_hoard_path, HOARD_ARC)
+
+
 def wget_readme(url, dest=readme_dest):
-    chk_exist = lambda u: sbp.run(f'wget --spider {u}', shell=True)
+    chk_exist = lambda u: subprocess.run(f'wget --spider {u}', shell=True)
 
     # URL formatting
     u = url.replace('github', 'raw.githubusercontent', 1) + '/master/'
@@ -42,14 +49,18 @@ def wget_readme(url, dest=readme_dest):
         ext = correct_rdme_name.split('.')[-1]
         if ext != correct_rdme_name:
             fname += '.' + ext
-        #=== append true readme name to url
 
+        # append true readme name to url
         u = u + correct_rdme_name
+
+        # add url to archive, so readme can be upated
+        add_list_to_archive(fname, u)
+
         #=== append file write name to dest
         dest = f'{dest}/{fname}'
 
         #=== Get readme
-        sbp.run(f'wget {u} -O {dest}', shell=True)
+        subprocess.run(f'wget {u} -O {dest}', shell=True)
 
 
 if __name__ == '__main__':
