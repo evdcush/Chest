@@ -211,8 +211,7 @@ draw.io.AppImage
 
 ####### LOOK INTO & EXTRA #######
 koreader.AppImage         # kobo software
-p3x-onenote-2019.AppImage # onenote clone
-polar-bookshelf.AppImage  # ebook progress library manager thign
+polar-bookshelf.AppImage  # ebook progress library manager thign, meh
 raven-reader.AppImage     # clean feed reader
 stencila-desktop.AppImage # scholarly all-in-one office thing, has potential
 themer-gui.AppImage       # select a colorset, and it generates CSS for everything
@@ -260,6 +259,9 @@ sudo apt install -y exfat-utils flac lame x264 vlc mpv inkscape
 
 # Fonts
 # =====
+# CAREFUL WITH THE APT-SOURCED FONTS, you already have most of the latest
+# open-source fonts downloaded from goog fonts or other, and it probably better
+# to use those over apt fonts (definitely mplus at any rate)
 sudo apt install -y fonts-hack fonts-oxygen fonts-noto-cjk-extra "fonts-sawarabi*" \
 fonts-mplus fonts-mononoki "fonts-moe*" fonts-umeplus \
 fonts-woowa-hanna "fonts-wqy*" fonts-ebgaramond-extra fonts-cantarell \

@@ -88,3 +88,5 @@ PUBLIC_TOKENS = R_yml(f"{RESOURCES_CLOUD}/gh_tokens.yml")['public']
 
 #==== projects
 READ_INBOX = open(inbox_read_path, 'a')
++        txt_len = len(rtxt) + 4
++        W = W if W > txt_len else txt_len

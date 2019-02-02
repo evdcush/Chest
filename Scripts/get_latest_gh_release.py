@@ -1,34 +1,22 @@
 #!/usr/bin/env python
-import sys, argparse
+"""Downloads latest release from a project on github
+Script is bespoke; not for general purpose/robustness
+"""
+import os
+import sys
+import argparse
 from json import loads
 from urllib.request import urlopen, urlretrieve, Request
 
-###############################################################################
-#                                                                             #
-#  888888888888        ,ad8888ba,        88888888ba,          ,ad8888ba,      #
-#       88            d8"'    `"8b       88      `"8b        d8"'    `"8b     #
-#       88           d8'        `8b      88        `8b      d8'        `8b    #
-#       88           88          88      88         88      88          88    #
-#       88           88          88      88         88      88          88    #
-#       88           Y8,        ,8P      88         8P      Y8,        ,8P    #
-#       88            Y8a.    .a8P       88      .a8P        Y8a.    .a8P     #
-#       88             `"Y8888Y"'        88888888Y"'          `"Y8888Y"'      #
-#                                                                             #
-"""############################################################################
 
-Features:
----------
-? specify download destination
-X what file within assets?
-- whether to unpack/unzip etc
-
-
-
-"""############################################################################
 # URL
 #-----------------------
 # user/repo-name/releases[/latest]
 URL_BASE = 'https://api.github.com/repos/{}/{}/releases{}'
+#https://github.com/mrgodhani/raven-reader/releases
+#
+#repos = dict(raven_reader=)
+
 
 # parser for user/repo
 #-----------------------
