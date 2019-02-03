@@ -716,3 +716,10 @@ class BunchInception: # assumes no dicts are elements of list
             else:
                 self.__dict__[k] = BunchInception(v)
 
+class AttrDict(dict):
+    """ simply a dict accessed/mutated by attribute instead of index
+    WARNING: cannot be pickled like normal dict/object
+    """
+    __getattr__ = dict.__getitem__
+    __setattr__ = dict.__setitem__
+    __delattr__ = dict.__delitem__

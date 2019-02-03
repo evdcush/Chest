@@ -6,16 +6,24 @@ import os
 import sys
 import argparse
 from json import loads
+from collections import namedtuple
 from urllib.request import urlopen, urlretrieve, Request
-
 
 # URL
 #-----------------------
 # user/repo-name/releases[/latest]
 URL_BASE = 'https://api.github.com/repos/{}/{}/releases{}'
-#https://github.com/mrgodhani/raven-reader/releases
-#
-#repos = dict(raven_reader=)
+
+# Repos
+# =====
+Repo = namedtuple('Repo', 'user repo ext')
+
+repos = [Repo('mrgodhani', 'raven-reader', 'AppImage'),
+         Repo('johannesjo', 'super-productivity', 'deb'),
+         Repo('rsms', 'inter', 'zip'),
+         Repo('kermitt2', 'grobid', 'zip'), # SOURCE CODE, NOT TYPICAL RELEASE
+         Repo('sharkdp', 'bat', 'deb'),
+]
 
 
 # parser for user/repo
