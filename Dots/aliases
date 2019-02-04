@@ -118,8 +118,8 @@ jupyter nbextensions_configurator enable --user;"
 
 # Misc extra setup
 # ================
-_inst_myougiden="pip install -U myougiden; updatedb-myougiden -f"
-_inst_nb_pdf="pip install -U ipython jupyter notebook nb_pdf_template; \
+alias inst_myougiden="pip install -U myougiden; updatedb-myougiden -f"
+alias inst_nb_pdf="pip install -U ipython jupyter notebook nb_pdf_template; \
 python -m nb_pdf_template.install;"
 
 # Bare minimum packages
