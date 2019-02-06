@@ -84,6 +84,7 @@ extract a range of pages
     pdfjam <input file> <page ranges> -o <output file>
     # eg:
     pdfjam original.pdf 3-8 -o out.pdf
+    pdfjam original.pdf 3-8,15-29,63-69 -o out.pdf
 
 
 ----

@@ -870,11 +870,9 @@ startup --output_user_root=/tmp/bazel
 nativefy "https://mail.google.com" -n gmail -t -c
 nativefy "https://drive.google.com" -n google-drive
 nativefy "https://keep.google.com" -n google-keep -u 3
-nativefy "https://www.simplyhired.com/" -n simply-hired
 nativefy "https://calendar.google.com" -n google-calendar
 nativefy "https://airtable.com/" -n airtable
 nativefy "https://www.hackerrank.com/dashboard" -n hacker-rank
-nativefy "https://www.semanticscholar.org/" -n semantic-scholar
 #nativefier "https://mail.google.com" -n gmail -a x64 -p linux --honest -m --single-instance --tray --counter
 #nativefier "https://drive.google.com" -n google-drive -a x64 -p linux --honest -m --single-instance --internal-url 3 -i /home/evan/Chest/Resources/Icons/google-drive.png
 #nativefier "https://keep.google.com" -n google-keep -a x64 -p linux --honest -m --single-instance --tray -i /home/evan/Chest/Resources/Icons/google_keep_icon.png
@@ -947,8 +945,6 @@ pip install --process-dependency-links --no-binary --upgrade git+https://github.
 "Close Tabs to the Left"
 "Copy All Urls"
 "Dark Reader"
-"Gibbon Tabs"
-"GitHub Downloader"
 "Github Original Streak"
 "HTTPS Everywhere"
 "Joplin Web Clipper"
@@ -962,10 +958,7 @@ pip install --process-dependency-links --no-binary --upgrade git+https://github.
 "Redirectify"
 "Refined GitHub"
 "rikaikun"
-"Save to Polar"
 "Sight"
-"Tab Ahead"
-"Tab Save"
 "uBlock Origin Extra"
 "uBlock Origin"
 "View Image"
@@ -1007,35 +1000,32 @@ pip install --process-dependency-links --no-binary --upgrade git+https://github.
 #        "Vintage"
 #    ],
 #    "index_files": false,
-#    "material_theme_accent_bright-teal": true,
-#    "material_theme_accent_scrollbars": true,
-#    "material_theme_accent_titlebar": true,
-#    "material_theme_bold_tab": true,
-#    "material_theme_bright_scrollbars": true,
-#    "material_theme_compact_panel": true,
-#    "material_theme_contrast_mode": true,
-#    "material_theme_panel_separator": true,
-#    "material_theme_small_statusbar": true,
-#    "material_theme_small_tab": true,
-#    "material_theme_tabs_autowidth": true,
-#    "material_theme_tabs_separator": true,
-#    "material_theme_titlebar": true,
 #    "preview_on_click": false,
 #    "rulers":
 #    [
 #        79
 #    ],
 #    "tab_size": 4,
-#    "theme": "Material-Theme.sublime-theme",
+#    "theme": "Default.sublime-theme",
 #    "translate_tabs_to_spaces": true,
 #    "trim_trailing_white_space_on_save": true
 #}
+
+# NOTE: "Default.sublime-theme" HAS BEEN MODIFIED
+#  via PackageResourceViewer:
+#  - font sizing for all labels has been increased
+#  - fg made white, and tints generally weakened
 
 
 # Sublime themes
 #======================
 # Almost all themes come from the ColorSublime package
 #  (which, in turn, sources from textmate themes I believe)
+
+# TOP CHOICES
+# dark  ---> piodine
+# light ---> spring, github_v2
+
 
 #==== Dark
 #  ** piodine **          # The one, the only. Awesome, clear, colors. everything looks good!
@@ -1066,8 +1056,11 @@ pip install --process-dependency-links --no-binary --upgrade git+https://github.
 # A File Icon
 # Colorsublime
 # Cython+
+# ExportHtml
+# Licence Snippets
 # Material Theme
 # Package Control
 # PackageResourceViewer
 # RestructuredText Improved
+# Restructured Text (RST) Snippets
 # SidebarEnhancements
