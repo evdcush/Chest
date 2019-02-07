@@ -28,8 +28,9 @@ LOCAL_BIN  = f'{LOCAL}/bin'                 # for symlinked binary
 LOCAL_APPS = f'{LOCAL}/share/applications'  # for `<app>.desktop` file
 DEFAULT_ARGS = '--file-download-options \'{"saveAs": true}\' -m'
 #==== User-specific paths
-APP_PATH  = f'{HOME}/.Apps/nativefied'        # app source dir
-ICON_DIR  = f'{HOME}/.Apps/Icons' # personally sourced icon assets
+APP_PATH     = f'{HOME}/.Apps/nativefied'    # app source dir
+DESKTOP_PATH = APP_PATH + '/desktop_entries' # desktop files to symlink
+ICON_DIR  = f'{HOME}/.Apps/Icons'       # personally sourced icon assets
 ICON_PATH = f'{ICON_DIR}/{{name}}.png'
 
 # Desktop entry format
@@ -120,17 +121,43 @@ def parse_args():
         args['internal_urls'] = f'--internal_urls {internal_urls}'
     #==== name
     args['name'] = f'-n {name}'
-
     return args
 
-#==============================================================================
-# Nativefy :
-#   1. build nativefied app
-#   2. make app desktop entry
-#      a. mv .desktop to .local/share/applications
-#   3. symlink binary to local bin
-#==============================================================================
+#=============================================================================#
+# Nativefy :                                                                  #
+#   1. build nativefied app                                                   #
+#   2. make app desktop entry                                                 #
+#   3. symlink files:                                                         #
+#       ln -sf <app_binary>  <local bin>                                      #
+#       ln -sf <app_desktop> <local applications>                             #
+#=============================================================================#
 
+# File and pathing utils
+# ======================
+def mkdirs(p):
+    if not os.path.exists(p):
+        os.makedirs(p)
+
+def symlink(from_path, to_path=LOCAL_BIN):
+    subprocess.run(f'ln -sf {from_path} {to_path}', shell=True)
+    print(f'\nsymlinked -\nFROM: {from_path}\n  TO: {to_path}')
+
+def make_binary_exec(bin_file_path):
+    subprocess.run(f'chmod +x {bin_file_path}', shell=True)
+    print('\nMade binary executable')
+
+def make_desktop_entry(name, slug_name, app_path):
+    app_title = name if name[0].isupper() else name.title()
+    file_name = f'{name}.desktop'
+    de = DESKTOP_ENTRY.format(title=app_title, name=slug_name, path=app_path)
+    mkdirs(DESKTOP_PATH)
+    de_path = f"{DESKTOP_PATH}/{file_name}"
+    with open(de_path, 'w') as entry:
+        entry.write(de)
+        symlink(de_path, LOCAL_APPS)
+
+# Main interface
+# ==============
 def nativefy():
     """ Make desktop app using nativefier
 
@@ -191,28 +218,11 @@ def nativefy():
     app_file_path = f'{dest}/{slug_name}-linux-x64'
     bin_file_path = f'{app_file_path}/{slug_name}'
     make_binary_exec(bin_file_path)
-    symlink_binary(bin_file_path)
+    symlink(bin_file_path)
 
     # Make desktop entry
     make_desktop_entry(name, slug_name, app_file_path)
     print('Finished nativefication process!')
-
-
-def make_desktop_entry(name, slug_name, app_path):
-    app_title = name if name[0].isupper() else name.title()
-    file_name = f'{name}.desktop'
-    de = DESKTOP_ENTRY.format(title=app_title, name=slug_name, path=app_path)
-    with open(f'{LOCAL_APPS}/{file_name}', 'w') as entry:
-        entry.write(de)
-        print(f'\n{file_name} written to {LOCAL_APPS}')
-
-def symlink_binary(from_path, to_path=LOCAL_BIN):
-    subprocess.run(f'ln -sf {from_path} {to_path}', shell=True)
-    print(f'\nsymlinked binary -\nFROM: {from_path}\n  TO: {to_path}')
-
-def make_binary_exec(bin_file_path):
-    subprocess.run(f'chmod +x {bin_file_path}', shell=True)
-    print('\nMade binary executable')
 
 
 # Nativefy a web app
