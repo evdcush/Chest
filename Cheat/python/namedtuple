@@ -1,0 +1,14 @@
+```python
+from collections import namedtuple
+
+# SIGNATURE: namedtuple(typename, field_names, *, rename=False, defaults=None)
+
+>>> Point = namedtuple('Point', ['x', 'y'])
+>>> # or namedtuple('Point', 'x, y'), or namedtuple('Point', 'x y')
+>>> p = Point(1, 7)
+>>> p
+Point(x=1, y=7)
+>>> a, b = p
+>>> p[0] + p[1] == p.x + p.y == a + b == 8
+True
+```

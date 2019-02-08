@@ -1,0 +1,97 @@
+```python
+import os, sys
+import glob
+
+# Finding files
+files_in_dir = os.listdir()        # everything in that dir (default='.')
+rst_files    = glob.glob("*.rst")  # glob files matching given pattern
+
+# R/W files using open
+# ====================
+"""
+Flags:
+'r' : open for reading (default)
+'w' : open for writing, truncating the file first
+'x' : create a new file and open it for writing
+'a' : open for writing, appending to the end of the file if it exists
+'b' : binary mode (eg, 'rb', 'wb')
+'t' : text mode (default)
+'+' : open a disk file for updating (reading and writing)
+"""
+
+# Read file, line-by-line
+# -----------------------
+lines = open('file.txt').read().split('\n')
+
+with open('file.txt') as myfile:
+    lines = myfile.read().split("\n") # strips '\n'
+    # OR
+    lines = myfile.readlines()  # will include '\n'
+
+myfile = open('file.txt') # Open file on read mode
+lines = myfile.read().split("\n") # Create a list containing all lines
+myfile.close() # Close file
+
+
+# Write to file
+# -------------
+myfile = open('file_to_write', 'x')
+for line in lines:
+    myfile.write(line + '\n')
+myfile.close()
+
+with open('file_to_write', 'w') as myfile:
+    myfile.write('file contents')
+
+# To append:
+with open('file_to_write', 'a') as myfile:
+    myfile.write("appended text")
+
+
+# Clear a file
+# ------------
+# exploiting close()
+open('file_to_clear.txt', 'w').close()
+
+# If file already opened, eg with 'r+'
+myfile = open('file.txt', 'r+')
+myfile.truncate(0) # need '0' when using r+
+
+
+# std in, out
+# ===========
+# input() only takes in the very first line
+
+# Some samples from ACM-style input
+n = int(input())
+a = list()
+c = list()
+for i in range(n):
+    c.append(list(map(int, input().split())))
+
+a, b = map(int, input().split())
+n, a, b = map(int, raw_input().split())
+
+
+''' # sample input
+4 9
+PP.-PPPS-S.S
+PSP-PPSP-.S.
+.S.-S..P-SS.
+P.S-P.PP-PSP
+'''
+n, k = map(int, input().split())
+plain = list()
+for i in range(n):
+    plain.append(list(input()))
+
+''' # sample input
+3 18
+4 4 4 2 2 2
+'''
+n, w = map(int, input().split())
+a = list(map(int, input().split()))
+
+line = sys.stdin.readline()
+lines = sys.stdin.readlines()# ['1\n', '2\n', ...]
+```

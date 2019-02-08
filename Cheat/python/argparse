@@ -1,0 +1,31 @@
+```python
+# At a glance
+# ===========
+parser = argparse.ArgumentParser(description='Processing integers.') # description of program
+parser.add_argument('integers',  # arg name; if prefixed '-', becomes optional
+                    metavar='N', # how the arg is referred in help msg
+                    type=int,    # type conversion
+                    nargs='+',   # indicates 1 or more vals to be passed to arg
+                    help='integer args') # help msg
+
+# parser
+# ======
+parser = argparse.ArgumentParser(description=__doc__) # uses file __doc__
+
+# arguments
+# =========
+# an action-like option with a default
+add_args('-b', '--baz', nargs='?', default=None, const='x', type=str)
+
+#    Nothing                 Default                        Option
+parser.parse_args();  parser.parse_args(['-b']);  parser.parse_args(['-b', '$'])
+Namespace(baz=None);  Namespace(baz='x');         Namespace(baz='$')
+
+# 'nargs' arg
+nargs='?' # 1 or None values; atomic; can fall back on default if no arg
+nargs='*' # 0 or more values;   list; can fall back on default if no arg
+nargs='+' # 1 or more values;   list; cannot fall back on default
+
+# restricting choices
+add_args('--color', default='green', choices=['red', 'blue', 'yellow', 'green'])
+```

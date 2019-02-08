@@ -1,6 +1,6 @@
 #!/usr/bin/env python
+"""
 
-""" Automate most of the nativefier process
 """
 import os
 import subprocess
