@@ -246,8 +246,8 @@ function lnbin(){
         # rename link endpoint
         DEST="$PATH_USER_BIN/$2"
     fi
-    # link it up
-    ln -sf $SRC $DEST
+    # link it up (NB: -r converts abs symlinks to rel)
+    ln -sfr $SRC $DEST
 }
 
 

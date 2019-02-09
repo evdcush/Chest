@@ -138,10 +138,11 @@ sudo apt install -y wget curl git-core apt-transport-https autoconf automake \
 build-essential cmake docbook2x dvipng extra-cmake-modules gfortran graphviz \
 imagemagick libarchive-dev libatomic1 libbz2-dev libcurl4-openssl-dev \
 libncurses5-dev libreadline-dev librsvg2-bin libre2-dev libsqlite3-dev \
-libssl-dev libxcb-keysyms1-dev llvm m4 make p7zip-full p7zip-rar perl \
+libssl-dev libxcb-keysyms1-dev llvm m4 make p7zip-full p7zip-rar unrar unar perl \
 pkg-config python-sphinx qt5-default qt5-qmake qttools5-dev-tools redis-server \
 redis-tools software-properties-common texlive-xetex tk-dev xz-utils zlib1g-dev \
-printer-driver-brlaser
+printer-driver-brlaser exfat-utils flac lame x264 x265
+
 
 
 #=============================================================================#
@@ -241,21 +242,34 @@ wget https://github.com/kermitt2/grobid/archive/0.5.3.zip
 
 # Apps
 # ====
-# NB: check guake version first (apt ver typically outdated)
-sudo apt install -y chromium-browser flameshot anki vim guake git-extras
-sudo apt install -y deluge nomacs font-manager redshift
+#sudo apt install -y guake # always check versions available from src and apt
 
-# Utils
-# =====
-# poppler-utils installs pdftoppm, and several other pdf ops
-sudo apt-fast install -y htop tree tlp unar unrar psensor aria2 poppler-utils wkhtmltopdf img2pdf deborphan xclip copyq pandoc
-#sudo apt install -y htop tree tlp unar unrar psensor aria2 poppler-utils
-#sudo apt install -y wkhtmltopdf img2pdf deborphan
-#sudo apt install -y xclip copyq # xfce4-clipman is good too
+#==== network
+sudo apt install -y chromium-browser deluge aria2 sshfs openssh-client
 
-# Media
-# =====
-sudo apt install -y exfat-utils flac lame x264 vlc mpv inkscape
+#==== image
+sudo apt install -y flameshot nomacs inkscape vlc mpv
+
+#==== doc conversion
+sudo apt install -y pandoc poppler-utils wkhtmltopdf img2pdf
+
+#==== system status
+sudo apt install -y htop psensor xsensors xfce4-sensors-plugin
+
+#==== file
+sudo apt install -y gparted tree tlp deborphan symlinks
+
+#==== git
+sudo apt install -y git-crypt git-exras
+
+#==== clipboard
+sudo apt install -y xclip copyq
+
+#==== dictionary
+sudo apt install -y dict dictd dict-gcide dict-wn dict-moby-thesaurus
+
+#==== misc
+sudo apt install -y anki xfce4-timer-plugin redshift font-manager
 
 # Fonts
 # =====
@@ -270,9 +284,8 @@ fonts-woowa-hanna "fonts-wqy*" fonts-ebgaramond-extra fonts-cantarell \
 texlive-fonts-recommended texlive-latex-recommended \
 fonts-umeplus fonts-hanazono
 
-# Dictionaries
-# ============
-sudo apt install -y dict dictd dict-gcide dict-wn dict-moby-thesaurus
+sudo apt install -y texlive-extra-utils --no-install-recommends
+
 
 #======#
 # PPAs #
@@ -338,6 +351,12 @@ sudo apt update && sudo apt install sublime-text -y
 #---- bat
 wget https://github.com/sharkdp/bat/releases/download/v0.9.0/bat_0.9.0_amd64.deb
 sudo dpkg -i bat_0.9.0_amd64.deb
+
+#---- git interactive rebase
+wget https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/0.7.0/git-interactive-rebase-tool_0.7.0_amd64.deb
+sudo dpkg -i git-interactive-rebase-tool_0.7.0_amd64.deb # may need install libcurl3 and libncurses5
+git config --global sequence.editor git-interactive-rebase-tool
+
 
 
 
@@ -873,30 +892,12 @@ nativefy "https://keep.google.com" -n google-keep -u 3
 nativefy "https://calendar.google.com" -n google-calendar
 nativefy "https://airtable.com/" -n airtable
 nativefy "https://www.hackerrank.com/dashboard" -n hacker-rank
-#nativefier "https://mail.google.com" -n gmail -a x64 -p linux --honest -m --single-instance --tray --counter
-#nativefier "https://drive.google.com" -n google-drive -a x64 -p linux --honest -m --single-instance --internal-url 3 -i /home/evan/Chest/Resources/Icons/google-drive.png
-#nativefier "https://keep.google.com" -n google-keep -a x64 -p linux --honest -m --single-instance --tray -i /home/evan/Chest/Resources/Icons/google_keep_icon.png
-#nativefier "https://calendar.google.com" -n google-calendar -a x64 -p linux --honest -m --single-instance --tray -i /home/evan/Chest/Resources/Icons/google-calendar.png
-
-#====== Blog/read
-# ...just use a damn rss reader
-# nativefier "https://deepmind.com/blog/" -n deepmind-blog -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/deepmind_logo_swirl_blue.png
-# nativefier "https://blog.openai.com/" -n openai-blog -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/openai.png
-# nativefier "https://ai.google/research/pubs/" -n google-ai -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/googleAi-icon
-
-#====== Job stuff
-#nativefier "https://www.simplyhired.com/" -n simply-hired -a x64 -p linux --honest -m -i /home/evan/Chest/Resources/Icons/SimplyHired-icon.png
-#nativefier "https://www.linkedin.com/uas/login" -p linux -a x64 -n linkedin --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/linkedin.png
-#nativefier "https://airtable.com/" -n airtable -a x64 -p linux --honest -m --single-instance -i /home/evan/Chest/Resources/Icons/airtable.png
-#
-##====== Other
-#nativefier "https://www.hackerrank.com/dashboard" -n hacker-rank -a x64 -p linux --honest -m -i /home/evan/Chest/Resources/Icons/HackerRank_logo.png
 
 # Openssh (local) server
 #=======================
 sudo apt install openssh-server;
 sudo service ssh status;
-sudo vi /etc/ssh/sshd_config; # change port from 22 to 2501
+sudo vi /etc/ssh/sshd_config; # change port from 22 to whatever
 sudo systemctl restart sshd.service;
 hostname -I; # get ip
 # copy ssh-id from non-server machine
