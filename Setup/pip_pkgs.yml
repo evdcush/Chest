@@ -45,6 +45,11 @@ AI-frameworks:
 - optuna
 - niapy  # framework for building nature-inspired algos
 
+Robotics:
+- pyserial  # access to serial port
+- pythonrobotics # !!NOT PIP!! git clone https://github.com/AtsushiSakai/PythonRobotics.git
+
+
 Recommenders:
 - surprise   # recommender scikit
 
@@ -176,6 +181,7 @@ docs-text:
 - pdfplumber   # probably best API for doing shit with pdfs
 - python-slugify
 - fuzzywuzzy  # string-match fuzzer
+- rinohtype  #******* document processor like latex, more user-friendly https://github.com/brechtm/rinohtype
 
 
 parsers:

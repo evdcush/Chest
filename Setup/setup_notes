@@ -109,8 +109,8 @@ sed -i "$ a MIRRORS=( 'http://mirror.picosecond.org/ubuntu/, http://mirror.enzu.
 
 #==== APT-REPO
 addrep(){
-    sudo add-apt-repository "ppa:$1" -y
-    sudo apt-fast update
+    sudo add-apt-repository "ppa:$1" -y;
+    sudo apt-fast update;
 }
 
 
@@ -118,10 +118,11 @@ addrep(){
 #                                     GCC                                     #
 #-----------------------------------------------------------------------------#
 addrep 'ubuntu-toolchain-r/test' # Don't need repo if on 18.04
-gcc-7 g++-7 gcc-8 g++-8 --install-suggests
+sudo apt install gcc-7 g++-7 gcc-8 g++-8 --install-suggests
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 80 --slave /usr/bin/g++ g++ /usr/bin/g++-7
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 100 --slave /usr/bin/g++ g++ /usr/bin/g++-8
 update-alternatives --set gcc /usr/bin/gcc-8
+
 
 #=============================================================================#
 #                       Utils & Common Dependencies                           #
@@ -132,7 +133,7 @@ update-alternatives --set gcc /usr/bin/gcc-8
 addrep git-core/ppa
 sudo apt update && sudo apt upgrade -y
 sudo apt install git-core
-~
+
 # Deps
 sudo apt install -y wget curl git-core apt-transport-https autoconf automake \
 build-essential cmake docbook2x dvipng extra-cmake-modules gfortran graphviz \
@@ -171,6 +172,9 @@ pip install pip==18.1 # installation will fail if pip==19 (latest)
 pip install pyinstaller
 pip install -U pip # then you just update right after...
 
+#-----------------------------------------------------------------------------#
+#                                  languages                                  #
+#-----------------------------------------------------------------------------#
 
 # System python
 # =============
@@ -189,6 +193,26 @@ sudo update-alternatives --config python
 # n (node manager)
 # ================
 curl -L https://git.io/n-install | N_PREFIX=~/.n bash -s -- -y
+
+
+
+# Julia
+#=========================
+#curl -s https://api.github.com/repos/JuliaLang/julia/releases/latest \
+#| grep "browser_download_url.*full.tar.gz" | head -1 \
+#| cut -d : -f 2,3 | tr -d \" \
+#| xargs wget
+#echo 'export PATH="$(pwd)/julia:$PATH"' >> ~/.zshrc
+# goto https://julialang.org/downloads/index.html
+wget https://julialang-s3.julialang.org/bin/linux/x64/1.1/julia-1.1.0-linux-x86_64.tar.gz
+tar -xvzf julia-1.1.0-linux-x86_64.tar.gz
+ln -sfr /path/to/julia-1.1.0/bin/julia /home/evan/.local/bin
+
+# Prolog
+#=========================
+sudo apt-add-repository ppa:swi-prolog/stable -y
+sudo apt update
+sudo apt install -y swi-prolog --install-suggests
 
 
 #=============================================================================#
@@ -216,10 +240,6 @@ polar-bookshelf.AppImage  # ebook progress library manager thign, meh
 raven-reader.AppImage     # clean feed reader
 stencila-desktop.AppImage # scholarly all-in-one office thing, has potential
 themer-gui.AppImage       # select a colorset, and it generates CSS for everything
-
-vym # "view your mind", concept mapping n stuff
-TiddlyDesktop
-
 
 # bookstack (docker)
 
@@ -311,12 +331,12 @@ wget -O - https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_insta
 
 # npm
 # ---
-npm i -g npm && npm i -g electron nativefier tldr lorem-ipsum
+npm i -g npm && npm i -g electron nativefier tldr lorem-ipsum percollate
 #npm i -g electron
 #npm i -g nativefier
 #npm i -g tldr
 #npm i -g lorem-ipsum
-
+#npm i -g percollate
 
 # croc
 # ====
@@ -356,6 +376,7 @@ sudo dpkg -i bat_0.9.0_amd64.deb
 wget https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/0.7.0/git-interactive-rebase-tool_0.7.0_amd64.deb
 sudo dpkg -i git-interactive-rebase-tool_0.7.0_amd64.deb # may need install libcurl3 and libncurses5
 git config --global sequence.editor git-interactive-rebase-tool
+
 
 
 
@@ -885,13 +906,20 @@ startup --output_user_root=/tmp/bazel
 
 # NATIVEFIER
 # ==========
-#===== Google
 nativefy "https://mail.google.com" -n gmail -t -c
 nativefy "https://drive.google.com" -n google-drive
 nativefy "https://keep.google.com" -n google-keep -u 3
 nativefy "https://calendar.google.com" -n google-calendar
 nativefy "https://airtable.com/" -n airtable
 nativefy "https://www.hackerrank.com/dashboard" -n hacker-rank
+
+# RSS feeds
+# =========
+https://blog.openai.com/rss/              # https://blog.openai.com/
+https://deepmind.com/blog/feed/basic/     # https://deepmind.com/blog/
+http://bair.berkeley.edu/blog/feed.xml    # http://bair.berkeley.edu/blog/
+http://feeds.feedburner.com/blogspot/gJZg # http://ai.googleblog.com/
+
 
 # Openssh (local) server
 #=======================
@@ -968,6 +996,9 @@ pip install --process-dependency-links --no-binary --upgrade git+https://github.
 "WikiMapper"
 "Wikipedia Reading Lists"
 "xBrowserSync"
+
+
+
 
 
 #-----------------------------#

@@ -139,6 +139,8 @@ glances apt-select thefuck cheat s-tui termdown speedtest-cli \
 fire pypi-cli cookiecutter faker johnnydep black \
 feedparser requests urllib3 bs4 gitsuggest github3.py grip;"
 
+# rinohtype currently only works py < 3.7
+
 
 # Spec-use pkgs
 # =============
