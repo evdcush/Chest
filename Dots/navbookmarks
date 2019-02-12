@@ -23,5 +23,6 @@ $HOME/.local|local
 $HOME/.local/bin|bin
 $HOME/Projects|pro
 $HOME/.Scratch|scr
-$HOME/Cloud|cloud
+$HOME/Cloud|nc
 $HOME/Work|work
+$HOME/.cache|cache

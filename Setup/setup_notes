@@ -1067,6 +1067,7 @@ pip install --process-dependency-links --no-binary --upgrade git+https://github.
 #  gooey **               # very clear, nice colors (bit boring), nice slate dark
 #  Easyballs *            # simple, clean, readable
 #  Wildlife-Night */*     # (RST) very clear, comment highlighting
+#  TwoStones **           # Nice, readable; great except for the white coloring on syntax
 
 #==== Medium & desat (or weird)
 #  mutedrainbow_sky **    # nice "adventure-time"-esque scheme, syntax supp could be better
