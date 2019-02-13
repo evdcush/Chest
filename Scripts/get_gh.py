@@ -3,17 +3,13 @@
 import os
 import sys
 import code
+import shutil
 import subprocess
 from datetime import datetime
 import fire
 import pyperclip
 import utils
-from utils import READMES, AWESOME_LISTS, PROJECTS, HOARD_ARCHIVE
-
-# dest dirs
-readme_dest = READMES
-file_dest   = PROJECTS
-
+from utils import READMES, AWESOME_LISTS, HOARD_ARCHIVE
 
 #=============================================================================#
 #                                                                             #
@@ -23,7 +19,7 @@ file_dest   = PROJECTS
 #         8888888888  .d88b.  888 88888b.   .d88b.  888d888 .d8888b           #
 #         888    888 d8P  Y8b 888 888 "88b d8P  Y8b 888P"   88K               #
 #         888    888 88888888 888 888  888 88888888 888     "Y8888b.          #
-#         888    888 Y8b.     888 888 d88P Y8b.     888          X88          #
+#         888    888 Y8b.     888 888 d881 Y8b.     888          X88          #
 #         888    888  "Y8888  888 88888P"   "Y8888  888      88888P'          #
 #                                 888                                         #
 #                                 888                                         #
@@ -31,7 +27,25 @@ file_dest   = PROJECTS
 #                                                                             #
 #=============================================================================#
 
+def rename_extracted(repo_name, rname=None):
+    rname = rname if rname else repo_name
+    shutil.move(repo_name + '-master', rname)
 
+def rename_zip(rname, zpath="master.zip"):
+    # assumes zip is typical "master.zip"
+    shutil.move(zpath, rname + '.zip')
+
+def unzip(zip_path=None):
+    import zipfile
+    zip_path = zip_path if zip_path else "master.zip"
+    with zipfile.ZipFile(zip_path) as zfile:
+        #==== extract path
+        ex_path = None
+        zp = zip_path.split('/')
+        if len(zp) > 1:
+            ex_path = '/'.join(zp[:-1])
+
+        zfile.extractall(ex_path)
 
 
 
@@ -70,12 +84,12 @@ def get_fname_from_repo(url, get_ext=True):
     else:
         ext = ''
     fname = repo_name + ext
-    return fname
+    return fname.lower()
 
 def make_entry(fname, url):
     date = get_date()
     entry = dict(fname=fname, url=url, date=date)
-    return date
+    return entry
 
 
 #-----------------------------------------------------------------------------#
@@ -85,13 +99,14 @@ def make_entry(fname, url):
 gh_domain     = "https://github.com"
 raw_gh_domain = "https://raw.githubusercontent.com"
 
+# funcs
 wget_sh = lambda u, fpath: subprocess.run(f"wget {u} -O {fpath}", shell=True)
 
 def check_url_exist(u):
     return subprocess.run(f'wget -q --spider {u}', shell=True).returncode == 0
 
 def check_for_file_link(base_url, candidates):
-    u = url.replace('github', 'raw.githubusercontent', 1) + '/master/'
+    u = base_url.replace('github', 'raw.githubusercontent', 1) + '/master/'
     for c in candidates:
         url_candidate = u + c
         if check_url_exist(url_candidate):
@@ -100,11 +115,8 @@ def check_for_file_link(base_url, candidates):
     raise FileNotFoundError("No URL found!")
 
 def check_for_readme_links(url):
-    try:
-        readme_link = check_for_file_link(url, readme_names)
-        return readme_link
-    except:
-        pass
+    readme_link = check_for_file_link(url, readme_names)
+    return readme_link
 
 def get_link_from_clipboard():
     url = pyperclip.paste()
@@ -139,8 +151,6 @@ def format_url(url=None):
     return u
 
 
-
-
 #=============================================================================#
 #                                                                             #
 #                            888    888                                       #
@@ -156,14 +166,20 @@ def format_url(url=None):
 #           "Y88P"                                                            #
 #                                                                             #
 #=============================================================================#
-"""
-Common Assumptions
-------------------
-* No input url is a raw link (if you have a raw link, no need to use
-  this script, since you already went to the trouble and you can just wget
+# There is a good amount of redundancy between the getters. Acceptable here,
+# for now, as it allows for easier exposure as an interface through fire
 
-There is a good amount of redundancy between the getters. Acceptable here,
-for now, as it allows for easier exposure as an interface through fire
+
+
+"""
+USAGE:
+ python get_gh.py src https://github.com/google/python-fire/blob/master/docs/guide.md
+ python get_gh.py src
+ python get_gh.py src --fname='userguide.md'
+
+ # download NiaPy project to cur dir and extract it
+ # of course, you need not input url if you copied it!
+ python get_gh.py project https://github.com/NiaOrg/NiaPy --dest=None --ex=True
 """
 
 def src(url=None, fname=None, dest=None, archive=True):
@@ -177,17 +193,16 @@ def src(url=None, fname=None, dest=None, archive=True):
     # get file & archive
     wget_sh(target, fpath)
     if archive:
-        entry = make_entry(fname, target)
+        entry = make_entry(fpath, target)
+        #code.interact(local=dict(globals(), **locals()))
         utils.add_to_archive('src', entry)
 
 
-def alist(url=None, fname=None, dest=AWESOME_LISTS, archive=True):
-    """ get 'awesome' list, or just a file that is a guide/collection
-
-    NB: url may not be pointing to actual file!
-        given awesome lists are often in readme files, and
-        they are their own projects, the base project url is sufficient to
-        crawl for a valid link to the readmefile
+def readme(url=None, fname=None, dest=READMES, archive=True, key='readmes'):
+    """ get readme from a url
+    NB: url may not point to the readme file.
+        Since readmes often adhere to a naming format,
+        you can crawl for the raw link
     """
     # formatting
     if url is None:
@@ -207,56 +222,23 @@ def alist(url=None, fname=None, dest=AWESOME_LISTS, archive=True):
     # get file & archive
     wget_sh(target, fpath)
     if archive:
-        entry = make_entry(fname, target)
-        utils.add_to_archive('awesome_lists', entry)
+        entry = make_entry(fpath, target)
+        utils.add_to_archive(key, entry)
 
-#https://gist.github.com/akesling/5358964
-#https://gist.githubusercontent.com/akesling/5358964/raw/cc5f54a47d0ffa6b15d2fceb36fa63782abf18c8/mnist.py
 
-#============================================================================================================#
-#                                                                                                            #
-#  .d8888b.  888                                             888       888    888                            #
-# d88P  Y88b 888                                             888       888    888                            #
-# Y88b.      888                                             888       888    888                            #
-#  "Y888b.   888888  .d88b.  88888b.  88888b.   .d88b.   .d88888       8888888888  .d88b.  888d888  .d88b.   #
-#     "Y88b. 888    d88""88b 888 "88b 888 "88b d8P  Y8b d88" 888       888    888 d8P  Y8b 888P"   d8P  Y8b  #
-#       "888 888    888  888 888  888 888  888 88888888 888  888       888    888 88888888 888     88888888  #
-# Y88b  d88P Y88b.  Y88..88P 888 d88P 888 d88P Y8b.     Y88b 888       888    888 Y8b.     888     Y8b.      #
-#  "Y8888P"   "Y888  "Y88P"  88888P"  88888P"   "Y8888   "Y88888       888    888  "Y8888  888      "Y8888   #
-#                            888      888                                                                    #
-#                            888      888                                                                    #
-#                            888      888                                                                    #
-#                                                                                                            #
-#============================================================================================================#
-def gist(url=None, fname=None, dest=READMES, archive=True):
-    """ get readme file
+def alist(url=None, fname=None, dest=AWESOME_LISTS, archive=True, key='awesome_lists'):
+    """ get 'awesome' list, or just a file that is a guide/collection
 
-    NB: url may not be pointing to actual file! Readme files have a
-        common naming format, so links can be crawled
+    NB: url may not be pointing to actual file!
+        given awesome lists are often in readme files, and
+        they are their own projects, the base project url is sufficient to
+        crawl for a valid link to the readmefile
     """
-    # check for link
-    if url is None:
-        url = get_link_from_clipboard()
+    readme(url, fname, dest, archive, key)
 
-    # check if link pointing at a file
-    if "blob" not in url:
-        target = check_for_readme_links(url)
-    else: # link to repo
-        target = format_url(url)
-
-    # name formatting
-    if fname is None:
-        fname = get_fname_from_repo(target)
-    fpath = fname if dest is None else f"{dest}/{fname}"
-
-    # get file & archive
-    wget_sh(target, fpath)
-    if archive:
-        entry = make_entry(fname, target)
-        utils.add_to_archive('readmes', entry)
-
-def readme(url=None, fname=None, dest=READMES, archive=True):
-    pass
+"""
+# TODO: These are more complicated functions that likely need to use
+        github api
 
 def org(url):
     pass
@@ -267,69 +249,42 @@ def repo(url):
 def user(url):
     pass
 
+def gist(url):
+    pass
 
+"""
 
-#https://github.com/jslee02/awesome-robotics-libraries/blob/master/README.md
-
-#https://github.com/cpp-taskflow/cpp-taskflow/archive/master.zip
-
-def project(url, name=None, dest=file_dest):
+def project(url=None, dest=HOARD_ARCHIVE, fname=None, archive=True, ex=False):
     """
+    url assumed to be top-level url, NOT archive link
     """
-    target = format_url(url)
+    if url is None:
+        url = get_link_from_clipboard()
+    user_name, repo_name = url.split('/')[-2:]
+    target = url + "/archive/master.zip"
 
+    # get zip
+    if fname is None:
+        fname = f"{user_name}_{repo_name}"
+    zname = fname + ".zip"
+    zpath = zname if dest is None else f"{dest}/{zname}"
+    wget_sh(target, zpath)
 
+    # extract
+    if ex:
+        #code.interact(local=dict(globals(), **locals()))
+        unzip(zpath)
+        # -master is appended, but the rename extract func assumes
+        expath = repo_name if dest is None else f"{dest}/{repo_name}"
+        rpath  = zpath[:-4] # same name as fname minus '.zip'
+        rename_extracted(expath, rpath)
 
-
-
-chk_exist = lambda u: subprocess.run(f'wget -q --spider {u}', shell=True)
-
-def wget_readme(url, dest=readme_dest):
-    chk_exist = lambda u: subprocess.run(f'wget --spider {u}', shell=True)
-
-    # URL formatting
-    u = url.replace('github', 'raw.githubusercontent', 1) + '/master/'
-    fname = f'{url.split("/")[-1]}'
-
-    # Check for filename format
-    correct_rdme_name = ''
-    for rdm in rdme:
-        if chk_exist(u + rdm).returncode == 0:
-            correct_rdme_name = rdm
-            break
-    if correct_rdme_name == '':
-        print('readme does not match standard readme file names or does not exist')
-    else:
-        # Get extension of correct readme
-        ext = correct_rdme_name.split('.')[-1]
-        if ext != correct_rdme_name:
-            fname += '.' + ext
-
-        # append true readme name to url
-        u = u + correct_rdme_name
-
-        # add url to archive, so readme can be upated
-        #add_list_to_archive(fname, u)
-
-        #=== append file write name to dest
-        dest = f'{dest}/{fname}'
-
-        #=== Get readme
-        subprocess.run(f'wget {u} -O {dest}', shell=True)
-
-
-#if __name__ == '__main__':
-#    args = sys.argv[1:]
-#    URL = args.pop(0)
-#    #code.interact(local=dict(globals(), **locals()))
-#    if args:
-#        # args is [filename, dest] or [filename]
-#        wget_raw(URL, *args)
-#    else:
-#        wget_readme(URL)
-
-
+    # archive
+    if archive:
+        entry = make_entry(fname, url)
+        utils.add_to_archive('r', entry)
 
 if __name__ == '__main__':
-    fire.Fire()
+    fire.Fire(dict(src=src, readme=readme, alist=alist, project=project))
+
 

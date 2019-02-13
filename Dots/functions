@@ -1,7 +1,6 @@
 #-----------------------------------------------------------------------------#
 #                                Endemic                                      #
 #-----------------------------------------------------------------------------#
-
 # Copy README template to a project dir
 function RDME {
     SRC_DIR="$DIR_CHEST_RESOURCES/Templates/README.rst"
@@ -9,31 +8,8 @@ function RDME {
     cp $SRC_DIR $DEST_DIR
 }
 
-
-
-asc() {
-    SCRIPT="$HOME/Projects/fart/render.py"
-    if [ "$#" -gt 1 ]; then
-        #==== 'other'
-        FNT="$1"
-        TXT="$2"
-        python $SCRIPT "-t$TXT" "-f$FNT"
-    else
-        TXT="$1"
-        python $SCRIPT "-t$TXT"
-    fi
-    #if [ "$1" = "demo" ]; then
-    #    # don't clip
-    #    python $SCRIPT '--sample'
-    #else
-    #    python $SCRIPT $@ | xclip -selection clipboard
-    #fi
-    #python $SCRIPT "-text $1 -"
-}
-
-
 dub() {
-    dochub $1 -i -d;
+    dochub $1 -i -d -n;
 }
 
 #=============================================================================#
@@ -53,15 +29,17 @@ dub() {
 
 # Lorem ipsum
 # ===========
-li(){lorem-ipsum $@ | xclip -selection clipboard}
+# DEPRECATED: python faker
+#li(){lorem-ipsum $@ | xclip -selection clipboard}
 
 
 
 # Get bib info
 # ============
-function arxbib {
-    arxiv2bib $1 | xclip -selection clipboard
-}
+# DEPRECATED: using my own api now
+#function arxbib {
+#    arxiv2bib $1 | xclip -selection clipboard
+#}
 
 
 
@@ -100,50 +78,52 @@ function rurl {
 # ============= #
 
 # Get chrome extension file
-get_crx(){
-    CRXNAME="$1.crx"
-    CRXID="$2"
-    CRX_PATH="$DIR_MEDIA/Software/CRX"
-    A2="crx?response=redirect&acceptformat=crx2,crx3&prodversion=69"
-    A3="&x=id%3D$CRXID%26installsource%3Dondemand%26uc"
-    echo $CRX_PATH
-    wget -O "$CRXNAME" "https://clients2.google.com/service/update2/$A2$A3"
-}
+#    TODO: function not properly tested. And it's ugly.
+#get_crx(){
+#    CRXNAME="$1.crx"
+#    CRXID="$2"
+#    CRX_PATH="$DIR_MEDIA/Software/CRX"
+#    A2="crx?response=redirect&acceptformat=crx2,crx3&prodversion=69"
+#    A3="&x=id%3D$CRXID%26installsource%3Dondemand%26uc"
+#    echo $CRX_PATH
+#    wget -O "$CRXNAME" "https://clients2.google.com/service/update2/$A2$A3"
+#}
 
-# `unar` is preferable; this func no longer used
-function extract() {
-    #==== Extract many types of compressed packages
-    if [ -f "$1" ] ; then
-        case "$1" in
-            *.tar.bz2)   tar xvjf "$1"                    ;;
-            *.tar.gz)    tar xvzf "$1"                    ;;
-            *.bz2)       bunzip2 "$1"                     ;;
-            *.rar)       unrar x "$1"                     ;;
-            *.gz)        gunzip "$1"                      ;;
-            *.tar)       tar xvf "$1"                     ;;
-            *.tbz2)      tar xvjf "$1"                    ;;
-            *.tgz)       tar xvzf "$1"                    ;;
-            *.zip)       unzip "$1"                       ;;
-            *.ZIP)       unzip "$1"                       ;;
-            *.pax)       cat "$1" | pax -r                ;;
-            *.pax.Z)     uncompress "$1" —stdout | pax -r ;;
-            *.Z)         uncompress "$1"                  ;;
-            *.7z)        7z x "$1"                        ;;
-            *)           echo "don't know how to extract '$1'..." ;;
-        esac
-    else
-        echo "extract: error: $1 is not valid"
-    fi
-}
+# DEPRECATED: `unar` is used instead
+#function extract() {
+#    #==== Extract many types of compressed packages
+#    if [ -f "$1" ] ; then
+#        case "$1" in
+#            *.tar.bz2)   tar xvjf "$1"                    ;;
+#            *.tar.gz)    tar xvzf "$1"                    ;;
+#            *.bz2)       bunzip2 "$1"                     ;;
+#            *.rar)       unrar x "$1"                     ;;
+#            *.gz)        gunzip "$1"                      ;;
+#            *.tar)       tar xvf "$1"                     ;;
+#            *.tbz2)      tar xvjf "$1"                    ;;
+#            *.tgz)       tar xvzf "$1"                    ;;
+#            *.zip)       unzip "$1"                       ;;
+#            *.ZIP)       unzip "$1"                       ;;
+#            *.pax)       cat "$1" | pax -r                ;;
+#            *.pax.Z)     uncompress "$1" —stdout | pax -r ;;
+#            *.Z)         uncompress "$1"                  ;;
+#            *.7z)        7z x "$1"                        ;;
+#            *)           echo "don't know how to extract '$1'..." ;;
+#        esac
+#    else
+#        echo "extract: error: $1 is not valid"
+#    fi
+#}
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Add apt repo
 # ============
-addrep(){
-    sudo add-apt-repository "ppa:$1" -y
-    sudo apt-fast update
-}
+# DEPRECATED: more of a PITA to clip just part of command than just whole cmd
+#addrep(){
+#    sudo add-apt-repository "ppa:$1" -y
+#    sudo apt-fast update
+#}
 
 
 #=============================================================================#
@@ -176,17 +156,12 @@ function reset_path(){
     echo "--------------------------------------------------"
 }
 
-#---- source zshrc
-function srcz(){
-    reset_path # sourcing can duplicate parts of PATH anyway, so just reset
-    #source ~/.zshrc
-}
-
-#---- add line to shell config
-function expzsh(){
-    echo "\n\n#==== $1" >> ~/.zshrc
-    echo "$2" >> ~/.zshrc
-}
+##---- add line to shell config
+# DEPRECATED: almost never used
+#function expzsh(){
+#    echo "\n\n#==== $1" >> ~/.zshrc
+#    echo "$2" >> ~/.zshrc
+#}
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -241,13 +216,16 @@ function lnbin(){
     chmod +x "$1"
     # Set paths
     SRC="$PWD/$1"
-    DEST="$PATH_USER_BIN"
+    #DEST="$PATH_USER_BIN"
+    DEST="$HOME/.local/bin"
     if [ "$#" -gt 1 ]; then
         # rename link endpoint
-        DEST="$PATH_USER_BIN/$2"
+        #DEST="$PATH_USER_BIN/$2"
+        DEST="$DEST/$2"
     fi
     # link it up (NB: -r converts abs symlinks to rel)
-    ln -sfr $SRC $DEST
+    #ln -sfr $SRC $DEST
+    ln -sf $SRC $DEST
 }
 
 

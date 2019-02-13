@@ -281,7 +281,11 @@ alias gsize="git rev-list --objects --all \
 #
 
 
-
+#=== github getters, 2nd order interface
+alias galist="ggh alist"
+alias grdm="ggh readme"
+alias gsrc="ggh src"
+alias gpro="ggh project"
 
 #=== license copies
 alias bsd3="cp $DIR_CHEST_TEMPLATES/Licenses/BSD-3-Clause.txt ./LICENSE"

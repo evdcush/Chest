@@ -1,8 +1,9 @@
 import os
 import sys
+import code
 import yaml
 
-# File RW helpers
+# yaml rw helpers
 # ===============
 def R_yml(fname):
     with open(fname) as file:
@@ -26,48 +27,52 @@ def W_yml(fname, obj):
 ###  BASE LEVEL  ###
 HOME  = os.environ['HOME']
 
-# Primary dests
-# =============
-DOTS  = f"{HOME}/.Dots"
-APPS  = f"{HOME}/.Apps"
-
-
-# Local
-# =====
-BIN      = f"{HOME}/.local/bin"
+# Dot dirs
+# ========
+DOTS = f"{HOME}/.Dots"
+APPS = f"{HOME}/.Apps"
+BIN  = f"{HOME}/.local/bin"
 DESKTOPS = f"{HOME}/.local/share/applications"
 
-
-# Homedirs
-# ========
+#-----------------------------------------------------------------------------#
+#                                 Home Paths                                  #
+#-----------------------------------------------------------------------------#
+#==== Home parents
 CHEST = f"{HOME}/Chest"
 CLOUD = f"{HOME}/Cloud"
-MEDIA = f"{HOME}/Media"
 PROJECTS  = f"{HOME}/Projects"
 DOCUMENTS = f"{HOME}/Documents"
-
 
 #==== .apps
 ICONS = f"{APPS}/Icons"
 NATIVEFIED = f"{APPS}/Nativefied"
 BINARIES   = f"{APPS}/Binaries"
 
-#==== CLOUD
+#==== Cloud
 READMES = f"{CLOUD}/READMEs"
 AWESOME_LISTS = READMES + "/awesome_lists"
 RESOURCES_CLOUD = f"{CLOUD}/Resources"
 DOCUMENTS_CLOUD = f"{CLOUD}/Reading"
 
-#==== chest
+#==== Chest
 DOTS_CHEST = f"{CHEST}/Dots"
 RESOURCES_CHEST = f"{CHEST}/Resources"
 
 #==== Projects
 HOARD = f"{PROJECTS}/Hoard"
+HOARD_ARCHIVE = HOARD + "/Archive"
 PAPER = f"{PROJECTS}/DocHub/Literature"
 PREP  = f"{PROJECTS}/Prep"
 
+# Files
+# =====
 
+# CURRENTLY UNUSED
+# ================
+"""
+MEDIA = f"{HOME}/Media"
+
+"""
 #=============================================================================#
 #                            __   _   _                                       #
 #                           / _| (_) | |   ___   ___                          #
@@ -83,7 +88,8 @@ inbox_read_path    = f"{CLOUD}/Reading/inbox.txt"
 #==== resources
 #HOARD_INBOX   = R_yml(f"{RESOURCES_CLOUD}/inbox_hoard.yml")
 #HOARD_ARCHIVE = R_yml(f"{RESOURCES_CLOUD}/archive_hoard.yml")
-PUBLIC_TOKENS = R_yml(f"{RESOURCES_CLOUD}/gh_tokens.yml")['public']
+#PUBLIC_TOKENS = R_yml(f"{RESOURCES_CLOUD}/gh_tokens.yml")['public']
+public_gh_tokens = lambda: R_yml(f"{RESOURCES_CLOUD}/gh_tokens.yml")['public']
 
 def add_to_read_inbox(entry):
     with open(inbox_read_path, 'a') as ibx:
@@ -98,6 +104,12 @@ def add_to_read_inbox(entry):
 #                                                              |___/          #
 #                                                                             #
 #=============================================================================#
+def impt_ghub():
+    import github3
+    tokens = public_gh_tokens()
+    hoard_token = tokens['hoard']['token']
+    github = github3.login(token=hoard_token)
+    return github
 
 
 #-----------------------------------------------------------------------------#
@@ -148,6 +160,7 @@ def add_to_archive(key, entry):
     hoard_archive = R_yml(hoard_archive_path)
 
     if hoard_key == 'files':
+        #code.interact(local=dict(globals(), **locals()))
         hoard_archive[hoard_key][key].append(entry)
     else:
         hoard_archive[hoard_key].append(entry)
