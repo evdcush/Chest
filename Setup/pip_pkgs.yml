@@ -180,8 +180,9 @@ docs-text:
 - pypdf2        # splitting, merging, cropping, and transforming the pages of
 - pdfplumber   # probably best API for doing shit with pdfs
 - python-slugify
-- fuzzywuzzy  # string-match fuzzer
+- fuzzywuzzy    # string-match fuzzer
 - rinohtype  #******* document processor like latex, more user-friendly https://github.com/brechtm/rinohtype
+- unidecode  # unidecode.unidecode('çivicioglu') --> 'civicioglu'
 
 
 parsers:
