@@ -98,6 +98,7 @@ def make_entry(fname, url):
 # Domain vars
 gh_domain     = "https://github.com"
 raw_gh_domain = "https://raw.githubusercontent.com"
+raw_len= len(raw_gh_domain + '/')
 
 # funcs
 wget_sh = lambda u, fpath: subprocess.run(f"wget {u} -O {fpath}", shell=True)
@@ -183,11 +184,23 @@ USAGE:
 """
 
 def src(url=None, fname=None, dest=None, archive=True):
-    """ get source files, generally code """
+    """ get source files, generally code
+
+    >>> url = "https://github.com/seatgeek/fuzzywuzzy/blob/master/fuzzywuzzy/fuzz.py"
+    >>> src(url)
+    Saving to: ‘seatgeek_fuzzywuzzy_fuzz.py’
+
+    Assumes
+    -------
+    url is pointing to file url
+    """
     # formatting
     target = format_url(url)
     if fname is None:
-        fname = target.split('/')[-1]
+        usplit = target[raw_len:].split('/')
+        user, repo_name = usplit[:2]
+        filename = usplit[-1]
+        fname = f"{user}_{repo_name}_{filename}"
     fpath = fname if dest is None else f"{dest}/{fname}"
 
     # get file & archive
