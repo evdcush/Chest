@@ -1,0 +1,19 @@
+```python
+from fuzzywuzzy import fuzz
+from fuzzywuzzy import process
+
+# Simple ratio
+>>> fuzz.ratio("this is a test", "this is a test!")
+97
+
+# Partial ratio
+>>> fuzz.partial_ratio("this is a test", "this is a test!")
+100
+
+# Token sort ratio
+>>> fuzz.ratio("fuzzy wuzzy was a bear", "wuzzy fuzzy was a bear")
+91
+>>> fuzz.token_sort_ratio("fuzzy wuzzy was a bear", "wuzzy fuzzy was a bear")
+100
+
+```

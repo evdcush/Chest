@@ -133,8 +133,8 @@ ipython jupyter notebook cloudpickle restview gitup jrnl pyperclip"
 
 std_pkgs="$min_pkgs sympy numba pandas chainerrl gym jax jaxlib pydataset keras \
 docutils sphinx sphinx-rtd-theme sphinxcontrib-websupport numpydoc pypandoc \
-pyyaml tinydb python-slugify unidecode \
-nltk spacy scattertext fuzzywuzzy surprise summa \
+pyyaml tinydb python-slugify unidecode pybtex \
+nltk spacy scattertext fuzzywuzzy surprise summa python-levenshtein \
 glances apt-select thefuck cheat s-tui termdown speedtest-cli \
 fire pypi-cli cookiecutter faker johnnydep black \
 feedparser requests lxml urllib3 bs4 gitsuggest github3.py grip"
@@ -205,6 +205,13 @@ alias p="showmarks"
 #---- Copy
 alias clip="xclip -selection clipboard"
 alias delclip="xclip -o | xargs sudo rm -rf"
+
+# Misc software
+# =============
+rawgh='https://raw.githubusercontent.com'
+#---- joplin
+alias install_joplin="wget -O - \
+$rawgh/laurent22/joplin/master/Joplin_install_and_update.sh | bash"
 
 
 #=============================================================================#
@@ -282,7 +289,7 @@ alias gsize="git rev-list --objects --all \
 #                       ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝                      #
 #                                                                             #
 #=============================================================================#
-#
+# stuff that references user resources
 
 
 #=== github getters, 2nd order interface

@@ -204,7 +204,8 @@ sphinx:
 - numpydoc  # sphinx extension to support docstrings in numpy format yeeeeeeeeeeeee
 - pelican   # static site generator for blog; py api, rst, django
 - nbsphinx  # do sphinx stuff with notebooks instead of rst
-
+- sphinx-me #? "Wraps your README-only projects in a dynamic Sphinx shell for hosting on http://readthedocs.org"
+- sphinx-view # sounds like restview for sphinx (+ rst)
 
 reading:
     bibtex:
