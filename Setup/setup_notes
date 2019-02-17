@@ -160,8 +160,9 @@ printer-driver-brlaser exfat-utils flac lame x264 x265
 # Oh-my-zsh
 # =========
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)";
-cd ~/.oh-my-zsh/custom/plugins
-git clone https://github.com/jocelynmallon/zshmarks.git
+git clone https://github.com/jocelynmallon/zshmarks.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zshmarks
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
 
 # Pyenv
 # =====
@@ -331,12 +332,13 @@ wget -O - https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_insta
 
 # npm
 # ---
-npm i -g npm && npm i -g electron nativefier tldr lorem-ipsum percollate
+npm i -g npm && npm i -g electron nativefier tldr lorem-ipsum percollate leetcode-cli
 #npm i -g electron
 #npm i -g nativefier
 #npm i -g tldr
 #npm i -g lorem-ipsum
 #npm i -g percollate
+#npm i -g leetcode-cli
 
 # croc
 # ====
@@ -1052,6 +1054,10 @@ pip install --process-dependency-links --no-binary --upgrade git+https://github.
 # Sublime themes
 #======================
 # Almost all themes come from the ColorSublime package
+# NB: Some themes have better support for certain syntaxes than others
+#     most of the colors described are relative to python syntax highlighting
+#     and code more generally
+#  markdown and RST support are often better supported by other themes
 #  (which, in turn, sources from textmate themes I believe)
 
 # TOP CHOICES
@@ -1084,6 +1090,29 @@ pip install --process-dependency-links --no-binary --upgrade git+https://github.
 #  spring ***             # uses bold!, off-white, good color, highlighting, very nice
 #  eiffel **              # off-white, great contrast, could have better syn supp
 
+# RST themes
+# ==========
+
+
+# Markdown themes
+# ===============
+
+# TOP CHOICES:
+#  dark  ---> bluloco-dark
+#  light ---> bluloco-light, Another_Kolor_Light
+#
+#==== dark
+#  bluloco-dark  ***  # great color, great syntax support
+#  bijan     ***      # very clear/legible, good color pallette, bold/italic/headers
+#  anarchist ***      # Headers, line-splits, bold, italic, dynamic coloring
+#
+#  azure **      #
+#
+#
+
+#==== medium
+#  Another_Kolor_light ***  # H1 highlight, headers, bold, italic, coloring
+#
 # Sublime packages
 # ================
 # A File Icon

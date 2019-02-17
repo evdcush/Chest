@@ -54,6 +54,85 @@ git ls-files -v . | grep ^S
 # -----------------------------------------
 git log --pretty=format: --name-only --diff-filter=A | sort - | sed '/^$/d'
 
+#=============================================================================#
+#                  _   _                                           _          #
+#           __ _  (_) | |_            ___   _ __   _   _   _ __   | |_        #
+#          / _` | | | | __|  _____   / __| | '__| | | | | | '_ \  | __|       #
+#         | (_| | | | | |_  |_____| | (__  | |    | |_| | | |_) | | |_        #
+#          \__, | |_|  \__|          \___| |_|     \__, | | .__/   \__|       #
+#          |___/                                   |___/  |_|                 #
+#                                                                             #
+#=============================================================================#
+
+# Install
+sudo apt install git-crypt
+
+# Setting up git-crypt repo
+# =========================
+# make git repo or navigate to your repo
+mkdir sample_repo && cd sample_repo
+git init
+
+# specify files to encrypt via .gitattributes file
+# in repo root
+touch .gitattributes
+echo "secretfile filter=git-crypt diff=git-crypt" >> .gitattributes
+echo "*.key filter=git-crypt diff=git-crypt" >> .gitattributes
+git add .gitattributes
+git commit -m 'git-crypt attrs'
+
+# dummy files
+touch publicfile
+touch secretfile
+touch nuclear_launch.key
+
+
+# initialize git-crypt
+git-crypt init  # Generating key...
+
+# Now 'secretfile' and any file with ext '.key' are encrypted by git-crypt
+git-crypt status
+#     encrypted: nuclear_launch.key
+# not encrypted: publicfile
+#     encrypted: secretfile
+# not encrypted: .gitattributes
+
+# Furthermore, the repo is in a "locked" state
+
+# WARNING:
+#  you MUST commit changes to .gitattributes before target files
+#  are encrypted
+git add secretfile
+git add nuclear_launch.key
+
+
+# Configuring users
+# =================
+# I prefer the shared key approach
+git-crypt export-key ../sample_repo_gckey
+git-crypt unlock ../sample_repo_gckey
+
+# ADD FILES IN UNLOCKED STATE, then lock
+
+# Encrypting directories
+# ======================
+# COMMON GOTCHA:
+#  simply adding `secret_dir/* filter=git-crypt diff=git-crypt`
+#   WILL NOT ENCRYPT ALL CONTENTS IN secret_dir  -- namely, subdirs will not be encrypt
+#  to encrypt ALL contents, you must add the following
+#  to secret_dir/.gitattributes:
+* filter=git-crypt diff=git-crypt
+.gitattributes !filter !diff  # this line necessary to insure .gitattributes file is not encrypted
+
+
+
+
+
+
+
+
+
+
 
 #  __  __   _____   _____    _____     ____    _____
 # |  \/  | |_   _| |  __ \  |  __ \   / __ \  |  __ \

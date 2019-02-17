@@ -68,6 +68,30 @@ crop PDF
     sudo apt install --no-install-recommends --no-install-suggests texlive-extra-utils
     pdfcrop my_doc.pdf cropped_my_doc.pdf
 
+
+To crop with all pages at consistent page size: https://tex.stackexchange.com/questions/166758/how-do-i-make-pdfcrop-output-all-pages-of-the-same-size
+
+1. ``pdfcrop --verbose myfile.pdf cropfile.pdf > crop.log``
+2. Open ``crop.log``, get all  lines with ``%%HiResBoundingBox: ``, and strip those lines so its just the space separated nums on the lines
+3. open that log in python, and get bbox as follows
+
+.. code-block:: python
+
+    import pyperclip
+    with open('crop.log') as log:
+        rlines = [line.split('\n') for line in log.read.strip().split('\n')]
+
+        a,b,c,d = 0,0,0,0
+        for w,x,y,z in rlines:
+            a = max(a, eval(w))
+            b = max(b, eval(x))
+            c = max(c, eval(y))
+            d = max(d, eval(z))
+        pyperclip.copy(f'pdfcrop --bbox "{a} {b} {c} {d}"')
+
+4. pdfcrop --box "<the nums>" myfile.pdf cropfile.pdf
+
+
 remove a watermark
 ^^^^^^^^^^^^^^^^^^
 .. code-block:: bash
