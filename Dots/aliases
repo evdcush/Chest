@@ -133,7 +133,7 @@ ipython jupyter notebook cloudpickle restview gitup jrnl pyperclip"
 
 std_pkgs="$min_pkgs sympy numba pandas chainerrl gym jax jaxlib pydataset keras \
 docutils sphinx sphinx-rtd-theme sphinxcontrib-websupport numpydoc pypandoc \
-pyyaml tinydb python-slugify unidecode pybtex \
+pyyaml tinydb python-slugify unidecode pybtex scikit-image imageio \
 nltk spacy scattertext fuzzywuzzy surprise summa python-levenshtein \
 glances apt-select thefuck cheat s-tui termdown speedtest-cli \
 fire pypi-cli cookiecutter faker johnnydep black \

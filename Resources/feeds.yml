@@ -1,0 +1,57 @@
+---
+
+babylonbee:
+    description: The most trusted source in news
+    feed_url: https://babylonbee.com/feed
+    url: https://babylonbee.com
+
+bair:
+    description: berkeley research blog
+    feed_url: http://bair.berkeley.edu/blog/feed.xml
+    url: http://bair.berkeley.edu/blog/
+
+deepmind:
+    description: deepmind blog
+    feed_url: https://deepmind.com/blog/feed/basic/
+    url: https://deepmind.com/blog
+
+distill:
+    description: incredible, never-updated platform for clear, visual publications
+    feed_url: https://distill.pub/rss.xml
+    url: https://distill.pub/
+
+google-ai:
+    description: google AI blog (news, summaries)
+    feed_url: http://feeds.feedburner.com/blogspot/gJZg
+    url: https://ai.googleblog.com/
+
+Irpan:
+    description: Alex Irpan's site
+    feed_url: https://www.alexirpan.com/feed.xml
+    url: https://www.alexirpan.com/
+
+lyrn-ai:
+    description: summaries of deep learning papers
+    feed_url: https://www.lyrn.ai/feed/
+    url: https://www.lyrn.ai/
+
+openai:
+    description: openai research blog (news, summaries)
+    feed_url: https://blog.openai.com/rss/
+    url: https://blog.openai.com/
+
+synced:
+    description: news on machine intelligence
+    feed_url: https://syncedreview.com/feed/
+    url: https://syncedreview.com/
+
+Ruder:
+    description: Sebastion Ruder's posts
+    feed_url: http://ruder.io/rss/index.rss
+    url: http://ruder.io/
+
+uber:
+    description: uber's AI blog
+    feed_url: https://eng.uber.com/category/articles/ai/feed/
+    url: https://eng.uber.com/category/articles/ai/#
+
