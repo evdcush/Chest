@@ -88,6 +88,23 @@ mv -t DESTINATION file1 file2 file3 ...
 mv file1 file2 file3 -t DESTINATION
 
 
+# Manipulating Strings
+# --------------------
+str=https://github.com/willsALMANJ/Zutilo
+# CUT
+#     1      2        3             4           5
+# ['https:', '', 'github.com', 'willALMANJ', 'Zutilo']
+echo "$str" | cut -d'/' -f5 # ---> Zutilo
+echo "$str" | cut -d'/' -f4 # ---> wukksALMANJ
+
+# tr (translate or delete chars)
+echo $str | tr "/" "\n" | tail -n 2
+# willsALMANJ
+# Zutilo
+
+
+
+
 #=============================================================================#
 #                                                                             #
 #                            _                          _                     #
@@ -124,8 +141,7 @@ function find_and_remove_all(){
 # Fix broken symlinks
 # ===================
 find /mnt/home/someone/something -lname '/home/someone/*' \
-     -exec sh -c 'ln -snf "/mnt$(readlink "$0")" "$0"' {} \;
-
+   # xec sh -c 'ln -snf "/mnt$(readlink "$0")" "$0"' {} \;
 
 # don't remember what this went to, but keeping it because it must have
 # felt like a cmd worth saving
@@ -138,6 +154,12 @@ curl --silent "https://api.github.com/repos/USER/REPO/releases/latest" |
     grep '"tag_name":' |
     sed -E 's/.*"([^"]+)".*/\1/' |
     xargs -I {} curl -sOL "https://github.com/USER/REPO/archive/"{}'.tar.gz'
+
+# Or, using JQ
+curl https://api.github.com/repos/willsALMANJ/Zutilo/releases/latest | jq '.assets | .[0] | .browser_download_url'
+# "https://github.com/willsALMANJ/Zutilo/releases/download/v3.0.3/zutilo.xpi"
+curl https://api.github.com/repos/willsALMANJ/Zutilo/releases/latest \
+| jq '.assets | .[0] | .browser_download_url' | xargs wget
 
 
 
@@ -195,6 +217,406 @@ deprec_getstars(){ # DEPRECATED; just made my own script an executable
     TOKEN="$TOKEN_GH_SCRAPE"
     getstars -u "$USER" -t "$TOKEN" -s > "GH-Stars_$USER.md"
 }
+
+
+#=============================================================================#
+#                                                                             #
+#                 .d8888b.   .d88888b.  8888888b.  8888888888                 #
+#                d88P  Y88b d88P" "Y88b 888   Y88b 888                        #
+#                888    888 888     888 888    888 888                        #
+#                888        888     888 888   d88P 8888888                    #
+#                888        888     888 8888888P"  888                        #
+#                888    888 888     888 888 T88b   888                        #
+#                Y88b  d88P Y88b. .d88P 888  T88b  888                        #
+#                 "Y8888P"   "Y88888P"  888   T88b 8888888888                 #
+#                                                                             #
+#                                                                             #
+#             888     888 88888888888 8888888 888       .d8888b.              #
+#             888     888     888       888   888      d88P  Y88b             #
+#             888     888     888       888   888      Y88b.                  #
+#             888     888     888       888   888       "Y888b.               #
+#             888     888     888       888   888          "Y88b.             #
+#             888     888     888       888   888            "888             #
+#             Y88b. .d88P     888       888   888      Y88b  d88P             #
+#              "Y88888P"      888     8888888 88888888  "Y8888P"              #
+#                                                                             #
+#=============================================================================#
+
+
+#=============================================================================#
+#     _____   _   _            ____                  _                        #
+#    |  ___| (_) | |   ___    / ___|   _   _   ___  | |_    ___   _ __ ___    #
+#    | |_    | | | |  / _ \   \___ \  | | | | / __| | __|  / _ \ | '_ ` _ \   #
+#    |  _|   | | | | |  __/    ___) | | |_| | \__ \ | |_  |  __/ | | | | | |  #
+#    |_|     |_| |_|  \___|   |____/   \__, | |___/  \__|  \___| |_| |_| |_|  #
+#                                      |___/                                  #
+#                                                                             #
+#=============================================================================#
+
+#-----------------------------------------------------------------------------#
+#                                     cat                                     #
+#-----------------------------------------------------------------------------#
+# Display the contents of a file
+cat /path/to/foo
+
+# Display contents with line numbers
+cat -n /path/to/foo
+
+# concat several files into the target file:
+cat file1 file2 > target_file # >> will append
+
+# Display contents with line numbers (blank lines excluded)
+cat -b /path/to/foo
+
+
+#-----------------------------------------------------------------------------#
+#                                    chmod                                    #
+#-----------------------------------------------------------------------------#
+# Add execute for all (myscript.sh)
+chmod a+x myscript.sh
+
+# Set user to read/write/execute, group/global to read only (myscript.sh), symbolic mode
+chmod u=rwx, go=r myscript.sh
+
+# Remove write from user/group/global (myscript.sh), symbolic mode
+chmod a-w myscript.sh
+
+# Remove read/write/execute from user/group/global (myscript.sh), symbolic mode
+chmod = myscript.sh
+
+# Set user to read/write and group/global read (myscript.sh), octal notation
+chmod 644 myscript.sh
+
+# Set user to read/write/execute and group/global read/execute (myscript.sh), octal notation
+chmod 755 myscript.sh
+
+# Set user/group/global to read/write (myscript.sh), octal notation
+chmod 666 myscript.sh
+
+# # Roles
+# u - user (owner of the file)
+# g - group (members of file's group)
+# o - global (all users who are not owner and not part of group)
+# a - all (all 3 roles above)
+#
+# # Numeric representations
+# 7 - full (rwx)
+# 6 - read and write (rw-)
+# 5 - read and execute (r-x)
+# 4 - read only (r--)
+# 3 - write and execute (-wx)
+# 2 - write only (-w-)
+# 1 - execute only (--x)
+# 0 - none (---)
+
+#-----------------------------------------------------------------------------#
+#                                    chown                                    #
+#-----------------------------------------------------------------------------#
+# Change file owner
+chown user file
+
+# Change file owner and group
+chown user:group file
+
+# Change owner recursively
+chown -R user directory
+
+# Change ownership to match another file
+chown --reference=/path/to/ref_file file
+
+#-----------------------------------------------------------------------------#
+#                                     cmp                                     #
+#-----------------------------------------------------------------------------#
+# Compare two files
+
+# Find the byte number and line number of the first difference between the files:
+cmp file1 file2
+
+# Find the byte number and differing bytes of every difference:
+cmp -l file1 file2
+
+
+#-----------------------------------------------------------------------------#
+#                                    file                                     #
+#-----------------------------------------------------------------------------#
+# Determine file type.
+
+# Give a description of the type of the specified file. Works fine for files with no file extension:
+file filename
+
+# Look inside a zipped file and determine the file type(s) inside:
+file -z foo.zip
+
+# Allow file to work with special or device files:
+file -s filename
+
+# Don't stop at first file type match; keep going until the end of the file:
+file -k filename
+
+# Determine the mime encoding type of a file:
+file -i filename
+
+
+#-----------------------------------------------------------------------------#
+#                                     tee                                     #
+#-----------------------------------------------------------------------------#
+# Read from standard input and write to standard output and files (or commands).
+
+# Copy standard input to each FILE, and also to standard output:
+echo "example" | tee FILE
+
+# Append to the given FILEs, do not overwrite:
+echo "example" | tee -a FILE
+
+# Print standard input to the terminal, and also pipe it into another program for further processing:
+echo "example" | tee /dev/tty | xargs printf "[%s]"
+
+# Create a folder called "example", count the number of characters in "example" and write "example" to the terminal:
+echo "example" | tee >(xargs mkdir) >(wc -c)
+
+
+#-----------------------------------------------------------------------------#
+#                                    split                                    #
+#-----------------------------------------------------------------------------#
+# Split a file into pieces.
+
+# Split a file, each split having 10 lines (except the last split):
+split -l 10 filename
+
+# Split a file into 5 files. File is split such that each split has same size (except the last split):
+split -n 5 filename
+
+# Split a file with 512 bytes in each split (except the last split; use 512k for kilobytes and 512m for megabytes):
+split -b 512 filename
+
+# Split a file with at most 512 bytes in each split without breaking lines:
+split -C 512 filename
+
+
+#=============================================================================#
+#                           _____                 _                           #
+#                          |_   _|   ___  __  __ | |_                         #
+#                            | |    / _ \ \ \/ / | __|                        #
+#                            | |   |  __/  >  <  | |_                         #
+#                            |_|    \___| /_/\_\  \__|                        #
+#                                                                             #
+#=============================================================================#
+
+#-----------------------------------------------------------------------------#
+#                                     awk                                     #
+#-----------------------------------------------------------------------------#
+# A versatile programming language for working on files.
+
+# Print the fifth column (a.k.a. field) in a space-separated file:
+awk '{print $5}' filename
+
+# Print the second column of the lines containing "something" in a space-separated file:
+awk '/something/ {print $2}' filename
+
+# Print the last column of each line in a file, using a comma (instead of space) as a field separator:
+awk -F ',' '{print $NF}' filename
+
+# Sum the values in the first column of a file and print the total:
+awk '{s+=$1} END {print s}' filename
+
+# Sum the values in the first column and pretty-print the values and then the total:
+awk '{s+=$1; print $1} END {print "--------"; print s}' filename
+
+# Print every third line starting from the first line:
+awk 'NR%3==1' filename
+
+# sum integers from a file or stdin, one integer per line:
+printf '1\n2\n3\n' | awk '{ sum += $1} END {print sum}'
+
+# using specific character as separator to sum integers from a file or stdin
+printf '1:2:3' | awk -F ":" '{print $1+$2+$3}'
+
+# print a multiplication table
+seq 9 | sed 'H;g' | awk -v RS='' '{for(i=1;i<=NF;i++)printf("%dx%d=%d%s", i, NR, i*NR, i==NR?"\n":"\t")}'
+
+# Specify output separator character
+printf '1 2 3' | awk 'BEGIN {OFS=":"}; {print $1,$2,$3}'
+
+
+#-----------------------------------------------------------------------------#
+#                                  basename                                   #
+#-----------------------------------------------------------------------------#
+# Returns non-directory portion of a pathname.
+
+# Show only the file name from a path:
+basename path/to/file
+# basename Projects/dummy_proj/src/hello.cpp ---> hello.cpp
+
+# Show only the file name from a path, with a suffix removed:
+basename path/to/file suffix
+
+
+#-----------------------------------------------------------------------------#
+#                                    comm                                     #
+#-----------------------------------------------------------------------------#
+# Select or reject lines common to two files. Both files must be sorted.
+
+# Produce three tab-separated columns: lines only in first file, lines only in second file and common lines:
+comm file1 file2
+
+# Print only lines common to both files:
+comm -12 file1 file2
+
+# Print only lines common to both files, reading one file from stdin:
+cat file1 | comm -12 - file2
+
+# Get lines only found in first file, saving the result to a third file:
+comm -23 file1 file2 > file1_only
+
+# Print lines only found in second file, when the files aren't sorted:
+comm -13 <(sort file1) <(sort file2)
+
+#-----------------------------------------------------------------------------#
+#                                   csplit                                    #
+#-----------------------------------------------------------------------------#
+# Split a file into pieces.
+# This generates files named "xx00", "xx01", and so on.
+
+# Split a file at lines 5 and 23:
+csplit file 5 23
+
+# Split a file every 5 lines (this will fail if the total number of lines is not divisible by 5):
+csplit file 5 {*}
+
+# Split a file every 5 lines, ignoring exact-division error:
+csplit -k file 5 {*}
+
+# Split a file at line 5 and use a custom prefix for the output files:
+csplit file 5 -f prefix
+
+# Split a file at a line matching a regular expression:
+csplit file /regex/
+
+
+
+
+#-----------------------------------------------------------------------------#
+#                                     cut                                     #
+#-----------------------------------------------------------------------------#
+# Cut out fields from STDIN or files.
+
+# Cut out the first sixteen characters of each line of STDIN:
+cut -c 1-16
+
+# Cut out the first sixteen characters of each line of the given files:
+cut -c 1-16 file
+
+# Cut out everything from the 3rd character to the end of each line:
+cut -c 3-
+
+# Cut out the fifth field of each line, using a colon as a field delimiter (default delimiter is tab):
+cut -d':' -f5
+
+# Cut out the 2nd and 10th fields of each line, using a semicolon as a delimiter:
+cut -d';' -f2,10
+
+# Cut out the fields 3 through to the end of each line, using a space as a delimiter:
+cut -d' ' -f3-
+
+#-----------------------------------------------------------------------------#
+#                                     sed                                     #
+#-----------------------------------------------------------------------------#
+# Edit text in a scriptable manner.
+
+# Replace the first occurrence of a regular expression in each line of a file, and print the result:
+sed 's/regex/replace/' filename
+
+# Replace all occurrences of an extended regular expression in a file, and print the result:
+sed -r 's/regex/replace/g' filename
+
+# Replace all occurrences of a string in a file, overwriting the file (i.e. in-place):
+sed -i 's/find/replace/g' filename
+
+# Replace only on lines matching the line pattern:
+sed '/line_pattern/s/find/replace/' filename
+
+# Delete lines matching the line pattern:
+sed '/line_pattern/d' filename
+
+# Print only text between n-th line till the next empty line:
+sed -n 'line_number,/^$/p' filename
+
+# Apply multiple find-replace expressions to a file:
+sed -e 's/find/replace/' -e 's/find/replace/' filename
+
+# Replace separator / by any other character not used in the find or replace patterns, e.g., #:
+sed 's#find#replace#' filename
+
+
+#-----------------------------------------------------------------------------#
+#                                    tail                                     #
+#-----------------------------------------------------------------------------#
+# Display the last part of a file.
+
+# Show last 'num' lines in file:
+tail -n num file
+
+# Show all file since line 'num':
+tail -n +num file
+
+# Show last 'num' bytes in file:
+tail -c num file
+
+# Keep reading file until Ctrl + C:
+tail -f file
+
+# Keep reading file until Ctrl + C, even if the file is rotated:
+tail -F file
+
+
+#-----------------------------------------------------------------------------#
+#                                     tr                                      #
+#-----------------------------------------------------------------------------#
+# Translate characters: run replacements based on single characters and character sets.
+
+# Replace all occurrences of a character in a file, and print the result:
+tr find_character replace_character < filename
+
+# Replace all occurrences of a character from another command's output:
+echo text | tr find_character replace_character
+
+# Map each character of the first set to the corresponding character of the second set:
+tr 'abcd' 'jkmn' < filename
+
+# Delete all occurrences of the specified set of characters from the input:
+tr -d 'input_characters' < filename
+
+# Compress a series of identical characters to a single character:
+tr -s 'input_characters' < filename
+
+# Translate the contents of a file to upper-case:
+tr "[:lower:]" "[:upper:]" < filename
+
+# Strip out non-printable characters from a file:
+tr -cd "[:print:]" < filename
+
+#replace : with new line
+echo $PATH|tr ":" "\n" #equivalent with:
+echo $PATH|tr -t ":" \n
+
+#remove all occurance of "ab"
+echo aabbcc |tr -d "ab"
+#ouput: cc
+
+#complement "aa"
+echo aabbccd |tr -c "aa" 1
+#output: aa11111 without new line
+#tip: Complement meaning keep aa,all others are replaced with 1
+
+#complement "ab\n"
+echo aabbccd |tr -c "ab\n" 1
+#output: aabb111 with new line
+
+#Preserve all alpha(-c). ":-[:digit:] etc" will be translated to "\n". sequeeze mode.
+echo $PATH|tr -cs "[:alpha:]" "\n"
+
+#ordered list to unordered list
+echo "1. /usr/bin\n2. /bin" |tr -cs " /[:alpha:]\n" "+"
 
 
 
