@@ -142,7 +142,7 @@ libncurses5-dev libreadline-dev librsvg2-bin libre2-dev libsqlite3-dev \
 libssl-dev libxcb-keysyms1-dev llvm m4 make p7zip-full p7zip-rar unrar unar perl \
 pkg-config python-sphinx qt5-default qt5-qmake qttools5-dev-tools redis-server \
 redis-tools software-properties-common texlive-xetex tk-dev xz-utils zlib1g-dev \
-printer-driver-brlaser exfat-utils flac lame x264 x265
+printer-driver-brlaser exfat-utils flac lame x264 x265 libglfw3
 
 
 
@@ -264,33 +264,17 @@ wget https://github.com/kermitt2/grobid/archive/0.5.3.zip
 # Apps
 # ====
 #sudo apt install -y guake # always check versions available from src and apt
+sudo apt install -y chromium-browser deluge aria2 sshfs openssh-client \
+jq \
+flameshot nomacs inkscape vlc mpv \
+pandoc poppler-utils wkhtmltopdf img2pdf \
+htop psensor xsensors xfce4-sensors-plugin \
+gparted tree tlp deborphan symlinks \
+git-crypt git-extras \
+xclip copyq \
+dict dictd dict-gcide dict-wn dict-moby-thesaurus \
+anki xfce4-timer-plugin redshift font-manager;
 
-#==== network
-sudo apt install -y chromium-browser deluge aria2 sshfs openssh-client
-
-#==== image
-sudo apt install -y flameshot nomacs inkscape vlc mpv
-
-#==== doc conversion
-sudo apt install -y pandoc poppler-utils wkhtmltopdf img2pdf
-
-#==== system status
-sudo apt install -y htop psensor xsensors xfce4-sensors-plugin
-
-#==== file
-sudo apt install -y gparted tree tlp deborphan symlinks
-
-#==== git
-sudo apt install -y git-crypt git-exras
-
-#==== clipboard
-sudo apt install -y xclip copyq
-
-#==== dictionary
-sudo apt install -y dict dictd dict-gcide dict-wn dict-moby-thesaurus
-
-#==== misc
-sudo apt install -y anki xfce4-timer-plugin redshift font-manager
 
 # Fonts
 # =====
@@ -368,6 +352,16 @@ wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list;
 sudo apt update && sudo apt install sublime-text -y
 
+# cheat.sh
+# ========
+sudo apt install xsel rlwrap  # deps for interactive shell
+curl https://cht.sh/:cht.sh > ~/.local/bin/cht.sh
+chmod ~/.local/bin/cht.sh
+
+# zsh tab completion support
+curl https://cheat.sh/:zsh > ~/.zsh.d/_cht
+
+
 # Misc debs
 # =========
 #---- bat
@@ -408,8 +402,26 @@ git config --global sequence.editor git-interactive-rebase-tool
 #                                                                             #
 #=============================================================================#
 
+#-----------------------------------------------------------------------------#
+#                                   Zotero                                    #
+#-----------------------------------------------------------------------------#
+# Use Sebastiaan Mathot's zotero installer script (github.com/smathot/zotero_installer)
+sudo wget https://raw.github.com/smathot/zotero_installer/master/zotero_installer.sh -O /tmp/zotero_installer.sh
+cd /tmp && sudo chmod +x zotero_installer.sh; ./zotero_installer.sh
 
+# Plugins
+# =======
+# Zutilo: adds missing edit features to zotero
+https://github.com/willsALMANJ/Zutilo
+curl https://api.github.com/repos/willsALMANJ/Zutilo/releases/latest \
+| jq '.assets | .[0] | .browser_download_url' | xargs wget
 
+# Voyant exporty: https://github.com/corajr/zotero-voyant-export
+# zotnet: http://www.exitsantacruz.com/zotnet/zotnet.php
+# zotsite: https://github.com/plandes/zotsite
+# zotxt: https://github.com/egh/zotxt
+# zot4st: https://gitlab.com/egh/zot4rst
+# cit2c: https://github.com/takluyver/cite2c # rst citations
 
 #=============================================================================#
 #                       ,,                                                    #
@@ -594,8 +606,6 @@ sudo apt install python-rosinstall python-rosinstall-generator python-wstool bui
 # ---------------
 curl -sSL http://get.gazebosim.org | sh
 gazebo
-
-
 
 
 #=======================================================================================#
@@ -895,6 +905,151 @@ startup --output_user_root=/tmp/bazel
 
 
 #=============================================================================#
+#                                                                             #
+#          .d8888b.           888      888 d8b                                #
+#         d88P  Y88b          888      888 Y8P                                #
+#         Y88b.               888      888                                    #
+#          "Y888b.   888  888 88888b.  888 888 88888b.d88b.   .d88b.          #
+#             "Y88b. 888  888 888 "88b 888 888 888 "888 "88b d8P  Y8b         #
+#               "888 888  888 888  888 888 888 888  888  888 88888888         #
+#         Y88b  d88P Y88b 888 888 d88P 888 888 888  888  888 Y8b.             #
+#          "Y8888P"   "Y88888 88888P"  888 888 888  888  888  "Y8888          #
+#                                                                             #
+#=============================================================================#
+
+
+# user settings
+# =============
+#{
+#    "always_show_minimap_viewport": true,
+#    "auto_find_in_selection": true,
+#    "bold_folder_labels": true,
+#    "caret_extra_width": 2,
+#    "caret_style": "smooth",
+#    "color_scheme": "Packages/Colorsublime - Themes/cache/Colorsublime-Themes-master/themes/Piodine.tmTheme",
+#    "detect_indentation": false,
+#    "draw_minimap_border": true,
+#    "ensure_newline_at_eof_on_save": true,
+#    "font_face": "Hack",
+#    "font_size": 12,
+#    //"highlight_line": true,
+#    "hot_exit": false,
+#    "ignored_packages":
+#    [
+#        "RestructuredText",
+#        "Vintage"
+#    ],
+#    "index_files": false,
+#    "preview_on_click": false,
+#    "rulers":
+#    [
+#        79
+#    ],
+#    "tab_size": 4,
+#    "theme": "Default.sublime-theme",
+#    "translate_tabs_to_spaces": true,
+#    "trim_trailing_white_space_on_save": true
+#}
+
+# NOTE: "Default.sublime-theme" HAS BEEN MODIFIED
+#  via PackageResourceViewer:
+#  - font sizing for all labels has been increased
+#  - fg made white, and tints generally weakened
+
+
+# Sublime themes
+# ==============
+# Almost all themes come from the ColorSublime package
+# Some themes are better suited for certain syntaxes, so I have made three
+# categories for keeping record of what themes I like for:
+#    code
+#    reStructuredText
+#    markdown
+
+
+#------------------------------------------------------------------------------
+# CODE THEMES
+# -----------
+# TOP CHOICES:
+#     dark  ---> piodine
+#     light ---> spring, github_v2
+
+
+#==== Dark
+#  ** piodine **          # The one, the only. Awesome, clear, colors. everything looks good!
+#  oceanic-reef/next *    # reef better, but comments nearly unreadable; next is a litte too desat
+#  Bijan **               # clean, readable, softish colors, slate background
+#  Foggy-Evening *        # vibrant colors, really pops, not great syntax for py
+#  gooey **               # very clear, nice colors (bit boring), nice slate dark
+#  Easyballs *            # simple, clean, readable
+#  Wildlife-Night */*     # (RST) very clear, comment highlighting
+#  TwoStones **           # Nice, readable; great except for the white coloring on python syntax
+
+#==== Medium & desat (or weird)
+#  mutedrainbow_sky **    # nice "adventure-time"-esque scheme, syntax supp could be better
+#  nouba *                # (PLAINTEXT) HEAVY contrast, very strong highlight
+#  Atomic - Light(Soft) * # similar to github-v2
+#  wild-cherry *          # good contrast, colors are a bit soft, purple-base, very strong highlight
+
+#==== Light
+#  Github-v2  ***         # Favorite light; syntax supp could be better, but love the yellowish/offwhite scheme
+#  ArtSchool **           # Almost too bright; very clear easy to read, white bkgrd, bright colors
+#  Celeste *              # very bright, light colors, clear, white
+#  Butterfly **           # like a better celeste, clearer, more sat colors
+#  softly **              # nice off-white, good highlight, overall clear
+#  spring ***             # uses bold!, off-white, good color, highlighting, very nice
+#  eiffel **              # off-white, great contrast, could have better syn supp
+#
+#------------------------------------------------------------------------------
+# RST themes
+# ==========
+
+
+#------------------------------------------------------------------------------
+# Markdown themes
+# ===============
+# TOP CHOICES:
+#  dark  ---> bijan
+#  light ---> github_light
+
+#==== dark
+#  bluloco-dark  **   # great color, great syntax support
+#  bijan     ***      # very clear/legible, good color pallette, bold/italic/headers
+#  anarchist **       # Headers, line-splits, bold, italic, dynamic albeit boring coloring
+#  WarpOS */*         # Great, interesting color palette and syntax, but maybe too opinionated
+#  azure *            # Good syntax support, not enough contrast in coloring
+#  solarized-ocean */ # Kind of same opinion i always have about solarized: great palette, support, but not a fan of the desat and lack of contrast
+#  paraiso-dark **    # Great colors and syntax, needs more contrast and header syn support
+
+#==== I-want-my-eyes-to-bleed
+#  Mcedit             # Impressive
+#  HotDogStand        # I want to die
+
+#==== medium
+#  Another_Kolor_light **  # Great contrast and colors, bg color maybe too grey
+#  Breakers ***            # excellent syntax support, good clean color palette
+#  Wildlife-Day */*        # Great, but almost too much contrast/highlighting
+#  Paraiso-light **        # So close to 3star, but missing header syntax (otherwise great colors)
+#  GitHub_Light ***        # Clean, legible, syntax
+#------------------------------------------------------------------------------
+
+# Sublime packages
+# ================
+# A File Icon
+# Colorsublime
+# Cython+
+# ExportHtml
+# Licence Snippets
+# Material Theme
+# Package Control
+# PackageResourceViewer
+# RestructuredText Improved
+# Restructured Text (RST) Snippets
+# SidebarEnhancements
+
+
+
+#=============================================================================#
 #             88b           d88  88   ad88888ba     ,ad8888ba,                #
 #             888b         d888  88  d8"     "8b   d8"'    `"8b               #
 #             88`8b       d8'88  88  Y8,          d8'                         #
@@ -1000,129 +1155,3 @@ pip install --process-dependency-links --no-binary --upgrade git+https://github.
 "xBrowserSync"
 
 
-
-
-
-#-----------------------------#
-#                 _       _   #
-#   ___   _   _  | |__   | |  #
-#  / __| | | | | | '_ \  | |  #
-#  \__ \ | |_| | | |_) | | |  #
-#  |___/  \__,_| |_.__/  |_|  #
-#                             #
-#-----------------------------#
-
-# user settings
-# =============
-#{
-#    "always_show_minimap_viewport": true,
-#    "auto_find_in_selection": true,
-#    "bold_folder_labels": true,
-#    "caret_extra_width": 2,
-#    "caret_style": "smooth",
-#    "color_scheme": "Packages/Colorsublime - Themes/cache/Colorsublime-Themes-master/themes/Piodine.tmTheme",
-#    "detect_indentation": false,
-#    "draw_minimap_border": true,
-#    "ensure_newline_at_eof_on_save": true,
-#    "font_face": "Hack",
-#    "font_size": 12,
-#    "highlight_line": true,
-#    "hot_exit": false,
-#    "ignored_packages":
-#    [
-#        "RestructuredText",
-#        "Vintage"
-#    ],
-#    "index_files": false,
-#    "preview_on_click": false,
-#    "rulers":
-#    [
-#        79
-#    ],
-#    "tab_size": 4,
-#    "theme": "Default.sublime-theme",
-#    "translate_tabs_to_spaces": true,
-#    "trim_trailing_white_space_on_save": true
-#}
-
-# NOTE: "Default.sublime-theme" HAS BEEN MODIFIED
-#  via PackageResourceViewer:
-#  - font sizing for all labels has been increased
-#  - fg made white, and tints generally weakened
-
-
-# Sublime themes
-#======================
-# Almost all themes come from the ColorSublime package
-# NB: Some themes have better support for certain syntaxes than others
-#     most of the colors described are relative to python syntax highlighting
-#     and code more generally
-#  markdown and RST support are often better supported by other themes
-#  (which, in turn, sources from textmate themes I believe)
-
-# TOP CHOICES
-# dark  ---> piodine
-# light ---> spring, github_v2
-
-
-#==== Dark
-#  ** piodine **          # The one, the only. Awesome, clear, colors. everything looks good!
-#  oceanic-reef/next *    # reef better, but comments nearly unreadable; next is a litte too desat
-#  Bijan **               # clean, readable, softish colors, slate background
-#  Foggy-Evening *        # vibrant colors, really pops, not great syntax for py
-#  gooey **               # very clear, nice colors (bit boring), nice slate dark
-#  Easyballs *            # simple, clean, readable
-#  Wildlife-Night */*     # (RST) very clear, comment highlighting
-#  TwoStones **           # Nice, readable; great except for the white coloring on syntax
-
-#==== Medium & desat (or weird)
-#  mutedrainbow_sky **    # nice "adventure-time"-esque scheme, syntax supp could be better
-#  nouba *                # (PLAINTEXT) HEAVY contrast, very strong highlight
-#  Atomic - Light(Soft) * # similar to github-v2
-#  wild-cherry *          # good contrast, colors are a bit soft, purple-base, very strong highlight
-
-#==== Light
-#  Github-v2  ***         # Favorite light; syntax supp could be better, but love the yellowish/offwhite scheme
-#  ArtSchool *            # Almost too bright; very clear easy to read, white bkgrd, bright colors
-#  Celeste *              # very bright, light colors, clear, white
-#  Butterfly **           # like a better celeste, clearer, more sat colors
-#  softly **              # nice off-white, good highlight, overall clear
-#  spring ***             # uses bold!, off-white, good color, highlighting, very nice
-#  eiffel **              # off-white, great contrast, could have better syn supp
-
-# RST themes
-# ==========
-
-
-# Markdown themes
-# ===============
-
-# TOP CHOICES:
-#  dark  ---> bluloco-dark
-#  light ---> bluloco-light, Another_Kolor_Light
-#
-#==== dark
-#  bluloco-dark  ***  # great color, great syntax support
-#  bijan     ***      # very clear/legible, good color pallette, bold/italic/headers
-#  anarchist ***      # Headers, line-splits, bold, italic, dynamic coloring
-#
-#  azure **      #
-#
-#
-
-#==== medium
-#  Another_Kolor_light ***  # H1 highlight, headers, bold, italic, coloring
-#
-# Sublime packages
-# ================
-# A File Icon
-# Colorsublime
-# Cython+
-# ExportHtml
-# Licence Snippets
-# Material Theme
-# Package Control
-# PackageResourceViewer
-# RestructuredText Improved
-# Restructured Text (RST) Snippets
-# SidebarEnhancements
