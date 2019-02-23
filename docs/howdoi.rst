@@ -71,6 +71,8 @@ crop PDF
 
 To crop with all pages at consistent page size: https://tex.stackexchange.com/questions/166758/how-do-i-make-pdfcrop-output-all-pages-of-the-same-size
 
+**scratch all below, use pdf-crop-margins instead (pip install pdfCropMargins), then ``pdf-crop-margins -s -u my_pdf.pdf**
+
 1. ``pdfcrop --verbose myfile.pdf cropfile.pdf > crop.log``
 2. Open ``crop.log``, get all  lines with ``%%HiResBoundingBox: ``, and strip those lines so its just the space separated nums on the lines
 3. open that log in python, and get bbox as follows

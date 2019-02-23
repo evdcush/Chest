@@ -125,6 +125,30 @@ function rurl {
 #    sudo apt-fast update
 #}
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+function hurl {
+    TARGET='repos'
+    URL="$1"
+    if [ "$#" -gt 1 ]; then
+        #==== "orgs" or "users" specified
+        TARGET="$1"
+        URL="$2"
+    fi
+    yq w -i $PATH_INBOX_HOARD "$TARGET"'[+]' $URL
+}
+#==== leetcode-cli
+leet(){
+    # leet(int num, str lang=python3): generate leetcode problem num
+    # leet 307 --> 307.range-sum-query-mutable.py
+    # leet 307 cpp --> 307.range-sum-query-mutable.cpp
+    PROBLEM_NUM="$1"
+    LANG='python3'
+    if [ "$#" -gt 1 ]; then
+        LANG="$2"
+    fi
+    leetcode show $PROBLEM_NUM -gx -l $LANG
+}
+
 
 #=============================================================================#
 #                                                                             #
@@ -283,7 +307,24 @@ function jst2pst(){
 #                        `"Y88888P"   88       88                             #
 #                                                                             #
 #=============================================================================#
-
+#https://api.github.com/repos/willsALMANJ/Zutilo/releases/latest
+# Get latest release
+# ==================
+# NB: this assumes whatever target asset you want is
+#     the first asset listed in release
+function gh-release(){
+    if [ "$#" -eq 0 ]; then
+        args=`xclip -o -selection clipboard` # NB: wrapping bash statement in backticks makes var = statement ret
+    else
+        args=$1
+    fi
+    splitargs=`echo $args | tr "/" "\n" | tail -n 2`
+    read -d "\n" GH_USER GH_REPO <<<$splitargs
+    #echo $GH_USER
+    #echo $GH_REPO
+    api_url="https://api.github.com/repos/$GH_USER/$GH_REPO/releases/latest"
+    curl $api_url | jq '.assets | .[0] | .browser_download_url' | xargs wget
+}
 
 
 # git clone && cd

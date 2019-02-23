@@ -56,16 +56,8 @@ lines = open('file.txt').read().split('\n')
 # OR
 with open('file.txt') as myfile:
     lines = myfile.read().split("\n")
+    lines = myfile.readlines() # includes \n in each line
 
-# OR
-with open('file.txt', -r) as myfile:
-    lines = myfile.readlines()
-
-# OR
-lines = []
-with open('file.txt', -r) as myfile:
-    for line in myfile.readlines():
-        lines.append(line)
 
 # OR
 myfile = open('file.txt') # Open file on read mode

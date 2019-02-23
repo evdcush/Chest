@@ -83,13 +83,12 @@ MEDIA = f"{HOME}/Media"
 #=============================================================================#
 
 # fpaths
-inbox_read_path    = f"{CLOUD}/Reading/inbox.txt"
+inbox_read_path = f"{CLOUD}/Reading/inbox.txt"
 
 #==== resources
-#HOARD_INBOX   = R_yml(f"{RESOURCES_CLOUD}/inbox_hoard.yml")
-#HOARD_ARCHIVE = R_yml(f"{RESOURCES_CLOUD}/archive_hoard.yml")
-#PUBLIC_TOKENS = R_yml(f"{RESOURCES_CLOUD}/gh_tokens.yml")['public']
-public_gh_tokens = lambda: R_yml(f"{RESOURCES_CLOUD}/gh_tokens.yml")['public']
+api_tokens_path = f"{RESOURCES_CLOUD}/api_tokens.yml"
+zot_token = lambda: R_yml(api_tokens_path)['zotero']
+public_gh_tokens = lambda: R_yml(api_tokens_path)['github']
 
 def add_to_read_inbox(entry):
     with open(inbox_read_path, 'a') as ibx:

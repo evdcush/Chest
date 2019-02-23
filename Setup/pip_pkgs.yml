@@ -32,6 +32,7 @@ vision:
 - scikit-video
 - scikit-image
 - chainercv
+- glumpy  # rendering
 
 GPU:
 - pycuda  # unofficial cython-like embedded cuda code
