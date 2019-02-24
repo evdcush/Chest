@@ -338,26 +338,38 @@ function gcd(){
 # Scorched earth
 # ==============
 function git-nuke(){
-    #=== Delete specified files from hist
+    #=== nuke targets
     TARGETS=$@
-    git filter-branch --force --index-filter \
-    "git rm --cached --ignore-unmatch $TARGETS" \
-    --prune-empty --tag-name-filter cat -- --all
+    echo -n "WARNING: git-nuke called on $TARGETS, do you want to proceed? (y/N): "
+    read launch_confirmation
+    if [ "$launch_confirmation" != "${launch_confirmation#[Yy]}" ] ;then
+        echo "Proceeding to nuke"
+        echo "NOTE: current .git is saved as GITBKP in case of SNAFU, and must removed manually\n"
+        cp -r .git GITBKP
 
-    #=== Cleanup refs
-    git for-each-ref --format='delete %(refname)' refs/original | git update-ref --stdin
-    git reflog expire --expire=now --all
-    git gc --aggressive --prune=now
+        #=== Delete specified files from hist
+        git filter-branch --force --index-filter \
+        "git rm --cached --ignore-unmatch $TARGETS" \
+        --prune-empty --tag-name-filter cat -- --all
 
-    #=== Push changes
-    echo -n "Do you want to push (y/N)? "
-    read answer
-    if [ "$answer" != "${answer#[Yy]}" ] ;then
-        git push --all --prune --force  # will delete all branches not in local
+        #=== Cleanup refs
+        git for-each-ref --format='delete %(refname)' refs/original | git update-ref --stdin
+        git reflog expire --expire=now --all
+        git gc --aggressive --prune=now
+
+        #=== Push changes
+        echo -n "\n\tLocal repo nuked; Do you want to force push to remote? (y/N): "
+        read push_confirmation
+        if [ "$push_confirmation" != "${push_confirmation#[Yy]}" ] ;then
+            git push --all --prune --force  # will delete all branches not in local
+        else
+            echo "/tREMOTE PUSH ABORT\n\tNB: local git changes persist"
+            echo "To restore git to pre-nuke state:"
+            echo 'rm -rf .git; mv GITBKP .git; git reset HEAD --hard'
+        fi
     else
-        echo "REMOTE PUSH ABORTED; LOCAL GIT CHANGES WILL PERSIST"
+        echo "/tNUCLEAR STRIKE CANCELED"
     fi
-
 }
 
 
