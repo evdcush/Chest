@@ -234,6 +234,16 @@ class Parser:
 
 ###############################################################################
 ########################       MY DECORATORS       ############################
+from functools import wraps
+
+# BASIC TEMPLATE
+def my_decorator(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        # call decorated func
+        return func(*args, **kwargs)
+    return wrapper
+
 
 # Nifty decorator to both comment and prevent running unfinished funcs
 def TODO(f):

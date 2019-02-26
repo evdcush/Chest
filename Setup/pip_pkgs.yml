@@ -26,6 +26,7 @@ science-math:
 - pydataset     # access to many datasets, in dataframe format
 - pandas
 - cvxpy   # python embedded modeling lang for convex opt problems; intuitive
+- cyflann  # cython interface to FLANN lib
 
 vision:
 - opencv-python

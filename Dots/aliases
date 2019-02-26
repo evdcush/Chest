@@ -140,7 +140,7 @@ vis_pkgs="opencv-python scikit-video scikit-image imageio \
 open3d-python glumpy pypng pyopengl chainercv"
 
 std_pkgs="$min_pkgs pandas chainerrl chainercv gym pydataset keras \
-docutils sphinx sphinx-rtd-theme sphinxcontrib-websupport numpydoc pypandoc \
+docutils sphinx sphinx-rtd-theme sphinxcontrib-websupport sphinx-gallery numpydoc pypandoc \
 pyyaml tinydb python-slugify unidecode pybtex scikit-image imageio jax jaxlib \
 fire pypi-cli cookiecutter faker johnnydep black \
 feedparser requests lxml urllib3 bs4  github3.py grip"

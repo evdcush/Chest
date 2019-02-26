@@ -1,7 +1,69 @@
-import numpy as np
+
 from matplotlib import pyplot as plt
 
 
+
+Examples
+    --------
+    ::
+
+        #First create some toy data:
+        x = np.linspace(0, 2*np.pi, 400)
+        y = np.sin(x**2)
+
+        #Creates just a figure and only one subplot
+        fig, ax = plt.subplots()
+        ax.plot(x, y)
+        ax.set_title('Simple plot')
+
+        #Creates two subplots and unpacks the output array immediately
+        f, (ax1, ax2) = plt.subplots(1, 2, sharey=True)
+        ax1.plot(x, y)
+        ax1.set_title('Sharing Y axis')
+        ax2.scatter(x, y)
+
+        #Creates four polar axes, and accesses them through the returned array
+        fig, axes = plt.subplots(2, 2, subplot_kw=dict(polar=True))
+        axes[0, 0].plot(x, y)
+        axes[1, 1].scatter(x, y)
+
+        #Share a X axis with each column of subplots
+        plt.subplots(2, 2, sharex='col')
+
+        #Share a Y axis with each row of subplots
+        plt.subplots(2, 2, sharey='row')
+
+        #Share both X and Y axes with all subplots
+        plt.subplots(2, 2, sharex='all', sharey='all')
+
+        #Note that this is the same as
+        plt.subplots(2, 2, sharex=True, sharey=True)
+
+        #Creates figure number 10 with a single subplot
+        #and clears it if it already exists.
+        fig, ax=plt.subplots(num=10, clear=True)
+
+
+#==============================================================================
+#                    3D plot, copied from project as-is
+#
+#
+#==============================================================================
+
+
+def plot_3D_pointcloud(xt, xh, j, pt_size=(.9,.9), colors=('b','r'), fsize=(18,18), xin=None):
+    xt_x, xt_y, xt_z = np.split(xt[...,:3], 3, axis=-1)
+    xh_x, xh_y, xh_z = np.split(xh[...,:3], 3, axis=-1)
+
+    fig = plt.figure(figsize=fsize)
+    ax = fig.add_subplot(111, projection='3d')
+    ax.scatter(xt_x[j], xt_y[j], xt_z[j], s=pt_size[0], c=colors[0])
+    ax.scatter(xh_x[j], xh_y[j], xh_z[j], s=pt_size[1], c=colors[1])
+
+    ax.set_xlabel('X')
+    ax.set_ylabel('Y')
+    ax.set_zlabel('Z')
+    return fig
 
 
 
