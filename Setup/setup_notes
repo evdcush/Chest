@@ -854,9 +854,23 @@ dpkg -l | grep TensorRT
 #                     |_|\_|  \___|  \___| |____|                             #
 #               ======================================                        #
 
+# Download the network package:
+# https://developer.nvidia.com/nccl/nccl-download
+# https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/nvidia-machine-learning-repo-ubuntu1804_1.0.0-1_amd64.deb
+sudo dpkg -i nvidia-machine-learning-repo-<version>.deb
 
+# Update apt
+sudo apt update
 
+# Install
+sudo apt install libnccl2 libnccl-dev
 
+# Check version via:
+cat /usr/include/nccl.h | grep NCCL_MAJOR -A 2
+#(^) ➜  ~ cat /usr/include/nccl.h | grep NCCL_MAJOR -A 2
+#define NCCL_MAJOR 2
+#define NCCL_MINOR 4
+#define NCCL_PATCH 2
 
 
 #=============================================================================#

@@ -274,8 +274,7 @@ alias gacmd="git add -u && git commit --amend --no-edit"
 
 # Remote
 # ======
-alias gcn="git clone"
-alias gcn1="git clone --depth=1"
+alias gcn="git clone --depth=1"
 alias gf="git fetch"
 alias gpull="git pull"
 alias gpush="git push"

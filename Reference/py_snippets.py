@@ -550,6 +550,16 @@ db.close()
 ###############################################################################
 #######################             Misc            ###########################
 
+# BIZARRE SHIT
+# ============
+float.as_integer_ratio(37, 103) # should return (37, 103) right??
+(6471191697580907, 18014398509481984) # WRONG, returns this bullshit
+
+# Works fine with simple ratios (0.5, 0.75, 0.25)
+# not so good with primes...
+float.as_integer_ratio(5/23)
+(7832347178035645, 36028797018963968) # ... really?
+
 # Handling decode errors in response
 # ----------------------------------
 page_response.decode('utf-8')
@@ -627,6 +637,12 @@ class array(builtins.object)
 #  Obviously faster ops for certain things, such as arr.count
 
 """
+
+lst = [6, 12, 11, 5, 3, 15, 9, 1, 0, 14, 2, 7, 13, 10, 8, 4]
+arr = array('l') # arr of signed ints (int32)
+arr.fromlist(lst)
+# --> array('l', [6, 12, 11, 5, 3, 15, 9, 1, 0, 14, 2, 7, 13, 10, 8, 4])
+
 
 ###############################################################################
 #######################    namespace-like dict      ###########################
