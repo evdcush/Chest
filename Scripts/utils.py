@@ -103,7 +103,7 @@ def add_to_read_inbox(entry):
 #                                                              |___/          #
 #                                                                             #
 #=============================================================================#
-def impt_ghub():
+def init_github():
     import github3
     tokens = public_gh_tokens()
     hoard_token = tokens['hoard']['token']

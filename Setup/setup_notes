@@ -936,6 +936,52 @@ sudo ln -sf /opt/bazel/bin/bazel /usr/local/bin
 #=============================================================================#
 #=============================================================================#
 
+#=============================================================================#
+#                                                                             #
+#         d8b  8888888b.           888    888                                 #
+#         Y8P  888   Y88b          888    888                                 #
+#              888    888          888    888                                 #
+#         888  888   d88P 888  888 888888 88888b.   .d88b.  88888b.           #
+#         888  8888888P"  888  888 888    888 "88b d88""88b 888 "88b          #
+#         888  888        888  888 888    888  888 888  888 888  888          #
+#         888  888        Y88b 888 Y88b.  888  888 Y88..88P 888  888          #
+#         888  888         "Y88888  "Y888 888  888  "Y88P"  888  888          #
+#                              888                                            #
+#                         Y8b d88P                                            #
+#                          "Y88P"                                             #
+#                                                                             #
+#=============================================================================#
+# Additional setup for ipython, jupyter notebook
+
+
+# Konch
+# =====
+# konch is a cli/config util for python shell
+# it allows you to preload stuff, uses ipython, lots
+pip install konch
+pip init # creates .konchrc
+
+
+# Pygments
+# ========
+
+# Save output to a file in HTML format:
+# WHY NO WORK???
+#pygmentize -S pairaso-light -f html -o output_file.html input_file.py
+
+# custom styles
+# -------------
+# FIND A BETTER WAY, THIS IS SILLY, LOOK AT PYGMENTIZE API
+# I LOOK AT PYGMENTIZE API, SOMETHING ABOUT PLUGINS N SHIT
+# `pygmentize --help` couldn't possibly be more useless... so here's the ugly way
+
+cd /home/evan/.pyenv/versions/3.7.2/envs/^/lib/python3.7/site-packages/pygments/styles
+wget https://raw.githubusercontent.com/dracula/pygments/master/dracula.py
+vi __init__.py
+# add this line to STYLE_MAP:
+'dracula':  'dracula::DraculaStyle',
+
+
 
 
 #=============================================================================#

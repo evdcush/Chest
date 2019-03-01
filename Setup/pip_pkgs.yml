@@ -6,6 +6,7 @@ essentials:
 - matplotlib
 - chainer
 - ipython
+- konch
 - jupyter
 - notebook
 - cython
@@ -100,7 +101,9 @@ notebook:
 - jupyter_dashboards  # slick customizable layout for notebook; ***HAS NOT WORKED***
 #   |---> jupyter dashboards quick-setup --sys-prefix
 #   |---> jupyter nbextension enable jupyter_dashboards --py --sys-prefix
-
+    kernels:
+        - calysto_prolog
+        -
 
 apps:
 - retext  # RST and MD editor; best desktop editor for RST, still kinda bad

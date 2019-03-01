@@ -1,3 +1,18 @@
+"""
+Preservation of one-off scripts used for some purpose, that
+might be useful again some time.
+
+"""
+
+
+
+
+
+###############################################################################
+#-----------------------------------------------------------------------------#
+#                             Combining src files                             #
+#-----------------------------------------------------------------------------#
+
 from glob import glob
 
 task_dirs  = {d.split('/')[-1]: [] for d in glob('common-tasks/*')}
@@ -30,3 +45,4 @@ def write_file():
                         wfile.write(line)
                 wfile.write(soft_line)
 
+###############################################################################
