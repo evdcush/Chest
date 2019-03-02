@@ -1,0 +1,95 @@
+# vi: set ft=python :
+import konch
+import os
+import sys
+import code
+import math
+import string
+import random
+import itertools
+import functools
+import collections
+
+import yaml
+import numpy
+import matplotlib.pyplot
+import pyperclip
+
+def R_yml(ymlpath):
+    with open(ymlpath) as yml:
+        yobj = yaml.read()
+
+
+context = {
+    'os': os,
+    'sys': sys,
+    'code': code,
+    'math': math,
+    'string': string,
+    'random': random,
+    'itertools': itertools,
+    'functools': functools,
+    'collections': collections,
+
+    'np': numpy,
+    'plt': matplotlib.pyplot,
+    'yaml': yaml,
+    'pyperclip': pyperclip,
+}
+
+# Available options:
+#   "context", "banner", "shell", "prompt", "output",
+#   "context_format", "ipy_extensions", "ipy_autoreload",
+#   "ipy_colors", "ipy_highlighting_style", "ptpy_vi_mode"
+# See: https://konch.readthedocs.io/en/latest/#configuration
+konch.config({
+    'context': context,
+    "ipy_highlighting_style": "piodine", # paraiso-dark!, rrt!, vim, pastie, perldoc
+
+})
+
+
+def setup():
+    pass
+
+
+def teardown():
+    pass
+
+
+
+
+"""
+# ipy_highlighting_style (from pygment.styles)
+['default',
+ 'emacs',
+ 'friendly',
+ 'colorful',
+ 'autumn',
+ 'murphy',
+ 'manni',  # =,. are black
+ 'monokai', # mediocre, as usual
+ 'perldoc',
+ 'pastie',
+ 'borland',
+ 'trac',
+ 'native',
+ 'fruity',
+ 'bw',
+ 'vim',
+ 'vs',
+ 'tango',         # light theme
+ 'rrt',
+ 'xcode',         # light theme
+ 'igor',          # nice!
+ 'paraiso-light', # light themes dont work in dark terminal
+ 'paraiso-dark',  # NICE
+ 'lovelace',      # not bad, a little soft
+ 'algol',         # NICE, monochrome, but has great bold
+ 'algol_nu',      # also nice, does italics instead underline
+ 'arduino',       # desat, soft, no
+ 'rainbow_dash',  # NICE, very colorful, saturated
+ 'abap',          # light theme
+ 'jupyter_python' # light theme
+ ]
+"""
