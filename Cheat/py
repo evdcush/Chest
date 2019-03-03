@@ -18,19 +18,10 @@ with_if = [i for i in range(20) if i & 1] # odds
 double_for = [(i,j) for j in range(5) for i in range(3)] # [(0,0), (1,0), ..., (2,4)]
 
 #==== COPY
-copy.copy(x)     # shallow copy (you almost never want this)
-copy.deepcopy(x) # deep copy (what you think of when you think copy)
+copy.copy(x)     # shallow copy: you almost never want this (still has references)
+copy.deepcopy(x) # deep copy: what you think of when you think copy, FULL recursive copy
 
-# Recipes
-# =======
-def translate_strip(s):
-    table = str.maketrans({key: None for key in string.punctuation})
-    t = s.translate(table)
-    return t
 
-def re_strip(s):
-    t = re.sub(r'[^\w\s]', '', s)
-    return t
 
 #-----------------------------------------------------------------------------#
 #                                   RECIPES                                   #
@@ -45,6 +36,11 @@ def translate_strip(s):
 def re_strip(s): # marginally faster than translate
     t = re.sub(r'[^\w\s]', '', s)
     return t
+
+#==== matrix
+def mk_matrix(N, M, fill=0):
+    mat = [[fill] * M for _ in range(N)]
+    return mat
 
 
 #-----------------------------------------------------------------------------#
@@ -177,8 +173,8 @@ print(f'|{b:>12}|')  # ---> |         baz|
 print(f'|{b:*<12}|') # ---> |baz*********|
 print(f'|{b:0^12}|') # ---> |0000baz00000|
 print(f'|{b:^>12}|') # ---> |^^^^^^^^^baz|
-print(f'{num:03}') # ---> 007
-print(f'{11:03}')  # ---> 011
+print(f'{num:03}')   # ---> 007
+print(f'{11:03}')    # ---> 011
 
 #==== STRING
 import string
