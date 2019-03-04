@@ -1084,6 +1084,31 @@ vi __init__.py
 # RST themes
 # ==========
 
+#==== Dark
+#  Wildlife_Night
+#  Poyeyo_Blue
+#  Github_Dark
+#  Kane
+#  Neon-kush
+#  ILM_shell
+
+#==== Medium & desat (or weird)
+#  Forest Focus
+#  Oblivion
+#  Wombat
+#  Oceanic_Next
+#  Foggy_evening
+#  Salmon Onice
+
+#==== Light
+#  Github_Light
+#  Eiffel
+#  Foggy_morning
+#  Textmate
+#  Karyfound_light
+#  Foggy_morning
+#  Flat
+
 
 #------------------------------------------------------------------------------
 # Markdown themes

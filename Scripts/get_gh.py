@@ -9,9 +9,9 @@ from datetime import datetime
 import fire
 import pyperclip
 import utils
+from utils import NOTIMPLEMENTED
 from utils import READMES, AWESOME_LISTS, HOARD_ARCHIVE # paths
 
-zip_path = "https://github.com/Calysto/calysto_prolog/archive/master.zip"
 
 #=============================================================================#
 #                                                                             #
@@ -49,6 +49,7 @@ def unzip(zip_path=None):
 
         zfile.extractall(ex_path)
 
+@NOTIMPLEMENTED
 def rename_zip_and_contents(repo_name, rname, zpath='master.zip'):
     """ rename the zip file AND the zip file dir
     Instead of trying to be slick, just going to
@@ -57,21 +58,7 @@ def rename_zip_and_contents(repo_name, rname, zpath='master.zip'):
     zip dir
     del zipfile
     """
-    dl_path = '/'.join(zpath.split('/')[:-1])
-    os.chdir(dl_path)
-    subprocess.run(f'unzip {zpath}', shell=True)
-
-    subprocess.run(f'unzip {zpath}', shell=True)
-
-    ex_path = f"{dl_path}/{repo_name}-master"
-    rname_path = dl_path + '/' + rname
-
-    subprocess.run(f'mv {ex_path} {rname_path}', shell=True)
-    os.chdir(dl_path)
-    subprocess.run(f'zip -r {rname}.zip {rname_path}', shell=True)
-    subprocess.run(f'rm -rf {rname_path}', shell=True)
-    subprocess.run(f'rm {zpath}', shell=True)
-
+    pass
 
 
 wget_sh = lambda u, fpath: subprocess.run(f"wget {u} -O {fpath}", shell=True)

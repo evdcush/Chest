@@ -99,13 +99,13 @@ The ``index.rst`` file is a special file for your sphinx documentation. It is th
 
 In the index file, you will see the following section ::
 
-    .. toctree::
+   .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
 Add your file, ``salamanders.rst`` to the index simply by adding it's name under the ``toctree`` directive::
 
-    .. toctree::
+   .. toctree::
    :maxdepth: 2
    :caption: Contents:
    salamanders

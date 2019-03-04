@@ -1,7 +1,12 @@
 import os
 import sys
 import code
+from functools import wraps
 import yaml
+
+#-----------------------------------------------------------------------------#
+#                                Handy Helpers                                #
+#-----------------------------------------------------------------------------#
 
 # yaml rw helpers
 # ===============
@@ -12,6 +17,23 @@ def R_yml(fname):
 def W_yml(fname, obj):
     with open(fname, 'w') as file:
         yaml.dump(obj, file, default_flow_style=False)
+
+
+# Decorators
+# ==========
+def NOTIMPLEMENTED(f):
+    """ Like TODO, but for functions in a class
+        raises error when wrappee is called """
+    @wraps(f)
+    def not_implemented(*args, **kwargs):
+        func_class = args[0]
+        f_class_name = func_class.get_class_name()
+        f_name = f.__name__
+        msg = '\n  Class: {}, function: {} has not been implemented!\n'
+        print(msg.format(f_class_name, f_name))
+        raise NotImplementedError
+    return not_implemented
+
 
 
 #=============================================================================#
