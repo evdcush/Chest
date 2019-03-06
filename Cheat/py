@@ -13,9 +13,13 @@ from itertools import permutations, combinations, accumulate, reduce
 # make an NxM matrix properly
 matrix = [[0]*ncols for _ in range(nrows)]  # BAD_MAT = [[0] * ncols] * nrows # DONT
 
+
 #==== comprehensions
-with_if = [i for i in range(20) if i & 1] # odds
 double_for = [(i,j) for j in range(5) for i in range(3)] # [(0,0), (1,0), ..., (2,4)]
+with_if   = [i for i in range(20) if i & 1] # odds
+set_comp  = set(i for i in range(20) if i & 1)
+dict_comp = {i: i**2 for i in range(20) if i & 1}
+
 
 #==== COPY
 copy.copy(x)     # shallow copy: you almost never want this (still has references)
@@ -26,6 +30,15 @@ copy.deepcopy(x) # deep copy: what you think of when you think copy, FULL recurs
 #-----------------------------------------------------------------------------#
 #                                   RECIPES                                   #
 #-----------------------------------------------------------------------------#
+
+#------------------
+class AttrDict(dict):
+    # just a dict mutated/accessed by attribute instead index
+    # NB: not pickleable
+    __getattr__ = dict.__getitem__
+    __setattr__ = dict.__setitem__
+    __delattr__ = dict.__delitem__
+
 
 #==== strip punctuation from string
 def translate_strip(s):
@@ -41,6 +54,17 @@ def re_strip(s): # marginally faster than translate
 def mk_matrix(N, M, fill=0):
     mat = [[fill] * M for _ in range(N)]
     return mat
+
+def dot_prod(v1, v2):
+    return sum(map(operator.mul, v1, v2))
+
+#==== combinatorial shit
+def powerset(S):
+    pS = []
+    combo = lambda i: set(itertools.combinations(S, i))
+    for i in range(len(S)):
+        pS.append(combo(i))
+    return pS
 
 
 #-----------------------------------------------------------------------------#
@@ -64,6 +88,48 @@ def gen_passphrase(num_words=4, sep=' '):
 
 #==== ITERTOOLS
 #https://docs.python.org/3/library/itertools.html
+
+# infinite iterators (basically for generators)
+cnt = itertools.count() # (c.__next__(), c.__next__()) == (0,1)
+cyc = itertools.cycle('abc') # --> a b c a b c a b...
+five_tens = list(itertools.repeat(10, 5)) # [10,10,10,10,10]
+
+# COMBINATORIC
+
+# Permutations, nPr
+list(itertools.permutations([2,5,0,1]))
+#   r = None         r = 2
+# [(2, 5, 0, 1),  # [(2, 5),
+#  (2, 5, 1, 0),  #  (2, 0),
+#  (2, 0, 5, 1),  #  (2, 1),
+#  (2, 0, 1, 5),  #  (5, 2),
+#  (2, 1, 5, 0),  #  (5, 0),
+#  (2, 1, 0, 5),  #  (5, 1),
+#  (5, 2, 0, 1),  #  (0, 2),
+#  (5, 2, 1, 0),  #  (0, 5),
+#  (5, 0, 2, 1),  #  (0, 1),
+#  (5, 0, 1, 2),  #  (1, 2),
+#  (5, 1, 2, 0),  #  (1, 5),
+#  (5, 1, 0, 2),  #  (1, 0)]
+#  (0, 2, 5, 1),  #
+#  (0, 2, 1, 5),  #
+#  (0, 5, 2, 1),  #
+#  (0, 5, 1, 2),  #
+#  (0, 1, 2, 5),  #
+#  (0, 1, 5, 2),  #
+#  (1, 2, 5, 0),  #
+#  (1, 2, 0, 5),  #
+#  (1, 5, 2, 0),  #
+#  (1, 5, 0, 2),  #
+#  (1, 0, 2, 5),  #
+#  (1, 0, 5, 2)]  #
+
+# Combinations nCr
+list(itertools.combinations([2,5,0,1], 2))
+[(2, 5), (2, 0), (2, 1), (5, 0), (5, 1), (0, 1)]
+
+
+
 
 #==== FUNCTOOLS
 #https://docs.python.org/3/library/functools.html

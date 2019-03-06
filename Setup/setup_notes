@@ -1036,6 +1036,59 @@ vi __init__.py
 #  - font sizing for all labels has been increased
 #  - fg made white, and tints generally weakened
 
+#import sublime
+#import sublime_plugin
+#
+#class ToggleColorSchemeCommand(sublime_plugin.TextCommand):
+#    def run(self, edit, **args):
+#
+#        # Dark themes
+#        # ===========
+#        dark1 = args['dark_color_scheme_1'] # Piodine
+#        dark2 = args['dark_color_scheme_2'] # Bijan
+#        darks = set(dark1, dark2)
+#
+#        # Light themes
+#        # ============
+#        light1 = args['light_color_scheme_1'] # Github-v2
+#        light2 = args['light_color_scheme_2'] # ArtSchool
+#        light3 = args['light_color_scheme_3'] # Spring
+#        light4 = args['light_color_scheme_4'] # Butterfly
+#        lights = set(light1, light2, light3, light4)
+#
+#        # Check current
+#        # =============
+#        cur_scheme = self.view.settings().get("color_scheme")
+#
+#        if cur_scheme in darks:
+#            new_scheme = dark2 if cur_scheme == dark1 else dark1
+#
+#        elif cur_scheme in lights:
+#            if cur_scheme == light1:
+#                new_scheme = light2
+#            elif cur_scheme == light2:
+#                new_scheme = light3
+#            elif cur_scheme == light3:
+#                new_scheme = light4
+#            else:
+#                new_scheme = light1
+#
+#        else:
+#            cur_scheme = dark1
+#
+#        #new_scheme = scheme2 if current_scheme == scheme1 else scheme1
+#        self.view.settings().set("color_scheme", new_scheme)
+
+# {
+#     "keys": ["YOUR_TOGGLE_SHORCUT"], "command": "toggle_color_scheme",
+#     "args":
+#     {
+#         "color_scheme_1": "Packages/Color Scheme - Default/Solarized (Light).tmTheme" ,
+#         "color_scheme_2": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme"
+#     }
+# }
+
+
 
 # Sublime themes
 # ==============

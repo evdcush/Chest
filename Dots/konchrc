@@ -8,6 +8,7 @@ import string
 import random
 import itertools
 import functools
+import subprocess
 import collections
 
 import yaml
@@ -15,9 +16,38 @@ import numpy
 import matplotlib.pyplot
 import pyperclip
 
-def R_yml(ymlpath):
-    with open(ymlpath) as yml:
-        yobj = yaml.read()
+
+# Handy Dandies
+# =============
+HOME = os.environ['HOME']
+
+def shrun(cmd):
+    subprocess.run(cmd, shell=True)
+
+# FILE RW
+# =======
+def R_file(fname):
+    with open(fname) as file:
+        return file.read().split('\n')
+
+def W_file(fname, text, flag='w'):
+    with open(fname, flag) as file:
+        file.write(text)
+
+# yaml stuff
+# ----------
+def R_yml(fname):
+    with open(fname) as file:
+        return yaml.load(file)
+
+def W_yml(fname, obj):
+    with open(fname, 'w') as file:
+        yaml.dump(obj, file, default_flow_style=False)
+
+_locals = dict(HOME=HOME, shrun=shrun,
+               R_file=R_file, W_file=W_file,
+               R_yml=R_yml, W_yml=W_yml,
+               )
 
 
 context = {
@@ -37,14 +67,19 @@ context = {
     'pyperclip': pyperclip,
 }
 
+context.update(_locals)
+
 # Available options:
 #   "context", "banner", "shell", "prompt", "output",
 #   "context_format", "ipy_extensions", "ipy_autoreload",
 #   "ipy_colors", "ipy_highlighting_style", "ptpy_vi_mode"
 # See: https://konch.readthedocs.io/en/latest/#configuration
 konch.config({
-    'context': context,
+    "context": context,
+    "ipy_colors": 'linux',
     "ipy_highlighting_style": "piodine", # paraiso-dark!, rrt!, vim, pastie, perldoc
+    "ipy_autoreload": True,
+    "context_format": 'hide',
 
 })
 
@@ -55,8 +90,6 @@ def setup():
 
 def teardown():
     pass
-
-
 
 
 """

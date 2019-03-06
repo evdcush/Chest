@@ -1,3 +1,5 @@
+
+
 Using a Personal Package Archive (**PPA**), you can distribute software and updates directly to Ubuntu users. Create your source package, upload it and Launchpad will build binaries and then host them in your own apt repository.
 
  - [Create a Launchpad Account][1].
@@ -15,6 +17,9 @@ Here is a [detailed explanation][5].
   [4]: https://help.launchpad.net/Packaging/PPA/Uploading
   [5]: https://help.launchpad.net/Packaging/PPA
 
+---
+
 **CREDIT**: [hhlp](https://askubuntu.com/users/3550/hhlp)
 
 **URL**: https://askubuntu.com/a/71516
+

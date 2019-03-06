@@ -2,13 +2,14 @@
 essentials:
 - numpy
 - scipy
-- sklearn cloudpickle # have to install "cloudpickle"; workaround for annoying deprecation warning on import
+- sklearn
 - matplotlib
 - chainer
 - ipython
 - konch
 - jupyter
 - notebook
+- sympy
 - cython
 - gitup
 - myougiden
@@ -16,8 +17,7 @@ essentials:
 
 # Stuff that looks useful or interesting, but haven't used yet
 promising:
-- pygal     # visualization lib, looks clean af
-
+- pygal     # visualization lib, looks clean
 
 
 science-math:
