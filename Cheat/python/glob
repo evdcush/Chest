@@ -1,0 +1,9 @@
+# get all numbered files
+glob.glob('./[0-9].*')
+
+# get all pdfs from curdir tree
+glob.glob('**/*.pdf', recursive=True)  # '**' needed for recursive globs
+
+# get all pdfs from curdir with abspaths
+[os.path.abspath(g) for g in glob.glob('./**/*.pdf', recursive=True)]
+

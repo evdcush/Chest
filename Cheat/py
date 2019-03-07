@@ -39,6 +39,17 @@ class AttrDict(dict):
     __setattr__ = dict.__setitem__
     __delattr__ = dict.__delitem__
 
+    @classmethod
+    def spec(cls): # since the class is preloaded in konch, this help refresh details
+        specification = (
+            "class AttrDict(dict):\n"
+            "    __getattr__ = dict.__getitem__\n"
+            "    __setattr__ = dict.__setitem__\n"
+            "    __delattr__ = dict.__delitem__"
+            )
+        print(specification)
+
+
 
 #==== strip punctuation from string
 def translate_strip(s):
@@ -65,6 +76,18 @@ def powerset(S):
     for i in range(len(S)):
         pS.append(combo(i))
     return pS
+
+#==== RNG
+def choice_simple(weights):
+    """ return idx selected with probs p from weights """
+    total = sum(weights)
+    u = random.uniform(0, total)
+    psum = 0
+    for i, w in enumerate(weights):
+        if psum + w >= u:
+            return i
+        psum += w
+    raise Exception('ERROR in choice')
 
 
 #-----------------------------------------------------------------------------#
@@ -129,11 +152,20 @@ list(itertools.combinations([2,5,0,1], 2))
 [(2, 5), (2, 0), (2, 1), (5, 0), (5, 1), (0, 1)]
 
 
-
-
 #==== FUNCTOOLS
 #https://docs.python.org/3/library/functools.html
 @functools.lru_cache(maxsize=5)
+
+
+#==== BISECT
+L = [-2, 0, 2, 4, 5, 8, 11]
+bisect.bisect(L, 6) # ----> 5; L[:5] <= 6, L[5:] > 6
+bisect.bisect(L, 1) # ----> 2; L[:2] <= 1, L[2:] > 1
+bisect.bisect(L, 5) # ----> 5; L[:5] <= 5, L[5:] > 5
+bisect.insort(L, 7) # ----> [-2, 0, 2, 4, 5, 7, 8, 11]
+
+
+
 
 
 
@@ -141,6 +173,19 @@ list(itertools.combinations([2,5,0,1], 2))
 #-----------------------------------------------------------------------------#
 #                                  OS  SH                                     #
 #-----------------------------------------------------------------------------#
+
+#==== OS / GLOB / Files & Dirs
+
+#== Glob
+# get all numbered files
+glob.glob('./[0-9].*')
+
+# get all pdfs from curdir tree
+glob.glob('**/*.pdf', recursive=True)  # '**' needed for recursive globs
+
+# get all pdfs from curdir with abspaths
+[os.path.abspath(g) for g in glob.glob('./**/*.pdf', recursive=True)]
+
 
 #==== MIMETYPES
 
@@ -191,7 +236,7 @@ math.inf # floating point pos infinity == float('inf')
 math.nan # fp for NaN == float('nan')
 
 
-#=== FRACTIONS, DECIMALS
+#=== FRACTION
 from fractions import Fraction
 Fraction(16, -10) == Fraction(-8, 5) # Fraction automatically reduces to rhs
 Fraction('3/7')   # Fraction(3, 7)
@@ -202,6 +247,12 @@ Fraction(.5) + 2.234  # --> 2.734
 from decimal import Decimal
 Fraction(1.1) # Fraction(2476979795053773, 2251799813685248)
 Fraction(Decimal('1.1')) # Fraction(11, 10)
+
+#=== DECIMAL
+# WHY?: decimal module provides support for FAST, CORRECTLY-ROUNDED fp arithmetic
+1.1 + 2.2 == 3.3000000000000003
+float(Decimal('1.1') + Decimal('2.2')) == 3.3
+
 
 #==== STATISTICS
 statistics.mean(nums)   # what you think

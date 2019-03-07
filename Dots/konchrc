@@ -10,6 +10,7 @@ import itertools
 import functools
 import subprocess
 import collections
+from decimal import Decimal
 
 import yaml
 import numpy
@@ -23,6 +24,38 @@ HOME = os.environ['HOME']
 
 def shrun(cmd):
     subprocess.run(cmd, shell=True)
+
+class AttrDict(dict):
+    # just a dict mutated/accessed by attribute instead index
+    # NB: not pickleable
+    __getattr__ = dict.__getitem__
+    __setattr__ = dict.__setitem__
+    __delattr__ = dict.__delitem__
+
+    @classmethod
+    def spec(cls): # since the class is preloaded in konch, this help refresh details
+        specification = (
+            "class AttrDict(dict):\n"
+            "    __getattr__ = dict.__getitem__\n"
+            "    __setattr__ = dict.__setitem__\n"
+            "    __delattr__ = dict.__delitem__"
+            )
+        print(specification)
+
+# Scratch space
+# =============
+CWD = os.path.abspath('.')
+CACHE = HOME + '/.cache'
+DOWNLOADS = HOME + '/Downloads'
+
+def cdir(p):
+    os.chdir(p)
+    print(os.path.abspath('.'))
+
+gocache = lambda: cdir(CACHE)
+goback  = lambda: cdir(CWD)
+godown  = lambda: cdir(DOWNLOADS)
+
 
 # FILE RW
 # =======
@@ -44,7 +77,8 @@ def W_yml(fname, obj):
     with open(fname, 'w') as file:
         yaml.dump(obj, file, default_flow_style=False)
 
-_locals = dict(HOME=HOME, shrun=shrun,
+_locals = dict(HOME=HOME, shrun=shrun, AttrDict=AttrDict,
+               gocache=gocache, goback=goback, godown=godown,
                R_file=R_file, W_file=W_file,
                R_yml=R_yml, W_yml=W_yml,
                )
@@ -57,6 +91,7 @@ context = {
     'math': math,
     'string': string,
     'random': random,
+    'Decimal': Decimal,
     'itertools': itertools,
     'functools': functools,
     'collections': collections,

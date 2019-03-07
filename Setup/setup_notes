@@ -316,13 +316,14 @@ wget -O - https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_insta
 
 # npm
 # ---
-npm i -g npm && npm i -g electron nativefier tldr lorem-ipsum percollate leetcode-cli
+npm i -g npm && npm i -g electron nativefier tldr lorem-ipsum percollate leetcode-cli taskbook
 #npm i -g electron
 #npm i -g nativefier
 #npm i -g tldr
 #npm i -g lorem-ipsum
 #npm i -g percollate
 #npm i -g leetcode-cli
+#npm i -g taskbook
 
 # croc
 # ====
@@ -1295,6 +1296,7 @@ pip install --process-dependency-links --no-binary --upgrade git+https://github.
 "Like on GitHub"
 "Linkclump"
 "Lovely forks"
+"Make Medium Readable Again"
 "Math Anywhere"
 "Old Reddit Redirect"
 "Privacy Badger"
@@ -1311,5 +1313,6 @@ pip install --process-dependency-links --no-binary --upgrade git+https://github.
 "WikiMapper"
 "Wikipedia Reading Lists"
 "xBrowserSync"
+"Zotero Connector"
 
 
