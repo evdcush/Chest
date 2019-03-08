@@ -13,8 +13,9 @@ from collections import OrderedDict
 from github3 import GitHub
 from github3.exceptions import NotFoundError
 
-from conf import PUBLIC_TOKENS
+from utils import public_gh_tokens
 
+PUBLIC_TOKENS = public_gh_tokens()
 
 # Grab token
 #with open(f'{os.environ["HOME"]}/.Dots/gh_tokens.yml') as tpath:
