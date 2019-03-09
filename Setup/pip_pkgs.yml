@@ -29,6 +29,18 @@ science-math:
 - cvxpy   # python embedded modeling lang for convex opt problems; intuitive
 - cyflann  # cython interface to FLANN lib
 
+cosmo:
+- corrfunc  # correlation func & clustering
+- astropy
+- pmesh
+- nbodykit[extras]   # collection of astro/cosmo algos and utils, uses mpi4py
+
+
+hpc:
+- mpi4py  # exactly what it sounds like; REQ MPI
+
+
+
 vision:
 - opencv-python
 - scikit-video

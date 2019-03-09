@@ -13,7 +13,6 @@
 # ==============
 # NB: oh-my-zsh defines useful aliases '..'|'...'|'....'
 alias md="mkdir -p"
-alias cdd="cd -"  # NOTE: `cd -` broken by enhanced file jumping utils
 
 #---- file stuff
 alias srt="sort -o $1 $1"
@@ -28,7 +27,7 @@ alias lm="ls -1F --file-type --group-directories-first"
 alias l="ls --group-directories-first -X"
 alias sl="ls -lhSr"
 alias duh="du -h --max-depth=1 | sort -h;"
-
+alias lzf="ls | fzf"
 
 #---- misc
 alias plz='sudo $(fc -ln -1)' # mmm inconsistent
@@ -201,6 +200,9 @@ alias pipupdate="pip list --outdated --format=freeze \
 
 # Dev stuff
 # =========
+#---- sys
+alias smi='nvidia-smi'
+
 #---- notebook
 alias nbc="jupyter nbconvert --to pdf $1 --template classicm" # pdf conversion
 alias nb="jupyter notebook"
