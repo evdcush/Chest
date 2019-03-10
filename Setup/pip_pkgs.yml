@@ -95,6 +95,7 @@ visualization:
 - bokeh
 - networkx  # lib whole bag of stuff for networks (create, manip, vis)
 - prince    # nice visualization stuff for factor analysis
+- pydot     # interface to graphviz, handles DOT stuff
 
 notebook:
 - ipython

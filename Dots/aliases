@@ -229,6 +229,7 @@ alias p="showmarks"
 #---- Copy
 alias clip="xclip -selection clipboard"
 alias delclip="xclip -o | xargs sudo rm -rf"
+alias cpget="xclip -o -sel clip | xargs wget"
 
 # Misc software
 # =============
