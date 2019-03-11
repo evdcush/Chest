@@ -77,6 +77,15 @@ def powerset(S):
         pS.append(combo(i))
     return pS
 
+def ordered_combos(lst):
+    idx_slices = itertools.combinations(range(len(lst) + 1), 2)
+    combos = []
+    for i, j in idx_slices:
+        combos.append(lst[i:j])
+    return combos
+
+
+
 #==== RNG
 def choice_simple(weights):
     """ return idx selected with probs p from weights """
@@ -122,7 +131,7 @@ five_tens = list(itertools.repeat(10, 5)) # [10,10,10,10,10]
 # Permutations, nPr
 list(itertools.permutations([2,5,0,1]))
 #   r = None         r = 2
-# [(2, 5, 0, 1),  # [(2, 5),
+# [(2, 5, 0, 1),  # [(2, 5),list()
 #  (2, 5, 1, 0),  #  (2, 0),
 #  (2, 0, 5, 1),  #  (2, 1),
 #  (2, 0, 1, 5),  #  (5, 2),
@@ -158,6 +167,7 @@ list(itertools.combinations([2,5,0,1], 2))
 
 
 #==== BISECT
+# returns the index where to insert i, assuming L is sorted
 L = [-2, 0, 2, 4, 5, 8, 11]
 bisect.bisect(L, 6) # ----> 5; L[:5] <= 6, L[5:] > 6
 bisect.bisect(L, 1) # ----> 2; L[:2] <= 1, L[2:] > 1

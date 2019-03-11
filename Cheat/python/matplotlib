@@ -39,6 +39,10 @@ fig, ax=plt.subplots(num=10, clear=True)
 #-----------------------------------------------------------------------------#
 #                                   3D Plot                                   #
 #-----------------------------------------------------------------------------#
+from mpl_toolkits.mplot3d import Axes3D
+# Never actually used "Axes3D", but the import has a side effect required for
+# the projection='3d' kwarg in fig.add_subplot
+
 # COPIED AS-IS FROM PROJECT
 def plot_3D_pointcloud(xt, xh, j, pt_size=(.9,.9), colors=('b','r'), fsize=(18,18), xin=None):
     xt_x, xt_y, xt_z = np.split(xt[...,:3], 3, axis=-1)
