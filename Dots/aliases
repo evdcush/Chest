@@ -115,7 +115,7 @@ piu="pip install -U"
 # =============
 #---- software that does not require extra steps (beyond pip install)
 pipsoftware="thefuck jrnl gitup restview grip termdown apt-select glances \
-s-tui speedtest-cli zensols.zotsite pdfCropMargins"
+s-tui speedtest-cli pdfCropMargins"
 pipsw="$piu $pipsoftware"
 
 #---- software that requires extra steps
@@ -133,15 +133,15 @@ pipswi="$piu $pipmyougiden; $piu $pipcite2c; $piu $pipnbextensions; $piu $pipnbp
 pre_pkg="$piu pip setuptools wheel"
 
 min_pkgs="numpy scipy sklearn matplotlib chainer cython numba sympy \
-ipython jupyter notebook cloudpickle restview gitup jrnl pyperclip"
+ipython jupyter notebook restview gitup jrnl pyperclip"
 
 vis_pkgs="opencv-python scikit-video scikit-image imageio \
 open3d-python glumpy pypng pyopengl chainercv"
 
-std_pkgs="$min_pkgs pandas chainerrl chainercv gym pydataset keras \
+std_pkgs="$min_pkgs pandas chainerrl gym pydataset keras primesieve \
 docutils sphinx sphinx-rtd-theme sphinxcontrib-websupport sphinx-gallery numpydoc pypandoc \
 pyyaml tinydb python-slugify unidecode pybtex scikit-image imageio jax jaxlib \
-fire pypi-cli cookiecutter faker johnnydep black \
+fire pypi-cli pypistats cookiecutter faker johnnydep black \
 feedparser requests lxml urllib3 bs4  github3.py grip"
 
 #fussy_pkgs="surprise gitsuggest"
@@ -161,10 +161,6 @@ alias pipiall="$pre_pkg; $piu $std_pkgs; $pipsw; $pipswi;"
 # starcraft
 alias pipsc="pip install -U pygame scbw pysc2 sc2 s2clientprotocol"
 
-# visual tasks
-alias pipvis="pip install -U opencv-python scikit-video scikit-image \
-open3d-python chainercv "
-
 # nlp
 # these packages can be fussy with deps
 # so make sure usual stack installed first (npy scipy skl nltk levenshtein)
@@ -182,8 +178,6 @@ alias pipupdate="pip list --outdated --format=freeze \
 | cut -d = -f 1  \
 | xargs -n1 pip install -U"
 
-# Misc
-# ====
 
 
 #=============================================================================#

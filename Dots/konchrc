@@ -11,6 +11,7 @@ import functools
 import subprocess
 import collections
 from decimal import Decimal
+from pprint import pprint
 
 import yaml
 import numpy
@@ -91,6 +92,7 @@ context = {
     'math': math,
     'string': string,
     'random': random,
+    'pprint': pprint,
     'Decimal': Decimal,
     'itertools': itertools,
     'functools': functools,

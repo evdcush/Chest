@@ -163,6 +163,26 @@ leet(){
 #                                                                             #
 #=============================================================================#
 
+# Cython
+# ======
+#---- full compile of cython from pyx to .so
+function cycc(){
+    # First get filenames
+    FNAME_PYX="$1"  # foo.pyx file
+    BASENAME=`echo $FNAME_PYX | cut -d'.' -f1`  # foo
+    FNAME_C="$BASENAME.c"   # foo.c
+    FNAME_O="$BASENAME.so"  # foo.so
+
+    # Cython compiler:  foo.pyx --> foo.c
+    cython "$FNAME_PYX"  # cython compiler
+
+    # C compiler:  foo.c --> foo.so
+    gcc -shared -pthread -fPIC -fwrapv -O2 -Wall \
+    -fno-strict-aliasing -I/home/evan/.pyenv/versions/3.7.2/include/python3.7m \
+    -o "$FNAME_O" "$FNAME_C"
+}
+
+
 
 
 # PATH & shell config
