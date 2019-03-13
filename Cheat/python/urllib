@@ -1,0 +1,28 @@
+###  Example retrieve  ###
+import urllib.parse
+import urllib.request
+import urllib.error
+
+#=== URL encoding
+base = "http://booksdl.org/scimag/get.php?"
+doi  = dict(doi='10.1007/978-3-030-01548-0')
+enc  = urlencode(doi) # 'doi=10.1007%2F978-3-030-01548-0'
+url  = base + enc  # 'http://booksdl.org/scimag/get.php?doi=10.1007%2F978-3-030-01548-0'
+
+#=== Download
+def download_ur(url):
+    filename = os.path.basename(url)
+    try:
+        req = urllib.request.urlretrieve(url, filename)
+    except urllib.error.HTTPError:
+        print('blah')
+
+# OR
+def download_uo(url):
+    request = urllib.request.urlopen(url)
+    filename = os.path.basename(url)
+    with open(filename, 'wb') as file_handle:
+        chunk = request.read(1024)
+        while chunk:
+            file_handle.write(chunk)
+            chunk = request.read(1024)

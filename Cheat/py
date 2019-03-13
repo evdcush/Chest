@@ -20,10 +20,29 @@ with_if   = [i for i in range(20) if i & 1] # odds
 set_comp  = set(i for i in range(20) if i & 1)
 dict_comp = {i: i**2 for i in range(20) if i & 1}
 
-
 #==== COPY
 copy.copy(x)     # shallow copy: you almost never want this (still has references)
 copy.deepcopy(x) # deep copy: what you think of when you think copy, FULL recursive copy
+
+
+"""
+# How to make your 'foo.py' script executable bin
+
+1. put this at the top of script:
+    #!/usr/bin/env python
+
+2. `chmod +x foo.py`  # you are already finished at this step
+
+3. ln -sf foo.py dir/thats/in/PATH/foo
+
+# Call like you would other bins from cli:
+$ foo
+"hello there"
+
+$ foo airplane
+"hello there airplane"
+
+"""
 
 
 
@@ -83,8 +102,6 @@ def ordered_combos(lst):
     for i, j in idx_slices:
         combos.append(lst[i:j])
     return combos
-
-
 
 #==== RNG
 def choice_simple(weights):
@@ -176,10 +193,6 @@ bisect.insort(L, 7) # ----> [-2, 0, 2, 4, 5, 7, 8, 11]
 
 
 
-
-
-
-
 #-----------------------------------------------------------------------------#
 #                                  OS  SH                                     #
 #-----------------------------------------------------------------------------#
@@ -203,7 +216,7 @@ glob.glob('**/*.pdf', recursive=True)  # '**' needed for recursive globs
 #                              DATA STRUCTURES                                #
 #-----------------------------------------------------------------------------#
 
-#==== SET
+####  SET  ####
 A = set(['a', 'b', 'c'])
 P = set([1,2,3,4])
 Q = set([3,4,5,6])
@@ -259,9 +272,6 @@ P.symmetric_difference_update(R) # {5,6}
 #-----------------------------------------------------------------------------#
 
 #==== HEAPQ
-
-#==== BISECT
-
 
 
 #-----------------------------------------------------------------------------#
@@ -446,9 +456,6 @@ abc : abstract base classes
 
 
 
-
-
-
 """
 
 #=== DATETIME
@@ -478,8 +485,6 @@ x << y; x >> y; # shifts
 (1024).to_bytes(4, 'big') # b'\x00\x00\x04\x00'; hex(1024): 0x400
 hex(1000) # '0x3e8'
 (1000).to_bytes(4, 'little') # b'\xe8\x03\x00\x00'
-
-
 
 
 #==== BUILTINS

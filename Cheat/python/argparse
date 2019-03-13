@@ -28,4 +28,30 @@ nargs='+' # 1 or more values;   list; cannot fall back on default
 
 # restricting choices
 add_args('--color', default='green', choices=['red', 'blue', 'yellow', 'green'])
+
+# append
+# ======
+parser.add_argument('--baz', action='append')
+# >>> python aparse.py
+# aparse.py: error: argument -b/--baz: expected one argument
+# >>> python aparse.py --baz 'hello'
+# Namespace(baz=['hello'])
+# >>> python aparse.py --baz 'hello' --baz 'there' --baz 'friend'
+# Namespace(baz=['hello', 'there', 'friend'])
+
+####  OTHER ARGPARSERS  ####
+# Fire
+# ====
+from fire import Fire
+
+def neg(num):
+    return -num
+
+def foo(location='floor'):
+    return f'foo on the {location}'
+
+if __name__ == '__main__':
+  # Fire()      # both neg and foo available at CLI, but can only use one :[
+  # Fire(foo)  # 'fire_example.py airplane' ---> `foo on the airplane`
+
 ```

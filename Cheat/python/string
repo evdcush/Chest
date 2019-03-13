@@ -1,0 +1,77 @@
+""" In general, f-string format specifiers are the same as '{}'.format() """
+# Floating-point
+#------------------
+my_float = 2**(1/2)
+print(f'{my_float}') # 1.4142135623730951
+print(f'{my_float: .3f}') # 1.414
+
+
+# String justification
+#---------------------
+b = 'baz'
+
+# left
+print(f'|{b:<12}|') # ---> |baz         |
+
+# center
+print(f'|{b:^12}|') # ---> |    baz     |
+
+# right
+print(f'|{b:>12}|') # ---> |         baz|
+
+# fill empty space with char
+print(f'|{b:*<12}|') # ---> |baz*********|
+print(f'|{b:0^12}|') # ---> |0000baz00000|
+print(f'|{b:^>12}|') # ---> |^^^^^^^^^baz|
+
+
+# Pad string/num with zeros
+# -------------------------
+num = 7
+print(f'{num:03}') # fill to 3 leading zeros
+# ---> 007
+
+print(f'{11:03}') # it properly interprets length of str
+# ---> 011
+
+####  ENCODING  ####
+# Handling decode errors in response
+# ----------------------------------
+page_response.decode('utf-8')
+# ---> UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa0 in position 103997: invalid start byte
+# JUST ADD 'ignore' to decode errors
+page_response.decode('utf-u', 'ignore')
+# allll gooood
+
+
+
+# Special Characters
+# ==================
+py_lits = {'Bell a':'\a', 'Backspace b':'\b', 'Formfeed f':'\f',
+           'Linefeed n':'\n', 'Carriage Return r':'\r',
+           'Horizontal tab t':'\t', 'Vertical tab v':'\v'}
+# newline vs carriage ret
+print("Hello \nWorld")
+'Hello'
+'World'
+
+print("Hello \rWorld")
+'World'
+
+print("Hell\no World")
+'Hell'
+'o World'
+
+print("Hell\ro World")
+'o World'
+
+# Using \r to make simple spinner animation
+import time
+import sys
+
+animation = '|/-\|'
+for i in range(100):
+    time.sleep(0.1)
+    sys.stdout.write("\r" + animation[i % len(animation)])
+    sys.stdout.flush()
+print('End!')

@@ -1,0 +1,80 @@
+from functools import wraps
+
+# BASIC TEMPLATE
+def my_decorator(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        # call decorated func
+        return func(*args, **kwargs)
+    return wrapper
+
+
+# Nifty decorator to both comment and prevent running unfinished funcs
+def TODO(f):
+    @wraps(f)
+    def not_finished():
+        print('\n  {} IS INCOMPLETE'.format(f.__name__))
+    return not_finished
+
+
+def NOTIMPLEMENTED(f):
+    @wraps(f)
+    def not_implemented(*args, **kwargs):
+        func_class = args[0]
+        f_class_name = func_class.get_class_name()
+        f_name = f.__name__
+        msg = '\n  Class: {}, function: {} has not been implemented!\n'
+        print(msg.format(f_class_name, f_name))
+        raise NotImplementedError
+    return not_implemented
+
+
+def INSPECT(f): # better to use code.interact directly
+    @wraps(f)
+    def inspector(*args, **kwargs):
+        print('\n Inspecting function: <{}>'.format(f.__name__))
+        x = args
+        y = kwargs
+        z = f(*args, **kwargs)
+        code.interact(local=dict(globals(), **locals())) # DEBUGGING-use
+        return z
+    return inspector
+
+
+
+# Class method decorators
+#------------------------
+# Yes, that's right, they can access/mutate class instances through self!
+
+def preserve_default(method):
+    """ always saves method inputs to fn_vars """
+    @wraps(method)
+    def preserve_args(self, *args, **kwargs):
+        self.fn_vars = args
+        return method(self, *args, **kwargs)
+    return preserve_args
+
+
+def preserve(inputs=True, outputs=True):
+    """ Preserve inputs and outputs to fn_vars
+    Also provides kwargs for individual cases
+     - sometimes you only need inputs, or outputs
+       this decorator allows you to choose which
+       parts of the function you want to preserve
+    """
+    def inner_preserve(method):
+        """ outer preserve is like a decorator to this
+        decorator
+        """
+        @wraps(method)
+        def preserve_args(self, *args, **kwargs):
+            my_args = ()
+            if inputs:
+                my_args += args
+            ret = method(self, *args, **kwargs)
+            if outputs:
+                my_args += (ret,)
+            self.fn_vars = my_args
+            return ret
+        return preserve_args
+    return inner_preserve

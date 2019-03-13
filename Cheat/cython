@@ -1,0 +1,27 @@
+```cython
+# .pyx header (add this to the top of any .pyx file)
+# distutils: language = c++
+# cython: language_level=3
+
+# Run steps
+# =========
+#---- write a distutils/setuptools setup.py
+
+#---- Full specified method
+# run cython compiler to generate C file
+cython foo.pyx
+
+# C compiler to generate a C file (switch -a to gen foo.html)
+gcc -shared -pthread -fPIC -fwrapv -O2 -Wall \
+-fno-strict-aliasing -I/home/evan/.pyenv/versions/3.7.2/include/python3.7m \
+-o foo.so foo.pyx
+
+# Run python interpreter, import module
+import foo
+
+#---- pyximport
+# For simple cython builds (no extra C libraries, no special building setup)
+#  pyximport allows you to build cython modules and import them like py
+import pyximport; pyximport.install()
+import my_cy_mod
+```

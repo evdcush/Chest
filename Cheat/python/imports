@@ -1,0 +1,6 @@
+#==== Pathing to another module, foo (at different level)
+cur_path = os.path.abspath(os.path.dirname(__file__))
+path_to_foo = '/'.join(cur_path.split('/')[:-1]) + 'foo'
+if path_to_foo not in sys.path:
+    sys.path.append(path_to_foo)
+from foo import Foo
