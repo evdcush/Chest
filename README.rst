@@ -1,60 +1,42 @@
-#####
+=====
 Chest
-#####
-A place I keep stuff.
-#####################
+=====
+A place I keep stuff for sync across machines. There is some organization, but I frequently update things and I don't worry about incomplete or redundant stuff or garbage commits. Cheat, Docs, and Reference all have somewhat similar content.
+
+.. contents::
+
+Cheat
+=====
+Files in cheat are partly cheatsheet, partly snippets. Plan is to eventually fork `cheat <https://github.com/cheat/cheat>`_, updating pathing/resolution logic to handle subdirs and add fuzzy searching for those fat cheats like ``Cheat/py``.
 
 
-Config
-******
-:pip_pkgs.yml: list of pip packages
-:setup: aggregation of many different setup and environment stuff
+Docs
+====
+Docs currently has some notes on troubleshooting and command reference, mostly copied stuff from SO. This dir was separated from reference with the intention of housing a static/locally-hosted sphinx doc page (RTD), but I never build the site so.... probably going to consolidate this into Reference.
 
-dotfiles
---------
-Dotfiles are typically kept in Chest and symlinked to respective locations
+Dots
+====
+You guessed it. Chest was originally just dotfiles, but I kept adding stuff. The filenames are self-explanatory; my shell config file sources the primary dots.
 
+Reference
+=========
+Messiest, most frequently updated dir in my chest. Stuff in Reference gets added, deleted, updated, relocated, consolidated all the time. Most of the reference content has been distilled into Cheats and Docs/howdoi.rst, and the stuff that remains is either WIP or not as cheatable.
 
 Resources
 =========
-Various assets and resources. Also keeps "inbox" files for processing later.
-
-
-Code
-====
-Fairly messy collection of snippets, notes, references, examples, scripts--anything related to coding.
-
-References
-----------
-Documentation mostly
+Assets and templates.
 
 Scripts
--------
-scripts that perform various unique things, rather than a snippet or example of how to do things.
+=======
+Orhpaned and cloned scripts. The good ones generally evolve into their own separate repos or reside in another VC'd scripts project. Only Scripts/gethub.py is used atm.
 
-Snippets
---------
-collection of different snippets for bash/shell stuff, git/github, python-general, python-specific packages.
+Setup
+=====
+After Dots, the most important thing in my chest. Contains my notes on my post-install setup process. Also contains a log of python packages I've used for specific purposes and others I found cool.
 
+----
 
-Templates
-=========
-Some txt copies of licenses I use, and true templates for copying to projects (like a README).
-
-
-
-Acknowledgements
-================
-Most content in the repo is original. Snippets are mostly experience for python, mostly SO copy-paste for git and bash.
-
-
-Scripts
--------
-Scripts are generally modified from another user's original, and acknowledgements/licenses are provided in each.
-
-
-License
--------
+**License**:
 Except where noted, original written content of the repo is licensed under `CC-BY-NC-ND-4.0`, while any software/code is licensed as `LGPL-3.0`. See LICENSE_.
 
 .. Substitutions:

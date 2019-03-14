@@ -370,9 +370,10 @@ wget https://github.com/sharkdp/bat/releases/download/v0.9.0/bat_0.9.0_amd64.deb
 sudo dpkg -i bat_0.9.0_amd64.deb
 
 #---- git interactive rebase
-wget https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/0.7.0/git-interactive-rebase-tool_0.7.0_amd64.deb
-sudo dpkg -i git-interactive-rebase-tool_0.7.0_amd64.deb # may need install libcurl3 and libncurses5
-git config --global sequence.editor git-interactive-rebase-tool
+# !!!!!  DONT DO IT   !!!!  Shit always breaks my ros cython opencv libs
+#wget https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/0.7.0/git-interactive-rebase-tool_0.7.0_amd64.deb
+#sudo dpkg -i git-interactive-rebase-tool_0.7.0_amd64.deb # may need install libcurl3 and libncurses5
+#git config --global sequence.editor git-interactive-rebase-tool
 
 
 
@@ -559,8 +560,7 @@ sudo apt install libsdl2-dev
 # StarCraft: BroodWar 1.16.1 or 1.18, or you can just start BWAPILauncher from the StarCraft directory.
 
 # I remember this being a HUGE PITA before sourcing these files
-#  you probably have on ext hdd, CHECK
-
+#  *** You ahve backed up the patches to your ext hdd
 
 
 #=============================================================================#
