@@ -1,0 +1,43 @@
+```python
+from pybtex.database import BibliographyData, Entry
+
+#=== Make a bibTex formatted bibliography entry
+bib_entry = BibliographyData()
+entry  = Entry('article')      # 'inproceedings', 'book', etc...
+fields = type(entry.fields)()  # pybtex.utils.OrderedCaseInsensitiveDict
+
+#=== Add fields to entry instance
+fields['title']  = "The Whale Optimization Algorithm"
+fields['year']   = str(2016)
+fields['doi']    = '10.1016/j.advengsoft.2016.01.008'
+fields['issn']   = '09659978'
+fields['author'] = "Mirjalili, Seyedali and Lewis, Andrew"
+fields['url']    = 'http://www.alimirjalili.com/WOA.html'
+
+#=== Update entry with fields and return
+entry.fields = fields
+bib_entry.add_entry('mirjalili_2016_whale', entry) #> @article{mirjalili_2016_whale,
+bibtex_string = bib_entry.to_string('bibtex').replace('\_', '_')
+yaml_string   = bib_entry.to_string('yaml')
+
+>>> print(bibtex_string)
+@article{mirjalili_2016_whale,
+    title = "The Whale Optimization Algorithm",
+    year = "2016",
+    doi = "10.1016/j.advengsoft.2016.01.008",
+    issn = "09659978",
+    author = "Mirjalili, Seyedali and Lewis, Andrew",
+    url = "http://www.alimirjalili.com/WOA.html"
+}
+>>> print(yaml_string)
+entries:
+    mirjalili_2016_whale:
+        type: article
+        title: The Whale Optimization Algorithm
+        year: '2016'
+        doi: 10.1016/j.advengsoft.2016.01.008
+        issn: 09659978
+        author: Mirjalili, Seyedali and Lewis, Andrew
+        url: http://www.alimirjalili.com/WOA.html
+
+```
