@@ -1,13 +1,13 @@
-############
+============
 Your Package
-############
+============
 Short description of the project/package and what it does.
 
 Structure
 =========
 More technical details on project
 
-:definition-lists: foo
+:def-lists: foo
 :look: bar
 :nice: baz
 :here: poo
@@ -24,15 +24,10 @@ Setup
 Requirements
 ------------
 - Python 3.6 and above
-- NumPy 1.15
+- NumPy 1.16
+    NumPy can be installed via pip: ``pip install numpy``
 
-NumPy can be installed via pip: ``pip install numpy``
 
-Environment
-...........
-.. (OPTIONAL) Suggest things like pyenv or whatever
-
-****
 
 Sample usage
 ============
@@ -40,7 +35,7 @@ Sample usage
 
 
 Extra options
-............
+-------------
 .. What the user will see when typing your_package -h
 
 
@@ -61,18 +56,12 @@ Extra options
 
 ****
 
-Known issues
-============
-.. optional
-
-
 Acknowledgements
-================
+----------------
 .. here put source, inspos, similar packages, or have contributors instead
 
-License
--------
-Except where noted otherwise, this project is licensed under the |SPDX-License-Name|_.
+**License**
+    Except where noted otherwise, this project is licensed under the |SPDX-License-Name|_.
 
 
 .. Substitutions:

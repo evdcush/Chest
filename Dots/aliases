@@ -1,4 +1,4 @@
-#=============================================================================# #                                                                             #
+#=============================================================================#
 #                  ███████╗██╗  ██╗███████╗██╗     ██╗                        #
 #                  ██╔════╝██║  ██║██╔════╝██║     ██║                        #
 #                  ███████╗███████║█████╗  ██║     ██║                        #
@@ -131,13 +131,14 @@ pipswi="$piu $pipmyougiden; $piu $pipcite2c; $piu $pipnbextensions; $piu $pipnbp
 # ======================
 pre_pkg="$piu pip setuptools wheel"
 
-min_pkgs="numpy scipy sklearn matplotlib chainer cython numba sympy \
+min_pkgs="numpy scipy sklearn matplotlib chainer cython sympy \
 ipython jupyter notebook restview gitup jrnl pyperclip"
 
 vis_pkgs="opencv-python scikit-video scikit-image imageio \
 open3d-python glumpy pypng pyopengl chainercv"
 
-std_pkgs="$min_pkgs pandas chainerrl gym pydataset keras primesieve \
+std_pkgs="$min_pkgs pandas chainerrl 'gym[atari, box2d, classic_control]' \
+pydataset keras primesieve numba \
 docutils sphinx sphinx-rtd-theme sphinxcontrib-websupport sphinx-gallery numpydoc pypandoc \
 pyyaml tinydb python-slugify unidecode pybtex scikit-image imageio jax jaxlib \
 fire pypi-cli pypistats cookiecutter faker johnnydep black \
@@ -312,14 +313,18 @@ alias gsize="git rev-list --objects --all \
 #=============================================================================#
 # stuff that references user resources
 
-#=== github getters, 2nd order interface
+#=== github getters, 2nd order interface, (USE functools.partial ffs, this lazy)
 alias galist="ggh alist"
 alias grdm="ggh readme"
 alias gsrc="ggh src"
 alias gpro="ggh project"
 
+#=== templates
+alias tpy="cp $DIR_CHEST_TEMPLATES/template.py ./foo.py"
+
 #=== license copies
 alias bsd3="cp $DIR_CHEST_TEMPLATES/Licenses/BSD-3-Clause.txt ./LICENSE"
 alias lgpl="cp $DIR_CHEST_TEMPLATES/Licenses/LGPL-3.0.txt ./LICENSE"
+alias agpl="cp $DIR_CHEST_TEMPLATES/Licenses/AGPL-3.0.txt ./LICENSE"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

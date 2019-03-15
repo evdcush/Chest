@@ -54,7 +54,7 @@ GPU:
 
 
 AI-frameworks:
-- gym
+- 'gym[atari, box2d, classic_control]'
 - chainerrl
 - neupy  # ANN library, TF backend, lib has some cool stuff
 - optuna
@@ -86,10 +86,11 @@ NLP-stuff:
 
 starcraft-games:
 - s2clientprotocol  # linux sc2 client (headless)
-- pysc2   # "official" deepmind sc2 api, fairly verbose and buggy, no documentation
-- sc2     # user-made sc2 api, (python-sc2), popular, also no documentation
-- scbw    # bw on linux (in docker container)
-- pygame  # dependency for every game-related thign
+- pysc2     # "official" deepmind sc2 api, fairly verbose and buggy, no documentation
+- sc2       # user-made sc2 api, (python-sc2), popular, also no documentation
+- scbw      # bw on linux (in docker container)
+- pygame    # dependency for every game-related thign
+- atari-py
 
 visualization:
 - ipyvolume    # <-------<< WOW! looks comparable to mayavi ##############
