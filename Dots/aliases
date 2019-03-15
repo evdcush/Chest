@@ -52,7 +52,7 @@ alias tjp="TZ='Asia/Tokyo' date"
 alias api="apt-cache show"
 alias apu="apt list --upgradable"
 alias dpkgi="sudo dpkg -i "
-alias dependees='apt-cache rdepends'
+alias deps='apt-cache rdepends'
 
 #==== deborphan
 alias rmorph="sudo deborphan | xargs sudo apt remove --purge -y"
@@ -105,9 +105,8 @@ alias ipyp="pypi info"
 
 # Install/upgrade pip pkgs and save pkg names
 function pipi(){
-    TARGETS=$@
-    pip install -U $TARGETS
-    echo "$TARGETS" >> "$DIR_DOTS/pip_pkgs.txt"
+    pip install -U "$@"
+    echo "$@" >> "$DIR_DOTS/pip_pkgs.txt"
 }
 piu="pip install -U"
 
@@ -211,6 +210,9 @@ https://github.com/kragniz/cookiecutter-pypackage-minimal.git"
 
 # CLI stuff
 # =========
+#---- fm
+alias rgr="ranger"
+
 #---- journal
 alias jrnl=" jrnl" # alias for preventing hist from logging jrnl
 
@@ -309,7 +311,6 @@ alias gsize="git rev-list --objects --all \
 #                                                                             #
 #=============================================================================#
 # stuff that references user resources
-
 
 #=== github getters, 2nd order interface
 alias galist="ggh alist"

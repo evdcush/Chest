@@ -1,0 +1,20 @@
+from functools import partial
+
+# Partial function
+# ================
+def foo(a, b, c, d='tail'): # NORMAL FUNC
+    print(f"a : {a}, b : {b}, c : {c}, d : {d}")
+
+# a partial func that calls foo with a='bar', b='wow'
+>>> baz = partial(foo, 'bar', 'wow') # NB: c arg not provided
+>>> baz('dog')         # equivalent to  foo('bar', 'wow', 'dog')
+a : bar, b : wow, c : dog, d : tail
+
+>>> baz('mamba', 'seer')
+a : bar, b : wow, c : mamba, d : seer
+>>> goof = partial(foo, c=11)   # foo(a, b, 11, d)
+>>> goof('hello', 'there')
+a : hello, b : there, c : 11, d : tail
+
+
+

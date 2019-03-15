@@ -63,6 +63,7 @@ AI-frameworks:
 Robotics:
 - pyserial  # access to serial port
 - pythonrobotics # !!NOT PIP!! git clone https://github.com/AtsushiSakai/PythonRobotics.git
+- pybullet  # py interface to bullet phys sdk
 
 
 Recommenders:

@@ -1,20 +1,17 @@
 #!/bin/bash
 #=============================================================================#
 #                                                                             #
-#           .d8888b.  8888888888 88888888888 888     888 8888888b.            #
-#          d88P  Y88b 888            888     888     888 888   Y88b           #
-#          Y88b.      888            888     888     888 888    888           #
-#           "Y888b.   8888888        888     888     888 888   d88P           #
-#              "Y88b. 888            888     888     888 8888888P"            #
-#                "888 888            888     888     888 888                  #
-#          Y88b  d88P 888            888     Y88b. .d88P 888                  #
-#           "Y8888P"  8888888888     888      "Y88888P"  888                  #
+#                  ███████ ███████ ████████ ██    ██ ██████                   #
+#                  ██      ██         ██    ██    ██ ██   ██                  #
+#                  ███████ █████      ██    ██    ██ ██████                   #
+#                       ██ ██         ██    ██    ██ ██                       #
+#                  ███████ ███████    ██     ██████  ██                       #
 #                                                                             #
-###############################################################################
+#                                                                             #
 # This script details my post-install process, and is mostly in order of ops  #
 # There are as many notes as there are commands, and it is NOT designed       #
 #  to be run, but rather copied and referenced after a fresh-install          #
-###############################################################################
+#=============================================================================#
 
 
 #=============================================================================#
@@ -25,7 +22,7 @@
 #-----------------------------
 #===== Bootable ISO
 #  * TRIED: Rufus (windows only), unetbootin (trash), dd, "bootiso" (trash), gparted
-#  * WORKS: UUI, distro-provided tools (tails, kali, etc), etcher
+#  * WORKS: etcher, distro-provided tools (tails, kali, etc), UUI (win)
 
 #===== Troubleshooting
 # If things are failing with the USB
@@ -43,7 +40,7 @@
 #     ONLY AFTER REMOVING BLOAT, should you even connect to internet
 #
 # - Do not install 3rd party shit (for wifi/video/flash etc)
-#   - you can install what you need later, and flash 2018 lol
+#   - you can install what you need later, and flash 2019 lol
 
 
 # Remove useless shit from default PATH
@@ -148,14 +145,13 @@ printer-driver-brlaser exfat-utils flac lame x264 x265 libglfw3
 
 #=============================================================================#
 #                                                                             #
-#                         888888  88b 88  Yb    dP                            #
-#                         88__    88Yb88   Yb  dP                             #
-#                         88""    88 Y88    YbdP                              #
-#                         888888  88  Y8     YP                               #
+#                         ███████ ███    ██ ██    ██                          #
+#                         ██      ████   ██ ██    ██                          #
+#                         █████   ██ ██  ██ ██    ██                          #
+#                         ██      ██  ██ ██  ██  ██                           #
+#                         ███████ ██   ████   ████                            #
 #                                                                             #
 #=============================================================================#
-
-
 
 # Oh-my-zsh
 # =========
@@ -218,26 +214,15 @@ sudo apt install -y swi-prolog --install-suggests
 
 #=============================================================================#
 #                                                                             #
-#                  db                                                         #
-#                 d88b                                                        #
-#                d8'`8b                                                       #
-#               d8'  `8b      8b,dPPYba,   8b,dPPYba,   ,adPPYba,             #
-#              d8YaaaaY8b     88P'    "8a  88P'    "8a  I8[    ""             #
-#             d8""""""""8b    88       d8  88       d8   `"Y8ba,              #
-#            d8'        `8b   88b,   ,a8"  88b,   ,a8"  aa    ]8I             #
-#           d8'          `8b  88`YbbdP"'   88`YbbdP"'   `"YbbdP"'             #
-#                             88           88                                 #
-#                             88           88                                 #
+#                        █████  ██████  ██████  ███████                       #
+#                       ██   ██ ██   ██ ██   ██ ██                            #
+#                       ███████ ██████  ██████  ███████                       #
+#                       ██   ██ ██      ██           ██                       #
+#                       ██   ██ ██      ██      ███████                       #
 #                                                                             #
 #=============================================================================#
 
-####### BINARIES, APPIMAGES, ELECTRON ######
-code-notes.AppImage
-draw.io.AppImage
-
 ####### LOOK INTO & EXTRA #######
-koreader.AppImage         # kobo software
-polar-bookshelf.AppImage  # ebook progress library manager thign, meh
 raven-reader.AppImage     # clean feed reader
 stencila-desktop.AppImage # scholarly all-in-one office thing, has potential
 themer-gui.AppImage       # select a colorset, and it generates CSS for everything
@@ -247,20 +232,13 @@ themer-gui.AppImage       # select a colorset, and it generates CSS for everythi
 # GROBID
 wget https://github.com/kermitt2/grobid/archive/0.5.3.zip
 
+# Python packaged apps
+# ====================
+sudo pip3 install ranger-fm
 
 #-----------------------------------------------------------------------------#
-#                                              dP                             #
-#                                              88                             #
-#                          .d8888b. 88d888b. d8888P                           #
-#                          88'  `88 88'  `88   88                             #
-#                          88.  .88 88.  .88   88                             #
-#                          `88888P8 88Y888P'   dP                             #
-#                                   88                                        #
-#                                   dP                                        #
+#                                 Apt-sourced                                 #
 #-----------------------------------------------------------------------------#
-
-
-
 # Apps
 # ====
 #sudo apt install -y guake # always check versions available from src and apt
@@ -377,33 +355,22 @@ sudo dpkg -i bat_0.9.0_amd64.deb
 
 
 
-
-
 #=============================================================================#
 #                                                                             #
-#         88888888888                                                         #
-#         88                          ,d                                      #
-#         88                          88                                      #
-#         88aaaaa      8b,     ,d8  MM88MMM  8b,dPPYba,  ,adPPYYba,           #
-#         88"""""       `Y8, ,8P'     88     88P'   "Y8  ""     `Y8           #
-#         88              )888(       88     88          ,adPPPPP88           #
-#         88            ,d8" "8b,     88,    88          88,    ,88           #
-#         88888888888  8P'     `Y8    "Y888  88          `"8bbdP"Y8           #
+#                  ███████ ██   ██ ████████ ██████   █████                    #
+#                  ██       ██ ██     ██    ██   ██ ██   ██                   #
+#                  █████     ███      ██    ██████  ███████                   #
+#                  ██       ██ ██     ██    ██   ██ ██   ██                   #
+#                  ███████ ██   ██    ██    ██   ██ ██   ██                   #
 #                                                                             #
 #                                                                             #
-#          ad88888ba                                                          #
-#         d8"     "8b                ,d                                       #
-#         Y8,                        88                                       #
-#         `Y8aaaaa,     ,adPPYba,  MM88MMM  88       88  8b,dPPYba,           #
-#           `"""""8b,  a8P_____88    88     88       88  88P'    "8a          #
-#                 `8b  8PP"""""""    88     88       88  88       d8          #
-#         Y8a     a8P  "8b,   ,aa    88,    "8a,   ,a88  88b,   ,a8"          #
-#          "Y88888P"    `"Ybbd8"'    "Y888   `"YbbdP'Y8  88`YbbdP"'           #
-#                                                        88                   #
-#                                                        88                   #
+#                  ███████ ███████ ████████ ██    ██ ██████                   #
+#                  ██      ██         ██    ██    ██ ██   ██                  #
+#                  ███████ █████      ██    ██    ██ ██████                   #
+#                       ██ ██         ██    ██    ██ ██                       #
+#                  ███████ ███████    ██     ██████  ██                       #
 #                                                                             #
 #=============================================================================#
-
 #-----------------------------------------------------------------------------#
 #                                   Zotero                                    #
 #-----------------------------------------------------------------------------#
@@ -1194,6 +1161,7 @@ vi __init__.py
 
 # Sublime packages
 # ================
+# Anaconda    # realllllly need to dial down the autocomplete stuff tho
 # A File Icon
 # Colorsublime
 # Cython+
@@ -1205,6 +1173,9 @@ vi __init__.py
 # RestructuredText Improved
 # Restructured Text (RST) Snippets
 # SidebarEnhancements
+# UnicodeMath  (WHERE HAVE YOU BEEN MY WHOLE LIFE)
+
+
 
 
 
