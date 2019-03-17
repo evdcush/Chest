@@ -35,6 +35,10 @@ alias myip="inxi -i"
 alias tjp="TZ='Asia/Tokyo' date"
 
 
+# SYMLINKS
+# ========
+alias stowpro='stow --target=/home/evan/Projects'
+alias stowhome='stow --target=/home/evan'
 
 #=============================================================================#
 #                                                                             #
@@ -138,7 +142,7 @@ vis_pkgs="opencv-python scikit-video scikit-image imageio \
 open3d-python glumpy pypng pyopengl chainercv"
 
 std_pkgs="$min_pkgs pandas chainerrl 'gym[atari, box2d, classic_control]' \
-pydataset keras primesieve numba \
+kaggle pydataset keras primesieve numba \
 docutils sphinx sphinx-rtd-theme sphinxcontrib-websupport sphinx-gallery numpydoc pypandoc \
 pyyaml tinydb python-slugify unidecode pybtex scikit-image imageio jax jaxlib \
 fire pypi-cli pypistats cookiecutter faker johnnydep black \

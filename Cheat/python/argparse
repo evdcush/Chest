@@ -1,42 +1,15 @@
-#-----------------------------------------------------------------------------#
-#                            argparse subcommands                             #
-"""---------------------------------------------------------------------------#
-# What is a sub-command?
-# ======================
-Consider git. Git splits it's functionality into many different
-sub-commands, eg: git add, git status, git commit
+```python
+# Subparser
+# =========
+cli = argparse.ArgumentParser()
+subparsers = cli.add_subparsers(dest='subcmd')
 
-When you have a program that performs several different functions,
-like git, which require different kinds of CL args, you use
-sub-commands.
 
-ArgumentParser supports the creation of sub-commands with the
-add_subparsers() method. The add_subparsers method is normally called with no arguments,
-and returns a special action object.
+# subcommand interface decorator
+def argp(*names_or_flags, **kwargs):
+    return names_or_flags, kwargs
 
-This object has a single method, add_parser(), which takes
-a command name and any ArgumentParser constructor args,
-and **returns an ArgumentParser object that can be
-modified as usual**.
-
-The following sample code is from
-https://mike.depalatis.net/blog/simplifying-argparse.html
-"""
-from argparse import ArgumentParser
-
-#==== Create parser and subparsers
-cli = ArgumentParser()
-subparsers = cli.add_subparsers(dest='subcommand')
-# dest=<name of attribute under which sub-command name will be stored>
-# We store the name of the called subcom so that we can later print help
-# if either no subcom is given, or an unrecognized one.
-
-#==== convenience func
-def argument(*name_or_flags, **kwargs):
-    return (list(names_or_flags), kwargs)
-
-#==== Decorator to turn a func into a subcommand
-def subcommand(args=[], parent=subparsers):
+def subcmd(*parser_args, parent=subparsers):
     """Decorator to define a new subcommand in a sanity-preserving way.
 
     The function will be stored in the ``func`` variable when the parser
@@ -45,7 +18,7 @@ def subcommand(args=[], parent=subparsers):
         args.func(args)
 
     Usage example::
-        @subcommand([argument("-d", help="Enable debug mode", action="store_true")])
+        @subcmd(argp("-d", help="Enable debug mode", action="store_true"))
         def foo(args):
             print(args)
 
@@ -54,43 +27,37 @@ def subcommand(args=[], parent=subparsers):
     """
     def decorator(func):
         parser = parent.add_parser(func.__name__, description=func.__doc__)
-        for arg in args:
-            parser.add_argument(*arg[0], **arg[1])
+        for args, kwargs in parser_args:
+            parser.add_argument(*args, **kwargs)
         parser.set_defaults(func=func)
     return decorator
 
-@subcommand()
+@subcmd()
 def nothing(args):
     print("Nothing special!")
+
+#==== Samples
+@subcmd(argp('-d', help='debug mod', action='store_true'))
+def test(args):
+    print(args)
+
+@subcmd(argp('-f', '--filename', help="A thing with a filename"))
+def filename(args):
+    print(args.filename)
+
+@subcmd(argp('name', help='Name'))
+def name(args):
+    print(args.name)
 
 #==== main func
 if __name__ == '__main__':
     args = cli.parse_args()
-    if args.subcommand is None:
+    if args.subcmd is None:
         cli.print_help()
     else:
         args.func(args)
 
-#==== Samples
-@subcommand([argument('-d', help='debug mod', action='store_true')])
-def test(args):
-    print(args)
-
-@subcommand([argument('-f', '--filename', help="A thing with a filename")])
-def filename(args):
-    print(args.filename)
-
-@subcommand([argument('name', help='Name')])
-def name(args):
-    print(args.name)
-
-
-
-
-
-
-
-
+```
 
 
 ```python

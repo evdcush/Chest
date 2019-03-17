@@ -35,6 +35,21 @@ read:
       it requiring credentials like google or some shit
 
 
+data:
+  fashion-mnist:
+    url: https://github.com/zalandoresearch/fashion-mnist
+    tags: [ml, dataset, visual]
+    what:
+      dataset of Zalando's article images, intended to be
+      a drop-in replacement for MNIST dataset
+
+  FMA:
+    url: https://github.com/mdeff/fma
+    tags: [music, dataset, ml]
+    what:
+      huuuuuuuuuuuuge dataset of high-quality audio data for
+      music analysis
+
 
 theme: # ANYTHING related to layout, appearance, highlighting, css, style, etc...
   themer:

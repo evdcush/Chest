@@ -28,6 +28,7 @@ science-math:
 - pandas
 - cvxpy   # python embedded modeling lang for convex opt problems; intuitive
 - cyflann  # cython interface to FLANN lib
+- edward  # framework for probablistic models, tf subset lang
 
 cosmo:
 - corrfunc  # correlation func & clustering
@@ -53,7 +54,8 @@ GPU:
 - cupy
 
 
-AI-frameworks:
+AI:
+- kaggle
 - 'gym[atari, box2d, classic_control]'
 - chainerrl
 - neupy  # ANN library, TF backend, lib has some cool stuff
