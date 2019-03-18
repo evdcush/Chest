@@ -4,6 +4,35 @@
 cli = argparse.ArgumentParser()
 subparsers = cli.add_subparsers(dest='subcmd')
 
+# IF YOU WANT TO HAVE ARGS AVAILABLE WITHOUT SUBCOMMAND
+# YOU MUST ADD THEM BEFORE ADDING SUBPARSERS, eg:
+'''
+# PROPER ORDER: foo.py
+cli = argparse.ArgumentParser()
+cli.add_argument('name')
+subparsers = cli.add_subparsers(dest='subcmd')
+print(cli.parse_args())
+
+# IMPROPER ORDER: baz.py
+cli = argparse.ArgumentParser()
+subparsers = cli.add_subparsers(dest='subcmd')
+cli.add_argument('name')
+print(cli.parse_args())
+
+$ python foo.py
+usage: foo.py [-h] name {} ...
+$ python foo.py 'hello'
+Namespace(name='hello', subcmd=None)
+
+$ python baz.py
+usage: baz.py [-h] {} ... name   # <-------- NOTE THE DIFFERENT ORDER
+baz.py: error: the following arguments are required: name
+$ python baz.py 'hello'
+usage: baz.py [-h] {} ... name
+baz.py: error: argument subcmd: invalid choice: 'hello' (choose from )
+'''
+
+
 
 # subcommand interface decorator
 def argp(*names_or_flags, **kwargs):

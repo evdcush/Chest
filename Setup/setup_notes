@@ -1009,53 +1009,62 @@ vi __init__.py
 #import sublime_plugin
 #
 #class ToggleColorSchemeCommand(sublime_plugin.TextCommand):
-#    def run(self, edit, **args):
+#    def run_global(self, edit, **args):
+#        # Get settings
+#        settings = sublime.load_settings('Preferences.sublime-settings')
 #
-#        # Dark themes
-#        # ===========
-#        dark1 = args['dark_color_scheme_1'] # Piodine
-#        dark2 = args['dark_color_scheme_2'] # Bijan
-#        darks = set(dark1, dark2)
+#        # Schemes
+#        scheme1 = args['color_scheme_1']  # Piodine
+#        scheme2 = args['color_scheme_2']  # Github-v2
+#        scheme3 = args['color_scheme_3']  # Spring
+#        scheme_map = {
+#            scheme1 : scheme2,
+#            scheme2 : scheme3,
+#            scheme3 : scheme1,
+#        }
 #
-#        # Light themes
-#        # ============
-#        light1 = args['light_color_scheme_1'] # Github-v2
-#        light2 = args['light_color_scheme_2'] # ArtSchool
-#        light3 = args['light_color_scheme_3'] # Spring
-#        light4 = args['light_color_scheme_4'] # Butterfly
-#        lights = set(light1, light2, light3, light4)
+#        # Update color scheme
+#        cur_scheme  = settings.get('color_scheme', scheme1)
+#        next_scheme = scheme_map.get(cur_scheme, scheme1)
+#        settings.set('color_scheme', next_scheme)
+#        sublime.save_settings("Preferences.sublime-settings")
+#
+#
+#    def run_local(self, edit, **args):
+#        # Schemes
+#        scheme1 = args['color_scheme_1']  # Piodine
+#        scheme2 = args['color_scheme_2']  # Github-v2
+#        scheme3 = args['color_scheme_3']  # Spring
+#        scheme_map = {
+#            scheme1 : scheme2,
+#            scheme2 : scheme3,
+#            scheme3 : scheme1,
+#        }
 #
 #        # Check current
-#        # =============
-#        cur_scheme = self.view.settings().get("color_scheme")
+#        cur_scheme = self.view.settings().get('color_scheme')
+#        next_scheme = scheme_map.get(cur_scheme, scheme1)
 #
-#        if cur_scheme in darks:
-#            new_scheme = dark2 if cur_scheme == dark1 else dark1
+#        # Update color scheme
+#        self.view.settings().set('color_scheme', next_scheme)
 #
-#        elif cur_scheme in lights:
-#            if cur_scheme == light1:
-#                new_scheme = light2
-#            elif cur_scheme == light2:
-#                new_scheme = light3
-#            elif cur_scheme == light3:
-#                new_scheme = light4
-#            else:
-#                new_scheme = light1
-#
-#        else:
-#            cur_scheme = dark1
-#
-#        #new_scheme = scheme2 if current_scheme == scheme1 else scheme1
-#        self.view.settings().set("color_scheme", new_scheme)
+#    def run(self, edit, **args):
+#        self.run_global(edit, **args)
 
-# {
-#     "keys": ["YOUR_TOGGLE_SHORCUT"], "command": "toggle_color_scheme",
-#     "args":
-#     {
-#         "color_scheme_1": "Packages/Color Scheme - Default/Solarized (Light).tmTheme" ,
-#         "color_scheme_2": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme"
-#     }
-# }
+# in Preferences/Key Bindings:
+#[
+#    {
+#    "keys": ["alt+shift+c"], "command": "toggle_color_scheme",
+#    "args":
+#        {
+#            "color_scheme_1": "Packages/Colorsublime - Themes/cache/Colorsublime-Themes-master/themes/Piodine.tmTheme",
+#            "color_scheme_2": "Packages/Colorsublime - Themes/cache/Colorsublime-Themes-master/themes/Github-v2.tmTheme",
+#            "color_scheme_3": "Packages/Colorsublime - Themes/cache/Colorsublime-Themes-master/themes/Spring.tmTheme",
+#        }
+#    },
+#
+#]
+
 
 
 

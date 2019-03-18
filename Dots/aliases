@@ -14,11 +14,6 @@
 # NB: oh-my-zsh defines useful aliases '..'|'...'|'....'
 alias md="mkdir -p"
 
-#---- file stuff
-alias srt="sort -o $1 $1"
-alias unq="sort $1 | uniq -i"  # ignore case
-alias dups="sort $1 | uniq -d"
-
 #---- list stuff
 alias h="history"
 alias ldot="ls -d --group-directories-first .*"
@@ -37,6 +32,7 @@ alias tjp="TZ='Asia/Tokyo' date"
 
 # SYMLINKS
 # ========
+#---- stow
 alias stowpro='stow --target=/home/evan/Projects'
 alias stowhome='stow --target=/home/evan'
 
@@ -202,7 +198,6 @@ alias pipupdate="pip list --outdated --format=freeze \
 alias smi='nvidia-smi'
 
 #---- notebook
-alias nbc="jupyter nbconvert --to pdf $1 --template classicm" # pdf conversion
 alias nb="jupyter notebook"
 
 #---- editors

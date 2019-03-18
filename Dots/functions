@@ -25,12 +25,15 @@ dub() {
 #                                                                             #
 #=============================================================================#
 
+nbc() { jupyter nbconvert --to pdf "$1" --template classicm } # pdf conversion
+tst() { touch "$1"; subl "$1" }
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Lorem ipsum
 # ===========
 # DEPRECATED: python faker
-#li(){lorem-ipsum $@ | xclip -selection clipboard}
+#li() { lorem-ipsum $@ | xclip -selection clipboard }
 
 
 
@@ -126,16 +129,7 @@ function rurl {
 #}
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-function hurl {
-    TARGET='repos'
-    URL="$1"
-    if [ "$#" -gt 1 ]; then
-        #==== "orgs" or "users" specified
-        TARGET="$1"
-        URL="$2"
-    fi
-    yq w -i $PATH_INBOX_HOARD "$TARGET"'[+]' $URL
-}
+
 #==== leetcode-cli
 leet(){
     # leet(int num, str lang=python3): generate leetcode problem num
@@ -245,14 +239,24 @@ function pvenv(){
 # dir and file stuff
 # ==================
 
-#==== Diff files in the manner of git diff
-function gdiff () { diff -u $@ | colordiff | less -R; }
+# Sort utils
+srt() { sort -o "$1" "$1" }
+unq() { sort "$1" | uniq -i }
+dups() { sort "$1" | uniq -d }
 
-#==== mkdir & cd into it
-function mcd(){mkdir -p "$1" && cd "$1"}
+# Diff files in the manner of git diff
+gdiff () { diff -u $@ | colordiff | less -R; }
 
-#==== cd & list contents
-function cdl(){cd "$1" && ls -1FSshX --file-type}
+# dir stuff
+mcd(){mkdir -p "$1" && cd "$1"}
+cdl(){cd "$1" && ls -1FSshX --file-type}
+
+# Symlink
+# =======
+# symlink something from curdir to somewhere rooted from home
+lnph() { ln -sf "$PWD/$1" "$HOME/$2" } # proble with this is you lose path completion for $2
+lnp() { ln -sf "$PWD/$1" "$2" }
+
 
 # symlink something to ~/.local/bin
 function lnbin(){

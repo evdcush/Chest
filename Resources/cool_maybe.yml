@@ -1,8 +1,10 @@
----
 # Collection of resources or software I've used briefly or
 # found notable/interesting that has further potential.
 # Most of it is from github
 
+
+---
+###   SOFTWARE   ###
 snip:
   code-notes:
     url: https://github.com/lauthieb/code-notes
@@ -34,22 +36,15 @@ read:
       manually add or delete stuff, and when it updated I remember
       it requiring credentials like google or some shit
 
-
-data:
-  fashion-mnist:
-    url: https://github.com/zalandoresearch/fashion-mnist
-    tags: [ml, dataset, visual]
+  Xapers:
+    url: https://finestructure.net/xapers/
+    tags: [journal, pdf, bibliography, cli-app]
     what:
-      dataset of Zalando's article images, intended to be
-      a drop-in replacement for MNIST dataset
-
-  FMA:
-    url: https://github.com/mdeff/fma
-    tags: [music, dataset, ml]
-    what:
-      huuuuuuuuuuuuge dataset of high-quality audio data for
-      music analysis
-
+      Xapers is a personal document indexing system, geared
+      towards academic journal articles. Think of it as your
+      own personal document search engine, or a local cache of
+      ponline libraries. It provides fast search of document text
+      and bibliographic data and simpel document bibtex retrieval.
 
 theme: # ANYTHING related to layout, appearance, highlighting, css, style, etc...
   themer:
@@ -58,6 +53,30 @@ theme: # ANYTHING related to layout, appearance, highlighting, css, style, etc..
     what:
       themer takes a set of colors and generates themes
       for your apps (editors, terminals, wallpapers, and more)
+
+
+
+
+---
+###    DATASETS   ###
+
+classification:
+  fashion-mnist:
+    url: https://github.com/zalandoresearch/fashion-mnist
+    tags: [ml, dataset, visual, mnist, classification, fashion]
+    what:
+      dataset of Zalando's article images, intended to be
+      a drop-in replacement for MNIST dataset
+
+multi:
+  FMA:
+    url: https://github.com/mdeff/fma
+    tags: [music, dataset, ml, analysis, classification]
+    what:
+      huuuuuuuuuuuuge dataset of high-quality audio data for
+      music analysis
+
+
 
 
 

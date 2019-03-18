@@ -58,17 +58,6 @@ class AttrDict(dict):
     __setattr__ = dict.__setitem__
     __delattr__ = dict.__delitem__
 
-    @classmethod
-    def spec(cls): # since the class is preloaded in konch, this help refresh details
-        specification = (
-            "class AttrDict(dict):\n"
-            "    __getattr__ = dict.__getitem__\n"
-            "    __setattr__ = dict.__setitem__\n"
-            "    __delattr__ = dict.__delitem__"
-            )
-        print(specification)
-
-
 
 #==== strip punctuation from string
 def translate_strip(s):
