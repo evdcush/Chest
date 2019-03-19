@@ -24,6 +24,9 @@ dict_comp = {i: i**2 for i in range(20) if i & 1}
 copy.copy(x)     # shallow copy: you almost never want this (still has references)
 copy.deepcopy(x) # deep copy: what you think of when you think copy, FULL recursive copy
 
+#==== subprocess
+subprocess.run(f'wget {url}', cwd=dst, shell=True) # cwd will exec this command in dst
+
 
 """
 # How to make your 'foo.py' script executable bin

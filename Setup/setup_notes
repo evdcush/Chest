@@ -1203,12 +1203,13 @@ vi __init__.py
 
 # NATIVEFIER
 # ==========
-nativefy "https://mail.google.com" -n gmail -t -c
-nativefy "https://drive.google.com" -n google-drive
-nativefy "https://keep.google.com" -n google-keep -u 3
-nativefy "https://calendar.google.com" -n google-calendar
-nativefy "https://airtable.com/" -n airtable
-nativefy "https://www.hackerrank.com/dashboard" -n hacker-rank
+nativefy "https://mail.google.com" gmail -t -c
+nativefy "https://drive.google.com" google-drive -u '.*?\.google\.*?'
+nativefy "https://keep.google.com" google-keep
+nativefy "https://calendar.google.com" google-calendar
+nativefy "https://airtable.com/" airtable
+nativefy "https://www.hackerrank.com/dashboard" hacker-rank
+
 
 # RSS feeds
 # =========

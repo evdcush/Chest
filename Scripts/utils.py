@@ -17,8 +17,6 @@ class AttrDict(dict):
 # Parser
 # ======
 CLI = argparse.ArgumentParser()
-#subparsers = CLI.add_subparsers(dest='subcmd')
-subparsers = None
 
 # Subcommands
 # ===========
