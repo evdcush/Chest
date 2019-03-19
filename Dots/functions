@@ -387,7 +387,7 @@ function git-nuke(){
         if [ "$push_confirmation" != "${push_confirmation#[Yy]}" ] ;then
             git push --all --prune --force  # will delete all branches not in local
         else
-            echo "/tREMOTE PUSH ABORT\n\tNB: local git changes persist"
+            echo "/tREMOTE PUSH ABORT\n\tNOTE: local git changes persist"
             echo "To restore git to pre-nuke state:"
             echo 'rm -rf .git; mv GITBKP .git; git reset HEAD --hard'
         fi

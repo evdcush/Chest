@@ -1,0 +1,2 @@
+# remove a .deb package
+sudo dpkg -r --purge pkg_name

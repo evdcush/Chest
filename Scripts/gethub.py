@@ -57,6 +57,8 @@ def rename_zip_and_contents(repo_name, rname, zpath='master.zip'):
     rename unzipped dir
     zip dir
     del zipfile
+
+    is this actually important?
     """
     pass
 
@@ -70,6 +72,8 @@ wget_sh = lambda u, fpath: subprocess.run(f"wget {u} -O {fpath}", shell=True)
 # Potential readme file names:
 readme_names = ['README.md', 'README', 'README.rst', 'README.txt',
                 'readme.md', 'readme', 'readme.txt']
+# use stemmer? # <--- no, don't be fancy if you don't need it, this list fine
+
 
 def get_date():
     date  = datetime.now().date()
@@ -183,7 +187,7 @@ def format_url(url=None):
 #=============================================================================#
 # There is a good amount of redundancy between the getters. Acceptable here,
 # for now, as it allows for easier exposure as an interface through fire
-
+#  UPD: no, you don't need this much redundancy. partial your funcs or class it
 
 
 """
