@@ -1,12 +1,13 @@
+===============
 troubleshooting
-###############
+===============
 
 
 Docker
-******
+======
 
 Docker connection
-=================
+-----------------
 
 ``docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.``
 
@@ -22,10 +23,10 @@ Docker connection
 -----
 
 SSH
-***
+===
 
 Remote sessions freezing
-========================
+------------------------
 You need to properly configure the ssh config files on both server and client. This solution from an answer on SO: `"How can I keep my SSH sessions from freezing?" <https://unix.stackexchange.com/a/200256>`_
 
 **On the client-side ssh config:**
@@ -61,4 +62,14 @@ With ``ClientAliveCountMax``, the server will send alive messages to the client 
 ------
 
 
-PLACEHOLDER
+Xorg
+====
+
+**How to restart xorg?**
+
+.. code-block:: bash
+
+    sudo systemctl restart display-manager
+
+    # find out which display manager your ubuntu has (not actually relevant)
+    cat /etc/X11/default-display-manager

@@ -96,6 +96,10 @@ alias afshow="apt-fast show"
 # jupyter dashboards quick-setup --sys-prefix; \
 # jupyter nbextension enable jupyter_dashboards --py --sys-prefix"
 
+# use this way too damn much
+alias cit="echo 'code.interact(local=dict(globals(), **locals()))' \
+| xclip -selection clipboard"
+
 #-----------------------------------------------------------------------------#
 #                                pip packages                                 #
 #-----------------------------------------------------------------------------#
