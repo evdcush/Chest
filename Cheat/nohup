@@ -1,0 +1,6 @@
+# if you just `nohup blah > train.log`, the process can still be
+# interrupted by CTRL+C.
+
+# To FULLY background the process from command, you must
+# also redirect stderr to stdout (by appending `2>&1 &`), eg:
+nohup python train.py -i 200000 -b 10 --seed 54321 > attn_deepC2_200k.log 2>&1 &

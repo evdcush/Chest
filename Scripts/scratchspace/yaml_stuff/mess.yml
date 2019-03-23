@@ -1,0 +1,70 @@
+
+
+
+---
+#-----------------------------------------------------------------------------#
+#                                Embedded Code                                #
+#-----------------------------------------------------------------------------#
+
+# How this works
+# ==============
+# To clarify, this code is not "embedded" in the sense that it is
+# a py script or something that is runnable
+#
+# It is python code defined as the literal string of yaml entries.
+# The important yaml syntax here is `|` symbol, which specifies
+# a "literal scalar block style"
+#
+# What that means is, everything defined within the block following
+# the `|` is a literal block (newlines preserved).
+#
+# So you can use this to essentially write python code.
+# These "code" blocks can be run as python programs
+# by first reading this yaml file, then exec the yaml objects
+# eg (assuming you have read this yaml file into a pyobj named "yml")
+# >>> yml = R_yml('mess.yml')
+# >>> exec(yml['hworld_code'])
+# Hello World
+# >>> exec(yml['array_code'])
+# [[5 8 6]
+#  [7 7 8]
+#  [1 2 9]]
+#
+# And, most importantly, everything defined within that code block
+# is available in the env namespace. So, since we exec'd 'array_code'
+# X is now a variable.
+
+
+hworld_code: |
+    print('Hello World')
+
+primes_code: |
+    """ from cookbook or something """
+    from itertools import count, islice, takewhile
+
+    def erat2():
+        """ generator for getting n primes """
+        D = dict()
+        yield 2
+        for q in islice(count(3), 0, None, 2):
+            p = D.pop(q, None)
+            if p is None:
+                D[q*q] = q
+                yield q
+            else:
+                x = p + q
+                while x in D or not (x&1):
+                    x += p
+                D[x] = p
+
+    def get_primes_erat(n):
+        return list(takewhile(lambda p: p<n, erat2()))
+
+    print(get_primes_erat(100))
+
+
+array_code: |
+    import numpy as np
+    np.random.seed(0)
+    X = np.random.randint(1, 11, (3,3), dtype=np.uint8)
+    print(X)

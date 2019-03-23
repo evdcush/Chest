@@ -387,4 +387,6 @@ Chrome & Browser
 - See all installed extensions: navigate to ``chrome://system``
 
 
-
+Prevent tor from starting automatically
+---------------------------------------
+``sudo systemctl disable tor.service``

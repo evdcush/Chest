@@ -3,6 +3,36 @@
 # distutils: language = c++
 # cython: language_level=3
 
+
+
+# def, cdef, cpdef
+# ================
+There are two kinds of funcs in cython, py and c funcs
+
+def : python functions
+    in : pyobj
+    out : pyobj
+
+cdef : C functions
+    in : pyobj | C values
+    out : pyobj | C values
+
+Withing a cython module, py and c funcs can call each
+other freely, ONLY PYTHON functions can be called
+from outside the module by CPython code.
+
+cpdef is hybrid of def, cdef. It can be called
+anywhere, and dispatches to C or py depending
+on caller. Overhead, so slower.
+
+
+
+# File types
+# ==========
+.pyx, .py : implementation files
+.pxd : definition files (ie headers)
+.pxi : include files
+
 # Run steps
 # =========
 #---- write a distutils/setuptools setup.py

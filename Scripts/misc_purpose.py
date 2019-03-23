@@ -4,6 +4,43 @@ might be useful again some time.
 
 """
 
+#██████████████████████████████████████████████████████████████████████████████
+#-----------------------------------------------------------------------------#
+#                                  pylibgen                                   #
+#-----------------------------------------------------------------------------#
+import subprocess
+from slugify import slugify
+from pylibgen import Library
+
+def fname_book(book):
+    title = slugify(book.title)
+    fname = title + '.pdf'
+    return fname
+
+def get_book(book):
+    fname = fname_book(book)
+    subprocess.run(f'wget -O {fname} {book.get_url()}', shell=True)
+
+l = Library()
+
+def search(isbn):
+    ids = l.search(isbn)
+    if len(ids) == 0:
+        print('No results!')
+        return
+    books = list(l.lookup(ids))
+    for i, b in enumerate(books):
+        if b.extension != 'pdf':
+            continue
+        print(f'BOOK {i}')
+        pprint(vars(b))
+        print('\n')
+    bidx = input('Download book: ')
+    if bidx:
+        #assert bidx.isdigit() # its just u
+        book = books[int(bidx)]
+        get_book(book)
+    return
 
 
 
