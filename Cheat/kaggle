@@ -1,0 +1,10 @@
+
+###  DATASETS  ###
+
+# List most voted datasets
+kaggle datasets list --sort-by votes
+
+# Search datasets
+kaggle datasets list -s mnist
+
+# List datasets by size
