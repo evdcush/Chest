@@ -88,6 +88,8 @@ sudo apt remove --purge catfish devhelp glade xul-ext-ubufox
 
 # Printer shit
 #--------------
+##### UPDATE: Careful on this one! Unless you are finding issues
+#             with these packages (ghost printers, drivers) do not delete
 sudo apt remove --purge printer-driver-splix printer-driver-sag-gdi \
 printer-driver-pxljr printer-driver-ptouch printer-driver-pnm2ppa \
 printer-driver-min12xxw printer-driver-m2300w printer-driver-foo2zjs-common \
@@ -102,6 +104,12 @@ printer-driver-foo2zjs printer-driver-c2esp
 sudo add-apt-repository ppa:apt-fast/stable
 sudo apt update
 sudo apt install apt-fast
+
+# Apt mirrors
+# ===========
+# So the mirrors featured here have best averaged ping and speed
+# but it's best to always check apt-select for best mirrors
+# pip install -U apt-select; apt-select -l -t 20;
 sed -i "$ a MIRRORS=( 'http://mirror.picosecond.org/ubuntu/, http://mirror.enzu.com/ubuntu/, http://la-mirrors.evowise.com/ubuntu/, http://mirrors.ocf.berkeley.edu/ubuntu/, http://mirror.math.ucdavis.edu/ubuntu/' )" /etc/apt-fast.conf
 
 #==== APT-REPO
@@ -248,7 +256,7 @@ jq \
 flameshot nomacs inkscape vlc mpv \
 pandoc poppler-utils wkhtmltopdf img2pdf \
 htop psensor xsensors xfce4-sensors-plugin \
-gparted tree tlp deborphan symlinks \
+gparted tree tlp deborphan symlinks xdot \
 git-crypt git-extras \
 xclip copyq \
 dict dictd dict-gcide dict-wn dict-moby-thesaurus \
