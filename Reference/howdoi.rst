@@ -1,34 +1,36 @@
-############
+============
 How Do I....
-############
+============
 
-.. contents:: Table of Contents
-.. section-numbering::
+.. contents:: 
 
-----
 
-Shell
-=====
 
-permissions
------------
-``sudo chown -R $USER:$USER <thing>``
-``chmod a+x <thing>``
-
-----
-
+---
 PDF
-===
+---
 
-conversion
-----------
+
+Conversion
+==========
 Conversion to pdf often involves an intermediate step where the document is converted to latex before pdf. This often messes things up.
 
 I've found it's easier to first convert to html, then pdf.
 
+If you can find one, a latex or css template for converting from some format to pdf is generally the best.
 
-``.ipynb`` to pdf
-^^^^^^^^^^^^^^^^^
+
+Notebook to pdf
+---------------
+For *any* solution, you will have to make some compromise. 
+
+The trouble with notebook to pdf conversion is that you cannot get clean single pages. Some methods will leave 90% of a page blank so that a cell or something does not get truncated.
+
+So far, I've only managed to work around the paging issue by manually formatting cells by guestimation. 
+
+A cursory search did not yield any solutions for embedded styling directives or something for pagebreaks, but there may be more there.
+
+**Methods used**:
 
 .. code-block:: bash
 
@@ -46,8 +48,8 @@ I've found it's easier to first convert to html, then pdf.
 
 
 rst to pdf
-^^^^^^^^^^
-(Still trying to find a good solution)
+----------
+(Still trying to find a good solution). Unlike the misadventures in notebook conversion, I think there may be more resources for rst to pdf I have not found yet.
 
 .. code-block:: bash
 
@@ -58,23 +60,38 @@ rst to pdf
 
 
 Manipulation
-------------
-There are LOADS of CLI tools for manipulating and modifying pdfs. Just google whatever you need to do.
+============
+There are LOADS of CLI tools for manipulating and modifying pdfs. 
 
-crop PDF
-^^^^^^^^
-.. code-block:: bash
+If these solutions do not work for you, just google whatever you need to do.
 
-    sudo apt install --no-install-recommends --no-install-suggests texlive-extra-utils
-    pdfcrop my_doc.pdf cropped_my_doc.pdf
+Crop pdf
+--------
+I found the top hits on SO and such to be very tedious. 
+They all tend to use library modules packaged with poppler or texlive.
 
+The issue has been that the defaults are generally too aggressive in cropping.
+You can specify margins, but even still, they often crop sparse pages
+to an entirely different size than normal pages.
+
+
+**Here's the best way**, using a interfacing script::
+
+    # Install pdf pkgs (texlive gives you pdfcrop)
+    sudo apt intall --no-install-recommends --no-install-suggests texlive-extra-utils
+
+    # Use python pkg interface
+    pip install -U pdfCropMargins
+    pdf-crop-margins -s -u paper.pdf
+
+
+
+**hard way**:
 
 To crop with all pages at consistent page size: https://tex.stackexchange.com/questions/166758/how-do-i-make-pdfcrop-output-all-pages-of-the-same-size
 
-**scratch all below, use pdf-crop-margins instead (pip install pdfCropMargins), then ``pdf-crop-margins -s -u my_pdf.pdf**
-
 1. ``pdfcrop --verbose myfile.pdf cropfile.pdf > crop.log``
-2. Open ``crop.log``, get all  lines with ``%%HiResBoundingBox: ``, and strip those lines so its just the space separated nums on the lines
+2. Open ``crop.log``, get all  lines with ``%%HiResBoundingBox:``, and strip those lines so its just the space separated nums on the lines
 3. open that log in python, and get bbox as follows
 
 .. code-block:: python
@@ -91,11 +108,12 @@ To crop with all pages at consistent page size: https://tex.stackexchange.com/qu
             d = max(d, eval(z))
         pyperclip.copy(f'pdfcrop --bbox "{a} {b} {c} {d}"')
 
-4. pdfcrop --box "<the nums>" myfile.pdf cropfile.pdf
+4. ``pdfcrop --box "<the nums>" myfile.pdf cropfile.pdf``
 
 
 remove a watermark
-^^^^^^^^^^^^^^^^^^
+------------------
+
 .. code-block:: bash
 
     #=== cut watermark text from pdf code
@@ -104,7 +122,9 @@ remove a watermark
     pdftk unwatermarked.pdf output fixed.pdf && mv fixed.pdf unwatermarked.pdf
 
 extract a range of pages
-^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
+NB: pdfjam is part of the texlive package.
+
 .. code-block:: bash
 
     pdfjam <input file> <page ranges> -o <output file>
@@ -116,34 +136,36 @@ extract a range of pages
 ----
 
 
+------
 Images
-======
+------
 
 Conversion
-----------
+==========
 
-convert svg to png
-^^^^^^^^^^^^^^^^^^
-``inkscape -z -e test.png -w 1024 -h 1024 test.svg``
+**convert svg to png**:
+
+    ``inkscape -z -e test.png -w 1024 -h 1024 test.svg``
 
 
 ----
 
+----
 Keys
-====
+----
 
 SSH
----
+===
 
-generate ssh key
-^^^^^^^^^^^^^^^^
+**generate ssh key**:
+    
 .. code-block:: bash
 
     ssh-keygen -t rsa -b 4096 -C "my_email@abc.com"
     # just accept defaults
 
-add SSH key to ssh-agent
-^^^^^^^^^^^^^^^^^^^^^^^^
+**add SSH key to ssh-agent**:
+
 .. code-block:: bash
 
     eval "$(ssh-agent -s)"
@@ -151,8 +173,8 @@ add SSH key to ssh-agent
     ssh-add ~/.ssh/id_rsa
 
 
-add my SSH key to server
-^^^^^^^^^^^^^^^^^^^^^^^^
+**add my SSH key to server**:
+
 .. code-block:: bash
 
     #=== add to server (from local)
@@ -163,10 +185,10 @@ add my SSH key to server
 
 
 GPG
----
+===
 
-generate gpg key
-^^^^^^^^^^^^^^^^
+**generate gpg key**:
+
 .. code-block:: bash
 
     #  Part of the process involves "generating enough
@@ -182,40 +204,38 @@ generate gpg key
 
     # you should now have your key
 
+-----
 
+------------
 Installation
-============
+------------
 
 Python
-------
+======
 
-Install py package from source
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Install py package from source**:
+
 .. code-block:: bash
 
     python setup.py install --prefix=$HOME/.local/bin
 
 
 Apt
----
+===
 
-Install package without recommended|suggested
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. code-block:: bash
+**Install package without recommended|suggested**::
 
     sudo apt --no-install-recommends --no-install-suggests install MY_PACKAGE
 
 
+------
 
+-------------
 Remote Server
-=============
+-------------
 
-via ssh
--------
 
-mount remote dir to local
-^^^^^^^^^^^^^^^^^^^^^^^^^
-.. code-block:: bash
+**mount remote dir to local**::
 
     # basic connection
     sshfs name@server:/path/to/folder /path/to/mount/point
@@ -227,22 +247,22 @@ mount remote dir to local
     sshfs -o ssh_command='ssh -p <customport>' name@server:/path/to/folder /path/to/mount/point
 
 
-Send my client SSH key to server
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. code-block:: bash
+**Send my client SSH key to server**::
 
     ssh-copy-id <username>@<host>
 
 
+-----
 
+------
 Python
-======
+------
 
 ipython
--------
+=======
 
-Save ipython session history|log
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Save ipython session history|log**:
+
 .. code-block:: python
 
     #-----> for current session
@@ -251,51 +271,17 @@ Save ipython session history|log
     #-----> for all sessions:
     %history -g -f full_history.py
 
+----
 
-
-Packages
-========
-
-Utils
------
-
-Check what package dependees
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. code-block:: bash
-
-    apt-cache rdepends packagename
-
-
-Adding and Removing
--------------------
-
-Apt install packages from text file
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. code-block:: bash
-
-    cat pkg_list.txt | xargs sudo apt install
-
-
-remove list of files or packages from STDIN or txt
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. code-block:: bash
-
-    #-----> For packages:
-    cat pkg_list.txt | xargs sudo apt remove --purge -y
-    EG:
-    sudo deborphan | xargs sudo apt remove --purge -y  # to remove all orphaned dependencies
-
-    #-----> For files:
-    cat stuff_i_dont_want.txt | xargs rm -rf -y
-
+---------------
 Troubleshooting
-===============
+---------------
 
 Ubuntu/Linux
-------------
+============
 
 Slow boot
-^^^^^^^^^
+---------
 This has been a persistent problem for **all** my machines with xubuntu 18.04. None had slow-boot issues with 16.04.
 
 After hours of googling and trying out a bunch of stuff (including a disastrous modification to lightdm/wayland that was only meant for ubuntu and not xubuntu), **I still have not found a solution.**
@@ -340,7 +326,7 @@ I had a boot time < 4s on 16.04. With 18.04, boot-times are consistently around 
 
 
 Black screen on boot
-""""""""""""""""""""
+--------------------
 The primary issue is a **hanging black screen** on boot. This phenomenon is apparently **NOT** logged by any of the typical system processes--eg ``systemd-analyze`` won't register this boot lag for any process.
 
 The system boots, normally then hangs on a blank, black screen for approximately 15~20s, and it seems like it can persist longer *if* you do not spam the keyboard (which seems to interrupt it).
@@ -352,41 +338,48 @@ The system boots, normally then hangs on a blank, black screen for approximately
 - Tinkering with nouveau, nvidia, mesa stuff
 
 
+Fonts
+=====
+This is a nightmare on linux.
 
+Check your dpi::
 
-Unsorted
-========
+    xdpyinfo | grep resolution
 
-Check my public ip
-------------------
-.. code-block:: bash
+    # dpi plus res
+    xdpyinfo | grep -B2 resolution
+
+-----
+
+-------------
+Miscellaneous
+-------------
+
+**Check my public ip**::
 
     inxi -i
     # or
     wget -O - -q icanhazip.com
 
 
-Disable the ins key
--------------------
-1. figure out what key is mapped to insert
+**Disable the ins key**
 
 .. code-block:: bash
 
+    # Figure out what is mapped to insert key
     xmodmap -pke | grep -i insert
 
-2. map ins key to null in ~/.Xmodmap
-
-.. code-block:: bash
-
+    # Map ins key to null in ~/.Xmodmap
     echo "keycode 90 =" >> ~/.Xmodmap
 
 
+**Prevent tor from starting automatically**::
+
+    sudo systemctl disable tor.service
+
+
+
 Chrome & Browser
-----------------
+================
 
 - See all installed extensions: navigate to ``chrome://system``
-
-
-Prevent tor from starting automatically
----------------------------------------
-``sudo systemctl disable tor.service``
