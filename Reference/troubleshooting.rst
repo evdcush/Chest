@@ -22,6 +22,30 @@ Docker connection
 
 -----
 
+Fonts
+=====
+Look like garbage on linux.
+
+**Consult:** https://pandasauce.org/post/linux-fonts/
+
+
+Chromium
+--------
+Consulting the afforementioned pandasauce post, the author, Georgi Boiko, has a gist for manually patching binary releases of chrome to fix font (force full hinting and subpixel positioning).
+
+**The gist:** https://gist.github.com/pandasauce/398c080f9054f05bee6e1c465416b53b
+
+He uses a tool called `radiff2 <https://r2wiki.readthedocs.io/en/latest/tools/radiff2/>`_, which is part of the ``radare2`` package. radiff shows difference between two binaries.
+
+So to patch chromium like in that gist::
+
+    # Install deps and parent lib
+    sudo apt install xdot radare2
+
+
+
+-----
+
 SSH
 ===
 

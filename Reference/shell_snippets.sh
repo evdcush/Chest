@@ -28,6 +28,12 @@ echo "Hello world" > 'foo.txt'
 #==== concatenate to end file instead
 echo "Hello world" >> 'foo.txt'
 
+# Open most recent command and edit it
+# ------------------------------------
+fc
+fc -e 'vim' # specify editor
+fc -l # list recent cmds from history
+
 
 # Sort file
 #----------------------------
@@ -101,8 +107,6 @@ echo "$str" | cut -d'/' -f4 # ---> wukksALMANJ
 echo $str | tr "/" "\n" | tail -n 2
 # willsALMANJ
 # Zutilo
-
-
 
 
 #=============================================================================#
