@@ -29,7 +29,7 @@ def subcmd(*args, **kwargs):
         args.func(args)
 
     Usage example::
-        @subcmd(argp("-d", help="Enable debug mode", action="store_true"))
+        @subcmd("-d", help="Enable debug mode", action="store_true")
         def foo(args):
             print(args)
 
@@ -55,15 +55,15 @@ def subcmd(*args, **kwargs):
 def nothing(args):
     print("Nothing special!")
 
-@subcmd(argp('-d', help='debug mod', action='store_true'))
+@subcmd('-d', help='debug mod', action='store_true')
 def test(args):
     print(args)
 
-@subcmd(argp('-f', '--filename', help="A thing with a filename"))
+@subcmd('-f', '--filename', help="A thing with a filename")
 def filename(args):
     print(args.filename)
 
-@subcmd(argp('name', help='Name'))
+@subcmd('name', help='Name')
 def name(args):
     print(args.name)
 """
@@ -105,66 +105,75 @@ def NOTIMPLEMENTED(f):
 #                                    PATHS                                    #
 #-----------------------------------------------------------------------------#
 
-###  BASE LEVEL  ###
+### DIRS
+
+# user root
 HOME  = os.environ['HOME']
 
 # Dot dirs
 # ========
-DOTS = f"{HOME}/.Dots"
-APPS = f"{HOME}/.Apps"
-BIN  = f"{HOME}/.local/bin"
-DESKTOPS = f"{HOME}/.local/share/applications"
+DOTS = HOME + '/.Dots'
+APPS = HOME + '/.Apps'
+BIN  = HOME + '/.local/bin'
+DESKTOPS = HOME + '/.local/share/applications'
 
-#==== Home dirs
-CHEST = f"{HOME}/Chest"
-CLOUD = f"{HOME}/Cloud"
-PROJECTS  = f"{HOME}/Projects"
-DOCUMENTS = f"{HOME}/Documents"
+# Home dirs
+# =========
+CHEST     = HOME + '/Chest'
+CLOUD     = HOME + '/Cloud'
+PROJECTS  = HOME + '/Projects'
+DOCUMENTS = HOME + '/Documents'
 
-#==== .apps
-ICONS = f"{APPS}/Icons"
-BINARIES = f"{APPS}/Binaries"
-NATIVEFIED = f"{APPS}/Nativefied"
+# Projects
+HOARD = PROJECTS + '/Hoard'
+HOARD_ARCHIVE = HOARD + '/Archive'
+PAPER = PROJECTS + '/DocHub/Literature'
 
+# Apps
+ICONS      = APPS + '/Icons'
+BINARIES   = APPS + '/Binaries'
+NATIVEFIED = APPS + '/Nativefied'
 
-#==== Cloud
-READMES = f"{CLOUD}/READMEs"
+# Cloud dirs
+# ==========
+READMES = CLOUD + '/READMEs'
 AWESOME_LISTS = READMES + "/awesome_lists"
-RESOURCES_CLOUD = f"{CLOUD}/Resources"
-DOCUMENTS_CLOUD = f"{CLOUD}/Reading"
+CLOUD_RESOURCES = CLOUD + '/Resources'
+CLOUD_READING   = CLOUD + '/Reading'
 
-#==== Chest
-DOTS_CHEST = f"{CHEST}/Dots"
-RESOURCES_CHEST = f"{CHEST}/Resources"
-TEMPLATES_CHEST = RESOURCES_CHEST + "/Templates"
-LICENSES_CHEST  = TEMPLATES_CHEST + "/Licenses"
+# Chest dirs
+# ==========
+CHEST_DOTS      = CHEST + '/Dots'
+CHEST_RESOURCES = CHEST + '/Resources'
+CHEST_TEMPLATES = CHEST_RESOURCES + '/Templates'
+CHEST_LICENSES  = CHEST_TEMPLATES + '/Licenses'
 
-#==== Projects
-HOARD = f"{PROJECTS}/Hoard"
-HOARD_ARCHIVE = HOARD + "/Archive"
-PAPER = f"{PROJECTS}/DocHub/Literature"
 
-# Files
-# =====
-inbox_read_path = f"{CLOUD}/Reading/inbox.txt"
+### FILES
 
-# Tokens
-api_tokens_path = f"{RESOURCES_CLOUD}/api_tokens.yml"
-zot_token = lambda: R_yml(api_tokens_path)['zotero']
-public_gh_tokens = lambda: R_yml(api_tokens_path)['github']
+# API tokens
+# ==========
+__tokens_path = DOTS + '/tokens.yml'
+_tokens = lambda: R_yml(__tokens_path)
+TOKEN_KAGGLE = lambda: _tokens()['kaggle']
+TOKEN_GITHUB = lambda: _tokens()['github']
+TOKEN_ZOTERO = lambda: _tokens()['zotero']
 
-# Licenses
+
+# Plain text licenses
+# ===================
 LICENSES = AttrDict(
-    bsd3=LICENSES_CHEST + '/BSD-3-Clause.txt',
-    lgpl=LICENSES_CHEST + '/LGPL-3.0.txt',
-    agpl=LICENSES_CHEST + '/AGPL-3.0.txt',
-    ccsa=LICENSES_CHEST + '/CC-BY-NC-SA-4.0.txt',
-    ccnd=LICENSES_CHEST + '/CC-BY-NC-ND-4.0.txt',
+    bsd3=CHEST_LICENSES + '/BSD-3-Clause.txt',
+    lgpl=CHEST_LICENSES + '/LGPL-3.0.txt',
+    agpl=CHEST_LICENSES + '/AGPL-3.0.txt',
+    ccsa=CHEST_LICENSES + '/CC-BY-NC-SA-4.0.txt',
+    ccnd=CHEST_LICENSES + '/CC-BY-NC-ND-4.0.txt',
     )
 
-def add_to_read_inbox(entry):
-    with open(inbox_read_path, 'a') as ibx:
-        ibx.write(entry + '\n')
+##inbox_read_path = f"{CLOUD}/Reading/inbox.txt"  # deprecated, dochub in use
+#def add_to_read_inbox(entry):
+#    with open(inbox_read_path, 'a') as ibx:
+#        ibx.write(entry + '\n')
 
 #-----------------------------------------------------------------------------#
 #                                  Hoarding                                   #
@@ -192,7 +201,7 @@ hoard_archive_keys = {'awesome_lists': 'files',
 def init_github():
     """ initialize github sess """
     import github3
-    tokens = public_gh_tokens()
+    tokens = TOKEN_GITHUB()
     hoard_token = tokens['hoard']['token']
     github = github3.login(token=hoard_token)
     return github

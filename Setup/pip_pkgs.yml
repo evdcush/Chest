@@ -40,6 +40,11 @@ cosmo:
 hpc:
 - mpi4py  # exactly what it sounds like; REQ MPI
 
+apis: # python wrapper apis
+- wikipedia-api  # wikipedia: import wikipediaapi
+- habanero       # crossref
+- pylibgen       # libgen
+
 
 
 vision:
@@ -100,6 +105,7 @@ visualization:
 - networkx  # lib whole bag of stuff for networks (create, manip, vis)
 - prince    # nice visualization stuff for factor analysis
 - pydot     # interface to graphviz, handles DOT stuff
+- visdom    # dashboard/sharing visualization thing from FB, look coo
 
 notebook:
 - ipython
@@ -303,7 +309,6 @@ ascii-art:
 
 misc-untested:
 - libgen.py  #  A script to download books from gen.lib.rus.ec, libgen.io, libgen.pw, b-ok.org and bookfi.ne
-- pylibgen  # python interface to libgen/sci-tech
 - SetSimilaritySearch # python, similarity score between sets
 - birdseye     # graphical debugger, easily evaluat values
 - pyviz        # "how to solve visualization problems with python tools" ??
