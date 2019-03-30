@@ -12,22 +12,31 @@
 # File|Dir stuff
 # ==============
 # NB: oh-my-zsh defines useful aliases '..'|'...'|'....'
-alias md="mkdir -p"
+alias md='mkdir -p'
 
 #---- list stuff
-alias h="history"
-alias ldot="ls -d --group-directories-first .*"
-alias lk="ls -1FSshX --file-type --group-directories-first"
-alias lm="ls -1F --file-type --group-directories-first"
-alias l="ls --group-directories-first -X"
-alias sl="ls -lhSr"
-alias duh="du -h --max-depth=1 | sort -h;"
-alias lzf="ls | fzf"
+alias h='history'
+alias ldot='ls -d --group-directories-first .*'
+alias lk='ls -1FSshX --file-type --group-directories-first'
+alias lm='ls -1F --file-type --group-directories-first'
+alias l='ls --group-directories-first -X'
+alias sl='ls -lhSr'
+alias duh='du -h --max-depth=1 | sort -h;'
+alias lzf='ls | fzf'
 
 #---- misc
 alias plz='sudo $(fc -ln -1)' # mmm inconsistent
-alias myip="inxi -i"
-alias tjp="TZ='Asia/Tokyo' date"
+alias myip='inxi -i'
+alias tjp='TZ="Asia/Tokyo" date'
+
+# copy previous command (is this really the only sol? stupidly verbose)
+# if you dont translate, there is newline?
+# if you dont cut, there is CMD number
+# if you dont selection clipboard, xclip copies to who the f knows
+alias cph='echo $(fc -l -1) \
+| cut -d" " -f2- \
+| tr -d "\n" \
+| xclip -selection clipboard'
 
 
 # SYMLINKS
@@ -100,12 +109,16 @@ alias afshow="apt-fast show"
 alias cit="echo 'code.interact(local=dict(globals(), **locals()))' \
 | xclip -selection clipboard"
 
+# Cython directives
+alias cyd="echo '# distutils: language = c++\n# cython: language_level=3' | xclip"
+
+
 #-----------------------------------------------------------------------------#
 #                                pip packages                                 #
 #-----------------------------------------------------------------------------#
 #---- pip stuff
 #alias pipi="pip install -U "
-alias ipyp="pypi info"
+alias ipyp='pypi info'
 
 # Install/upgrade pip pkgs and save pkg names
 function pipi(){
@@ -147,6 +160,11 @@ docutils sphinx sphinx-rtd-theme sphinxcontrib-websupport sphinx-gallery numpydo
 pyyaml tinydb python-slugify unidecode pybtex scikit-image imageio jax jaxlib \
 fire pypi-cli pypistats cookiecutter faker johnnydep black \
 feedparser requests lxml urllib3 bs4  github3.py grip"
+
+# Snowflakes
+# ----------
+ptorch='https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp37-cp37m-linux_x86_64.whl'
+snowflake_pkgs="$ptorch"
 
 #fussy_pkgs="surprise gitsuggest"
 

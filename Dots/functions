@@ -276,6 +276,11 @@ function lnbin(){
     ln -sf $SRC $DEST
 }
 
+function lnpro(){
+    src="$PWD/$1"
+    dst="$HOME/Projects"
+    ln -sf $src $dst
+}
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

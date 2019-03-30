@@ -54,10 +54,10 @@ fi
 #---- User bin path
 export PATH="${PATH:+${PATH}:}$PATH_USER_BIN"
 
-# Cheat dir
-# =========
-#export CHEAT_PATH="$DIR_CHEST/Cheat"
-#export CHEAT_COLORS=true
+# Cheat conf
+# ==========
+#export CHEAT_PATH="$HOME/.cheat"
+export CHEAT_COLORS=true
 
 
 #------------------------------------------------------------------------------
