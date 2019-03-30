@@ -1,3 +1,5 @@
+
+from pprint import pprint
 import yaml
 
 class AttrDict(dict):
@@ -21,3 +23,10 @@ def W_yml(fname, obj):
 yml = R_yml('mess.yml')
 
 # play with embedded code
+
+
+def main():
+    print('yaml file var name: yml')
+
+if __name__ == '__main__':
+    main()
