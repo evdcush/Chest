@@ -1089,10 +1089,36 @@ vi __init__.py
 #------------------------------------------------------------------------------
 # CODE THEMES
 # -----------
-# TOP CHOICES:
-#     dark  ---> piodine
-#     light ---> spring, github_v2
 
+# CPP
+# ===
+# Virtually all the themes in python apply to CPP as well,
+#  but here are some themes that have extra support
+# TOP CHOICES:
+#     dark  ---> brogrammer, piodine
+#     light ---> flat
+
+#==== Dark
+#  Brogrammer ***         # Good syntax highlighting for everything
+#  DarkKorokai **         # High contrast, really like the bold-italics on attr and stuff
+#  Future_Frank *         # nice bold and colors
+
+
+#==== Medium & desat (or weird)
+#  Forest_Focus *    # Nice, good palette, but a bit soft
+
+#==== Light
+#  flat ***          # clean, simple palette.
+#  eiffel **         # off-white, great contrast, could have better syn supp
+#  GitHub_Light ***  # All-rounder
+
+
+
+# PYTHON
+# ======
+# TOP CHOICES:
+#     dark  ---> piodine, brogrammer
+#     light ---> spring, github_v2
 
 #==== Dark
 #  ** piodine **          # The one, the only. Awesome, clear, colors. everything looks good!
@@ -1103,6 +1129,10 @@ vi __init__.py
 #  Easyballs *            # simple, clean, readable
 #  Wildlife-Night */*     # (RST) very clear, comment highlighting
 #  TwoStones **           # Nice, readable; great except for the white coloring on python syntax
+#-- CPP/Other
+#  Brogrammer ***         # Good syntax highlighting for everything
+#  DarkKorokai **         # High contrast, really like the bold-italics on attr and stuff
+
 
 #==== Medium & desat (or weird)
 #  mutedrainbow_sky **    # nice "adventure-time"-esque scheme, syntax supp could be better
@@ -1118,7 +1148,8 @@ vi __init__.py
 #  softly **              # nice off-white, good highlight, overall clear
 #  spring ***             # uses bold!, off-white, good color, highlighting, very nice
 #  eiffel **              # off-white, great contrast, could have better syn supp
-#
+
+
 #------------------------------------------------------------------------------
 # RST themes
 # ==========

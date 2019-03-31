@@ -82,8 +82,8 @@ export HISTFILESIZE=-1
 
 # Preferred editor
 # ---------------
-export VISUAL=vim
-#export VISUAL=subl
+#export VISUAL=vim
+export VISUAL=subl
 export EDITOR="$VISUAL"
 
 # jrnl prevent hist
