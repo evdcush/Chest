@@ -570,6 +570,9 @@ source /opt/ros/melodic/setup.zsh
 # for rosinstall (only need python-rosinstall I think, other shit may be bloat)
 sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential
 
+sudo apt install python-apt python-defusedxml
+
+
 #                               _
 #   __ _    __ _   ____   ___  | |__     ___
 #  / _` |  / _` | |_  /  / _ \ | '_ \   / _ \

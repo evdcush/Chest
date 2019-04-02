@@ -43,6 +43,31 @@ So to patch chromium like in that gist::
     sudo apt install xdot radare2
 
 
+-----
+
+ROS
+===
+ROS is still on python2, so you'll likely have issues with PYTHONPATH and 
+annoying coupling issues between your typical venv and system-site packages.
+
+ModuleNotFoundError: No module named 'deez-nuts'
+------------------------------------------------
+So you've gotten this error for: ``apt-pkg``, ``rospkg``, ``defusedxml``.
+
+**First step:** make sure you have these packages installed
+- I installed to both system, and venv:
+
+    ``sudo apt install -y python-apt python3-apt python-rospkg python-defusedxml python3-defusedxml``
+    ``pip install rospkg defusedxml``
+
+BUT this didnt fix anything. Realizing some python2 stuff, I tried adjusting
+the system default python::
+
+    sudo update-alternatives python
+    # then select python2
+
+**THIS FIXED IT**
+
 
 -----
 
