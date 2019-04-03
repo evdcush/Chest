@@ -1,0 +1,21 @@
+# MENUS & TOOLS
+alt + f           # chromium menu
+shift + esc       # task manager
+ctrl + shift + j  # dev tools
+
+# BOOKMARKS
+ctrl + shift + b  # show/hide bookmarks bar
+ctrl + shift + o  # bookmarks manager
+ctrl + shift + d  # save open tabs as bookmarks in new dir
+
+# PAGES
+ctrl + h  # history
+ctrl + j  # downloads
+
+# SHORTCUTS
+alt + d   # address bar
+ctrl + k  # focus search
+
+# CALLS
+shift + f5  # reload current page, ignoring cache
+ctrl + o    # select item to open in chromium
