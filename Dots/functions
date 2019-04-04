@@ -1,16 +1,16 @@
 #-----------------------------------------------------------------------------#
 #                                Endemic                                      #
 #-----------------------------------------------------------------------------#
-# Copy README template to a project dir
-function RDME {
+
+# Copy README template to cwd
+function RDME() {
     SRC_DIR="$DIR_CHEST_RESOURCES/Templates/README.rst"
     DEST_DIR="$PWD/README.rst"
     cp $SRC_DIR $DEST_DIR
 }
 
-dub() {
-    dochub $1 -i -d -n;
-}
+# Download paper
+dub() { dochub $1 -i -d -n; }
 
 #=============================================================================#
 #                                                                             #
@@ -24,114 +24,20 @@ dub() {
 #           `"Y8888Y"'   d8'          `8b  88888888888  88888888888           #
 #                                                                             #
 #=============================================================================#
+# call some app
+
+# inlines
+# =======
+# stuff that would be an alias, if not for positional arg formatting
 
 nbc() { jupyter nbconvert --to pdf "$1" --template classicm } # pdf conversion
 tst() { touch "$1"; subl "$1" }
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-# Lorem ipsum
-# ===========
-# DEPRECATED: python faker
-#li() { lorem-ipsum $@ | xclip -selection clipboard }
-
-
-
-# Get bib info
-# ============
-# DEPRECATED: using my own api now
-#function arxbib {
-#    arxiv2bib $1 | xclip -selection clipboard
-#}
-
-
-
-# INBOXING FUNCTIONS
-# ==================
-#---- git repo hoarding (cloning)
-function hurl {
-    TARGET='repos'
-    URL="$1"
-    if [ "$#" -gt 1 ]; then
-        #==== "orgs" or "users" specified
-        TARGET="$1"
-        URL="$2"
-    fi
-    yq w -i $PATH_INBOX_HOARD "$TARGET"'[+]' $URL
-}
-
-#----- Add papers/literature to reading inbox
-function rurl {
-    #TARGET='arxiv'
-    #URL="$1"
-    #if [ "$#" -gt 1 ]; then
-    #    #==== 'other'
-    #    TARGET="$1"
-    #    URL="$2"
-    #fi
-    #yq w -i $PATH_INBOX_READ "$TARGET"'[+]' $URL
-    echo $1 >> "$HOME/Cloud/Reading/inbox.txt"
-}
-
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-# ============= #
-# miscellaneous #
-# ============= #
-
-# Get chrome extension file
-#    TODO: function not properly tested. And it's ugly.
-#get_crx(){
-#    CRXNAME="$1.crx"
-#    CRXID="$2"
-#    CRX_PATH="$DIR_MEDIA/Software/CRX"
-#    A2="crx?response=redirect&acceptformat=crx2,crx3&prodversion=69"
-#    A3="&x=id%3D$CRXID%26installsource%3Dondemand%26uc"
-#    echo $CRX_PATH
-#    wget -O "$CRXNAME" "https://clients2.google.com/service/update2/$A2$A3"
-#}
-
-# DEPRECATED: `unar` is used instead
-#function extract() {
-#    #==== Extract many types of compressed packages
-#    if [ -f "$1" ] ; then
-#        case "$1" in
-#            *.tar.bz2)   tar xvjf "$1"                    ;;
-#            *.tar.gz)    tar xvzf "$1"                    ;;
-#            *.bz2)       bunzip2 "$1"                     ;;
-#            *.rar)       unrar x "$1"                     ;;
-#            *.gz)        gunzip "$1"                      ;;
-#            *.tar)       tar xvf "$1"                     ;;
-#            *.tbz2)      tar xvjf "$1"                    ;;
-#            *.tgz)       tar xvzf "$1"                    ;;
-#            *.zip)       unzip "$1"                       ;;
-#            *.ZIP)       unzip "$1"                       ;;
-#            *.pax)       cat "$1" | pax -r                ;;
-#            *.pax.Z)     uncompress "$1" —stdout | pax -r ;;
-#            *.Z)         uncompress "$1"                  ;;
-#            *.7z)        7z x "$1"                        ;;
-#            *)           echo "don't know how to extract '$1'..." ;;
-#        esac
-#    else
-#        echo "extract: error: $1 is not valid"
-#    fi
-#}
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-# Add apt repo
-# ============
-# DEPRECATED: more of a PITA to clip just part of command than just whole cmd
-#addrep(){
-#    sudo add-apt-repository "ppa:$1" -y
-#    sudo apt-fast update
-#}
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 #==== leetcode-cli
-leet(){
+function leet(){
     # leet(int num, str lang=python3): generate leetcode problem num
     # leet 307 --> 307.range-sum-query-mutable.py
     # leet 307 cpp --> 307.range-sum-query-mutable.cpp
@@ -177,12 +83,7 @@ function cycc(){
 }
 
 
-
-
-# PATH & shell config
-# ===================
-
-#---- reset PATH to default
+# Reset PATH to default
 function reset_path(){
     echo "Resetting Path...\n--------------------------------------------------"
     echo "  current path = $PATH\n"
@@ -194,18 +95,9 @@ function reset_path(){
     echo "--------------------------------------------------"
 }
 
-##---- add line to shell config
-# DEPRECATED: almost never used
-#function expzsh(){
-#    echo "\n\n#==== $1" >> ~/.zshrc
-#    echo "$2" >> ~/.zshrc
-#}
-
-
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Make new pyenv virtualenv
-# =========================
 function pvenv(){
     if [ "$#" -gt 1 ]; then
         #==== python version specified
@@ -213,7 +105,7 @@ function pvenv(){
         VENV_NAME="$2"
     else
         #==== default latest python ver (3.7)
-        PY_VER='3.7.2'
+        PY_VER='3.7.3'
         VENV_NAME="$1"
     fi
     #==== Make virtualenv
@@ -222,6 +114,7 @@ function pvenv(){
     #==== Update base packages
     pip install -U pip setuptools wheel
 }
+
 
 #=============================================================================#
 #                                                                             #
@@ -238,7 +131,6 @@ function pvenv(){
 
 # dir and file stuff
 # ==================
-
 # Sort utils
 srt() { sort -o "$1" "$1" }
 unq() { sort "$1" | uniq -i }
@@ -254,7 +146,7 @@ cdl(){cd "$1" && ls -1FSshX --file-type}
 # Symlink
 # =======
 # symlink something from curdir to somewhere rooted from home
-lnph() { ln -sf "$PWD/$1" "$HOME/$2" } # proble with this is you lose path completion for $2
+lnph() { ln -sf "$PWD/$1" "$HOME/$2" }
 lnp() { ln -sf "$PWD/$1" "$2" }
 
 
@@ -301,8 +193,8 @@ function find_and_remove_all(){
 }
 
 # Shortcut find
-# =============
 function f(){
+    # SH
     if [ "$#" -gt 1 ]; then
         #=== find location specified
         find "$1" -iname "*$2*"
@@ -312,17 +204,6 @@ function f(){
     fi
 }
 
-# Timezone diff
-# =============
-function jst2pst(){
-    # *** ASSUMES SYSTEM tz IS PST ***
-    _TIME="$1"
-    _DATE="$2"
-    JST='TZ="Asia/Tokyo"'
-    # Sample call:
-    # date --date='TZ="Asia/Tokyo" 09:00 2/1'
-    date --date="$JST $_TIME $_DATE"
-}
 
 #=============================================================================#
 #                                                                             #
@@ -336,25 +217,6 @@ function jst2pst(){
 #                        `"Y88888P"   88       88                             #
 #                                                                             #
 #=============================================================================#
-#https://api.github.com/repos/willsALMANJ/Zutilo/releases/latest
-# Get latest release
-# ==================
-# NB: this assumes whatever target asset you want is
-#     the first asset listed in release
-function gh-release(){
-    if [ "$#" -eq 0 ]; then
-        args=`xclip -o -selection clipboard` # NB: wrapping bash statement in backticks makes var = statement ret
-    else
-        args=$1
-    fi
-    splitargs=`echo $args | tr "/" "\n" | tail -n 2`
-    read -d "\n" GH_USER GH_REPO <<<$splitargs
-    #echo $GH_USER
-    #echo $GH_REPO
-    api_url="https://api.github.com/repos/$GH_USER/$GH_REPO/releases/latest"
-    curl $api_url | jq '.assets | .[0] | .browser_download_url' | xargs wget
-}
-
 
 # git clone && cd
 function gcd(){

@@ -17,6 +17,7 @@ import yaml
 import numpy
 import matplotlib.pyplot
 import pyperclip
+from pyperclip import copy as _CP
 
 
 # Handy Dandies
@@ -102,6 +103,7 @@ context = {
     'plt': matplotlib.pyplot,
     'yaml': yaml,
     'pyperclip': pyperclip,
+    '_CP': _CP,
 }
 
 context.update(_locals)

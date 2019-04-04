@@ -223,6 +223,140 @@ deprec_getstars(){ # DEPRECATED; just made my own script an executable
 }
 
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# ============= #
+# miscellaneous #
+# ============= #
+
+# Get chrome extension file
+#    TODO: function not properly tested. And it's ugly.
+get_crx(){
+    CRXNAME="$1.crx"
+    CRXID="$2"
+    CRX_PATH="$DIR_MEDIA/Software/CRX"
+    A2="crx?response=redirect&acceptformat=crx2,crx3&prodversion=69"
+    A3="&x=id%3D$CRXID%26installsource%3Dondemand%26uc"
+    echo $CRX_PATH
+    wget -O "$CRXNAME" "https://clients2.google.com/service/update2/$A2$A3"
+}
+
+# DEPRECATED: `unar` is used instead
+function extract() {
+    #==== Extract many types of compressed packages
+    if [ -f "$1" ] ; then
+        case "$1" in
+            *.tar.bz2)   tar xvjf "$1"                    ;;
+            *.tar.gz)    tar xvzf "$1"                    ;;
+            *.bz2)       bunzip2 "$1"                     ;;
+            *.rar)       unrar x "$1"                     ;;
+            *.gz)        gunzip "$1"                      ;;
+            *.tar)       tar xvf "$1"                     ;;
+            *.tbz2)      tar xvjf "$1"                    ;;
+            *.tgz)       tar xvzf "$1"                    ;;
+            *.zip)       unzip "$1"                       ;;
+            *.ZIP)       unzip "$1"                       ;;
+            *.pax)       cat "$1" | pax -r                ;;
+            *.pax.Z)     uncompress "$1" —stdout | pax -r ;;
+            *.Z)         uncompress "$1"                  ;;
+            *.7z)        7z x "$1"                        ;;
+            *)           echo "don't know how to extract '$1'..." ;;
+        esac
+    else
+        echo "extract: error: $1 is not valid"
+    fi
+}
+
+#----- Add papers/literature to reading inbox
+function rurl {
+    #TARGET='arxiv'
+    #URL="$1"
+    #if [ "$#" -gt 1 ]; then
+    #    #==== 'other'
+    #    TARGET="$1"
+    #    URL="$2"
+    #fi
+    #yq w -i $PATH_INBOX_READ "$TARGET"'[+]' $URL
+    echo $1 >> "$HOME/Cloud/Reading/inbox.txt"
+}
+
+
+# Add apt repo
+# ============
+# DEPRECATED: more of a PITA to clip just part of command than just whole cmd
+#addrep(){
+#    sudo add-apt-repository "ppa:$1" -y
+#    sudo apt-fast update
+#}
+
+#---- git repo hoarding (cloning)
+function hurl {
+    TARGET='repos'
+    URL="$1"
+    if [ "$#" -gt 1 ]; then
+        #==== "orgs" or "users" specified
+        TARGET="$1"
+        URL="$2"
+    fi
+    yq w -i $PATH_INBOX_HOARD "$TARGET"'[+]' $URL
+}
+
+
+# Lorem ipsum
+# ===========
+# DEPRECATED: python faker
+#li() { lorem-ipsum $@ | xclip -selection clipboard }
+
+
+
+# Get bib info
+# ============
+# DEPRECATED: using my own api now
+#function arxbib {
+#    arxiv2bib $1 | xclip -selection clipboard
+#}
+
+
+##---- add line to shell config
+# DEPRECATED: almost never used
+#function expzsh(){
+#    echo "\n\n#==== $1" >> ~/.zshrc
+#    echo "$2" >> ~/.zshrc
+#}
+
+
+# Timezone diff
+# =============
+function jst2pst(){
+    # *** ASSUMES SYSTEM tz IS PST ***
+    _TIME="$1"
+    _DATE="$2"
+    JST='TZ="Asia/Tokyo"'
+    # Sample call:
+    # date --date='TZ="Asia/Tokyo" 09:00 2/1'
+    date --date="$JST $_TIME $_DATE"
+}
+
+
+#https://api.github.com/repos/willsALMANJ/Zutilo/releases/latest
+# Get latest release
+# ==================
+# NB: this assumes whatever target asset you want is
+#     the first asset listed in release
+function gh-release(){
+    if [ "$#" -eq 0 ]; then
+        args=`xclip -o -selection clipboard` # NB: wrapping bash statement in backticks makes var = statement ret
+    else
+        args=$1
+    fi
+    splitargs=`echo $args | tr "/" "\n" | tail -n 2`
+    read -d "\n" GH_USER GH_REPO <<<$splitargs
+    #echo $GH_USER
+    #echo $GH_REPO
+    api_url="https://api.github.com/repos/$GH_USER/$GH_REPO/releases/latest"
+    curl $api_url | jq '.assets | .[0] | .browser_download_url' | xargs wget
+}
+
 #=============================================================================#
 #                                                                             #
 #                 .d8888b.   .d88888b.  8888888b.  8888888888                 #

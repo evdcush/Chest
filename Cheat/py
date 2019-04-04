@@ -255,6 +255,11 @@ P.symmetric_difference_update(R) # {5,6}
 #==== ARRAY
 
 #==== COLLECTIONS
+s = [('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
+d = defaultdict(list)
+for k, v in s:
+    d[k].append(v)
+
 
 #==== TYPES.SimpleNamespace
 
