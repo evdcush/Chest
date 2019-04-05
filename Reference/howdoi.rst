@@ -2,7 +2,7 @@
 How Do I....
 ============
 
-.. contents:: 
+.. contents::
 
 
 
@@ -22,11 +22,11 @@ If you can find one, a latex or css template for converting from some format to 
 
 Notebook to pdf
 ---------------
-For *any* solution, you will have to make some compromise. 
+For *any* solution, you will have to make some compromise.
 
 The trouble with notebook to pdf conversion is that you cannot get clean single pages. Some methods will leave 90% of a page blank so that a cell or something does not get truncated.
 
-So far, I've only managed to work around the paging issue by manually formatting cells by guestimation. 
+So far, I've only managed to work around the paging issue by manually formatting cells by guestimation.
 
 A cursory search did not yield any solutions for embedded styling directives or something for pagebreaks, but there may be more there.
 
@@ -61,13 +61,13 @@ rst to pdf
 
 Manipulation
 ============
-There are LOADS of CLI tools for manipulating and modifying pdfs. 
+There are LOADS of CLI tools for manipulating and modifying pdfs.
 
 If these solutions do not work for you, just google whatever you need to do.
 
 Crop pdf
 --------
-I found the top hits on SO and such to be very tedious. 
+I found the top hits on SO and such to be very tedious.
 They all tend to use library modules packaged with poppler or texlive.
 
 The issue has been that the defaults are generally too aggressive in cropping.
@@ -132,6 +132,21 @@ NB: pdfjam is part of the texlive package.
     pdfjam original.pdf 3-8 -o out.pdf
     pdfjam original.pdf 3-8,15-29,63-69 -o out.pdf
 
+extract pdf pages as png
+------------------------
+Check out: https://askubuntu.com/questions/50170/how-to-convert-pdf-to-image
+
+.. code-block:: bash
+
+    # output each page in PDF, with name format `outputname-01.png`
+    pdftoppm input.pdf outputname -png
+
+    # Single page
+    pdftoppm input.pdf outputname -png -f pgnum -singlefile
+
+    # The default resolution, 150 dpi, is kind of shit, so
+    # you can try increasing resolution to RES dpi like:
+    pdftoppm input.pdf outputname -png -rx RES -ry RES
 
 ----
 
@@ -147,6 +162,18 @@ Conversion
 
     ``inkscape -z -e test.png -w 1024 -h 1024 test.svg``
 
+**convert to monochrome**:
+
+    ``convert input_image.png -monochrome output.png``
+
+    Some other options, depending on the result::
+
+        # higher resolution
+        convert input_image.png -density 150 output.png
+
+        # dithering
+        convert input_image.png -remap pattern:gray50 output.png
+
 
 ----
 
@@ -158,7 +185,7 @@ SSH
 ===
 
 **generate ssh key**:
-    
+
 .. code-block:: bash
 
     ssh-keygen -t rsa -b 4096 -C "my_email@abc.com"
