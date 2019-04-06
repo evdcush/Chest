@@ -54,7 +54,13 @@ theme: # ANYTHING related to layout, appearance, highlighting, css, style, etc..
       themer takes a set of colors and generates themes
       for your apps (editors, terminals, wallpapers, and more)
 
+---
+###    PRIVACY    ###
 
+privacy_resources:
+  - https://www.privacytools.io/classic/
+  - https://github.com/KevinColemanInc/awesome-privacy    # not maintained
+  - https://github.com/nikitavoloboev/privacy-respecting
 
 
 ---
