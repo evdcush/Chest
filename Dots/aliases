@@ -131,7 +131,7 @@ piu="pip install -U"
 # =============
 #---- software that does not require extra steps (beyond pip install)
 pipsoftware="thefuck jrnl gitup restview grip termdown apt-select glances \
-s-tui speedtest-cli pdfCropMargins"
+s-tui speedtest-cli pdfCropMargins ruamel.yaml.cmd"
 pipsw="$piu $pipsoftware"
 
 #---- software that requires extra steps
@@ -157,7 +157,7 @@ open3d-python glumpy pypng pyopengl chainercv"
 std_pkgs="$min_pkgs pandas chainerrl 'gym[atari, box2d, classic_control]' \
 kaggle pydataset keras primesieve numba \
 docutils sphinx sphinx-rtd-theme sphinxcontrib-websupport sphinx-gallery numpydoc pypandoc \
-pyyaml tinydb python-slugify unidecode pybtex scikit-image imageio jax jaxlib \
+ruamel.yaml tinydb python-slugify unidecode pybtex scikit-image imageio jax jaxlib \
 fire pypi-cli pypistats cookiecutter faker johnnydep black \
 feedparser requests lxml urllib3 bs4  github3.py grip"
 
@@ -232,6 +232,19 @@ https://github.com/kragniz/cookiecutter-pypackage-minimal.git"
 
 # CLI stuff
 # =========
+#---- vpn
+spvpn='sudo pvpn'
+alias vp="$spvpn"
+alias vpi="$spvpn --status"
+alias vpc="$spvpn --connect"
+alias vpd="$spvpn --disconnect"
+alias vprc="$spvpn --reconnect"
+alias vpcc="$spvpn --country-connect"
+alias vpjp="$spvpn --country-connect JP udp"
+alias vpcf="$spvpn --fastest-connect"
+
+
+
 #---- fm
 alias rgr="ranger"
 
@@ -255,7 +268,6 @@ rawgh='https://raw.githubusercontent.com'
 #---- joplin
 alias install_joplin="wget -O - \
 $rawgh/laurent22/joplin/master/Joplin_install_and_update.sh | bash"
-
 
 alias rs='redshift -O 2400'
 
