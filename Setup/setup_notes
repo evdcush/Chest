@@ -1,30 +1,31 @@
-#!/bin/bash
 #=============================================================================#
 #                                                                             #
-#                  ███████ ███████ ████████ ██    ██ ██████                   #
-#                  ██      ██         ██    ██    ██ ██   ██                  #
-#                  ███████ █████      ██    ██    ██ ██████                   #
-#                       ██ ██         ██    ██    ██ ██                       #
-#                  ███████ ███████    ██     ██████  ██                       #
+#      ad88888ba   88888888888  888888888888  88        88  88888888ba        #
+#     d8"     "8b  88                88       88        88  88      "8b       #
+#     Y8,          88                88       88        88  88      ,8P       #
+#     `Y8aaaaa,    88aaaaa           88       88        88  88aaaaaa8P'       #
+#       `"""""8b,  88"""""           88       88        88  88""""""'         #
+#             `8b  88                88       88        88  88                #
+#     Y8a     a8P  88                88       Y8a.    .a8P  88                #
+#      "Y88888P"   88888888888       88        `"Y8888Y"'   88                #
 #                                                                             #
 #                                                                             #
-# This script details my post-install process, and is mostly in order of ops  #
-# There are as many notes as there are commands, and it is NOT designed       #
-#  to be run, but rather copied and referenced after a fresh-install          #
+# This script details my post-install process, and is mostly in order of ops. #
+#   There are as many notes as there are commands, and it is NOT designed     #
+#     to be run, but rather copied and referenced after a fresh-install.      #
 #=============================================================================#
-
 
 #=============================================================================#
 #                     Preinstallation Steps and Notes                         #
 #=============================================================================#
 
 # Installation Media
-#-----------------------------
-#===== Bootable ISO
-#  * TRIED: Rufus (windows only), unetbootin (trash), dd, "bootiso" (trash), gparted
-#  * WORKS: etcher, distro-provided tools (tails, kali, etc), UUI (win)
+# ==================
+###  Bootable ISO
+# * TRIED: Rufus (windows only), unetbootin (trash), dd, "bootiso" (trash), gparted
+# * WORKS: etcher, distro-provided tools (tails, kali, etc), UUI (win)
 
-#===== Troubleshooting
+###  Troubleshooting
 # If things are failing with the USB
 #  * try a different, non-3.0 port
 #  * not a "hub" port, like the front ones near power or otherwise joint hubs
@@ -33,7 +34,7 @@
 
 
 # Installer
-#-----------------------------
+# ---------
 #===== Options
 # - DO NOT CONNECT TO INTERNET/DOWNLOAD DURING INSTALL
 #   - Remove bloat first
@@ -81,9 +82,8 @@ path_prepend() {
 #===== Default desktop shit: Apps, libraries
 sudo apt remove --purge mate-desktop-common mate-calc-common mate-calc libgnome-games-support-common
 sudo apt remove --purge gnome-*
-sudo apt remove --purge "*mate-desktop*"
+sudo apt remove --purge "*mate-desktop*" "snapd*" thunderbird* catfish xul-ext-ubufox
 sudo apt remove --purge "*firefox*" "transmission-*" "*pidgin*" "*parole*" "*xfburn*" "*libreoffice*"
-sudo apt remove --purge "hplip*" "sgt*" "snapd*" simple-scan "thunderbird*" "*yelp*"
 sudo apt remove --purge catfish devhelp glade xul-ext-ubufox
 
 # Printer shit
@@ -154,13 +154,17 @@ swig python-piglet python3-opengl libboost-all-dev libosmesa6-dev patchelf xvfb
 
 #=============================================================================#
 #                                                                             #
-#                         ███████ ███    ██ ██    ██                          #
-#                         ██      ████   ██ ██    ██                          #
-#                         █████   ██ ██  ██ ██    ██                          #
-#                         ██      ██  ██ ██  ██  ██                           #
-#                         ███████ ██   ████   ████                            #
+#                 88888888888  888b      88  8b           d8                  #
+#                 88           8888b     88  `8b         d8'                  #
+#                 88           88 `8b    88   `8b       d8'                   #
+#                 88aaaaa      88  `8b   88    `8b     d8'                    #
+#                 88"""""      88   `8b  88     `8b   d8'                     #
+#                 88           88    `8b 88      `8b d8'                      #
+#                 88           88     `8888       `888'                       #
+#                 88888888888  88      `888        `8'                        #
 #                                                                             #
 #=============================================================================#
+
 
 # Oh-my-zsh
 # =========
@@ -223,11 +227,14 @@ sudo apt install -y swi-prolog --install-suggests
 
 #=============================================================================#
 #                                                                             #
-#                        █████  ██████  ██████  ███████                       #
-#                       ██   ██ ██   ██ ██   ██ ██                            #
-#                       ███████ ██████  ██████  ███████                       #
-#                       ██   ██ ██      ██           ██                       #
-#                       ██   ██ ██      ██      ███████                       #
+#                 db         88888888ba   88888888ba    ad88888ba             #
+#                d88b        88      "8b  88      "8b  d8"     "8b            #
+#               d8'`8b       88      ,8P  88      ,8P  Y8,                    #
+#              d8'  `8b      88aaaaaa8P'  88aaaaaa8P'  `Y8aaaaa,              #
+#             d8YaaaaY8b     88""""""'    88""""""'      `"""""8b,            #
+#            d8""""""""8b    88           88                   `8b            #
+#           d8'        `8b   88           88           Y8a     a8P            #
+#          d8'          `8b  88           88            "Y88888P"             #
 #                                                                             #
 #=============================================================================#
 
@@ -355,6 +362,11 @@ curl https://cheat.sh/:zsh > ~/.zsh.d/_cht
 #---- bat
 wget https://github.com/sharkdp/bat/releases/download/v0.9.0/bat_0.9.0_amd64.deb
 sudo dpkg -i bat_0.9.0_amd64.deb
+
+#---- mailspring
+wget https://updates.getmailspring.com/download?platform=linuxDeb
+sudo dpkg -i mailspring*.deb
+
 
 #---- git interactive rebase
 # !!!!!  DONT DO IT   !!!!  Shit always breaks my ros cython opencv libs
