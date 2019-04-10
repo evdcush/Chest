@@ -2,6 +2,16 @@
 troubleshooting
 ===============
 
+deb stuff
+=========
+
+``dpkg: warning: files list file for package 'X' missing``:
+
+    sudo apt remove X
+    sudo apt autoclean
+
+
+
 
 Docker
 ======
@@ -47,7 +57,7 @@ So to patch chromium like in that gist::
 
 ROS
 ===
-ROS is still on python2, so you'll likely have issues with PYTHONPATH and 
+ROS is still on python2, so you'll likely have issues with PYTHONPATH and
 annoying coupling issues between your typical venv and system-site packages.
 
 ModuleNotFoundError: No module named 'deez-nuts'
