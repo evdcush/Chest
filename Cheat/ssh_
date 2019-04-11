@@ -1,0 +1,13 @@
+# SSHFS
+# =====
+# basic connection
+sshfs name@server:/path/to/folder /path/to/mount/point
+
+# Auto reconnect if drop
+sshfs -o reconnect name@server:/path/to/folder /path/to/mount/point
+
+# Custom port
+sshfs -o ssh_command='ssh -p <customport>' name@server:/path/to/folder /path/to/mount/point
+
+# Unmount
+fusermount -u PATH
