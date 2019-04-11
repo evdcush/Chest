@@ -3,7 +3,9 @@ import sys
 import code
 import argparse
 from functools import wraps
-import yaml
+#import yaml
+from ruamel.yaml import YAML
+yaml = YAML()
 
 class AttrDict(dict):
     __getattr__ = dict.__getitem__
