@@ -29,6 +29,7 @@ alias plz='sudo $(fc -ln -1)' # mmm inconsistent
 alias myip='inxi -i'
 alias tjp='TZ="Asia/Tokyo" date'
 
+
 # copy previous command (is this really the only sol? stupidly verbose)
 # if you dont translate, there is newline?
 # if you dont cut, there is CMD number
@@ -259,6 +260,7 @@ alias p="showmarks"
 
 #---- Copy
 alias clip="xclip -selection clipboard"
+alias clipo="xclip -o -sel clip"
 alias delclip="xclip -o | xargs sudo rm -rf"
 alias cpget="xclip -o -sel clip | xargs wget"
 
