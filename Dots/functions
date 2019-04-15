@@ -28,13 +28,16 @@ dub() { dochub $1 -i -d -n; }
 
 # inlines
 # =======
-# stuff that would be an alias, if not for positional arg formatting
+# stuff that would be an alias
 
 nbc() { jupyter nbconvert --to pdf "$1" --template classicm } # pdf conversion
 tst() { touch "$1"; subl "$1" }
 
+# stupid complicated                              # strip damn ansi colors
+ipgeo() { inxi -i | awk '/WAN/ {print $5}' | sed "s,\x1B\[[0-9;]*m,,g" | xargs geoiplookup }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 
 #==== leetcode-cli
 function leet(){
@@ -265,4 +268,23 @@ function git-nuke(){
     fi
 }
 
-
+# Get latest release urls from github, defaulting on zip
+#  usage:
+#   # get zip releases
+#   $ get_release balena-io etcher
+#
+#   # get amd64 AppImage releases
+#   $ get_release balena-io etcher amd64.AppImage
+function get_release {
+    # read args
+    _USER="$1"
+    _REPO="$2"
+    _EXT='zip'
+    if [ "$#" -gt 2 ]; then
+        _EXT="$3"
+    fi
+    # format url and GET
+    _HUB="https://api.github.com/repos/$_USER/$_REPO/releases/latest"
+    _TARGET="browser_download_url.*$_EXT"
+    wget -q -nv -O- $_HUB | grep $_TARGET | cut -d: -f 2,3 | tr -d '[:space:]"'
+}
