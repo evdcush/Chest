@@ -32,7 +32,6 @@ $HOME/Projects/DocHub/Notes|notes
 $HOME/SyncCloud|scl
 $HOME/Cloud/Projects/DevSandbox|ds
 $HOME/Chest/Resources|chres
-$HOME/Projects/nbodypce|pce
 $HOME/Projects/Gymnasium|gym
 $HOME/Cloud/Projects/Demos|dem
 $HOME/Cloud/Projects/ModelZoo|zoo
@@ -46,3 +45,6 @@ $HOME/Projects/ROS|pros
 $HOME/Projects/pazu|paz
 $HOME/Projects/kuzushiji-mnist|kuzu
 $HOME/Cloud/Projects/Demos/ROS|ros
+$HOME/Projects/deep_nbody|pce
+$HOME/Projects/pointnet2|pn2
+$HOME/.drootnc|dnc
