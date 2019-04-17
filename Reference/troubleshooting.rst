@@ -2,6 +2,16 @@
 troubleshooting
 ===============
 
+Startup etc
+===========
+
+disable autostart
+-----------------
+
+To disable teamviewer from autostart::
+
+    sudo teamviewer --daemon disable
+
 deb stuff
 =========
 
