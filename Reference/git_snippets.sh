@@ -5,6 +5,18 @@
 git checkout -b <branch>
 git push -u <remote> <branch>
 
+# Create branch with no history/code
+# ----------------------------------
+git checkout --orphan my_branch
+
+# to unstage automatically added code:
+git rm --cached -r .
+
+# to remove automatically added code:
+git rm -rf .
+
+
+
 # To pull all new remote branches from remote:
 git remote update
 
