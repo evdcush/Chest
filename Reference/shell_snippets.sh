@@ -727,6 +727,9 @@ tr -d 'input_characters' < filename
 # Compress a series of identical characters to a single character:
 tr -s 'input_characters' < filename
 
+# delete all whitespace
+tr -d "[:space:]"
+
 # Translate the contents of a file to upper-case:
 tr "[:lower:]" "[:upper:]" < filename
 
