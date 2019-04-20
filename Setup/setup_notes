@@ -51,6 +51,7 @@ sudo vi /etc/environment
 # delete '/usr/games:/usr/local/games' near the end
 px="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 py="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+sudo echo 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"' > /etc/environment
 
 # Smarter path add funcs
 # ======================
@@ -79,50 +80,44 @@ path_prepend() {
 # Desktop and Apps
 #-----------------------------
 # Note: there may be some redundancy
-#===== Default desktop shit: Apps, libraries
+#===== Default desktop stuff
 sudo apt remove --purge mate-desktop-common mate-calc-common mate-calc libgnome-games-support-common
 sudo apt remove --purge gnome-*
 sudo apt remove --purge "*mate-desktop*" "snapd*" thunderbird* catfish xul-ext-ubufox
 sudo apt remove --purge "*firefox*" "transmission-*" "*pidgin*" "*parole*" "*xfburn*" "*libreoffice*"
-sudo apt remove --purge catfish devhelp glade xul-ext-ubufox
 
-# Printer shit
-#--------------
-##### UPDATE: Careful on this one! Unless you are finding issues
-#             with these packages (ghost printers, drivers) do not delete
-sudo apt remove --purge printer-driver-splix printer-driver-sag-gdi \
-printer-driver-pxljr printer-driver-ptouch printer-driver-pnm2ppa \
-printer-driver-min12xxw printer-driver-m2300w printer-driver-foo2zjs-common \
-printer-driver-foo2zjs printer-driver-c2esp
 
 #=============================================================================#
 #                  Package manager setup and helpful aliases                  #
 #=============================================================================#
 
+# What's important is getting the faster mirrors for apt (via apt-select)
+# apt-fast isn't actually that much faster--if at all; it's just nice having aria
+
 # Apt fast
-#------------------------------------------------------------------------------
+# ========
 sudo add-apt-repository ppa:apt-fast/stable
 sudo apt update
 sudo apt install apt-fast
 
 # Apt mirrors
 # ===========
-# So the mirrors featured here have best averaged ping and speed
-# but it's best to always check apt-select for best mirrors
-# pip install -U apt-select; apt-select -l -t 20;
+sudo apt update && sudo apt install -y python-pip
+sudo pip install apt-select
+apt-select -c -t 15
+sudo mv ~/sources.list /etc/apt
+
+# copy mirrors to apt-fast
 sed -i "$ a MIRRORS=( 'http://mirror.picosecond.org/ubuntu/, http://mirror.enzu.com/ubuntu/, http://la-mirrors.evowise.com/ubuntu/, http://mirrors.ocf.berkeley.edu/ubuntu/, http://mirror.math.ucdavis.edu/ubuntu/' )" /etc/apt-fast.conf
 
 #==== APT-REPO
-addrep(){
-    sudo add-apt-repository "ppa:$1" -y;
-    sudo apt-fast update;
-}
+addrep() { sudo add-apt-repository "ppa:$1" -y; }
 
 
 #-----------------------------------------------------------------------------#
 #                                     GCC                                     #
 #-----------------------------------------------------------------------------#
-addrep 'ubuntu-toolchain-r/test' # Don't need repo if on 18.04
+sudo apt-add-repository ppa:ubuntu-toolchain-r/test # Don't need repo if on ubu >= 18.04
 sudo apt install gcc-7 g++-7 gcc-8 g++-8 --install-suggests
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 80 --slave /usr/bin/g++ g++ /usr/bin/g++-7
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 100 --slave /usr/bin/g++ g++ /usr/bin/g++-8
@@ -135,7 +130,7 @@ update-alternatives --set gcc /usr/bin/gcc-8
 
 # git
 # ===
-addrep git-core/ppa
+sudo apt-add-repository ppa:git-core/ppa
 sudo apt update && sudo apt upgrade -y
 sudo apt install git-core
 
@@ -148,7 +143,7 @@ libssl-dev libxcb-keysyms1-dev llvm m4 make p7zip-full p7zip-rar unrar unar perl
 pkg-config python-sphinx qt5-default qt5-qmake qttools5-dev-tools redis-server \
 redis-tools software-properties-common texlive-xetex tk-dev xz-utils zlib1g-dev \
 printer-driver-brlaser ffmpeg exfat-utils flac lame x264 x265 libglfw3 libjpeg-dev \
-swig python-piglet python3-opengl libboost-all-dev libosmesa6-dev patchelf xvfb
+swig python3-opengl libboost-all-dev libosmesa6-dev patchelf xvfb
 
 
 
@@ -169,18 +164,15 @@ swig python-piglet python3-opengl libboost-all-dev libosmesa6-dev patchelf xvfb
 # Oh-my-zsh
 # =========
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)";
-git clone https://github.com/jocelynmallon/zshmarks.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zshmarks
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone --depth=1 https://github.com/jocelynmallon/zshmarks.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zshmarks
+git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 
 # Pyenv
 # =====
 curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash;
-#### BEFORE INSTALLING ALL PIP PACKAGES IN VENV:
-# pyinstaller is bugged, so you have to hold it's hand
-pip install pip==18.1 # installation will fail if pip==19 (latest)
-pip install pyinstaller
-pip install -U pip # then you just update right after...
+
+# install pyinstaller before updating pip
 
 #-----------------------------------------------------------------------------#
 #                                  languages                                  #
@@ -192,6 +184,7 @@ pip install -U pip # then you just update right after...
 sudo apt install -y python3.7
 
 #---- install alternatives
+# dont do this actually; you'll always be in py3 via venv, and ROS needs py2 still
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.7 80
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.6 50
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 20
@@ -216,7 +209,9 @@ curl -L https://git.io/n-install | N_PREFIX=~/.n bash -s -- -y
 # goto https://julialang.org/downloads/index.html
 wget https://julialang-s3.julialang.org/bin/linux/x64/1.1/julia-1.1.0-linux-x86_64.tar.gz
 tar -xvzf julia-1.1.0-linux-x86_64.tar.gz
-ln -sfr /path/to/julia-1.1.0/bin/julia /home/evan/.local/bin
+ln -sf /path/to/julia-1.1.0/bin/julia /home/evan/.local/bin
+# eg:
+ln -sf $PWD/julia-1.1.0/bin/julia /home/evan/.local/bin
 
 # Prolog
 #=========================
@@ -259,11 +254,11 @@ sudo pip3 install ranger-fm
 # ====
 #sudo apt install -y guake # always check versions available from src and apt
 sudo apt install -y chromium-browser deluge aria2 sshfs openssh-client \
-jq \
+jq sqlitebrowser \
 flameshot nomacs inkscape vlc mpv \
 pandoc poppler-utils wkhtmltopdf img2pdf \
 htop psensor xsensors xfce4-sensors-plugin \
-gparted tree tlp deborphan symlinks xdot \
+gparted tree tlp deborphan xdot \
 git-crypt git-extras \
 xclip copyq \
 dict dictd dict-gcide dict-wn dict-moby-thesaurus \
@@ -272,9 +267,8 @@ anki xfce4-timer-plugin redshift font-manager;
 
 # Fonts
 # =====
-# CAREFUL WITH THE APT-SOURCED FONTS, you already have most of the latest
-# open-source fonts downloaded from goog fonts or other, and it probably better
-# to use those over apt fonts (definitely mplus at any rate)
+### still need to look into whether apt sourced fonts are better rendered/supported
+### by desktop than the latest, manually downloaded fonts
 sudo apt install -y fonts-hack fonts-oxygen fonts-noto-cjk-extra "fonts-sawarabi*" \
 fonts-mplus fonts-mononoki "fonts-moe*" fonts-umeplus \
 fonts-woowa-hanna "fonts-wqy*" fonts-ebgaramond-extra fonts-cantarell \
@@ -292,7 +286,7 @@ sudo apt install -y texlive-extra-utils --no-install-recommends
 
 # Ghostwriter
 # ===============
-addrep wereturtle/ppa
+sudo apt-add-repository ppa:wereturtle/ppa
 ghostwriter
 
 # yq
