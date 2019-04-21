@@ -100,7 +100,7 @@ starcraft-games:
 - atari-py
 
 visualization:
-- ipyvolume    # <-------<< WOW! looks comparable to mayavi ##############
+- ipyvolume    # <-------<< WOW! looks comparable to mayavi #### (notebook only?)
 - bokeh
 - networkx  # lib whole bag of stuff for networks (create, manip, vis)
 - prince    # nice visualization stuff for factor analysis
