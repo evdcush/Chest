@@ -283,6 +283,7 @@ CLI-shell:
 system:
 - glances  # wayyyyy better top/htop
 - s-tui    # CPU monitoring, pretty nice; couple with 'stress': `afi stress`
+- yara-python  # python interface for YARA
 
 git-github:
 - GitPython           # python git library
