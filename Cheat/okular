@@ -1,0 +1,30 @@
+Annotations
+===========
+To annotate, open the review toolbar via F6
+Select annotation tools via keys 1-9
+
+# F6+1 : Pop-up Note
+    Write a note in a pop-up box. Click on note icon
+    to pop-up the box again and view the full note.
+
+# F6+2 : Inline Note
+    Like a sticky note. Always on-top, does not collapse.
+
+# F6+3 : Freehand Line
+    Exactly what it sounds like. Can be moved after too.
+
+# F6+4 : Highlighter  <-------------------------
+    Highlight tool that highlights a text selection.
+
+# F6+5 : Straight Line
+    Click once for line origin, click again for
+    destination.
+
+# F6+6 : Polygon
+    Creating a polygon is like creating straight lines,
+    connected end-to-end, until you close and finish the
+    polygon by clicking a line to end on the starting point.
+
+# F6+7 : Underline
+    Underline text selection.
+
