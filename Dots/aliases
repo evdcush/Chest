@@ -60,7 +60,7 @@ alias stowhome='stow --target=/home/evan'
 
 #==== package stuff
 alias api="apt-cache show"
-alias apu="apt list --upgradable"
+#alias alu="apt list --upgradable"
 alias dpkgi="sudo dpkg -i "
 alias deps='apt-cache rdepends'
 
@@ -71,21 +71,36 @@ alias rmorph="sudo deborphan | xargs sudo apt remove --purge -y"
 
 # Apt-fast
 # ========
-apf='sudo apt-fast'
-alias af="$apf"
-alias afu="$apf update"
-alias afg="$apf upgrade"
-alias afug="$apf update && $apf upgrade"
-alias afi="$apf install"
-alias afiNO="$apf --no-install-recommends --no-install-suggests install"
-alias afr="$apf remove"
-alias afrp="$apf remove --purge"
-alias afa="$apf autoremove"
-alias afc="$apf clean"
-alias affu="$apf full-upgrade"
-alias afl="apt-fast list"
-alias afs="apt-fast search"
-alias afshow="apt-fast show"
+# TBH no noticed speedup from regular apt...
+#apf='sudo apt-fast'
+#alias af="$apf"
+#alias afu="$apf update"
+#alias afg="$apf upgrade"
+#alias afug="$apf update && $apf upgrade"
+#alias afi="$apf install"
+#alias afiNO="$apf --no-install-recommends --no-install-suggests install"
+#alias afr="$apf remove"
+#alias afrp="$apf remove --purge"
+#alias afa="$apf autoremove"
+#alias afc="$apf clean"
+#alias affu="$apf full-upgrade"
+#alias afl="apt-fast list"
+#alias afs="apt-fast search"
+#alias afshow="apt-fast show"
+
+ap='sudo apt'
+alias atu="$ap update"
+alias atg="$ap upgrade"
+alias atfg="$ap full-upgrade"
+alias atug="$ap update && $ap upgrade"
+alias ati="$ap install"
+alias atr="$ap remove"
+alias atrp="$ap remove --purge"
+alias ata="$ap autoremove"
+alias atc="$ap clean"
+alias atl="$ap list"
+alias atlg="$ap list --upgradable"
+
 
 
 #=============================================================================#
