@@ -9,7 +9,7 @@ Primary features of this wrapper:
 
 Shortcomings:
 - assumed that you have downloaded a png icon asset
-    - nativefier's automatic sourcing of icons is hit-or-miss
+  - nativefier's automatic sourcing of icons is hit-or-miss
 
 """
 import os

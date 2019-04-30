@@ -116,7 +116,7 @@ HOME  = os.environ['HOME']
 # ========
 DOTS = HOME + '/.Dots'
 APPS = HOME + '/.Apps'
-BIN  = HOME + '/.local/bin'
+USER_BIN = HOME + '/.local/bin'
 DESKTOPS = HOME + '/.local/share/applications'
 
 # Home dirs

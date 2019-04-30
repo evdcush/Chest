@@ -312,6 +312,7 @@ npm i -g npm && npm i -g electron nativefier tldr lorem-ipsum percollate leetcod
 #npm i -g percollate
 #npm i -g leetcode-cli
 #npm i -g taskbook
+#npm i -g catj
 
 # croc
 # ====
