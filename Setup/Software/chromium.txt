@@ -1,0 +1,81 @@
+# Extensions
+# ==========
+
+Awesome Stars
+  Shows how many stars a repo has in github
+    https://chrome.google.com/webstore/detail/awesome-stars/lcokkcbdmicofdahlooopcpinogephfb
+
+Backspace to go Back
+  restores the navigational utility of backspace
+    https://chrome.google.com/webstore/detail/backspace-to-go-back/nlffgllnjjkheddehpolbanogdeaogbc
+
+Better Bookmark
+  easiest way to add bookmarks; fuzzy spotlight search
+  https://chrome.google.com/webstore/detail/better-bookmark/pniopfmciclllcpockpkgceikipiibol
+
+Close Tabs to the Left
+  you guessed it
+    https://chrome.google.com/webstore/detail/close-tabs-to-the-left/gggbppgpkegkkgjpmlbedgbmgomecmoj
+
+Copy All Urls
+  copies all urls of currently opened tabs
+    https://chrome.google.com/webstore/detail/copy-all-urls/djdmadneanknadilpjiknlnanaolmbfk
+
+Dark Reader
+  dark mode all the stuff
+    https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh
+
+Decentraleyes
+  Tracking protection thru free centralized cdn
+    https://chrome.google.com/webstore/detail/decentraleyes/ldpochfccmkkmhdbclfhpagapcfdljkj
+
+Github Original Streak
+  commit stats
+    https://chrome.google.com/webstore/detail/github-original-streak/jgfeifpakohnblfnjdpigclinhbkocja
+
+Joplin Web Clipper
+  save web pages to joplin
+    https://chrome.google.com/webstore/detail/joplin-web-clipper/alofnhikmmkdbbbgpnglcpdollgjjfek
+
+Make Medium Readable Again
+  fix Medium's shit ui/ux
+    https://chrome.google.com/webstore/detail/make-medium-readable-agai/kljjfejkagofbgklifblndjelgabcmig
+
+Old Reddit Redirect
+  fix reddit's shit ui/ux
+    https://chrome.google.com/webstore/detail/old-reddit-redirect/dneaehbmnbhcippjikoajpoabadpodje
+
+Privacy badger
+  "automatically learns to block invis trackers" (meh)
+    https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp
+
+py3redirect
+  stop reading all those damn py2 hits
+    https://chrome.google.com/webstore/detail/py3redirect/codfjigcljdnlklcaopdciclmmdandig
+
+
+## INFREQUENTLY USED
+
+Bookmarks clean up
+  finds/removes duplicate bookmarks; get rid of broken links
+    https://chrome.google.com/webstore/detail/bookmarks-clean-up/oncbjlgldmiagjophlhobkogeladjijl
+
+HTTPS Everywhere
+  unfortunately breaks any site without https
+    https://chrome.google.com/webstore/detail/https-everywhere/gcbommkclmclpchllfjekcdonpmejbdp
+
+Inbox theme for gmail
+  makes gmail look more like inbox (meh)
+    https://chrome.google.com/webstore/detail/inbox-theme-for-gmail/albppgldjlaflgenhggocpigdgdmgpee
+
+Link grabber
+  grabs available hyperlinks from a page
+    https://chrome.google.com/webstore/detail/link-grabber/caodelkhipncidmoebgbbeemedohcdma
+
+Linkclump
+  nifty drag-and-select tool for open/copy/bookmarking multiple links same time
+    https://chrome.google.com/webstore/detail/linkclump/lfpjkncokllnfokkgpkobnkbkmelfefj
+
+Lovely forks
+  show popular forks of a repo (meh)
+    https://chrome.google.com/webstore/detail/lovely-forks/ialbpcipalajnakfondkflpkagbkdoib
