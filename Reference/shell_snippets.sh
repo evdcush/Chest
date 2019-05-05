@@ -108,6 +108,26 @@ echo $str | tr "/" "\n" | tail -n 2
 # willsALMANJ
 # Zutilo
 
+# Adjust/view timezone
+# --------------------
+# Check current timezone settings
+timedatectl
+
+# list timezones
+timedatectl list-timezones
+# eg:
+timedatectl list-timezones | grep -i america
+timedatectl list-timezones | fzf
+
+# Change timezone
+sudo timedatectl set-timezone Asia/Tokyo # painless
+
+# painful way
+sudo unlink /etc/localtime
+sudo ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+
+
+
 
 #=============================================================================#
 #                                                                             #
