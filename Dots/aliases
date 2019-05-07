@@ -27,7 +27,11 @@ alias lzf='ls | fzf'
 #---- misc
 alias plz='sudo $(fc -ln -1)' # mmm inconsistent
 alias myip='inxi -i'
-alias tjp='TZ="Asia/Tokyo" date'
+alias tjst='TZ="Asia/Tokyo" date'
+alias tpst='TZ="America/Los_Angeles" date'
+alias tedt='TZ="America/New_York" date'
+
+
 
 
 # copy previous command (is this really the only sol? stupidly verbose)
