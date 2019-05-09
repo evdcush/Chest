@@ -258,7 +258,7 @@ jq sqlitebrowser \
 flameshot nomacs inkscape vlc mpv \
 pandoc poppler-utils wkhtmltopdf img2pdf \
 htop psensor xsensors xfce4-sensors-plugin \
-gparted tree tlp deborphan xdot \
+gparted tree tlp deborphan xdot iotop \
 git-crypt git-extras \
 xclip copyq \
 dict dictd dict-gcide dict-wn dict-moby-thesaurus \
