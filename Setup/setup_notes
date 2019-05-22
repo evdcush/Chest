@@ -1347,3 +1347,13 @@ pip install --process-dependency-links --no-binary --upgrade git+https://github.
 "Zotero Connector"
 
 
+# Xubuntu/XFCE theme stuff
+# ========================
+
+# TO CHANGE THE LOGIN PROMPT THEME,
+#   sudo apt install lightdm-gtk-greeter
+#   a gui for changing prompt
+(+) ➜  ~ cat /etc/lightdm/lightdm-gtk-greeter.conf
+[greeter]
+theme-name = OSX-Arc-Shadow
+hide-user-image = true
