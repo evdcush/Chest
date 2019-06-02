@@ -83,7 +83,9 @@ export HISTFILESIZE=-1
 # Preferred editor
 # ---------------
 #export VISUAL=vim
-export VISUAL=subl
+## '-n : --new-window; -w : --wait'
+##  (open in new window and wait for file to close before returning)
+export VISUAL='subl -n -w'
 export EDITOR="$VISUAL"
 
 # jrnl prevent hist
