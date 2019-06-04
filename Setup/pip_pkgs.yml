@@ -38,7 +38,8 @@ cosmo:
 
 
 hpc:
-- mpi4py  # exactly what it sounds like; REQ MPI
+- mpi4py    # exactly what it sounds like; REQ MPI
+- openmdao  # hpc platform for optimization; engineering focus; https://openmdao.org/
 
 apis: # python wrapper apis
 - wikipedia-api  # wikipedia: import wikipediaapi
