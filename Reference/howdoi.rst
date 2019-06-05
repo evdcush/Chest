@@ -307,6 +307,23 @@ Troubleshooting
 Ubuntu/Linux
 ============
 
+Mount an ISO
+------------
+1. **Create a directory to serve as the mount location:**
+
+    sudo mkdir /media/myiso
+
+2. **Mount the ISO in the target directory:**
+
+    sudo mount -o loop /path/to/iso/fine/MY_ISO_FILE.iso /media/myiso
+
+3. **Unmount the ISO:**
+
+    sudo umount /media/myiso
+
+
+
+
 Slow boot
 ---------
 This has been a persistent problem for **all** my machines with xubuntu 18.04. None had slow-boot issues with 16.04.
