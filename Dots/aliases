@@ -68,6 +68,18 @@ alias api="apt-cache show"
 alias dpkgi="sudo dpkg -i "
 alias deps='apt-cache rdepends'
 
+function RDME() {
+    SRC_DIR="$DIR_CHEST_RESOURCES/Templates/README.rst"
+    DEST_DIR="$PWD/README.rst"
+    cp $SRC_DIR $DEST_DIR
+}
+
+# Clear apt lock
+alias secure_lock="sudo rm /var/lib/apt/lists/lock; \
+sudo rm /var/cache/apt/archives/lock; \
+sudo rm /var/lib/dpkg/lock;
+"
+
 #==== deborphan
 alias rmorph="sudo deborphan | xargs sudo apt remove --purge -y"
 
@@ -102,9 +114,11 @@ alias atr="$ap remove"
 alias atrp="$ap remove --purge"
 alias ata="$ap autoremove"
 alias atay="$ap autoremove -y"
-alias atc="$ap clean"
+alias atc="$ap clean && $ap autoclean && $ap purge"
 alias atl="$ap list"
 alias atlg="$ap list --upgradable"
+
+
 
 
 
