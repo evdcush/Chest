@@ -74,10 +74,18 @@ function RDME() {
     cp $SRC_DIR $DEST_DIR
 }
 
+#==== Apt cleanup
 # Clear apt lock
 alias secure_lock="sudo rm /var/lib/apt/lists/lock; \
 sudo rm /var/cache/apt/archives/lock; \
 sudo rm /var/lib/dpkg/lock;
+"
+
+# Regenerate apt list cache (troubleshooting for 'Waiting at headers' crap)
+alias regen_apt_list="sudo apt clean; \
+sudo mv /var/lib/apt/lists{,.old}; \
+sudo mkdir -p /var/lib/apt/lists/partial; \
+sudo apt clean; sudo apt update;
 "
 
 #==== deborphan
