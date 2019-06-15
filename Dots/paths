@@ -41,6 +41,7 @@ GCKEY_CHEST="$DIR_DOTS/Keys/chest_key"
 
 # Misc
 # ====
-#---- hostname local; used for whether CUDA should be sourced
+#---- hostname local; used for CUDA and proxy sourcing
 T430_HNAME="T4"
+OFFICE_HNAME="ECTRI-2501"
 LOCAL_HNAME=$(hostname)
