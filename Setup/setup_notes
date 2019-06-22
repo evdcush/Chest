@@ -136,12 +136,14 @@ sudo apt install git-core
 
 # Deps
 sudo apt install -y wget curl git-core apt-transport-https autoconf automake \
-build-essential cmake docbook2x dvipng extra-cmake-modules gfortran graphviz \
+make llvm m4 perl \
+libblas-dev liblapack-dev libatlas-base-dev gfortran build-essential cmake \
+docbook2x dvipng graphviz \
 imagemagick libarchive-dev libatomic1 libbz2-dev libcurl4-openssl-dev \
 libncurses5-dev libreadline-dev librsvg2-bin libre2-dev libsqlite3-dev \
-libssl-dev libxcb-keysyms1-dev llvm m4 make p7zip-full p7zip-rar unrar unar perl \
-pkg-config python-sphinx qt5-default qt5-qmake qttools5-dev-tools redis-server \
-redis-tools software-properties-common texlive-xetex tk-dev xz-utils zlib1g-dev \
+libssl-dev libxcb-keysyms1-dev p7zip-full p7zip-rar unrar unar \
+pkg-config python-sphinx qt5-default qt5-qmake qttools5-dev-tools \
+software-properties-common texlive-xetex texlive-extras tk-dev xz-utils zlib1g-dev \
 printer-driver-brlaser ffmpeg exfat-utils flac lame x264 x265 libglfw3 libjpeg-dev \
 swig python3-opengl libboost-all-dev libosmesa6-dev patchelf xvfb
 
