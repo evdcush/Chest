@@ -192,12 +192,13 @@ pipswi="$piu $pipmyougiden; $piu $pipcite2c; $piu $pipnbextensions; $piu $pipnbp
 pre_pkg="$piu pip setuptools wheel"
 
 min_pkgs="numpy scipy sklearn matplotlib chainer cython sympy \
-ipython jupyter notebook restview gitup jrnl pyperclip"
+ipython jupyter notebook restview gitup jrnl pyperclip pyqt5"
 
 vis_pkgs="opencv-python scikit-video scikit-image imageio \
 open3d-python glumpy pypng pyopengl chainercv"
 
 std_pkgs="$min_pkgs pandas chainerrl 'gym[atari, box2d, classic_control]' \
+pygame pybullet pymunk \
 kaggle pydataset keras primesieve numba \
 docutils sphinx sphinx-rtd-theme sphinxcontrib-websupport sphinx-gallery numpydoc pypandoc \
 ruamel.yaml tinydb python-slugify unidecode pybtex scikit-image imageio jax jaxlib \
