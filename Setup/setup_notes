@@ -139,6 +139,7 @@ sudo apt install -y wget curl git-core apt-transport-https autoconf automake \
 make llvm m4 perl \
 libblas-dev liblapack-dev libatlas-base-dev gfortran build-essential cmake \
 docbook2x dvipng graphviz \
+libsimbody-dev simbody-doc \
 imagemagick libarchive-dev libatomic1 libbz2-dev libcurl4-openssl-dev \
 libncurses5-dev libreadline-dev librsvg2-bin libre2-dev libsqlite3-dev \
 libssl-dev libxcb-keysyms1-dev p7zip-full p7zip-rar unrar unar \
