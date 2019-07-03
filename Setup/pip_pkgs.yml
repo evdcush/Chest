@@ -41,10 +41,12 @@ hpc:
 - mpi4py    # exactly what it sounds like; REQ MPI
 - openmdao  # hpc platform for optimization; engineering focus; https://openmdao.org/
 
-apis: # python wrapper apis
-- wikipedia-api  # wikipedia: import wikipediaapi
-- habanero       # crossref
-- pylibgen       # libgen
+
+GUI:
+- sciplot-pyqt  # UI/matplotlib wrapper using pyqt5 that allows interactive plotting
+- kivy          # library for making UI, seems multi-touch is specialty
+- ThorPy        # GUI library for pygame
+- pgu           # pygame-pgu; collection of utils and libs for gui in pygame
 
 
 
@@ -77,11 +79,13 @@ Robotics:
 Recommenders:
 - surprise   # recommender scikit
 
+
 TF-dependencies:  # don't actually use any of it; it's just to build TF
 - keras
 - keras-applications
 - keras-preprocessing
 - protobuf
+
 
 NLP-stuff:
 - nltk       # de-jure natural language library
@@ -92,6 +96,7 @@ NLP-stuff:
 - scattertext  # great looking vis of lang/text diff between docs
 - summa      # summarizer/keyword extractor LOOKS GOOD/SIMPLE
 
+
 starcraft-games:
 - s2clientprotocol  # linux sc2 client (headless)
 - pysc2     # "official" deepmind sc2 api, fairly verbose and buggy, no documentation
@@ -99,6 +104,9 @@ starcraft-games:
 - scbw      # bw on linux (in docker container)
 - pygame    # dependency for every game-related thign
 - atari-py
+- pymunk    # *** easy to use, pythonic, 2d physics library. good for 2d rigid body physs
+
+
 
 visualization:
 - ipyvolume    # <-------<< WOW! looks comparable to mayavi #### (notebook only?)
@@ -137,6 +145,12 @@ apps:
 - termdown    # simple countdown/timer terminal
 - apt-select  # pings apt mirrors, gives list fastest
 - speedtest-cli  # speedtest on the cli
+
+apis: # python wrapper apis
+- wikipedia-api  # wikipedia: import wikipediaapi
+- habanero       # crossref
+- pylibgen       # libgen
+
 
 
 lib-enhancements:
