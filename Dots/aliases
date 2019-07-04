@@ -174,25 +174,24 @@ piu="pip install -U"
 # =============
 #---- software that does not require extra steps (beyond pip install)
 pipsoftware="thefuck jrnl gitup restview grip termdown apt-select glances \
-s-tui speedtest-cli pdfCropMargins ruamel.yaml.cmd"
+speedtest-cli pdfCropMargins"
 pipsw="$piu $pipsoftware"
 
 #---- software that requires extra steps
 pipmyougiden="myougiden; updatedb-myougiden -f"
-pipcite2c="cite2c; python -m cite2c.install"
+#pipcite2c="cite2c; python -m cite2c.install"
 pipnbextensions="jupyter_contrib_nbextensions jupyter_nbextensions_configurator; \
-jupyter_nbextensions_configurator; \
 jupyter contrib nbextension install --user; \
 jupyter nbextensions_configurator enable --user"
 pipnbpdf="nb_pdf_template; python -m nb_pdf_template.install"
-pipswi="$piu $pipmyougiden; $piu $pipcite2c; $piu $pipnbextensions; $piu $pipnbpdf"
+pipswi="$piu $pipmyougiden; $piu $pipnbextensions; $piu $pipnbpdf"
 
 # Python library/modules
 # ======================
 pre_pkg="$piu pip setuptools wheel"
 
 min_pkgs="numpy scipy sklearn matplotlib chainer cython sympy \
-ipython jupyter notebook restview gitup jrnl pyperclip pyqt5"
+ipython jupyter restview gitup jrnl pyperclip pyqt5"
 
 vis_pkgs="opencv-python scikit-video scikit-image imageio \
 open3d-python glumpy pypng pyopengl chainercv"
@@ -201,9 +200,9 @@ std_pkgs="$min_pkgs pandas chainerrl 'gym[atari, box2d, classic_control]' \
 pygame pybullet pymunk \
 kaggle pydataset keras primesieve numba \
 docutils sphinx sphinx-rtd-theme sphinxcontrib-websupport sphinx-gallery numpydoc pypandoc \
-ruamel.yaml tinydb python-slugify unidecode pybtex scikit-image imageio jax jaxlib \
-fire pypi-cli pypistats cookiecutter faker johnnydep black \
-feedparser requests lxml urllib3 bs4  github3.py grip"
+ruamel.yaml python-slugify unidecode pybtex scikit-image imageio jax jaxlib \
+fire pypi-cli cookiecutter faker johnnydep black \
+feedparser requests lxml urllib3 bs4 github3.py grip"
 
 # Snowflakes
 # ----------
