@@ -54,6 +54,9 @@ fi
 #---- User bin path
 export PATH="${PATH:+${PATH}:}$PATH_USER_BIN"
 
+#---- nltk data
+export NLTK_DATA='/home/evan/.Data/nltk_data'
+
 # Cheat conf
 # ==========
 #export CHEAT_PATH="$HOME/.cheat"
