@@ -315,7 +315,9 @@ rawgh='https://raw.githubusercontent.com'
 alias install_joplin="wget -O - \
 $rawgh/laurent22/joplin/master/Joplin_install_and_update.sh | bash"
 
-alias rs='redshift -O 2400'
+
+alias rs='redshift -O 2400'   # screen color temp adjust for night
+alias ja='myougiden'
 
 
 
