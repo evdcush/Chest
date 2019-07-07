@@ -20,7 +20,7 @@ alias ldot='ls -d --group-directories-first .*'
 alias lk='ls -1FSshX --file-type --group-directories-first'
 alias lm='ls -1F --file-type --group-directories-first'
 alias l='ls --group-directories-first -X'
-alias sl='ls -lhSr'
+alias lsz='ls -lhSr'
 alias duh='du -h --max-depth=1 | sort -h;'
 alias lzf='ls | fzf'
 
@@ -317,7 +317,8 @@ $rawgh/laurent22/joplin/master/Joplin_install_and_update.sh | bash"
 
 
 alias rs='redshift -O 2400'   # screen color temp adjust for night
-alias ja='myougiden'
+#alias ja='myougiden'   # ja now a func that can accept from clipboard
+alias myg='myougiden'
 
 
 
