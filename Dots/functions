@@ -53,6 +53,22 @@ function leet(){
 }
 
 
+#==== myougiden, jp dictionary lookup
+# Lookup a word in myougiden dictionary
+#  will lookup given arg or from clipboard
+function ja(){
+    if [ "$#" -eq 0 ]; then
+        # No arg given, get arg from clipboard
+        lookup_arg=`xclip -o -sel clip`
+        # NB: wrapping bash statement in backticks makes var = statement ret ;]
+    else
+        # arg given
+        lookup_arg=$1
+    fi
+    myougiden $lookup_arg
+}
+
+
 #=============================================================================#
 #                                                                             #
 #                88888888888  888b      88  8b           d8                   #
@@ -143,8 +159,8 @@ dups() { sort "$1" | uniq -d }
 gdiff () { diff -u $@ | colordiff | less -R; }
 
 # dir stuff
-mcd(){mkdir -p "$1" && cd "$1"}
-cdl(){cd "$1" && ls -1FSshX --file-type}
+mcd() { mkdir -p "$1" && cd "$1" }
+cdl() { cd "$1" && ls -1FSshX --file-type }
 
 # Symlink
 # =======
