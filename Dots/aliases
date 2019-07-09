@@ -275,8 +275,11 @@ alias ssubw='sudo subl -new-window --wait'
 alias mk_pyproj="cookiecutter \
 https://github.com/kragniz/cookiecutter-pypackage-minimal.git"
 
-# CLI stuff
-# =========
+#---- npm
+alias npmls='npm list -g --depth 0'  # list all globally installed packages
+
+# Software
+# ========
 #---- vpn
 spvpn='sudo pvpn'
 alias vp="$spvpn"
@@ -287,11 +290,6 @@ alias vprc="$spvpn --reconnect"
 alias vpcc="$spvpn --country-connect"
 alias vpjp="$spvpn --country-connect JP udp"
 alias vpcf="$spvpn --fastest-connect"
-
-
-
-#---- fm
-alias rgr="ranger"
 
 #---- journal
 alias jrnl=" jrnl" # alias for preventing hist from logging jrnl
@@ -308,17 +306,16 @@ alias clipo="xclip -o -sel clip"
 alias delclip="xclip -o | xargs sudo rm -rf"
 alias cpget="xclip -o -sel clip | xargs wget"
 
-# Misc software
-# =============
-rawgh='https://raw.githubusercontent.com'
 #---- joplin
 alias install_joplin="wget -O - \
-$rawgh/laurent22/joplin/master/Joplin_install_and_update.sh | bash"
+https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_install_and_update.sh | bash"
 
-
+# Misc software
+# =============
+alias rgr="ranger"            # ranger file manager
 alias rs='redshift -O 2400'   # screen color temp adjust for night
 #alias ja='myougiden'   # ja now a func that can accept from clipboard
-alias myg='myougiden'
+alias myg='myougiden'         # shorter myougiden
 
 
 
