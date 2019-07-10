@@ -1255,12 +1255,29 @@ vi __init__.py
 
 # NATIVEFIER
 # ==========
-nativefy "https://mail.google.com" gmail -t -c
-nativefy "https://drive.google.com" google-drive -u '.*?\.google\.*?'
-nativefy "https://keep.google.com" google-keep
-nativefy "https://calendar.google.com" google-calendar
-nativefy "https://airtable.com/" airtable
-nativefy "https://www.hackerrank.com/dashboard" hacker-rank
+# --- just drop the tryhard nativefy script makes things stupid complicated
+#nativefy "https://mail.google.com" gmail -t -c
+#nativefy "https://drive.google.com" google-drive -u '.*?\.google\.*?'
+#nativefy "https://keep.google.com" google-keep
+#nativefy "https://calendar.google.com" google-calendar
+#nativefy "https://airtable.com/" airtable
+#nativefy "https://www.hackerrank.com/dashboard" hacker-rank
+
+# real example:
+nativefier --hide-window-frame --disable-context-menu --name 'maps' \
+--icon /home/evan/.Apps/Icons/google-maps.png 'https://maps.google.com/' \
+/home/evan/.Apps/Nativefied/
+
+ln -sf /home/evan/.Apps/Nativefied/maps-linux-x64/maps /home/evan/.local/bin
+#--- in ~/.local/share/applications/maps.desktop
+#[Desktop Entry]
+#Name=Maps
+#Comment=Nativefied google maps
+#Exec=/home/evan/.local/bin/maps
+#Terminal=false
+#Type=Application
+#Icon=/home/evan/.Apps/Nativefied/maps-linux-x64/resources/app/icon.png
+#Categories=Network;
 
 
 # RSS feeds
