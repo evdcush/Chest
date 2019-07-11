@@ -1263,13 +1263,17 @@ vi __init__.py
 #nativefy "https://airtable.com/" airtable
 #nativefy "https://www.hackerrank.com/dashboard" hacker-rank
 
-# real example:
+#---- real example:
+## USAGE: nativefier [options] <targetURL> [dest]
 nativefier --hide-window-frame --disable-context-menu --name 'maps' \
 --icon /home/evan/.Apps/Icons/google-maps.png 'https://maps.google.com/' \
 /home/evan/.Apps/Nativefied/
 
+## Symlink binary dest --> local bin
 ln -sf /home/evan/.Apps/Nativefied/maps-linux-x64/maps /home/evan/.local/bin
-#--- in ~/.local/share/applications/maps.desktop
+
+## Make desktop entry in local apps
+##--- in ~/.local/share/applications/maps.desktop
 #[Desktop Entry]
 #Name=Maps
 #Comment=Nativefied google maps
