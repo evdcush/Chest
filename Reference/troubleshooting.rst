@@ -65,6 +65,25 @@ So to patch chromium like in that gist::
 
 -----
 
+
+NPM
+===
+Setup or usage issues
+
+
+proxy
+-----
+Explicitly set the HTTP and HTTPS proxy (apparently npm not read these vars from env)::
+
+    # http proxy
+    npm config set proxy http://proxy.example.com:8080
+
+    # https proxy
+    npm config set https-proxy http://proxy.example.com:8080
+
+
+-----
+
 ROS
 ===
 ROS is still on python2, so you'll likely have issues with PYTHONPATH and
