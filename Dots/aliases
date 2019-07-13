@@ -16,6 +16,7 @@ alias md='mkdir -p'
 
 #---- list stuff
 alias h='history'
+alias hf='history | fzf'
 alias ldot='ls -d --group-directories-first .*'
 alias lk='ls -1FSshX --file-type --group-directories-first'
 alias lm='ls -1F --file-type --group-directories-first'
