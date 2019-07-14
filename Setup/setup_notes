@@ -1263,6 +1263,10 @@ vi __init__.py
 #nativefy "https://airtable.com/" airtable
 #nativefy "https://www.hackerrank.com/dashboard" hacker-rank
 
+
+# --file-download-options '{"saveAs": true}'
+
+
 #---- real example:
 ## USAGE: nativefier [options] <targetURL> [dest]
 nativefier --hide-window-frame --disable-context-menu --name 'maps' \
@@ -1345,6 +1349,7 @@ pip install --process-dependency-links --no-binary --upgrade git+https://github.
 "Close Tabs to the Left"
 "Copy All Urls"
 "Dark Reader"
+"Favicon Detector"
 "Github Original Streak"
 "HTTPS Everywhere"
 "Joplin Web Clipper"
