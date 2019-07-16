@@ -1279,6 +1279,13 @@ nativefier --file-download-options '{"saveAs": true}' --clear-cache \
 /home/evan/.Apps/Nativefied/
 
 
+
+
+nativefier --file-download-options '{"saveAs": true}' --hide-window-frame --disable-context-menu --internal-urls ".*?" --name 'Arxiv Sanity Preserver' --icon /home/evan/.Apps/Icons/arxiv-sanity.png 'http://www.arxiv-sanity.com/top?timefilter=week&vfilter=all' /home/evan/.Apps/Nativefied/
+
+
+
+
 ## Symlink binary dest --> local bin
 ln -sf /home/evan/.Apps/Nativefied/maps-linux-x64/maps /home/evan/.local/bin
 
