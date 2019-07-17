@@ -1279,8 +1279,13 @@ nativefier --file-download-options '{"saveAs": true}' --clear-cache \
 /home/evan/.Apps/Nativefied/
 
 
+##--- Google calendar
+# Opts: start maximized
+nativefier --hide-window-frame --maximize --disable-context-menu --name 'Google-calendar' --icon /home/evan/.Apps/Icons/google-calendar.png 'https://calendar.google.com/' /home/evan/.Apps/Nativefied/
 
 
+##--- Arxiv Sanity Preserver
+# Opts: internal urls (JUST AS EXAMPLE)
 nativefier --file-download-options '{"saveAs": true}' --hide-window-frame --disable-context-menu --internal-urls ".*?" --name 'Arxiv Sanity Preserver' --icon /home/evan/.Apps/Icons/arxiv-sanity.png 'http://www.arxiv-sanity.com/top?timefilter=week&vfilter=all' /home/evan/.Apps/Nativefied/
 
 
