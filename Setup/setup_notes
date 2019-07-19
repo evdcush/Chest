@@ -268,6 +268,16 @@ dict dictd dict-gcide dict-wn dict-moby-thesaurus \
 anki xfce4-timer-plugin redshift font-manager;
 
 
+#---- Scientific/numerical software
+sudo apt install -y scilab sagemath # sagemath 2gb pkg, just use sympy?
+
+
+#---- Libreoffice suite
+sudo apt install -y libreoffice-dev libreoffice-wiki-publisher libreoffice-texmaths \
+libreoffice-templates libreoffice-script-provider-python libreoffice-calc \
+libreoffice-math libreoffice-l10n-ja libreoffice-dmaths libreoffice-draw
+
+
 # Fonts
 # =====
 ### still need to look into whether apt sourced fonts are better rendered/supported
