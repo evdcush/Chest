@@ -30,6 +30,14 @@ science-math:
 - cyflann  # cython interface to FLANN lib
 - edward  # framework for probablistic models, tf subset lang
 
+
+simulation:
+- brian2   # clock-driven simu for SNN
+- bmspy    # "python block-model simulator. An alternative to simulink in Python"
+- simupy   # "a framework for modeling and simulating dynamical systems"
+
+
+
 cosmo:
 - corrfunc  # correlation func & clustering
 - astropy
@@ -47,7 +55,7 @@ GUI:
 - kivy          # library for making UI, seems multi-touch is specialty
 - ThorPy        # GUI library for pygame
 - pgu           # pygame-pgu; collection of utils and libs for gui in pygame
-
+- pyweaver      # visual code editor a la simulink?
 
 
 vision:
@@ -69,11 +77,13 @@ AI:
 - neupy  # ANN library, TF backend, lib has some cool stuff
 - optuna
 - niapy  # framework for building nature-inspired algos
+- deap   # EA computation framework
 
 Robotics:
 - pyserial  # access to serial port
 - pythonrobotics # !!NOT PIP!! git clone https://github.com/AtsushiSakai/PythonRobotics.git
 - pybullet  # py interface to bullet phys sdk
+- sphinx-ros     # sphinx ext adds rst directives that can be used to document ROS pkgs
 
 
 Recommenders:
@@ -105,6 +115,7 @@ starcraft-games:
 - pygame    # dependency for every game-related thign
 - atari-py
 - pymunk    # *** easy to use, pythonic, 2d physics library. good for 2d rigid body physs
+- gym-super-mario-bros  # gym env for super-mario bros (requires nes-py)
 
 
 
@@ -253,6 +264,7 @@ sphinx:
 - nbsphinx  # do sphinx stuff with notebooks instead of rst
 - sphinx-me #? "Wraps your README-only projects in a dynamic Sphinx shell for hosting on http://readthedocs.org"
 - sphinx-view # sounds like restview for sphinx (+ rst)
+- runestone   # sphinx ext for writing interatctive documents
 
 reading:
     bibtex:
