@@ -410,5 +410,7 @@ alias tpy="cp $DIR_CHEST_TEMPLATES/template.py ./foo.py"
 alias bsd3="cp $DIR_CHEST_TEMPLATES/Licenses/BSD-3-Clause.txt ./LICENSE"
 alias lgpl="cp $DIR_CHEST_TEMPLATES/Licenses/LGPL-3.0.txt ./LICENSE"
 alias agpl="cp $DIR_CHEST_TEMPLATES/Licenses/AGPL-3.0.txt ./LICENSE"
+alias ccsa="cp $DIR_CHEST_TEMPLATES/Licenses/CC-BY-NC-SA-4.0.txt ./LICENSE"
+alias ccnd="cp $DIR_CHEST_TEMPLATES/Licenses/CC-BY-NC-ND-4.0.txt ./LICENSE"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
