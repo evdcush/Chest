@@ -55,8 +55,8 @@ GUI:
 - kivy          # library for making UI, seems multi-touch is specialty
 - ThorPy        # GUI library for pygame
 - pgu           # pygame-pgu; collection of utils and libs for gui in pygame
-- pyweaver      # visual code editor a la simulink?
-
+- pyweaver      # visual code editor a la simulink? Kinda cool
+- cocos2d       # actually, game dev frameowrk
 
 vision:
 - opencv-python
@@ -78,6 +78,7 @@ AI:
 - optuna
 - niapy  # framework for building nature-inspired algos
 - deap   # EA computation framework
+
 
 Robotics:
 - pyserial  # access to serial port
@@ -118,7 +119,6 @@ starcraft-games:
 - gym-super-mario-bros  # gym env for super-mario bros (requires nes-py)
 
 
-
 visualization:
 - ipyvolume    # <-------<< WOW! looks comparable to mayavi #### (notebook only?)
 - bokeh
@@ -127,6 +127,7 @@ visualization:
 - pydot     # interface to graphviz, handles DOT stuff
 - visdom    # dashboard/sharing visualization thing from FB, look coo
 - holoviews  # jupyter, rich
+
 
 notebook:
 - ipython
@@ -157,11 +158,11 @@ apps:
 - apt-select  # pings apt mirrors, gives list fastest
 - speedtest-cli  # speedtest on the cli
 
+
 apis: # python wrapper apis
 - wikipedia-api  # wikipedia: import wikipediaapi
 - habanero       # crossref
 - pylibgen       # libgen
-
 
 
 lib-enhancements:
@@ -170,10 +171,12 @@ lib-enhancements:
 - python-box  # has surprising amount of different "boxes"; allow attr-like dotaccess to dicts
 - sh          # subprocess replacement; let you call any program as if it were func
 
+
 testing:
 - nose
 - pytest
 - sniffer
+
 
 dev:
 - cookiecutter  #*** project boilerplate, multiple langs; kragniz/cookiecutter-pypackage-minimal for py
@@ -186,12 +189,14 @@ dev:
 - semver        # semantic versioning helper
 - bullet  # cli making tool
 
+
 net:
 - html5lib  # dep
 - bs4       # scrape
 - you-get   # scrape for dummies
 - favicon   # library to find favicon from a url
 - feedparser #$ universal feed parser; this shit's MONEY
+
 
 filesystem-sh:
 - pyinotify   # Linux filesystem event monitoring
@@ -203,6 +208,7 @@ compsci-assets: # packages to help study/learn compsci stuff
 - binarytree      # make arbitrary binary trees to work/study/play with
 - python-patterns # design-patterns library for python
 
+
 deps-utils:
 - h5py        # h5 serialization
 - pyqt5       # dep
@@ -213,15 +219,16 @@ deps-utils:
 - johnnydep   # noooyyyce, lists dependencies of a package
 - pydeps      # call graph for package, not bad.
 
+
 db-docs:
 - tinydb
+
 
 pypi-python:
 - pypi-cli  # decent utils in `pypi info <pkg>` and `pypi search`
 - pip-autoremove  # rm package and it's deps; used to be GREAT, no longer supported seems like
 - pyinstaller #***** bundles a python app and all dependencies into a single package,# REQUIRES pip=18.1, WILL NOT WORK ON LATEST PIP
 - pypistats
-
 
 
 docs-text:
@@ -253,6 +260,7 @@ media:
 - romkan  # romaji/kana converter
 - myougiden  # like dictd for jp
 
+
 sphinx:
 - sphinx
 - sphinx-rtd-theme
@@ -265,6 +273,7 @@ sphinx:
 - sphinx-me #? "Wraps your README-only projects in a dynamic Sphinx shell for hosting on http://readthedocs.org"
 - sphinx-view # sounds like restview for sphinx (+ rst)
 - runestone   # sphinx ext for writing interatctive documents
+
 
 reading:
     bibtex:
@@ -293,8 +302,6 @@ reading:
         - scihub2pdf  # (bibcure proj) very nice, still hit-or-miss compared to site
 
 
-
-
 arg-parsers: # I prefer argparse/argv in general, to keep dependencies down
 - fire   # IF I opt for diff argparser, fire is the shit (args req'd tho)
 - docopt # more work than you think
@@ -314,6 +321,7 @@ system:
 - glances  # wayyyyy better top/htop
 - s-tui    # CPU monitoring, pretty nice; couple with 'stress': `afi stress`
 - yara-python  # python interface for YARA
+
 
 git-github:
 - GitPython           # python git library
