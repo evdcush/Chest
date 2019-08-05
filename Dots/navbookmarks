@@ -24,12 +24,10 @@ $HOME/.local/bin|bin
 $HOME/Projects|pro
 $HOME/.Scratch|scr
 $HOME/Cloud|nc
-$HOME/Work|work
 $HOME/.cache|cache
 $HOME/Projects/Samsara|sam
 $HOME/Projects/Hoard|hoard
 $HOME/Projects/DocHub/Notes|notes
-$HOME/SyncCloud|scl
 $HOME/Cloud/Projects/DevSandbox|ds
 $HOME/Chest/Resources|chres
 $HOME/Projects/Gymnasium|gym
@@ -37,12 +35,8 @@ $HOME/Cloud/Projects/Demos|dem
 $HOME/Cloud/Projects/ModelZoo|zoo
 $HOME/Cloud/Projects|cpro
 $HOME/Projects/AI-Sandbox/sandbox/ML|ml
-$HOME/SyncCloud/Projects/Clones|clones
 $HOME/Chest/Scripts/scratchspace|scr
 $HOME/Cloud/Projects|ncp
-$HOME/Cloud/Projects/lblbio|lbl
-$HOME/Projects/ROS|pros
-$HOME/Projects/pazu|paz
 $HOME/Projects/kuzushiji-mnist|kuzu
 $HOME/Cloud/Projects/Demos/ROS|ros
 $HOME/Projects/deep_nbody|pce
@@ -50,3 +44,4 @@ $HOME/Projects/pointnet2|pn2
 $HOME/.drootnc|dnc
 $HOME/.pyenv/versions/3.7.3/envs/+/lib/python3.7/site-packages/apt_select|asel
 $HOME/.WorkCloud|wrk
+$HOME/.WorkCloud|work
