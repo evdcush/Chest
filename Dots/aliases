@@ -13,6 +13,7 @@
 # ==============
 # NB: oh-my-zsh defines useful aliases '..'|'...'|'....'
 alias md='mkdir -p'
+alias cdp='cd -P'  # cd to physical path rather than symlinked
 
 #---- list stuff
 alias h='history'
