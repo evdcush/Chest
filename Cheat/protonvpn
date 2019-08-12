@@ -1,0 +1,19 @@
+NB: req root priv
+
+# Initialization
+pvpn -init   # enter OpenVPN creds
+
+# Connection
+pvpn -c # connect to a server
+pvpn -l      # connect to previously used server
+pvpn -f      # connect to fastest available server
+pvpn -r      # connect random
+pvpn -cc     # select server by country
+pvpn -cc <country> <protocol>  # fastest avail server in country
+pvpn -d           # disconnect from current session
+pvpn --reconnect  # reconnect
+
+# Utils
+pvpn --ip       # print current public IP
+pvpn --status   # print connection status
+pvpn --update   # update pvpn
