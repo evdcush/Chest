@@ -12,6 +12,36 @@ To disable teamviewer from autostart::
 
     sudo teamviewer --daemon disable
 
+------
+
+CIFS mount
+==========
+
+cifs mount using env vars for usr and pwd
+-----------------------------------------
+This is another one of those instances where you want to consistently
+call some command in shell that uses sensitive information (such as a
+password).
+
+There are many potential solutions, here is one from SO using a
+credentials file: (https://askubuntu.com/a/67418/601020)::
+
+    # Create a text file, eg $HOME/.Cifs.cred to store the credentials:
+    user=your-username-on-cifs-server
+    password=the-password
+    domain=leave-this-blank-unless-really-using-windows-domain
+
+    # Protect the $HOME/.Cifs.cred file; run this command
+    # NB: this changes perm to -rw------ and is owned by user
+    chmod go-rw $HOME/.Cifs.cred
+
+    # Now mount CIFS share to target directory using the creds file:
+    sudo mount -t cifs -o cred=$HOME/.Cifs.cred,uid=`id -u`,gid=`id -g`, //server/data /mnt/share_data
+
+
+
+
+
 deb stuff
 =========
 
