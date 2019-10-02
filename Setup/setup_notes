@@ -264,6 +264,7 @@ htop psensor xsensors xfce4-sensors-plugin \
 gparted tree tlp deborphan xdot iotop furiusisomount \
 git-crypt git-extras git-repair \
 xclip copyq \
+kdeconnect \
 dict dictd dict-gcide dict-wn dict-moby-thesaurus \
 anki xfce4-timer-plugin redshift font-manager;
 
