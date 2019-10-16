@@ -25,6 +25,7 @@ alias l='ls --group-directories-first -X'
 alias lsz='ls -lhSr'
 alias duh='du -h --max-depth=1 | sort -h;'
 alias lzf='ls | fzf'
+alias lsd='sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL'
 
 #---- misc
 alias plz='sudo $(fc -ln -1)' # mmm inconsistent
