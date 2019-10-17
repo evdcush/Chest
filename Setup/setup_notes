@@ -261,7 +261,7 @@ jq sqlitebrowser \
 flameshot nomacs inkscape vlc mpv \
 pandoc poppler-utils wkhtmltopdf img2pdf \
 htop psensor xsensors xfce4-sensors-plugin \
-gparted tree tlp deborphan xdot iotop furiusisomount \
+gparted partitionmanager tree tlp deborphan xdot iotop furiusisomount \
 git-crypt git-extras git-repair \
 xclip copyq \
 kdeconnect \
