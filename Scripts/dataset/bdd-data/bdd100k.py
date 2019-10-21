@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 """
+This script provides some handy funcs to interact with the
+Berkeley DeepDrive dataset.
+
+
+
 DATASET
 =======
 BDD100K : Berkeley DeepDrive video dataset
@@ -126,12 +131,264 @@ of drawing all the labels.
 
 Utils for reading/processing BDD100K dataset
 
+SUMMARY
+-------
+'bdd100k_labels_images_train.json' : 69863 labels for images, list<dict>
+    xtrain[0] : dict
+        name : str
+            name of image file, eg: '0000f77c-6257be58.jpg'
+
+        attributes : dict
+            key attributes of image scene, eg:
+            {'weather': 'clear', 'scene': 'city street', 'timeofday': 'daytime'}
+
+        timestamp : int
+            IGNORE (all 10000, since taken at 10th second of video)
+
+        labels : list<dict>
+            features/labels of image frame,
+            eg (NOTE THE 'traffic light' CATEGORY):
+            [{'category': 'traffic light',
+             'attributes': {'occluded': False,
+              'truncated': False,
+              'trafficLightColor': 'green'},
+             'manualShape': True,
+             'manualAttributes': True,
+             'box2d': {'x1': 1125.902264,
+              'y1': 133.184488,
+              'x2': 1156.978645,
+              'y2': 210.875445},
+             'id': 0},
+            {'category': 'traffic light',
+             'attributes': {'occluded': False,
+              'truncated': False,
+              'trafficLightColor': 'green'},
+             'manualShape': True,
+             'manualAttributes': True,
+             'box2d': {'x1': 1156.978645,
+              'y1': 136.637417,
+              'x2': 1191.50796,
+              'y2': 210.875443},
+             'id': 1},
+            {'category': 'traffic sign',
+             'attributes': {'occluded': False,
+              'truncated': False,
+              'trafficLightColor': 'none'},
+             'manualShape': True,
+             'manualAttributes': True,
+             'box2d': {'x1': 1101.731743,
+              'y1': 211.122087,
+              'x2': 1170.79037,
+              'y2': 233.566141},
+             'id': 2},
+            {'category': 'traffic sign',
+             'attributes': {'occluded': False,
+              'truncated': True,
+              'trafficLightColor': 'none'},
+             'manualShape': True,
+             'manualAttributes': True,
+             'box2d': {'x1': 0, 'y1': 0.246631, 'x2': 100.381647, 'y2': 122.825696},
+             'id': 3},
+            {'category': 'car',
+             'attributes': {'occluded': False,
+              'truncated': False,
+              'trafficLightColor': 'none'},
+             'manualShape': True,
+             'manualAttributes': True,
+             'box2d': {'x1': 45.240919,
+              'y1': 254.530367,
+              'x2': 357.805838,
+              'y2': 487.906215},
+             'id': 4},
+            {'category': 'car',
+             'attributes': {'occluded': False,
+              'truncated': False,
+              'trafficLightColor': 'none'},
+             'manualShape': True,
+             'manualAttributes': True,
+             'box2d': {'x1': 507.82755,
+              'y1': 221.727518,
+              'x2': 908.367588,
+              'y2': 442.715126},
+             'id': 5},
+            {'category': 'traffic sign',
+             'attributes': {'occluded': False,
+              'truncated': True,
+              'trafficLightColor': 'none'},
+             'manualShape': True,
+             'manualAttributes': True,
+             'box2d': {'x1': 0.156955,
+              'y1': 0.809282,
+              'x2': 102.417429,
+              'y2': 133.411856},
+             'id': 6},
+            {'category': 'drivable area',
+             'attributes': {'areaType': 'direct'},
+             'manualShape': True,
+             'manualAttributes': True,
+             'poly2d': [{'vertices': [[1280.195648, 626.372529],
+                [1280.195648, 371.830705],
+                [927.081254, 366.839689],
+                [872.180076, 427.979637],
+                [658.814135, 450.439209],
+                [585.196646, 426.731883],
+                [0, 517.817928],
+                [0, 602.665203],
+                [497.853863, 540.2775],
+                [927.081254, 571.471352],
+                [1280.195648, 626.372529]],
+               'types': 'LLLLLLLLCCC',
+               'closed': True}],
+             'id': 7},
+            {'category': 'lane',
+             'attributes': {'laneDirection': 'parallel',
+              'laneStyle': 'solid',
+              'laneType': 'road curb'},
+             'manualShape': True,
+             'manualAttributes': True,
+             'poly2d': [{'vertices': [[503.674413, 373.137193], [357.797732, 374.672737]],
+               'types': 'LL',
+               'closed': False}],
+             'id': 8},
+            {'category': 'lane',
+             'attributes': {'laneDirection': 'parallel',
+              'laneStyle': 'solid',
+              'laneType': 'road curb'},
+             'manualShape': True,
+             'manualAttributes': True,
+             'poly2d': [{'vertices': [[62.973282, 371.601649], [0, 368.53056]],
+               'types': 'LL',
+               'closed': False}],
+             'id': 9},
+            {'category': 'lane',
+             'attributes': {'laneDirection': 'parallel',
+              'laneStyle': 'solid',
+              'laneType': 'road curb'},
+             'manualShape': True,
+             'manualAttributes': True,
+             'poly2d': [{'vertices': [[1274.517503, 376.208281],
+                [905.986941, 371.601649]],
+               'types': 'LL',
+               'closed': False}],
+             'id': 10}]
+
 """
 import os
 import sys
+import code
 import glob
+import json
+
+import skimage
+import numpy as np
+import matplotlib.pyplot as plt
 
 
+# ========= #
+# CONSTANTS #
+# ========= #
+DATA_PATH = '/home/evan/.Data/BDD100K/bdd100k'
+LABELS_PATH = DATA_PATH + '/labels'
+TRAIN_LABELS_FPATH = LABELS_PATH + '/bdd100k_labels_images_train.json'
+
+# CHERRY-PICK VARS
+# ================
+ATTRIBUTE_WEATHER = 'clear'
+ATTRIBUTE_TIME_OF_DAY = 'daytime'
+LABEL_CATEGORY_TRAFFIC_LIGHT = 'traffic light'
+
+#-----------------------------------------------------------------------------#
+#                                   FILE IO                                   #
+#-----------------------------------------------------------------------------#
+
+
+# READ/WRITE images
+# =================
+def read_image(label, fpath=IMAGE_TRAIN_PATH):
+    """ Read a single rgb image, label.name at <fpath> into numpy array
+
+    Returns
+    -------
+    img_arr : ndarry.uint8; (720, 1280, 3)
+        rgb image, as an array of unsigned shorts [0, 255)
+    """
+    fname = label['name']
+    image_path = fpath + f'/{fname}'
+    img_arr = ski.io.imread(image_path)
+    return img_arr
+
+
+# READ/WRITE labels
+# =================
+def read_labels(fpath=TRAIN_LABELS_FPATH):
+    """ reads json labels file into a list<dict> """
+    with open(fpath) as file:
+        print(f"Loading json file from:\n\t{fpath}")
+        labels = json.load(file)
+        print("Completed load!")
+    return labels
+
+
+def write_labels(labels, fname, wpath=LABELS_PATH):
+    """ writes labels to json file named <fname>.json at <wpath>
+    Params
+    ------
+    labels : list<dict>
+        a list of labels that have same structure as original labels
+
+    fname : str
+        name of json file
+
+    wpath : str
+        path to which json file should be written (default labels dir)
+    """
+    fpath = wpath + f'/{fname}.json'
+    print(f"Writing labels to:\n\t{fpath}")
+    with open(fpath, 'w') as wfile:
+        json.dump(labels, wfile, indent=True) #== indent prettyprints json
+    print(f"Completed write!")
+
+
+#-----------------------------------------------------------------------------#
+#                                   PROCESS                                   #
+#-----------------------------------------------------------------------------#
+
+# First, let's just get the labels with traffic lights
+# Some helpers
+is_daytime       = lambda x: x['attributes']['timeofday'] == ATTRIBUTE_TIME_OF_DAY
+is_clear_weather = lambda x: x['attributes']['weather'] == ATTRIBUTE_WEATHER
+
+def select_category(labels, category=LABEL_CATEGORY_TRAFFIC_LIGHT):
+    """ selects samples from labels that feaure the target category """
+    selected = []
+    for label in labels:
+        if is_daytime(label) and is_clear_weather(label):
+            for feat in label['labels']:
+                if feat['category'] == category:
+                    selected.append(label)
+                    break
+    return selected
+
+
+# Visualize an image
+# ==================
+
+def show_img(img):
+    """ Display a single rgb image, received as (H, W, C) array """
+    skimage.io.imshow(img)
+
+
+
+
+
+
+
+#=============================================================================
+
+
+#######
+# RUN #
+#######
 
 def main(*args, **kwargs):
     pass
