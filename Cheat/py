@@ -10,8 +10,10 @@ from itertools import permutations, combinations, accumulate, reduce
 #-----------------------------------------------------------------------------#
 
 #==== gotchas
-# make an NxM matrix properly
-matrix = [[0]*ncols for _ in range(nrows)]  # BAD_MAT = [[0] * ncols] * nrows # DONT
+# make an NxM matrix properly:
+matrix = [[0]*ncols for _ in range(nrows)]
+
+# BAD_MAT = [[0] * ncols] * nrows # DONT
 
 
 #==== comprehensions
@@ -354,11 +356,23 @@ print(f'|{b:^>12}|') # ---> |^^^^^^^^^baz|
 print(f'{num:03}')   # ---> 007
 print(f'{11:03}')    # ---> 011
 
+####--- NEW, PY 3.8.0 f-string `=` feature:
+# f"{expr=}" prints 'expr' + '=' + <evaluation of expr>, eg:
+A = [1,2,3,4]
+my_decimal = Decimal('3.3')
+print(f"{A = }")   # ---> A = [1, 2, 3, 4]
+print(f"A = {A}")  # ---> A = [1, 2, 3, 4]
+print(f"{my_decimal = }")            # ---> my_decimal = Decimal('3.3')
+print(f"my_decimal = {my_decimal}")  # ---> my_decimal = 3.3
+
+
+
 # str methods
 # -----------
 #==== Padding and formatting
 # case
 'OKAY'.lower()  # 'okay'
+>>> fea
 'quiet'.upper() # 'QUIET'
 'chainer'.capitalize() # 'Chainer'
 'Hello friend!'.title() # 'Hello Friend!'
