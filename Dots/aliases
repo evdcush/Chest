@@ -9,42 +9,43 @@
 #=============================================================================#
 # All aliases that use coreutils stuff is in this section
 
-# File|Dir stuff
-# ==============
+# Dir stuff
+# =========
 # NB: oh-my-zsh defines useful aliases '..'|'...'|'....'
-alias md='mkdir -p'
-alias cdp='cd -P'  # cd to physical path rather than symlinked
+alias md='mkdir -p'   # mkdir all non-existing dirs in path
+alias cdln='cd -P'    # cd to physical path rather than symlinked
 
-#---- list stuff
+# List stuff
+# ==========
+# ---- OVERVIEW OF ls OPTS ----
+# FORMAT: across -x, commas -m, horizontal -x, long -l, single-column -1, verbose -l, vertical -C
+# SORTS : none (-U), size (-S), time (-t), version (-v), extension (-X)
+# g:no-owner | G:no-group (same as o?) | 1:list one file per line
+# X:sort alpha by extension (ALSO PUTS DIRS FIRST?, in alpha order)
+# h:human-readable (eg, file size 6378230 -> 6.1M)
+# p:indicator-style=slash (append / indicator to dirs)
+# F:indicate entries by file-type (eg, sym: foo.py@, dir: Documents/)
+
+#=== ALIASES
+#alias l='ls -X --group-directories-first'  # puts symlinked dirs after dirs (not in alpha with)
+alias l='ls -Xp'  # alpha-sorts symlinked dirs with phys dirs
+alias ll='ls -gGXhp'
+alias ldot='ls -dF --group-directories-first .*' # list dots only
+alias lk='ls -1SshX --file-type --group-directories-first' # list contents, sorted by size, grouped by ext
+alias lsz='ls -1shSr' # list files, 1-line each, show size in human-readable, sorted on size, reverse (biggest bottom)
+alias lzf='ls | fzf' # list w/ fuzzy search
+
 alias h='history'
 alias hf='history | fzf'
-alias ldot='ls -d --group-directories-first .*'
-alias lk='ls -1FSshX --file-type --group-directories-first'
-alias lm='ls -1F --file-type --group-directories-first'
-alias l='ls --group-directories-first -X'
-alias lsz='ls -lhSr'
-alias duh='du -h --max-depth=1 | sort -h;'
-alias lzf='ls | fzf'
 alias lsd='sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL'
+alias duh='du -h --max-depth=1 | sort -h;'
 
 #---- misc
-alias plz='sudo $(fc -ln -1)' # mmm inconsistent
+#alias plz='sudo $(fc -ln -1)' # mmm inconsistent
 alias myip='inxi -i'
 alias tjst='TZ="Asia/Tokyo" date'
 alias tpst='TZ="America/Los_Angeles" date'
 alias tedt='TZ="America/New_York" date'
-
-
-
-
-# copy previous command (is this really the only sol? stupidly verbose)
-# if you dont translate, there is newline?
-# if you dont cut, there is CMD number
-# if you dont selection clipboard, xclip copies to who the f knows
-alias cph='echo $(fc -l -1) \
-| cut -d" " -f2- \
-| tr -d "\n" \
-| xclip -selection clipboard'
 
 
 # SYMLINKS
@@ -271,8 +272,8 @@ alias nb="jupyter notebook"
 #---- editors
 alias st="subl"    # open file with sublime
 alias stt="subl ." # open  dir with sublime
-alias subw='subl --new-window --wait'
-alias ssubw='sudo subl -new-window --wait'
+alias subw='subl --new-window --wait'      # open file and wait on edits
+alias ssubw='sudo subl -new-window --wait' # w/ sudo; eg `ssubw /etc/profile`
 
 #---- cookiecutter project
 alias mk_pyproj="cookiecutter \
@@ -308,6 +309,17 @@ alias clip="xclip -selection clipboard"
 alias clipo="xclip -o -sel clip"
 alias delclip="xclip -o | xargs sudo rm -rf"
 alias cpget="xclip -o -sel clip | xargs wget"
+
+# copy previous command (is this really the only sol? stupidly verbose)
+# if you dont translate, there is newline?
+# if you dont cut, there is CMD number
+# if you dont selection clipboard, xclip copies to who the f knows
+alias cph='echo $(fc -l -1) \
+| cut -d" " -f2- \
+| tr -d "\n" \
+| xclip -selection clipboard'
+
+
 
 #---- joplin
 alias install_joplin="wget -O - \
