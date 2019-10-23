@@ -372,7 +372,6 @@ print(f"my_decimal = {my_decimal}")  # ---> my_decimal = 3.3
 #==== Padding and formatting
 # case
 'OKAY'.lower()  # 'okay'
->>> fea
 'quiet'.upper() # 'QUIET'
 'chainer'.capitalize() # 'Chainer'
 'Hello friend!'.title() # 'Hello Friend!'
