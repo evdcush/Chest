@@ -705,6 +705,13 @@ sed -e 's/find/replace/' -e 's/find/replace/' filename
 # Replace separator / by any other character not used in the find or replace patterns, e.g., #:
 sed 's#find#replace#' filename
 
+#================#
+###  EXAMPLES  ###
+#================#
+
+# Replace all occurences of diff usr's abspath in a file in-place (-i flag)
+sed -i 's#/scratch/fs2/DTLD_final#/home/evan/.Data/DriveU#' Berlin_all.yml
+
 
 #-----------------------------------------------------------------------------#
 #                                    tail                                     #
