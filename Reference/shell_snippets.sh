@@ -711,7 +711,7 @@ sed 's#find#replace#' filename
 
 # Replace all occurences of diff usr's abspath in a file in-place (-i flag)
 sed -i 's#/scratch/fs2/DTLD_final#/home/evan/.Data/DriveU#' Berlin_all.yml
-
+sed -i 's#/scratch/fs2/DTLD_final#/home/evan/.Data/DriveU#' *.yml  # do above for ALL files
 
 #-----------------------------------------------------------------------------#
 #                                    tail                                     #
