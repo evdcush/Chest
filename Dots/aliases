@@ -7,13 +7,19 @@
 #                  ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝                   #
 #                                                                             #
 #=============================================================================#
-# All aliases that use coreutils stuff is in this section
+# All aliases that use coreutils and stuff is in this section
 
 # Dir stuff
 # =========
 # NB: oh-my-zsh defines useful aliases '..'|'...'|'....'
 alias md='mkdir -p'   # mkdir all non-existing dirs in path
 alias cdln='cd -P'    # cd to physical path rather than symlinked
+
+
+# Permissions
+# ===========
+alias chwn="sudo chown -R $USER:$USER"  # maybe make a func that assumes most recent /media drive?
+
 
 # List stuff
 # ==========
@@ -47,12 +53,6 @@ alias tjst='TZ="Asia/Tokyo" date'
 alias tpst='TZ="America/Los_Angeles" date'
 alias tedt='TZ="America/New_York" date'
 
-
-# SYMLINKS
-# ========
-#---- stow
-alias stowpro='stow --target=/home/evan/Projects'
-alias stowhome='stow --target=/home/evan'
 
 #=============================================================================#
 #                                                                             #
@@ -324,6 +324,14 @@ alias cph='echo $(fc -l -1) \
 #---- joplin
 alias install_joplin="wget -O - \
 https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_install_and_update.sh | bash"
+
+
+
+# SYMLINKS
+# ========
+#---- stow
+alias stowpro='stow --target=/home/evan/Projects'
+alias stowhome='stow --target=/home/evan'
 
 # Misc software
 # =============
