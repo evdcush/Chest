@@ -39,12 +39,12 @@ path_prepend "$PATH_PYENV"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-#---- CUDA, cuDNN
-if [ "$LOCAL_HNAME" != "$T430_HNAME" ] ;then
-    # You are on GPU machine, path exists
-    path_append "$PATH_CUDA/bin"
-    export LD_LIBRARY_PATH="$PATH_CUDA/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
-fi
+##---- CUDA, cuDNN
+#if [ "$LOCAL_HNAME" != "$T430_HNAME" ] ;then
+#    # You are on GPU machine, path exists
+#    path_append "$PATH_CUDA/bin"
+#    export LD_LIBRARY_PATH="$PATH_CUDA/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
+#fi
 
 #---- rbenv
 #path_append "$PATH_RBENV"
@@ -113,6 +113,7 @@ plugins=(
     colored-man-pages
     zshmarks
     zsh-syntax-highlighting
+    zsh-z
     #pip
 )
 
@@ -141,17 +142,14 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
-# Z jump
-# ======
-. "$HOME/.Apps/utils/Z_jump.sh"
-
 # ROS
 # ===
-source /opt/ros/melodic/setup.zsh
+#source /opt/ros/melodic/setup.zsh
 
 # Source aliases and funcs
 # ========================
 source $DIR_DOTS/aliases
+source $DIR_DOTS/work_aliases
 source $DIR_DOTS/functions
 eval $(thefuck --alias)
 
