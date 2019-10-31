@@ -149,6 +149,13 @@ printer-driver-brlaser ffmpeg exfat-utils flac lame x264 x265 libglfw3 libjpeg-d
 swig python3-opengl libboost-all-dev libosmesa6-dev patchelf xvfb
 
 
+# Aptitude
+# ========
+# when you can't install stuff because of bizarre dependency issues
+#  like for libboost-dev-all:
+sudo apt install -y aptitude
+sudo aptitude install libboost-dev-all
+
 
 #=============================================================================#
 #                                                                             #
@@ -169,6 +176,10 @@ swig python3-opengl libboost-all-dev libosmesa6-dev patchelf xvfb
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)";
 git clone --depth=1 https://github.com/jocelynmallon/zshmarks.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zshmarks
 git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone --depth=1 https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
+
+# fzf
+# ===
 
 
 # Pyenv
@@ -334,7 +345,8 @@ curl https://getcroc.schollz.com | bash
 
 # fzf
 # ===
-git clone --depth=1 https://github.com/junegunn/fzf.git ~/.Apps/utils/fzf
+git clone --depth=1 https://github.com/junegunn/fzf.git ~/.Apps/Utils/fzf
+./~/.Apps/Utils/fzf/install
 
 # Z jump
 # ======
