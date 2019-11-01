@@ -165,8 +165,7 @@ cdl() { cd "$1" && ls -1FSshX --file-type }
 # Symlink
 # =======
 # symlink something from curdir to somewhere rooted from home
-lnph() { ln -sf "$PWD/$1" "$HOME/$2" }
-lnp() { ln -sf "$PWD/$1" "$2" }
+lnc() { ln -sf "$PWD" "$HOME/$1" }     # symlink curdir
 
 
 # symlink something to ~/.local/bin
