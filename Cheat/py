@@ -3,6 +3,7 @@ import sys
 import code
 import math
 import random
+import IPython
 from itertools import permutations, combinations, accumulate, reduce
 
 #-----------------------------------------------------------------------------#
@@ -28,6 +29,11 @@ copy.deepcopy(x) # deep copy: what you think of when you think copy, FULL recurs
 
 #==== subprocess
 subprocess.run(f'wget {url}', cwd=dst, shell=True) # cwd will exec this command in dst
+
+#==== interact with code
+# TWO options, code and IPython
+code.interact(local=dict(globals(), **locals()))
+IPython.embed()
 
 
 """

@@ -40,11 +40,7 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 ##---- CUDA, cuDNN
-if [ "$LOCAL_HNAME" != "$T430_HNAME" ] ;then
-    # You are on GPU machine, path exists
-    path_append "$PATH_CUDA/bin"
-    export LD_LIBRARY_PATH="$PATH_CUDA/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
-fi
+source $HOME/.Dots/gpu_dot
 
 #---- rbenv
 #path_append "$PATH_RBENV"
@@ -113,8 +109,7 @@ plugins=(
     colored-man-pages
     zshmarks
     zsh-syntax-highlighting
-    zsh-z
-    #pip
+    z
 )
 
 # Source zsh
@@ -158,11 +153,11 @@ eval $(thefuck --alias)
 
 # Stuff automatically added by other software:
 
-#export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-
 export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 #zprof
 
 
 #export UE4_ROOT='/home/evan/.Dev/UnrealEngine'
+
+

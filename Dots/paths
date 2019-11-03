@@ -1,15 +1,14 @@
 
 # Base PATH
 # =========
-#---- default path, minus the "games" crap
-PATH_DEFAULT="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+#---- default path
+PATH_DEFAULT="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 PATH_USER_BIN="$HOME/.local/bin"
 
 # env/library Paths
 # =================
 PATH_PYENV="$HOME/.pyenv/bin"
 #PATH_RBENV="$HOME/.rbenv/bin" # unused!
-PATH_CUDA="/usr/local/cuda"
 SCIKIT_LEARN_DATA="$HOME/.Data/scikit_learn_data"
 
 # Directories
@@ -41,6 +40,3 @@ GCKEY_CHEST="$DIR_DOTS/Keys/chest_key"
 
 # Misc
 # ====
-#---- hostname local; used for CUDA and proxy sourcing
-T430_HNAME="T4"
-LOCAL_HNAME=$(hostname)
