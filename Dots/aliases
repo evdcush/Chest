@@ -21,6 +21,8 @@ alias cdln='cd -P'    # cd to physical path rather than symlinked
 alias chwn="sudo chown -R $USER:$USER"  # maybe make a func that assumes most recent /media drive?
 
 
+
+
 # List stuff
 # ==========
 # ---- OVERVIEW OF ls OPTS ----
@@ -42,7 +44,7 @@ alias lsz='ls -1shSr' # list files, 1-line each, show size in human-readable, so
 alias lzf='ls | fzf' # list w/ fuzzy search
 
 alias h='history'
-alias hf='history | fzf'
+alias hzf='history | fzf'
 alias lsd='sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL'
 alias duh='du -h --max-depth=1 | sort -h;'
 
