@@ -650,7 +650,16 @@ gazebo
 # =========================
 # apt-daily
 # ---------
-sudo systemctl edit apt-daily.timer
+#sudo systemctl edit apt-daily.timer  #=== this is only temp fix
+
+# First, backup
+cp /lib/systemd/system/apt-daily.timer ~/.BKPS
+cp /lib/systemd/system/apt-daily-upgrade.timer ~/.BKPS
+
+# Now edit the service files
+sudo vi /lib/systemd/system/apt-daily.service
+sudo vi /lib/systemd/system/apt-daily-upgrade.service
+
 # Paste into edit:
 # apt-daily timer configuration override
 [Timer]
@@ -662,6 +671,11 @@ RandomizedDelaySec=30min
 # Network manager
 # ---------------
 sudo systemctl disable NetworkManager-wait-online.service
+
+# Disable message of the day shit (motd-news.service)
+sudo vi /etc/default/motd-news
+#---> change `ENABLED=1` to `ENABLED=0`
+
 
 # Disable CDROM Eject Buttom
 # ==========================
@@ -715,6 +729,22 @@ guake -n '%d%f ' -r "%f " --show -e "cd '%f' && ls -1FSshX --file-type"
 # previous: %d %b, %H:%M
 
 
+# UPDATE ALTERNATIVES
+# ===================
+# this is cleanest (?) way to have side-by-side version installations
+
+## Python
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 20
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.6 60
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.7 70
+
+## CUDA
+sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-10.1 80
+sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-10.2 70
+
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 20
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 20
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 20
 
 
 
