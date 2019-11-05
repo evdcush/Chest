@@ -260,6 +260,9 @@ media:
 - romkan  # romaji/kana converter
 - myougiden  # like dictd for jp
 
+images:
+- imageio
+- pypotrace  # potrace python bindings (bitmap -> vector), sudo apt install -y libagg-dev libpotrace-dev
 
 sphinx:
 - sphinx
