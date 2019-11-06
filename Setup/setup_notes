@@ -434,6 +434,22 @@ curl https://api.github.com/repos/willsALMANJ/Zutilo/releases/latest \
 # zot4st: https://gitlab.com/egh/zot4rst
 # cit2c: https://github.com/takluyver/cite2c # rst citations
 
+
+#-----------------------------------------------------------------------------#
+#                                  TPU stuff                                  #
+#-----------------------------------------------------------------------------#
+
+# Add source & key
+echo "deb https://packages.cloud.google.com/apt coral-edgetpu-stable main" | sudo tee /etc/apt/sources.list.d/coral-edgetpu.list
+
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+
+# Install
+sudo apt update
+sudo apt install -y libedgetpu1-std libedgetpu1-max
+
+
+
 #=============================================================================#
 #                       ,,                                                    #
 #                      *MM                                                    #
