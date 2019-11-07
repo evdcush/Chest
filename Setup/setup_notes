@@ -669,8 +669,9 @@ gazebo
 #sudo systemctl edit apt-daily.timer  #=== this is only temp fix
 
 # First, backup
-cp /lib/systemd/system/apt-daily.timer ~/.BKPS
-cp /lib/systemd/system/apt-daily-upgrade.timer ~/.BKPS
+mkdir -p ~/.Dots/BKPS
+cp /lib/systemd/system/apt-daily.timer ~/.Dots/BKPS
+cp /lib/systemd/system/apt-daily-upgrade.timer ~/.Dots/BKPS
 
 # Now edit the service files
 sudo vi /lib/systemd/system/apt-daily.service
