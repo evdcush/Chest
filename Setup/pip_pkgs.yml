@@ -58,6 +58,12 @@ GUI:
 - pyweaver      # visual code editor a la simulink? Kinda cool
 - cocos2d       # actually, game dev frameowrk
 
+
+# for anything color, css, theming, appearance related
+colors:
+- pybase16-builder  # a base16 builder
+
+
 vision:
 - opencv-python
 - scikit-video
