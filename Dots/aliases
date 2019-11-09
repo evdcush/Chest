@@ -306,6 +306,9 @@ alias s="bookmark"
 alias d="deletemark"
 alias p="showmarks"
 
+#---- tree
+alias treed='tree -d'   # only show dirs
+
 #---- Copy
 alias clip="xclip -selection clipboard"
 alias clipo="xclip -o -sel clip"
