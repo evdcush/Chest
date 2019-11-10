@@ -162,6 +162,9 @@ gdiff () { diff -u $@ | colordiff | less -R; }
 mcd() { mkdir -p "$1" && cd "$1" }
 cdl() { cd "$1" && ls -1FSshX --file-type }
 
+# save console stdout and stderr to file (and display in console)
+function shsv() { $@ 2>&1 | tee output.txt }
+
 # Symlink
 # =======
 # symlink something from curdir to somewhere rooted from home
