@@ -42,6 +42,10 @@ eval "$(pyenv virtualenv-init -)"
 ##---- CUDA, cuDNN
 source $HOME/.Dots/gpu_dot
 
+#---- MKL
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}/usr/local/lib"
+
 #---- rbenv
 #path_append "$PATH_RBENV"
 #eval "$(rbenv init -)"
