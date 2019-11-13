@@ -285,6 +285,14 @@ Remote Server
 Python
 ------
 
+Packages
+========
+
+**install package from egg file**::
+
+    easy_install some_egg_file.egg
+
+
 ipython
 =======
 
