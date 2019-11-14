@@ -180,6 +180,41 @@ With ``ClientAliveCountMax``, the server will send alive messages to the client 
 ------
 
 
+Time & Date Stuff
+=================
+Your clock is incorrect, and you are trying to fix it or synchronize.
+
+Typically, you just need to install ntp: `sudo apt install ntp`.
+
+But chances are, you don't have such a simple case. You'll also see people
+recommending to `sudo ntpdate ntp.ubuntu.com`.
+
+What they should actually say is::
+
+    sudo service ntp stop  # since "socket" is in use
+    sudo ntpdate ntp.ubuntu.com
+    sudo service ntp start
+
+
+But, if you're on a suffocating company proxy that blocks everyhting,
+none of the above will work, since the `123` port will be blocked.
+
+So, just manual fix::
+
+    sudo date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"
+
+
+
+**Reference**:
+
+- https://askubuntu.com/questions/429306/ntpdate-no-server-suitable-for-synchronization-found
+- https://superuser.com/questions/639202/updating-time-ntpdate3108-the-ntp-socket-is-in-use-exiting
+- https://askubuntu.com/questions/201133/can-i-use-ntp-service-through-a-proxy
+
+
+------
+
+
 Xorg
 ====
 
