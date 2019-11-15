@@ -1,7 +1,7 @@
 
 # -*- coding: utf-8 -*-
 """
-    pygments.styles.paraiso_dark
+    pygments.styles.piodine
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     Paraíso (Dark) by Jan T. Sott
