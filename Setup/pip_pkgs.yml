@@ -206,6 +206,8 @@ scrape:
 - favicon    # library to find favicon from a url
 - feedparser #$ universal feed parser
 - edx-dl     # script that downloads videos and lectures from open edx-based sites ####################################3
+- coursera-dl  # script to download content from open coursera-based site
+
 
 
 filesystem-sh:
