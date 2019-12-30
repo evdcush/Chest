@@ -93,6 +93,9 @@ Robotics:
 - sphinx-ros     # sphinx ext adds rst directives that can be used to document ROS pkgs
 
 
+
+
+
 Recommenders:
 - surprise   # recommender scikit
 
@@ -196,12 +199,13 @@ dev:
 - bullet  # cli making tool
 
 
-net:
-- html5lib  # dep
-- bs4       # scrape
-- you-get   # scrape for dummies
-- favicon   # library to find favicon from a url
-- feedparser #$ universal feed parser; this shit's MONEY
+scrape:
+- html5lib   # dep
+- bs4        # scrape
+- you-get    # scrape for dummies
+- favicon    # library to find favicon from a url
+- feedparser #$ universal feed parser
+- edx-dl     # script that downloads videos and lectures from open edx-based sites ####################################3
 
 
 filesystem-sh:
