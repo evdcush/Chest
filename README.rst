@@ -17,7 +17,7 @@ A place I keep stuff.
     Assets and templates.
 
 :Scripts_:
-    Cloned and orphaned scripts. Some scripts are for reference. Good ones usually evolve into a separate repo or another VC'd scripts repo. `gethub.py <Scripts/gethub.py>`_ is the only script being used atm.
+    Cloned and orphaned scripts. Some scripts are for reference. Good ones usually evolve into a separate repo or another VC'd scripts repo.
 
 :Setup_:
     Contains my notes on my post-install process and a log of python packages.
@@ -26,6 +26,10 @@ A place I keep stuff.
 
 **License**:
 Except where noted, original written content of the repo is licensed under `CC-BY-NC-ND-4.0`, while any software/code is licensed as `LGPL-3.0`. See LICENSE_.
+
+
+Any logos, icons, or other assets in resources are not my property, and are only used as icons in custom ``*.desktop`` files or other personal use.
+
 
 .. Substitutions:
 
