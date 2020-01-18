@@ -91,14 +91,14 @@ to an entirely different size than normal pages.
 To crop with all pages at consistent page size: https://tex.stackexchange.com/questions/166758/how-do-i-make-pdfcrop-output-all-pages-of-the-same-size
 
 1. ``pdfcrop --verbose myfile.pdf cropfile.pdf > crop.log``
-2. Open ``crop.log``, get all  lines with ``%%HiResBoundingBox:``, and strip those lines so its just the space separated nums on the lines
-3. open that log in python, and get bbox as follows
+2. Open ``crop.log``, select only lines with ``%%HiResBoundingBox:``, and strip the %%HiResBoundingBox from those lines so its just the space separated nums on the lines
+4. open that log in python, and get bbox as follows
 
 .. code-block:: python
 
     import pyperclip
     with open('crop.log') as log:
-        rlines = [line.split('\n') for line in log.read.strip().split('\n')]
+        rlines = [line.split(' ') for line in log.read().strip().split('\n')]
 
         a,b,c,d = 0,0,0,0
         for w,x,y,z in rlines:
@@ -108,7 +108,7 @@ To crop with all pages at consistent page size: https://tex.stackexchange.com/qu
             d = max(d, eval(z))
         pyperclip.copy(f'pdfcrop --bbox "{a} {b} {c} {d}"')
 
-4. ``pdfcrop --box "<the nums>" myfile.pdf cropfile.pdf``
+4. ``pdfcrop --bbox "<the nums>" myfile.pdf cropfile.pdf``
 
 
 remove a watermark
