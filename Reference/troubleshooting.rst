@@ -215,8 +215,8 @@ So, just manual fix::
 ------
 
 
-Xorg
-====
+Xorg & Display issues
+=====================
 
 **How to restart xorg?**
 
@@ -226,3 +226,10 @@ Xorg
 
     # find out which display manager your ubuntu has (not actually relevant)
     cat /etc/X11/default-display-manager
+
+
+**Display not loaded on GPU? Resolution is fixed to very low setting?**
+
+.. code-block:: bash
+
+    sudo /etc/init.d/lightdm restart
