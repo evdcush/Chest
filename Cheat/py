@@ -69,6 +69,14 @@ class AttrDict(dict):
     __setattr__ = dict.__setitem__
     __delattr__ = dict.__delitem__
 
+#==== collection/structure
+def count(iterable):
+    """ count frequency of elements in an iterable (w/o collections) """
+    counts = dict()
+    for x in iterable:
+        counts[x] = 1 + counts.get(x, 0)  ## get returns 0 if x not in counts
+    return counts
+
 
 #==== strip punctuation from string
 def translate_strip(s):
@@ -196,6 +204,12 @@ bisect.insort(L, 7) # ----> [-2, 0, 2, 4, 5, 7, 8, 11]
 #-----------------------------------------------------------------------------#
 #                                  OS  SH                                     #
 #-----------------------------------------------------------------------------#
+
+#==== cool os lib stuff
+term_size = os.get_terminal_size()
+print(term_size.columns)  # 173
+print(term_size.lines)    # 21
+
 
 #==== OS / GLOB / Files & Dirs
 
