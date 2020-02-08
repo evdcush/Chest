@@ -685,6 +685,12 @@ OnUnitActiveSec=1d
 AccuracySec=1h
 RandomizedDelaySec=30min
 
+# Session & startup
+# =================
+
+## Fix guake transparency loss issue, application autostart:
+bash -c 'sleep 1s; /usr/bin/guake'
+
 # Network manager
 # ---------------
 sudo systemctl disable NetworkManager-wait-online.service

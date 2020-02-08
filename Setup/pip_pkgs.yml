@@ -90,6 +90,7 @@ Robotics:
 - pyserial  # access to serial port
 - pythonrobotics # !!NOT PIP!! git clone https://github.com/AtsushiSakai/PythonRobotics.git
 - pybullet  # py interface to bullet phys sdk
+  - pysdl2  # dep for pybullet
 - sphinx-ros     # sphinx ext adds rst directives that can be used to document ROS pkgs
 
 
