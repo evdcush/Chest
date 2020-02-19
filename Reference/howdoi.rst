@@ -161,6 +161,8 @@ pdfjam can be used for this. You may need to try it a few times with different a
     # join multiple different images, in landscape
     pdfjam foo.png bar.png baz.png --landscape -o foobar.pdf
 
+    # join multiple images, named sequentially (eg: foo_00.png, foo_01.png ...)
+    pdfjam foo_*.png -o foo.pdf
 
 ----
 
