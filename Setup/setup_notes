@@ -91,21 +91,13 @@ sudo apt remove --purge "*firefox*" "transmission-*" "*pidgin*" "*parole*" "*xfb
 #                  Package manager setup and helpful aliases                  #
 #=============================================================================#
 
-# What's important is getting the faster mirrors for apt (via apt-select)
-# apt-fast isn't actually that much faster--if at all; it's just nice having aria
-
-# Apt fast
-# ========
-sudo add-apt-repository ppa:apt-fast/stable
-sudo apt update
-sudo apt install apt-fast
-
 # Apt mirrors
 # ===========
+##: Official mirrors are slow as heck
 sudo apt update && sudo apt install -y python-pip
 sudo pip install apt-select
-apt-select -c -t 15
-sudo mv ~/sources.list /etc/apt
+apt-select -c -t 15 # -C JP for jap
+sudo mv sources.list /etc/apt
 
 # copy mirrors to apt-fast
 sed -i "$ a MIRRORS=( 'http://mirror.picosecond.org/ubuntu/, http://mirror.enzu.com/ubuntu/, http://la-mirrors.evowise.com/ubuntu/, http://mirrors.ocf.berkeley.edu/ubuntu/, http://mirror.math.ucdavis.edu/ubuntu/' )" /etc/apt-fast.conf
