@@ -145,8 +145,11 @@ Check out: https://askubuntu.com/questions/50170/how-to-convert-pdf-to-image
     pdftoppm input.pdf outputname -png -f pgnum -singlefile
 
     # The default resolution, 150 dpi, is kind of shit, so
-    # you can try increasing resolution to RES dpi like:
+    #   you can try increasing resolution to RES dpi like:
     pdftoppm input.pdf outputname -png -rx RES -ry RES
+
+
+
 
 ----
 
@@ -371,6 +374,11 @@ I had a boot time < 4s on 16.04. With 18.04, boot-times are consistently around 
     OnUnitActiveSec=1d
     AccuracySec=1h
     RandomizedDelaySec=30min
+
+
+``apt-daily-upgrade.service`` is another common problem. Just disable it::
+
+    sudo systemctl disable apt-daily-upgrade.timer
 
 4. ``NetworkManager-wait-online.service`` is another  usual suspect. You can just disable it::
 

@@ -44,14 +44,17 @@
 #   - you can install what you need later, and flash 2019 lol
 
 
-# Remove useless shit from default PATH
-#--------------------------------------
+# Remove unused stuff from path
+#------------------------------
 #===== /usr/games
-sudo vi /etc/environment
+##: ACTUALLY, doesn't matter.
+##:   Some stuff, TORCS, sc2, etc. will not be on path
+
+#sudo vi /etc/environment
 # delete '/usr/games:/usr/local/games' near the end
-px="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-py="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-sudo echo 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"' > /etc/environment
+#px="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+#py="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+#sudo echo 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"' > /etc/environment
 
 # Smarter path add funcs
 # ======================
