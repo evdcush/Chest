@@ -99,11 +99,7 @@ sudo pip install apt-select
 apt-select -c -t 15 # -C JP for jap
 sudo mv sources.list /etc/apt
 
-# copy mirrors to apt-fast
-sed -i "$ a MIRRORS=( 'http://mirror.picosecond.org/ubuntu/, http://mirror.enzu.com/ubuntu/, http://la-mirrors.evowise.com/ubuntu/, http://mirrors.ocf.berkeley.edu/ubuntu/, http://mirror.math.ucdavis.edu/ubuntu/' )" /etc/apt-fast.conf
-
-#==== APT-REPO
-addrep() { sudo add-apt-repository "ppa:$1" -y; }
+# addrep() { sudo add-apt-repository "ppa:$1" -y; }  # KEPT for reference
 
 
 #-----------------------------------------------------------------------------#
