@@ -1,4 +1,5 @@
 # Install pdfjam (part of the texlive pkg)
+# --------------
 sudo apt intall --no-install-recommends --no-install-suggests texlive-extra-utils
 
 # Crop PDF margins
@@ -20,4 +21,14 @@ pdfjoin file1 file2 2- file3 '3,7-9,14-' -o joined.pdf
 
 # what actually worked (pdfjoin no like no spec page for file1)
 pdfjoin pnet2.pdf 1 pnet2_full.pdf 2- -o pointnet2.pdf
+
+
+
+# Remove a watermark
+# ------------------
+#=== cut watermark text from pdf code
+sed -e "s/watermarktextstring/ /g" <input.pdf >unwatermarked.pdf
+
+#=== fix modified pdf
+pdftk unwatermarked.pdf output fixed.pdf && mv fixed.pdf unwatermarked.pdf
 
