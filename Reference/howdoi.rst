@@ -153,6 +153,15 @@ join png images into pdf
 ------------------------
 pdfjam can be used for this. You may need to try it a few times with different alignment options, as images are not always aligned efficiently.
 
+.. code-block:: bash
+
+    # join multiple different images to single pdf named 'foobar'
+    pdfjam foo.png bar.png baz.png -o foobar.pdf
+
+    # join multiple different images, in landscape
+    pdfjam foo.png bar.png baz.png --landscape -o foobar.pdf
+
+
 ----
 
 
