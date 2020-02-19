@@ -3,7 +3,7 @@ sudo apt intall --no-install-recommends --no-install-suggests texlive-extra-util
 
 # Crop PDF margins
 pip install -U pdfCropMargins
-pdf-crop-margins -s -u myfile.pdf     # s : samePageSize, u : uniform
+pdf-crop-margins -s -u myfile.pdf
 
 
 # Extract PDF pages
@@ -14,5 +14,7 @@ pdfjam original.pdf 3-8,15-29,63-29 -o out.pdf
 
 # Join PDF pages
 pdfjoin file1 file2 2- file3 '3,7-9,14-' -o joined.pdf
-    # what actually worked, pdfjoin no like no spec page for file1
+
+# what actually worked (pdfjoin no like no spec page for file1)
 pdfjoin pnet2.pdf 1 pnet2_full.pdf 2- -o pointnet2.pdf
+
