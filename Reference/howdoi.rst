@@ -149,7 +149,9 @@ Check out: https://askubuntu.com/questions/50170/how-to-convert-pdf-to-image
     pdftoppm input.pdf outputname -png -rx RES -ry RES
 
 
-
+join png images into pdf
+------------------------
+pdfjam can be used for this. You may need to try it a few times with different alignment options, as images are not always aligned efficiently.
 
 ----
 
