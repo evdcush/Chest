@@ -21,8 +21,6 @@ alias cdln='cd -P'    # cd to physical path rather than symlinked
 alias chwn="sudo chown -R $USER:$USER"  # maybe make a func that assumes most recent /media drive?
 
 
-
-
 # List stuff
 # ==========
 # ---- OVERVIEW OF ls OPTS ----
@@ -82,7 +80,7 @@ function RDME() {
 
 #==== Apt cleanup
 # Clear apt lock
-alias secure_lock="sudo rm /var/lib/apt/lists/lock; \
+alias getlock="sudo rm /var/lib/apt/lists/lock; \
 sudo rm /var/cache/apt/archives/lock; \
 sudo rm /var/lib/dpkg/lock;
 "
@@ -176,6 +174,15 @@ function pipi(){
 }
 piu="pip install -U"
 
+# Typical stack
+# =============
+alias newpy="$piu pip setuptools wheel; \
+$piu cython numpy scipy sklearn matplotlib sympy ipython jupyter notebook; \
+$piu opencv-python imageio scikit-image scikit-video open3d-python pandas; \
+$piu pybullet numba 'gym[atari, box2d, classic_control]' pypi-cli thefuck; \
+$piu docutils restview grip pyperclip pdfCropMargins unidecode termdown python-slugify; \
+$piu feedparser requests lxml urllib3 bs4;"
+
 # Software/apps
 # =============
 #---- software that does not require extra steps (beyond pip install)
@@ -192,39 +199,13 @@ jupyter nbextensions_configurator enable --user"
 pipnbpdf="nb_pdf_template; python -m nb_pdf_template.install"
 pipswi="$piu $pipmyougiden; $piu $pipnbextensions; $piu $pipnbpdf"
 
-# Python library/modules
-# ======================
-pre_pkg="$piu pip setuptools wheel"
-
-min_pkgs="numpy scipy sklearn matplotlib chainer cython sympy \
-ipython jupyter restview gitup jrnl pyperclip pyqt5"
-
-vis_pkgs="opencv-python scikit-video scikit-image imageio \
-open3d-python glumpy pypng pyopengl chainercv"
-
-std_pkgs="$min_pkgs pandas chainerrl 'gym[atari, box2d, classic_control]' \
-pygame pybullet pymunk \
-kaggle pydataset keras primesieve numba \
-docutils sphinx sphinx-rtd-theme sphinxcontrib-websupport sphinx-gallery numpydoc pypandoc \
-ruamel.yaml python-slugify unidecode pybtex scikit-image imageio jax jaxlib \
-fire pypi-cli cookiecutter faker johnnydep black \
-feedparser requests lxml urllib3 bs4 github3.py grip"
 
 # Snowflakes
 # ----------
-ptorch='https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp37-cp37m-linux_x86_64.whl'
-snowflake_pkgs="$ptorch"
+alias pipipyt="$piu torch==1.4.0+cpu torchvision==0.5.0+cpu -f https://download.pytorch.org/whl/torch_stable.html"
 
 #fussy_pkgs="surprise gitsuggest"
-
-alias pipimin="$pre_pkg; $piu $min_pkgs;"
-alias pipistd="$pre_pkg; $piu $min_pkgs; $piu $std_pkgs;" # some pkgs complain?
-alias pipisoft="$pre_pkg; $pipsw;"
-alias pipiswi="$pre_pkg; $pipswi;"
-alias pipiall="$pre_pkg; $piu $std_pkgs; $pipsw; $pipswi;"
-
-
-# rinohtype currently only works py < 3.7
+#rinohtype currently only works py < 3.7
 
 
 # Spec-use pkgs
