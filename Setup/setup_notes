@@ -442,6 +442,29 @@ sudo apt update
 sudo apt install -y libedgetpu1-std libedgetpu1-max
 
 
+#-----------------------------------------------------------------------------#
+#                                  Docker                                     #
+#-----------------------------------------------------------------------------#
+
+# Uninstall previous (if already installed)
+sudo apt remove --purge docker docker-engine docker.io containerd runc
+
+# Install deps
+sudo apt update && sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+
+# Add Docker's key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+# Add Docker repo
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+# Install docker ce
+sudo apt update && sudo apt install -y docker-ce docker-ce-cli containerd.io
+
+# (OPTIONAL) Config docker to run without sudo
+sudo groupadd docker
+sudo usermod -aG docker $USER
+
 
 #=============================================================================#
 #                       ,,                                                    #
