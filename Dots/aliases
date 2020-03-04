@@ -68,15 +68,8 @@ alias tedt='TZ="America/New_York" date'
 
 #==== package stuff
 alias api="apt-cache show"
-#alias alu="apt list --upgradable"
 alias dpkgi="sudo dpkg -i "
 alias deps='apt-cache rdepends'
-
-function RDME() {
-    SRC_DIR="$DIR_CHEST_RESOURCES/Templates/README.rst"
-    DEST_DIR="$PWD/README.rst"
-    cp $SRC_DIR $DEST_DIR
-}
 
 #==== Apt cleanup
 # Clear apt lock
@@ -93,29 +86,11 @@ sudo apt clean; sudo apt update;
 "
 
 #==== deborphan
-alias rmorph="sudo deborphan | xargs sudo apt remove --purge -y"
+alias rmorph="sudo deborphan | xargs sudo apt remove --purge -y" # careful with -y
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Apt-fast
-# ========
-# TBH no noticed speedup from regular apt...
-#apf='sudo apt-fast'
-#alias af="$apf"
-#alias afu="$apf update"
-#alias afg="$apf upgrade"
-#alias afug="$apf update && $apf upgrade"
-#alias afi="$apf install"
-#alias afiNO="$apf --no-install-recommends --no-install-suggests install"
-#alias afr="$apf remove"
-#alias afrp="$apf remove --purge"
-#alias afa="$apf autoremove"
-#alias afc="$apf clean"
-#alias affu="$apf full-upgrade"
-#alias afl="apt-fast list"
-#alias afs="apt-fast search"
-#alias afshow="apt-fast show"
-
+#=== apt
 ap='sudo apt'
 alias atu="$ap update"
 alias atg="$ap upgrade"
@@ -128,8 +103,9 @@ alias ata="$ap autoremove"
 alias atay="$ap autoremove -y"
 alias atc="$ap clean && $ap autoclean && $ap purge"
 alias atl="$ap list"
-alias atlg="$ap list --upgradable"
+alias atlu='apt list --upgradable'
 
+alias akd="$ap-key del"
 
 
 
@@ -416,6 +392,12 @@ alias gpro="ggh project"
 
 #=== templates
 alias tpy="cp $DIR_CHEST_TEMPLATES/template.py ./foo.py"
+
+function RDME() {
+    SRC_DIR="$DIR_CHEST_RESOURCES/Templates/README.rst"
+    DEST_DIR="$PWD/README.rst"
+    cp $SRC_DIR $DEST_DIR
+}
 
 #=== license copies
 alias bsd3="cp $DIR_CHEST_TEMPLATES/Licenses/BSD-3-Clause.txt ./LICENSE"
