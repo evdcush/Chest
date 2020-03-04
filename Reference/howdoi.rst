@@ -1,18 +1,18 @@
-============
+############
 How Do I....
-============
+############
 
 .. contents::
 
 
 
----
+===
 PDF
----
+===
 
-
+----------
 Conversion
-==========
+----------
 Conversion to pdf often involves an intermediate step where the document is converted to latex before pdf. This often messes things up.
 
 I've found it's easier to first convert to html, then pdf.
@@ -21,7 +21,7 @@ If you can find one, a latex or css template for converting from some format to 
 
 
 Notebook to pdf
----------------
+===============
 For *any* solution, you will have to make some compromise.
 
 The trouble with notebook to pdf conversion is that you cannot get clean single pages. Some methods will leave 90% of a page blank so that a cell or something does not get truncated.
@@ -48,7 +48,7 @@ A cursory search did not yield any solutions for embedded styling directives or 
 
 
 rst to pdf
-----------
+==========
 (Still trying to find a good solution). Unlike the misadventures in notebook conversion, I think there may be more resources for rst to pdf I have not found yet.
 
 .. code-block:: bash
@@ -59,14 +59,15 @@ rst to pdf
     wkhtmltopdf README.html README.pdf
 
 
+------------
 Manipulation
-============
+------------
 There are LOADS of CLI tools for manipulating and modifying pdfs.
 
 If these solutions do not work for you, just google whatever you need to do.
 
 Crop pdf
---------
+========
 I found the top hits on SO and such to be very tedious.
 They all tend to use library modules packaged with poppler or texlive.
 
@@ -112,7 +113,7 @@ To crop with all pages at consistent page size: https://tex.stackexchange.com/qu
 
 
 remove a watermark
-------------------
+==================
 
 .. code-block:: bash
 
@@ -122,7 +123,7 @@ remove a watermark
     pdftk unwatermarked.pdf output fixed.pdf && mv fixed.pdf unwatermarked.pdf
 
 extract a range of pages
-------------------------
+========================
 NB: pdfjam is part of the texlive package.
 
 .. code-block:: bash
@@ -132,8 +133,10 @@ NB: pdfjam is part of the texlive package.
     pdfjam original.pdf 3-8 -o out.pdf
     pdfjam original.pdf 3-8,15-29,63-69 -o out.pdf
 
+
+
 extract pdf pages as png
-------------------------
+========================
 Check out: https://askubuntu.com/questions/50170/how-to-convert-pdf-to-image
 
 .. code-block:: bash
@@ -150,7 +153,7 @@ Check out: https://askubuntu.com/questions/50170/how-to-convert-pdf-to-image
 
 
 join png images into pdf
-------------------------
+========================
 pdfjam can be used for this. You may need to try it a few times with different alignment options, as images are not always aligned efficiently.
 
 .. code-block:: bash
@@ -164,15 +167,18 @@ pdfjam can be used for this. You may need to try it a few times with different a
     # join multiple images, named sequentially (eg: foo_00.png, foo_01.png ...)
     pdfjam foo_*.png -o foo.pdf
 
+
+
 ----
 
 
-------
+======
 Images
-------
+======
 
+----------
 Conversion
-==========
+----------
 
 **convert svg to png**:
 
@@ -193,12 +199,48 @@ Conversion
 
 ----
 
-----
+====
 Keys
-----
+====
 
+---
+Apt
+---
+
+Remove apt-key
+==============
+How to remove an apt-key added by user.
+
+First, list apt keys in your keychain via ``sudo apt-key list``. You will see a list of all apt keys in your trusted apt keychain, eg::
+
+    /etc/apt/trusted.gpg
+    --------------------
+    pub   rsa4096 2016-06-24 [SC]
+      AE09 FE4B BD22 3A84 B2CC  FCE3 F60F 4B3D 7FA2 AF80
+    uid           [ unknown] cudatools <cudatools@nvidia.com>
+
+    pub   rsa2048 2016-06-22 [SC] [expires: 2021-06-21]
+      D404 0146 BE39 7250 9FD5  7FC7 1F30 45A5 DF75 87C3
+    uid           [ unknown] Skype Linux Client Repository <se-um@microsoft.com>
+    sub   rsa2048 2016-06-22 [E] [expires: 2021-06-21]
+
+The key is the 8 chars from the last two blocks of hex.
+For example, ``cudatools`` is::
+
+    AE09 FE4B BD22 3A84 B2CC  FCE3 F60F 4B3D 7FA2 AF80
+
+So its key is: ``7FA2AF80``
+
+**Delete the key**: ``sudo apt-key del 7FA2AF80``
+
+
+
+
+
+
+---
 SSH
-===
+---
 
 **generate ssh key**:
 
@@ -227,10 +269,12 @@ SSH
     cat ~/.ssh/id_rsa.pub | xclip -selection clipboard
 
 
+---
 GPG
-===
+---
 
-**generate gpg key**:
+generate gpg key
+================
 
 .. code-block:: bash
 
@@ -247,14 +291,18 @@ GPG
 
     # you should now have your key
 
+
 -----
 
-------------
-Installation
-------------
 
+
+============
+Installation
+============
+
+------
 Python
-======
+------
 
 **Install py package from source**:
 
@@ -263,8 +311,9 @@ Python
     python setup.py install --prefix=$HOME/.local/bin
 
 
+---
 Apt
-===
+---
 
 **Install package without recommended|suggested**::
 
@@ -273,9 +322,10 @@ Apt
 
 ------
 
--------------
+
+=============
 Remote Server
--------------
+=============
 
 
 **mount remote dir to local**::
@@ -297,20 +347,22 @@ Remote Server
 
 -----
 
-------
+======
 Python
-------
+======
 
+--------
 Packages
-========
+--------
 
 **install package from egg file**::
 
     easy_install some_egg_file.egg
 
 
+-------
 ipython
-=======
+-------
 
 **Save ipython session history|log**:
 
@@ -324,15 +376,16 @@ ipython
 
 ----
 
----------------
+===============
 Troubleshooting
----------------
+===============
 
+------------
 Ubuntu/Linux
-============
+------------
 
 Mount an ISO
-------------
+============
 1. **Create a directory to serve as the mount location:**
 
     sudo mkdir /media/myiso
@@ -349,7 +402,7 @@ Mount an ISO
 
 
 Slow boot
----------
+=========
 This has been a persistent problem for **all** my machines with xubuntu 18.04. None had slow-boot issues with 16.04.
 
 After hours of googling and trying out a bunch of stuff (including a disastrous modification to lightdm/wayland that was only meant for ubuntu and not xubuntu), **I still have not found a solution.**
@@ -399,7 +452,7 @@ I had a boot time < 4s on 16.04. With 18.04, boot-times are consistently around 
 
 
 Black screen on boot
---------------------
+====================
 The primary issue is a **hanging black screen** on boot. This phenomenon is apparently **NOT** logged by any of the typical system processes--eg ``systemd-analyze`` won't register this boot lag for any process.
 
 The system boots, normally then hangs on a blank, black screen for approximately 15~20s, and it seems like it can persist longer *if* you do not spam the keyboard (which seems to interrupt it).
@@ -424,9 +477,9 @@ Check your dpi::
 
 -----
 
--------------
+=============
 Miscellaneous
--------------
+=============
 
 **Check my public ip**::
 
@@ -452,7 +505,8 @@ Miscellaneous
 
 
 
+----------------
 Chrome & Browser
-================
+----------------
 
 - See all installed extensions: navigate to ``chrome://system``
