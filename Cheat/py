@@ -111,7 +111,7 @@ def ordered_combos(lst):
         combos.append(lst[i:j])
     return combos
 
-#==== RNG
+#==== random & mathy
 def choice_simple(weights):
     """ return idx selected with probs p from weights """
     total = sum(weights)
@@ -122,6 +122,17 @@ def choice_simple(weights):
             return i
         psum += w
     raise Exception('ERROR in choice')
+
+
+def weighted_mean(nums, weights):
+    """ calculate weighted mean """
+    num = 0
+    den = 0
+    for x, w in zip(nums, weights):
+        num += x * w
+        den += w
+    return num / den
+
 
 
 #-----------------------------------------------------------------------------#
