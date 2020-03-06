@@ -277,6 +277,8 @@ P.symmetric_difference_update(R) # {5,6}
 #==== ARRAY
 
 #==== COLLECTIONS
+
+# defaultdict : takes callable with init and defaults that value for missing key
 s = [('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
 d = defaultdict(list)
 for k, v in s:
@@ -291,6 +293,10 @@ for k, v in s:
 #-----------------------------------------------------------------------------#
 
 #==== HEAPQ
+
+
+#==== SORT & MAX
+
 
 
 #-----------------------------------------------------------------------------#
