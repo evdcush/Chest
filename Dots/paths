@@ -8,6 +8,7 @@ PATH_USER_BIN="$HOME/.local/bin"
 # env/library Paths
 # =================
 PATH_PYENV="$HOME/.pyenv/bin"
+PATH_RSTCARGO="$HOME/.cargo/bin"
 #PATH_RBENV="$HOME/.rbenv/bin" # unused!
 SCIKIT_LEARN_DATA="$HOME/.Data/scikit_learn_data"
 
