@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=MATLAB
+GenericName=Proprietary Scientific Software Package
+Comment=Numerical computing environment and proprietary programming language
+Exec=matlab -desktop
+Icon=/home/evan/.Apps/Icons/matlab.png
+Terminal=false
+Type=Application
+Categories=Development;Science;Math;
+StatupNotify=true
