@@ -1,4 +1,22 @@
 #=============================================================================#
+#                                                                             #
+#                          ███████╗██╗   ██╗███████╗                          #
+#                          ██╔════╝╚██╗ ██╔╝██╔════╝                          #
+#                          ███████╗ ╚████╔╝ ███████╗                          #
+#                          ╚════██║  ╚██╔╝  ╚════██║                          #
+#                          ███████║   ██║   ███████║                          #
+#                          ╚══════╝   ╚═╝   ╚══════╝                          #
+#                                                                             #
+#=============================================================================#
+# System stuff
+
+# Display
+# =======
+alias fixdisplay='sudo /etc/init.d/lightdm restart'
+
+
+
+#=============================================================================#
 #                  ███████╗██╗  ██╗███████╗██╗     ██╗                        #
 #                  ██╔════╝██║  ██║██╔════╝██║     ██║                        #
 #                  ███████╗███████║█████╗  ██║     ██║                        #
@@ -155,9 +173,10 @@ piu="pip install -U"
 alias newpy="$piu pip setuptools wheel; \
 $piu cython numpy scipy sklearn matplotlib sympy ipython jupyter notebook; \
 $piu opencv-python imageio scikit-image scikit-video open3d-python pandas; \
-$piu pybullet numba 'gym[atari, box2d, classic_control]' pypi-cli thefuck; \
-$piu docutils restview grip pyperclip pdfCropMargins unidecode termdown python-slugify; \
-$piu feedparser requests lxml urllib3 bs4;"
+$piu pybullet numba 'gym[atari, box2d, classic_control]'; \
+$piu sphinx docutils restview rinohtype grip pyperclip pdfCropMargins; \
+$piu python-slugify unidecode feedparser requests lxml urllib3 bs4; \
+$piu termdown pypi-cli thefuck;"
 
 # Software/apps
 # =============
