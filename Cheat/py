@@ -61,7 +61,7 @@ $ foo airplane
 #                                   RECIPES                                   #
 #-----------------------------------------------------------------------------#
 
-#------------------
+#==== collection/structure
 class AttrDict(dict):
     # just a dict mutated/accessed by attribute instead index
     # NB: not pickleable
@@ -69,7 +69,7 @@ class AttrDict(dict):
     __setattr__ = dict.__setitem__
     __delattr__ = dict.__delitem__
 
-#==== collection/structure
+
 def count(iterable):
     """ count frequency of elements in an iterable (w/o collections) """
     counts = dict()
@@ -77,6 +77,18 @@ def count(iterable):
         counts[x] = 1 + counts.get(x, 0)  ## get returns 0 if x not in counts
     return counts
 
+
+def argsort(nums):
+    """ get indices that would sort nums """
+    # sort enumerated nums on vals
+    idx = [i for i, x in sorted(enumerate(nums), key=lambda tup: tup[1])]
+    return idx
+
+
+def g(seq):
+    # http://stackoverflow.com/questions/3382352/equivalent-of-numpy-argsort-in-basic-python/3383106#3383106
+    #lambda version by Tony Veijalainen
+    return [x for x,y in sorted(enumerate(seq), key = lambda x: x[1])]
 
 #==== strip punctuation from string
 def translate_strip(s):
