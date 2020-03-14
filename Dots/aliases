@@ -37,6 +37,7 @@ alias cdln='cd -P'    # cd to physical path rather than symlinked
 # Permissions
 # ===========
 alias chwn="sudo chown -R $USER:$USER"  # maybe make a func that assumes most recent /media drive?
+alias shx='chmod +x'
 
 
 # List stuff
