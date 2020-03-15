@@ -297,6 +297,21 @@ fonts-umeplus fonts-hanazono
 
 sudo apt install -y texlive-extra-utils --no-install-recommends
 
+# Inter font
+# ==========
+# Donwload & unzip
+wget https://github.com/rsms/inter/releases/download/v3.12/Inter-3.12.zip
+unar Inter-3.12.zip
+
+# Move fonts to system fonts dirs
+cd Inter-3.12
+sudo mv Inter /usr/share/fonts/opentype/inter
+sudo mv 'Inter (Web)' /usr/share/fonts/woff/inter
+
+# Rebuild font database
+sudo fc-cache -f -v
+
+
 
 #======#
 # PPAs #
@@ -406,20 +421,9 @@ sudo dpkg -i mailspring*.deb
 #                  ███████ ███████    ██     ██████  ██                       #
 #                                                                             #
 #=============================================================================#
-#-----------------------------------------------------------------------------#
-#                                   Zotero                                    #
-#-----------------------------------------------------------------------------#
-# Use Sebastiaan Mathot's zotero installer script (github.com/smathot/zotero_installer)
-sudo wget https://raw.github.com/smathot/zotero_installer/master/zotero_installer.sh -O /tmp/zotero_installer.sh
-cd /tmp && sudo chmod +x zotero_installer.sh; ./zotero_installer.sh
 
-# Plugins
-# =======
-# Zutilo: adds missing edit features to zotero
-https://github.com/willsALMANJ/Zutilo
-curl https://api.github.com/repos/willsALMANJ/Zutilo/releases/latest \
-| jq '.assets | .[0] | .browser_download_url' | xargs wget
-
+# Zotero plugins
+# --------------
 # Voyant exporty: https://github.com/corajr/zotero-voyant-export
 # zotnet: http://www.exitsantacruz.com/zotnet/zotnet.php
 # zotsite: https://github.com/plandes/zotsite
