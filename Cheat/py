@@ -14,7 +14,7 @@ from itertools import permutations, combinations, accumulate, reduce
 # make an NxM matrix properly:
 matrix = [[0]*ncols for _ in range(nrows)]
 
-# BAD_MAT = [[0] * ncols] * nrows # DONT
+# BAD_MAT = [[0] * ncols] * nrows   ## DONT! this makes duplicate rows
 
 
 #==== comprehensions
