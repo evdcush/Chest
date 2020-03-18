@@ -94,20 +94,27 @@ def argsort(nums):
     return idx
 
 
-def g(seq):
-    # http://stackoverflow.com/questions/3382352/equivalent-of-numpy-argsort-in-basic-python/3383106#3383106
-    #lambda version by Tony Veijalainen
-    return [x for x,y in sorted(enumerate(seq), key = lambda x: x[1])]
 
-#==== strip punctuation from string
-def translate_strip(s):
+#==== remove punctuation from string
+def rmpunc(s):
+    import string
+    punc_set = set(string.punctuation)  # for faster lookups
+    t = ''.join([c for c in s if c not in punc_set])
+    return t
+
+
+def rmpunc_translate(s):
     table = str.maketrans({key: None for key in string.punctuation})
     t = s.translate(table)
     return t
 
-def re_strip(s): # marginally faster than translate
+
+def rmpunc_re(s): # marginally faster than translate
     t = re.sub(r'[^\w\s]', '', s)
     return t
+
+
+
 
 #==== matrix
 def mk_matrix(N, M, fill=0):
@@ -117,7 +124,10 @@ def mk_matrix(N, M, fill=0):
 def dot_prod(v1, v2):
     return sum(map(operator.mul, v1, v2))
 
-#==== combinatorial shit
+
+
+
+#==== permutation stuff
 def powerset(S):
     pS = []
     combo = lambda i: set(itertools.combinations(S, i))
@@ -125,12 +135,29 @@ def powerset(S):
         pS.append(combo(i))
     return pS
 
+
 def ordered_combos(lst):
+    """
+    >>> ordered_combos([1,2,3,4])
+    [[1],
+     [1, 2],
+     [1, 2, 3],
+     [1, 2, 3, 4],
+     [2],
+     [2, 3],
+     [2, 3, 4],
+     [3],
+     [3, 4],
+     [4]]
+    """
     idx_slices = itertools.combinations(range(len(lst) + 1), 2)
     combos = []
     for i, j in idx_slices:
         combos.append(lst[i:j])
     return combos
+
+
+
 
 #==== random & mathy
 def choice_simple(weights):
