@@ -28,36 +28,40 @@ with_if    = [i for i in range(20) if i & 1]       # odds
 set_comp   = set(i for i in range(20) if i & 1)    # odds
 dict_comp  = {i: i**2 for i in range(20) if i & 1}
 
+
 #==== COPY
-copy.copy(x)     # shallow copy: you almost never want this (still has references)
+copy.copy(x)     # shallow copy: you ALMOST NEVER want this (still has references)
 copy.deepcopy(x) # deep copy: what you think of when you think copy, FULL recursive copy
+
 
 #==== subprocess
 subprocess.run(f'wget {url}', cwd=dst, shell=True) # cwd will exec this command in dst
 
+
 #==== interact with code
-# TWO options, code and IPython
+## TWO options: code, and IPython (better)
 code.interact(local=dict(globals(), **locals()))
 IPython.embed()
 
 
 """
-# How to make your 'foo.py' script executable bin
+## How to make your 'foo.py' script executable bin
 
 1. put this at the top of script:
-    #!/usr/bin/env python
+#!/usr/bin/env python
 
-2. `chmod +x foo.py`  # you are already finished at this step
+2. Make script executable (in terminal):
+chmod +x foo.py
 
-3. ln -sf foo.py dir/thats/in/PATH/foo
+3. symlink script to somewhere on path (like user bin):
+ln -sf /path/to/foo.py $HOME/.local/bin/foo
 
-# Call like you would other bins from cli:
+4. Call like you would other bins on cli:
 $ foo
 "hello there"
 
 $ foo airplane
 "hello there airplane"
-
 """
 
 
