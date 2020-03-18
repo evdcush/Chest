@@ -18,10 +18,15 @@ matrix = [[0]*ncols for _ in range(nrows)]
 
 
 #==== comprehensions
+## with double for-loop, the first for is the inner-loop, and 2nd for is outer
+##  eg: [print('foo') for j in range(5) for i in range(3)] is same as
+##      for i in range(3):
+##          for j in range(5):
+##              print('foo')
 double_for = [(i,j) for j in range(5) for i in range(3)] # [(0,0), (1,0), ..., (2,4)]
-with_if   = [i for i in range(20) if i & 1] # odds
-set_comp  = set(i for i in range(20) if i & 1)
-dict_comp = {i: i**2 for i in range(20) if i & 1}
+with_if    = [i for i in range(20) if i & 1]       # odds
+set_comp   = set(i for i in range(20) if i & 1)    # odds
+dict_comp  = {i: i**2 for i in range(20) if i & 1}
 
 #==== COPY
 copy.copy(x)     # shallow copy: you almost never want this (still has references)
