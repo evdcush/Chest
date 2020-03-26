@@ -5,8 +5,8 @@
 
 # Version
 # -------
-major='1.3'
-minor='1'
+major='1.4'
+minor='0'
 VER="$major.$minor"
 
 # Formatting
