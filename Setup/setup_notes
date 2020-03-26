@@ -764,6 +764,24 @@ options hid_apple fnmode=2
 sudo update-initramfs -u && reboot
 
 
+# Trackpoint sensitivity on thinkpads
+# ===================================
+
+# First, try out different values, 0-220, of settings
+echo 80 |  sudo tee /sys/devices/platform/i8042/serio1/serio2/sensitivity
+echo 100 | sudo tee /sys/devices/platform/i8042/serio1/serio2/speed
+
+# After finding value you like, make new udev rule for sys start
+sudo vi /etc/udev/rules.d/trackpoint.rules
+
+# add this line
+SUBSYSTEM=="serio", DRIVERS=="psmouse", DEVPATH=="/sys/devices/platform/i8042/serio1/serio2", ATTR{sensitivity}="80", ATTR{speed}="100"
+
+# Reboot, or run commands:
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+
+
 # Japanese IME (mozc)
 # ===================
 # mozc  # (THIS WAS FOR 16.04)
