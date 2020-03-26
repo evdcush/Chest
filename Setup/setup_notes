@@ -754,6 +754,16 @@ guake -n '%d%f ' -r "%f " --show -e "cd '%f' && ls -1FSshX --file-type"
 
 
 
+# Keychron K2 keyboard FN keys fix
+# ================================
+sudo vi /etc/modprobe.d/hid_apple.conf
+# add the following:
+options hid_apple fnmode=2
+
+# save, close, update & reboot
+sudo update-initramfs -u && reboot
+
+
 # Japanese IME (mozc)
 # ===================
 # mozc  # (THIS WAS FOR 16.04)
