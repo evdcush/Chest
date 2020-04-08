@@ -171,53 +171,22 @@ piu="pip install -U"
 
 # Typical stack
 # =============
-alias newpy="$piu pip setuptools wheel; \
+alias pipinew="$piu pip setuptools wheel; \
 $piu cython numpy scipy sklearn matplotlib sympy ipython jupyter notebook; \
 $piu opencv-python imageio scikit-image scikit-video open3d-python pandas; \
-$piu pybullet numba 'gym[atari, box2d, classic_control]'; \
-$piu sphinx docutils restview rinohtype grip pyperclip pdfCropMargins; \
-$piu python-slugify unidecode feedparser requests lxml urllib3 bs4; \
-$piu twine termdown pypi-cli thefuck;"
-
-# Software/apps
-# =============
-#---- software that does not require extra steps (beyond pip install)
-pipsoftware="thefuck jrnl gitup restview grip termdown apt-select glances \
-speedtest-cli pdfCropMargins"
-pipsw="$piu $pipsoftware"
-
-#---- software that requires extra steps
-pipmyougiden="myougiden; updatedb-myougiden -f"
-#pipcite2c="cite2c; python -m cite2c.install"
-pipnbextensions="jupyter_contrib_nbextensions jupyter_nbextensions_configurator; \
-jupyter contrib nbextension install --user; \
-jupyter nbextensions_configurator enable --user"
-pipnbpdf="nb_pdf_template; python -m nb_pdf_template.install"
-pipswi="$piu $pipmyougiden; $piu $pipnbextensions; $piu $pipnbpdf"
+$piu chainer pybullet 'gym[atari, box2d, classic_control]'; \
+$piu sphinx docutils pyperclip unidecode python-slugify; \
+$piu feedparser requests lxml urllib3 bs4; \
+$piu twine pytest pypi-cli fart; \
+$piu restview grip termdown pdfCropMargins;"
 
 
 # Snowflakes
 # ----------
-alias pipipyt="$piu torch==1.4.0+cpu torchvision==0.5.0+cpu -f https://download.pytorch.org/whl/torch_stable.html"
-
-#fussy_pkgs="surprise gitsuggest"
-#rinohtype currently only works py < 3.7
-
-
-# Spec-use pkgs
-# =============
-# starcraft
-alias pipsc="pip install -U pygame scbw pysc2 sc2 s2clientprotocol"
-
-# nlp
-# these packages can be fussy with deps
-# so make sure usual stack installed first (npy scipy skl nltk levenshtein)
-alias pipnlp="pip install -U numpy scipy sklearn nltk python-levenshtein; \
-pip install -U spacy scattertext fuzzywuzzy summa"
-
-
-# GPU
-alias pipgpu="pip install -U pycuda cupy"
+#== pytorch
+pyt_url='https://download.pytorch.org/whl/torch_stable.html'
+pyt_ver='1.4.0'
+alias pipipyt="$piu torch==$pyt_ver+cpu torchvision==0.5.0+cpu -f $pyt_url"
 
 
 # UPDATE PIP PACKAGES

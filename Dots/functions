@@ -12,6 +12,27 @@ function RDME() {
 # Download paper
 dub() { dochub $1 -i -d -n; }
 
+
+# PYGMENTS SYMLINK
+# ----------------
+# symlink custom pygment theme to pygments styles dir
+# eg: ln -sf /home/evan/Chest/Resources/Themes/pygments/piodine.py /home/evan/.pyenv/versions/3.8.2/envs/382/lib/python3.8/site-packages/pygments/styles
+function lnpyg(){
+    ## link src
+    PYGSRC="$HOME/Chest/Resources/Themes/pygments/piodine.py"
+
+    ## link dest
+    PYMAJ=`python --version | cut -d' ' -f2 | cut -d'.' -f1-2`
+    PYVENV=$PYENV_VIRTUAL_ENV   # eg: /home/evan/.pyenv/versions/3.8.2/envs/382
+    PYGDST="$PYVENV/lib/python$PYMAJ/site-packages/pygments/styles"
+
+    ## symlink
+    echo "Symlinking \n$PYGSRC\n\tto\n$PYGDST"
+    ln -sf $PYGSRC $PYGDST
+}
+
+
+
 #=============================================================================#
 #                                                                             #
 #           ,ad8888ba,          db         88           88                    #
@@ -95,9 +116,17 @@ function cycc(){
     # Cython compiler:  foo.pyx --> foo.c
     cython "$FNAME_PYX"  # cython compiler
 
+    # Py version
+    PYVER=`python --version | cut -d' ' -f2`  # eg 3.8.2
+    PYMAJ=`echo $PYVER | cut -d'.' -f1-2`     # eg 3.8
+    PYMPATH="$HOME/.pyenv/versions/$PYVER/include/python$PYMAJ\m"
+
     # C compiler:  foo.c --> foo.so
+    #gcc -shared -pthread -fPIC -fwrapv -O2 -Wall \
+    #-fno-strict-aliasing -I/home/evan/.pyenv/versions/3.7.2/include/python3.7m \
+    #-o "$FNAME_O" "$FNAME_C"
     gcc -shared -pthread -fPIC -fwrapv -O2 -Wall \
-    -fno-strict-aliasing -I/home/evan/.pyenv/versions/3.7.2/include/python3.7m \
+    -fno-strict-aliasing -I"$PYMPATH" \
     -o "$FNAME_O" "$FNAME_C"
 }
 
