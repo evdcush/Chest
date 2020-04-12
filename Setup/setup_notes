@@ -422,8 +422,56 @@ sudo dpkg -i mailspring*.deb
 #                                                                             #
 #=============================================================================#
 
+#-----------------------------------------------------------------------------#
+#                                    Zotero                                   #
+#-----------------------------------------------------------------------------#
+
+
+# Zotero Preferences
+# ==================
+
+#=== General
+## File Handling
+# untick all but 'retrieve metadata for pdfs'
+
+#=== Sync
+# Sync automatically, untick sync full-text content
+# no syncing for file stuff
+
+#=== Export
+# default: BibTeX
+
+#=== Advanced: Files and Folders
+## Base directory:
+# choose: /home/evan/LitCloud/Literature
+
+## Data Directory Location
+# Custom, choose: /home/evan/.config/Zotero
+
+
+# ZotFile Preferences
+# ===================
+
+#=== General
+## Source folder for attaching new files:
+# choose: /home/evan/Downloads
+
+## Location of Files
+# custom location: /home/evan/LitCloud/Literature
+
+#=== Renaming Rules
+## Renaming Format
+# {%a - }{%y - }{%t}
+
+## Additional
+# delimiter: 'and'
+# max num auth: 2
+# add suffix: 'et al'
+
+
 # Zotero plugins
 # --------------
+# zotero-scihub: https://github.com/ethanwillis/zotero-scihub
 # Voyant exporty: https://github.com/corajr/zotero-voyant-export
 # zotnet: http://www.exitsantacruz.com/zotnet/zotnet.php
 # zotsite: https://github.com/plandes/zotsite
