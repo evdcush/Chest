@@ -14,6 +14,10 @@
 # =======
 alias fixdisplay='sudo /etc/init.d/lightdm restart'
 
+# Trackpoint sensitivity
+# ======================
+alias trk="xinput --set-prop `xinput | grep -i trackpoint | cut -d'=' -f2 | cut -c -2` 'libinput Accel Speed' -0.7"
+
 
 
 #=============================================================================#
