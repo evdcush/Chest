@@ -479,6 +479,67 @@ sudo dpkg -i mailspring*.deb
 # zot4st: https://gitlab.com/egh/zot4rst
 # cit2c: https://github.com/takluyver/cite2c # rst citations
 
+#=============================================================================#
+#                                 leetcode-cli                                #
+#=============================================================================#
+# This is npm package. It used to work, then leetcode broke it, now you need to
+#  do a chrome cookie hack to get it to function
+#  here are steps to fix:
+
+# REFERENCE:
+#  https://github.com/skygragon/leetcode-cli/issues/195
+#  https://github.com/jdneo/vscode-leetcode/issues/478#issuecomment-564757098
+
+# Install
+# -------
+# First, uninstall old leetcode-cli if you have
+npm uninstall -g leetcode-cli
+
+# Install latest
+npm i -g vsc-leetcode-cli
+
+# Install cookie plugin
+leetcode plugin -i cookie.chrome
+
+# Cookie
+# ------
+# 1. Open browser, goto leetcode, sign-in
+#   a. go to leetcode.com/problems
+# 2. ctrl+shift+I to inspect
+# 3. Go to network tab, xhr: Network > XHR
+# 4. Refresh, f5
+# 5. you should see an 'all/' thing, if not try refreshing, going to leetcode.com/problems
+# 6. Click on headers
+# 7. find 'cookie:'
+#   a. copy the whole thing (except 'cookie:' part )
+#      so, should look something like:
+#  c_a_u="ZXZkY2c=:1ixpue:mS1tulcXXXXXXXXXXXXXX"; disable_new_question_detail="[\"MYUSERNAME\"]"; __stripe_mid=dca11c35-4fa8-4167-8e1d-878bd3452e782; _ga=GA1.2.376869643.1580623507; __cfduid=d52a2152449b03c04p251003fd89ed08e31586766934; csrftoken=mwgPp3A0I6beUsoWKxd5XsmGXXNtLTUb3mQkswVQWWPVVo1aTY6E3DxcxMaiTdNGK; LEETCODE_SESSION=SNIPPED.SNIPPED.SNIPPED; __cf_bm=5f34bd2aa502c9ed4a0d511b344f6e6d49e94c90-1586769499-1800-Aem/DCQVzuyOogFETHRn2Qm6MWMXtckDdog35OvA7BODaHe4x3W6TxbAVn6WamT24V0Sq73XtFhhH3t2wKLjjGCV0=
+
+
+# Login with cookie
+# -----------------
+leetcode user -c
+
+# It will ask for username, then cookie
+# paste the cookie you copied earlier
+#  SHOULD WORK
+
+
+# Usage
+# -----
+# Get two-sum:
+leetcode show 1 -gx -l python3
+
+# test two-sum (run)
+leetcode test 1.two-sum.py
+
+# submit two-sum
+leetcode submit 1.two-sum.py
+
+
+
+
+
 
 #-----------------------------------------------------------------------------#
 #                                  TPU stuff                                  #
