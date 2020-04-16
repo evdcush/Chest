@@ -194,9 +194,9 @@ alias pipipyt="$piu torch==$pyt_ver+cpu torchvision==0.5.0+cpu -f $pyt_url"
 
 # Extra setup
 # ===========
-alias pipimyg="pip install -U myougiden; updatedb-myougiden -f"
-alias pipijupynb="pip install -U jupyter_contrib_nbextensions \
-jupyter_nbextensions_configurator;\
+alias pipimyg="$piu myougiden; updatedb-myougiden -f"
+alias pipijupynb="$piu \
+jupyter_contrib_nbextensions jupyter_nbextensions_configurator; \
 jupyter contrib nbextension install --user; \
 jupyter nbextensions_configurator enable --user;"
 
