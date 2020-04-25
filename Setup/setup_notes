@@ -885,7 +885,7 @@ echo 100 | sudo tee /sys/devices/platform/i8042/serio1/serio2/speed
 sudo vi /etc/udev/rules.d/trackpoint.rules
 
 # add this line
-SUBSYSTEM=="serio", DRIVERS=="psmouse", DEVPATH=="/sys/devices/platform/i8042/serio1/serio2", ATTR{sensitivity}="80", ATTR{speed}="100"
+SUBSYSTEM=="serio", DRIVERS=="psmouse", DEVPATH=="/sys/devices/platform/i8042/serio1/serio2", ATTR{sensitivity}="80", ATTR{speed}="180"
 
 # Reboot, or run commands:
 sudo udevadm control --reload-rules
