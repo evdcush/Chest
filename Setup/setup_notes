@@ -270,7 +270,7 @@ git-crypt git-extras git-repair \
 xclip copyq \
 kdeconnect \
 dict dictd dict-gcide dict-wn dict-moby-thesaurus \
-anki xfce4-timer-plugin redshift font-manager;
+anki xfce4-timer-plugin redshift font-manager fslint;
 
 
 #---- Scientific/numerical software
