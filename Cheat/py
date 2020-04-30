@@ -87,11 +87,13 @@ def count(iterable):
     return counts
 
 
+#==== algo
 def argsort(nums):
     """ get indices that would sort nums """
     # sort enumerated nums on vals
     idx = [i for i, x in sorted(enumerate(nums), key=lambda tup: tup[1])]
     return idx
+
 
 
 
