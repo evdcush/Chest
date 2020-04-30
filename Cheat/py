@@ -87,6 +87,26 @@ def count(iterable):
     return counts
 
 
+class Record:
+    """ A key:value structure, with comp methods defined on the values """
+    def __init__(self, rid, val):
+        self.id  = rid
+        self.val = val
+
+    def __lt__(self, x): return self.val < x
+
+    def __le__(self, x): return self.val <= x
+
+    def __eq__(self, x): return self.val == x
+
+    def __ge__(self, x): return self.val >= x
+
+    def __gt__(self, x): return self.val > x
+
+    def __str__(self):
+        return self.id + ' ' + str(self.val)
+
+
 #==== algo
 def argsort(nums):
     """ get indices that would sort nums """
