@@ -106,6 +106,17 @@ class Record:
     def __str__(self):
         return self.id + ' ' + str(self.val)
 
+### The same thing, but using functools.total_ordering to do comps for you:
+@functools.total_ordering
+class Record:
+    def __init__(self, rid, val):
+        self.id  = rid
+        self.val = val
+
+    def __lt__(self, x): return self.val < x
+
+    def __eq__(self, x): return self.val == x
+
 
 #==== algo
 def argsort(nums):
@@ -270,6 +281,22 @@ list(itertools.combinations([2,5,0,1], 2))
 #==== FUNCTOOLS
 #https://docs.python.org/3/library/functools.html
 @functools.lru_cache(maxsize=5)
+
+# Partial function
+# ================
+def foo(a, b, c, d='tail'): # NORMAL FUNC
+    print(f"a : {a}, b : {b}, c : {c}, d : {d}")
+
+# partial func baz that calls foo with a='bar', b='wow'
+>>> baz = partial(foo, 'bar', 'wow') # NB: c arg not provided
+>>> baz('dog')         # equivalent to  foo('bar', 'wow', 'dog')
+'a : bar, b : wow, c : dog, d : tail'
+
+>>> baz('mamba', 'seer')
+'a : bar, b : wow, c : mamba, d : seer'
+>>> goof = partial(foo, c=11)   # foo(a, b, 11, d)
+>>> goof('hello', 'there')
+'a : hello, b : there, c : 11, d : tail'
 
 
 #==== BISECT
