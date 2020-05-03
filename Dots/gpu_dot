@@ -1,0 +1,6 @@
+#--- Pathing for machines with CUDA
+PATH_CUDA="/usr/local/cuda"
+export PATH="${PATH:+${PATH}:}$PATH_CUDA"
+export LD_LIBRARY_PATH="$PATH_CUDA/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
+
+## NB: non-gpu machines have dummy `gpu_dot`
