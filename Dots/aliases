@@ -169,7 +169,7 @@ alias ipyp='pypi info'
 # Install/upgrade pip pkgs and save pkg names
 function pipi(){
     pip install -U "$@"
-    echo "$@" >> "$DIR_DOTS/pip_pkgs.txt"
+    #echo "$@" >> "$DIR_DOTS/pip_pkgs.txt"
 }
 piu="pip install -U"
 
@@ -178,7 +178,7 @@ piu="pip install -U"
 alias pipinew="$piu pip setuptools wheel; \
 $piu cython numpy scipy sklearn matplotlib sympy ipython jupyter notebook; \
 $piu opencv-python imageio scikit-image scikit-video open3d-python pandas; \
-$piu chainer pybullet 'gym[atari, box2d, classic_control]'; \
+$piu chainer pybullet 'gym[atari, box2d, classic_control]' mpi4py; \
 $piu sphinx docutils pyperclip unidecode python-slugify; \
 $piu feedparser requests lxml urllib3 bs4; \
 $piu twine pytest pypi-cli fart; \
