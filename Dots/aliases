@@ -189,8 +189,8 @@ $piu restview grip termdown pdfCropMargins;"
 # ----------
 #== pytorch
 pyt_url='https://download.pytorch.org/whl/torch_stable.html'
-pyt_ver='1.5.0'
-alias pipipyt="$piu torch==$pyt_ver+cpu torchvision==0.6.0+cpu -f $pyt_url"
+pyt_ver='1.5.1'
+alias pipipyt="$piu torch==$pyt_ver+cpu torchvision==0.6.1+cpu -f $pyt_url"
 
 # Extra setup
 # ===========
