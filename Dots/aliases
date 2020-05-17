@@ -395,7 +395,7 @@ alias gpro="ggh project"
 alias tpy="cp $DIR_CHEST_TEMPLATES/template.py ./foo.py"
 
 function RDME() {
-    SRC_DIR="$DIR_CHEST_RESOURCES/Templates/README.rst"
+    SRC_DIR="$DIR_CHEST_TEMPLATES/README.rst"
     DEST_DIR="$PWD/README.rst"
     cp $SRC_DIR $DEST_DIR
 }
