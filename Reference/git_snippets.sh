@@ -279,6 +279,11 @@ git branch -d <branch_name> # local
 #                           |_|  |_| |_| |___/  \___|                         #
 #                                                                             #
 #=============================================================================#
+
+# Set global git ignore
+# ---------------------
+git config --global core.excludesfile ~/.Dots/global_gitignore
+
 # Squash/drop all commits to one commit
 # -------------------------------------
 git rebase --root -i  # squash or drop for all commits save first
