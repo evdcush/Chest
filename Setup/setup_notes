@@ -31,17 +31,12 @@
 #  * not a "hub" port, like the front ones near power or otherwise joint hubs
 #  * insure USB is FAT32, MBR table (GPR never works)
 
-
-
 # Installer
 # ---------
 #===== Options
 # - DO NOT CONNECT TO INTERNET/DOWNLOAD DURING INSTALL
 #   - Remove bloat first
 #     ONLY AFTER REMOVING BLOAT, should you even connect to internet
-#
-# - Do not install 3rd party shit (for wifi/video/flash etc)
-#   - you can install what you need later, and flash 2019 lol
 
 
 # Remove unused stuff from path
