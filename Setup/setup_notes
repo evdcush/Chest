@@ -22,6 +22,7 @@
 # Installation Media
 # ==================
 ###  Bootable ISO
+# *   USE: etcher: https://github.com/balena-io/etcher/releases
 # * TRIED: Rufus (windows only), unetbootin (trash), dd, "bootiso" (trash), gparted
 # * WORKS: etcher, distro-provided tools (tails, kali, etc), UUI (win)
 
