@@ -76,6 +76,8 @@ path_prepend() {
 #     * DON'T WORRY! These packages are just the bundles of default apps
 #       That come with those respective desktops
 
+# NB: 20.04 doesn't seem to support wildcard matching
+
 # Desktop and Apps
 #-----------------------------
 # Note: there may be some redundancy
