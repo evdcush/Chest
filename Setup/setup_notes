@@ -94,6 +94,8 @@ sudo apt remove --purge "*firefox*" "transmission-*" "*pidgin*" "*parole*" "*xfb
 
 # Apt mirrors
 # ===========
+##: Just select a mirror in `Software & Updates`
+
 ##: Official mirrors are slow as heck
 sudo apt update && sudo apt install -y python-pip
 sudo pip install apt-select
