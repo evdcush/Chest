@@ -121,9 +121,7 @@ update-alternatives --set gcc /usr/bin/gcc-8
 
 # git
 # ===
-sudo apt-add-repository ppa:git-core/ppa
-sudo apt update && sudo apt upgrade -y
-sudo apt install git-core
+sudo apt install git
 
 # Deps
 sudo apt install -y wget curl git apt-transport-https autoconf automake \
