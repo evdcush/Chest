@@ -189,21 +189,6 @@ curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv
 #                                  languages                                  #
 #-----------------------------------------------------------------------------#
 
-# System python
-# =============
-#---- install latest py3
-sudo apt install -y python3.7
-
-#---- install alternatives
-# dont do this actually; you'll always be in py3 via venv, and ROS needs py2 still
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.7 80
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.6 50
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 20
-
-#---- select
-sudo update-alternatives --config python
-
-
 # n (node manager)
 # ================
 curl -L https://git.io/n-install | N_PREFIX=~/.n bash -s -- -y
