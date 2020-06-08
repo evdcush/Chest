@@ -194,7 +194,6 @@ curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv
 curl -L https://git.io/n-install | N_PREFIX=~/.n bash -s -- -y
 
 
-
 # Julia
 #=========================
 #curl -s https://api.github.com/repos/JuliaLang/julia/releases/latest \
