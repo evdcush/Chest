@@ -59,6 +59,17 @@ ipgeo() { inxi -i | awk '/WAN/ {print $5}' | sed "s,\x1B\[[0-9;]*m,,g" | xargs g
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+function get(){
+    if [ "$#" -eq 0 ]; then
+        # No arg given, get arg from clipboard
+        target=`xclip -o -sel clip`
+    else
+        # arg given
+        target=$1
+    fi
+    wget -P ~/.cache $target;
+}
+
 
 #==== leetcode-cli
 function leet(){
