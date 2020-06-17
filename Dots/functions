@@ -67,7 +67,8 @@ function get(){
         # arg given
         target=$1
     fi
-    wget -P ~/.cache $target;
+    #wget -P ~/.cache $target;
+    wget $target;
 }
 
 
