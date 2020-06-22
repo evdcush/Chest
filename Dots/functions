@@ -59,6 +59,7 @@ ipgeo() { inxi -i | awk '/WAN/ {print $5}' | sed "s,\x1B\[[0-9;]*m,,g" | xargs g
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Wrapper for wget from clipboard
 function get(){
     if [ "$#" -eq 0 ]; then
         # No arg given, get arg from clipboard
