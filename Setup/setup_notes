@@ -386,6 +386,9 @@ sudo dpkg -i bat_0.9.0_amd64.deb
 wget https://updates.getmailspring.com/download?platform=linuxDeb
 sudo dpkg -i mailspring*.deb
 
+#---- calendar
+wget https://europe-west1-minetime-backend.cloudfunctions.net/download/linux-deb
+
 
 #---- git interactive rebase
 # !!!!!  DONT DO IT   !!!!  Shit always breaks my ros cython opencv libs
