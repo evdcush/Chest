@@ -182,7 +182,7 @@ $piu tensorboardX chainer pybullet 'gym[atari, box2d, classic_control]' mpi4py; 
 $piu sphinx docutils pyperclip unidecode python-slugify; \
 $piu feedparser requests lxml urllib3 bs4; \
 $piu twine pytest pypi-cli fart; \
-$piu restview grip termdown pdfCropMargins;"
+$piu restview rstcheck grip termdown pdfCropMargins;"
 
 
 # Snowflakes
