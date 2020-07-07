@@ -560,7 +560,7 @@ sudo apt install -y libedgetpu1-std libedgetpu1-max
 #  88888888Y"'     `"YbbdP"'    `"Ybbd8"'  88   `Y8a   `"Ybbd8"'  88          #
 #                                                                             #
 #=============================================================================#
-
+###  Reference: https://docs.docker.com/engine/install/ubuntu/
 
 # Uninstall previous (if already installed)
 sudo apt remove --purge docker docker-engine docker.io containerd runc
@@ -581,6 +581,9 @@ sudo apt update && sudo apt install -y docker-ce docker-ce-cli containerd.io
 sudo groupadd docker
 sudo usermod -aG docker $USER
 
+# Confirm installation
+## newgrp docker  # do this if you do not want to log-out/log-in for changes for sudoless docker
+docker run hello-world
 
 #=============================================================================#
 #                       ,,                                                    #
