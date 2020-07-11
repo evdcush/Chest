@@ -531,9 +531,6 @@ leetcode submit 1.two-sum.py
 
 
 
-
-
-
 #-----------------------------------------------------------------------------#
 #                                  TPU stuff                                  #
 #-----------------------------------------------------------------------------#
@@ -1531,7 +1528,13 @@ https://github.com/VSCodium/vscodium/releases
 # ======
 # - Atom One Dark/Light Theme
 
-
+# Converting .tmTheme to VS Code
+# ------------------------------
+## SEE: 
+##     - https://github.com/microsoft/vscode-docs/blob/6f440690d21274cd5edcdea3ff9d5010549a980d/release-notes/v0_9_0.md#customization---adding-language-colorization--bracket-matching
+##     - https://code.visualstudio.com/api/extension-guides/color-theme
+##
+## guess it needs yeoman??
 
 
 
