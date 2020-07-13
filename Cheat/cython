@@ -1,20 +1,19 @@
 ```cython
-# .pyx header (add this to the top of any .pyx file)
+#---- .pyx header (add this to the top of any .pyx file)
 # distutils: language = c++
 # cython: language_level=3
 
 
-
 # def, cdef, cpdef
 # ================
-There are two kinds of funcs in cython, py and c funcs
+There are two kinds of funcs in cython: py and c funcs
 
 def : python functions
-    in : pyobj
+    in  : pyobj
     out : pyobj
 
 cdef : C functions
-    in : pyobj | C values
+    in  : pyobj | C values
     out : pyobj | C values
 
 Withing a cython module, py and c funcs can call each
@@ -26,12 +25,12 @@ anywhere, and dispatches to C or py depending
 on caller. Overhead, so slower.
 
 
-
 # File types
 # ==========
 .pyx, .py : implementation files
 .pxd : definition files (ie headers)
 .pxi : include files
+
 
 # Run steps
 # =========
