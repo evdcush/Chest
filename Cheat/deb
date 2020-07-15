@@ -7,7 +7,6 @@ apt-cache rdepends packagename
 # Install packages listed in text file
 cat pkg_list.txt | xargs sudo apt install
 
-
 # Remove a list of packages from STDIN or txt
 cat pkg_list.txt | xargs sudo apt remove --purge -y
 sudo deborphan | xargs sudo apt remove --purge -y  # to remove all orphaned dependencies
