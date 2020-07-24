@@ -8,5 +8,4 @@ chunk_reader = pd.read_csv('fat.csv', chunksize=chunk_size)
 for i, chunk in enumerate(chunk_reader):
     arr = chunk.get_values()  # dframe --> ndarray
     my_process_func(arr)
-
 ```
