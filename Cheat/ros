@@ -1,4 +1,0 @@
-# run rviz
-# open terminal, input `roscore`, in different window:
-rosrun rviz rviz
-
