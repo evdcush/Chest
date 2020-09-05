@@ -1530,11 +1530,38 @@ https://github.com/VSCodium/vscodium/releases
 
 # Converting .tmTheme to VS Code
 # ------------------------------
-## SEE: 
+## SEE:
 ##     - https://github.com/microsoft/vscode-docs/blob/6f440690d21274cd5edcdea3ff9d5010549a980d/release-notes/v0_9_0.md#customization---adding-language-colorization--bracket-matching
 ##     - https://code.visualstudio.com/api/extension-guides/color-theme
 ##
 ## guess it needs yeoman??
+
+
+{
+    "editor.find.autoFindInSelection": true,
+    "editor.detectIndentation": false,
+    "files.insertFinalNewline": true,
+    "editor.fontFamily": "Hack",
+    "editor.fontSize": 15,
+    "workbench.editor.enablePreview": false,
+    "editor.tabSize": 4,
+    "files.trimTrailingWhitespace": true,
+    "editor.formatOnPaste": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.snippetSuggestions": "top",
+    "python.linting.enabled": false,
+    "workbench.colorTheme": "Noctis Lux",
+    "workbench.iconTheme": "vscode-icons",
+    "gitlens.codeLens.enabled": false,
+    "vsicons.dontShowNewVersionMessage": true,
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "window.zoomLevel": 2,
+    "restructuredtext.experimental": true,
+    "python.dataScience.alwaysTrustNotebooks": true,
+    "python.venvPath": "~/.pyenv",
+    "python.formatting.provider": "none"
+}
 
 
 
