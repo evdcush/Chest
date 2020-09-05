@@ -3,9 +3,7 @@ import sys
 import code
 import argparse
 from functools import wraps
-#import yaml
-from ruamel.yaml import YAML
-yaml = YAML()
+import yaml
 
 class AttrDict(dict):
     __getattr__ = dict.__getitem__
@@ -80,7 +78,7 @@ def name(args):
 # ===============
 def R_yml(fname):
     with open(fname) as file:
-        return yaml.load(file)
+        return yaml.safe_load(file)
 
 def W_yml(fname, obj):
     with open(fname, 'w') as file:
