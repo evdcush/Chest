@@ -188,9 +188,14 @@ $piu restview rstcheck grip termdown pdfCropMargins;"
 # Snowflakes
 # ----------
 #== pytorch
+# nb: only for cpu, just `pip install torch` for gpu ver
 pyt_url='https://download.pytorch.org/whl/torch_stable.html'
-pyt_ver='1.5.1'
-alias pipipyt="$piu torch==$pyt_ver+cpu torchvision==0.6.1+cpu -f $pyt_url"
+pyt_ver='1.6.0'
+alias pipipyt="$piu torch==$pyt_ver+cpu torchvision==0.7.0+cpu -f $pyt_url"
+
+#== CuPy
+# `pip install cupy` just doesnt seem to work, so use whl
+alias pipicupy="pip install cupy-cuda110 -f https://github.com/cupy/cupy/releases/tag/v7.8.0"
 
 # Extra setup
 # ===========
