@@ -191,7 +191,7 @@ ln -sf /home/evan/.Dots/ipython_config.py /home/evan/.ipython/profile_default
 #                                  languages                                  #
 #-----------------------------------------------------------------------------#
 
-# n (node manager)
+# n (node manager) npm
 # ================
 curl -L https://git.io/n-install | N_PREFIX=~/.n bash -s -- -y
 
@@ -395,6 +395,31 @@ wget https://europe-west1-minetime-backend.cloudfunctions.net/download/linux-deb
 #wget https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/0.7.0/git-interactive-rebase-tool_0.7.0_amd64.deb
 #sudo dpkg -i git-interactive-rebase-tool_0.7.0_amd64.deb # may need install libcurl3 and libncurses5
 #git config --global sequence.editor git-interactive-rebase-tool
+
+
+#=============================================================================#
+#                                                                             #
+#     .oooooo.    ooooo      ooo   .oooooo.   ooo        ooooo oooooooooooo   #
+#    d8P'  `Y8b   `888b.     `8'  d8P'  `Y8b  `88.       .888' `888'     `8   #
+#   888            8 `88b.    8  888      888  888b     d'888   888           #
+#   888            8   `88b.  8  888      888  8 Y88. .P  888   888oooo8      #
+#   888     ooooo  8     `88b.8  888      888  8  `888'   888   888    "      #
+#   `88.    .88'   8       `888  `88b    d88'  8    Y     888   888       o   #
+#    `Y8bood8P'   o8o        `8   `Y8bood8P'  o8o        o888o o888ooooood8   #
+#                                                                             #
+#=============================================================================#
+#
+# Recently started using gnome DE; here are my notes on setup.
+
+# Shell-extensions:
+sudo apt install -y gnome-shell-extensions gnome-shell-extension-move-clock
+
+# Enabled extensions
+# ------------------
+# Desktop icons, horizontal workspaces,
+
+
+
 
 
 
