@@ -354,6 +354,12 @@ wget -O ~/.Apps/utils/Z_jump.sh https://raw.githubusercontent.com/rupa/z/master/
 #                   Independent Installers + extra steps                      #
 #-----------------------------------------------------------------------------#
 
+# MineTime
+# ========
+# (calendar)
+wget https://github.com/marcoancona/MineTime/releases/download/v1.8.6/MineTime_1.8.6_amd64.deb
+
+
 # borg
 # ====
 # (terminal snippet manager)
