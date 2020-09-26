@@ -54,6 +54,15 @@ theme: # ANYTHING related to layout, appearance, highlighting, css, style, etc..
       themer takes a set of colors and generates themes
       for your apps (editors, terminals, wallpapers, and more)
 
+watch:
+  lbry:
+    url: https://lbry.com/
+    tags: [videos, youtube, foss]
+    what:
+      LBRY is a secure, open, and community-run digital marketplace.
+      FOSS, decentralized, distributed, community controlled alternative to
+      something like youtube.
+
 ---
 ###    PRIVACY    ###
 
