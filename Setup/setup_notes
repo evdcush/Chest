@@ -418,11 +418,12 @@ wget https://europe-west1-minetime-backend.cloudfunctions.net/download/linux-deb
 # Recently started using gnome DE; here are my notes on setup.
 
 # Shell-extensions:
-sudo apt install -y gnome-shell-extensions gnome-shell-extension-move-clock
+sudo apt install -y gnome-shell-extensions gnome-shell-extension-dash-to-panel gnome-tweaks
 
 # Enabled extensions
 # ------------------
 # Desktop icons, horizontal workspaces,
+
 
 
 
