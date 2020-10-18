@@ -489,7 +489,7 @@ sudo apt install -y gnome-shell-extensions gnome-shell-extension-dash-to-panel g
 # {%a - }{%y - }{%t}
 
 ## Additional
-# delimiter: 'and'
+# delimiter: ' and '
 # max num auth: 2
 # add suffix: 'et al'
 
