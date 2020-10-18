@@ -69,6 +69,8 @@ alias hzf='history | fzf'
 alias lsd='sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL'
 alias duh='du -h --max-depth=1 | sort -h;'
 
+alias wg='wget'
+
 #---- misc
 #alias plz='sudo $(fc -ln -1)' # mmm inconsistent
 alias myip='inxi -i'
