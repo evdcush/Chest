@@ -186,6 +186,7 @@ testing:
 - nose
 - pytest
 - sniffer
+- tox      # a virtualenv test automation tool, basically to check your package on different builds/envs
 
 
 dev:
