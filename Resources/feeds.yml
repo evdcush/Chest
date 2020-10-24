@@ -4,7 +4,7 @@
 # ====
 
 bair:
-    description: berkeley research blog
+    description: Berkeley research blog
     feed_url: http://bair.berkeley.edu/blog/feed.xml
     url: http://bair.berkeley.edu/blog/
 
@@ -14,7 +14,7 @@ cmu:
     url: https://blog.ml.cmu.edu/
 
 deepmind:
-    description: deepmind blog
+    description: DeepMind blog
     feed_url: https://deepmind.com/blog/feed/basic/
     url: https://deepmind.com/blog
 
@@ -24,19 +24,25 @@ distill:
     url: https://distill.pub/
 
 google-ai:
-    description: google AI blog (news, summaries)
+    description: Google AI blog (news, summaries)
     feed_url: http://feeds.feedburner.com/blogspot/gJZg
     url: https://ai.googleblog.com/
 
-Irpan:
+irpan:
     description: Alex Irpan site
     feed_url: https://www.alexirpan.com/feed.xml
     url: https://www.alexirpan.com/
 
 openai:
-    description: openai research blog (news, summaries)
+    description: OpenAI research blog (news, summaries)
     feed_url: https://blog.openai.com/rss/
     url: https://blog.openai.com/
+
+phys.org:
+    description:
+        'quality science news (NB: MANY RSS feeds, see https://phys.org/feeds/)'
+    feed_url: https://phys.org/rss-feed/
+    url: https://phys.org/
 
 synced:
     description: news on machine intelligence
@@ -48,8 +54,13 @@ Ruder:
     feed_url: http://ruder.io/rss/index.rss
     url: http://ruder.io/
 
+techxplore:
+    description: tech news from the same folks behind phys.org
+    feed_url: https://techxplore.com/rss-feed/
+    url: https://techxplore.com/
+
 uber:
-    description: uber AI blog
+    description: Uber AI blog
     feed_url: https://eng.uber.com/category/articles/ai/feed/
     url: https://eng.uber.com/category/articles/ai/#
 
