@@ -186,6 +186,7 @@ $piu feedparser requests lxml urllib3 bs4 pygithub; \
 $piu twine pytest pypi-cli fart hydra omegaconf; \
 $piu restview rstcheck grip termdown pdfCropMargins;"
 
+# NB: if you get an error with mpi4py --> `sudo apt install -y mpich`
 
 # Snowflakes
 # ----------
