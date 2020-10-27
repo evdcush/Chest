@@ -118,6 +118,7 @@ plugins=(
 
 # Source zsh
 # ==========
+DISABLE_AUTO_UPDATE="true"
 source $ZSH/oh-my-zsh.sh
 
 # Uncomment the following line to enable command auto-correction.
