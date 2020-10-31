@@ -1,4 +1,6 @@
-# Pull
+# Pull image.
+# FROM ubuntu:20.04
+# FROM alpine:latest
 FROM nvidia/cuda:11.1-cudnn8-devel-ubuntu18.04
 
 # Update packages.
