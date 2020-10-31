@@ -21,3 +21,11 @@ RUN apt install -y \
 # Set locale
 RUN locale-gen en_US.UTF-8
 
+# @TODO Setup zsh
+#   --> I think you have to setup $USER and .zshrc first??
+# RUN chsh -s $(which zsh)
+# RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# @TODO Install pyenv
+#   --> I think you need to have done the .zshrc first
+#RUN curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | zsh
