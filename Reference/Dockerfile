@@ -16,7 +16,9 @@ RUN apt install -y \
     gcc-9 g++-9 llvm mpich gfortran libboost-all-dev libblas-dev liblapack-dev \
     libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev locales \
     libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev \
-    libjpeg-dev liblzma-dev
+    software-properties-common libjpeg-dev liblzma-dev jq yq vim \
+    rm -rf /var/lib/apt/lists/* && \
+    rm -rf /var/cache/apt/archives/*
 
 # Set locale
 RUN locale-gen en_US.UTF-8
@@ -29,3 +31,13 @@ RUN locale-gen en_US.UTF-8
 # @TODO Install pyenv
 #   --> I think you need to have done the .zshrc first
 #RUN curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | zsh
+
+
+
+#=============================================================================#
+#                                  REFERENCE                                  #
+#=============================================================================#
+
+# https://github.com/topics/zsh?l=dockerfile
+# https://github.com/topics/oh-my-zsh?l=dockerfile
+# https://github.com/topics/pytorch?l=dockerfile
