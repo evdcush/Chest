@@ -306,7 +306,8 @@ alias cph='echo $(fc -l -1) \
 
 #---- joplin
 alias install_joplin="wget -O - \
-https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_install_and_update.sh | bash"
+https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_install_and_update.sh \
+| bash"
 
 
 
