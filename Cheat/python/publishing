@@ -6,6 +6,8 @@
 This whole process was pretty tricky; there were many steps involved and you
 depended heavily on shell history commands to get the proper command.
 
+Basically, everything you did was referenced from the Real Python tutorial:
+https://realpython.com/pypi-publish-python-package/
 
 
 #=============================================================================#
