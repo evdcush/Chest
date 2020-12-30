@@ -1,5 +1,10 @@
 
 
+#=============================================================================#
+#                              PUBLISHING ON PYPI                             #
+#=============================================================================#
+This whole process was pretty tricky; there were many steps involved and you
+depended heavily on shell history commands to get the proper command.
 
 
 
