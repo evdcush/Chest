@@ -12,6 +12,12 @@ https://realpython.com/pypi-publish-python-package/
 @TODO(evan): proper steps here (AT LEAST shell hist commands).
 ##  FLOW  ##
 
+##  GOTCHAS  ##
+* I remember most of the gotchas being with **versioning** and **build/**.
+  - If you messed up something with a build, and pushed that to pypi,
+    you cannot simply rebuild and push again as you CANNOT PUSH UPDATES/CHANGES
+    TO SAME VERSION. It's tedious, but you must make a new version for ANY
+    change.
 
 
 
