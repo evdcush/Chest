@@ -9,6 +9,11 @@ depended heavily on shell history commands to get the proper command.
 Basically, everything you did was referenced from the Real Python tutorial:
 https://realpython.com/pypi-publish-python-package/
 
+@TODO(evan): proper steps here (AT LEAST shell hist commands).
+##  FLOW  ##
+
+
+
 
 #=============================================================================#
 #                             OBSERVATIONS & TIPS                             #
