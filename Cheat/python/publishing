@@ -23,7 +23,21 @@ https://realpython.com/pypi-publish-python-package/
 #                                    PAINS                                    #
 #-----------------------------------------------------------------------------#
 
-##  MANUAL
+##  TOO MANY MANUAL STEPS  ##
+It's absurd.
+
+* Manual changes to many different files (eg, __init__.py) for trivial updates
+  like version.
+
+* Multiple steps to build and then publish.
+  - Build and publish target different files, confusion about what's needed
+    to publish to pypi (which build/ artifacts).
+
+* Synchronization between version available on github vs. pypi?
+
+We NEED some sense of best-practices AND some tool to automate this process.
+It's excrutiatingly manual.
+
 
 
 #=============================================================================#
