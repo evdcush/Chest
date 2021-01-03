@@ -579,6 +579,32 @@ sudo apt install -y libedgetpu1-std libedgetpu1-max
 
 #=============================================================================#
 #                                                                             #
+#                  db         I8,        8        ,8I   ad88888ba             #
+#                 d88b        `8b       d8b       d8'  d8"     "8b            #
+#                d8'`8b        "8,     ,8"8,     ,8"   Y8,                    #
+#               d8'  `8b        Y8     8P Y8     8P    `Y8aaaaa,              #
+#              d8YaaaaY8b       `8b   d8' `8b   d8'      `"""""8b,            #
+#             d8""""""""8b       `8a a8'   `8a a8'             `8b            #
+#            d8'        `8b       `8a8'     `8a8'      Y8a     a8P            #
+#           d8'          `8b       `8'       `8'        "Y88888P"             #
+#                                                                             #
+#=============================================================================#
+
+# Create & launch an Ubuntu EC2 instance, you will be `ubuntu@ip`
+# First, add a new user
+# REFERENCE: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managing-users.html
+
+# Add that user to sudoers (from `ubuntu` user)
+sudo usermod -aG sudo evan
+
+# Install lustre client on ubuntu 18.04:
+wget -O - https://fsx-lustre-client-repo-public-keys.s3.amazonaws.com/fsx-ubuntu-public-key.asc | sudo apt-key add -
+
+
+
+
+#=============================================================================#
+#                                                                             #
 #  88888888ba,                             88                                 #
 #  88      `"8b                            88                                 #
 #  88        `8b                           88                                 #
