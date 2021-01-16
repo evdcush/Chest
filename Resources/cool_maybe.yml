@@ -54,7 +54,7 @@ theme: # ANYTHING related to layout, appearance, highlighting, css, style, etc..
       themer takes a set of colors and generates themes
       for your apps (editors, terminals, wallpapers, and more)
 
-watch:
+social-media:
   lbry:
     url: https://lbry.com/
     tags: [videos, youtube, foss]
@@ -62,6 +62,15 @@ watch:
       LBRY is a secure, open, and community-run digital marketplace.
       FOSS, decentralized, distributed, community controlled alternative to
       something like youtube.
+
+  aether:
+    url: https://getaether.net/
+    tags: [community, decentralized, chat]
+    what:
+      Peer-to-peer ephemeral public communities.
+      Open source, self-governing communities with auditable moderation and
+      mod elections.
+
 
 ---
 ###    PRIVACY    ###
