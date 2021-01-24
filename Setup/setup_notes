@@ -262,6 +262,9 @@ kdeconnect \
 dict dictd dict-gcide dict-wn dict-moby-thesaurus \
 anki xfce4-timer-plugin redshift font-manager fslint;
 
+# EQ
+sudo apt install -y pulseeffects
+
 
 #---- Scientific/numerical software
 sudo apt install -y scilab sagemath # sagemath 2gb pkg, just use sympy?
