@@ -4,7 +4,7 @@ essentials:
 - scipy
 - sklearn
 - matplotlib
-- chainer
+- torch
 - ipython
 - konch
 - jupyter
