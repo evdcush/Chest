@@ -70,6 +70,7 @@ vision:
 - scikit-image
 - chainercv
 - glumpy  # rendering
+- torchvision
 
 GPU:
 - pycuda  # unofficial cython-like embedded cuda code
