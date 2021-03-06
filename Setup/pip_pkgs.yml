@@ -95,6 +95,9 @@ Robotics:
 - sphinx-ros     # sphinx ext adds rst directives that can be used to document ROS pkgs
 
 
+# Python packages related to torch
+torch-ecosystem:
+  - torchvision
 
 
 
