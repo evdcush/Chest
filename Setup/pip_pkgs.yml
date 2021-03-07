@@ -141,6 +141,7 @@ visualization:
 - pydot     # interface to graphviz, handles DOT stuff
 - visdom    # dashboard/sharing visualization thing from FB, look coo
 - holoviews  # jupyter, rich
+- streamlit # data apps in python
 
 
 notebook:
