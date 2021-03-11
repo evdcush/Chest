@@ -142,6 +142,7 @@ visualization:
 - visdom    # dashboard/sharing visualization thing from FB, look coo
 - holoviews  # jupyter, rich
 - streamlit # data apps in python
+- pyvista   # like mayavi it seems, but better and maintained
 
 
 notebook:
