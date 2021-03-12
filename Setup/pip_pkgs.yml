@@ -380,6 +380,7 @@ misc-untested:
 - luigi         # manages task pipeline
 - simiki       # simple wiki platform; **appears unmaintained
 - argcomplete  # bash autocompletion for argparse
+- outrun
 
 
 hmmm-cool:
