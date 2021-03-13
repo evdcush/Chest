@@ -183,7 +183,7 @@ cv='opencv-python imageio scikit-image scikit-video open3d-python pycocotools'
 alias pipinew="$piu pip setuptools wheel; \
 $piu cython numpy scipy sklearn matplotlib sympy ipython jupyter notebook; \
 $piu opencv-python imageio scikit-image scikit-video open3d-python pandas; \
-$piu tensorboardX chainer pybullet 'gym[atari, box2d, classic_control]' ; \
+$piu tensorboardX pybullet 'gym[atari, box2d, classic_control]' ; \
 $piu optuna 'ray[tune]'; \
 $piu gym-super-mario-bros sphinx docutils pyperclip unidecode python-slugify; \
 $piu feedparser requests lxml urllib3 bs4 pygithub mpi4py; \
@@ -197,8 +197,8 @@ $piu restview rstcheck grip termdown pdfCropMargins;"
 #== pytorch
 # nb: only for cpu, just `pip install torch` for gpu ver
 pyt_url='https://download.pytorch.org/whl/torch_stable.html'
-pyt_ver='1.7.1'
-alias pipipyt="$piu torch==$pyt_ver+cpu torchvision==0.8.2+cpu -f $pyt_url"
+pyt_ver='1.8.0'
+alias pipipyt="$piu torch==$pyt_ver+cpu torchvision==0.9.0+cpu -f $pyt_url"
 
 #== detectron2
 alias pipid2prebuilt='python -m pip install detectron2 -f \
