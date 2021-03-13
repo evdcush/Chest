@@ -184,7 +184,7 @@ alias pipinew="$piu pip setuptools wheel; \
 $piu cython numpy scipy sklearn matplotlib sympy ipython jupyter notebook; \
 $piu opencv-python imageio scikit-image scikit-video open3d-python pandas; \
 $piu tensorboardX pybullet 'gym[atari, box2d, classic_control]' ; \
-$piu optuna 'ray[tune]' hyperopt; \
+$piu optuna 'ray[tune]' hyperopt scikit-optimize; \
 $piu gym-super-mario-bros sphinx docutils pyperclip unidecode python-slugify; \
 $piu feedparser requests lxml urllib3 bs4 pygithub mpi4py; \
 $piu twine pytest pypi-cli fart hydra-core omegaconf tensorboard; \
