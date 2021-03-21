@@ -163,5 +163,3 @@ export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_P
 
 
 #export UE4_ROOT='/home/evan/.Dev/UnrealEngine'
-
-
