@@ -63,6 +63,7 @@ alias ldot='ls -dF --group-directories-first .*' # list dots only
 alias lk='ls -1SshX --file-type --group-directories-first' # list contents, sorted by size, grouped by ext
 alias lsz='ls -1shSr' # list files, 1-line each, show size in human-readable, sorted on size, reverse (biggest bottom)
 alias lzf='ls | fzf' # list w/ fuzzy search
+alias countf='find . -type f -printf . | wc -c'
 
 alias h='history'
 alias hzf='history | fzf'
