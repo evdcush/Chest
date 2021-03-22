@@ -381,7 +381,7 @@ misc-untested:
 - simiki       # simple wiki platform; **appears unmaintained
 - argcomplete  # bash autocompletion for argparse
 - outrun       # execute a local command using the processing power of another linux machine
-- xeuledoc
+- xeuledoc     # fetch info about a public google doc
 
 
 hmmm-cool:
