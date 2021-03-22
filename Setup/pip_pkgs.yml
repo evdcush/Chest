@@ -98,6 +98,7 @@ Robotics:
 # Python packages related to torch
 torch-ecosystem:
   - torchvision
+  - torch_tb_profiler
 
 
 
