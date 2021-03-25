@@ -477,6 +477,13 @@ random.shuffle(seq) # shuffle seq IN PLACE
 #                                   STRING                                    #
 #-----------------------------------------------------------------------------#
 
+#==== logging
+import logging
+>>> logging.basicConfig(format="[%(asctime)s]: %(message)s", datefmt="%Y/%m/%d %H:%M:%S")
+>>> logging.warning("Hello friend!")
+[2021/03/28 10:32:50]: Hello friend!
+
+
 #==== f string (and .format)
 b = 'baz'; my_float = 2**(1/2);
 print(f'{my_float}') # 1.4142135623730951
