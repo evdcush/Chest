@@ -112,6 +112,8 @@ sudo apt-add-repository ppa:ubuntu-toolchain-r/test # Don't need repo if on ubu 
 sudo apt install gcc-7 g++-7 gcc-8 g++-8 gcc-9 g++-9 gcc-10 g++-10 --install-suggests
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 70 --slave /usr/bin/g++ g++ /usr/bin/g++-7
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 80 --slave /usr/bin/g++ g++ /usr/bin/g++-8
+update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /usr/bin/g++ g++ /usr/bin/g++-9
+update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 100 --slave /usr/bin/g++ g++ /usr/bin/g++-10
 update-alternatives --set gcc /usr/bin/gcc-8
 
 
@@ -282,7 +284,7 @@ libreoffice-math libreoffice-l10n-ja libreoffice-dmaths libreoffice-draw
 ### by desktop than the latest, manually downloaded fonts
 sudo apt install -y fonts-hack fonts-oxygen fonts-noto-cjk-extra "fonts-sawarabi*" \
 fonts-mplus fonts-mononoki "fonts-moe*" fonts-umeplus \
-fonts-woowa-hanna "fonts-wqy*" fonts-ebgaramond-extra fonts-cantarell \
+"fonts-wqy*" fonts-ebgaramond-extra fonts-cantarell \
 "fonts-aoyagi*" fonts-ipafont fonts-seto fonts-misaki fonts-mikachan \
 "fonts-takao*" fonts-lato fonts-stix \
 texlive-fonts-recommended texlive-latex-recommended \
@@ -425,9 +427,11 @@ sudo apt install -y gnome-shell-extensions gnome-shell-extension-dash-to-panel g
 
 # Enabled extensions
 # ------------------
-# Desktop icons, horizontal workspaces,
+# Desktop icons, horizontal workspaces (maybe not, kills overview preview), dash-to-panel, ArcMenu
 
 
+# fcitx + mozc
+# https://notekunst.hatenablog.com/entry/fcitx-
 
 
 
@@ -449,6 +453,10 @@ sudo apt install -y gnome-shell-extensions gnome-shell-extension-dash-to-panel g
 #                  ███████ ███████    ██     ██████  ██                       #
 #                                                                             #
 #=============================================================================#
+
+# STARTPAGE BULLSHIT
+# https://support.startpage.com/index.php?/en/Knowledgebase/Article/View/1164/2/search-strings-or-adding-startpage-as-a-search-option-in-unsupported-browsers
+# this: https://www.startpage.com/do/dsearch?query=%s
 
 #-----------------------------------------------------------------------------#
 #                                    Zotero                                   #
