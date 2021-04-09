@@ -15,8 +15,6 @@ git rm --cached -r .
 # to remove automatically added code:
 git rm -rf .
 
-
-
 # To pull all new remote branches from remote:
 git remote update
 
@@ -143,7 +141,6 @@ git-crypt unlock ../sample_repo_gckey
 #  to secret_dir/.gitattributes:
 * filter=git-crypt diff=git-crypt
 .gitattributes !filter !diff  # this line necessary to insure .gitattributes file is not encrypted
-
 
 
 #=============================================================================#
@@ -304,10 +301,6 @@ git rev-list --objects --all \
 | sort --numeric-sort --key=2 \
 | cut -c 1-12,41- \
 | numfmt --field=2 --to=iec-i --suffix=B --padding=7 --round=nearest
-
-
-
-
 
 
 # Script/Cmd to replace all author
