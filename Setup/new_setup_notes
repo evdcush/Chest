@@ -49,8 +49,9 @@
 # wherever possible, we use Ungoogled Chromium.
 
 
-# EXTENSIONS
-# ==========
+#-----------------------------------------------------------------------------#
+#                                  Extensions                                 #
+#-----------------------------------------------------------------------------#
 # To install extensions conveniently, first install this extension:
 https://github.com/NeverDecaf/chromium-web-store
 
@@ -61,8 +62,6 @@ wget https://github.com/NeverDecaf/chromium-web-store/releases/download/v1.3.0/C
 # chromium extensions.
 
 
-#-----------------------------------------------------------------------------#
-#                                  Extensions                                 #
-#-----------------------------------------------------------------------------#
+
 
 https://github.com/Zohaib-Amir/CloseLeftTabs
