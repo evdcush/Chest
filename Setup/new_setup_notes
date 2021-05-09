@@ -49,6 +49,18 @@
 # wherever possible, we use Ungoogled Chromium.
 
 
+# EXTENSIONS
+# ==========
+# To install extensions conveniently, first install this extension:
+https://github.com/NeverDecaf/chromium-web-store
+
+wget https://github.com/NeverDecaf/chromium-web-store/releases/download/v1.3.0/Chromium.Web.Store.crx
+
+# Now I've never been able to "drag and drop" this crx into chromium and have it
+# work, so you'll need to unzip that crx somewhere, and "Load unpacked" in
+# chromium extensions.
+
+
 
 #-----------------------------------------------------------------------------#
 #                                  Extensions                                 #
