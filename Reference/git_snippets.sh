@@ -281,6 +281,10 @@ git branch -d <branch_name> # local
 # ---------------------
 git config --global core.excludesfile ~/.Dots/global_gitignore
 
+# Set local git config to ignore untracked files
+# ----------------------------------------------
+git config --local status.showUntrackedFiles no
+
 # Squash/drop all commits to one commit
 # -------------------------------------
 git rebase --root -i  # squash or drop for all commits save first
