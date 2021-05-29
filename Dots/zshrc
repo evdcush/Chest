@@ -32,6 +32,9 @@ path_prepend() {
     fi
 }
 
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="${PATH:+${PATH}:}$PYENV_ROOT/bin"
+
 # Add to path
 # ===========
 #---- Pyenv
