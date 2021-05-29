@@ -101,3 +101,28 @@ wget https://github.com/NeverDecaf/chromium-web-store/releases/download/v1.3.0/C
 
 ###  EXTENSIONS:
 https://github.com/Zohaib-Amir/CloseLeftTabs
+
+
+
+#===============================================================================#
+#                                                                               #
+#          88                           88                                      #
+#          88                           ""                                      #
+#          88                                                                   #
+#  ,adPPYb,88   ,adPPYba,  8b       d8  88   ,adPPYba,   ,adPPYba,  ,adPPYba,   #
+# a8"    `Y88  a8P_____88  `8b     d8'  88  a8"     ""  a8P_____88  I8[    ""   #
+# 8b       88  8PP"""""""   `8b   d8'   88  8b          8PP"""""""   `"Y8ba,    #
+# "8a,   ,d88  "8b,   ,aa    `8b,d8'    88  "8a,   ,aa  "8b,   ,aa  aa    ]8I   #
+#  `"8bbdP"Y8   `"Ybbd8"'      "8"      88   `"Ybbd8"'   `"Ybbd8"'  `"YbbdP"'   #
+#                                                                               #
+#===============================================================================#
+
+# KOBO
+# ====
+# if you factory reset it, it will "require" you to login to some online service.
+# instead, just validate your user via:
+# 1. Connect kobo to pc
+# 2. sqlite3 .kobo/KoboReader.sqlite
+# 3. sql> INSERT INTO user(UserID,UserKey) VALUES('1','');
+# 4. exit sql
+# 5. disconnect kobo, and you should be good to go
