@@ -62,6 +62,18 @@ sudo apt install dconf-editor
 #=============================================================================#
 
 
+# Hotkeys
+# =======
+
+# Remap super<NUM> keys
+# ---------------------
+# SOURCE: https://unix.stackexchange.com/questions/510375/super1-super2-super3-etc-keys-can-not-be-remapped-in-gnome
+
+
+
+
+
+
 
 
 
