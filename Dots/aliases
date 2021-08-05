@@ -296,9 +296,11 @@ alias treed='tree -d'   # only show dirs
 
 #---- Copy
 alias clip="xclip -selection clipboard"
-alias clipo="xclip -o -sel clip"
+#alias clipo="xclip -o -sel clip"
 alias delclip="xclip -o | xargs sudo rm -rf"
 alias cpget="xclip -o -sel clip | xargs wget"
+alias clipo='xclip -o'
+alias pst='xclip -o >'
 
 # copy previous command (is this really the only sol? stupidly verbose)
 # if you dont translate, there is newline?
