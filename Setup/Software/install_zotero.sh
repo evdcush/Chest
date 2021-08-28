@@ -23,7 +23,7 @@ ZDL='https://www.zotero.org/download'  # zotero download splash
 PLAT='linux-x86_64'                    # 'mac', 'win32', 'linux-i686' available
 
 #=== Get Latest version
-VER=`wget -q -O- $ZDL | grep $PLAT | tail -c 12 | cut -d'"' -f1`
+VER=`wget -q -O- $ZDL | grep $PLAT | tail -c 15 | cut -d'"' -f2`
 
 # ALTERNATIVELY
 #VER=`wget -q -O- https://www.zotero.org/download \
