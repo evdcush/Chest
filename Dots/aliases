@@ -203,7 +203,7 @@ alias pipipyt="$piu torch==$pyt_ver+cpu torchvision==0.10.0+cpu -f $pyt_url"
 
 #== detectron2
 alias pipid2prebuilt='python -m pip install detectron2 -f \
-https://dl.fbaipublicfiles.com/detectron2/wheels/cu110/torch1.7/index.html'
+https://dl.fbaipublicfiles.com/detectron2/wheels/cu111/torch1.9/index.html'
 
 alias pipid2build="python -m pip install \
 'git+https://github.com/facebookresearch/detectron2.git'"
