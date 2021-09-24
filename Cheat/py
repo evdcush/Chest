@@ -651,3 +651,22 @@ list(map(lambda i: i - 1, [1,2,3,4])) == [0,1,2,3]
 #-----------------------------------------------------------------------------#
 #                              PROCESS & THREAD                               #
 #-----------------------------------------------------------------------------#
+
+
+class BiDict(UserDict):
+    """A bijective dictionary used for mapping torch <--> trt objects.
+    """
+    def __delitem__(self, key):
+        value = self.data.pop(key)
+        self.data.pop(value, None)
+
+    def __setitem__(self, key, value):
+        if key in self:
+            del self[self[key]]
+        if value in self:
+            del self[value]
+        self.data[key] = value
+        self.data[value] = key
+
+DTYPE_MAPPING = BiDict({torch.int8: trt.int8, torch.int32: trt.int32, torch.float16: trt.float16, torch.float32: trt.float32})
+DEVICE_MAPPING = BiDict({torch.device("cuda")})
