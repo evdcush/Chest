@@ -198,7 +198,7 @@ $piu restview rstcheck grip termdown pdfCropMargins;"
 #== pytorch
 # nb: only for cpu, just `pip install torch` for gpu ver
 pyt_url='https://download.pytorch.org/whl/torch_stable.html'
-pyt_ver='1.8.0'
+pyt_ver='1.9.0'
 alias pipipyt="$piu torch==$pyt_ver+cpu torchvision==0.9.0+cpu -f $pyt_url"
 
 #== detectron2
