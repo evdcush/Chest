@@ -7,6 +7,10 @@ sudo apt intall --no-install-recommends --no-install-suggests texlive-extra-util
 pip install -U pdfCropMargins
 pdf-crop-margins -s -u myfile.pdf
 
+# Examples
+# uniformly pad left bot right top margins (5% pad to L/R, 10% pad to T/B)
+pdf-crop-margins -u -p4 105 110 105 110 RLbook2020trimmed.pdf
+
 
 # Extract PDF pages
 # -----------------
