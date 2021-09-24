@@ -1,0 +1,7 @@
+##  To mount a drive remotely via ssh  ##
+
+# Find your target drive
+sudo fdisk -l  # eg '/dev/sdb1'
+
+# Mount it
+sudo mount /dev/sdb1 /media/evan/Pack
