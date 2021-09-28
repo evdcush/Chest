@@ -188,7 +188,7 @@ $piu tensorboardX pybullet 'gym[atari, box2d, classic_control]' ; \
 $piu optuna 'ray[tune]' hyperopt scikit-optimize HEBO jax jaxlib pymoo; \
 $piu gym-super-mario-bros sphinx docutils pyperclip unidecode python-slugify; \
 $piu feedparser requests lxml urllib3 bs4 pygithub mpi4py; \
-$piu twine pytest pypi-cli fart hydra-core omegaconf tensorboard; \
+$piu twine pytest pypi-cli fart hydra-core omegaconf tensorboard wandb; \
 $piu restview rstcheck grip termdown pdfCropMargins;"
 
 # NB: if you get an error with mpi4py --> `sudo apt install -y mpich`
