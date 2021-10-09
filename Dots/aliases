@@ -148,6 +148,7 @@ alias akd="$ap-key del"
 #=============================================================================#
 # all aliases related to python stuff
 alias py='python'
+alias ipy='ipython'
 
 # notebook extensions
 #  - jupyter_dashboards  <---- has NOT worked yet (maybe conflict with nbext?)
