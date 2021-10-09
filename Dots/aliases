@@ -149,6 +149,7 @@ alias akd="$ap-key del"
 # all aliases related to python stuff
 alias py='python'
 alias ipy='ipython'
+alias nb="jupyter notebook"
 
 # notebook extensions
 #  - jupyter_dashboards  <---- has NOT worked yet (maybe conflict with nbext?)
@@ -250,9 +251,6 @@ alias pipupdate="pip list --outdated --format=freeze \
 # =========
 #---- sys
 alias smi='nvidia-smi'
-
-#---- notebook
-alias nb="jupyter notebook"
 
 #---- editors
 alias st="subl"    # open file with sublime
