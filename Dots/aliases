@@ -268,7 +268,7 @@ alias npmls='npm list -g --depth 0'  # list all globally installed packages
 # Software
 # ========
 #---- youtube-dl
-alias ytda='youtube-dl -f bestaudio -x --audio-format flac'
+alias ytmu='youtube-dl -f bestaudio'
 
 #---- vpn
 spvpn='sudo pvpn'
