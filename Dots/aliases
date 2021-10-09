@@ -157,6 +157,8 @@ alias akd="$ap-key del"
 # use this way too damn much
 alias cit="echo 'code.interact(local=dict(globals(), **locals()))' \
 | xclip -selection clipboard"
+alias pit="echo 'from IPython import embed; embed();' \
+| xclip -sel clip"
 
 # Cython directives
 alias cyd="echo '# distutils: language = c++\n# cython: language_level=3' | xclip"
