@@ -339,8 +339,7 @@ alias rgr="ranger"            # ranger file manager
 alias rs='redshift -O 2400'   # screen color temp adjust for night
 #alias ja='myougiden'   # ja now a func that can accept from clipboard
 alias myg='myougiden'         # shorter myougiden
-
-
+alias bat='batcat'
 
 
 #=============================================================================#
