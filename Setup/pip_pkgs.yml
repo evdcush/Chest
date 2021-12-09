@@ -282,7 +282,7 @@ media:
 - myougiden  # like dictd for jp
 - rembg      # Remove the background from images!
 - yt-dlp     # youtube-dl fork; more features and maintained
-- spotdl
+- spotdl     # spotify downloader (assuming match from yt)
 
 images:
 - imageio
