@@ -212,7 +212,7 @@ pyt_ver='1.10.0'
 alias pipipyt="$piu torch==$pyt_ver+cpu torchvision==0.11.1+cpu -f $pyt_url"
 
 #== detectron2
-alias pipid2prebuilt='python -m pip install detectron2 -f \
+alias pipid2gpu='python -m pip install detectron2 -f \
 https://dl.fbaipublicfiles.com/detectron2/wheels/cu113/torch1.10/index.html'
 
 alias pipid2build="python -m pip install \
