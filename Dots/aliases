@@ -187,6 +187,9 @@ piu="pip install -U"
 vis='matplotlib bokeh seaborn plotly pyvista'
 cv='opencv-python imageio scikit-image scikit-video open3d-python pycocotools'
 
+# apps
+mediadl='yt-dlp youtube-dl spotdl'
+
 alias pipinew="$piu pip setuptools wheel; \
 $piu cython numpy scipy sklearn matplotlib sympy ipython jupyter notebook; \
 $piu opencv-python imageio scikit-image scikit-video open3d-python pandas; \
@@ -195,7 +198,8 @@ $piu optuna 'ray[tune]' hyperopt scikit-optimize HEBO jax jaxlib pymoo; \
 $piu gym-super-mario-bros sphinx docutils pyperclip unidecode python-slugify; \
 $piu feedparser requests lxml urllib3 bs4 pygithub mpi4py; \
 $piu twine pytest pypi-cli fart hydra-core omegaconf tensorboard wandb; \
-$piu restview rstcheck grip termdown pdfCropMargins rembg;"
+$piu restview rstcheck grip termdown pdfCropMargins rembg; \
+$piu $mediadl;"
 
 # NB: if you get an error with mpi4py --> `sudo apt install -y mpich`
 
@@ -204,12 +208,12 @@ $piu restview rstcheck grip termdown pdfCropMargins rembg;"
 #== pytorch
 # nb: only for cpu, just `pip install torch` for gpu ver
 pyt_url='https://download.pytorch.org/whl/torch_stable.html'
-pyt_ver='1.9.1'
-alias pipipyt="$piu torch==$pyt_ver+cpu torchvision==0.10.0+cpu -f $pyt_url"
+pyt_ver='1.10.0'
+alias pipipyt="$piu torch==$pyt_ver+cpu torchvision==0.11.1+cpu -f $pyt_url"
 
 #== detectron2
 alias pipid2prebuilt='python -m pip install detectron2 -f \
-https://dl.fbaipublicfiles.com/detectron2/wheels/cu111/torch1.9/index.html'
+https://dl.fbaipublicfiles.com/detectron2/wheels/cu113/torch1.10/index.html'
 
 alias pipid2build="python -m pip install \
 'git+https://github.com/facebookresearch/detectron2.git'"
