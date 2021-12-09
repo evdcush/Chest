@@ -183,6 +183,7 @@ piu="pip install -U"
 
 # Typical stack
 # =============
+# work stuff
 vis='matplotlib bokeh seaborn plotly pyvista'
 cv='opencv-python imageio scikit-image scikit-video open3d-python pycocotools'
 
