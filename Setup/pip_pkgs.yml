@@ -277,10 +277,10 @@ parsers:
 
 
 media:
-- scdl  # soundcloud downloader, worked well one time i used
-- romkan  # romaji/kana converter
+- scdl       # soundcloud downloader, worked well one time i used
+- romkan     # romaji/kana converter
 - myougiden  # like dictd for jp
-- rembg  # Remove the background from images!
+- rembg      # Remove the background from images!
 
 images:
 - imageio
