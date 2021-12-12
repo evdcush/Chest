@@ -78,6 +78,7 @@ alias myip='inxi -i'
 alias tjst='TZ="Asia/Tokyo" date'
 alias tpst='TZ="America/Los_Angeles" date'
 alias tedt='TZ="America/New_York" date'
+alias tcet='TZ="Europe/Berlin" date'
 
 
 #=============================================================================#
