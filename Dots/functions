@@ -190,6 +190,11 @@ function pvenv(){
 #                                                                             #
 #=============================================================================#
 
+# scp with reversed order
+#   scp file.txt target:/path/to/dst
+#   pcs target:/path/to/dst file.txt
+pcs(){ scp $2 $1 }
+
 # dir and file stuff
 # ==================
 # Sort utils
