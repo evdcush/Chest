@@ -135,6 +135,18 @@ sudo apt install dolphin-emu
 #                                                                             #
 #-----------------------------------------------------------------------------#
 
+# First need to install java-8
+sudo apt install -y openjdk-8-jdk
+
+# Make sure your system's java is linked to java-8.
+sudo update-alternatives --config java
+
+# Install MineRL.
+pip install --upgrade minerl
+
+# (Optionally) download data.
+mkdir -p $HOME/.Data/MineRL
+python -m minerl.data.download --directory $HOME/.Data/MineRL --competition diamond
 
 
 
