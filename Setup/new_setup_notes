@@ -143,6 +143,26 @@ sudo apt install dolphin-emu
 # eg:
 wget https://github.com/deepmind/mujoco/releases/download/2.1.0/mujoco210-linux-x86_64.tar.gz
 
+# symlink or extract the dir to .mujoco/mujoco210  # (THIS IS FOR mujoco-py)!
+ln -sf /path/to/extracted-mujoco $HOME/.mujoco/mujoco210
+
+# Update LD_LIBRARY_PATH to point to the mujoco bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.mujoco/mujoco210/bin
+
+# mujoco-py
+# =========
+# install deps
+sudo apt install -y libosmesa6-dev libgl1-mesa-glx libglfw3
+
+# install py package
+pip install mujoco-py
+
+# Test installation, in python:
+#import mujoco_py
+#import os
+## This line will compile stuff:
+#mj_path = mujoco_py.utils.discover_mujoco()
+
 
 #=============================================================================#
 #                                                                             #
