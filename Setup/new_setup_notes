@@ -137,6 +137,11 @@ sudo apt install dolphin-emu
 # These notes are best-effort WIP.
 # It's also mixing up setup required for mujoco-py: https://github.com/openai/mujoco-py
 
+# mujoco
+# ======
+# Download from https://github.com/deepmind/mujoco/releases
+# eg:
+wget https://github.com/deepmind/mujoco/releases/download/2.1.0/mujoco210-linux-x86_64.tar.gz
 
 
 #=============================================================================#
