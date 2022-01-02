@@ -295,7 +295,8 @@ alias vpcf="$spvpn --fastest-connect"
 alias jrnl=" jrnl" # alias for preventing hist from logging jrnl
 
 #---- percollate
-alias perc='percollate pdf --output'
+#alias perc='percollate pdf --output'
+alias perc='percollate pdf'
 
 #---- zsh-marks
 alias g="jump"
