@@ -1,0 +1,1787 @@
+#=============================================================================#
+#                                                                             #
+#      ad88888ba   88888888888  888888888888  88        88  88888888ba        #
+#     d8"     "8b  88                88       88        88  88      "8b       #
+#     Y8,          88                88       88        88  88      ,8P       #
+#     `Y8aaaaa,    88aaaaa           88       88        88  88aaaaaa8P'       #
+#       `"""""8b,  88"""""           88       88        88  88""""""'         #
+#             `8b  88                88       88        88  88                #
+#     Y8a     a8P  88                88       Y8a.    .a8P  88                #
+#      "Y88888P"   88888888888       88        `"Y8888Y"'   88                #
+#                                                                             #
+#                                                                             #
+# This script details my post-install process, and is mostly in order of ops. #
+#   There are as many notes as there are commands, and it is NOT designed     #
+#     to be run, but rather copied and referenced after a fresh-install.      #
+#=============================================================================#
+
+#=============================================================================#
+#                     Preinstallation Steps and Notes                         #
+#=============================================================================#
+
+# Installation Media
+# ==================
+###  Bootable ISO
+# *   USE: etcher: https://github.com/balena-io/etcher/releases
+# * TRIED: Rufus (windows only), unetbootin (trash), dd, "bootiso" (trash), gparted
+# * WORKS: etcher, distro-provided tools (tails, kali, etc), UUI (win)
+
+###  Troubleshooting
+# If things are failing with the USB
+#  * try a different, non-3.0 port
+#  * not a "hub" port, like the front ones near power or otherwise joint hubs
+#  * insure USB is FAT32, MBR table (GPR never works)
+
+# Installer
+# ---------
+#===== Options
+# - DO NOT CONNECT TO INTERNET/DOWNLOAD DURING INSTALL
+#   - Remove bloat first
+#     ONLY AFTER REMOVING BLOAT, should you even connect to internet
+
+
+# Remove unused stuff from path
+#------------------------------
+#===== /usr/games
+##: ACTUALLY, doesn't matter.
+##:   Some stuff, TORCS, sc2, etc. will not be on path
+
+#sudo vi /etc/environment
+# delete '/usr/games:/usr/local/games' near the end
+#px="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+#py="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+#sudo echo 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"' > /etc/environment
+
+# Smarter path add funcs
+# ======================
+# These functions will only add something to path IF it
+#  is not present in path already
+path_append() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$1"
+    fi
+}
+path_prepend() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="$1${PATH:+:${PATH}}"
+    fi
+}
+
+
+#=============================================================================#
+#                               Remove Bloat                                  #
+#=============================================================================#
+# - During this process, all '*desktop' packages will likely get removed.
+#   - this includes: gnome-desktop, mate-desktop, xubuntu-desktop
+#     * DON'T WORRY! These packages are just the bundles of default apps
+#       That come with those respective desktops
+
+# NB: 20.04 doesn't seem to support wildcard matching
+
+# Desktop and Apps
+#-----------------------------
+# Note: there may be some redundancy
+#===== Default desktop stuff
+sudo apt remove --purge mate-desktop-common mate-calc-common mate-calc libgnome-games-support-common
+sudo apt remove --purge gnome-*
+sudo apt remove --purge "*mate-desktop*" "snapd*" thunderbird* catfish xul-ext-ubufox
+sudo apt remove --purge "*firefox*" "transmission-*" "*pidgin*" "*parole*" "*xfburn*" "*libreoffice*"
+
+
+#=============================================================================#
+#                  Package manager setup and helpful aliases                  #
+#=============================================================================#
+
+# Apt mirrors
+# ===========
+##: Just select a mirror in `Software & Updates`
+
+##: Official mirrors are slow as heck
+sudo apt update && sudo apt install -y python-pip
+sudo pip install apt-select
+apt-select -c -t 15 # -C JP for jap
+sudo mv sources.list /etc/apt
+
+# addrep() { sudo add-apt-repository "ppa:$1" -y; }  # KEPT for reference
+
+
+#-----------------------------------------------------------------------------#
+#                                     GCC                                     #
+#-----------------------------------------------------------------------------#
+sudo apt-add-repository ppa:ubuntu-toolchain-r/test # Don't need repo if on ubu >= 18.04
+sudo apt install gcc-7 g++-7 gcc-8 g++-8 gcc-9 g++-9 gcc-10 g++-10 --install-suggests
+update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 70 --slave /usr/bin/g++ g++ /usr/bin/g++-7
+update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 80 --slave /usr/bin/g++ g++ /usr/bin/g++-8
+update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /usr/bin/g++ g++ /usr/bin/g++-9
+update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 100 --slave /usr/bin/g++ g++ /usr/bin/g++-10
+update-alternatives --set gcc /usr/bin/gcc-8
+
+
+#=============================================================================#
+#                       Utils & Common Dependencies                           #
+#=============================================================================#
+
+# git
+# ===
+sudo apt install git
+
+# Deps
+sudo apt install -y wget curl git apt-transport-https autoconf automake \
+make llvm m4 perl \
+libblas-dev liblapack-dev libatlas-base-dev gfortran build-essential cmake \
+docbook2x dvipng graphviz \
+libsimbody-dev simbody-doc \
+imagemagick libarchive-dev libatomic1 libbz2-dev libcurl4-openssl-dev \
+libncurses5-dev libreadline-dev librsvg2-bin libre2-dev libsqlite3-dev \
+libssl-dev libxcb-keysyms1-dev p7zip-full p7zip-rar unrar unar \
+pkg-config qt5-default qt5-qmake qttools5-dev-tools \
+software-properties-common texlive-xetex texlive-extra-utils tk-dev xz-utils zlib1g-dev \
+ffmpeg exfat-utils flac lame x264 x265 libglfw3 libjpeg-dev \
+swig python3-opengl libboost-all-dev libosmesa6-dev patchelf xvfb
+
+# pygame deps
+sudo apt install python-dev libsdl-image1.2-dev libsdl-mixer1.2-dev \
+libsdl-ttf2.0-dev libsdl1.2-dev libsmpeg-dev python-numpy subversion \
+libportmidi-dev ffmpeg libswscale-dev libavformat-dev libavcodec-dev libfreetype6-dev
+
+
+
+# Aptitude
+# ========
+# when you can't install stuff because of bizarre dependency issues
+#  like for libboost-dev-all:
+sudo apt install -y aptitude
+sudo aptitude install libboost-dev-all
+
+
+#=============================================================================#
+#                                                                             #
+#                 88888888888  888b      88  8b           d8                  #
+#                 88           8888b     88  `8b         d8'                  #
+#                 88           88 `8b    88   `8b       d8'                   #
+#                 88aaaaa      88  `8b   88    `8b     d8'                    #
+#                 88"""""      88   `8b  88     `8b   d8'                     #
+#                 88           88    `8b 88      `8b d8'                      #
+#                 88           88     `8888       `888'                       #
+#                 88888888888  88      `888        `8'                        #
+#                                                                             #
+#=============================================================================#
+
+
+# Oh-my-zsh
+# =========
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)";
+git clone --depth=1 https://github.com/jocelynmallon/zshmarks.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zshmarks
+git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone --depth=1 https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z
+
+# fzf
+# ===
+
+
+# Pyenv
+# =====
+# "common build problems" deps
+sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
+curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash;
+
+#=== Ipython config
+ipython profile create
+ln -sf /home/evan/.Dots/ipython_config.py /home/evan/.ipython/profile_default
+
+#-----------------------------------------------------------------------------#
+#                                  languages                                  #
+#-----------------------------------------------------------------------------#
+
+# n (node manager) npm
+# ================
+curl -L https://git.io/n-install | N_PREFIX=~/.n bash -s -- -y
+
+
+# Julia
+#=========================
+#curl -s https://api.github.com/repos/JuliaLang/julia/releases/latest \
+#| grep "browser_download_url.*full.tar.gz" | head -1 \
+#| cut -d : -f 2,3 | tr -d \" \
+#| xargs wget
+#echo 'export PATH="$(pwd)/julia:$PATH"' >> ~/.zshrc
+# goto https://julialang.org/downloads/index.html
+wget https://julialang-s3.julialang.org/bin/linux/x64/1.1/julia-1.1.0-linux-x86_64.tar.gz
+tar -xvzf julia-1.1.0-linux-x86_64.tar.gz
+ln -sf /path/to/julia-1.1.0/bin/julia /home/evan/.local/bin
+# eg:
+ln -sf $PWD/julia-1.1.0/bin/julia /home/evan/.local/bin
+
+# Prolog
+#=========================
+sudo apt-add-repository ppa:swi-prolog/stable -y
+sudo apt update
+sudo apt install -y swi-prolog --install-suggests
+
+
+#=============================================================================#
+#                                                                             #
+#                 db         88888888ba   88888888ba    ad88888ba             #
+#                d88b        88      "8b  88      "8b  d8"     "8b            #
+#               d8'`8b       88      ,8P  88      ,8P  Y8,                    #
+#              d8'  `8b      88aaaaaa8P'  88aaaaaa8P'  `Y8aaaaa,              #
+#             d8YaaaaY8b     88""""""'    88""""""'      `"""""8b,            #
+#            d8""""""""8b    88           88                   `8b            #
+#           d8'        `8b   88           88           Y8a     a8P            #
+#          d8'          `8b  88           88            "Y88888P"             #
+#                                                                             #
+#=============================================================================#
+
+####### LOOK INTO & EXTRA #######
+raven-reader.AppImage     # clean feed reader
+stencila-desktop.AppImage # scholarly all-in-one office thing, has potential
+themer-gui.AppImage       # select a colorset, and it generates CSS for everything
+
+# bookstack (docker)
+
+# GROBID
+wget https://github.com/kermitt2/grobid/archive/0.5.3.zip
+
+# Python packaged apps
+# ====================
+sudo pip3 install ranger-fm
+
+#-----------------------------------------------------------------------------#
+#                                 Apt-sourced                                 #
+#-----------------------------------------------------------------------------#
+# Apps
+# ====
+#sudo apt install -y guake # always check versions available from src and apt
+sudo apt install -y chromium-browser deluge aria2 sshfs openssh-client \
+jq sqlitebrowser \
+flameshot nomacs inkscape vlc mpv \
+pandoc poppler-utils wkhtmltopdf img2pdf \
+htop psensor xsensors xfce4-sensors-plugin \
+gparted partitionmanager tree tlp deborphan xdot iotop furiusisomount \
+git-crypt git-extras git-repair \
+xclip copyq \
+kdeconnect \
+dict dictd dict-gcide dict-wn dict-moby-thesaurus \
+anki xfce4-timer-plugin redshift font-manager fslint;
+
+# EQ
+sudo apt install -y pulseeffects
+
+
+#---- Scientific/numerical software
+sudo apt install -y scilab sagemath # sagemath 2gb pkg, just use sympy?
+
+
+#---- Libreoffice suite
+sudo apt install -y libreoffice-dev libreoffice-wiki-publisher libreoffice-texmaths \
+libreoffice-templates libreoffice-script-provider-python libreoffice-calc \
+libreoffice-math libreoffice-l10n-ja libreoffice-dmaths libreoffice-draw
+
+
+# Fonts
+# =====
+### still need to look into whether apt sourced fonts are better rendered/supported
+### by desktop than the latest, manually downloaded fonts
+sudo apt install -y fonts-hack fonts-oxygen fonts-noto-cjk-extra "fonts-sawarabi*" \
+fonts-mplus fonts-mononoki "fonts-moe*" fonts-umeplus \
+"fonts-wqy*" fonts-ebgaramond-extra fonts-cantarell \
+"fonts-aoyagi*" fonts-ipafont fonts-seto fonts-misaki fonts-mikachan \
+"fonts-takao*" fonts-lato fonts-stix \
+texlive-fonts-recommended texlive-latex-recommended \
+fonts-umeplus fonts-hanazono
+
+sudo apt install -y texlive-extra-utils --no-install-recommends
+
+# Inter font
+# ==========
+# Donwload & unzip
+wget https://github.com/rsms/inter/releases/download/v3.12/Inter-3.12.zip
+unar Inter-3.12.zip
+
+# Move fonts to system fonts dirs
+cd Inter-3.12
+sudo mv Inter /usr/share/fonts/opentype/inter
+sudo mv 'Inter (Web)' /usr/share/fonts/woff/inter
+
+# Rebuild font database
+sudo fc-cache -f -v
+
+
+
+#======#
+# PPAs #
+#======#
+
+# Ghostwriter
+# ===============
+sudo apt-add-repository ppa:wereturtle/ppa
+ghostwriter
+
+# yq
+# ==
+sudo add-apt-repository ppa:rmescandon/yq
+sudo apt update
+sudo apt install yq -y
+
+#-----------------------------------------------------------------------------#
+#                           Independent Installers                            #
+#-----------------------------------------------------------------------------#
+# Joplin
+# ======
+wget -O - https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_install_and_update.sh | bash
+
+# npm
+# ---
+npm i -g npm && npm i -g electron nativefier tldr lorem-ipsum percollate leetcode-cli taskbook
+#npm i -g electron
+#npm i -g nativefier
+#npm i -g tldr
+#npm i -g lorem-ipsum
+#npm i -g percollate
+#npm i -g leetcode-cli
+#npm i -g taskbook
+#npm i -g catj
+
+# croc
+# ====
+curl https://getcroc.schollz.com | bash
+
+# fzf
+# ===
+git clone --depth=1 https://github.com/junegunn/fzf.git ~/.Apps/Utils/fzf
+./~/.Apps/Utils/fzf/install
+
+# Z jump
+# ======
+wget -O ~/.Apps/utils/Z_jump.sh https://raw.githubusercontent.com/rupa/z/master/z.sh
+
+#-----------------------------------------------------------------------------#
+#                   Independent Installers + extra steps                      #
+#-----------------------------------------------------------------------------#
+
+# MineTime
+# ========
+# (calendar)
+wget https://github.com/marcoancona/MineTime/releases/download/v1.8.6/MineTime_1.8.6_amd64.deb
+
+
+# borg
+# ====
+# (terminal snippet manager)
+wget https://github.com/ok-borg/borg/releases/download/v0.0.3/borg_linux_amd64 -O $HOME/.local/bin/borg
+chmod 755 $HOME/.local/bin/borg
+
+# Sublime Text 3
+# ===============
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -;
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list;
+sudo apt update && sudo apt install sublime-text -y
+
+# cheat.sh
+# ========
+sudo apt install xsel rlwrap  # deps for interactive shell
+curl https://cht.sh/:cht.sh > ~/.local/bin/cht.sh
+chmod ~/.local/bin/cht.sh
+
+# zsh tab completion support
+curl https://cheat.sh/:zsh > ~/.zsh.d/_cht
+
+
+# Misc debs
+# =========
+#---- bat
+wget https://github.com/sharkdp/bat/releases/download/v0.9.0/bat_0.9.0_amd64.deb
+sudo dpkg -i bat_0.9.0_amd64.deb
+
+#---- mailspring
+wget https://updates.getmailspring.com/download?platform=linuxDeb
+sudo dpkg -i mailspring*.deb
+
+#---- calendar
+wget https://europe-west1-minetime-backend.cloudfunctions.net/download/linux-deb
+
+
+#---- git interactive rebase
+# !!!!!  DONT DO IT   !!!!  Shit always breaks my ros cython opencv libs
+#wget https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/0.7.0/git-interactive-rebase-tool_0.7.0_amd64.deb
+#sudo dpkg -i git-interactive-rebase-tool_0.7.0_amd64.deb # may need install libcurl3 and libncurses5
+#git config --global sequence.editor git-interactive-rebase-tool
+
+
+#=============================================================================#
+#                                                                             #
+#     .oooooo.    ooooo      ooo   .oooooo.   ooo        ooooo oooooooooooo   #
+#    d8P'  `Y8b   `888b.     `8'  d8P'  `Y8b  `88.       .888' `888'     `8   #
+#   888            8 `88b.    8  888      888  888b     d'888   888           #
+#   888            8   `88b.  8  888      888  8 Y88. .P  888   888oooo8      #
+#   888     ooooo  8     `88b.8  888      888  8  `888'   888   888    "      #
+#   `88.    .88'   8       `888  `88b    d88'  8    Y     888   888       o   #
+#    `Y8bood8P'   o8o        `8   `Y8bood8P'  o8o        o888o o888ooooood8   #
+#                                                                             #
+#=============================================================================#
+#
+# Recently started using gnome DE; here are my notes on setup.
+
+# Shell-extensions:
+sudo apt install -y gnome-shell-extensions gnome-shell-extension-dash-to-panel gnome-tweaks
+
+# Enabled extensions
+# ------------------
+# Desktop icons, horizontal workspaces (maybe not, kills overview preview), dash-to-panel, ArcMenu
+
+
+# MOZC FOCAL
+# fcitx + mozc
+# REFERENCE: https://notekunst.hatenablog.com/entry/fcitx-mozc
+# Remove ibus.
+sudo apt remove -y --purge ibus
+
+# Install mozc
+sudo apt install -y fcitx-mozc
+
+# In gnome settings > Region & Language
+# Click on "Manage Installed Languages"
+#   --> It may say "The Language support is not installed completely"
+#      --> If so, click install
+# gnome settings > REgion & Language > Manage installed languages > Keyboard input method system: fcitx
+# Close it
+# (may need to reboot or log-out after this)
+
+# Mozc part:
+#  - select/launch fcitx
+#  - launch fcitx configuration
+#  - Click on the + sign to add keyboard input method
+#  - Uncheck "Only Show Current Language"
+#  - Find and add "mozc" input method
+# REBOOT --> DONE!
+
+
+
+# Remapping super# (eg super1, super2 ...)
+https://unix.stackexchange.com/questions/510375/super1-super2-super3-etc-keys-can-not-be-remapped-in-gnome
+
+
+
+#=============================================================================#
+#                                                                             #
+#                  ███████ ██   ██ ████████ ██████   █████                    #
+#                  ██       ██ ██     ██    ██   ██ ██   ██                   #
+#                  █████     ███      ██    ██████  ███████                   #
+#                  ██       ██ ██     ██    ██   ██ ██   ██                   #
+#                  ███████ ██   ██    ██    ██   ██ ██   ██                   #
+#                                                                             #
+#                                                                             #
+#                  ███████ ███████ ████████ ██    ██ ██████                   #
+#                  ██      ██         ██    ██    ██ ██   ██                  #
+#                  ███████ █████      ██    ██    ██ ██████                   #
+#                       ██ ██         ██    ██    ██ ██                       #
+#                  ███████ ███████    ██     ██████  ██                       #
+#                                                                             #
+#=============================================================================#
+
+# STARTPAGE BULLSHIT
+# https://support.startpage.com/index.php?/en/Knowledgebase/Article/View/1164/2/search-strings-or-adding-startpage-as-a-search-option-in-unsupported-browsers
+# this: https://www.startpage.com/do/dsearch?query=%s
+
+#-----------------------------------------------------------------------------#
+#                                    Zotero                                   #
+#-----------------------------------------------------------------------------#
+
+
+# Zotero Preferences
+# ==================
+
+#=== General
+## File Handling
+# untick all but 'retrieve metadata for pdfs'
+
+#=== Sync
+# Sync automatically, untick sync full-text content
+# no syncing for file stuff
+
+#=== Export
+# default: BibTeX
+
+#=== Advanced: Files and Folders
+## Base directory:
+# choose: /home/evan/LitCloud/Literature
+
+## Data Directory Location
+# Custom, choose: /home/evan/.config/Zotero
+
+
+# ZotFile Preferences
+# ===================
+
+#=== General
+## Source folder for attaching new files:
+# choose: /home/evan/Downloads
+
+## Location of Files
+# custom location: /home/evan/LitCloud/Literature
+
+#=== Renaming Rules
+## Renaming Format
+# {%a - }{%y - }{%t}
+
+## Additional
+# delimiter: ' and '
+# max num auth: 2
+# add suffix: 'et al'
+
+
+# Zotero plugins
+# --------------
+# zotero-scihub: https://github.com/ethanwillis/zotero-scihub
+# Voyant exporty: https://github.com/corajr/zotero-voyant-export
+# zotnet: http://www.exitsantacruz.com/zotnet/zotnet.php
+# zotsite: https://github.com/plandes/zotsite
+# zotxt: https://github.com/egh/zotxt
+# zot4st: https://gitlab.com/egh/zot4rst
+# cit2c: https://github.com/takluyver/cite2c # rst citations
+
+#=============================================================================#
+#                                 leetcode-cli                                #
+#=============================================================================#
+# This is npm package. It used to work, then leetcode broke it, now you need to
+#  do a chrome cookie hack to get it to function
+#  here are steps to fix:
+
+# REFERENCE:
+#  https://github.com/skygragon/leetcode-cli/issues/195
+#  https://github.com/jdneo/vscode-leetcode/issues/478#issuecomment-564757098
+
+# Install
+# -------
+# First, uninstall old leetcode-cli if you have
+npm uninstall -g leetcode-cli
+
+# Install latest
+npm i -g vsc-leetcode-cli
+
+# Install cookie plugin
+leetcode plugin -i cookie.chrome
+
+# Cookie
+# ------
+# 1. Open browser, goto leetcode, sign-in
+#   a. go to leetcode.com/problems
+# 2. ctrl+shift+I to inspect
+# 3. Go to network tab, xhr: Network > XHR
+# 4. Refresh, f5
+# 5. you should see an 'all/' thing, if not try refreshing, going to leetcode.com/problems
+# 6. Click on headers
+# 7. find 'cookie:'
+#   a. copy the whole thing (except 'cookie:' part )
+#      so, should look something like:
+#  c_a_u="ZXZkY2c=:1ixpue:mS1tulcXXXXXXXXXXXXXX"; disable_new_question_detail="[\"MYUSERNAME\"]"; __stripe_mid=dca11c35-4fa8-4167-8e1d-878bd3452e782; _ga=GA1.2.376869643.1580623507; __cfduid=d52a2152449b03c04p251003fd89ed08e31586766934; csrftoken=mwgPp3A0I6beUsoWKxd5XsmGXXNtLTUb3mQkswVQWWPVVo1aTY6E3DxcxMaiTdNGK; LEETCODE_SESSION=SNIPPED.SNIPPED.SNIPPED; __cf_bm=5f34bd2aa502c9ed4a0d511b344f6e6d49e94c90-1586769499-1800-Aem/DCQVzuyOogFETHRn2Qm6MWMXtckDdog35OvA7BODaHe4x3W6TxbAVn6WamT24V0Sq73XtFhhH3t2wKLjjGCV0=
+
+
+# Login with cookie
+# -----------------
+leetcode user -c
+
+# It will ask for username, then cookie
+# paste the cookie you copied earlier
+#  SHOULD WORK
+
+
+# Usage
+# -----
+# Get two-sum:
+leetcode show 1 -gx -l python3
+
+# test two-sum (run)
+leetcode test 1.two-sum.py
+
+# submit two-sum
+leetcode submit 1.two-sum.py
+
+
+
+#-----------------------------------------------------------------------------#
+#                                  TPU stuff                                  #
+#-----------------------------------------------------------------------------#
+
+# Add source & key
+echo "deb https://packages.cloud.google.com/apt coral-edgetpu-stable main" | sudo tee /etc/apt/sources.list.d/coral-edgetpu.list
+
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+
+# Install
+sudo apt update
+sudo apt install -y libedgetpu1-std libedgetpu1-max
+
+
+#=============================================================================#
+#                                                                             #
+#                  db         I8,        8        ,8I   ad88888ba             #
+#                 d88b        `8b       d8b       d8'  d8"     "8b            #
+#                d8'`8b        "8,     ,8"8,     ,8"   Y8,                    #
+#               d8'  `8b        Y8     8P Y8     8P    `Y8aaaaa,              #
+#              d8YaaaaY8b       `8b   d8' `8b   d8'      `"""""8b,            #
+#             d8""""""""8b       `8a a8'   `8a a8'             `8b            #
+#            d8'        `8b       `8a8'     `8a8'      Y8a     a8P            #
+#           d8'          `8b       `8'       `8'        "Y88888P"             #
+#                                                                             #
+#=============================================================================#
+
+# Create & launch an Ubuntu EC2 instance, you will be `ubuntu@ip`
+# First, add a new user
+# REFERENCE: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managing-users.html
+
+# Add that user to sudoers (from `ubuntu` user)
+sudo usermod -aG sudo evan
+
+# Install lustre client on ubuntu 18.04:
+wget -O - https://fsx-lustre-client-repo-public-keys.s3.amazonaws.com/fsx-ubuntu-public-key.asc | sudo apt-key add -
+
+
+
+
+#=============================================================================#
+#                                                                             #
+#  88888888ba,                             88                                 #
+#  88      `"8b                            88                                 #
+#  88        `8b                           88                                 #
+#  88         88   ,adPPYba,    ,adPPYba,  88   ,d8    ,adPPYba,  8b,dPPYba,  #
+#  88         88  a8"     "8a  a8"     ""  88 ,a8"    a8P_____88  88P'   "Y8  #
+#  88         8P  8b       d8  8b          8888[      8PP"""""""  88          #
+#  88      .a8P   "8a,   ,a8"  "8a,   ,aa  88`"Yba,   "8b,   ,aa  88          #
+#  88888888Y"'     `"YbbdP"'    `"Ybbd8"'  88   `Y8a   `"Ybbd8"'  88          #
+#                                                                             #
+#=============================================================================#
+###  Reference: https://docs.docker.com/engine/install/ubuntu/
+
+# Uninstall previous (if already installed)
+sudo apt remove --purge docker docker-engine docker.io containerd runc
+
+# Install deps
+sudo apt update && sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+
+# Add Docker's key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+# Add Docker repo
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+# Install docker ce
+sudo apt update && sudo apt install -y docker-ce docker-ce-cli containerd.io
+
+# (OPTIONAL) Config docker to run without sudo
+sudo groupadd docker
+sudo usermod -aG docker $USER
+
+# Confirm installation
+## newgrp docker  # do this if you do not want to log-out/log-in for changes for sudoless docker
+docker run hello-world
+
+#=============================================================================#
+#                       ,,                                                    #
+#                      *MM                                                    #
+#                       MM                                                    #
+#             `7Mb,od8  MM,dMMb.   .gP"Ya  `7MMpMMMb.  `7M'   `MF'            #
+#               MM' "'  MM    `Mb ,M'   Yb   MM    MM    VA   ,V              #
+#               MM      MM     M8 8M""""""   MM    MM     VA ,V               #
+#               MM      MM.   ,M9 YM.    ,   MM    MM      VVV                #
+#             .JMML.    P^YbmdP'   `Mbmmd' .JMML  JMML.     W                 #
+#                                                                             #
+#=============================================================================#
+
+# INSTALLATION
+# ============
+
+# 1 - Use the installer
+wget -q https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer -O- | bash
+
+# 2 - Update shell config for rbenv path and init
+#---- Path
+PATH="${PATH:+"$PATH:"}$HOME/.rbenv/bin"
+# The "official" way:
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
+#---- init
+eval "$(rbenv init -)"
+
+
+# 4 - Install a ruby version
+rbenv install -l   # list all ruby versions available
+rbenv install 2.5.3
+
+# 5 - Local your rbenv ver and check gems path
+rbenv local 2.5.3
+gem env home  # should show rbenv
+#  /home/evan/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0
+
+# 6 - install gems
+gem install bundler
+
+
+#=============================================================================#
+#                                  ,,                                         #
+#                                 *MM                                         #
+#                                  MM                                         #
+#               ,pP"Ybd   ,p6"bo   MM,dMMb.  `7M'    ,A    `MF'               #
+#               8I   `"  6M'  OO   MM    `Mb   VA   ,VAA   ,V                 #
+#               `YMMMa.  8M        MM     M8    VA ,V  VA ,V                  #
+#               L.   I8  YM.    ,  MM.   ,M9     VVV    VVV                   #
+#               M9mmmP'   YMbmd'   P^YbmdP'       W      W                    #
+#                                                                             #
+#=============================================================================#
+#-----------------------------------------------------------------------------#
+#                                   DOCKER                                    #
+#-----------------------------------------------------------------------------#
+
+# Instructions from SCBW
+#   github.com/Games-and-Simulations/sc-docker
+# =======================
+sudo apt update
+sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+
+#=== add docker repository
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+#=== install docker
+sudo apt update
+sudo apt install -y docker-ce=17.09.0~ce-0~ubuntu # NB: this ver pkg was UNAVAILABLE
+
+#=== Make sure you can run docker without sudo
+sudo usermod -aG docker $USER
+# Restart shell
+docker run hello-world
+
+#-----------------------------------------------------------------------------#
+#                                Python Setup                                 #
+#-----------------------------------------------------------------------------#
+
+# Steps here different, assuming you have pyenv
+pip install scbw
+scbw.play --install  # This can take awhile, download n install
+
+
+#-----------------------------------------------------------------------------#
+#                            GUI setup: VNC Viewer                            #
+#-----------------------------------------------------------------------------#
+#=== Download VNC Viewer @   https://www.realvnc.com/en/connect/download/viewer/linux/
+# eg: https://www.realvnc.com/download/file/viewer.files/VNC-Viewer-6.18.907-Linux-x64.deb
+
+#######    IF YOU DOWNLOADED THE .deb,  INSTEAD OF BINARY             #########
+
+#  VNC viewer is launched via 'vncviewer' through the deb install
+#  However, scbw launches through 'vnc-viewer', so you need to symlink to same dir
+#   >>-----> ln -s /usr/bin/vncviewer /usr/bin/vnc-viewer
+#   * the scbw instructions say to symlink the binary to /usr/bin as 'vnc-viewer'
+#   * the .deb is actually launched by 'vncviewer'
+
+
+# FINALLY: watch a match between two bots!
+#  (in headful mode, you must select the map, wait in lobby for bots to join, and start)
+scbw.play --bots "krasi0" "CherryPi" --show_all
+
+
+#=============================================================================#
+#            ,,                                                ,,             #
+#           *MM                                                db             #
+#            MM                                                               #
+#            MM,dMMb.  `7M'    ,A    `MF' ,6"Yb.  `7MMpdMAo. `7MM             #
+#            MM    `Mb   VA   ,VAA   ,V  8)   MM    MM   `Wb   MM             #
+#            MM     M8    VA ,V  VA ,V    ,pm9MM    MM    M8   MM             #
+#            MM.   ,M9     VVV    VVV    8M   MM    MM   ,AP   MM             #
+#            P^YbmdP'       W      W     `Moo9^Yo.  MMbmmd'  .JMML.           #
+#                                                   MM                        #
+#                                                 .JMML.                      #
+#                                                                             #
+#=============================================================================#
+# Clone and make
+# ==============
+git clone https://github.com/openbw/openbw
+git clone https://github.com/openbw/bwapi
+cd bwapi
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release -DOPENBW_DIR=../../openbw -DOPENBW_ENABLE_UI=1
+make
+
+# GUI setup
+# =========
+sudo apt install libsdl2-dev
+
+# OpenBW needs the usual 3 mpq files in the working directory when it starts
+# (Stardat.mpq, Broodat.mpq and Patch_rt.mpq). These can be copied from
+# StarCraft: BroodWar 1.16.1 or 1.18, or you can just start BWAPILauncher from the StarCraft directory.
+
+# I remember this being a HUGE PITA before sourcing these files
+#  *** You ahve backed up the patches to your ext hdd
+
+
+#=============================================================================#
+#                                                                             #
+#                     `7MM"""Mq.    .g8""8q.    .M"""bgd                      #
+#                       MM   `MM. .dP'    `YM. ,MI    "Y                      #
+#                       MM   ,M9  dM'      `MM `MMb.                          #
+#                       MMmmdM9   MM        MM   `YMMNq.                      #
+#                       MM  YM.   MM.      ,MP .     `MM                      #
+#                       MM   `Mb. `Mb.    ,dP' Mb     dM                      #
+#                     .JMML. .JMM.  `"bmmd"'   P"Ybmmd"                       #
+#                                                                             #
+#=============================================================================#
+
+# Add ROS source to apt sources
+# -----------------------------
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+sudo apt update
+
+# Install and initialize
+# ----------------------
+sudo apt install ros-melodic-desktop-full
+sudo rosdep init # requires python2
+rosdep update # do not sudo this
+
+# Env setup
+# ---------
+# in zshrc:
+source /opt/ros/melodic/setup.zsh
+# for rosinstall (only need python-rosinstall I think, other shit may be bloat)
+sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential
+
+sudo apt install python-apt python-defusedxml
+
+
+#                               _
+#   __ _    __ _   ____   ___  | |__     ___
+#  / _` |  / _` | |_  /  / _ \ | '_ \   / _ \
+# | (_| | | (_| |  / /  |  __/ | |_) | | (_) |
+#  \__, |  \__,_| /___|  \___| |_.__/   \___/
+#  |___/
+
+# ****NB**** Gazebo may already be installed if you do ros-full
+
+# Install and run
+# ---------------
+curl -sSL http://get.gazebosim.org | sh
+gazebo
+
+
+#=======================================================================================#
+#      ad88888ba                                                                        #
+#     d8"     "8b                            ,d                                         #
+#     Y8,                                    88                                         #
+#     `Y8aaaaa,    8b       d8  ,adPPYba,  MM88MMM   ,adPPYba,  88,dPYba,,adPYba,       #
+#       `"""""8b,  `8b     d8'  I8[    ""    88     a8P_____88  88P'   "88"    "8a      #
+#             `8b   `8b   d8'    `"Y8ba,     88     8PP"""""""  88      88      88      #
+#     Y8a     a8P    `8b,d8'    aa    ]8I    88,    "8b,   ,aa  88      88      88      #
+#      "Y88888P"       Y88'     `"YbbdP"'    "Y888   `"Ybbd8"'  88      88      88      #
+#                      d8'                                                              #
+#                     d8'                                                               #
+#                                                                                       #
+#   ad88888ba                                 88                                        #
+#  d8"     "8b                ,d       ,d     ""                                        #
+#  Y8,                        88       88                                               #
+#  `Y8aaaaa,     ,adPPYba,  MM88MMM  MM88MMM  88  8b,dPPYba,    ,adPPYb,d8  ,adPPYba,   #
+#    `"""""8b,  a8P_____88    88       88     88  88P'   `"8a  a8"    `Y88  I8[    ""   #
+#          `8b  8PP"""""""    88       88     88  88       88  8b       88   `"Y8ba,    #
+#  Y8a     a8P  "8b,   ,aa    88,      88,    88  88       88  "8a,   ,d88  aa    ]8I   #
+#   "Y88888P"    `"Ybbd8"'    "Y888    "Y888  88  88       88   `"YbbdP"Y8  `"YbbdP"'   #
+#                                                               aa,    ,88              #
+#                                                                "Y8bbdP"               #
+#                                                                                       #
+#=======================================================================================#
+
+# Fix slow-start debian bug
+# =========================
+# apt-daily
+# ---------
+#sudo systemctl edit apt-daily.timer  #=== this is only temp fix
+
+# First, backup
+mkdir -p ~/.Dots/BKPS
+cp /lib/systemd/system/apt-daily.timer ~/.Dots/BKPS
+cp /lib/systemd/system/apt-daily-upgrade.timer ~/.Dots/BKPS
+
+# Now edit the service files
+sudo vi /lib/systemd/system/apt-daily.service
+sudo vi /lib/systemd/system/apt-daily-upgrade.service
+
+# Paste into edit:
+# apt-daily timer configuration override
+[Timer]
+OnBootSec=15min
+OnUnitActiveSec=1d
+AccuracySec=1h
+RandomizedDelaySec=30min
+
+# Session & startup
+# =================
+
+## Fix guake transparency loss issue, application autostart:
+bash -c 'sleep 1s; /usr/bin/guake'
+
+# Network manager
+# ---------------
+sudo systemctl disable NetworkManager-wait-online.service
+
+# Disable message of the day shit (motd-news.service)
+sudo vi /etc/default/motd-news
+#---> change `ENABLED=1` to `ENABLED=0`
+
+
+# Disable CDROM Eject Buttom
+# ==========================
+eject -i 1 /dev/sr0  # assign as app autostart
+
+
+# Keyboard
+# ========
+#---- Volume
+amixer set Master 5%-  # Alt+-
+amixer set Master 5%+  # Alt+=
+#---- misc/app
+flameshot gui    # Print
+echo 'keycode 118 = ' > ~/.Xmodmap # disable insert key
+
+
+# Thunar custom actions
+# =====================
+#---- Replace spaces, format name to all lower
+for file in %N; do mv "$file" "$(echo "$file" | tr -s ' ' | tr ' A-Z' '-a-z' | tr -s '-' | tr -c '[:alnum:][:cntrl:].' '-')"; done
+
+#---- Open directory in sublime
+/usr/bin/subl .
+
+#---- Copies full pathname for a file or folder  to clipboard
+echo -n %f | xclip -selection "clipboard"
+
+#---- Touch .txt
+/usr/bin/touch notes.txt
+
+#---- Open guake here
+guake -n '%d%f ' -r "%f " --show -e "cd '%f' && ls -1FSshX --file-type"
+
+
+
+# Keychron K2 keyboard FN keys fix
+# ================================
+sudo vi /etc/modprobe.d/hid_apple.conf
+# add the following:
+options hid_apple fnmode=2
+
+# save, close, update & reboot
+sudo update-initramfs -u && reboot
+
+
+# Trackpoint sensitivity on thinkpads
+# ===================================
+
+## FOR OLDER VERSIONS UBUNTU
+# First, try out different values, 0-220, of settings
+echo 80 |  sudo tee /sys/devices/platform/i8042/serio1/serio2/sensitivity
+echo 100 | sudo tee /sys/devices/platform/i8042/serio1/serio2/speed
+
+# After finding value you like, make new udev rule for sys start
+sudo vi /etc/udev/rules.d/trackpoint.rules
+
+# add this line
+SUBSYSTEM=="serio", DRIVERS=="psmouse", DEVPATH=="/sys/devices/platform/i8042/serio1/serio2", ATTR{sensitivity}="80", ATTR{speed}="180"
+
+# Reboot, or run commands:
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+
+
+## WHAT ACTUALLY WORKS CURRENT
+
+# First, figure out which device id
+xinput | grep -i trackpoint
+⎜   ↳ TPPS/2 ALPS TrackPoint                    id=16   [slave  pointer  (2)]
+
+
+# See what properties associated
+xinput --list-props 12
+#    ...
+#    libinput Accel Speed (315): 0.000000
+#    libinput Accel Speed Default (316): 0.000000
+#    ...
+
+# Experiment with speed setting, eg:
+xinput --set-prop 12 'libinput Accel Speed' -0.7
+
+# Once you're satisfied, add a startup application with that command
+
+
+
+
+
+# Japanese IME (mozc)
+# ===================
+# mozc  # (THIS WAS FOR 16.04)
+#If you have Xubuntu 16.04 installed and want to be able to type Japanese, try the following steps:
+#1. Go to "Settings" and then "Language Support": click the button "install/remove languages" and choose Japanese.
+#2. Change the "Keyboard input method system" (same menu) to "fcitx". "Close" window.
+#3. Go to "Keyboard", choose the "Layout" tab, and "Add" Japanese. Make sure "use system default" is untoggled. "Close" window (I'm not sure this step is necessary, but I did it anyway)
+#4. Go to "Settings" and then "Fcitx Configuration", under the tab "Input method" click "+". Untoggle "only show current language" and choose "Mozc Japanese" from the list. (I had to scroll throught the entire list to find this. It doesn't start with "Keyboard - " like the other options.)
+#5. Go to the tab "Global config" in the same window and look which keys trigger the Japanese input method. The default on my computer is CTRL+Space. Alternatively, a keyboard icon should be visible in the panel where you can select "Input method" - "Mozc"
+#I admit to restarting my computer a few times inbetween some of the steps. I'm not sure if it is necessary.
+#I don't remember ever installing "Mozc" and "Fcitx", I think they came with the system/Japanese language support.
+
+# in Language Support > regional formats > display numbers usual format for japanese
+# orage clock format: %x %R
+# https://www.linuxquestions.org/questions/slackware-14/xfce-clock-custom-formatting-codes-753433/
+# previous: %d %b, %H:%M
+
+
+# UPDATE ALTERNATIVES
+# ===================
+# this is cleanest (?) way to have side-by-side version installations
+
+## Python
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 20
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.6 60
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.7 70
+
+## CUDA
+sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-10.1 80
+sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-10.2 70
+
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 20
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 20
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 20
+
+
+
+#=============================================================================#
+#                                                                             #
+#        .d8888b.      8888888b.     888     888                              #
+#       d88P  Y88b     888   Y88b    888     888                              #
+#       888    888     888    888    888     888                              #
+#       888            888   d88P    888     888                              #
+#       888  88888     8888888P"     888     888                              #
+#       888    888     888           888     888                              #
+#       Y88b  d88P     888           Y88b. .d88P                              #
+#        "Y8888P88     888            "Y88888P"                               #
+#                                                                             #
+#        .d8888b.     8888888888   88888888888   888     888    8888888b.     #
+#       d88P  Y88b    888              888       888     888    888   Y88b    #
+#       Y88b.         888              888       888     888    888    888    #
+#        "Y888b.      8888888          888       888     888    888   d88P    #
+#           "Y88b.    888              888       888     888    8888888P"     #
+#             "888    888              888       888     888    888           #
+#       Y88b  d88P    888              888       Y88b. .d88P    888           #
+#        "Y8888P"     8888888888       888        "Y88888P"     888           #
+#                                                                             #
+#=============================================================================#
+
+
+#=============================================================================#
+#                     ___   _   _   ___      _                                #
+#                    / __| | | | | |   \    /_\                               #
+#                   | (__  | |_| | | |) |  / _ \                              #
+#                    \___|  \___/  |___/  /_/ \_\                             #
+#               ======================================                        #
+
+#------------------------------------------------------------------------------
+#   __ ___       __  ___
+#  (_   |   /\  |__)  |
+#  __)  |  /--\ | \   |
+
+#==== Install from network deb (downloaded)
+sudo dpkg -i cuda-repo-ubuntu1804_10.0.130-1_amd64.deb
+#sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+
+sudo apt update
+sudo apt install cuda-10-0
+
+
+# "Recommended Packages"
+#libnvidia-compute-410:i386 libnvidia-decode-410:i386 libnvidia-encode-410:i386 libnvidia-ifr1-410:i386 libnvidia-fbc1-410:i386 libnvidia-gl-410:i386
+
+
+#==== Update path
+# Now, add the following lines to your shell config (.zshrc, etc)
+export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+#==== Reboot to finish installation
+reboot
+
+#==== Verify installation
+nvcc -V
+nvidia-smi
+
+#==== If nouveau is an issue:
+# Create a file at /etc/modprobe.d/blacklist-nouveau.conf with the following contents:
+blacklist nouveau
+options nouveau modeset=0
+
+# Regenerate the kernel initramfs:
+sudo update-initramfs -u
+
+#   __       __
+#  |_  |\ | |  \
+#  |__ | \| |__/
+#------------------------------------------------------------------------------
+
+
+
+
+
+#=============================================================================#
+#                               ___    _  _   _  _                            #
+#                   __   _  _  |   \  | \| | | \| |                           #
+#                  / _| | || | | |) | | .` | | .` |                           #
+#                  \__|  \_,_| |___/  |_|\_| |_|\_|                           #
+#               ======================================                        #
+
+#------------------------------------------------------------------------------
+#   __ ___       __  ___
+#  (_   |   /\  |__)  |
+#  __)  |  /--\ | \   |
+
+#==== cuDNN
+# tar file method:
+tar -xzvf cudnn-10.0-linux-x64-v7.3.1.20.tgz # whatever ver you got
+sudo cp cuda/include/cudnn.h /usr/local/cuda/include
+sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
+sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
+
+#==== Verify cuDNN installation
+#  For cuDNN 7.3, you should see CUDNN_MAJOR 7, CUDNN_MINOR 3
+cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
+
+#   __       __
+#  |_  |\ | |  \
+#  |__ | \| |__/
+#------------------------------------------------------------------------------
+
+
+
+
+
+#=============================================================================#
+#           _____                                 ___   _____                 #
+#          |_   _|  ___   _ _    ___  ___   _ _  | _ \ |_   _|                #
+#            | |   / -_) | ' \  (_-< / _ \ | '_| |   /   | |                  #
+#            |_|   \___| |_||_| /__/ \___/ |_|   |_|_\   |_|                  #
+#               ======================================                        #
+
+
+#------------------------------------------------------------------------------
+#   __ ___       __  ___
+#  (_   |   /\  |__)  |
+#  __)  |  /--\ | \   |
+
+#==== TensorRT
+sudo dpkg -i nv-tensorrt-repo-ubuntu1804-cuda10.0-trt5.0.0.10-rc-20180906_1-1_amd64.deb
+sudo apt update
+sudo apt install tensorrt
+sudo apt install uff-converter-tf
+
+#==== Verify installation
+dpkg -l | grep TensorRT
+
+
+#   __       __
+#  |_  |\ | |  \
+#  |__ | \| |__/
+#------------------------------------------------------------------------------
+
+
+
+
+
+
+#=============================================================================#
+#                      _  _    ___    ___   _                                 #
+#                     | \| |  / __|  / __| | |                                #
+#                     | .` | | (__  | (__  | |__                              #
+#                     |_|\_|  \___|  \___| |____|                             #
+#               ======================================                        #
+
+# Download the network package:
+# https://developer.nvidia.com/nccl/nccl-download
+# https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/nvidia-machine-learning-repo-ubuntu1804_1.0.0-1_amd64.deb
+sudo dpkg -i nvidia-machine-learning-repo-<version>.deb
+
+# Update apt
+sudo apt update
+
+# Install
+sudo apt install libnccl2 libnccl-dev
+
+# Check version via:
+cat /usr/include/nccl.h | grep NCCL_MAJOR -A 2
+#(^) ➜  ~ cat /usr/include/nccl.h | grep NCCL_MAJOR -A 2
+#define NCCL_MAJOR 2
+#define NCCL_MINOR 4
+#define NCCL_PATCH 2
+
+
+#=============================================================================#
+#                                                                             #
+#     88                        88  88           88                  ad88     #
+#     88                        ""  88           88        ,d       d8"       #
+#     88                            88           88        88       88        #
+#     88,dPPYba,   88       88  88  88   ,adPPYb,88      MM88MMM  MM88MMM     #
+#     88P'    "8a  88       88  88  88  a8"    `Y88        88       88        #
+#     88       d8  88       88  88  88  8b       88        88       88        #
+#     88b,   ,a8"  "8a,   ,a88  88  88  "8a,   ,d88        88,      88        #
+#     8Y"Ybbd8"'    `"YbbdP'Y8  88  88   `"8bbdP"Y8        "Y888    88        #
+#                                                                             #
+#=============================================================================#
+
+
+#                ___   _____   ___   ___     _                                #
+#               / __| |_   _| | __| | _ \   / |                               #
+#               \__ \   | |   | _|  |  _/   | |                               #
+#               |___/   |_|   |___| |_|     |_|                               #
+#            =====================================                            #
+#             ---> Install bazel
+
+#==== Install the JDK:
+sudo apt install openjdk-8-jdk
+
+#==== Add Bazel distribution URI as a package source:
+echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
+curl https://bazel.build/bazel-release.pub.gpg | sudo apt-key add -
+
+#==== Install Bazel
+sudo apt update && sudo apt install bazel
+
+
+#  .bazelrc:
+#==== startup args come before commands like "build"
+# Now outputs to /tmp/bazel INSTEAD of ~/.cache
+startup --output_user_root=/tmp/bazel
+
+
+#==== Binary installation
+# Pre-reqs
+sudo apt install -y pkg-config zip g++ zlib1g-dev unzip python
+
+# Get installer script
+wget https://github.com/bazelbuild/bazel/releases/download/0.22.0/bazel-0.22.0-installer-linux-x86_64.sh
+
+# install bazel to opt path
+sudo ./bazel-0.22.0-installer-linux-x86_64.sh --prefix=/opt/bazel
+
+# symlink binary
+sudo ln -sf /opt/bazel/bin/bazel /usr/local/bin
+
+# eventually setup your bazelrc file
+# https://docs.bazel.build/versions/master/guide.html#bazelrc
+
+
+
+
+
+
+#=============================================================================#
+#=============================================================================#
+#=============================================================================#
+
+#=============================================================================#
+#                                                                             #
+#         d8b  8888888b.           888    888                                 #
+#         Y8P  888   Y88b          888    888                                 #
+#              888    888          888    888                                 #
+#         888  888   d88P 888  888 888888 88888b.   .d88b.  88888b.           #
+#         888  8888888P"  888  888 888    888 "88b d88""88b 888 "88b          #
+#         888  888        888  888 888    888  888 888  888 888  888          #
+#         888  888        Y88b 888 Y88b.  888  888 Y88..88P 888  888          #
+#         888  888         "Y88888  "Y888 888  888  "Y88P"  888  888          #
+#                              888                                            #
+#                         Y8b d88P                                            #
+#                          "Y88P"                                             #
+#                                                                             #
+#=============================================================================#
+# Additional setup for ipython, jupyter notebook
+
+
+# Konch
+# =====
+# konch is a cli/config util for python shell
+# it allows you to preload stuff, uses ipython, lots
+pip install konch
+pip init # creates .konchrc
+
+
+# Pygments
+# ========
+
+# Save output to a file in HTML format:
+# WHY NO WORK???
+#pygmentize -S pairaso-light -f html -o output_file.html input_file.py
+
+# custom styles
+# -------------
+# FIND A BETTER WAY, THIS IS SILLY, LOOK AT PYGMENTIZE API
+# I LOOK AT PYGMENTIZE API, SOMETHING ABOUT PLUGINS N SHIT
+# `pygmentize --help` couldn't possibly be more useless... so here's the ugly way
+
+cd /home/evan/.pyenv/versions/3.7.2/envs/^/lib/python3.7/site-packages/pygments/styles
+wget https://raw.githubusercontent.com/dracula/pygments/master/dracula.py
+vi __init__.py
+# add this line to STYLE_MAP:
+'dracula':  'dracula::DraculaStyle',
+
+#=============================================================================#
+#                                                                             #
+#        888     888  .d8888b.   .d8888b.                888                  #
+#        888     888 d88P  Y88b d88P  Y88b               888                  #
+#        888     888 Y88b.      888    888               888                  #
+#        Y88b   d88P  "Y888b.   888         .d88b.   .d88888  .d88b.          #
+#         Y88b d88P      "Y88b. 888        d88""88b d88" 888 d8P  Y8b         #
+#          Y88o88P         "888 888    888 888  888 888  888 88888888         #
+#           Y888P    Y88b  d88P Y88b  d88P Y88..88P Y88b 888 Y8b.             #
+#            Y8P      "Y8888P"   "Y8888P"   "Y88P"   "Y88888  "Y8888          #
+#                                                                             #
+#=============================================================================#
+
+# Themes
+# ======
+
+# reStructuredText
+# ================
+#---- Dark
+# Ayu dark bordered
+# Github Dark
+
+
+#=============================================================================#
+#                                                                             #
+#          .d8888b.           888      888 d8b                                #
+#         d88P  Y88b          888      888 Y8P                                #
+#         Y88b.               888      888                                    #
+#          "Y888b.   888  888 88888b.  888 888 88888b.d88b.   .d88b.          #
+#             "Y88b. 888  888 888 "88b 888 888 888 "888 "88b d8P  Y8b         #
+#               "888 888  888 888  888 888 888 888  888  888 88888888         #
+#         Y88b  d88P Y88b 888 888 d88P 888 888 888  888  888 Y8b.             #
+#          "Y8888P"   "Y88888 88888P"  888 888 888  888  888  "Y8888          #
+#                                                                             #
+#=============================================================================#
+
+
+# user settings
+# =============
+#{
+#    "always_show_minimap_viewport": true,
+#    "auto_find_in_selection": true,
+#    "bold_folder_labels": true,
+#    "caret_extra_width": 2,
+#    "caret_style": "smooth",
+#    "color_scheme": "Packages/Colorsublime - Themes/cache/Colorsublime-Themes-master/themes/Piodine.tmTheme",
+#    "detect_indentation": false,
+#    "draw_minimap_border": true,
+#    "ensure_newline_at_eof_on_save": true,
+#    "font_face": "Hack",
+#    "font_size": 12,
+#    //"highlight_line": true,
+#    "hot_exit": false,
+#    "ignored_packages":
+#    [
+#        "RestructuredText",
+#        "Vintage"
+#    ],
+#    "index_files": false,
+#    "preview_on_click": false,
+#    "rulers":
+#    [
+#        79
+#    ],
+#    "tab_size": 4,
+#    "theme": "Default.sublime-theme",
+#    "translate_tabs_to_spaces": true,
+#    "trim_trailing_white_space_on_save": true
+#}
+
+# NOTE: "Default.sublime-theme" HAS BEEN MODIFIED
+#  via PackageResourceViewer:
+#  - font sizing for all labels has been increased
+#  - fg made white, and tints generally weakened
+
+#import sublime
+#import sublime_plugin
+#
+#class ToggleColorSchemeCommand(sublime_plugin.TextCommand):
+#    def run_global(self, edit, **args):
+#        # Get settings
+#        settings = sublime.load_settings('Preferences.sublime-settings')
+#
+#        # Schemes
+#        scheme1 = args['color_scheme_1']  # Piodine
+#        scheme2 = args['color_scheme_2']  # Github-v2
+#        scheme3 = args['color_scheme_3']  # Spring
+#        scheme_map = {
+#            scheme1 : scheme2,
+#            scheme2 : scheme3,
+#            scheme3 : scheme1,
+#        }
+#
+#        # Update color scheme
+#        cur_scheme  = settings.get('color_scheme', scheme1)
+#        next_scheme = scheme_map.get(cur_scheme, scheme1)
+#        settings.set('color_scheme', next_scheme)
+#        sublime.save_settings("Preferences.sublime-settings")
+#
+#
+#    def run_local(self, edit, **args):
+#        # Schemes
+#        scheme1 = args['color_scheme_1']  # Piodine
+#        scheme2 = args['color_scheme_2']  # Github-v2
+#        scheme3 = args['color_scheme_3']  # Spring
+#        scheme_map = {
+#            scheme1 : scheme2,
+#            scheme2 : scheme3,
+#            scheme3 : scheme1,
+#        }
+#
+#        # Check current
+#        cur_scheme = self.view.settings().get('color_scheme')
+#        next_scheme = scheme_map.get(cur_scheme, scheme1)
+#
+#        # Update color scheme
+#        self.view.settings().set('color_scheme', next_scheme)
+#
+#    def run(self, edit, **args):
+#        self.run_global(edit, **args)
+
+# in Preferences/Key Bindings:
+#[
+#    {
+#    "keys": ["alt+shift+c"], "command": "toggle_color_scheme",
+#    "args":
+#        {
+#            "color_scheme_1": "Packages/Colorsublime - Themes/cache/Colorsublime-Themes-master/themes/Piodine.tmTheme",
+#            "color_scheme_2": "Packages/Colorsublime - Themes/cache/Colorsublime-Themes-master/themes/Github-v2.tmTheme",
+#            "color_scheme_3": "Packages/Colorsublime - Themes/cache/Colorsublime-Themes-master/themes/Spring.tmTheme",
+#        }
+#    },
+#
+#]
+
+
+
+
+# Sublime themes
+# ==============
+# Almost all themes come from the ColorSublime package
+# Some themes are better suited for certain syntaxes, so I have made three
+# categories for keeping record of what themes I like for:
+#    code
+#    reStructuredText
+#    markdown
+
+
+#------------------------------------------------------------------------------
+# CODE THEMES
+# -----------
+
+# CPP
+# ===
+# Virtually all the themes in python apply to CPP as well,
+#  but here are some themes that have extra support
+# TOP CHOICES:
+#     dark  ---> brogrammer, piodine
+#     light ---> flat
+
+#==== Dark
+#  Brogrammer ***         # Good syntax highlighting for everything
+#  DarkKorokai **         # High contrast, really like the bold-italics on attr and stuff
+#  Future_Frank *         # nice bold and colors
+
+
+#==== Medium & desat (or weird)
+#  Forest_Focus *    # Nice, good palette, but a bit soft
+
+#==== Light
+#  flat ***          # clean, simple palette.
+#  eiffel **         # off-white, great contrast, could have better syn supp
+#  GitHub_Light ***  # All-rounder
+
+
+
+# PYTHON
+# ======
+# TOP CHOICES:
+#     dark  ---> piodine, brogrammer
+#     light ---> spring, github_v2
+
+#==== Dark
+#  ** piodine **          # The one, the only. Awesome, clear, colors. everything looks good!
+#  oceanic-reef/next *    # reef better, but comments nearly unreadable; next is a litte too desat
+#  Bijan **               # clean, readable, softish colors, slate background
+#  Foggy-Evening *        # vibrant colors, really pops, not great syntax for py
+#  gooey **               # very clear, nice colors (bit boring), nice slate dark
+#  Easyballs *            # simple, clean, readable
+#  Wildlife-Night */*     # (RST) very clear, comment highlighting
+#  TwoStones **           # Nice, readable; great except for the white coloring on python syntax
+#-- CPP/Other
+#  Brogrammer ***         # Good syntax highlighting for everything
+#  DarkKorokai **         # High contrast, really like the bold-italics on attr and stuff
+
+
+#==== Medium & desat (or weird)
+#  mutedrainbow_sky **    # nice "adventure-time"-esque scheme, syntax supp could be better
+#  nouba *                # (PLAINTEXT) HEAVY contrast, very strong highlight
+#  Atomic - Light(Soft) * # similar to github-v2
+#  wild-cherry *          # good contrast, colors are a bit soft, purple-base, very strong highlight
+
+#==== Light
+#  Github-v2  ***         # Favorite light; syntax supp could be better, but love the yellowish/offwhite scheme
+#  ArtSchool **           # Almost too bright; very clear easy to read, white bkgrd, bright colors
+#  Celeste *              # very bright, light colors, clear, white
+#  Butterfly **           # like a better celeste, clearer, more sat colors
+#  softly **              # nice off-white, good highlight, overall clear
+#  spring ***             # uses bold!, off-white, good color, highlighting, very nice
+#  eiffel **              # off-white, great contrast, could have better syn supp
+
+
+#------------------------------------------------------------------------------
+# RST themes
+# ==========
+
+#==== Dark
+#  Wildlife_Night
+#  Poyeyo_Blue
+#  Github_Dark
+#  Kane
+#  Neon-kush
+#  ILM_shell
+
+#==== Medium & desat (or weird)
+#  Forest Focus
+#  Oblivion
+#  Wombat
+#  Oceanic_Next
+#  Foggy_evening
+#  Salmon Onice
+
+#==== Light
+#  Github_Light
+#  Eiffel
+#  Foggy_morning
+#  Textmate
+#  Karyfound_light
+#  Foggy_morning
+#  Flat
+
+
+#------------------------------------------------------------------------------
+# Markdown themes
+# ===============
+# TOP CHOICES:
+#  dark  ---> bijan
+#  light ---> github_light
+
+#==== dark
+#  bluloco-dark  **   # great color, great syntax support
+#  bijan     ***      # very clear/legible, good color pallette, bold/italic/headers
+#  anarchist **       # Headers, line-splits, bold, italic, dynamic albeit boring coloring
+#  WarpOS */*         # Great, interesting color palette and syntax, but maybe too opinionated
+#  azure *            # Good syntax support, not enough contrast in coloring
+#  solarized-ocean */ # Kind of same opinion i always have about solarized: great palette, support, but not a fan of the desat and lack of contrast
+#  paraiso-dark **    # Great colors and syntax, needs more contrast and header syn support
+
+#==== I-want-my-eyes-to-bleed
+#  Mcedit             # Impressive
+#  HotDogStand        # I want to die
+
+#==== medium
+#  Another_Kolor_light **  # Great contrast and colors, bg color maybe too grey
+#  Breakers ***            # excellent syntax support, good clean color palette
+#  Wildlife-Day */*        # Great, but almost too much contrast/highlighting
+#  Paraiso-light **        # So close to 3star, but missing header syntax (otherwise great colors)
+#  GitHub_Light ***        # Clean, legible, syntax
+#------------------------------------------------------------------------------
+
+# Sublime packages
+# ================
+# Anaconda    # realllllly need to dial down the autocomplete stuff tho
+# A File Icon
+# Colorsublime
+# Cython+
+# ExportHtml
+# Licence Snippets
+# Material Theme
+# Package Control
+# PackageResourceViewer
+# RestructuredText Improved
+# Restructured Text (RST) Snippets
+# SidebarEnhancements
+# UnicodeMath  (WHERE HAVE YOU BEEN MY WHOLE LIFE)
+
+#=============================================================================#
+#             88b           d88  88   ad88888ba     ,ad8888ba,                #
+#             888b         d888  88  d8"     "8b   d8"'    `"8b               #
+#             88`8b       d8'88  88  Y8,          d8'                         #
+#             88 `8b     d8' 88  88  `Y8aaaaa,    88                          #
+#             88  `8b   d8'  88  88    `"""""8b,  88                          #
+#             88   `8b d8'   88  88          `8b  Y8,                         #
+#             88    `888'    88  88  Y8a     a8P   Y8a.    .a8P               #
+#             88     `8'     88  88   "Y88888P"     `"Y8888Y"'                #
+#                                                                             #
+#=============================================================================#
+
+# DISPLAY
+# =======
+
+# Change sub-pixel ordering, via GUI:
+# https://itectec.com/ubuntu/ubuntu-how-to-change-font-rendering-to-sub-pixel-bgr-ordering/
+sudo apt install -y dconf-editor
+# In the left pane, go: /org/gnome/settings-daemon/plugins/xsettings
+# In the right pane, change the value of the rgba-order key to bgr
+
+
+
+# NATIVEFIER
+# ==========
+# --- just drop the tryhard nativefy script makes things stupid complicated
+#nativefy "https://mail.google.com" gmail -t -c
+#nativefy "https://drive.google.com" google-drive -u '.*?\.google\.*?'
+#nativefy "https://keep.google.com" google-keep
+#nativefy "https://calendar.google.com" google-calendar
+#nativefy "https://airtable.com/" airtable
+#nativefy "https://www.hackerrank.com/dashboard" hacker-rank
+
+
+# --file-download-options '{"saveAs": true}'
+
+
+#---- real example:
+## USAGE: nativefier [options] <targetURL> [dest]
+nativefier --hide-window-frame --disable-context-menu --name 'maps' \
+--icon /home/evan/.Apps/Icons/google-maps.png 'https://maps.google.com/' \
+/home/evan/.Apps/Nativefied/
+
+nativefier --file-download-options '{"saveAs": true}' --clear-cache \
+--hide-window-frame --disable-context-menu --name 'Libgen' \
+--icon /home/evan/.Apps/Icons/libgen.png 'http://gen.lib.rus.ec/' \
+/home/evan/.Apps/Nativefied/
+
+
+##--- Google calendar
+# Opts: start maximized
+nativefier --hide-window-frame --maximize --disable-context-menu --name 'Google-calendar' --icon /home/evan/.Apps/Icons/google-calendar.png 'https://calendar.google.com/' /home/evan/.Apps/Nativefied/
+
+
+##--- Arxiv Sanity Preserver
+# Opts: internal urls (JUST AS EXAMPLE)
+nativefier --file-download-options '{"saveAs": true}' --hide-window-frame --disable-context-menu --internal-urls ".*?" --name 'Arxiv Sanity Preserver' --icon /home/evan/.Apps/Icons/arxiv-sanity.png 'http://www.arxiv-sanity.com/top?timefilter=week&vfilter=all' /home/evan/.Apps/Nativefied/
+
+
+
+
+## Symlink binary dest --> local bin
+ln -sf /home/evan/.Apps/Nativefied/maps-linux-x64/maps /home/evan/.local/bin
+
+## Make desktop entry in local apps
+##--- in ~/.local/share/applications/maps.desktop
+#[Desktop Entry]
+#Name=Maps
+#Comment=Nativefied google maps
+#Exec=/home/evan/.local/bin/maps
+#Terminal=false
+#Type=Application
+#Icon=/home/evan/.Apps/Nativefied/maps-linux-x64/resources/app/icon.png
+#Categories=Network;
+
+
+# RSS feeds
+# =========
+https://blog.openai.com/rss/              # https://blog.openai.com/
+https://deepmind.com/blog/feed/basic/     # https://deepmind.com/blog/
+http://bair.berkeley.edu/blog/feed.xml    # http://bair.berkeley.edu/blog/
+http://feeds.feedburner.com/blogspot/gJZg # http://ai.googleblog.com/
+
+
+# Openssh (local) server
+#=======================
+sudo apt install openssh-server;
+sudo service ssh status;
+sudo vi /etc/ssh/sshd_config; # change port from 22 to whatever
+sudo systemctl restart sshd.service;
+hostname -I; # get ip
+# copy ssh-id from non-server machine
+ssh-copy-id evan@remotehost;
+sudo vi /etc/ssh/sshd_config; # disable password auth
+sudo systemctl restart sshd.service;
+
+# Reminiscence
+#=============
+# need ---> venv (pyenv), wkhtmltopdf, redis-server (optional)
+mkdir reminiscence
+cd reminiscence
+pyenv virtualenv 3.7.0 reminiscence
+pyenv local reminiscence
+git clone --depth=1 https://github.com/kanishka-linux/reminiscence.git
+cd reminiscence
+pip install -r requirements.txt
+mkdir logs archive tmp
+python manage.py generatesecretkey
+python manage.py nltkdownload
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver 127.0.0.1:8000
+# open 127.0.0.1:8000 using any browser, login and start adding links
+
+#**Note:** replace localhost address with local ip address of your server
+#          to access web-interface from anywhere on the local network
+
+# grab-site
+#=============
+sudo apt update
+sudo apt install --no-install-recommends git build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libffi-dev libxml2-dev libxslt1-dev libre2-dev pkg-config
+pip install --process-dependency-links --no-binary --upgrade git+https://github.com/ludios/grab-site
+
+
+# Chromium extensions
+#====================
+# To see all installed extensions, navigate to: chrome://system
+"Arc Dark"
+"Archiveror"
+"arXiv bib overlay"
+"Awesome Stars"
+"Backspace to go Back"
+"Better Bookmark"
+"Bookmarks clean up"
+"Close Tabs to the Left"
+"Copy All Urls"
+"Dark Reader"
+"Favicon Detector"
+"Github Original Streak"
+"HTTPS Everywhere"
+"Joplin Web Clipper"
+"Like on GitHub"
+"Linkclump"
+"Lovely forks"
+"Make Medium Readable Again"
+"Math Anywhere"
+"Old Reddit Redirect"
+"Privacy Badger"
+"py3redirect"
+"Redirectify"
+"Refined GitHub"
+"rikaikun"
+"Sight"
+"uBlock Origin Extra"
+"uBlock Origin"
+"View Image"
+"WARCreate"
+"Wide Github"
+"WikiMapper"
+"Wikipedia Reading Lists"
+"xBrowserSync"
+"Zotero Connector"
+
+
+# Xubuntu/XFCE theme stuff
+# ========================
+
+# TO CHANGE THE LOGIN PROMPT THEME,
+#   sudo apt install lightdm-gtk-greeter
+#   a gui for changing prompt
+(+) ➜  ~ cat /etc/lightdm/lightdm-gtk-greeter.conf
+[greeter]
+theme-name = OSX-Arc-Shadow
+hide-user-image = true
