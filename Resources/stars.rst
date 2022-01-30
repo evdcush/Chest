@@ -767,3 +767,50 @@
 - `jaakkopasanen/AutoEq <https://github.com/jaakkopasanen/AutoEq>`_: (6354 ⭐) Automatic headphone equalization from frequency responses
 - `wowchemy/starter-hugo-academic <https://github.com/wowchemy/starter-hugo-academic>`_: (1819 ⭐) 🎓 Hugo Academic Theme 创建一个学术网站. Easily create a beautiful academic résumé or educational website using Hugo, GitHub, and Netlify.
 - `JuliaAcademy/JuliaTutorials <https://github.com/JuliaAcademy/JuliaTutorials>`_: (936 ⭐) Learn Julia via interactive tutorials!
+- `google/iree <https://github.com/google/iree>`_: (979 ⭐) 👻
+- `google/flatbuffers <https://github.com/google/flatbuffers>`_: (17387 ⭐) FlatBuffers: Memory Efficient Serialization Library
+- `hoya012/awesome-anomaly-detection <https://github.com/hoya012/awesome-anomaly-detection>`_: (1881 ⭐) A curated list of awesome anomaly detection resources
+- `google/jax <https://github.com/google/jax>`_: (16109 ⭐) Composable transformations of Python+NumPy programs: differentiate, vectorize, JIT to GPU/TPU, and more
+- `google/python-fire <https://github.com/google/python-fire>`_: (21870 ⭐) Python Fire is a library for automatically generating command line interfaces (CLIs) from absolutely any Python object.
+- `danielgatis/rembg <https://github.com/danielgatis/rembg>`_: (2192 ⭐) Rembg is a tool to remove images background.
+- `gordicaleksa/pytorch-original-transformer <https://github.com/gordicaleksa/pytorch-original-transformer>`_: (547 ⭐) My implementation of the original transformer model (Vaswani et al.). I've additionally included the playground.py file for visualizing otherwise seemingly hard concepts. Currently included IWSLT pretrained models.
+- `eriklindernoren/PyTorch-GAN <https://github.com/eriklindernoren/PyTorch-GAN>`_: (11225 ⭐) PyTorch implementations of Generative Adversarial Networks.
+- `hyperopt/hyperopt <https://github.com/hyperopt/hyperopt>`_: (6054 ⭐) Distributed Asynchronous Hyperparameter Optimization in Python
+- `sebastianruder/NLP-progress <https://github.com/sebastianruder/NLP-progress>`_: (19656 ⭐) Repository to track the progress in Natural Language Processing (NLP), including the datasets and the current state-of-the-art for the most common NLP tasks.
+- `xingyizhou/CenterNet <https://github.com/xingyizhou/CenterNet>`_: (6175 ⭐) Object detection, 3D detection, and pose estimation using center point detection:
+- `orchest/orchest <https://github.com/orchest/orchest>`_: (1799 ⭐) Build data pipelines, the easy way 🛠️
+- `pytorch/elastic <https://github.com/pytorch/elastic>`_: (686 ⭐) PyTorch elastic training
+- `pytorch/pytorch_sphinx_theme <https://github.com/pytorch/pytorch_sphinx_theme>`_: (57 ⭐) PyTorch Sphinx Theme
+- `facebookresearch/foltr-es <https://github.com/facebookresearch/foltr-es>`_: (33 ⭐) The source code to reproduce the results reported in the 'Federated Online Learning to Rank with Evolution Strategies' paper, published at WSDM 2019.
+- `facebookresearch/Mephisto <https://github.com/facebookresearch/Mephisto>`_: (102 ⭐) A suite of tools for managing crowdsourcing tasks from the inception through to data packaging for research use
+- `huchenme/github-trending-api <https://github.com/huchenme/github-trending-api>`_: (666 ⭐) :octocat: The missing APIs for GitHub trending projects and developers 📈
+- `rasmusbergpalm/evostrat <https://github.com/rasmusbergpalm/evostrat>`_: (167 ⭐) A library that makes Evolutionary Strategies (ES) simple to use.
+- `facebookresearch/nevergrad <https://github.com/facebookresearch/nevergrad>`_: (3225 ⭐) A Python toolbox for performing gradient-free optimization
+- `facebookresearch/EGG <https://github.com/facebookresearch/EGG>`_: (218 ⭐) EGG: Emergence of lanGuage in Games
+- `facebookresearch/nle <https://github.com/facebookresearch/nle>`_: (567 ⭐) The NetHack Learning Environment
+- `facebookresearch/habitat-lab <https://github.com/facebookresearch/habitat-lab>`_: (775 ⭐) A modular high-level library to train embodied AI agents across a variety of tasks, environments, and simulators.
+- `flashlight/flashlight <https://github.com/flashlight/flashlight>`_: (4066 ⭐) A C++ standalone library for machine learning
+- `horovod/horovod <https://github.com/horovod/horovod>`_: (12085 ⭐) Distributed training framework for TensorFlow, Keras, PyTorch, and Apache MXNet.
+- `facebookresearch/TransCoder <https://github.com/facebookresearch/TransCoder>`_: (1406 ⭐) Public release of the TransCoder research project https://arxiv.org/pdf/2006.03511.pdf
+- `microsoft/nni <https://github.com/microsoft/nni>`_: (10925 ⭐) An open source AutoML toolkit for automate machine learning lifecycle, including feature engineering, neural architecture search, model compression and hyper-parameter tuning.
+- `geerlingguy/ansible-for-devops <https://github.com/geerlingguy/ansible-for-devops>`_: (5408 ⭐) Ansible for DevOps examples.
+- `adamerose/PandasGUI <https://github.com/adamerose/PandasGUI>`_: (2537 ⭐) A GUI for Pandas DataFrames
+- `blackjack4494/yt-dlc <https://github.com/blackjack4494/yt-dlc>`_: (2624 ⭐) media downloader and library for various sites.
+- `geohot/tinygrad <https://github.com/geohot/tinygrad>`_: (5154 ⭐) You like pytorch? You like micrograd? You love tinygrad! ❤️
+- `UnityTechnologies/open-project-1 <https://github.com/UnityTechnologies/open-project-1>`_: (4330 ⭐) Unity Open Project #1: Chop Chop
+- `tobspr/shapez.io <https://github.com/tobspr/shapez.io>`_: (4525 ⭐) shapez.io is an open source base building game inspired by factorio! Available on web & steam
+- `chrislusf/seaweedfs <https://github.com/chrislusf/seaweedfs>`_: (13753 ⭐) SeaweedFS is a fast distributed storage system for blobs, objects, files, and data lake, for billions of files! Blob store has O(1) disk seek, cloud tiering. Filer supports Cloud Drive, cross-DC active-active replication, Kubernetes, POSIX FUSE mount, S3 API, S3 Gateway, Hadoop, WebDAV, encryption, Erasure Coding.
+- `changkun/modern-cpp-tutorial <https://github.com/changkun/modern-cpp-tutorial>`_: (16331 ⭐) 📚 Modern C++ Tutorial: C++11/14/17/20 On the Fly | https://changkun.de/modern-cpp/
+- `GitSquared/edex-ui <https://github.com/GitSquared/edex-ui>`_: (34925 ⭐) A cross-platform, customizable science fiction terminal emulator with advanced monitoring & touchscreen support.
+- `hardikvasa/google-images-download <https://github.com/hardikvasa/google-images-download>`_: (7857 ⭐) Python Script to download hundreds of images from 'Google Images'. It is a ready-to-run code!
+- `lucidrains/performer-pytorch <https://github.com/lucidrains/performer-pytorch>`_: (774 ⭐) An implementation of Performer, a linear attention-based transformer, in Pytorch
+- `Hari-Nagarajan/fairgame <https://github.com/Hari-Nagarajan/fairgame>`_: (2456 ⭐) Tool to help us buy hard to find items.
+- `microsoft/Cream <https://github.com/microsoft/Cream>`_: (421 ⭐) This is a collection of our NAS and Vision Transformer work.
+- `NVIDIA/semantic-segmentation <https://github.com/NVIDIA/semantic-segmentation>`_: (1485 ⭐) Nvidia Semantic Segmentation monorepo
+- `xingyizhou/CenterTrack <https://github.com/xingyizhou/CenterTrack>`_: (1939 ⭐) Simultaneous object detection and tracking using center points.
+- `joelgrus/data-science-from-scratch <https://github.com/joelgrus/data-science-from-scratch>`_: (6652 ⭐) code for Data Science From Scratch book
+- `gaogaotiantian/viztracer <https://github.com/gaogaotiantian/viztracer>`_: (1564 ⭐) VizTracer is a low-overhead logging/debugging/profiling tool that can trace and visualize your python code execution.
+- `augustogoulart/awesome-pytest <https://github.com/augustogoulart/awesome-pytest>`_: (246 ⭐) A curated list of awesome pytest resources
+- `awesome-selfhosted/awesome-selfhosted <https://github.com/awesome-selfhosted/awesome-selfhosted>`_: (40000 ⭐) A list of Free Software network services and web applications which can be hosted on your own servers
+- `jessfraz/dockerfiles <https://github.com/jessfraz/dockerfiles>`_: (12324 ⭐) Various Dockerfiles I use on the desktop and on servers.
+- `P3GLEG/Whaler <https://github.com/P3GLEG/Whaler>`_: (785 ⭐) Program to reverse Docker images into Dockerfiles
