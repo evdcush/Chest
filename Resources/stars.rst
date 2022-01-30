@@ -1,1296 +1,1296 @@
 See that we already have a doc ready in Resources/cool.rst
 
-- `ICLR/Master-Template <https://github.com/ICLR/Master-Template>`_: (88 ⭐) Template and style files for ICLR
-- `deepmind/meltingpot <https://github.com/deepmind/meltingpot>`_: (114 ⭐) None
-- `deepmind/reverb <https://github.com/deepmind/reverb>`_: (511 ⭐) Reverb is an efficient and easy-to-use data storage and transport system designed for machine learning research
-- `wandb/client <https://github.com/wandb/client>`_: (3674 ⭐) 🔥 A tool for visualizing and tracking your machine learning experiments. This repo contains the CLI and Python API.
-- `deepmind/acme <https://github.com/deepmind/acme>`_: (2499 ⭐) A library of reinforcement learning components and agents
-- `kot-behemoth/awesome-joplin <https://github.com/kot-behemoth/awesome-joplin>`_: (226 ⭐) 📒 A curated list of awesome Joplin themes and tools.
-- `joplin/plugin-kanban <https://github.com/joplin/plugin-kanban>`_: (39 ⭐) None
-- `agerardin/joplin-plugin-knowledge-graph <https://github.com/agerardin/joplin-plugin-knowledge-graph>`_: (16 ⭐) Notes as nodes. Explore your Joplin knowledge graph.
-- `jgraph/drawio-desktop <https://github.com/jgraph/drawio-desktop>`_: (26011 ⭐) Official electron build of diagrams.net
-- `openai/multiagent-competition <https://github.com/openai/multiagent-competition>`_: (707 ⭐)  Code for the paper "Emergent Complexity via Multi-agent Competition"
-- `facebookresearch/moolib <https://github.com/facebookresearch/moolib>`_: (190 ⭐) A library for distributed ML training with PyTorch
-- `Machine-Learning-Tokyo/Interactive_Tools <https://github.com/Machine-Learning-Tokyo/Interactive_Tools>`_: (1550 ⭐) Interactive Tools for Machine Learning, Deep Learning and Math
-- `Machine-Learning-Tokyo/DL-workshop-series <https://github.com/Machine-Learning-Tokyo/DL-workshop-series>`_: (906 ⭐) Material used for Deep Learning related workshops for Machine Learning Tokyo (MLT)
-- `microsoft/malmo <https://github.com/microsoft/malmo>`_: (3738 ⭐) Project Malmo is a platform for Artificial Intelligence experimentation and research built on top of Minecraft. We aim to inspire a new generation of research into challenging new problems presented by this unique environment. --- For installation instructions, scroll down to *Getting Started* below, or visit the project page for more information:
-- `resume/resume.github.com <https://github.com/resume/resume.github.com>`_: (40000 ⭐) Resumes generated using the GitHub informations
-- `jankapunkt/latexcv <https://github.com/jankapunkt/latexcv>`_: (1495 ⭐) :necktie: A collection of cv and resume templates written in LaTeX. Leave an issue if your language is not supported!
-- `AxelThevenot/Python_Benchmark_Test_Optimization_Function_Single_Objective <https://github.com/AxelThevenot/Python_Benchmark_Test_Optimization_Function_Single_Objective>`_: (41 ⭐) None
-- `thieu1995/mealpy <https://github.com/thieu1995/mealpy>`_: (163 ⭐) A collection of the state-of-the-art MEta-heuristics ALgorithms in PYthon (mealpy)
-- `snowie2000/mactype <https://github.com/snowie2000/mactype>`_: (6994 ⭐) Better font rendering for Windows.
-- `ErikCH/DevYouTubeList <https://github.com/ErikCH/DevYouTubeList>`_: (4417 ⭐) List of Development YouTube Channels
-- `HunterMcGushion/hyperparameter_hunter <https://github.com/HunterMcGushion/hyperparameter_hunter>`_: (682 ⭐) Easy hyperparameter optimization and automatic result saving across machine learning algorithms and libraries
-- `aqlaboratory/openfold <https://github.com/aqlaboratory/openfold>`_: (697 ⭐) Trainable PyTorch reproduction of AlphaFold 2
-- `facebookresearch/astmt <https://github.com/facebookresearch/astmt>`_: (66 ⭐) Attentive Single-tasking of Multiple Tasks
-- `evanzd/ICLR2021-OpenReviewData <https://github.com/evanzd/ICLR2021-OpenReviewData>`_: (402 ⭐) Crawl & visualize ICLR papers and reviews.
-- `eleanorlutz/topography_atlas_of_space <https://github.com/eleanorlutz/topography_atlas_of_space>`_: (219 ⭐) Code and instructions for making topographic maps of planets and moons
-- `algorithm-archivists/algorithm-archive <https://github.com/algorithm-archivists/algorithm-archive>`_: (1911 ⭐) A collaborative book on algorithms
-- `CelestiaProject/Celestia <https://github.com/CelestiaProject/Celestia>`_: (966 ⭐) Real-time 3D visualization of space.
-- `alexlenail/NN-SVG <https://github.com/alexlenail/NN-SVG>`_: (1853 ⭐) Publication-ready NN-architecture schematics.
-- `Michael-Beukman/PCGNN <https://github.com/Michael-Beukman/PCGNN>`_: (1 ⭐) Combining NEAT and novelty search to quickly generate diverse video game levels.
-- `LondonNode/Pearl <https://github.com/LondonNode/Pearl>`_: (14 ⭐) Adaptable tools to make reinforcement learning and evolutionary computation algorithms.
-- `google-research/self-organising-systems <https://github.com/google-research/self-organising-systems>`_: (116 ⭐) None
-- `google-research/vision_transformer <https://github.com/google-research/vision_transformer>`_: (4458 ⭐) None
-- `google-research/kubric <https://github.com/google-research/kubric>`_: (98 ⭐) A data generation pipeline for creating semi-realistic synthetic multi-object videos with rich annotations such as instance segmentation masks, depth maps, and optical flow.
-- `sksq96/pytorch-summary <https://github.com/sksq96/pytorch-summary>`_: (3384 ⭐) Model summary in PyTorch similar to `model.summary()` in Keras
-- `zetane/viewer <https://github.com/zetane/viewer>`_: (343 ⭐) ML models and internal tensors 3D visualizer
-- `Developer-Y/cs-video-courses <https://github.com/Developer-Y/cs-video-courses>`_: (28978 ⭐) List of Computer Science courses with video lectures.
-- `trakBan/spongebob-cli <https://github.com/trakBan/spongebob-cli>`_: (302 ⭐) Watch classic spongebob from the terminal!
-- `magenta/magenta <https://github.com/magenta/magenta>`_: (17384 ⭐) Magenta: Music and Art Generation with Machine Intelligence
-- `amaboura/panama-papers-dataset-2016 <https://github.com/amaboura/panama-papers-dataset-2016>`_: (705 ⭐) Structured data about Panama papers collected from official ICIJ website
-- `Evolving-AI-Lab/innovation-engine <https://github.com/Evolving-AI-Lab/innovation-engine>`_: (28 ⭐) Code base for "Innovation Engines" GECCO 2015 paper
-- `NikolaiT/GoogleScraper <https://github.com/NikolaiT/GoogleScraper>`_: (2374 ⭐) A Python module to scrape several search engines (like Google, Yandex, Bing, Duckduckgo, ...). Including asynchronous networking support.
-- `ellisk42/ec <https://github.com/ellisk42/ec>`_: (280 ⭐) None
-- `enajx/ES <https://github.com/enajx/ES>`_: (4 ⭐) Evolution Strategy (ES) implementation of https://arxiv.org/abs/1703.03864
-- `uber-research/PyTorch-NEAT <https://github.com/uber-research/PyTorch-NEAT>`_: (478 ⭐) None
-- `TianhongDai/hindsight-experience-replay <https://github.com/TianhongDai/hindsight-experience-replay>`_: (214 ⭐) This is the pytorch implementation of Hindsight Experience Replay (HER) - Experiment on all fetch robotic environments.
-- `locuslab/convmixer <https://github.com/locuslab/convmixer>`_: (776 ⭐) Implementation of ConvMixer for "Patches Are All You Need? 🤷"
-- `fregante/GhostText <https://github.com/fregante/GhostText>`_: (2632 ⭐) 👻 Use your text editor to write in your browser. Everything you type in the editor will be instantly updated in the browser (and vice versa).
-- `ysh329/deep-learning-model-convertor <https://github.com/ysh329/deep-learning-model-convertor>`_: (3057 ⭐) The convertor/conversion of deep learning models for different deep learning frameworks/softwares.
-- `arogozhnikov/einops <https://github.com/arogozhnikov/einops>`_: (4212 ⭐) Deep learning operations reinvented (for pytorch, tensorflow, jax and others)
-- `openai/jukebox <https://github.com/openai/jukebox>`_: (4940 ⭐) Code for the paper "Jukebox: A Generative Model for Music"
-- `AboutRSS/ALL-about-RSS <https://github.com/AboutRSS/ALL-about-RSS>`_: (1429 ⭐) A list of RSS related stuff: tools, services, communities and tutorials, etc.
-- `victornpb/deleteDiscordMessages <https://github.com/victornpb/deleteDiscordMessages>`_: (2669 ⭐) Undiscord - Delete all messages in a Discord channel or DM (Easy and fast) Bulk delete
-- `kingoflolz/CLIP_JAX <https://github.com/kingoflolz/CLIP_JAX>`_: (96 ⭐) Contrastive Language-Image Pretraining
-- `VGraupera/1on1-questions <https://github.com/VGraupera/1on1-questions>`_: (8761 ⭐) Mega list of 1 on 1 meeting questions compiled from a variety to sources
-- `raylene/eng-handbook <https://github.com/raylene/eng-handbook>`_: (1135 ⭐) A developer's guide to management: an open-sourced handbook for leading software engineering teams.
-- `cle-ros/RoutingNetworks <https://github.com/cle-ros/RoutingNetworks>`_: (55 ⭐) None
-- `jdah/minecraft-again <https://github.com/jdah/minecraft-again>`_: (452 ⭐) yeah I made it again
-- `alyssaxuu/omni <https://github.com/alyssaxuu/omni>`_: (2663 ⭐) The all-in-one tool to supercharge your productivity ⌨️
-- `massgravel/Microsoft-Activation-Scripts <https://github.com/massgravel/Microsoft-Activation-Scripts>`_: (10248 ⭐) A collection of scripts for activating Microsoft products using HWID / KMS38 / Online KMS activation methods with a focus on open-source code, less antivirus detection and user-friendliness.
-- `synercys/annotated_latex_equations <https://github.com/synercys/annotated_latex_equations>`_: (2448 ⭐) Examples of how to create colorful, annotated equations in Latex using Tikz.
-- `scrapy/scrapy <https://github.com/scrapy/scrapy>`_: (40000 ⭐) Scrapy, a fast high-level web crawling & scraping framework for Python.
-- `deepmind/mathematics_conjectures <https://github.com/deepmind/mathematics_conjectures>`_: (262 ⭐) None
-- `mljar/mercury <https://github.com/mljar/mercury>`_: (889 ⭐) Mercury: easily convert Python notebook to web app and share with others
-- `facebookresearch/theseus <https://github.com/facebookresearch/theseus>`_: (206 ⭐) A library for differentiable nonlinear optimization.
-- `uber-research/permute-quantize-finetune <https://github.com/uber-research/permute-quantize-finetune>`_: (116 ⭐) Using ideas from product quantization for state-of-the-art neural network compression.
-- `wayveai/fiery <https://github.com/wayveai/fiery>`_: (232 ⭐) PyTorch code for the paper "FIERY: Future Instance Segmentation in Bird's-Eye view from Surround Monocular Cameras"
-- `khuedoan/homelab <https://github.com/khuedoan/homelab>`_: (4931 ⭐) My self-hosting infrastructure, fully automated from empty disk to operating services
-- `daniruiz/flat-remix-gnome <https://github.com/daniruiz/flat-remix-gnome>`_: (1395 ⭐) Flat Remix is a GNOME Shell theme inspired by material design. It is mostly flat using a colorful palette with some shadows, highlights, and gradients for some depth.
-- `daniruiz/flat-remix <https://github.com/daniruiz/flat-remix>`_: (1523 ⭐) Flat Remix is an icon theme inspired by material design. It is mostly flat using a colorful palette with some shadows, highlights, and gradients for some depth.
-- `hbons/SparkleShare <https://github.com/hbons/SparkleShare>`_: (4683 ⭐) Share and collaborate by syncing with any Git repository instantly. Linux, macOS, and Windows.
-- `phw/peek <https://github.com/phw/peek>`_: (8545 ⭐) Simple animated GIF screen recorder with an easy to use interface
-- `lwindolf/liferea <https://github.com/lwindolf/liferea>`_: (676 ⭐) Liferea (Linux Feed Reader), a news reader for GTK/GNOME
-- `isl-org/MultiObjectiveOptimization <https://github.com/isl-org/MultiObjectiveOptimization>`_: (532 ⭐) Source code for Neural Information Processing Systems (NeurIPS) 2018 paper "Multi-Task Learning as Multi-Objective Optimization"
-- `lorenmt/mtan <https://github.com/lorenmt/mtan>`_: (468 ⭐) The implementation of "End-to-End Multi-Task Learning with Attention" [CVPR 2019].
-- `tianheyu927/PCGrad <https://github.com/tianheyu927/PCGrad>`_: (186 ⭐) Code for "Gradient Surgery for Multi-Task Learning"
-- `adrianjav/rotograd <https://github.com/adrianjav/rotograd>`_: (17 ⭐) Official Pytorch's implementation of RotoGrad
-- `facebookresearch/pycls <https://github.com/facebookresearch/pycls>`_: (1835 ⭐) Codebase for Image Classification Research, written in PyTorch.
-- `szagoruyko/pytorchviz <https://github.com/szagoruyko/pytorchviz>`_: (2105 ⭐) A small package to create visualizations of PyTorch execution graphs
-- `waleedka/hiddenlayer <https://github.com/waleedka/hiddenlayer>`_: (1571 ⭐) Neural network graphs and training metrics for PyTorch, Tensorflow, and Keras.
-- `ashishpatel26/Tools-to-Design-or-Visualize-Architecture-of-Neural-Network <https://github.com/ashishpatel26/Tools-to-Design-or-Visualize-Architecture-of-Neural-Network>`_: (2393 ⭐) Tools to Design or Visualize Architecture of Neural Network
-- `tstandley/taskgrouping <https://github.com/tstandley/taskgrouping>`_: (61 ⭐) Code for Which Tasks Should Be Learned Together in Multi-task Learning?
-- `lucidrains/x-transformers <https://github.com/lucidrains/x-transformers>`_: (1367 ⭐) A simple but complete full-attention transformer with a set of promising experimental features from various papers
-- `wonderworks-software/PyFlow <https://github.com/wonderworks-software/PyFlow>`_: (1464 ⭐) Visual scripting framework for python - https://wonderworks-software.github.io/PyFlow
-- `NVlabs/tiny-cuda-nn <https://github.com/NVlabs/tiny-cuda-nn>`_: (725 ⭐) Lightning fast & tiny C++/CUDA neural network framework
-- `mattermost/focalboard <https://github.com/mattermost/focalboard>`_: (9344 ⭐) Focalboard is an open source, self-hosted alternative to Trello, Notion, and Asana.
-- `preetum/cifar5m <https://github.com/preetum/cifar5m>`_: (18 ⭐) CIFAR-5m dataset
-- `huangwl18/language-planner <https://github.com/huangwl18/language-planner>`_: (33 ⭐) Official Code for "Language Models as Zero-Shot Planners: Extracting Actionable Knowledge for Embodied Agents"
-- `jangernert/FeedReader <https://github.com/jangernert/FeedReader>`_: (769 ⭐) Modern desktop application designed to complement existing web-based RSS accounts.
-- `jcoreyes/evolvingrl <https://github.com/jcoreyes/evolvingrl>`_: (37 ⭐) Supplementary Data for Evolving Reinforcement Learning Algorithms
-- `google-research/vmoe <https://github.com/google-research/vmoe>`_: (179 ⭐) None
-- `onelivesleft/PrettyErrors <https://github.com/onelivesleft/PrettyErrors>`_: (2442 ⭐) Prettify Python exception output to make it legible.
-- `deepmind/open_spiel <https://github.com/deepmind/open_spiel>`_: (3069 ⭐) OpenSpiel is a collection of environments and algorithms for research in general reinforcement learning and search/planning in games.
-- `HumanCompatibleAI/imitation <https://github.com/HumanCompatibleAI/imitation>`_: (396 ⭐) Clean PyTorch implementations of imitation and reward learning algorithms
-- `facebookresearch/ConvNeXt <https://github.com/facebookresearch/ConvNeXt>`_: (2818 ⭐) Code release for ConvNeXt model
-- `priyankavergadia/google-cloud-4-words <https://github.com/priyankavergadia/google-cloud-4-words>`_: (5927 ⭐) The Google Cloud Developer's Cheat Sheet
-- `Zekfoo/AGZ <https://github.com/Zekfoo/AGZ>`_: (287 ⭐) A circuit-level redesign of the Game Boy Advance, addressing many of the issues seen with the original GBA
-- `inancgumus/learngo <https://github.com/inancgumus/learngo>`_: (12734 ⭐) 1000+ Hand-Crafted Go Examples, Exercises, and Quizzes
-- `facebookresearch/Detic <https://github.com/facebookresearch/Detic>`_: (762 ⭐) Code release for "Detecting Twenty-thousand Classes using Image-level Supervision".
-- `BenHerbst/idaesbasic <https://github.com/BenHerbst/idaesbasic>`_: (115 ⭐) Idaesbasic - An all in one project manager that stores everything in files directly into your project! 🤯
-- `deepchecks/deepchecks <https://github.com/deepchecks/deepchecks>`_: (959 ⭐) Test Suites for Validating ML Models & Data. Deepchecks is a Python package for comprehensively validating your machine learning models and data with minimal effort.
-- `linux-nvme/nvme-cli <https://github.com/linux-nvme/nvme-cli>`_: (883 ⭐) NVMe management command line interface.
-- `BookStackApp/BookStack <https://github.com/BookStackApp/BookStack>`_: (8512 ⭐) A platform to create documentation/wiki content built with PHP & Laravel
-- `LingDong-/shan-shui-inf <https://github.com/LingDong-/shan-shui-inf>`_: (4279 ⭐) Procedurally generated Chinese landscape painting.
-- `CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers <https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers>`_: (24054 ⭐) aka "Bayesian Methods for Hackers": An introduction to Bayesian methods + probabilistic programming with a computation/understanding-first, mathematics-second point of view. All in pure Python ;)
-- `T3rry7f/WideVineDump <https://github.com/T3rry7f/WideVineDump>`_: (97 ⭐) Dump audio and video streams from  Widevine Level 3
-- `deepmind/educational <https://github.com/deepmind/educational>`_: (303 ⭐) None
-- `sepandhaghighi/samila <https://github.com/sepandhaghighi/samila>`_: (497 ⭐) Generative Art Generator
-- `dwyl/english-words <https://github.com/dwyl/english-words>`_: (6220 ⭐) :memo: A text file containing 479k English words for all your dictionary/word-based projects e.g: auto-completion / autosuggestion
-- `austinvhuang/openmemex <https://github.com/austinvhuang/openmemex>`_: (149 ⭐) Open source, local-first knowledge platform.
-- `AwesomeTTS/awesometts-anki-addon <https://github.com/AwesomeTTS/awesometts-anki-addon>`_: (313 ⭐) AwesomeTTS text-to-speech add-on for Anki
-- `vahidk/EffectiveTensorflow <https://github.com/vahidk/EffectiveTensorflow>`_: (8692 ⭐) TensorFlow tutorials and best practices.
-- `visionml/pytracking <https://github.com/visionml/pytracking>`_: (2007 ⭐) Visual tracking library based on PyTorch.
-- `LeviBorodenko/primify <https://github.com/LeviBorodenko/primify>`_: (433 ⭐) Embed any image into a prime number.
-- `pyinstaller/pyinstaller <https://github.com/pyinstaller/pyinstaller>`_: (8793 ⭐) Freeze (package) Python programs into stand-alone executables
-- `mkrl/misbrands <https://github.com/mkrl/misbrands>`_: (6201 ⭐) The world's most hated IT stickers
-- `phoboslab/qoi <https://github.com/phoboslab/qoi>`_: (4256 ⭐) The “Quite OK Image Format” for fast, lossless image compression
-- `Unity-Technologies/PeopleSansPeople <https://github.com/Unity-Technologies/PeopleSansPeople>`_: (64 ⭐) Unity's privacy-preserving human-centric synthetic data generator
-- `deepklarity/jupyter-text2code <https://github.com/deepklarity/jupyter-text2code>`_: (2049 ⭐) A proof-of-concept jupyter extension which converts english queries into relevant python code
-- `google-research/simclr <https://github.com/google-research/simclr>`_: (2802 ⭐) SimCLRv2 - Big Self-Supervised Models are Strong Semi-Supervised Learners
-- `wjf5203/SeqFormer <https://github.com/wjf5203/SeqFormer>`_: (200 ⭐) SeqFormer: a Frustratingly Simple Model for Video Instance Segmentation
-- `ropas/pytea <https://github.com/ropas/pytea>`_: (221 ⭐) PyTea: PyTorch Tensor shape error analyzer
-- `deepmind/arnheim <https://github.com/deepmind/arnheim>`_: (172 ⭐) None
-- `fudan-zvg/SOFT <https://github.com/fudan-zvg/SOFT>`_: (211 ⭐) SOFT: Softmax-free Transformer with Linear Complexity, NeurIPS 2021 Spotlight
-- `utiasSTARS/lfgp <https://github.com/utiasSTARS/lfgp>`_: (4 ⭐) Learning from Guided Play: A Scheduled Hierarchical Approach for Improving Exploration in Adversarial Imitation Learning Source Code
-- `chuangg/OPEn <https://github.com/chuangg/OPEn>`_: (4 ⭐) None
-- `shellysheynin/Locally-SAG-Transformer <https://github.com/shellysheynin/Locally-SAG-Transformer>`_: (7 ⭐) Official Pytorch implementation of the paper: "Locally Shifted Attention With Early Global Integration"
-- `IAmPara0x/Yuno <https://github.com/IAmPara0x/Yuno>`_: (317 ⭐) Yuno is context based search engine for anime.
-- `kakaobrain/minDALL-E <https://github.com/kakaobrain/minDALL-E>`_: (427 ⭐) PyTorch implementation of a 1.3B text-to-image generation model trained on 14 million image-text pairs
-- `Music-and-Culture-Technology-Lab/omnizart <https://github.com/Music-and-Culture-Technology-Lab/omnizart>`_: (1103 ⭐) Omniscient Mozart, being able to transcribe everything in the music, including vocal, drum, chord, beat, instruments, and more.
-- `aeon0/botty <https://github.com/aeon0/botty>`_: (275 ⭐) D2R Pixel Bot
-- `EvolutionGym/evogym-design-tool <https://github.com/EvolutionGym/evogym-design-tool>`_: (85 ⭐) Design tool for creating Evolution Gym environments.
-- `anchore/grype <https://github.com/anchore/grype>`_: (2841 ⭐) A vulnerability scanner for container images and filesystems
-- `learntocloud/learn-to-cloud <https://github.com/learntocloud/learn-to-cloud>`_: (2377 ⭐) Learn the fundamentals of cloud computing
-- `autonomousvision/transfuser <https://github.com/autonomousvision/transfuser>`_: (396 ⭐) [CVPR'21] Multi-Modal Fusion Transformer for End-to-End Autonomous Driving
-- `Atten4Vis/ConditionalDETR <https://github.com/Atten4Vis/ConditionalDETR>`_: (174 ⭐) This repository is an official implementation of the ICCV 2021 paper "Conditional DETR for Fast Training Convergence". (https://arxiv.org/abs/2108.06152)
-- `VITA-Group/SViTE <https://github.com/VITA-Group/SViTE>`_: (50 ⭐) [NeurIPS'21] "Chasing Sparsity in Vision Transformers: An End-to-End Exploration" by Tianlong Chen, Yu Cheng, Zhe Gan, Lu Yuan, Lei Zhang, Zhangyang Wang
-- `hustvl/YOLOS <https://github.com/hustvl/YOLOS>`_: (458 ⭐) You Only Look at One Sequence (NeurIPS 2021)
-- `leereilly/games <https://github.com/leereilly/games>`_: (18891 ⭐) :video_game: A list of popular/awesome video games, add-ons, maps, etc. hosted on GitHub. Any genre. Any platform. Any engine.
-- `inconvergent/weird <https://github.com/inconvergent/weird>`_: (1270 ⭐) Generative art in Common Lisp
-- `mradaideh/neorl <https://github.com/mradaideh/neorl>`_: (13 ⭐) NeuroEvolution Optimisation with Reinforcement Learning
-- `heartexlabs/label-studio <https://github.com/heartexlabs/label-studio>`_: (7531 ⭐) Label Studio is a multi-type data labeling and annotation tool with standardized output format
-- `mle-infrastructure/mle-monitor <https://github.com/mle-infrastructure/mle-monitor>`_: (91 ⭐) A Lightweight Experiment & Resource Monitoring Tool 📺
-- `fundamentalvision/Parameterized-AP-Loss <https://github.com/fundamentalvision/Parameterized-AP-Loss>`_: (35 ⭐) None
-- `facebookresearch/minihack <https://github.com/facebookresearch/minihack>`_: (221 ⭐) MiniHack the Planet: A Sandbox for Open-Ended Reinforcement Learning Research
-- `d9w/evolution <https://github.com/d9w/evolution>`_: (18 ⭐) Introduction to Evolutionary Computation class
-- `Edward-Sun/TSP-Detection <https://github.com/Edward-Sun/TSP-Detection>`_: (42 ⭐) Code of ICCV paper: https://arxiv.org/abs/2011.10881
-- `jesseduffield/lazydocker <https://github.com/jesseduffield/lazydocker>`_: (21583 ⭐) The lazier way to manage everything docker
-- `tenderlove/asmrepl <https://github.com/tenderlove/asmrepl>`_: (715 ⭐) A REPL for x86-64 assembly language
-- `zeldaret/oot <https://github.com/zeldaret/oot>`_: (3335 ⭐) Decompilation of The Legend of Zelda: Ocarina of Time
-- `facebookresearch/pytorchvideo <https://github.com/facebookresearch/pytorchvideo>`_: (2242 ⭐) A deep learning library for video understanding research.
-- `facebookresearch/SlowFast <https://github.com/facebookresearch/SlowFast>`_: (4540 ⭐) PySlowFast: video understanding codebase from FAIR for reproducing state-of-the-art video models.
-- `ChengyueGongR/PatchVisionTransformer <https://github.com/ChengyueGongR/PatchVisionTransformer>`_: (62 ⭐) None
-- `thunlp/WantWords <https://github.com/thunlp/WantWords>`_: (4198 ⭐) An open-source online reverse dictionary.
-- `google-research/long-range-arena <https://github.com/google-research/long-range-arena>`_: (390 ⭐) Long Range Arena for Benchmarking Efficient Transformers
-- `utkuozbulak/pytorch-cnn-visualizations <https://github.com/utkuozbulak/pytorch-cnn-visualizations>`_: (6260 ⭐) Pytorch implementation of convolutional neural network visualization techniques
-- `ray-project/tune-sklearn <https://github.com/ray-project/tune-sklearn>`_: (334 ⭐) A drop-in replacement for Scikit-Learn’s GridSearchCV / RandomizedSearchCV -- but with cutting edge hyperparameter tuning techniques.
-- `jonaswinkler/paperless-ng <https://github.com/jonaswinkler/paperless-ng>`_: (3904 ⭐) A supercharged version of paperless: scan, index and archive all your physical documents
-- `benbusby/whoogle-search <https://github.com/benbusby/whoogle-search>`_: (4883 ⭐) A self-hosted, ad-free, privacy-respecting metasearch engine
-- `samuelcolvin/pydantic <https://github.com/samuelcolvin/pydantic>`_: (8996 ⭐) Data parsing and validation using Python type hints
-- `linusericsson/ssl-invariances <https://github.com/linusericsson/ssl-invariances>`_: (6 ⭐) Official code for the paper "Why Do Self-Supervised Models Transfer? Investigating the Impact of Invariance on Downstream Tasks".
-- `scipy/scipy-cookbook <https://github.com/scipy/scipy-cookbook>`_: (383 ⭐) Scipy Cookbook
-- `karpathy/arxiv-sanity-lite <https://github.com/karpathy/arxiv-sanity-lite>`_: (451 ⭐) arxiv-sanity lite: tag arxiv papers of interest get recommendations of similar papers in a nice UI using SVMs over tfidf feature vectors based on paper abstracts.
-- `cdevroe/unmark <https://github.com/cdevroe/unmark>`_: (1505 ⭐) An open source to do app for bookmarks.
-- `joe-siyuan-qiao/ViP-DeepLab <https://github.com/joe-siyuan-qiao/ViP-DeepLab>`_: (181 ⭐) None
-- `elfshaker/elfshaker <https://github.com/elfshaker/elfshaker>`_: (2025 ⭐) elfshaker stores binary objects efficiently
-- `davidrmiller/biosim4 <https://github.com/davidrmiller/biosim4>`_: (1637 ⭐) Biological evolution simulator
-- `supabase/supabase <https://github.com/supabase/supabase>`_: (27253 ⭐) The open source Firebase alternative. Follow to stay updated about our public Beta.
-- `Anarios/return-youtube-dislike <https://github.com/Anarios/return-youtube-dislike>`_: (7981 ⭐) Chrome extension to return youtube dislikes
-- `lucidrains/hourglass-transformer-pytorch <https://github.com/lucidrains/hourglass-transformer-pytorch>`_: (59 ⭐) Implementation of Hourglass Transformer, in Pytorch, from Google and OpenAI
-- `PyAV-Org/PyAV <https://github.com/PyAV-Org/PyAV>`_: (1440 ⭐) Pythonic bindings for FFmpeg's libraries.
-- `Kaggle/docker-python <https://github.com/Kaggle/docker-python>`_: (1879 ⭐) Kaggle Python docker image
-- `yzhao062/anomaly-detection-resources <https://github.com/yzhao062/anomaly-detection-resources>`_: (5467 ⭐) Anomaly detection related books, papers, videos, and toolboxes
-- `mfrashad/text2art <https://github.com/mfrashad/text2art>`_: (277 ⭐) AI-powered Text-to-Art Generator - Text2Art.com
-- `microsoft/varuna <https://github.com/microsoft/varuna>`_: (99 ⭐) None
-- `hhatto/autopep8 <https://github.com/hhatto/autopep8>`_: (3980 ⭐) A tool that automatically formats Python code to conform to the PEP 8 style guide.
-- `atulkum/pointer_summarizer <https://github.com/atulkum/pointer_summarizer>`_: (753 ⭐) pytorch implementation of "Get To The Point: Summarization with Pointer-Generator Networks"
-- `assafshocher/ResizeRight <https://github.com/assafshocher/ResizeRight>`_: (307 ⭐) The correct way to resize images or tensors. For Numpy or Pytorch (differentiable).
-- `facebookresearch/fairo <https://github.com/facebookresearch/fairo>`_: (706 ⭐) A modular embodied agent architecture and platform for building embodied agents
-- `Textualize/rich <https://github.com/Textualize/rich>`_: (34389 ⭐) Rich is a Python library for rich text and beautiful formatting in the terminal.
-- `brett-daley/fast-dqn <https://github.com/brett-daley/fast-dqn>`_: (4 ⭐) A concurrent/synchronized DQN implementation optimized for multi-CPU, single-GPU systems.
-- `voldemortX/pytorch-auto-drive <https://github.com/voldemortX/pytorch-auto-drive>`_: (174 ⭐) Segmentation models (ERFNet, ENet, DeepLab, FCN...) and Lane detection models (SCNN, PRNet, RESA, LSTR, BezierLaneNet...) based on PyTorch with mixed precision training
-- `newren/git-filter-repo <https://github.com/newren/git-filter-repo>`_: (3221 ⭐) Quickly rewrite git repository history (filter-branch replacement)
-- `pdfarranger/pdfarranger <https://github.com/pdfarranger/pdfarranger>`_: (1185 ⭐) Small python-gtk application, which helps the user to merge or split pdf documents and rotate, crop and rearrange their pages using an interactive and intuitive graphical interface
-- `marceloprates/prettymaps <https://github.com/marceloprates/prettymaps>`_: (7682 ⭐) A small set of Python functions to draw pretty maps from OpenStreetMap data. Based on osmnx, matplotlib and shapely libraries.
-- `bryandlee/animegan2-pytorch <https://github.com/bryandlee/animegan2-pytorch>`_: (3048 ⭐) PyTorch implementation of AnimeGANv2
-- `TachibanaYoshino/AnimeGANv2 <https://github.com/TachibanaYoshino/AnimeGANv2>`_: (3378 ⭐) [Open Source].  The improved version of AnimeGAN. Landscape photos/videos to anime
-- `salomonelli/best-resume-ever <https://github.com/salomonelli/best-resume-ever>`_: (15203 ⭐) :necktie: :briefcase: Build fast :rocket: and easy multiple beautiful resumes and create your best CV ever! Made with Vue and LESS.
-- `thearn/game-of-life <https://github.com/thearn/game-of-life>`_: (156 ⭐) Simple Python implementation of Conway's game of life and other cellular automata, computed using numpy.fft
-- `duckythescientist/SmoothLife <https://github.com/duckythescientist/SmoothLife>`_: (625 ⭐) Continuous Domain Game of Life in Python with Numpy
-- `pipeseroni/pipes.sh <https://github.com/pipeseroni/pipes.sh>`_: (1613 ⭐) Animated pipes terminal screensaver
-- `AugustUnderground/gace <https://github.com/AugustUnderground/gace>`_: (7 ⭐) Gym Analog Circuit Characterization Environments
-- `CMA-ES/pycomocma <https://github.com/CMA-ES/pycomocma>`_: (10 ⭐) A Python implementation of COMO-CMA-ES, a non-elitist multiobjective Evolution Strategy
-- `isapome/BrainProp <https://github.com/isapome/BrainProp>`_: (12 ⭐) BrainProp: How the brain can implement reward-based error backpropagation
-- `idiap/fast-transformers <https://github.com/idiap/fast-transformers>`_: (1074 ⭐) Pytorch library for fast transformer implementations
-- `hardmaru/WorldModelsExperiments <https://github.com/hardmaru/WorldModelsExperiments>`_: (487 ⭐) World Models Experiments
-- `google-research/tiny-differentiable-simulator <https://github.com/google-research/tiny-differentiable-simulator>`_: (820 ⭐) Tiny Differentiable Simulator is a header-only C++ and CUDA physics library for reinforcement learning and robotics with zero dependencies.
-- `dribnet/pixray <https://github.com/dribnet/pixray>`_: (347 ⭐) neural image generation
-- `antofuller/configaformers <https://github.com/antofuller/configaformers>`_: (49 ⭐) A python library for highly configurable transformers - easing model architecture search and experimentation.
-- `minetest/minetest <https://github.com/minetest/minetest>`_: (6570 ⭐) Minetest is an open source voxel game engine with easy modding and game creation
-- `hardmaru/estool <https://github.com/hardmaru/estool>`_: (830 ⭐) Evolution Strategies Tool
-- `rll-research/BPref <https://github.com/rll-research/BPref>`_: (17 ⭐) Official codebase for "B-Pref: Benchmarking Preference-BasedReinforcement Learning" contains scripts to reproduce experiments.
-- `koulanurag/muzero-pytorch <https://github.com/koulanurag/muzero-pytorch>`_: (225 ⭐) Pytorch Implementation of MuZero
-- `YeWR/EfficientZero <https://github.com/YeWR/EfficientZero>`_: (459 ⭐) Open-source codebase for EfficientZero, from "Mastering Atari Games with Limited Data" at NeurIPS 2021.
-- `rish-16/aft-pytorch <https://github.com/rish-16/aft-pytorch>`_: (164 ⭐) Unofficial PyTorch implementation of Attention Free Transformer (AFT) layers by Apple Inc.
-- `openai/grade-school-math <https://github.com/openai/grade-school-math>`_: (155 ⭐) None
-- `PradyumnaKrishna/Colab-Hacks <https://github.com/PradyumnaKrishna/Colab-Hacks>`_: (506 ⭐) Simple Hacks for Google Colaboratory to boost your productivity and help you to perform daily tasks.
-- `topjohnwu/Magisk <https://github.com/topjohnwu/Magisk>`_: (23186 ⭐) The Magic Mask for Android
-- `click-contrib/click-log <https://github.com/click-contrib/click-log>`_: (97 ⭐) Simple and beautiful logging for click applications
-- `brendenpetersen/deep-symbolic-optimization <https://github.com/brendenpetersen/deep-symbolic-optimization>`_: (152 ⭐) Source code for deep symbolic optimization.
-- `lyft/confidant <https://github.com/lyft/confidant>`_: (1674 ⭐) Confidant: your secret keeper. https://lyft.github.io/confidant
-- `google-research/scenic <https://github.com/google-research/scenic>`_: (704 ⭐) Scenic: A Jax Library for Computer Vision Research and Beyond
-- `Jingkang50/OODSurvey <https://github.com/Jingkang50/OODSurvey>`_: (171 ⭐) The Official Repository for "Generalized OOD Detection: A Survey"
-- `ifzhang/ByteTrack <https://github.com/ifzhang/ByteTrack>`_: (1815 ⭐) ByteTrack: Multi-Object Tracking by Associating Every Detection Box
-- `rigtorp/awesome-modern-cpp <https://github.com/rigtorp/awesome-modern-cpp>`_: (8921 ⭐) A collection of resources on modern C++
-- `lucidrains/jax2torch <https://github.com/lucidrains/jax2torch>`_: (77 ⭐) Use Jax functions in Pytorch
-- `yzhwang/jax-multi-gpu-resnet50-example <https://github.com/yzhwang/jax-multi-gpu-resnet50-example>`_: (14 ⭐) An example showing how to use jax to train resnet50 on multi-node multi-GPU
-- `Cli98/anchor_computation_tool <https://github.com/Cli98/anchor_computation_tool>`_: (62 ⭐) This repo primarily targets to help those who needs to compute anchors to customer dataset in object detection.
-- `d2l-ai/d2l-en <https://github.com/d2l-ai/d2l-en>`_: (12299 ⭐) Interactive deep learning book with multi-framework code, math, and discussions. Adopted at 300 universities from 55 countries including Stanford, MIT, Harvard, and Cambridge.
-- `facebookresearch/ppuda <https://github.com/facebookresearch/ppuda>`_: (378 ⭐) Code for Parameter Prediction for Unseen Deep Architectures (NeurIPS 2021)
-- `dolphin-emu/dolphin <https://github.com/dolphin-emu/dolphin>`_: (8136 ⭐) Dolphin is a GameCube / Wii emulator, allowing you to play games for these two platforms on PC with improvements.
-- `lars76/kmeans-anchor-boxes <https://github.com/lars76/kmeans-anchor-boxes>`_: (513 ⭐) k-means clustering with the Intersection over Union (IoU) metric as described in the YOLO9000 paper
-- `joydeepmedhi/Anchor-Boxes-with-KMeans <https://github.com/joydeepmedhi/Anchor-Boxes-with-KMeans>`_: (80 ⭐) How to initialize Anchors in Faster RCNN for custom dataset?
-- `zylo117/Yet-Another-EfficientDet-Pytorch <https://github.com/zylo117/Yet-Another-EfficientDet-Pytorch>`_: (4966 ⭐) The pytorch re-implement of the official efficientdet with SOTA performance in real time and pretrained weights.
-- `anyscale/academy <https://github.com/anyscale/academy>`_: (311 ⭐) Ray tutorials from Anyscale
-- `graphdeeplearning/benchmarking-gnns <https://github.com/graphdeeplearning/benchmarking-gnns>`_: (1693 ⭐) Repository for benchmarking graph neural networks
-- `IntelLabs/control-flag <https://github.com/IntelLabs/control-flag>`_: (1000 ⭐) A system to flag anomalous source code expressions by learning typical expressions from training data
-- `imankgoyal/NonDeepNetworks <https://github.com/imankgoyal/NonDeepNetworks>`_: (541 ⭐) Official Code for "Non-deep Networks"
-- `openai/mujoco-py <https://github.com/openai/mujoco-py>`_: (1945 ⭐) MuJoCo is a physics engine for detailed, efficient rigid body simulations with contacts. mujoco-py allows using MuJoCo from Python 3.
-- `dnddnjs/pytorch-multigpu <https://github.com/dnddnjs/pytorch-multigpu>`_: (155 ⭐) Multi GPU Training Code for Deep Learning with PyTorch
-- `facebookresearch/xformers <https://github.com/facebookresearch/xformers>`_: (614 ⭐) Hackable and optimized Transformers building blocks, supporting a composable construction.
-- `NeuralEnsemble/elephant <https://github.com/NeuralEnsemble/elephant>`_: (114 ⭐) Elephant is the Electrophysiology Analysis Toolkit
-- `nukeop/nuclear <https://github.com/nukeop/nuclear>`_: (7509 ⭐) Streaming music player that finds free music for you
-- `kzl/universal-computation <https://github.com/kzl/universal-computation>`_: (182 ⭐) Official codebase for Pretrained Transformers as Universal Computation Engines.
-- `jazlab/moog.github.io <https://github.com/jazlab/moog.github.io>`_: (24 ⭐) Modular Object-Oriented Games (MOOG): Python-based game engine for reinforcement learning, psychology, and neurophysiology.
-- `cpnota/autonomous-learning-library <https://github.com/cpnota/autonomous-learning-library>`_: (542 ⭐) A PyTorch library for building deep reinforcement learning agents.
-- `CodeReclaimers/neat-python <https://github.com/CodeReclaimers/neat-python>`_: (1018 ⭐) Python implementation of the NEAT neuroevolution algorithm
-- `mtdvio/every-programmer-should-know <https://github.com/mtdvio/every-programmer-should-know>`_: (40000 ⭐) A collection of (mostly) technical things every software developer should know about
-- `thoppe/pixelhouse <https://github.com/thoppe/pixelhouse>`_: (341 ⭐) A minimalist drawing library for making beautiful animations in python
-- `ryankiros/neural-storyteller <https://github.com/ryankiros/neural-storyteller>`_: (2930 ⭐) A recurrent neural network for generating little stories about images
-- `fabric/fabric <https://github.com/fabric/fabric>`_: (13228 ⭐) Simple, Pythonic remote execution and deployment.
-- `stencila/stencila <https://github.com/stencila/stencila>`_: (620 ⭐) Stencila
-- `myollie/img2pdf <https://github.com/myollie/img2pdf>`_: (9 ⭐) losslessly convert images to pdf
-- `deepmind/hanabi-learning-environment <https://github.com/deepmind/hanabi-learning-environment>`_: (557 ⭐) hanabi_learning_environment is a research platform for Hanabi experiments.
-- `deepmind/mujoco <https://github.com/deepmind/mujoco>`_: (3180 ⭐) Multi-Joint dynamics with Contact. A general purpose physics simulator.
-- `megvii-research/AnchorDETR <https://github.com/megvii-research/AnchorDETR>`_: (173 ⭐) An official implementation of the Anchor DETR.
-- `sedthh/pyxelate <https://github.com/sedthh/pyxelate>`_: (1246 ⭐) Python class that generates pixel art from images
-- `realpython/list-of-python-api-wrappers <https://github.com/realpython/list-of-python-api-wrappers>`_: (1832 ⭐) List of Python API Wrappers and Libraries
-- `HendrikStrobelt/LSTMVis <https://github.com/HendrikStrobelt/LSTMVis>`_: (1058 ⭐) Visualization Toolbox for Long Short Term Memory networks (LSTMs)
-- `goodtft/LCD-show <https://github.com/goodtft/LCD-show>`_: (1686 ⭐)   2.4" 2.8"3.2" 3.5" 5.0" 7.0" TFT LCD driver for the Raspberry PI 3B+/A/A+/B/B+/PI2/ PI3/ZERO/ZERO W
-- `analyticalmonk/awesome-neuroscience <https://github.com/analyticalmonk/awesome-neuroscience>`_: (856 ⭐) A curated list of awesome neuroscience libraries, software and any content related to the domain.
-- `tomgoldstein/loss-landscape <https://github.com/tomgoldstein/loss-landscape>`_: (1849 ⭐) Code for visualizing the loss landscape of neural nets
-- `uber-research/backpropamine <https://github.com/uber-research/backpropamine>`_: (60 ⭐) Train self-modifying neural networks with neuromodulated plasticity
-- `beyretb/AnimalAI-Olympics <https://github.com/beyretb/AnimalAI-Olympics>`_: (567 ⭐) Code repository for the Animal AI Olympics competition
-- `openai/train-procgen <https://github.com/openai/train-procgen>`_: (127 ⭐) Code for the paper "Leveraging Procedural Generation to Benchmark Reinforcement Learning"
-- `openai/retro <https://github.com/openai/retro>`_: (2598 ⭐) Retro Games in Gym
-- `deepmind/optax <https://github.com/deepmind/optax>`_: (604 ⭐) Optax is a gradient processing and optimization library for JAX.
-- `xmu-xiaoma666/External-Attention-pytorch <https://github.com/xmu-xiaoma666/External-Attention-pytorch>`_: (3866 ⭐) 🍀 Pytorch implementation of various Attention Mechanisms, MLP, Re-parameter, Convolution, which is helpful to further understand papers.⭐⭐⭐
-- `deepmind/neural_testbed <https://github.com/deepmind/neural_testbed>`_: (139 ⭐) None
-- `Farama-Foundation/SuperSuit <https://github.com/Farama-Foundation/SuperSuit>`_: (272 ⭐) Easy-to-use micro-wrappers for Gym and PettingZoo based RL Environments
-- `microsoft/Swin-Transformer <https://github.com/microsoft/Swin-Transformer>`_: (7008 ⭐) This is an official implementation for "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows".
-- `marcelja/facebook-delete <https://github.com/marcelja/facebook-delete>`_: (1135 ⭐) Fast facebook activity deletion
-- `NVlabs/stylegan3 <https://github.com/NVlabs/stylegan3>`_: (3547 ⭐) Official PyTorch implementation of StyleGAN3
-- `Chakazul/Lenia <https://github.com/Chakazul/Lenia>`_: (2814 ⭐) Lenia - Mathematical Life Forms
-- `markshannon/faster-cpython <https://github.com/markshannon/faster-cpython>`_: (728 ⭐) How to make CPython faster.
-- `codePerfectPlus/awesomeScripts <https://github.com/codePerfectPlus/awesomeScripts>`_: (310 ⭐) A Collection of Awesome Scripts in Python to Ease Daily-Life. Create an issue If you have some great ideas for the new script. Leave a :star:
-- `bytedance/raylink <https://github.com/bytedance/raylink>`_: (32 ⭐) Framework to build and train RL algorithms
-- `yt-dlp/yt-dlp <https://github.com/yt-dlp/yt-dlp>`_: (17861 ⭐) A youtube-dl fork with additional features and fixes
-- `sdras/awesome-actions <https://github.com/sdras/awesome-actions>`_: (17150 ⭐) A curated list of awesome actions to use on GitHub
-- `kenjihiranabe/The-Art-of-Linear-Algebra <https://github.com/kenjihiranabe/The-Art-of-Linear-Algebra>`_: (969 ⭐) Graphic notes on Gilbert Strang's "Linear Algebra for Everyone"
-- `gquere/pwn_jenkins <https://github.com/gquere/pwn_jenkins>`_: (1283 ⭐) Notes about attacking Jenkins servers
-- `joaoperfig/GRaNDPapA <https://github.com/joaoperfig/GRaNDPapA>`_: (240 ⭐) Generator of Rad Names from Decent Paper Acronyms
-- `rahul-thakoor/balena-rpiplay <https://github.com/rahul-thakoor/balena-rpiplay>`_: (1192 ⭐) Turn a Raspberry Pi into an Airplay server using RPiPlay to enable screen mirroring on tvs, monitors and projectors.
-- `XuehaiPan/nvitop <https://github.com/XuehaiPan/nvitop>`_: (397 ⭐) An interactive NVIDIA-GPU process viewer, the one-stop solution for GPU process management.
-- `wookayin/gpustat <https://github.com/wookayin/gpustat>`_: (2712 ⭐) 📊 A simple command-line utility for querying and monitoring GPU status
-- `Cyclenerd/ethereum_nvidia_miner <https://github.com/Cyclenerd/ethereum_nvidia_miner>`_: (816 ⭐) 💰 USB flash drive ISO image for Ethereum, Zcash and Monero mining with NVIDIA graphics cards and Ubuntu GNU/Linux (headless)
-- `trekhleb/promote-your-next-startup <https://github.com/trekhleb/promote-your-next-startup>`_: (1787 ⭐) 🚀 Free resources you may use to promote your next startup
-- `SimonVandenhende/Awesome-Multi-Task-Learning <https://github.com/SimonVandenhende/Awesome-Multi-Task-Learning>`_: (201 ⭐) A list of multi-task learning papers and projects.
-- `SimonVandenhende/Multi-Task-Learning-PyTorch <https://github.com/SimonVandenhende/Multi-Task-Learning-PyTorch>`_: (393 ⭐) PyTorch implementation of multi-task learning architectures, incl. MTI-Net (ECCV2020).
-- `SysCV/bdd100k-models <https://github.com/SysCV/bdd100k-models>`_: (107 ⭐) Model Zoo of BDD100K Dataset
-- `pgaskin/NickelMenu <https://github.com/pgaskin/NickelMenu>`_: (181 ⭐) The easiest way to launch scripts, change settings, and run actions on Kobo e-readers.
-- `odoo/odoo <https://github.com/odoo/odoo>`_: (23978 ⭐) Odoo. Open Source Apps To Grow Your Business.
-- `isl-org/DPT <https://github.com/isl-org/DPT>`_: (959 ⭐) Dense Prediction Transformers
-- `Megvii-BaseDetection/YOLOX <https://github.com/Megvii-BaseDetection/YOLOX>`_: (5574 ⭐) YOLOX is a high-performance anchor-free YOLO, exceeding yolov3~v5 with MegEngine, ONNX, TensorRT, ncnn, and OpenVINO supported. Documentation: https://yolox.readthedocs.io/
-- `danielo515/TW5-auto-publish2gh-pages <https://github.com/danielo515/TW5-auto-publish2gh-pages>`_: (88 ⭐) Host your tiddlywikis in GitHub pages without any git knowledge or installing any software
-- `LiYangHart/Hyperparameter-Optimization-of-Machine-Learning-Algorithms <https://github.com/LiYangHart/Hyperparameter-Optimization-of-Machine-Learning-Algorithms>`_: (784 ⭐) Implementation of hyperparameter optimization/tuning methods for machine learning & deep learning models (easy&clear)
-- `araffin/rl-baselines-zoo <https://github.com/araffin/rl-baselines-zoo>`_: (963 ⭐) A collection of 100+ pre-trained RL agents using Stable Baselines, training and hyperparameter optimization included.
-- `automl/HPOBench <https://github.com/automl/HPOBench>`_: (60 ⭐) Collection of hyperparameter optimization benchmark problems
-- `parrt/dtreeviz <https://github.com/parrt/dtreeviz>`_: (1995 ⭐) A python library for decision tree visualization and model interpretation.
-- `cmsflash/efficient-attention <https://github.com/cmsflash/efficient-attention>`_: (146 ⭐) An implementation of the efficient attention module.
-- `thieu1995/metaheuristics <https://github.com/thieu1995/metaheuristics>`_: (146 ⭐) Implement the-state-of-the-art meta-heuristic algorithms using python (numpy)
-- `dair-ai/ml-visuals <https://github.com/dair-ai/ml-visuals>`_: (5873 ⭐) 🎨 ML Visuals contains figures and templates which you can reuse and customize to improve your scientific writing.
-- `IntelLabs/distiller <https://github.com/IntelLabs/distiller>`_: (3801 ⭐) Neural Network Distiller by Intel AI Lab: a Python package for neural network compression research.  https://intellabs.github.io/distiller
-- `qubvel/segmentation_models.pytorch <https://github.com/qubvel/segmentation_models.pytorch>`_: (4810 ⭐) Segmentation models with pretrained backbones. PyTorch.
-- `waymo-research/waymo-open-dataset <https://github.com/waymo-research/waymo-open-dataset>`_: (1589 ⭐) Waymo Open Dataset
-- `eusporg/alphaicon <https://github.com/eusporg/alphaicon>`_: (146 ⭐) α-Indirect Control in Onion-like Networks
-- `AugustKarlstedt/slideslive-downloader <https://github.com/AugustKarlstedt/slideslive-downloader>`_: (21 ⭐) download slideslive presentations (video + slides)
-- `mml-book/mml-book.github.io <https://github.com/mml-book/mml-book.github.io>`_: (9609 ⭐) Companion webpage to the book "Mathematics For Machine Learning"
-- `datasciencescoop/Data-Visualization <https://github.com/datasciencescoop/Data-Visualization>`_: (324 ⭐) Data Visualization with Python
-- `microsoft/muzic <https://github.com/microsoft/muzic>`_: (1907 ⭐) Muzic: Music Understanding and Generation with Artificial Intelligence
-- `learning-zone/python-interview-questions <https://github.com/learning-zone/python-interview-questions>`_: (762 ⭐) 300+ Python Interview Questions
-- `The-Japan-DataScientist-Society/100knocks-preprocess <https://github.com/The-Japan-DataScientist-Society/100knocks-preprocess>`_: (1454 ⭐) データサイエンス100本ノック（構造化データ加工編）
-- `SimonBlanke/Gradient-Free-Optimizers <https://github.com/SimonBlanke/Gradient-Free-Optimizers>`_: (838 ⭐) Simple and reliable optimization with local, global, population-based and sequential techniques in numerical discrete search spaces.
-- `cdhigh/KindleEar <https://github.com/cdhigh/KindleEar>`_: (2514 ⭐) A website application running in Google app engine, deliver rss news to your kindle. generate mobi using python, multilanguages supported.
-- `AllenDowney/ThinkStats2 <https://github.com/AllenDowney/ThinkStats2>`_: (3498 ⭐) Text and supporting code for Think Stats, 2nd Edition
-- `omegaml/minibatch <https://github.com/omegaml/minibatch>`_: (174 ⭐) Python stream processing for humans
-- `CalculatedContent/WeightWatcher <https://github.com/CalculatedContent/WeightWatcher>`_: (576 ⭐) The WeightWatcher tool for predicting the accuracy of   Deep Neural Networks
-- `microsoft/PythonProgrammingPuzzles <https://github.com/microsoft/PythonProgrammingPuzzles>`_: (777 ⭐) A Dataset of Python Challenges for AI Research
-- `facebookresearch/3detr <https://github.com/facebookresearch/3detr>`_: (353 ⭐) Code & Models for 3DETR - an End-to-end transformer model for 3D object detection
-- `thieu1995/opfunu <https://github.com/thieu1995/opfunu>`_: (29 ⭐) A collection of Benchmark functions for numerical optimization problems. Framework of OPtimization FUnction in NUmpy (opfunu)
-- `SioKCronin/swarmopt <https://github.com/SioKCronin/swarmopt>`_: (31 ⭐) Swarm intelligence optimizer
-- `gliderkite/formicarium <https://github.com/gliderkite/formicarium>`_: (38 ⭐) Ant colony simulator
-- `amineremache/qbso-fs <https://github.com/amineremache/qbso-fs>`_: (47 ⭐) Python implementation of QBSO-FS : a Reinforcement Learning based Bee Swarm Optimization metaheuristic for Feature Selection problem.
-- `NiaOrg/NiaPy <https://github.com/NiaOrg/NiaPy>`_: (181 ⭐) Python microframework for building nature-inspired algorithms. Official docs: https://niapy.org
-- `ljvmiranda921/pyswarms <https://github.com/ljvmiranda921/pyswarms>`_: (876 ⭐) A research toolkit for particle swarm optimization in Python
-- `automl/HpBandSter <https://github.com/automl/HpBandSter>`_: (514 ⭐) a distributed Hyperband implementation on Steroids
-- `mit-han-lab/tinyml <https://github.com/mit-han-lab/tinyml>`_: (400 ⭐) None
-- `lucidrains/triton-transformer <https://github.com/lucidrains/triton-transformer>`_: (113 ⭐) Implementation of a Transformer, but completely in Triton
-- `sebastianruder/sluice-networks <https://github.com/sebastianruder/sluice-networks>`_: (141 ⭐) Code for Sluice networks: Learning what to share between loosely related tasks
-- `cs231n/cs231n.github.io <https://github.com/cs231n/cs231n.github.io>`_: (8670 ⭐) Public facing notes page
-- `couler-proj/couler <https://github.com/couler-proj/couler>`_: (647 ⭐) Unified Interface for Constructing and Managing Workflows on different workflow engines, such as Argo Workflows, Tekton Pipelines, and Apache Airflow.
-- `lucidrains/HTM-pytorch <https://github.com/lucidrains/HTM-pytorch>`_: (53 ⭐) Implementation of Hierarchical Transformer Memory (HTM) for Pytorch
-- `google-research/rliable <https://github.com/google-research/rliable>`_: (307 ⭐) Library for reliable evaluation on RL and ML benchmarks, as recommended by our NeurIPS 2021 Outstanding Paper.
-- `facebookresearch/mtrl <https://github.com/facebookresearch/mtrl>`_: (127 ⭐) Multi Task RL Baselines
-- `Xilinx/brevitas <https://github.com/Xilinx/brevitas>`_: (581 ⭐) Brevitas: quantization-aware training in PyTorch
-- `InterDigitalInc/CompressAI <https://github.com/InterDigitalInc/CompressAI>`_: (459 ⭐) A PyTorch library and evaluation platform for end-to-end compression research
-- `pdfernhout/High-Performance-Organizations-Reading-List <https://github.com/pdfernhout/High-Performance-Organizations-Reading-List>`_: (1134 ⭐) Ideas for creating and sustaining high performance organizations
-- `lucidrains/ponder-transformer <https://github.com/lucidrains/ponder-transformer>`_: (59 ⭐) Implementation of a Transformer that Ponders, using the scheme from the PonderNet paper
-- `lucidrains/perceiver-pytorch <https://github.com/lucidrains/perceiver-pytorch>`_: (708 ⭐) Implementation of Perceiver, General Perception with Iterative Attention, in Pytorch
-- `FedML-AI/FedML <https://github.com/FedML-AI/FedML>`_: (1002 ⭐) A Research-oriented Federated Learning Library. Supporting distributed computing, mobile/IoT on-device training, and standalone simulation. Best Paper Award at NeurIPS 2020 Federated Learning workshop. Join our Slack Community:(https://join.slack.com/t/fedml/shared_invite/zt-havwx1ee-a1xfOUrATNfc9DFqU~r34w)
-- `facebookexperimental/skybison <https://github.com/facebookexperimental/skybison>`_: (270 ⭐) Instagram's experimental performance oriented greenfield implementation of Python.
-- `wkhtmltopdf/wkhtmltopdf <https://github.com/wkhtmltopdf/wkhtmltopdf>`_: (11873 ⭐) Convert HTML to PDF using Webkit (QtWebKit)
-- `spotify/pedalboard <https://github.com/spotify/pedalboard>`_: (3115 ⭐) 🎛 🔊 A Python library for adding effects to audio.
-- `pytorch/hydra-torch <https://github.com/pytorch/hydra-torch>`_: (130 ⭐) Configuration classes enabling type-safe PyTorch configuration for Hydra apps
-- `pytorch/opacus <https://github.com/pytorch/opacus>`_: (1027 ⭐) Training PyTorch models with differential privacy
-- `pytorch/kineto <https://github.com/pytorch/kineto>`_: (211 ⭐) A CPU+GPU Profiling library that provides access to timeline traces and hardware performance counters.
-- `pytorch/csprng <https://github.com/pytorch/csprng>`_: (71 ⭐) Cryptographically secure pseudorandom number generators for PyTorch
-- `pytorch/botorch <https://github.com/pytorch/botorch>`_: (2177 ⭐) Bayesian optimization in PyTorch
-- `pytorch/test-infra <https://github.com/pytorch/test-infra>`_: (9 ⭐) This repository hosts code that supports the testing infrastructure for the main PyTorch repo. For example, this repo hosts the logic to track disabled tests and slow tests, as well as our continuation integration jobs HUD/dashboard.
-- `cerlymarco/MEDIUM_NoteBook <https://github.com/cerlymarco/MEDIUM_NoteBook>`_: (1138 ⭐) Repository containing notebooks of my posts on Medium
-- `gimseng/99-ML-Learning-Projects <https://github.com/gimseng/99-ML-Learning-Projects>`_: (216 ⭐) A list of 99 machine learning projects for anyone interested to learn from coding and building projects
-- `graviraja/MLOps-Basics <https://github.com/graviraja/MLOps-Basics>`_: (2483 ⭐) None
-- `AI4Finance-Foundation/ElegantRL <https://github.com/AI4Finance-Foundation/ElegantRL>`_: (1635 ⭐) Scalable and Elastic Deep Reinforcement Learning Using PyTorch. Please star. 🔥
-- `DiegoVicen/som-tsp <https://github.com/DiegoVicen/som-tsp>`_: (1703 ⭐) Solving the Traveling Salesman Problem using Self-Organizing Maps
-- `astropy/astropy <https://github.com/astropy/astropy>`_: (3129 ⭐) Astronomy and astrophysics core library
-- `orhun/git-cliff <https://github.com/orhun/git-cliff>`_: (3674 ⭐) A highly customizable Changelog Generator that follows Conventional Commit specifications ⛰️
-- `HashLips/generative-art-opensource <https://github.com/HashLips/generative-art-opensource>`_: (1170 ⭐) Create generative art by using the canvas api and node js, feel free to contribute to this repo with new ideas.
-- `bpierre/loot-rarity <https://github.com/bpierre/loot-rarity>`_: (476 ⭐) 🤍 💚 💙 💜 🧡 ❤️ Rarity levels for Loot.
-- `VickScarlet/lifeRestart <https://github.com/VickScarlet/lifeRestart>`_: (9167 ⭐) やり直すんだ。そして、次はうまくやる。
-- `minerllabs/baselines <https://github.com/minerllabs/baselines>`_: (138 ⭐) A collection of baselines for the MineRL environment/datasets & the NeurIPS 2021 MineRL competitions
-- `sally20921/SinForkGAN-pytorch <https://github.com/sally20921/SinForkGAN-pytorch>`_: (49 ⭐) PyTorch Implementation for "ForkGAN with SIngle Rainy NIght Images: Leveraging the RumiGAN to See into the Rainy Night"
-- `AhmadRafiee/Docker_training_with_DockerMe <https://github.com/AhmadRafiee/Docker_training_with_DockerMe>`_: (406 ⭐) The tools and sample needed to learn the Docker
-- `cs-books/influential-cs-books <https://github.com/cs-books/influential-cs-books>`_: (4385 ⭐) Most influential books on Computer Science/programming
-- `mxm0z/awesome-intelligence-writing <https://github.com/mxm0z/awesome-intelligence-writing>`_: (239 ⭐) Awesome collection of great and useful resources concerning intelligence writing such as manuals/guides, standards, books, and articles
-- `AI4Finance-Foundation/FinRL <https://github.com/AI4Finance-Foundation/FinRL>`_: (3272 ⭐) FinRL: Financial Reinforcement Learning Framework. Please star. 🔥
-- `quantopian/pyfolio <https://github.com/quantopian/pyfolio>`_: (4235 ⭐) Portfolio and risk analytics in Python
-- `ashleve/lightning-hydra-template <https://github.com/ashleve/lightning-hydra-template>`_: (933 ⭐) PyTorch Lightning + Hydra. A feature-rich template for rapid, scalable and reproducible ML experimentation with best practices.  ⚡🔥⚡
-- `python-control/python-control <https://github.com/python-control/python-control>`_: (1044 ⭐)  The Python Control Systems Library is a Python module that implements basic operations for analysis and design of feedback control systems.
-- `Versent/saml2aws <https://github.com/Versent/saml2aws>`_: (1410 ⭐) CLI tool which enables you to login and retrieve AWS temporary credentials using a SAML IDP
-- `JingyunLiang/SwinIR <https://github.com/JingyunLiang/SwinIR>`_: (1228 ⭐) SwinIR: Image Restoration Using Swin Transformer
-- `yanx27/Pointnet_Pointnet2_pytorch <https://github.com/yanx27/Pointnet_Pointnet2_pytorch>`_: (1332 ⭐) PointNet and PointNet++ implemented by pytorch (pure python) and on ModelNet, ShapeNet and S3DIS.
-- `great-expectations/great_expectations <https://github.com/great-expectations/great_expectations>`_: (5996 ⭐) Always know what to expect from your data.
-- `microsoft/Focal-Transformer <https://github.com/microsoft/Focal-Transformer>`_: (379 ⭐) Official code for our NeurIPS 2021 Spotlight "Focal Self-attention for Local-Global Interactions in Vision Transformers"
-- `rail-berkeley/d4rl <https://github.com/rail-berkeley/d4rl>`_: (513 ⭐) A benchmark for offline reinforcement learning.
-- `lucidrains/fast-transformer-pytorch <https://github.com/lucidrains/fast-transformer-pytorch>`_: (157 ⭐) Implementation of Fast Transformer in Pytorch
-- `lucidrains/segformer-pytorch <https://github.com/lucidrains/segformer-pytorch>`_: (147 ⭐) Implementation of Segformer, Attention + MLP neural network for segmentation, in Pytorch
-- `jonaslejon/malicious-pdf <https://github.com/jonaslejon/malicious-pdf>`_: (1194 ⭐) Generate a bunch of malicious pdf files with phone-home functionality. Can be used with Burp Collaborator or Interact.sh
-- `jorisschellekens/borb <https://github.com/jorisschellekens/borb>`_: (2505 ⭐) borb is a library for reading, creating and manipulating PDF files in python.
-- `Lux-AI-Challenge/Lux-Design-2021 <https://github.com/Lux-AI-Challenge/Lux-Design-2021>`_: (906 ⭐) Home to the design and engine of the @Lux-AI-Challenge Season 1, hosted on @kaggle
-- `DeepGraphLearning/torchdrug <https://github.com/DeepGraphLearning/torchdrug>`_: (724 ⭐) A powerful and flexible machine learning platform for drug discovery
-- `j05t/dbclf <https://github.com/j05t/dbclf>`_: (37 ⭐) Identify Dog Breeds Android App
-- `SvenBecker/vscode-pytorch <https://github.com/SvenBecker/vscode-pytorch>`_: (43 ⭐) Visual Studio Code (VS Code) extension offering code snippets when working with PyTorch.
-- `tj/git-extras <https://github.com/tj/git-extras>`_: (15387 ⭐) GIT utilities -- repo summary, repl, changelog population, author commit percentages and more
-- `aith/agentcraft <https://github.com/aith/agentcraft>`_: (25 ⭐) AI Agent Simulation generates Minecraft Settlements
-- `jeffheaton/t81_558_deep_learning <https://github.com/jeffheaton/t81_558_deep_learning>`_: (4269 ⭐) Washington University (in St. Louis) Course T81-558: Applications of Deep Neural Networks
-- `Textualize/textual <https://github.com/Textualize/textual>`_: (7423 ⭐) Textual is a TUI (Text User Interface) framework for Python inspired by modern web development.
-- `hackjutsu/Lepton <https://github.com/hackjutsu/Lepton>`_: (9140 ⭐) 💻     Democratizing Snippet Management (macOS/Win/Linux)
-- `treymo/joplin-link-graph <https://github.com/treymo/joplin-link-graph>`_: (151 ⭐) UI for viewing connections between different Joplin notes
-- `facebookresearch/impact-driven-exploration <https://github.com/facebookresearch/impact-driven-exploration>`_: (98 ⭐) impact-driven-exploration
-- `mailpile/Mailpile <https://github.com/mailpile/Mailpile>`_: (8553 ⭐) A free & open modern, fast email client with user-friendly encryption and privacy features
-- `vector-im/element-web <https://github.com/vector-im/element-web>`_: (7728 ⭐) A glossy Matrix collaboration client for the web.
-- `onionshare/onionshare <https://github.com/onionshare/onionshare>`_: (5027 ⭐) Securely and anonymously share files, host websites, and chat with friends using the Tor network
-- `xwiki-labs/cryptpad <https://github.com/xwiki-labs/cryptpad>`_: (3306 ⭐) Collaboration suite, end-to-end encrypted and open-source.
-- `iptv-org/iptv <https://github.com/iptv-org/iptv>`_: (40000 ⭐) Collection of publicly available IPTV channels from all over the world
-- `kingyiusuen/image-to-latex <https://github.com/kingyiusuen/image-to-latex>`_: (886 ⭐) Convert images of LaTex math equations into LaTex code.
-- `instaloader/instaloader <https://github.com/instaloader/instaloader>`_: (3808 ⭐) Download pictures (or videos) along with their captions and other metadata from Instagram.
-- `Kikobeats/awesome-github <https://github.com/Kikobeats/awesome-github>`_: (514 ⭐) An exquisite list of awesome :octocat: secrets.
-- `nocodb/nocodb <https://github.com/nocodb/nocodb>`_: (21818 ⭐) 🔥 🔥 🔥 Open Source Airtable Alternative
-- `Kaixhin/dockerfiles <https://github.com/Kaixhin/dockerfiles>`_: (504 ⭐) Compilation of Dockerfiles with automated builds enabled on the Docker Registry
-- `coxlab/prednet <https://github.com/coxlab/prednet>`_: (695 ⭐) Code and models accompanying "Deep Predictive Coding Networks for Video Prediction and Unsupervised Learning"
-- `microsoft/ML-For-Beginners <https://github.com/microsoft/ML-For-Beginners>`_: (28873 ⭐) 12 weeks, 26 lessons, 52 quizzes, classic Machine Learning for all
-- `abarker/pdfCropMargins <https://github.com/abarker/pdfCropMargins>`_: (187 ⭐) pdfCropMargins -- a program to crop the margins of PDF files
-- `h-Klok/StatsWithJuliaBook <https://github.com/h-Klok/StatsWithJuliaBook>`_: (916 ⭐) None
-- `Netflix/consoleme <https://github.com/Netflix/consoleme>`_: (2660 ⭐) A Central Control Plane for AWS Permissions and Access
-- `JuliaReinforcementLearning/ReinforcementLearning.jl <https://github.com/JuliaReinforcementLearning/ReinforcementLearning.jl>`_: (335 ⭐) A reinforcement learning package for Julia
-- `JuliaNLSolvers/Optim.jl <https://github.com/JuliaNLSolvers/Optim.jl>`_: (813 ⭐) Optimization functions for Julia
-- `jonathan-laurent/AlphaZero.jl <https://github.com/jonathan-laurent/AlphaZero.jl>`_: (957 ⭐) A generic, simple and fast implementation of Deepmind's AlphaZero algorithm.
-- `FluxML/FastAI.jl <https://github.com/FluxML/FastAI.jl>`_: (452 ⭐) Repository of best practices for deep learning in Julia, inspired by fastai
-- `SantaFeInstitute/ABMA <https://github.com/SantaFeInstitute/ABMA>`_: (33 ⭐) SantaFeInstitute/ABMA: the code repository and website for Agent-Based Modeling for Archaeology.
-- `organicmaps/organicmaps <https://github.com/organicmaps/organicmaps>`_: (2974 ⭐) 🍃 Organic Maps is a free Android & iOS offline maps app for travelers, tourists, hikers, and cyclists. It uses crowd-sourced OpenStreetMap data and is developed with love by MapsWithMe (MapsMe) founders and our community. No ads, no tracking, no data collection, no crapware. Your donations and positive reviews motivate and inspire our small team!
-- `chiphuyen/ml-interviews-book <https://github.com/chiphuyen/ml-interviews-book>`_: (1562 ⭐) https://huyenchip.com/ml-interviews-book/
-- `RoiArthurB/Side-Auto_Sci-Hub <https://github.com/RoiArthurB/Side-Auto_Sci-Hub>`_: (214 ⭐) Cross-Browser Plugin to open Sci-Hub 🗝 page with the article from your current tab
-- `lokeshreddy007/freedom-of-eduation <https://github.com/lokeshreddy007/freedom-of-eduation>`_: (24 ⭐) Full List of websites from where any one can get free resources to improve ones Knowledge
-- `0x01h/sci-hub-now <https://github.com/0x01h/sci-hub-now>`_: (349 ⭐) Free access to academic papers with just a single click! Abolish publishers, long live the open access movement! 🦅
-- `GjjvdBurg/paper2remarkable <https://github.com/GjjvdBurg/paper2remarkable>`_: (236 ⭐) Fetch an academic paper or web article and send it to the reMarkable tablet with a single command
-- `dkozlov/awesome-knowledge-distillation <https://github.com/dkozlov/awesome-knowledge-distillation>`_: (2665 ⭐) Awesome Knowledge Distillation
-- `Netflix/hubcommander <https://github.com/Netflix/hubcommander>`_: (1191 ⭐) A Slack bot for GitHub organization management -- and other things too
-- `clvrai/awesome-rl-envs <https://github.com/clvrai/awesome-rl-envs>`_: (400 ⭐) None
-- `Stable-Baselines-Team/stable-baselines <https://github.com/Stable-Baselines-Team/stable-baselines>`_: (185 ⭐) Mirror of Stable-Baselines: a fork of OpenAI Baselines, implementations of reinforcement learning algorithms
-- `openai/triton <https://github.com/openai/triton>`_: (3470 ⭐) Development repository for the Triton language and compiler
-- `kunal-kushwaha/Competitive-Programming-Resources <https://github.com/kunal-kushwaha/Competitive-Programming-Resources>`_: (1750 ⭐) Competitive Programming & System Design Resources.
-- `Ebazhanov/linkedin-skill-assessments-quizzes <https://github.com/Ebazhanov/linkedin-skill-assessments-quizzes>`_: (8139 ⭐) Full reference of LinkedIn answers 2021 for skill assessments, LinkedIn test, questions and answers (aws-lambda, rest-api, javascript, react, git, html, jquery, mongodb, java, Go, python, machine-learning, power-point) linkedin excel test lösungen, linkedin machine learning test
-- `gayanvoice/top-github-users <https://github.com/gayanvoice/top-github-users>`_: (618 ⭐) Check your ranking in GitHub! Don't forget to star ⭐ this repository.
-- `rotki/rotki <https://github.com/rotki/rotki>`_: (1462 ⭐) A portfolio tracking, analytics, accounting and tax reporting application that protects your privacy
-- `ultrafunkamsterdam/undetected-chromedriver <https://github.com/ultrafunkamsterdam/undetected-chromedriver>`_: (1469 ⭐) Custom Selenium Chromedriver | Zero-Config | Passes ALL bot mitigation systems (like Distil / Imperva/ Datadadome / CloudFlare IUAM)
-- `JDAI-CV/CoTNet <https://github.com/JDAI-CV/CoTNet>`_: (338 ⭐) This is an official implementation for "Contextual Transformer Networks for Visual Recognition".
-- `deepmind/enn <https://github.com/deepmind/enn>`_: (137 ⭐) None
-- `ucla-mobility/OpenCDA <https://github.com/ucla-mobility/OpenCDA>`_: (515 ⭐) A generalized framework for prototyping full-stack cooperative driving automation applications under CARLA+SUMO.
-- `dr-guangtou/daily_astroph <https://github.com/dr-guangtou/daily_astroph>`_: (36 ⭐) Daily dose of astro-ph reading
-- `recite/autosum <https://github.com/recite/autosum>`_: (31 ⭐) Summarize Publications Automatically
-- `IouJenLiu/CMAE <https://github.com/IouJenLiu/CMAE>`_: (21 ⭐) None
-- `chintu619/citation-sorted-arxiv-slack-bot <https://github.com/chintu619/citation-sorted-arxiv-slack-bot>`_: (35 ⭐) Top ML papers published daily in arXiv
-- `bibcure/scihub2pdf <https://github.com/bibcure/scihub2pdf>`_: (135 ⭐) Downloads pdfs via a DOI number, article title or a bibtex file, using the database of libgen(sci-hub) , arxiv
-- `kourgeorge/arxiv-style <https://github.com/kourgeorge/arxiv-style>`_: (640 ⭐) A Latex style and template for paper preprints (based on NIPS style)
-- `google-research/arxiv-latex-cleaner <https://github.com/google-research/arxiv-latex-cleaner>`_: (2723 ⭐) arXiv LaTeX Cleaner: Easily clean the LaTeX code of your paper to submit to arXiv
-- `bibcure/bibcure <https://github.com/bibcure/bibcure>`_: (150 ⭐) Bibcure helps in boring tasks by keeping your bibfile up to date and normalized...also allows you to easily download all papers inside your bibtex
-- `deerawan/vscode-dash <https://github.com/deerawan/vscode-dash>`_: (209 ⭐) Dash, Zeal and Velocity documentation integration in Visual Studio Code 🔎📖
-- `unixorn/awesome-zsh-plugins <https://github.com/unixorn/awesome-zsh-plugins>`_: (10322 ⭐) A collection of ZSH frameworks, plugins, themes and tutorials.
-- `terkelg/awesome-creative-coding <https://github.com/terkelg/awesome-creative-coding>`_: (8925 ⭐) Creative Coding: Generative Art, Data visualization, Interaction Design, Resources.
-- `lordgiotto/google-font-installer <https://github.com/lordgiotto/google-font-installer>`_: (143 ⭐) Download and install Google Web Fonts on your local machine. Both CLI and API available.
-- `TezRomacH/python-package-template <https://github.com/TezRomacH/python-package-template>`_: (647 ⭐) 🚀 Your next Python package needs a bleeding-edge project structure.
-- `drivendata/cookiecutter-data-science <https://github.com/drivendata/cookiecutter-data-science>`_: (5387 ⭐) A logical, reasonably standardized, but flexible project structure for doing and sharing data science work.
-- `wemake-services/wemake-python-package <https://github.com/wemake-services/wemake-python-package>`_: (303 ⭐) Bleeding edge cookiecutter template to create new python packages
-- `cjolowicz/cookiecutter-hypermodern-python <https://github.com/cjolowicz/cookiecutter-hypermodern-python>`_: (512 ⭐) Hypermodern Python Cookiecutter
-- `cruft/cruft <https://github.com/cruft/cruft>`_: (348 ⭐) Allows you to maintain all the necessary cruft for packaging and building projects separate from the code you intentionally write. Built on-top of, and fully compatible with, CookieCutter.
-- `mkrapp/cookiecutter-reproducible-science <https://github.com/mkrapp/cookiecutter-reproducible-science>`_: (132 ⭐) boilerplate for reproducible and transparent science
-- `madewithml/boilerplate <https://github.com/madewithml/boilerplate>`_: (122 ⭐) 🍪 ML application template to create API services around your ML code.
-- `NSLS-II/scientific-python-cookiecutter <https://github.com/NSLS-II/scientific-python-cookiecutter>`_: (83 ⭐) a tutorial and 'cookiecutter' template for a scientific Python library
-- `executablebooks/cookiecutter-jupyter-book <https://github.com/executablebooks/cookiecutter-jupyter-book>`_: (65 ⭐) Cookiecutter template for a simple jupyter book
-- `crmne/cookiecutter-modern-datascience <https://github.com/crmne/cookiecutter-modern-datascience>`_: (79 ⭐) Start a data science project with modern tools
-- `selimb/cookiecutter-latex-article <https://github.com/selimb/cookiecutter-latex-article>`_: (39 ⭐) Cookiecutter template for LaTeX article.
-- `victoresque/pytorch-template <https://github.com/victoresque/pytorch-template>`_: (3100 ⭐) PyTorch deep learning projects made easy.
-- `ttscoff/doing <https://github.com/ttscoff/doing>`_: (874 ⭐) None
-- `papis/papis <https://github.com/papis/papis>`_: (749 ⭐) Powerful and highly extensible command-line based document and bibliography manager.
-- `PyCQA/flake8-commas <https://github.com/PyCQA/flake8-commas>`_: (127 ⭐) Flake8 extension for enforcing trailing commas in python
-- `PyCQA/redbaron <https://github.com/PyCQA/redbaron>`_: (625 ⭐) Bottom-up approach to refactoring in python
-- `rasmusbergpalm/hebbian-evolution <https://github.com/rasmusbergpalm/hebbian-evolution>`_: (5 ⭐) None
-- `google/bloaty <https://github.com/google/bloaty>`_: (3546 ⭐) Bloaty McBloatface: a size profiler for binaries
-- `google/mediapipe <https://github.com/google/mediapipe>`_: (15923 ⭐) Cross-platform, customizable ML solutions for live and streaming media.
-- `google/pytype <https://github.com/google/pytype>`_: (3598 ⭐) A static type analyzer for Python code
-- `PyCQA/bandit <https://github.com/PyCQA/bandit>`_: (3835 ⭐) Bandit is a tool designed to find common security issues in Python code.
-- `PyCQA/astroid <https://github.com/PyCQA/astroid>`_: (375 ⭐) A common base representation of python source code for pylint and other projects
-- `PyCQA/pydocstyle <https://github.com/PyCQA/pydocstyle>`_: (846 ⭐) docstring style checker
-- `jacebrowning/template-python <https://github.com/jacebrowning/template-python>`_: (525 ⭐) A template for new Python libraries.
-- `ionelmc/cookiecutter-pylibrary <https://github.com/ionelmc/cookiecutter-pylibrary>`_: (978 ⭐) Enhanced cookiecutter template for Python libraries.
-- `sourcery-ai/python-best-practices-cookiecutter <https://github.com/sourcery-ai/python-best-practices-cookiecutter>`_: (428 ⭐) Python best practices project cookiecutter 🍪
-- `tmrts/boilr <https://github.com/tmrts/boilr>`_: (1425 ⭐) :zap: boilerplate template manager that generates files or directories from template repositories
-- `release-it/release-it <https://github.com/release-it/release-it>`_: (4875 ⭐) 🚀 Automate versioning and package publishing
-- `jettify/pytorch-optimizer <https://github.com/jettify/pytorch-optimizer>`_: (2299 ⭐) torch-optimizer -- collection of optimizers for Pytorch
-- `Lyken17/pytorch-OpCounter <https://github.com/Lyken17/pytorch-OpCounter>`_: (3191 ⭐) Count the MACs / FLOPs of your PyTorch model.
-- `MushroomRL/mushroom-rl <https://github.com/MushroomRL/mushroom-rl>`_: (558 ⭐) Python library for Reinforcement Learning.
-- `pytorch/ignite <https://github.com/pytorch/ignite>`_: (3839 ⭐) High-level library to help with training and evaluating neural networks in PyTorch flexibly and transparently.
-- `pythonguis/15-minute-apps <https://github.com/pythonguis/15-minute-apps>`_: (3127 ⭐) 15 minute (small) desktop apps built with PyQt
-- `rShetty/awesome-podcasts <https://github.com/rShetty/awesome-podcasts>`_: (10579 ⭐) Collection of awesome podcasts
-- `tuanavu/airflow-tutorial <https://github.com/tuanavu/airflow-tutorial>`_: (659 ⭐) Apache Airflow tutorial
-- `fastai/fastpages <https://github.com/fastai/fastpages>`_: (2991 ⭐) An easy to use blogging platform, with enhanced support for Jupyter Notebooks.
-- `labmlai/annotated_deep_learning_paper_implementations <https://github.com/labmlai/annotated_deep_learning_paper_implementations>`_: (6118 ⭐) 🧑‍🏫 50! Implementations/tutorials of deep learning papers with side-by-side notes 📝; including transformers (original, xl, switch, feedback, vit, ...), optimizers (adam, adabelief, ...), gans(cyclegan, stylegan2, ...), 🎮 reinforcement learning (ppo, dqn), capsnet, distillation, ... 🧠
-- `The-Eigensolvers/TEQS <https://github.com/The-Eigensolvers/TEQS>`_: (53 ⭐) Welcome to The Eigensolver Quantum School, a quantum computing crash course designed by students for students.
-- `apache/superset <https://github.com/apache/superset>`_: (40000 ⭐) Apache Superset is a Data Visualization and Data Exploration Platform
-- `opendilab/DI-star <https://github.com/opendilab/DI-star>`_: (266 ⭐) OpenDILab Decision AI in StarCraftII
-- `opengapps/opengapps <https://github.com/opengapps/opengapps>`_: (5041 ⭐) The main repository of the Open GApps Project
-- `PeizeSun/SparseR-CNN <https://github.com/PeizeSun/SparseR-CNN>`_: (1097 ⭐) End-to-End Object Detection with Learnable Proposal, CVPR2021
-- `typesense/typesense <https://github.com/typesense/typesense>`_: (8927 ⭐) Fast, typo tolerant, fuzzy search engine for building delightful search experiences ⚡ 🔍 ✨ An Open Source alternative to Algolia and an Easier-to-Use alternative to ElasticSearch.
-- `joplin/plugins <https://github.com/joplin/plugins>`_: (411 ⭐) Joplin official plugin repository. For issues, please use https://github.com/laurent22/joplin/issues
-- `mermaid-js/mermaid <https://github.com/mermaid-js/mermaid>`_: (40000 ⭐) Generation of diagram and flowchart from text in a similar manner as markdown
-- `deepmind/alphafold <https://github.com/deepmind/alphafold>`_: (7734 ⭐) Open source code for AlphaFold.
-- `cat-milk/Anime-Girls-Holding-Programming-Books <https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books>`_: (8164 ⭐) Anime Girls Holding Programming Books
-- `rsalmei/alive-progress <https://github.com/rsalmei/alive-progress>`_: (3037 ⭐) A new kind of Progress Bar, with real-time throughput, ETA, and very cool animations!
-- `dk-liang/Awesome-Visual-Transformer <https://github.com/dk-liang/Awesome-Visual-Transformer>`_: (2124 ⭐) Collect some papers about transformer with vision. Awesome Transformer with Computer Vision (CV)
-- `mikf/gallery-dl <https://github.com/mikf/gallery-dl>`_: (4414 ⭐) Command-line program to download image galleries and collections from several image hosting sites
-- `GT-RIPL/Continual-Learning-Benchmark <https://github.com/GT-RIPL/Continual-Learning-Benchmark>`_: (352 ⭐) Evaluate three types of task shifting with popular continual learning algorithms.
-- `brainflow-dev/brainflow <https://github.com/brainflow-dev/brainflow>`_: (538 ⭐) BrainFlow is a library intended to obtain, parse and analyze EEG, EMG, ECG and other kinds of data from biosensors
-- `chinese-poetry/chinese-poetry <https://github.com/chinese-poetry/chinese-poetry>`_: (35085 ⭐) The most comprehensive database of Chinese poetry 🧶最全中华古诗词数据库,  唐宋两朝近一万四千古诗人,  接近5.5万首唐诗加26万宋诗.  两宋时期1564位词人，21050首词。
-- `TorchDrift/TorchDrift <https://github.com/TorchDrift/TorchDrift>`_: (193 ⭐) Drift Detection for your PyTorch Models
-- `azavea/raster-vision <https://github.com/azavea/raster-vision>`_: (1497 ⭐) An open source framework for deep learning on satellite and aerial imagery.
-- `microsoft/vscode-recipes <https://github.com/microsoft/vscode-recipes>`_: (5306 ⭐) None
-- `openai/neural-mmo <https://github.com/openai/neural-mmo>`_: (1321 ⭐) Code for the paper "Neural MMO: A Massively Multiagent Game Environment for Training and Evaluating Intelligent Agents"
-- `openai/evolution-strategies-starter <https://github.com/openai/evolution-strategies-starter>`_: (1425 ⭐) Code for the paper "Evolution Strategies as a Scalable Alternative to Reinforcement Learning"
-- `DirtyHarryLYL/Transformer-in-Vision <https://github.com/DirtyHarryLYL/Transformer-in-Vision>`_: (709 ⭐) Recent Transformer-based CV and related works.
-- `davidhalter/jedi <https://github.com/davidhalter/jedi>`_: (5062 ⭐) Awesome autocompletion, static analysis and refactoring library for python
-- `adrienverge/yamllint <https://github.com/adrienverge/yamllint>`_: (1808 ⭐) A linter for YAML files.
-- `probml/pml-book <https://github.com/probml/pml-book>`_: (2021 ⭐) "Probabilistic Machine Learning" - a book series by Kevin Murphy
-- `kingoflolz/swarm-jax <https://github.com/kingoflolz/swarm-jax>`_: (127 ⭐) Swarm training framework using Haiku + JAX + Ray for layer parallel transformer language models on unreliable, heterogeneous nodes
-- `robertmartin8/PyPortfolioOpt <https://github.com/robertmartin8/PyPortfolioOpt>`_: (2582 ⭐) Financial portfolio optimisation in python, including classical efficient frontier, Black-Litterman, Hierarchical Risk Parity
-- `ubc-vision/COTR <https://github.com/ubc-vision/COTR>`_: (264 ⭐) Code release for "COTR: Correspondence Transformer for Matching Across Images"
-- `deepmind/dm-haiku <https://github.com/deepmind/dm-haiku>`_: (1678 ⭐) JAX-based neural network library
-- `ahmetb/kubectl-aliases <https://github.com/ahmetb/kubectl-aliases>`_: (2205 ⭐) Programmatically generated handy kubectl aliases.
-- `Python-World/python-mini-projects <https://github.com/Python-World/python-mini-projects>`_: (9027 ⭐) A collection of simple python mini projects to enhance your python skills
-- `facebookresearch/TimeSformer <https://github.com/facebookresearch/TimeSformer>`_: (708 ⭐) The official pytorch implementation of our paper "Is Space-Time Attention All You Need for Video Understanding?"
-- `laramies/theHarvester <https://github.com/laramies/theHarvester>`_: (6343 ⭐) E-mails, subdomains and names Harvester - OSINT
-- `facebookresearch/xcit <https://github.com/facebookresearch/xcit>`_: (533 ⭐) Official code Cross-Covariance Image Transformer (XCiT)
-- `datamllab/rlcard <https://github.com/datamllab/rlcard>`_: (1588 ⭐) Reinforcement Learning / AI Bots in Card (Poker) Games - Blackjack, Leduc, Texas, DouDizhu, Mahjong, UNO.
-- `kkkgo/LTSB-Add-MicrosoftStore <https://github.com/kkkgo/LTSB-Add-MicrosoftStore>`_: (399 ⭐) Add Windows Store for LTSB
-- `gigwegbe/tinyml-papers-and-projects <https://github.com/gigwegbe/tinyml-papers-and-projects>`_: (282 ⭐) This is a list of interesting papers and projects about TinyML.
-- `rougier/scientific-visualization-book <https://github.com/rougier/scientific-visualization-book>`_: (6724 ⭐) An open access book on scientific visualization using python and matplotlib
-- `jason718/awesome-self-supervised-learning <https://github.com/jason718/awesome-self-supervised-learning>`_: (4575 ⭐) A curated list of awesome self-supervised methods
-- `plantuml-stdlib/C4-PlantUML <https://github.com/plantuml-stdlib/C4-PlantUML>`_: (3642 ⭐) C4-PlantUML combines the benefits of PlantUML and the C4 model for providing a simple way of describing and communicate software architectures
-- `chanakaudaya/solution-architecture-patterns <https://github.com/chanakaudaya/solution-architecture-patterns>`_: (2577 ⭐) Reusable, vendor-neutral, industry-specific, vendor-specific solution architecture patterns for enterprise
-- `AdrienGuille/GrowingNeuralGas <https://github.com/AdrienGuille/GrowingNeuralGas>`_: (41 ⭐) Simple implementation of the "growing neural gas" artificial neural network
-- `lana-k/sqliteviz <https://github.com/lana-k/sqliteviz>`_: (1395 ⭐) Instant offline SQL-powered data visualisation in your browser
-- `Querz/mcaselector <https://github.com/Querz/mcaselector>`_: (1488 ⭐) A tool to select chunks from Minecraft worlds for deletion or export.
-- `rmunro/pytorch_active_learning <https://github.com/rmunro/pytorch_active_learning>`_: (578 ⭐) PyTorch Library for Active Learning to accompany Human-in-the-Loop Machine Learning book
-- `meetps/pytorch-semseg <https://github.com/meetps/pytorch-semseg>`_: (3192 ⭐) Semantic Segmentation Architectures Implemented in PyTorch
-- `vsitzmann/awesome-implicit-representations <https://github.com/vsitzmann/awesome-implicit-representations>`_: (1341 ⭐) A curated list of resources on implicit neural representations.
-- `kzl/decision-transformer <https://github.com/kzl/decision-transformer>`_: (990 ⭐) Official codebase for Decision Transformer: Reinforcement Learning via Sequence Modeling.
-- `openai/guided-diffusion <https://github.com/openai/guided-diffusion>`_: (1080 ⭐) None
-- `mitre/caldera <https://github.com/mitre/caldera>`_: (3198 ⭐) Automated Adversary Emulation Platform
-- `sqfmi/Watchy <https://github.com/sqfmi/Watchy>`_: (1204 ⭐) Watchy - An Open Source E-Ink Smartwatch
-- `ionelmc/pytest-benchmark <https://github.com/ionelmc/pytest-benchmark>`_: (849 ⭐) py.test fixture for benchmarking code
-- `rougier/numpy-100 <https://github.com/rougier/numpy-100>`_: (7838 ⭐) 100 numpy exercises (with solutions)
-- `microsoft/FLAML <https://github.com/microsoft/FLAML>`_: (1725 ⭐) A fast library for AutoML and tuning.
-- `jakevdp/PythonDataScienceHandbook <https://github.com/jakevdp/PythonDataScienceHandbook>`_: (32372 ⭐) Python Data Science Handbook: full text in Jupyter Notebooks
-- `google/brax <https://github.com/google/brax>`_: (1121 ⭐) Massively parallel rigidbody physics simulation on accelerator hardware.
-- `Sycnex/Windows10Debloater <https://github.com/Sycnex/Windows10Debloater>`_: (11998 ⭐) Script to remove Windows 10 bloatware.
-- `NVlabs/SegFormer <https://github.com/NVlabs/SegFormer>`_: (807 ⭐) Official PyTorch implementation of SegFormer
-- `nushell/nushell <https://github.com/nushell/nushell>`_: (17105 ⭐) A new type of shell
-- `ahmedfgad/GeneticAlgorithmPython <https://github.com/ahmedfgad/GeneticAlgorithmPython>`_: (765 ⭐) Source code of PyGAD, a Python 3 library for building the genetic algorithm and training machine learning algorithms (Keras & PyTorch).
-- `mosquito/aiofile <https://github.com/mosquito/aiofile>`_: (281 ⭐) Real asynchronous file operations with asyncio support.
-- `megvii-research/SOLQ <https://github.com/megvii-research/SOLQ>`_: (148 ⭐) "SOLQ: Segmenting Objects by Learning Queries", SOLQ is an end-to-end instance segmentation framework with Transformer.
-- `chrxh/alien <https://github.com/chrxh/alien>`_: (2308 ⭐) alien is a CUDA-powered artificial life simulation program.
-- `mnoukhov/emergent-compete <https://github.com/mnoukhov/emergent-compete>`_: (8 ⭐) Code for Emergent Communication under Competition (AAMAS 2021)
-- `huggingface/pytorch_block_sparse <https://github.com/huggingface/pytorch_block_sparse>`_: (465 ⭐) Fast Block Sparse Matrices for Pytorch
-- `google-coral/pycoral <https://github.com/google-coral/pycoral>`_: (133 ⭐) Python API for ML inferencing and transfer-learning on Coral devices
-- `google/neuroglancer <https://github.com/google/neuroglancer>`_: (711 ⭐) WebGL-based viewer for volumetric data
-- `NVIDIA-AI-IOT/torch2trt <https://github.com/NVIDIA-AI-IOT/torch2trt>`_: (3080 ⭐) An easy to use PyTorch to TensorRT converter
-- `archlinux/archinstall <https://github.com/archlinux/archinstall>`_: (2855 ⭐) Arch Linux installer - guided, templates etc.
-- `bee-san/pyWhat <https://github.com/bee-san/pyWhat>`_: (5007 ⭐) 🐸   Identify anything. pyWhat easily lets you identify emails, IP addresses, and more. Feed it a .pcap file or some text and it'll tell you what it is! 🧙‍♀️
-- `gelstudios/gitfiti <https://github.com/gelstudios/gitfiti>`_: (6811 ⭐) abusing github commit history for the lulz
-- `uber-research/poet <https://github.com/uber-research/poet>`_: (209 ⭐) Paired Open-Ended Trailblazer (POET) and Enhanced POET
-- `freereadorg/awesome-libgen <https://github.com/freereadorg/awesome-libgen>`_: (1021 ⭐) 😎 Awesome list of Library Genesis, the world's largest free library.
-- `lucidrains/g-mlp-pytorch <https://github.com/lucidrains/g-mlp-pytorch>`_: (338 ⭐) Implementation of gMLP, an all-MLP replacement for Transformers, in Pytorch
-- `aimhubio/aim <https://github.com/aimhubio/aim>`_: (1993 ⭐) Aim — an easy-to-use and performant open-source experiment tracker.
-- `vincepare/CopyAllUrl_Chrome <https://github.com/vincepare/CopyAllUrl_Chrome>`_: (70 ⭐) CopyAllUrl extension for Google Chrome
-- `WongKinYiu/yolor <https://github.com/WongKinYiu/yolor>`_: (1330 ⭐) implementation of paper - You Only Learn One Representation: Unified Network for Multiple Tasks (https://arxiv.org/abs/2105.04206)
-- `Mukosame/Anime2Sketch <https://github.com/Mukosame/Anime2Sketch>`_: (1383 ⭐) A sketch extractor for anime/illustration.
-- `opf/openproject <https://github.com/opf/openproject>`_: (5435 ⭐) OpenProject is the leading open source project management software.
-- `nojhan/paradiseo <https://github.com/nojhan/paradiseo>`_: (57 ⭐) A C++ evolutionary computation framework to build parallel stochastic optimization solvers
-- `pdfminer/pdfminer.six <https://github.com/pdfminer/pdfminer.six>`_: (3346 ⭐) Community maintained fork of pdfminer - we fathom PDF
-- `Wandmalfarbe/pandoc-latex-template <https://github.com/Wandmalfarbe/pandoc-latex-template>`_: (3840 ⭐) A pandoc LaTeX template to convert markdown files to PDF or LaTeX.
-- `privacybot-berkeley/privacybot <https://github.com/privacybot-berkeley/privacybot>`_: (507 ⭐) None
-- `trailofbits/algo <https://github.com/trailofbits/algo>`_: (24507 ⭐) Set up a personal VPN in the cloud
-- `kobra-dev/Kobra <https://github.com/kobra-dev/Kobra>`_: (219 ⭐) Kobra is a visual programming language (like Scratch) for Machine Learning (currently under active development).
-- `lukemelas/do-you-even-need-attention <https://github.com/lukemelas/do-you-even-need-attention>`_: (448 ⭐) Exploring whether attention is necessary for vision transformers
-- `lucidrains/mlp-mixer-pytorch <https://github.com/lucidrains/mlp-mixer-pytorch>`_: (621 ⭐) An All-MLP solution for Vision, from Google AI
-- `ManimCommunity/manim <https://github.com/ManimCommunity/manim>`_: (8382 ⭐) A community-maintained Python framework for creating mathematical animations.
-- `adamchainz/sublime-rst-improved <https://github.com/adamchainz/sublime-rst-improved>`_: (6 ⭐) None
-- `raydium-io/raydium-ui <https://github.com/raydium-io/raydium-ui>`_: (296 ⭐) None
-- `andres-jurado/audiophile-linux <https://github.com/andres-jurado/audiophile-linux>`_: (58 ⭐) This repository contains helpful information for audio enthusiasts who use Linux. Contributions through pull requests are welcome!
-- `lessw2020/Ranger21 <https://github.com/lessw2020/Ranger21>`_: (195 ⭐) Ranger deep learning optimizer rewrite to use newest components
-- `LiyuanLucasLiu/RAdam <https://github.com/LiyuanLucasLiu/RAdam>`_: (2448 ⭐) On the Variance of the Adaptive Learning Rate and Beyond
-- `CMA-ES/pycma <https://github.com/CMA-ES/pycma>`_: (706 ⭐) Python implementation of CMA-ES
-- `facebook/pyre-check <https://github.com/facebook/pyre-check>`_: (5750 ⭐) Performant type-checking for python.
-- `ml-tooling/best-of-python-dev <https://github.com/ml-tooling/best-of-python-dev>`_: (402 ⭐) 🏆 A ranked list of awesome python developer tools and libraries. Updated weekly.
-- `rh12503/triangula <https://github.com/rh12503/triangula>`_: (3676 ⭐) Generate high-quality triangulated and polygonal art from images.
-- `ml-tooling/opyrator <https://github.com/ml-tooling/opyrator>`_: (2566 ⭐) 🪄 Turns your machine learning code into microservices with web API, interactive GUI, and more.
-- `GSConnect/gnome-shell-extension-gsconnect <https://github.com/GSConnect/gnome-shell-extension-gsconnect>`_: (2187 ⭐) KDE Connect implementation for GNOME
-- `aunetx/blur-my-shell <https://github.com/aunetx/blur-my-shell>`_: (455 ⭐) Extension that adds a blur look to different parts of the GNOME Shell, including the top panel, dash and overview
-- `Fs00/Win10BloatRemover <https://github.com/Fs00/Win10BloatRemover>`_: (131 ⭐) Configurable CLI tool to easily and aggressively debloat and tweak Windows 10 by removing preinstalled UWP apps, services and more. Originally based on the W10 de-botnet guide made by @adolfintel.
-- `openai/multi-agent-emergence-environments <https://github.com/openai/multi-agent-emergence-environments>`_: (1224 ⭐) Environment generation code for the paper "Emergent Tool Use From Multi-Agent Autocurricula"
-- `deluan/zsh-in-docker <https://github.com/deluan/zsh-in-docker>`_: (363 ⭐) Install Zsh, Oh-My-Zsh and plugins inside a Docker container with one line!
-- `bigH/git-fuzzy <https://github.com/bigH/git-fuzzy>`_: (1914 ⭐) interactive `git` with the help of `fzf`
-- `kingoflolz/mesh-transformer-jax <https://github.com/kingoflolz/mesh-transformer-jax>`_: (3783 ⭐) Model parallel transformers in JAX and Haiku
-- `lwhb/lawhub <https://github.com/lwhb/lawhub>`_: (143 ⭐) Repository to track Japanese Law in text format
-- `MycroftAI/mycroft-core <https://github.com/MycroftAI/mycroft-core>`_: (5597 ⭐) Mycroft Core, the Mycroft Artificial Intelligence platform.
-- `Andrew-Qibin/CoordAttention <https://github.com/Andrew-Qibin/CoordAttention>`_: (523 ⭐) Code for our CVPR2021 paper coordinate attention
-- `spotDL/spotify-downloader <https://github.com/spotDL/spotify-downloader>`_: (7309 ⭐) Download your Spotify playlists and songs along with album art and metadata (from YouTube if a match is found).
-- `hyz-xmaster/VarifocalNet <https://github.com/hyz-xmaster/VarifocalNet>`_: (265 ⭐) VarifocalNet: An IoU-aware Dense Object Detector
-- `khurramjaved96/awesome-continual-learning <https://github.com/khurramjaved96/awesome-continual-learning>`_: (28 ⭐) A repository to keep track of literature on catastrophic forgetting
-- `khurramjaved96/mrcl <https://github.com/khurramjaved96/mrcl>`_: (167 ⭐) Code for the NeurIPS19 paper "Meta-Learning Representations for Continual Learning"
-- `uvm-neurobotics-lab/ANML <https://github.com/uvm-neurobotics-lab/ANML>`_: (105 ⭐) A Neuromodulated Meta-Learning algorithm
-- `uber-research/GTN <https://github.com/uber-research/GTN>`_: (70 ⭐) None
-- `voiler/PopulationBasedTraining <https://github.com/voiler/PopulationBasedTraining>`_: (40 ⭐) A simple PyTorch implementation of Population Based Training of Neural Networks.
-- `kuangliu/pytorch-cifar <https://github.com/kuangliu/pytorch-cifar>`_: (4447 ⭐) 95.47% on CIFAR10 with PyTorch
-- `Yuheng-Li/MixNMatch <https://github.com/Yuheng-Li/MixNMatch>`_: (842 ⭐) Pytorch implementation of MixNMatch
-- `deepmind/deepmind-research <https://github.com/deepmind/deepmind-research>`_: (9485 ⭐) This repository contains implementations and illustrative code to accompany DeepMind publications
-- `karan/Projects <https://github.com/karan/Projects>`_: (37654 ⭐) :page_with_curl: A list of practical projects that anyone can solve in any programming language.
-- `spotify/annoy <https://github.com/spotify/annoy>`_: (9392 ⭐) Approximate Nearest Neighbors in C++/Python optimized for memory usage and loading/saving to disk
-- `no-fee-ethereum-mining/nsfminer <https://github.com/no-fee-ethereum-mining/nsfminer>`_: (495 ⭐) No Fee Ethash miner for AMD and Nvidia
-- `jdah/minecraft-weekend <https://github.com/jdah/minecraft-weekend>`_: (2525 ⭐) Minecraft, but I made it in 48 hours.
-- `d-li14/involution <https://github.com/d-li14/involution>`_: (1213 ⭐) [CVPR 2021] Involution: Inverting the Inherence of Convolution for Visual Recognition, a brand new neural operator
-- `internetarchive/openlibrary <https://github.com/internetarchive/openlibrary>`_: (3366 ⭐) One webpage for every book ever published!
-- `streamlit/streamlit <https://github.com/streamlit/streamlit>`_: (17516 ⭐) Streamlit — The fastest way to build data apps in Python
-- `Overv/outrun <https://github.com/Overv/outrun>`_: (3001 ⭐) Execute a local command using the processing power of another Linux machine.
-- `angusfung/population-based-training <https://github.com/angusfung/population-based-training>`_: (45 ⭐) Reproducing results from DeepMind's paper on Population Based Training of Neural Networks.
-- `windmaple/awesome-AutoML <https://github.com/windmaple/awesome-AutoML>`_: (536 ⭐) Curating a list of AutoML-related research, tools, projects and other resources
-- `pytorch/vision <https://github.com/pytorch/vision>`_: (10783 ⭐) Datasets, Transforms and Models specific to Computer Vision
-- `xgi/castero <https://github.com/xgi/castero>`_: (433 ⭐) TUI podcast client for the terminal
-- `jvns/pandas-cookbook <https://github.com/jvns/pandas-cookbook>`_: (5582 ⭐) Recipes for using Python's pandas library
-- `avinashkranjan/Amazing-Python-Scripts <https://github.com/avinashkranjan/Amazing-Python-Scripts>`_: (833 ⭐) 🚀 Curated collection of Amazing Python scripts from Basics to Advance with automation task scripts.
-- `hila-chefer/Transformer-Explainability <https://github.com/hila-chefer/Transformer-Explainability>`_: (805 ⭐) [CVPR 2021] Official PyTorch implementation for Transformer Interpretability Beyond Attention Visualization, a novel method to visualize classifications by Transformer based networks.
-- `guipsamora/pandas_exercises <https://github.com/guipsamora/pandas_exercises>`_: (7290 ⭐) Practice your pandas skills!
-- `hongleizhang/RSPapers <https://github.com/hongleizhang/RSPapers>`_: (4232 ⭐) A Curated List of Must-read Papers on Recommender System.
-- `GorvGoyl/Clone-Wars <https://github.com/GorvGoyl/Clone-Wars>`_: (12840 ⭐) 100+ open-source clones of popular sites like Airbnb, Amazon, Instagram, Netflix, Tiktok, Spotify, Whatsapp, Youtube etc. See source code, demo links, tech stack, github stars.
-- `endless-sky/endless-sky <https://github.com/endless-sky/endless-sky>`_: (3392 ⭐) Space exploration, trading, and combat game.
-- `deepmind/dm_alchemy <https://github.com/deepmind/dm_alchemy>`_: (176 ⭐) DeepMind Alchemy task environment: a meta-reinforcement learning benchmark
-- `facebookresearch/vissl <https://github.com/facebookresearch/vissl>`_: (2326 ⭐) VISSL is FAIR's library of extensible, modular and scalable components for SOTA Self-Supervised Learning with images.
-- `optuna/optuna-dashboard <https://github.com/optuna/optuna-dashboard>`_: (175 ⭐) Real-time Web dashboard for Optuna.
-- `uber/manifold <https://github.com/uber/manifold>`_: (1558 ⭐) A model-agnostic visual debugging tool for machine learning
-- `uber/bayesmark <https://github.com/uber/bayesmark>`_: (94 ⭐) Benchmark framework to easily compare Bayesian optimization methods on real machine learning tasks
-- `MathInspector/MathInspector <https://github.com/MathInspector/MathInspector>`_: (892 ⭐) A visual programing environment for scientific computing with python
-- `xingyizhou/UniDet <https://github.com/xingyizhou/UniDet>`_: (324 ⭐) Object detection on multiple datasets with an automatically learned unified label space.
-- `TheSpeedX/TBomb <https://github.com/TheSpeedX/TBomb>`_: (2099 ⭐) This is a SMS And Call Bomber For Linux And Termux
-- `milesial/Pytorch-UNet <https://github.com/milesial/Pytorch-UNet>`_: (4916 ⭐) PyTorch implementation of the U-Net for image semantic segmentation with high quality images
-- `ryancheunggit/Denoise-Transformer-AutoEncoder <https://github.com/ryancheunggit/Denoise-Transformer-AutoEncoder>`_: (260 ⭐) None
-- `sdushantha/wifi-password <https://github.com/sdushantha/wifi-password>`_: (2375 ⭐) Quickly fetch your WiFi password and if needed, generate a QR code of your WiFi to allow phones to easily connect
-- `dorarad/gansformer <https://github.com/dorarad/gansformer>`_: (1071 ⭐) Generative Adversarial Transformers
-- `jupyterhub/zero-to-jupyterhub-k8s <https://github.com/jupyterhub/zero-to-jupyterhub-k8s>`_: (1099 ⭐) Helm Chart & Documentation for deploying JupyterHub on Kubernetes
-- `mxrch/GHunt <https://github.com/mxrch/GHunt>`_: (10635 ⭐) 🕵️‍♂️ Investigate Google emails and documents.
-- `chriswalz/bit <https://github.com/chriswalz/bit>`_: (5744 ⭐) Bit is a modern Git CLI
-- `kuchin/awesome-cto <https://github.com/kuchin/awesome-cto>`_: (10970 ⭐) A curated and opinionated list of resources for Chief Technology Officers, with the emphasis on startups
-- `home-assistant/core <https://github.com/home-assistant/core>`_: (40000 ⭐) :house_with_garden: Open source home automation that puts local control and privacy first.
-- `vinceliuice/Tela-circle-icon-theme <https://github.com/vinceliuice/Tela-circle-icon-theme>`_: (256 ⭐) Tela-circle-icon-theme
-- `spantaleev/matrix-docker-ansible-deploy <https://github.com/spantaleev/matrix-docker-ansible-deploy>`_: (2660 ⭐) Matrix (An open network for secure, decentralized communication) server setup using Ansible and Docker
-- `diasurgical/devilutionX <https://github.com/diasurgical/devilutionX>`_: (5111 ⭐) Diablo build for modern operating systems
-- `CoreyMSchafer/code_snippets <https://github.com/CoreyMSchafer/code_snippets>`_: (8334 ⭐) None
-- `Clarionos/clarion <https://github.com/Clarionos/clarion>`_: (332 ⭐) None
-- `tone-row/flowchart-fun <https://github.com/tone-row/flowchart-fun>`_: (2350 ⭐) Easily generate flowcharts and diagrams from text ⿻
-- `trailofbits/graphtage <https://github.com/trailofbits/graphtage>`_: (2078 ⭐) A semantic diff utility and library for tree-like files such as JSON, JSON5, XML, HTML, YAML, and CSV.
-- `googlecreativelab/alto <https://github.com/googlecreativelab/alto>`_: (242 ⭐) Explore the basics of machine learning by building your own teachable object at home.
-- `bitcoinbook/bitcoinbook <https://github.com/bitcoinbook/bitcoinbook>`_: (18851 ⭐) Mastering Bitcoin 2nd Edition - Programming the Open Blockchain
-- `NeuralSec/Daedalus-attack <https://github.com/NeuralSec/Daedalus-attack>`_: (34 ⭐) The code of our paper: 'Daedalus: Breaking Non-Maximum Suppression in Object Detection via Adversarial Examples', in Tensorflow.
-- `ripienaar/free-for-dev <https://github.com/ripienaar/free-for-dev>`_: (40000 ⭐) A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev
-- `PeterTheOne/slideslive-slides-dl <https://github.com/PeterTheOne/slideslive-slides-dl>`_: (82 ⭐) slideslive slides downloading script
-- `GuoLusjtu/DVC <https://github.com/GuoLusjtu/DVC>`_: (284 ⭐) DVC: An End-to-end Deep Video Compression Framework, CVPR 2019 (Oral)
-- `ej0cl6/deep-active-learning <https://github.com/ej0cl6/deep-active-learning>`_: (408 ⭐) Deep Active Learning
-- `mljar/mljar-supervised <https://github.com/mljar/mljar-supervised>`_: (1758 ⭐) Python package for AutoML on Tabular Data with Feature Engineering, Hyper-Parameters Tuning, Explanations and Automatic Documentation
-- `tssovi/grokking-the-object-oriented-design-interview <https://github.com/tssovi/grokking-the-object-oriented-design-interview>`_: (1362 ⭐) None
-- `neuralmagic/sparseml <https://github.com/neuralmagic/sparseml>`_: (799 ⭐) Libraries for applying sparsification recipes to neural networks with a few lines of code, enabling faster and smaller models
-- `hirokatsukataoka16/FractalDB-Pretrained-ResNet-PyTorch <https://github.com/hirokatsukataoka16/FractalDB-Pretrained-ResNet-PyTorch>`_: (136 ⭐) Pre-training without Natural Images (ACCV 2020 Best Paper Honorable Mention Award)
-- `rlworkgroup/metaworld <https://github.com/rlworkgroup/metaworld>`_: (625 ⭐) An open source robotics benchmark for meta- and multi-task reinforcement learning
-- `henokyen/EOH <https://github.com/henokyen/EOH>`_: (3 ⭐) The code based used to produce the paper on Evolutionary Orgin of Hierarchy
-- `yosinski/deep-visualization-toolbox <https://github.com/yosinski/deep-visualization-toolbox>`_: (3787 ⭐) DeepVis Toolbox
-- `uber-research/go-explore <https://github.com/uber-research/go-explore>`_: (466 ⭐) Code for Go-Explore: a New Approach for Hard-Exploration Problems
-- `CyberAgentAILab/cmaes <https://github.com/CyberAgentAILab/cmaes>`_: (153 ⭐) Python library for CMA Evolution Strategy.
-- `dusty-nv/jetson-inference <https://github.com/dusty-nv/jetson-inference>`_: (5299 ⭐) Hello AI World guide to deploying deep-learning inference networks and deep vision primitives with TensorRT and NVIDIA Jetson.
-- `ebhy/budgetml <https://github.com/ebhy/budgetml>`_: (1254 ⭐) Deploy a ML inference service on a budget in less than 10 lines of code.
-- `werner-duvaud/muzero-general <https://github.com/werner-duvaud/muzero-general>`_: (1640 ⭐) MuZero
-- `mrdbourke/cs329s-ml-deployment-tutorial <https://github.com/mrdbourke/cs329s-ml-deployment-tutorial>`_: (470 ⭐) Code and files to go along with CS329s machine learning model deployment tutorial.
-- `lucidrains/feedback-transformer-pytorch <https://github.com/lucidrains/feedback-transformer-pytorch>`_: (90 ⭐) Implementation of Feedback Transformer in Pytorch
-- `yitu-opensource/T2T-ViT <https://github.com/yitu-opensource/T2T-ViT>`_: (874 ⭐) ICCV2021, Tokens-to-Token ViT: Training Vision Transformers from Scratch on ImageNet
-- `lucidrains/bottleneck-transformer-pytorch <https://github.com/lucidrains/bottleneck-transformer-pytorch>`_: (566 ⭐) Implementation of Bottleneck Transformer in Pytorch
-- `neurolib-dev/neurolib <https://github.com/neurolib-dev/neurolib>`_: (236 ⭐) Easy whole-brain modeling for computational neuroscientists 🧠💻👩🏿‍🔬
-- `ludwig-ai/ludwig <https://github.com/ludwig-ai/ludwig>`_: (8095 ⭐) Data-centric declarative deep learning framework
-- `overviewer/Minecraft-Overviewer <https://github.com/overviewer/Minecraft-Overviewer>`_: (2911 ⭐) Render high-resolution maps of a Minecraft world with a Leaflet powered interface
-- `google-research/ravens <https://github.com/google-research/ravens>`_: (272 ⭐) Train robotic agents to learn pick and place with deep learning for vision-based manipulation in PyBullet. Transporter Nets, CoRL 2020.
-- `facebookresearch/deit <https://github.com/facebookresearch/deit>`_: (2471 ⭐) Official DeiT repository
-- `DingXiaoH/RepVGG <https://github.com/DingXiaoH/RepVGG>`_: (2216 ⭐) RepVGG: Making VGG-style ConvNets Great Again
-- `facebookresearch/hiplot <https://github.com/facebookresearch/hiplot>`_: (2246 ⭐) HiPlot makes understanding high dimensional data easy
-- `facebookresearch/rlstructures <https://github.com/facebookresearch/rlstructures>`_: (262 ⭐) RLStructures is a library to facilitate the implementation of new reinforcement learning algorithms. It includes a library, a tutorial, and different RL algorithms provided as examples.
-- `voxel51/fiftyone <https://github.com/voxel51/fiftyone>`_: (961 ⭐) The open-source tool for building high-quality datasets and computer vision models
-- `AtsushiSakai/PythonRobotics <https://github.com/AtsushiSakai/PythonRobotics>`_: (14337 ⭐) Python sample codes for robotics algorithms.
-- `n2cholas/awesome-jax <https://github.com/n2cholas/awesome-jax>`_: (497 ⭐) JAX - A curated list of resources https://github.com/google/jax
-- `DEAP/deap <https://github.com/DEAP/deap>`_: (4565 ⭐) Distributed Evolutionary Algorithms in Python
-- `optuna/kurobako <https://github.com/optuna/kurobako>`_: (56 ⭐) A black-box optimization benchmark tool
-- `hill-a/stable-baselines <https://github.com/hill-a/stable-baselines>`_: (3428 ⭐) A fork of OpenAI Baselines, implementations of reinforcement learning algorithms
-- `streamlit/demo-self-driving <https://github.com/streamlit/demo-self-driving>`_: (896 ⭐) Streamlit app demonstrating an image browser for the Udacity self-driving-car dataset with realtime object detection using YOLO.
-- `wandb/examples <https://github.com/wandb/examples>`_: (620 ⭐) Example deep learning projects that use wandb's features.
-- `pycaret/pycaret <https://github.com/pycaret/pycaret>`_: (5030 ⭐) An open-source, low-code machine learning library in Python
-- `LyWangPX/Reinforcement-Learning-2nd-Edition-by-Sutton-Exercise-Solutions <https://github.com/LyWangPX/Reinforcement-Learning-2nd-Edition-by-Sutton-Exercise-Solutions>`_: (1110 ⭐) Solutions of Reinforcement Learning, An Introduction
-- `trekhleb/homemade-machine-learning <https://github.com/trekhleb/homemade-machine-learning>`_: (18796 ⭐) 🤖 Python examples of popular machine learning algorithms with interactive Jupyter demos and math being explained
-- `microsoft/hummingbird <https://github.com/microsoft/hummingbird>`_: (2727 ⭐) Hummingbird compiles trained ML models into tensor computation for faster inference.
-- `facebookresearch/fairscale <https://github.com/facebookresearch/fairscale>`_: (1589 ⭐) PyTorch extensions for high performance and large scale training.
-- `TuSimple/tusimple-benchmark <https://github.com/TuSimple/tusimple-benchmark>`_: (427 ⭐) Download Datasets and Ground Truths:  https://github.com/TuSimple/tusimple-benchmark/issues/3
-- `arkel23/animesion <https://github.com/arkel23/animesion>`_: (61 ⭐) For holding anime-related object classification and detection models
-- `ml-tooling/best-of-web-python <https://github.com/ml-tooling/best-of-web-python>`_: (1416 ⭐) 🏆  A ranked list of awesome python libraries for web development. Updated weekly.
-- `ml-tooling/best-of-python <https://github.com/ml-tooling/best-of-python>`_: (1950 ⭐) 🏆 A ranked list of awesome Python open-source libraries and tools. Updated weekly.
-- `ml-tooling/best-of-ml-python <https://github.com/ml-tooling/best-of-ml-python>`_: (6205 ⭐) 🏆 A ranked list of awesome machine learning Python libraries. Updated weekly.
-- `uber/causalml <https://github.com/uber/causalml>`_: (2750 ⭐) Uplift modeling and causal inference with machine learning algorithms
-- `ddbourgin/numpy-ml <https://github.com/ddbourgin/numpy-ml>`_: (11192 ⭐) Machine learning, in numpy
-- `kubeflow/kubeflow <https://github.com/kubeflow/kubeflow>`_: (11155 ⭐) Machine Learning Toolkit for Kubernetes
-- `ucbrise/clipper <https://github.com/ucbrise/clipper>`_: (1308 ⭐) A low-latency prediction-serving system
-- `mlcommons/training <https://github.com/mlcommons/training>`_: (1257 ⭐) Reference implementations of MLPerf™ training benchmarks
-- `pytorch/serve <https://github.com/pytorch/serve>`_: (2389 ⭐) Model Serving on PyTorch
-- `lukemelas/EfficientNet-PyTorch <https://github.com/lukemelas/EfficientNet-PyTorch>`_: (6747 ⭐) A PyTorch implementation of EfficientNet and EfficientNetV2 (coming soon!)
-- `lukemelas/Poker-Bot-with-Genetic-Algorithms <https://github.com/lukemelas/Poker-Bot-with-Genetic-Algorithms>`_: (19 ⭐) A final project for Math 153 (Evolutionary Dynamics) at Harvard University
-- `deepmind/lab2d <https://github.com/deepmind/lab2d>`_: (356 ⭐) A customisable 2D platform for agent-based AI research
-- `deepmind/dm_env_rpc <https://github.com/deepmind/dm_env_rpc>`_: (68 ⭐) A networking protocol for agent-environment communication
-- `openai/robogym <https://github.com/openai/robogym>`_: (269 ⭐) Robotics Gym Environments
-- `Denys88/rl_games <https://github.com/Denys88/rl_games>`_: (149 ⭐) RL implementations
-- `seungeunrho/minimalRL <https://github.com/seungeunrho/minimalRL>`_: (2084 ⭐) Implementations of basic RL algorithms with minimal lines of codes! (pytorch based)
-- `Healthcare-Robotics/assistive-gym <https://github.com/Healthcare-Robotics/assistive-gym>`_: (203 ⭐) Assistive Gym, a physics-based simulation framework for physical human-robot interaction and robotic assistance.
-- `owncast/owncast <https://github.com/owncast/owncast>`_: (5521 ⭐) Take control over your live stream video by running it yourself.  Streaming + chat out of the box.
-- `google/gemmlowp <https://github.com/google/gemmlowp>`_: (1494 ⭐) Low-precision matrix multiplication
-- `Mayukhdeb/torch-dreams <https://github.com/Mayukhdeb/torch-dreams>`_: (207 ⭐) Making neural networks more interpretable, for research and art :mag_right: :computer: :brain: :art:
-- `sebastianrisi/ga-world-models <https://github.com/sebastianrisi/ga-world-models>`_: (19 ⭐) None
-- `lablup/backend.ai <https://github.com/lablup/backend.ai>`_: (268 ⭐) Backend.AI is a streamlined, container-based computing cluster orchestrator that hosts diverse programming languages and popular computing/ML frameworks, with pluggable heterogeneous accelerator support including CUDA and ROCM.
-- `GitbookIO/plugin-mathjax <https://github.com/GitbookIO/plugin-mathjax>`_: (86 ⭐) MathJAX plugin for GitBook
-- `beeware/briefcase <https://github.com/beeware/briefcase>`_: (1291 ⭐) Tools to support converting a Python project into a standalone native application.
-- `lucidrains/reformer-pytorch <https://github.com/lucidrains/reformer-pytorch>`_: (1671 ⭐) Reformer, the efficient Transformer, in Pytorch
-- `simondlevy/neat-gym <https://github.com/simondlevy/neat-gym>`_: (38 ⭐) Neuro-evolution for OpenAI Gym environments
-- `datastacktv/data-engineer-roadmap <https://github.com/datastacktv/data-engineer-roadmap>`_: (9155 ⭐) Roadmap to becoming a data engineer in 2021
-- `anyoptimization/pymoo <https://github.com/anyoptimization/pymoo>`_: (903 ⭐) NSGA2, NSGA3, R-NSGA3, MOEAD, Genetic Algorithms (GA), Differential Evolution (DE), CMAES, PSO
-- `awslabs/deequ <https://github.com/awslabs/deequ>`_: (2089 ⭐) Deequ is a library built on top of Apache Spark for defining "unit tests for data", which measure data quality in large datasets.
-- `HarisIqbal88/PlotNeuralNet <https://github.com/HarisIqbal88/PlotNeuralNet>`_: (15968 ⭐) Latex code for making neural networks diagrams
-- `cyxx/extract_android_ota_payload <https://github.com/cyxx/extract_android_ota_payload>`_: (339 ⭐) Extract firmware images from an Android OTA payload.bin file
-- `foolwood/benchmark_results <https://github.com/foolwood/benchmark_results>`_: (3689 ⭐) Visual Tracking Paper List
-- `jayveer2807/data_science_questions <https://github.com/jayveer2807/data_science_questions>`_: (57 ⭐) None
-- `poloclub/cnn-explainer <https://github.com/poloclub/cnn-explainer>`_: (5845 ⭐) Learning Convolutional Neural Networks with Interactive Visualization.
-- `scutan90/DeepLearning-500-questions <https://github.com/scutan90/DeepLearning-500-questions>`_: (40000 ⭐) 深度学习500问，以问答形式对常用的概率知识、线性代数、机器学习、深度学习、计算机视觉等热点问题进行阐述，以帮助自己及有需要的读者。 全书分为18个章节，50余万字。由于水平有限，书中不妥之处恳请广大读者批评指正。   未完待续............ 如有意合作，联系scutjy2015@163.com                     版权所有，违权必究       Tan 2018.06
-- `yangyutu/EssentialMath <https://github.com/yangyutu/EssentialMath>`_: (756 ⭐) None
-- `tirthajyoti/Papers-Literature-ML-DL-RL-AI <https://github.com/tirthajyoti/Papers-Literature-ML-DL-RL-AI>`_: (1620 ⭐) Highly cited and useful papers related to machine learning, deep learning, AI, game theory, reinforcement learning
-- `khanhnamle1994/cracking-the-data-science-interview <https://github.com/khanhnamle1994/cracking-the-data-science-interview>`_: (1605 ⭐) A Collection of Cheatsheets, Books, Questions, and Portfolio For DS/ML Interview Prep
-- `facebookresearch/torchbeast <https://github.com/facebookresearch/torchbeast>`_: (610 ⭐) A PyTorch Platform for Distributed RL
-- `naganandy/graph-based-deep-learning-literature <https://github.com/naganandy/graph-based-deep-learning-literature>`_: (3478 ⭐) links to conference publications in graph-based deep learning
-- `christophM/interpretable-ml-book <https://github.com/christophM/interpretable-ml-book>`_: (4001 ⭐) Book about interpretable machine learning
-- `jmschrei/pomegranate <https://github.com/jmschrei/pomegranate>`_: (2820 ⭐) Fast, flexible and easy to use probabilistic modelling in Python.
-- `pixie-io/pixie <https://github.com/pixie-io/pixie>`_: (2837 ⭐) Instant Kubernetes-Native Application Observability
-- `Megvii-BaseDetection/DeFCN <https://github.com/Megvii-BaseDetection/DeFCN>`_: (437 ⭐) End-to-End Object Detection with Fully Convolutional Network
-- `deepseagirl/degoogle <https://github.com/deepseagirl/degoogle>`_: (440 ⭐) search Google and extract results directly. skip all the click-through links and other sketchiness
-- `enajx/HebbianMetaLearning <https://github.com/enajx/HebbianMetaLearning>`_: (73 ⭐) Meta-Learning through Hebbian Plasticity in Random Networks: https://arxiv.org/abs/2007.02686
-- `real-itu/Evocraft-py <https://github.com/real-itu/Evocraft-py>`_: (89 ⭐) A Python interface for Minecraft built on gRPC
-- `NVIDIA/aistore <https://github.com/NVIDIA/aistore>`_: (546 ⭐) AIStore: scalable storage for AI applications
-- `santosjorge/cufflinks <https://github.com/santosjorge/cufflinks>`_: (2474 ⭐) Productivity Tools for Plotly + Pandas
-- `suragnair/alpha-zero-general <https://github.com/suragnair/alpha-zero-general>`_: (2661 ⭐) A clean implementation based on AlphaZero for any game in any framework + tutorial + Othello/Gobang/TicTacToe/Connect4 and more
-- `simoninithomas/Deep_reinforcement_learning_Course <https://github.com/simoninithomas/Deep_reinforcement_learning_Course>`_: (3262 ⭐) Implementations from the free course Deep Reinforcement Learning with Tensorflow and PyTorch
-- `holoviz/holoviews <https://github.com/holoviz/holoviews>`_: (2102 ⭐) With Holoviews, your data visualizes itself.
-- `jupyter/docker-stacks <https://github.com/jupyter/docker-stacks>`_: (6463 ⭐) Ready-to-run Docker images containing Jupyter applications
-- `obheda12/GitDorker <https://github.com/obheda12/GitDorker>`_: (1663 ⭐) A Python program to scrape secrets from GitHub through usage of a large repository of dorks.
-- `fundamentalvision/Deformable-DETR <https://github.com/fundamentalvision/Deformable-DETR>`_: (1348 ⭐) Deformable DETR: Deformable Transformers for End-to-End Object Detection.
-- `audacity/audacity <https://github.com/audacity/audacity>`_: (7020 ⭐) Audio Editor
-- `pbloem/former <https://github.com/pbloem/former>`_: (630 ⭐) Simple transformer implementation from scratch in pytorch.
-- `dellacortelab/prospr <https://github.com/dellacortelab/prospr>`_: (399 ⭐) ProSPr: Protein Structure Prediction
-- `allenai/scitldr <https://github.com/allenai/scitldr>`_: (604 ⭐) None
-- `huawei-noah/vega <https://github.com/huawei-noah/vega>`_: (683 ⭐) AutoML tools chain
-- `karpathy/micrograd <https://github.com/karpathy/micrograd>`_: (1878 ⭐) A tiny scalar-valued autograd engine and a neural net library on top of it with PyTorch-like API
-- `the-paperless-project/paperless <https://github.com/the-paperless-project/paperless>`_: (7672 ⭐) Scan, index, and archive all of your paper documents
-- `Curt-Park/rainbow-is-all-you-need <https://github.com/Curt-Park/rainbow-is-all-you-need>`_: (1189 ⭐) Rainbow is all you need! A step-by-step tutorial from DQN to Rainbow
-- `trekhleb/machine-learning-experiments <https://github.com/trekhleb/machine-learning-experiments>`_: (1191 ⭐) 🤖 Interactive Machine Learning experiments: 🏋️models training + 🎨models demo
-- `dctian/DeepPiCar <https://github.com/dctian/DeepPiCar>`_: (293 ⭐) Deep Learning Autonomous Car based on Raspberry Pi, SunFounder PiCar-V Kit, TensorFlow, and Google's EdgeTPU Co-Processor
-- `reHackable/awesome-reMarkable <https://github.com/reHackable/awesome-reMarkable>`_: (4230 ⭐) A curated list of projects related to the reMarkable tablet
-- `jantic/DeOldify <https://github.com/jantic/DeOldify>`_: (14632 ⭐) A Deep Learning based project for colorizing and restoring old images (and video!)
-- `rasbt/python_reference <https://github.com/rasbt/python_reference>`_: (3175 ⭐) Useful functions, tutorials, and other Python-related things
-- `RangiLyu/nanodet <https://github.com/RangiLyu/nanodet>`_: (4027 ⭐) NanoDet-Plus⚡Super fast and lightweight anchor-free object detection model. 🔥Only 980 KB(int8) / 1.8MB (fp16) and run 97FPS on cellphone🔥
-- `joaotinti75/Pygame <https://github.com/joaotinti75/Pygame>`_: (212 ⭐) Games that i did using pygame library
-- `pytorch/tensorpipe <https://github.com/pytorch/tensorpipe>`_: (176 ⭐) A tensor-aware point-to-point communication primitive for machine learning
-- `guildai/guildai <https://github.com/guildai/guildai>`_: (654 ⭐) Experiment tracking, ML developer tools
-- `replicate/keepsake <https://github.com/replicate/keepsake>`_: (1542 ⭐) Version control for machine learning
-- `minerllabs/competition_submission_template <https://github.com/minerllabs/competition_submission_template>`_: (92 ⭐) The submission template for the MineRL Competition @ NeurIPS 2021. Clone this to make a new submission!
-- `D-X-Y/NATS-Bench <https://github.com/D-X-Y/NATS-Bench>`_: (107 ⭐) TPAMI 2021: NATS-Bench: Benchmarking NAS Algorithms for Architecture Topology and Size
-- `automl/Auto-PyTorch <https://github.com/automl/Auto-PyTorch>`_: (1523 ⭐) Automatic architecture search and hyperparameter optimization for PyTorch
-- `NVIDIA/apex <https://github.com/NVIDIA/apex>`_: (6038 ⭐) A PyTorch Extension:  Tools for easy mixed precision and distributed training in Pytorch
-- `aim-uofa/AdelaiDet <https://github.com/aim-uofa/AdelaiDet>`_: (2635 ⭐) AdelaiDet is an open source toolbox for multiple instance-level detection and recognition tasks.
-- `liuruijin17/LSTR <https://github.com/liuruijin17/LSTR>`_: (498 ⭐) This is an official repository of End-to-end Lane Shape Prediction with Transformers.
-- `abhishekkrthakur/colabcode <https://github.com/abhishekkrthakur/colabcode>`_: (1680 ⭐) Run VSCode (codeserver) on Google Colab or Kaggle Notebooks
-- `dennybritz/reinforcement-learning <https://github.com/dennybritz/reinforcement-learning>`_: (17571 ⭐) Implementation of Reinforcement Learning Algorithms. Python, OpenAI Gym, Tensorflow. Exercises and Solutions to accompany Sutton's Book and David Silver's course.
-- `slundberg/shap <https://github.com/slundberg/shap>`_: (15256 ⭐) A game theoretic approach to explain the output of any machine learning model.
-- `ebatty/MathToolsforNeuroscience <https://github.com/ebatty/MathToolsforNeuroscience>`_: (366 ⭐) Materials for Mathematical Tools for Neuroscience course  at Harvard (Neurobio 212)
-- `hooram/ownphotos <https://github.com/hooram/ownphotos>`_: (2596 ⭐) Self hosted alternative to Google Photos
-- `xueyuanl/daily-hackernews <https://github.com/xueyuanl/daily-hackernews>`_: (98 ⭐) Daily hacker news top stories. Subscribe the hackernews daily top stories by watching this repo.
-- `alan-turing-institute/sktime <https://github.com/alan-turing-institute/sktime>`_: (4894 ⭐) A unified framework for machine learning with time series
-- `microsoft/Bringing-Old-Photos-Back-to-Life <https://github.com/microsoft/Bringing-Old-Photos-Back-to-Life>`_: (9881 ⭐) Bringing Old Photo Back to Life (CVPR 2020 oral)
-- `OpenMined/PySyft <https://github.com/OpenMined/PySyft>`_: (7899 ⭐) A library for answering questions using data you cannot see
-- `zhm-real/PathPlanning <https://github.com/zhm-real/PathPlanning>`_: (3634 ⭐) Common used path planning algorithms with animations.
-- `public-apis/public-apis <https://github.com/public-apis/public-apis>`_: (40000 ⭐) A collective list of free APIs
-- `spmallick/learnopencv <https://github.com/spmallick/learnopencv>`_: (15607 ⭐) Learn OpenCV  : C++ and Python Examples
-- `jaakkopasanen/AutoEq <https://github.com/jaakkopasanen/AutoEq>`_: (6354 ⭐) Automatic headphone equalization from frequency responses
-- `wowchemy/starter-hugo-academic <https://github.com/wowchemy/starter-hugo-academic>`_: (1819 ⭐) 🎓 Hugo Academic Theme 创建一个学术网站. Easily create a beautiful academic résumé or educational website using Hugo, GitHub, and Netlify.
-- `JuliaAcademy/JuliaTutorials <https://github.com/JuliaAcademy/JuliaTutorials>`_: (936 ⭐) Learn Julia via interactive tutorials!
-- `google/iree <https://github.com/google/iree>`_: (979 ⭐) 👻
-- `google/flatbuffers <https://github.com/google/flatbuffers>`_: (17387 ⭐) FlatBuffers: Memory Efficient Serialization Library
-- `hoya012/awesome-anomaly-detection <https://github.com/hoya012/awesome-anomaly-detection>`_: (1881 ⭐) A curated list of awesome anomaly detection resources
-- `google/jax <https://github.com/google/jax>`_: (16109 ⭐) Composable transformations of Python+NumPy programs: differentiate, vectorize, JIT to GPU/TPU, and more
-- `google/python-fire <https://github.com/google/python-fire>`_: (21870 ⭐) Python Fire is a library for automatically generating command line interfaces (CLIs) from absolutely any Python object.
-- `danielgatis/rembg <https://github.com/danielgatis/rembg>`_: (2192 ⭐) Rembg is a tool to remove images background.
-- `gordicaleksa/pytorch-original-transformer <https://github.com/gordicaleksa/pytorch-original-transformer>`_: (547 ⭐) My implementation of the original transformer model (Vaswani et al.). I've additionally included the playground.py file for visualizing otherwise seemingly hard concepts. Currently included IWSLT pretrained models.
-- `eriklindernoren/PyTorch-GAN <https://github.com/eriklindernoren/PyTorch-GAN>`_: (11225 ⭐) PyTorch implementations of Generative Adversarial Networks.
-- `hyperopt/hyperopt <https://github.com/hyperopt/hyperopt>`_: (6054 ⭐) Distributed Asynchronous Hyperparameter Optimization in Python
-- `sebastianruder/NLP-progress <https://github.com/sebastianruder/NLP-progress>`_: (19656 ⭐) Repository to track the progress in Natural Language Processing (NLP), including the datasets and the current state-of-the-art for the most common NLP tasks.
-- `xingyizhou/CenterNet <https://github.com/xingyizhou/CenterNet>`_: (6175 ⭐) Object detection, 3D detection, and pose estimation using center point detection:
-- `orchest/orchest <https://github.com/orchest/orchest>`_: (1799 ⭐) Build data pipelines, the easy way 🛠️
-- `pytorch/elastic <https://github.com/pytorch/elastic>`_: (686 ⭐) PyTorch elastic training
-- `pytorch/pytorch_sphinx_theme <https://github.com/pytorch/pytorch_sphinx_theme>`_: (57 ⭐) PyTorch Sphinx Theme
-- `facebookresearch/foltr-es <https://github.com/facebookresearch/foltr-es>`_: (33 ⭐) The source code to reproduce the results reported in the 'Federated Online Learning to Rank with Evolution Strategies' paper, published at WSDM 2019.
-- `facebookresearch/Mephisto <https://github.com/facebookresearch/Mephisto>`_: (102 ⭐) A suite of tools for managing crowdsourcing tasks from the inception through to data packaging for research use
-- `huchenme/github-trending-api <https://github.com/huchenme/github-trending-api>`_: (666 ⭐) :octocat: The missing APIs for GitHub trending projects and developers 📈
-- `rasmusbergpalm/evostrat <https://github.com/rasmusbergpalm/evostrat>`_: (167 ⭐) A library that makes Evolutionary Strategies (ES) simple to use.
-- `facebookresearch/nevergrad <https://github.com/facebookresearch/nevergrad>`_: (3225 ⭐) A Python toolbox for performing gradient-free optimization
-- `facebookresearch/EGG <https://github.com/facebookresearch/EGG>`_: (218 ⭐) EGG: Emergence of lanGuage in Games
-- `facebookresearch/nle <https://github.com/facebookresearch/nle>`_: (567 ⭐) The NetHack Learning Environment
-- `facebookresearch/habitat-lab <https://github.com/facebookresearch/habitat-lab>`_: (775 ⭐) A modular high-level library to train embodied AI agents across a variety of tasks, environments, and simulators.
-- `flashlight/flashlight <https://github.com/flashlight/flashlight>`_: (4066 ⭐) A C++ standalone library for machine learning
-- `horovod/horovod <https://github.com/horovod/horovod>`_: (12085 ⭐) Distributed training framework for TensorFlow, Keras, PyTorch, and Apache MXNet.
-- `facebookresearch/TransCoder <https://github.com/facebookresearch/TransCoder>`_: (1406 ⭐) Public release of the TransCoder research project https://arxiv.org/pdf/2006.03511.pdf
-- `microsoft/nni <https://github.com/microsoft/nni>`_: (10925 ⭐) An open source AutoML toolkit for automate machine learning lifecycle, including feature engineering, neural architecture search, model compression and hyper-parameter tuning.
-- `geerlingguy/ansible-for-devops <https://github.com/geerlingguy/ansible-for-devops>`_: (5408 ⭐) Ansible for DevOps examples.
-- `adamerose/PandasGUI <https://github.com/adamerose/PandasGUI>`_: (2537 ⭐) A GUI for Pandas DataFrames
-- `blackjack4494/yt-dlc <https://github.com/blackjack4494/yt-dlc>`_: (2624 ⭐) media downloader and library for various sites.
-- `geohot/tinygrad <https://github.com/geohot/tinygrad>`_: (5154 ⭐) You like pytorch? You like micrograd? You love tinygrad! ❤️
-- `UnityTechnologies/open-project-1 <https://github.com/UnityTechnologies/open-project-1>`_: (4330 ⭐) Unity Open Project #1: Chop Chop
-- `tobspr/shapez.io <https://github.com/tobspr/shapez.io>`_: (4525 ⭐) shapez.io is an open source base building game inspired by factorio! Available on web & steam
-- `chrislusf/seaweedfs <https://github.com/chrislusf/seaweedfs>`_: (13753 ⭐) SeaweedFS is a fast distributed storage system for blobs, objects, files, and data lake, for billions of files! Blob store has O(1) disk seek, cloud tiering. Filer supports Cloud Drive, cross-DC active-active replication, Kubernetes, POSIX FUSE mount, S3 API, S3 Gateway, Hadoop, WebDAV, encryption, Erasure Coding.
-- `changkun/modern-cpp-tutorial <https://github.com/changkun/modern-cpp-tutorial>`_: (16331 ⭐) 📚 Modern C++ Tutorial: C++11/14/17/20 On the Fly | https://changkun.de/modern-cpp/
-- `GitSquared/edex-ui <https://github.com/GitSquared/edex-ui>`_: (34925 ⭐) A cross-platform, customizable science fiction terminal emulator with advanced monitoring & touchscreen support.
-- `hardikvasa/google-images-download <https://github.com/hardikvasa/google-images-download>`_: (7857 ⭐) Python Script to download hundreds of images from 'Google Images'. It is a ready-to-run code!
-- `lucidrains/performer-pytorch <https://github.com/lucidrains/performer-pytorch>`_: (774 ⭐) An implementation of Performer, a linear attention-based transformer, in Pytorch
-- `Hari-Nagarajan/fairgame <https://github.com/Hari-Nagarajan/fairgame>`_: (2456 ⭐) Tool to help us buy hard to find items.
-- `microsoft/Cream <https://github.com/microsoft/Cream>`_: (421 ⭐) This is a collection of our NAS and Vision Transformer work.
-- `NVIDIA/semantic-segmentation <https://github.com/NVIDIA/semantic-segmentation>`_: (1485 ⭐) Nvidia Semantic Segmentation monorepo
-- `xingyizhou/CenterTrack <https://github.com/xingyizhou/CenterTrack>`_: (1939 ⭐) Simultaneous object detection and tracking using center points.
-- `joelgrus/data-science-from-scratch <https://github.com/joelgrus/data-science-from-scratch>`_: (6652 ⭐) code for Data Science From Scratch book
-- `gaogaotiantian/viztracer <https://github.com/gaogaotiantian/viztracer>`_: (1564 ⭐) VizTracer is a low-overhead logging/debugging/profiling tool that can trace and visualize your python code execution.
-- `augustogoulart/awesome-pytest <https://github.com/augustogoulart/awesome-pytest>`_: (246 ⭐) A curated list of awesome pytest resources
-- `awesome-selfhosted/awesome-selfhosted <https://github.com/awesome-selfhosted/awesome-selfhosted>`_: (40000 ⭐) A list of Free Software network services and web applications which can be hosted on your own servers
-- `jessfraz/dockerfiles <https://github.com/jessfraz/dockerfiles>`_: (12324 ⭐) Various Dockerfiles I use on the desktop and on servers.
-- `P3GLEG/Whaler <https://github.com/P3GLEG/Whaler>`_: (785 ⭐) Program to reverse Docker images into Dockerfiles
-- `Lausannen/NAS-FCOS <https://github.com/Lausannen/NAS-FCOS>`_: (172 ⭐) NAS-FCOS: Fast Neural Architecture Search for Object Detection (CVPR 2020)
-- `tianzhi0549/FCOS <https://github.com/tianzhi0549/FCOS>`_: (2857 ⭐) FCOS: Fully Convolutional One-Stage Object Detection (ICCV'19)
-- `modelhub-ai/modelhub <https://github.com/modelhub-ai/modelhub>`_: (57 ⭐) A collection of deep learning models with a unified API.
-- `rasbt/deeplearning-models <https://github.com/rasbt/deeplearning-models>`_: (14719 ⭐) A collection of various deep learning architectures, models, and tips
-- `pytest-dev/unittest2pytest <https://github.com/pytest-dev/unittest2pytest>`_: (93 ⭐) helps rewriting Python `unittest` test-cases into `pytest` test-cases
-- `ramitsurana/awesome-kubernetes <https://github.com/ramitsurana/awesome-kubernetes>`_: (12403 ⭐) A curated list for awesome kubernetes sources :ship::tada:
-- `binhnguyennus/awesome-scalability <https://github.com/binhnguyennus/awesome-scalability>`_: (37239 ⭐) The Patterns of Scalable, Reliable, and Performant Large-Scale Systems
-- `aitemr/awesome-git-hooks <https://github.com/aitemr/awesome-git-hooks>`_: (547 ⭐) 😎 A collection of awesome Git Hooks
-- `meirwah/awesome-workflow-engines <https://github.com/meirwah/awesome-workflow-engines>`_: (3075 ⭐) A curated list of awesome open source workflow engines
-- `pditommaso/awesome-pipeline <https://github.com/pditommaso/awesome-pipeline>`_: (4557 ⭐) A curated list of awesome pipeline toolkits inspired by Awesome Sysadmin
-- `jlegewie/zotfile <https://github.com/jlegewie/zotfile>`_: (1819 ⭐) Zotero plugin to manage your attachments: automatically rename, move, and attach PDFs (or other files) to Zotero items, sync PDFs from your Zotero library to your (mobile) PDF reader (e.g. an iPad, Android tablet, etc.), and extract PDF annotations.
-- `rst2pdf/rst2pdf <https://github.com/rst2pdf/rst2pdf>`_: (455 ⭐) Use a text editor.  Make a PDF.
-- `wkentaro/pytorch-for-numpy-users <https://github.com/wkentaro/pytorch-for-numpy-users>`_: (588 ⭐) PyTorch for Numpy users. https://pytorch-for-numpy-users.wkentaro.com
-- `birchill/10ten-ja-reader <https://github.com/birchill/10ten-ja-reader>`_: (320 ⭐) A browser extension to translate Japanese by hovering over words.
-- `polyaxon/polyaxon <https://github.com/polyaxon/polyaxon>`_: (2989 ⭐) Machine Learning Management & Orchestration Platform (Monorepo for Polyaxon's MLOps Tools)
-- `hamuchiwa/AutoRCCar <https://github.com/hamuchiwa/AutoRCCar>`_: (3139 ⭐) OpenCV Python Neural Network Autonomous RC Car
-- `woven-planet/l5kit <https://github.com/woven-planet/l5kit>`_: (642 ⭐) L5Kit - https://level-5.global/
-- `lucidrains/vit-pytorch <https://github.com/lucidrains/vit-pytorch>`_: (8420 ⭐) Implementation of Vision Transformer, a simple way to achieve SOTA in vision classification with only a single transformer encoder, in Pytorch
-- `akamhy/waybackpy <https://github.com/akamhy/waybackpy>`_: (151 ⭐) Wayback Machine API interface and a command-line tool
-- `microsoft/archai <https://github.com/microsoft/archai>`_: (325 ⭐) Reproducible Rapid Research for Neural Architecture Search (NAS)
-- `philippnormann/nvidia-sniper <https://github.com/philippnormann/nvidia-sniper>`_: (411 ⭐) 🎯 Autonomously buy Nvidia Founders Edition GPUs as soon as they become available.
-- `domokane/FinancePy <https://github.com/domokane/FinancePy>`_: (747 ⭐) A Python Finance Library that focuses on the pricing and risk-management of Financial Derivatives, including fixed-income, equity, FX and credit derivatives.
-- `amidos2006/Mario-AI-Framework <https://github.com/amidos2006/Mario-AI-Framework>`_: (65 ⭐) 10th Anniversary Edition (Not endorsed by Nintendo)
-- `mil-tokyo/webdnn <https://github.com/mil-tokyo/webdnn>`_: (1852 ⭐) The Fastest DNN Running Framework on Web Browser
-- `iamadamdev/bypass-paywalls-chrome <https://github.com/iamadamdev/bypass-paywalls-chrome>`_: (21766 ⭐) Bypass Paywalls web browser extension for Chrome and Firefox.
-- `astooke/rlpyt <https://github.com/astooke/rlpyt>`_: (1998 ⭐) Reinforcement Learning in PyTorch
-- `unofficial-protonmail-desktop/application <https://github.com/unofficial-protonmail-desktop/application>`_: (550 ⭐) :envelope: Unofficial desktop client for ProtonMail
-- `material-shell/material-shell <https://github.com/material-shell/material-shell>`_: (6232 ⭐) A modern desktop interface for Linux. Improve your user experience and get rid of the anarchy of traditional desktop workflows. Designed to simplify navigation and reduce the need to manipulate windows in order to improve productivity. It's meant to be 100% predictable and bring the benefits of tools coveted by professionals to everyone.
-- `Kazhnuz/awesome-gnome <https://github.com/Kazhnuz/awesome-gnome>`_: (610 ⭐) A curated list of awesome apps, extensions, modules, themes and tools for the Gnome Desktop Environment.
-- `google/latexify_py <https://github.com/google/latexify_py>`_: (1786 ⭐) Generates LaTeX math description from Python functions.
-- `taskflow/taskflow <https://github.com/taskflow/taskflow>`_: (6338 ⭐) A General-purpose Parallel and Heterogeneous Task Programming System
-- `p-ranav/awesome-hpp <https://github.com/p-ranav/awesome-hpp>`_: (1701 ⭐) A curated list of awesome header-only C++ libraries
-- `madd86/awesome-system-design <https://github.com/madd86/awesome-system-design>`_: (5145 ⭐) A curated list of awesome System Design (A.K.A. Distributed Systems) resources.
-- `pytorch/captum <https://github.com/pytorch/captum>`_: (2905 ⭐) Model interpretability and understanding for PyTorch
-- `mahmoud/awesome-python-applications <https://github.com/mahmoud/awesome-python-applications>`_: (13372 ⭐) 💿 Free software that works great, and also happens to be open-source Python.
-- `wagoodman/dive <https://github.com/wagoodman/dive>`_: (29772 ⭐) A tool for exploring each layer in a docker image
-- `google/makani <https://github.com/google/makani>`_: (1103 ⭐) Makani was a project to develop a commercial-scale airborne wind turbine, culminating in a flight test of the Makani M600 off the coast of Norway. All Makani software has now been open-sourced. This repository contains the working Makani flight simulator, controller (autopilot), visualizer, and command center flight monitoring tools. Additionally, almost all avionics firmware is also included, albeit potentially not in a buildable state, due to the removal of some third-party proprietary code. We hope that this code will be inspirational and useful to the kite-based windpower and wider communities.
-- `veggiemonk/awesome-docker <https://github.com/veggiemonk/awesome-docker>`_: (21111 ⭐) :whale: A curated list of Docker resources and projects
-- `mrgloom/awesome-semantic-segmentation <https://github.com/mrgloom/awesome-semantic-segmentation>`_: (8939 ⭐) :metal: awesome-semantic-segmentation
-- `mbadry1/Top-Deep-Learning <https://github.com/mbadry1/Top-Deep-Learning>`_: (1446 ⭐)  Top 200 deep learning Github repositories sorted by the number of stars.
-- `python-engineer/python-engineer-notebooks <https://github.com/python-engineer/python-engineer-notebooks>`_: (335 ⭐) None
-- `TRI-ML/DDAD <https://github.com/TRI-ML/DDAD>`_: (329 ⭐) Dense Depth for Autonomous Driving (DDAD) dataset.
-- `cupy/cupy <https://github.com/cupy/cupy>`_: (5724 ⭐) NumPy & SciPy for GPU
-- `kurgol/keychron <https://github.com/kurgol/keychron>`_: (508 ⭐) Settings for Keychron keyboards
-- `alicevision/meshroom <https://github.com/alicevision/meshroom>`_: (7438 ⭐) 3D Reconstruction Software
-- `ContainerSolutions/kubernetes-examples <https://github.com/ContainerSolutions/kubernetes-examples>`_: (1042 ⭐) Minimal self-contained examples of standard Kubernetes features and patterns in YAML
-- `learning-at-home/hivemind <https://github.com/learning-at-home/hivemind>`_: (909 ⭐) Decentralized deep learning in PyTorch. Built to train models on thousands of volunteers across the world.
-- `mxssl/sre-interview-prep-guide <https://github.com/mxssl/sre-interview-prep-guide>`_: (2582 ⭐) Site Reliability Engineer Interview Preparation Guide
-- `torch-points3d/torch-points3d <https://github.com/torch-points3d/torch-points3d>`_: (1680 ⭐) Pytorch framework for doing deep learning on point clouds.
-- `skorch-dev/skorch <https://github.com/skorch-dev/skorch>`_: (4333 ⭐) A scikit-learn compatible neural network library that wraps PyTorch
-- `PyTorchLightning/pytorch-lightning <https://github.com/PyTorchLightning/pytorch-lightning>`_: (17163 ⭐) The lightweight PyTorch wrapper for high-performance AI research. Scale your models, not the boilerplate.
-- `pyg-team/pytorch_geometric <https://github.com/pyg-team/pytorch_geometric>`_: (13680 ⭐) Graph Neural Network Library for PyTorch
-- `pfnet/pytorch-pfn-extras <https://github.com/pfnet/pytorch-pfn-extras>`_: (226 ⭐) Supplementary components to accelerate research and development in PyTorch
-- `facebookresearch/hydra <https://github.com/facebookresearch/hydra>`_: (5415 ⭐) Hydra is a framework for elegantly configuring complex applications
-- `facebookresearch/higher <https://github.com/facebookresearch/higher>`_: (1331 ⭐) higher is a pytorch library allowing users to obtain higher order gradients over losses spanning training loops rather than individual training steps.
-- `catalyst-team/catalyst <https://github.com/catalyst-team/catalyst>`_: (2826 ⭐) Accelerated deep learning R&D
-- `allegroai/clearml <https://github.com/allegroai/clearml>`_: (2961 ⭐) ClearML - Auto-Magical CI/CD to streamline your ML workflow. Experiment Manager, MLOps and Data-Management
-- `albumentations-team/albumentations <https://github.com/albumentations-team/albumentations>`_: (9582 ⭐) Fast image augmentation library and an easy-to-use wrapper around other libraries. Documentation:  https://albumentations.ai/docs/ Paper about the library: https://www.mdpi.com/2078-2489/11/2/125
-- `Jermolene/TiddlyWiki5 <https://github.com/Jermolene/TiddlyWiki5>`_: (6522 ⭐) A self-contained JavaScript wiki for the browser, Node.js, AWS Lambda etc.
-- `PyGithub/PyGithub <https://github.com/PyGithub/PyGithub>`_: (5043 ⭐) Typed interactions with the GitHub API v3
-- `joekroese/tiddlyroam <https://github.com/joekroese/tiddlyroam>`_: (458 ⭐) Your open source external brain
-- `Jermolene/TiddlyDesktop <https://github.com/Jermolene/TiddlyDesktop>`_: (1245 ⭐) A custom desktop browser for TiddlyWiki 5 and TiddlyWiki Classic, based on nw.js
-- `freeplane/freeplane <https://github.com/freeplane/freeplane>`_: (865 ⭐) None
-- `monicahq/monica <https://github.com/monicahq/monica>`_: (15698 ⭐) Personal CRM. Remember everything about your friends, family and business relationships.
-- `alandefreitas/matplotplusplus <https://github.com/alandefreitas/matplotplusplus>`_: (2490 ⭐) Matplot++: A C++ Graphics Library for Data Visualization 📊🗾
-- `octref/polacode <https://github.com/octref/polacode>`_: (6516 ⭐) 📸 Polaroid for your code
-- `pomber/git-history <https://github.com/pomber/git-history>`_: (12691 ⭐) Quickly browse the history of a file from any git repository
-- `bradtraversy/vanillawebprojects <https://github.com/bradtraversy/vanillawebprojects>`_: (12233 ⭐) Mini projects built with HTML5, CSS & JavaScript. No frameworks or libraries
-- `joeycastillo/The-Open-Book <https://github.com/joeycastillo/The-Open-Book>`_: (6072 ⭐) None
-- `ksindi/managers-playbook <https://github.com/ksindi/managers-playbook>`_: (4569 ⭐) :book: Heuristics for effective management
-- `Teraskull/PyDebloatX <https://github.com/Teraskull/PyDebloatX>`_: (647 ⭐) Python GUI for uninstalling the default Windows 10 apps.
-- `jonnyhyman/Chaos <https://github.com/jonnyhyman/Chaos>`_: (1611 ⭐) Visualizations of the connections between chaos theory and fractals through the logistic map; made for Veritasium YouTube video
-- `WereDev/Wu10Man <https://github.com/WereDev/Wu10Man>`_: (506 ⭐) Enable/Disable Windows 10 Automatic Updates
-- `xournalpp/xournalpp <https://github.com/xournalpp/xournalpp>`_: (5598 ⭐) Xournal++ is a handwriting notetaking software with PDF annotation support. Written in C++ with GTK3, supporting Linux (e.g. Ubuntu, Debian, Arch, SUSE), macOS and Windows 10. Supports pen input from devices such as Wacom Tablets.
-- `foambubble/foam <https://github.com/foambubble/foam>`_: (11356 ⭐) A personal knowledge management and sharing system for VSCode
-- `iggredible/Learn-Vim <https://github.com/iggredible/Learn-Vim>`_: (7417 ⭐) Learning Vim and Vimscript doesn't have to be hard. This is the guide that you're looking for 📖
-- `oldboyxx/jira_clone <https://github.com/oldboyxx/jira_clone>`_: (7923 ⭐) A simplified Jira clone built with React/Babel (Client), and Node/TypeScript (API). Auto formatted with Prettier, tested with Cypress.
-- `mitmath/18S191 <https://github.com/mitmath/18S191>`_: (2129 ⭐) Course 18.S191 at MIT, Spring 2021 - Introduction to computational thinking with Julia:
-- `openalpr/openalpr <https://github.com/openalpr/openalpr>`_: (10340 ⭐) Automatic License Plate Recognition library
-- `facebookresearch/faiss <https://github.com/facebookresearch/faiss>`_: (16096 ⭐) A library for efficient similarity search and clustering of dense vectors.
-- `tradytics/surpriver <https://github.com/tradytics/surpriver>`_: (1407 ⭐) Find big moving stocks before they move using machine learning and anomaly detection
-- `pyenv/pyenv-installer <https://github.com/pyenv/pyenv-installer>`_: (3041 ⭐) This tool is used to install `pyenv` and friends.
-- `bermanmaxim/LovaszSoftmax <https://github.com/bermanmaxim/LovaszSoftmax>`_: (1245 ⭐) Code for the Lovász-Softmax loss (CVPR 2018)
-- `alirezamika/autoscraper <https://github.com/alirezamika/autoscraper>`_: (4206 ⭐) A Smart, Automatic, Fast and Lightweight Web Scraper for Python
-- `NVIDIA/DALI <https://github.com/NVIDIA/DALI>`_: (3681 ⭐) A GPU-accelerated library containing highly optimized building blocks and an execution engine for data processing to accelerate deep learning training and inference applications.
-- `guyskk/language-cython-for-vscode <https://github.com/guyskk/language-cython-for-vscode>`_: (28 ⭐) Visual Studio Code Syntax highlighter for Cython
-- `vscode-restructuredtext/vscode-restructuredtext <https://github.com/vscode-restructuredtext/vscode-restructuredtext>`_: (274 ⭐) reStructuredText Language Support in Visual Studio Code
-- `semantic-release/semantic-release <https://github.com/semantic-release/semantic-release>`_: (14648 ⭐) :package::rocket: Fully automated version management and package publishing
-- `github-changelog-generator/github-changelog-generator <https://github.com/github-changelog-generator/github-changelog-generator>`_: (6678 ⭐) Automatically generate change log from your tags, issues, labels and pull requests on GitHub.
-- `khangich/machine-learning-interview <https://github.com/khangich/machine-learning-interview>`_: (3358 ⭐) Machine Learning Interviews from FAANG, Snapchat, LinkedIn. I have offers from Snapchat, Coupang, Stitchfix etc. Blog: mlengineer.io.
-- `karpathy/minGPT <https://github.com/karpathy/minGPT>`_: (6935 ⭐) A minimal PyTorch re-implementation of the OpenAI GPT (Generative Pretrained Transformer) training
-- `hudson-and-thames/mlfinlab <https://github.com/hudson-and-thames/mlfinlab>`_: (2757 ⭐) MlFinLab helps portfolio managers and traders who want to leverage the power of machine learning by providing reproducible, interpretable, and easy to use tools.
-- `mingrammer/diagrams <https://github.com/mingrammer/diagrams>`_: (16046 ⭐) :art: Diagram as Code for prototyping cloud system architectures
-- `princeton-vl/RAFT <https://github.com/princeton-vl/RAFT>`_: (1758 ⭐) None
-- `cotoami/cotoami <https://github.com/cotoami/cotoami>`_: (308 ⭐) Cotoami is a platform where people can weave a large network of wisdom from tiny ideas.
-- `felixhayashi/TW5-TiddlyMap <https://github.com/felixhayashi/TW5-TiddlyMap>`_: (687 ⭐) Map drawing and topic visualization for your wiki
-- `dformoso/machine-learning-mindmap <https://github.com/dformoso/machine-learning-mindmap>`_: (5381 ⭐) A mindmap summarising Machine Learning concepts, from Data Analysis to Deep Learning.
-- `quark0/darts <https://github.com/quark0/darts>`_: (3489 ⭐) Differentiable architecture search for convolutional and recurrent networks
-- `bharathgs/Awesome-pytorch-list <https://github.com/bharathgs/Awesome-pytorch-list>`_: (12578 ⭐) A comprehensive list of pytorch related content on github,such as different models,implementations,helper libraries,tutorials etc.
-- `Pattio/DeepSwarm <https://github.com/Pattio/DeepSwarm>`_: (282 ⭐) Neural Architecture Search Powered by Swarm Intelligence 🐜
-- `bregman-arie/devops-exercises <https://github.com/bregman-arie/devops-exercises>`_: (21022 ⭐) Linux, Jenkins, AWS, SRE, Prometheus, Docker, Python, Ansible, Git, Kubernetes, Terraform, OpenStack, SQL, NoSQL, Azure, GCP, DNS, Elastic, Network, Virtualization. DevOps Interview Questions
-- `D-X-Y/Awesome-AutoDL <https://github.com/D-X-Y/Awesome-AutoDL>`_: (1848 ⭐) A curated list of automated deep learning (including neural architecture search and hyper-parameter optimization) resources.
-- `markdtw/awesome-architecture-search <https://github.com/markdtw/awesome-architecture-search>`_: (1130 ⭐) A curated list of awesome architecture search resources
-- `D-X-Y/AutoDL-Projects <https://github.com/D-X-Y/AutoDL-Projects>`_: (1328 ⭐) Automated deep learning algorithms implemented in PyTorch.
-- `seungwonpark/RandWireNN <https://github.com/seungwonpark/RandWireNN>`_: (679 ⭐) Implementation of: "Exploring Randomly Wired Neural Networks for Image Recognition"
-- `guan-yuan/awesome-AutoML-and-Lightweight-Models <https://github.com/guan-yuan/awesome-AutoML-and-Lightweight-Models>`_: (745 ⭐) A list of high-quality (newest) AutoML works and lightweight models including 1.) Neural Architecture Search, 2.) Lightweight Structures, 3.) Model Compression, Quantization and Acceleration, 4.) Hyperparameter Optimization, 5.) Automated Feature Engineering.
-- `JohanLink/Ball-Balancing-PID-System <https://github.com/JohanLink/Ball-Balancing-PID-System>`_: (296 ⭐) None
-- `bentoml/BentoML <https://github.com/bentoml/BentoML>`_: (3167 ⭐) The Unified Model Serving Framework 🍱
-- `kubernetes/minikube <https://github.com/kubernetes/minikube>`_: (23095 ⭐) Run Kubernetes locally
-- `jonasrauber/eagerpy <https://github.com/jonasrauber/eagerpy>`_: (592 ⭐) PyTorch, TensorFlow, JAX and NumPy — all of them natively using the same code
-- `donnemartin/data-science-ipython-notebooks <https://github.com/donnemartin/data-science-ipython-notebooks>`_: (22383 ⭐) Data science Python notebooks: Deep learning (TensorFlow, Theano, Caffe, Keras), scikit-learn, Kaggle, big data (Spark, Hadoop MapReduce, HDFS), matplotlib, pandas, NumPy, SciPy, Python essentials, AWS, and various command lines.
-- `florinpop17/app-ideas <https://github.com/florinpop17/app-ideas>`_: (40000 ⭐) A Collection of application ideas which can be used to improve your coding skills.
-- `alex/what-happens-when <https://github.com/alex/what-happens-when>`_: (31781 ⭐) An attempt to answer the age old interview question "What happens when you type google.com into your browser and press enter?"
-- `photonlines/Intuitive-Guide-to-Maxwells-Equations <https://github.com/photonlines/Intuitive-Guide-to-Maxwells-Equations>`_: (764 ⭐) An intuitive and visual guide to understanding Maxwell's equations.
-- `ianwhale/nsga-net <https://github.com/ianwhale/nsga-net>`_: (205 ⭐) NSGA-Net, a Neural Architecture Search Algorithm
-- `carpedm20/ENAS-pytorch <https://github.com/carpedm20/ENAS-pytorch>`_: (2524 ⭐) PyTorch implementation of "Efficient Neural Architecture Search via Parameters Sharing"
-- `Sentdex/pygta5 <https://github.com/Sentdex/pygta5>`_: (3661 ⭐) Explorations of Using Python to play Grand Theft Auto 5.
-- `Unity-Technologies/ml-agents <https://github.com/Unity-Technologies/ml-agents>`_: (12335 ⭐) Unity Machine Learning Agents Toolkit
-- `cloud-custodian/cloud-custodian <https://github.com/cloud-custodian/cloud-custodian>`_: (3978 ⭐) Rules engine for cloud security, cost optimization, and governance, DSL in yaml for policies to query, filter, and take actions on resources
-- `connorferster/handcalcs <https://github.com/connorferster/handcalcs>`_: (3443 ⭐) Python library for converting Python calculations into rendered latex.
-- `PaulMcInnis/JobFunnel <https://github.com/PaulMcInnis/JobFunnel>`_: (1539 ⭐) Scrape job websites into a single spreadsheet with no duplicates.
-- `PySimpleGUI/PySimpleGUI <https://github.com/PySimpleGUI/PySimpleGUI>`_: (9345 ⭐) Launched in 2018. It's 2022 and PySimpleGUI is actively developed & supported. Supports tkinter, Qt, WxPython, Remi (in browser). Create custom GUI Windows simply, trivially with a full set of widgets. Multi-Window applications are also simple. 3.4 to 3.11 supported. 325+ Demo programs & Cookbook for rapid start. Extensive documentation.  Examples using Machine Learning(GUI, OpenCV Integration,  Chatterbot), Desktop Widgets (Rainmeter-like), Matplotlib + Pyplot integration, add GUI to command line scripts, PDF & Image Viewer. For both beginning and advanced programmers. docs -  PySimpleGUI.org GitHub - PySimpleGUI.com. Create complex windows simply.
-- `cfzd/Ultra-Fast-Lane-Detection <https://github.com/cfzd/Ultra-Fast-Lane-Detection>`_: (1103 ⭐) Ultra Fast Structure-aware Deep Lane Detection (ECCV 2020)
-- `juzzlin/Heimer <https://github.com/juzzlin/Heimer>`_: (587 ⭐) Heimer is a simple cross-platform mind map, diagram, and note-taking tool written in Qt.
-- `dagster-io/dagster <https://github.com/dagster-io/dagster>`_: (4269 ⭐) An orchestration platform for the development, production, and observation of data assets.
-- `localstack/localstack <https://github.com/localstack/localstack>`_: (38425 ⭐) 💻  A fully functional local AWS cloud stack. Develop and test your cloud & Serverless apps offline!
-- `microsoft/computervision-recipes <https://github.com/microsoft/computervision-recipes>`_: (8268 ⭐) Best Practices, code samples, and documentation for Computer Vision.
-- `dennyzhang/cheatsheet-kubernetes-A4 <https://github.com/dennyzhang/cheatsheet-kubernetes-A4>`_: (1397 ⭐) :book: Kubernetes CheatSheets In A4
-- `mit-han-lab/proxylessnas <https://github.com/mit-han-lab/proxylessnas>`_: (1293 ⭐) [ICLR 2019] ProxylessNAS: Direct Neural Architecture Search on Target Task and Hardware
-- `HuaizhengZhang/Awesome-System-for-Machine-Learning <https://github.com/HuaizhengZhang/Awesome-System-for-Machine-Learning>`_: (1521 ⭐) A curated list of research in machine learning systems (MLSys). Paper notes are also provided.
-- `Tencent/PocketFlow <https://github.com/Tencent/PocketFlow>`_: (2676 ⭐) An Automatic Model Compression (AutoMC) framework for developing smaller and faster AI applications.
-- `hibayesian/awesome-automl-papers <https://github.com/hibayesian/awesome-automl-papers>`_: (3246 ⭐) A curated list of automated machine learning papers, articles, tutorials, slides and projects
-- `awslabs/autogluon <https://github.com/awslabs/autogluon>`_: (4090 ⭐) AutoGluon: AutoML for Text, Image, and Tabular Data
-- `google/automl <https://github.com/google/automl>`_: (4867 ⭐) Google Brain AutoML
-- `EpistasisLab/tpot <https://github.com/EpistasisLab/tpot>`_: (8420 ⭐) A Python Automated Machine Learning tool that optimizes machine learning pipelines using genetic programming.
-- `chubin/wttr.in <https://github.com/chubin/wttr.in>`_: (16786 ⭐) :partly_sunny: The right way to check the weather
-- `fabiopardo/tonic <https://github.com/fabiopardo/tonic>`_: (320 ⭐) Tonic RL library
-- `matplotlib/cheatsheets <https://github.com/matplotlib/cheatsheets>`_: (5916 ⭐) Official Matplotlib cheat sheets
-- `JiahuiYu/slimmable_networks <https://github.com/JiahuiYu/slimmable_networks>`_: (798 ⭐) Slimmable Networks, AutoSlim, and Beyond, ICLR 2019, and ICCV 2019
-- `AnnaAraslanova/FBNet <https://github.com/AnnaAraslanova/FBNet>`_: (130 ⭐) reproduction of the article
-- `mit-han-lab/once-for-all <https://github.com/mit-han-lab/once-for-all>`_: (1428 ⭐) [ICLR 2020] Once for All: Train One Network and Specialize it for Efficient Deployment
-- `Farama-Foundation/PettingZoo <https://github.com/Farama-Foundation/PettingZoo>`_: (1024 ⭐) Gym for multi-agent reinforcement learning
-- `Kkevsterrr/geneva <https://github.com/Kkevsterrr/geneva>`_: (1077 ⭐) automated censorship evasion for the client-side and server-side
-- `naiveHobo/InvoiceNet <https://github.com/naiveHobo/InvoiceNet>`_: (1904 ⭐) Deep neural network to extract intelligent information from invoice documents.
-- `Feryal/rl_mlss_2020 <https://github.com/Feryal/rl_mlss_2020>`_: (49 ⭐) None
-- `Oneflow-Inc/oneflow <https://github.com/Oneflow-Inc/oneflow>`_: (2987 ⭐) OneFlow is a performance-centered and open-source deep learning framework.
-- `google/or-tools <https://github.com/google/or-tools>`_: (7731 ⭐) Google's Operations Research tools:
-- `wang-xinyu/tensorrtx <https://github.com/wang-xinyu/tensorrtx>`_: (3640 ⭐) Implementation of popular deep learning networks with TensorRT network definition API
-- `TheAlgorithms/C-Plus-Plus <https://github.com/TheAlgorithms/C-Plus-Plus>`_: (17723 ⭐) Collection of various algorithms in mathematics, machine learning, computer science and physics implemented in C++ for educational purposes.
-- `AnthonyCalandra/modern-cpp-features <https://github.com/AnthonyCalandra/modern-cpp-features>`_: (13373 ⭐) A cheatsheet of modern C++ language and library features.
-- `bradtraversy/design-resources-for-developers <https://github.com/bradtraversy/design-resources-for-developers>`_: (35372 ⭐) Curated list of design and UI resources from stock photos, web templates, CSS frameworks, UI libraries, tools and much more
-- `kelseyhightower/kubernetes-the-hard-way <https://github.com/kelseyhightower/kubernetes-the-hard-way>`_: (29760 ⭐) Bootstrap Kubernetes the hard way on Google Cloud Platform. No scripts.
-- `lukasz-madon/awesome-remote-job <https://github.com/lukasz-madon/awesome-remote-job>`_: (21651 ⭐) A curated list of awesome remote jobs and resources. Inspired by https://github.com/vinta/awesome-python
-- `ckz8780/market-toolkit <https://github.com/ckz8780/market-toolkit>`_: (2763 ⭐) A collection of stock market resources and tools
-- `JaidedAI/EasyOCR <https://github.com/JaidedAI/EasyOCR>`_: (13672 ⭐) Ready-to-use OCR with 80+ supported languages and all popular writing scripts including Latin, Chinese, Arabic, Devanagari, Cyrillic and etc.
-- `litmuschaos/litmus <https://github.com/litmuschaos/litmus>`_: (2488 ⭐) Litmus helps  SREs and developers practice chaos engineering in a Cloud-native way. Chaos experiments are published at the ChaosHub  (https://hub.litmuschaos.io). Community notes is at https://hackmd.io/a4Zu_sH4TZGeih-xCimi3Q
-- `IonicaBizau/git-stats <https://github.com/IonicaBizau/git-stats>`_: (5815 ⭐) 🍀 Local git statistics including GitHub-like contributions calendars.
-- `aluxnimm/outlookcaldavsynchronizer <https://github.com/aluxnimm/outlookcaldavsynchronizer>`_: (654 ⭐) Sync Outlook with Google, SOGo, Nextcloud or any other CalDAV/CardDAV server
-- `EthicalML/awesome-production-machine-learning <https://github.com/EthicalML/awesome-production-machine-learning>`_: (10800 ⭐) A curated list of awesome open source libraries to deploy, monitor, version and scale your machine learning
-- `donnemartin/system-design-primer <https://github.com/donnemartin/system-design-primer>`_: (40000 ⭐) Learn how to design large-scale systems. Prep for the system design interview.  Includes Anki flashcards.
-- `apache/airflow <https://github.com/apache/airflow>`_: (24564 ⭐) Apache Airflow - A platform to programmatically author, schedule, and monitor workflows
-- `bridgecrewio/checkov <https://github.com/bridgecrewio/checkov>`_: (3723 ⭐) Prevent cloud misconfigurations during build-time for Terraform, CloudFormation, Kubernetes, Serverless framework and other infrastructure-as-code-languages with Checkov by Bridgecrew.
-- `yunjey/pytorch-tutorial <https://github.com/yunjey/pytorch-tutorial>`_: (22934 ⭐) PyTorch Tutorial for Deep Learning Researchers
-- `microsoft/DeepSpeed <https://github.com/microsoft/DeepSpeed>`_: (6207 ⭐) DeepSpeed is a deep learning optimization library that makes distributed training easy, efficient, and effective.
-- `visenger/awesome-mlops <https://github.com/visenger/awesome-mlops>`_: (7324 ⭐) A curated list of references for MLOps
-- `luspr/awesome-ml-courses <https://github.com/luspr/awesome-ml-courses>`_: (2169 ⭐) Awesome free machine learning and AI courses with video lectures.
-- `ngosang/trackerslist <https://github.com/ngosang/trackerslist>`_: (32206 ⭐) Updated list of public BitTorrent trackers
-- `thuml/Transfer-Learning-Library <https://github.com/thuml/Transfer-Learning-Library>`_: (1280 ⭐) Transfer Learning Library for Domain Adaptation, Task Adaptation, and Domain Generalization
-- `100DaysOfCloud/100DaysOfCloudIdeas <https://github.com/100DaysOfCloud/100DaysOfCloudIdeas>`_: (483 ⭐) The purpose of this repo is to provide a list of micro-projects to help people with their Cloud Journey.
-- `Separius/awesome-fast-attention <https://github.com/Separius/awesome-fast-attention>`_: (776 ⭐) list of efficient attention modules
-- `aimacode/aima-python <https://github.com/aimacode/aima-python>`_: (6216 ⭐) Python implementation of algorithms from Russell And Norvig's "Artificial Intelligence - A Modern Approach"
-- `onnx/tutorials <https://github.com/onnx/tutorials>`_: (2545 ⭐) Tutorials for creating and using ONNX models
-- `gerdm/prml <https://github.com/gerdm/prml>`_: (795 ⭐) Repository of notes, code and notebooks in Python for the book Pattern Recognition and Machine Learning by Christopher Bishop
-- `allenai/allennlp <https://github.com/allenai/allennlp>`_: (10776 ⭐) An open-source NLP research library, built on PyTorch.
-- `kubeflow/pipelines <https://github.com/kubeflow/pipelines>`_: (2667 ⭐) Machine Learning Pipelines for Kubeflow
-- `guofei9987/scikit-opt <https://github.com/guofei9987/scikit-opt>`_: (2882 ⭐) Genetic Algorithm, Particle Swarm Optimization, Simulated Annealing, Ant Colony Optimization Algorithm,Immune Algorithm, Artificial Fish Swarm Algorithm, Differential Evolution and TSP(Traveling salesman)
-- `lensapp/lens <https://github.com/lensapp/lens>`_: (16873 ⭐) Lens - The way the world runs Kubernetes
-- `rwightman/pytorch-image-models <https://github.com/rwightman/pytorch-image-models>`_: (16196 ⭐) PyTorch image models, scripts, pretrained weights -- ResNet, ResNeXT, EfficientNet, EfficientNetV2, NFNet, Vision Transformer, MixNet, MobileNet-V3/V2, RegNet, DPN, CSPNet, and more
-- `microsoft/recommenders <https://github.com/microsoft/recommenders>`_: (12108 ⭐) Best Practices on Recommendation Systems
-- `sdmg15/Best-websites-a-programmer-should-visit <https://github.com/sdmg15/Best-websites-a-programmer-should-visit>`_: (40000 ⭐) :link: Some useful websites for programmers.
-- `patrikx3/onenote <https://github.com/patrikx3/onenote>`_: (1518 ⭐) 📚 Linux Electron Onenote - A Linux compatible version of OneNote
-- `manosim/gitify <https://github.com/manosim/gitify>`_: (3600 ⭐) GitHub notifications on your menu bar. Available on macOS, Windows & Linux.
-- `yang991178/fluent-reader <https://github.com/yang991178/fluent-reader>`_: (2367 ⭐) Modern desktop RSS reader built with Electron, React, and Fluent UI
-- `Igglybuff/awesome-piracy <https://github.com/Igglybuff/awesome-piracy>`_: (17131 ⭐) A curated list of awesome warez and piracy links
-- `rust-lang/rustlings <https://github.com/rust-lang/rustlings>`_: (21788 ⭐) :crab: Small exercises to get you used to reading and writing Rust code!
-- `google-research/nasbench <https://github.com/google-research/nasbench>`_: (575 ⭐) NASBench: A Neural Architecture Search Dataset and Benchmark
-- `Alro10/deep-learning-time-series <https://github.com/Alro10/deep-learning-time-series>`_: (1461 ⭐) List of papers, code and experiments using deep learning for time series forecasting
-- `JWarmenhoven/ISLR-python <https://github.com/JWarmenhoven/ISLR-python>`_: (3429 ⭐) An Introduction to Statistical Learning (James, Witten, Hastie, Tibshirani, 2013): Python code
-- `norvig/pytudes <https://github.com/norvig/pytudes>`_: (18164 ⭐) Python programs, usually short, of considerable difficulty, to perfect particular skills.
-- `chvmp/champ <https://github.com/chvmp/champ>`_: (844 ⭐) 𓃡 Quadruped Robot based on MIT Cheetah I
-- `pfnet/intern-coding-tasks <https://github.com/pfnet/intern-coding-tasks>`_: (428 ⭐) Coding tasks for PFN internship
-- `alirezadir/Production-Level-Deep-Learning <https://github.com/alirezadir/Production-Level-Deep-Learning>`_: (3411 ⭐) A guideline for building practical production-level deep learning systems to be deployed in real world applications.
-- `chiphuyen/machine-learning-systems-design <https://github.com/chiphuyen/machine-learning-systems-design>`_: (6657 ⭐) A booklet on machine learning systems design with exercises: https://huyenchip.com/machine-learning-systems-design/toc.html
-- `eugeneyan/applied-ml <https://github.com/eugeneyan/applied-ml>`_: (18687 ⭐) 📚 Papers & tech blogs by companies sharing their work on data science & machine learning in production.
-- `balena-io/etcher <https://github.com/balena-io/etcher>`_: (22174 ⭐) Flash OS images to SD cards & USB drives, safely and easily.
-- `stanfordroboticsclub/StanfordQuadruped <https://github.com/stanfordroboticsclub/StanfordQuadruped>`_: (1074 ⭐) None
-- `uvipen/Super-mario-bros-PPO-pytorch <https://github.com/uvipen/Super-mario-bros-PPO-pytorch>`_: (746 ⭐) Proximal Policy Optimization (PPO) algorithm for Super Mario Bros
-- `optuna/optuna <https://github.com/optuna/optuna>`_: (5873 ⭐) A hyperparameter optimization framework
-- `UZ-SLAMLab/ORB_SLAM3 <https://github.com/UZ-SLAMLab/ORB_SLAM3>`_: (3318 ⭐) ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM
-- `hwayne/awesome-cold-showers <https://github.com/hwayne/awesome-cold-showers>`_: (4620 ⭐) For when people get too hyped up about things
-- `mrdbourke/machine-learning-roadmap <https://github.com/mrdbourke/machine-learning-roadmap>`_: (5369 ⭐) A roadmap connecting many of the most important concepts in machine learning, how to learn them and what tools to use to perform them.
-- `karanpratapsingh/fullstack-starterkit <https://github.com/karanpratapsingh/fullstack-starterkit>`_: (1084 ⭐) GraphQL first full-stack starter kit with Node, React. Powered by TypeScript
-- `ChrisTitusTech/win10script <https://github.com/ChrisTitusTech/win10script>`_: (2593 ⭐) This is the Ultimate Windows 10 Script from a creation from multiple debloat scripts and gists from github.
-- `trimstray/the-book-of-secret-knowledge <https://github.com/trimstray/the-book-of-secret-knowledge>`_: (40000 ⭐) A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools and more.
-- `goabstract/Marketing-for-Engineers <https://github.com/goabstract/Marketing-for-Engineers>`_: (11914 ⭐) A curated collection of marketing articles & tools to grow your product.
-- `ritchieng/the-incredible-pytorch <https://github.com/ritchieng/the-incredible-pytorch>`_: (8645 ⭐) The Incredible PyTorch: a curated list of tutorials, papers, projects, communities and more relating to PyTorch.
-- `nordicgiant2/awesome-landing-page <https://github.com/nordicgiant2/awesome-landing-page>`_: (2498 ⭐) A series of beautiful and practical landing page templates
-- `pytorch/glow <https://github.com/pytorch/glow>`_: (2680 ⭐) Compiler for Neural Network hardware accelerators
-- `lexfridman/mit-deep-learning <https://github.com/lexfridman/mit-deep-learning>`_: (8979 ⭐) Tutorials, assignments, and competitions for MIT Deep Learning related courses.
-- `GokuMohandas/MadeWithML <https://github.com/GokuMohandas/MadeWithML>`_: (29464 ⭐) Learn how to responsibly deliver value with ML.
-- `pfnet/pfrl <https://github.com/pfnet/pfrl>`_: (778 ⭐) PFRL: a PyTorch-based deep reinforcement learning library
-- `kedro-org/kedro <https://github.com/kedro-org/kedro>`_: (6321 ⭐) A Python framework for creating reproducible, maintainable and modular data science code.
-- `commaai/openpilot <https://github.com/commaai/openpilot>`_: (32230 ⭐) openpilot is an open source driver assistance system. openpilot performs the functions of Automated Lane Centering and Adaptive Cruise Control for over 150 supported car makes and models.
-- `ageron/handson-ml2 <https://github.com/ageron/handson-ml2>`_: (19197 ⭐) A series of Jupyter notebooks that walk you through the fundamentals of Machine Learning and Deep Learning in Python using Scikit-Learn, Keras and TensorFlow 2.
-- `Shawn-Shan/fawkes <https://github.com/Shawn-Shan/fawkes>`_: (4423 ⭐) Fawkes, privacy preserving tool against facial recognition systems. More info at https://sandlab.cs.uchicago.edu/fawkes
-- `data-science-on-aws/oreilly_book <https://github.com/data-science-on-aws/oreilly_book>`_: (2458 ⭐) AI and Machine Learning with Kubeflow, Amazon EKS, and SageMaker
-- `MysteryVaibhav/leetcode_company_wise_questions <https://github.com/MysteryVaibhav/leetcode_company_wise_questions>`_: (5328 ⭐) This is a repository containing the list of company wise questions available on leetcode premium
-- `ultralytics/yolov5 <https://github.com/ultralytics/yolov5>`_: (21675 ⭐) YOLOv5 🚀 in PyTorch > ONNX > CoreML > TFLite
-- `TeamNewPipe/NewPipe <https://github.com/TeamNewPipe/NewPipe>`_: (16310 ⭐) A libre lightweight streaming front-end for Android.
-- `kubernetes-sigs/kubespray <https://github.com/kubernetes-sigs/kubespray>`_: (11784 ⭐) Deploy a Production Ready Kubernetes Cluster
-- `dmlc/dgl <https://github.com/dmlc/dgl>`_: (8846 ⭐) Python package built to ease deep learning on graph, on top of existing DL frameworks.
-- `alex04072000/ObstructionRemoval <https://github.com/alex04072000/ObstructionRemoval>`_: (965 ⭐) [CVPR 2020] Learning to See Through Obstructions
-- `google/trax <https://github.com/google/trax>`_: (6742 ⭐) Trax — Deep Learning with Clear Code and Speed
-- `GetStream/Winds <https://github.com/GetStream/Winds>`_: (8545 ⭐) A Beautiful Open Source RSS & Podcast App Powered by Getstream.io
-- `hello-efficiency-inc/raven-reader <https://github.com/hello-efficiency-inc/raven-reader>`_: (2080 ⭐) 📖 All your articles in one place. Beautiful.
-- `pytorch/examples <https://github.com/pytorch/examples>`_: (17722 ⭐) A set of examples around pytorch in Vision, Text, Reinforcement Learning, etc.
-- `openai/spinningup <https://github.com/openai/spinningup>`_: (6609 ⭐) An educational resource to help anyone learn deep reinforcement learning.
-- `JuliaML/LossFunctions.jl <https://github.com/JuliaML/LossFunctions.jl>`_: (107 ⭐) Julia package of loss functions for machine learning.
-- `microsoft/onnxruntime <https://github.com/microsoft/onnxruntime>`_: (6167 ⭐) ONNX Runtime: cross-platform, high performance ML inferencing and training accelerator
-- `rafaelpadilla/Object-Detection-Metrics <https://github.com/rafaelpadilla/Object-Detection-Metrics>`_: (3952 ⭐) Most popular metrics used to evaluate object detection algorithms.
-- `hoya012/deep_learning_object_detection <https://github.com/hoya012/deep_learning_object_detection>`_: (10418 ⭐) A paper list of object detection using deep learning.
-- `ugurkanates/awesome-real-world-rl <https://github.com/ugurkanates/awesome-real-world-rl>`_: (260 ⭐) Great resources for making Reinforcement Learning work in Real Life situations. Papers,projects and more.
-- `ifzhang/FairMOT <https://github.com/ifzhang/FairMOT>`_: (3255 ⭐) [IJCV-2021] FairMOT: On the Fairness of Detection and Re-Identification in Multi-Object Tracking
-- `facebookresearch/detr <https://github.com/facebookresearch/detr>`_: (8302 ⭐) End-to-End Object Detection with Transformers
-- `DopplerHQ/awesome-interview-questions <https://github.com/DopplerHQ/awesome-interview-questions>`_: (40000 ⭐) :octocat: A curated awesome list of lists of interview questions. Feel free to contribute! :mortar_board:
-- `SystemErrorWang/White-box-Cartoonization <https://github.com/SystemErrorWang/White-box-Cartoonization>`_: (3324 ⭐) Official tensorflow implementation for CVPR2020 paper “Learning to Cartoonize Using White-box Cartoon Representations”
-- `google-research/google-research <https://github.com/google-research/google-research>`_: (21698 ⭐) Google Research
-- `MaggieAppleton/digital-gardeners <https://github.com/MaggieAppleton/digital-gardeners>`_: (1864 ⭐) Resources, links, projects, and ideas for gardeners tending their digital notes on the public interwebs
-- `wsargent/docker-cheat-sheet <https://github.com/wsargent/docker-cheat-sheet>`_: (20589 ⭐) Docker Cheat Sheet
-- `thunlp/GNNPapers <https://github.com/thunlp/GNNPapers>`_: (12478 ⭐) Must-read papers on graph neural networks (GNN)
-- `rlabbe/Kalman-and-Bayesian-Filters-in-Python <https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python>`_: (11392 ⭐) Kalman Filter book using Jupyter Notebook. Focuses on building intuition and experience, not formal proofs.  Includes Kalman filters,extended Kalman filters, unscented Kalman filters, particle filters, and more. All exercises include solutions.
-- `lanpa/tensorboardX <https://github.com/lanpa/tensorboardX>`_: (7218 ⭐) tensorboard for pytorch (and chainer, mxnet, numpy, ...)
-- `anopara/genetic-drawing <https://github.com/anopara/genetic-drawing>`_: (2022 ⭐) A genetic algorithm toy project for drawing
-- `alfiopuglisi/guietta <https://github.com/alfiopuglisi/guietta>`_: (1873 ⭐) None
-- `ray-project/ray <https://github.com/ray-project/ray>`_: (18991 ⭐) An open source framework that provides a simple, universal API for building distributed applications. Ray is packaged with RLlib, a scalable reinforcement learning library, and Tune, a scalable hyperparameter tuning library.
-- `dcmocanu/sparse-evolutionary-artificial-neural-networks <https://github.com/dcmocanu/sparse-evolutionary-artificial-neural-networks>`_: (199 ⭐) Always sparse. Never dense. But never say never. A Sparse Training repository for the Adaptive Sparse Connectivity concept and its algorithmic instantiation, i.e. Sparse Evolutionary Training, to boost Deep Learning scalability on various aspects (e.g. memory and computational time efficiency, representation and generalization power).
-- `lutzroeder/netron <https://github.com/lutzroeder/netron>`_: (17546 ⭐) Visualizer for neural network, deep learning, and machine learning models
-- `iduta/pyconv <https://github.com/iduta/pyconv>`_: (277 ⭐) Pyramidal Convolution: Rethinking Convolutional Neural Networks for Visual Recognition (https://arxiv.org/pdf/2006.11538.pdf)
-- `danielegrattarola/spektral <https://github.com/danielegrattarola/spektral>`_: (1976 ⭐) Graph Neural Networks with Keras and Tensorflow 2.
-- `garrettj403/SciencePlots <https://github.com/garrettj403/SciencePlots>`_: (3062 ⭐) Matplotlib styles for scientific plotting
-- `detectRecog/PointTrack <https://github.com/detectRecog/PointTrack>`_: (241 ⭐) PointTrack (ECCV2020 ORAL): Segment as Points for Efficient Online Multi-Object Tracking and Segmentation
-- `daattali/oldschool-github-extension <https://github.com/daattali/oldschool-github-extension>`_: (205 ⭐) Revert GitHub's UI back to its classic look (before the June 23, 2020 update that has a flat, rounded and more whitespaced design).
-- `Shikhargupta/Spiking-Neural-Network <https://github.com/Shikhargupta/Spiking-Neural-Network>`_: (677 ⭐) Pure python implementation of SNN
-- `DLR-RM/stable-baselines3 <https://github.com/DLR-RM/stable-baselines3>`_: (2809 ⭐) PyTorch version of Stable Baselines, reliable implementations of reinforcement learning algorithms.
-- `executablebooks/jupyter-book <https://github.com/executablebooks/jupyter-book>`_: (2642 ⭐) Create beautiful, publication-quality books and documents from computational content.
-- `maximecb/gym-minigrid <https://github.com/maximecb/gym-minigrid>`_: (1390 ⭐) Minimalistic gridworld package for OpenAI Gym
-- `ashutoshbsathe/scarpet-nn <https://github.com/ashutoshbsathe/scarpet-nn>`_: (134 ⭐) Tools and libraries to run neural networks in Minecraft :pick:
-- `Kaixhin/grokking-pytorch <https://github.com/Kaixhin/grokking-pytorch>`_: (1011 ⭐) The Hitchiker's Guide to PyTorch
-- `facebookresearch/detectron2 <https://github.com/facebookresearch/detectron2>`_: (19705 ⭐) Detectron2 is a platform for object detection, segmentation and other visual recognition tasks.
-- `viraptor/reverse-interview <https://github.com/viraptor/reverse-interview>`_: (19994 ⭐) Questions to ask the company during your interview
-- `inoryy/reaver <https://github.com/inoryy/reaver>`_: (527 ⭐) Reaver: Modular Deep Reinforcement Learning Framework. Focused on StarCraft II. Supports Gym, Atari, and MuJoCo.
-- `vita-epfl/trajnetplusplusbaselines <https://github.com/vita-epfl/trajnetplusplusbaselines>`_: (133 ⭐) Baselines for TrajNet++
-- `urschrei/pyzotero <https://github.com/urschrei/pyzotero>`_: (454 ⭐) Pyzotero: a Python client for the Zotero API
-- `DeepGraphLearning/LiteratureDL4Graph <https://github.com/DeepGraphLearning/LiteratureDL4Graph>`_: (2899 ⭐) A comprehensive collection of recent papers on graph deep learning
-- `3b1b/manim <https://github.com/3b1b/manim>`_: (40000 ⭐) Animation engine for explanatory math videos
-- `algorithmsbooks/algforopt-notebooks <https://github.com/algorithmsbooks/algforopt-notebooks>`_: (278 ⭐) Jupyter notebooks associated with the Algorithms for Optimization textbook
-- `AndreaCensi/geometry <https://github.com/AndreaCensi/geometry>`_: (47 ⭐) Library for handling various differentiable manifolds.
-- `zztianzz/PF-Net-Point-Fractal-Network <https://github.com/zztianzz/PF-Net-Point-Fractal-Network>`_: (186 ⭐) CVPR2020 PF-Net: Point Fractal Network for 3D Point Cloud Completion
-- `xieenze/PolarMask <https://github.com/xieenze/PolarMask>`_: (793 ⭐) Code for 'PolarMask: Single Shot Instance Segmentation with Polar Representation'
-- `intel/ad-rss-lib <https://github.com/intel/ad-rss-lib>`_: (238 ⭐) Library implementing the Responsibility Sensitive Safety model (RSS) for Autonomous Vehicles
-- `dingmyu/D4LCN <https://github.com/dingmyu/D4LCN>`_: (277 ⭐) A pytorch implementation of "D4LCN: Learning Depth-Guided Convolutions for Monocular 3D Object Detection" CVPR 2020
-- `The-Learning-And-Vision-Atelier-LAVA/SoTA-Point-Cloud <https://github.com/The-Learning-And-Vision-Atelier-LAVA/SoTA-Point-Cloud>`_: (1169 ⭐) 🔥[IEEE TPAMI 2020] Deep Learning for 3D Point Clouds: A Survey
-- `StanfordASL/Trajectron-plus-plus <https://github.com/StanfordASL/Trajectron-plus-plus>`_: (327 ⭐) Code accompanying the ECCV 2020 paper "Trajectron++: Dynamically-Feasible Trajectory Forecasting With Heterogeneous Data" by Tim Salzmann*, Boris Ivanovic*, Punarjay Chakravarty, and Marco Pavone (* denotes equal contribution).
-- `utiasSTARS/pykitti <https://github.com/utiasSTARS/pykitti>`_: (815 ⭐) Python tools for working with KITTI data.
-- `corochann/chainer-pointnet <https://github.com/corochann/chainer-pointnet>`_: (35 ⭐) Chainer implementation of PointNet, PointNet++, KD-Network and 3DContextNework
-- `charlesq34/frustum-pointnets <https://github.com/charlesq34/frustum-pointnets>`_: (1310 ⭐) Frustum PointNets for 3D Object Detection from RGB-D Data
-- `charlesq34/pointnet2 <https://github.com/charlesq34/pointnet2>`_: (2237 ⭐) PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space
-- `montrealrobotics/active-domainrand <https://github.com/montrealrobotics/active-domainrand>`_: (69 ⭐) Code repository for Active Domain Randomization (CoRL 2019, https://arxiv.org/abs/1904.04762)
-- `UM-ARM-Lab/arc_utilities <https://github.com/UM-ARM-Lab/arc_utilities>`_: (6 ⭐) C++ and Python utilities. ARC -> ARM
-- `cartographer-project/cartographer <https://github.com/cartographer-project/cartographer>`_: (5829 ⭐) Cartographer is a system that provides real-time simultaneous localization and mapping (SLAM) in 2D and 3D across multiple platforms and sensor configurations.
-- `bccp/nbodykit <https://github.com/bccp/nbodykit>`_: (90 ⭐) Analysis kit for large-scale structure datasets, the massively parallel way
-- `meiqua/6DPose <https://github.com/meiqua/6DPose>`_: (202 ⭐) implement some algorithms of 6d pose estimation
-- `davidagraf/doi2bib2 <https://github.com/davidagraf/doi2bib2>`_: (200 ⭐) None
-- `brechtm/rinohtype <https://github.com/brechtm/rinohtype>`_: (410 ⭐) The Python document processor
-- `7ossam81/EvoloPy <https://github.com/7ossam81/EvoloPy>`_: (240 ⭐) None
-- `floodsung/Lifelong-Learning-Paper-List <https://github.com/floodsung/Lifelong-Learning-Paper-List>`_: (148 ⭐) Lifelong/Continual Learning Paper List
-- `green7ea/cpp-compilation <https://github.com/green7ea/cpp-compilation>`_: (1171 ⭐) A short description of the C++ build process
-- `rkern/line_profiler <https://github.com/rkern/line_profiler>`_: (3573 ⭐) (OLD REPO) Line-by-line profiling for Python - Current repo ->
-- `chiphuyen/sotawhat <https://github.com/chiphuyen/sotawhat>`_: (1207 ⭐) Returns latest research results by crawling arxiv papers and summarizing abstracts. Helps you stay afloat with so many new papers everyday.
-- `netromdk/vermin <https://github.com/netromdk/vermin>`_: (284 ⭐) Concurrently detect the minimum Python versions needed to run code
-- `brian-team/brian2 <https://github.com/brian-team/brian2>`_: (621 ⭐) Brian is a free, open source simulator for spiking neural networks.
-- `yasoob/intermediatePython <https://github.com/yasoob/intermediatePython>`_: (3372 ⭐) None
-- `BNMetrics/logme <https://github.com/BNMetrics/logme>`_: (540 ⭐) Python Logging For Humans (Also supports configurable color logging for the terminal!)
-- `Eloston/ungoogled-chromium <https://github.com/Eloston/ungoogled-chromium>`_: (13871 ⭐) Google Chromium, sans integration with Google
-- `suragnair/seqGAN <https://github.com/suragnair/seqGAN>`_: (549 ⭐) A simplified PyTorch implementation of "SeqGAN: Sequence Generative Adversarial Nets with Policy Gradient." (Yu, Lantao, et al.)
-- `junegunn/fzf <https://github.com/junegunn/fzf>`_: (40000 ⭐) :cherry_blossom: A command-line fuzzy finder
-- `Kapeli/Dash-User-Contributions <https://github.com/Kapeli/Dash-User-Contributions>`_: (1738 ⭐) Dash repo of user contributed docsets
-- `afshinea/stanford-cs-229-machine-learning <https://github.com/afshinea/stanford-cs-229-machine-learning>`_: (12980 ⭐) VIP cheatsheets for Stanford's CS 229 Machine Learning
-- `perkeep/perkeep <https://github.com/perkeep/perkeep>`_: (5771 ⭐) Perkeep (née Camlistore) is your personal storage system for life: a way of storing, syncing, sharing, modelling and backing up content.
-- `nschloe/betterbib <https://github.com/nschloe/betterbib>`_: (681 ⭐) :green_book: Update BibTeX files with info from online resources.
-- `rsms/inter <https://github.com/rsms/inter>`_: (13429 ⭐) The Inter font family
-- `ProvenanceLabs/image-match <https://github.com/ProvenanceLabs/image-match>`_: (2681 ⭐) 🎇 Quickly search over billions of images
-- `StanfordVL/taskonomy <https://github.com/StanfordVL/taskonomy>`_: (760 ⭐) Taskonomy: Disentangling Task Transfer Learning
-- `facebookincubator/Bowler <https://github.com/facebookincubator/Bowler>`_: (1353 ⭐) Safe code refactoring for modern Python.
-- `jaredthecoder/BioPy <https://github.com/jaredthecoder/BioPy>`_: (39 ⭐) Biologically-Inspired and Machine Learning Algorithms written in Python
-- `ChristosChristofidis/awesome-deep-learning <https://github.com/ChristosChristofidis/awesome-deep-learning>`_: (18236 ⭐) A curated list of awesome Deep Learning tutorials, projects and communities.
-- `deepmind/sonnet <https://github.com/deepmind/sonnet>`_: (9175 ⭐) TensorFlow-based neural network library
-- `zziz/pwc <https://github.com/zziz/pwc>`_: (15306 ⭐) Papers with code. Sorted by stars. Updated weekly.
-- `venthur/gscholar <https://github.com/venthur/gscholar>`_: (232 ⭐) Query Google Scholar with Python
-- `ShapeNet/shapenet-viewer <https://github.com/ShapeNet/shapenet-viewer>`_: (161 ⭐) ShapeNet Viewer
-- `shi-jian/mitsuba-shapenet <https://github.com/shi-jian/mitsuba-shapenet>`_: (78 ⭐) Mitsuba for ShapeNet
-- `Regenerator/kdnets <https://github.com/Regenerator/kdnets>`_: (33 ⭐) Kd-Networks
-- `joowani/binarytree <https://github.com/joowani/binarytree>`_: (1701 ⭐) Python Library for Studying Binary Trees
-- `kakwa/py-ascii-graph <https://github.com/kakwa/py-ascii-graph>`_: (111 ⭐) A simple python lib to print data as ascii histograms
-- `ConSol/docker-headless-vnc-container <https://github.com/ConSol/docker-headless-vnc-container>`_: (1266 ⭐) Collection of Docker images with headless VNC environments
-- `ianw/rstdiary <https://github.com/ianw/rstdiary>`_: (22 ⭐) Turn a flat rst text file into a simle HTML diary
-- `ralsina/rst-cheatsheet <https://github.com/ralsina/rst-cheatsheet>`_: (1084 ⭐) A two-page cheatsheet for restructured text
-- `getpelican/pelican <https://github.com/getpelican/pelican>`_: (10765 ⭐) Static site generator that supports Markdown and reST syntax. Powered by Python.
-- `sphinx-doc/sphinx <https://github.com/sphinx-doc/sphinx>`_: (4386 ⭐) Main repository for the Sphinx documentation builder
-- `reinout/reinout.vanrees.org <https://github.com/reinout/reinout.vanrees.org>`_: (19 ⭐) Software that runs reinout.vanrees.org
-- `trehn/termdown <https://github.com/trehn/termdown>`_: (944 ⭐) Countdown timer and stopwatch in your terminal
-- `numpy/numpydoc <https://github.com/numpy/numpydoc>`_: (198 ⭐) Numpy's Sphinx extensions
-- `PacktPublishing/Cpp17-STL-Cookbook <https://github.com/PacktPublishing/Cpp17-STL-Cookbook>`_: (425 ⭐) Code files by Packt
-- `CMU-Perceptual-Computing-Lab/openpose <https://github.com/CMU-Perceptual-Computing-Lab/openpose>`_: (23232 ⭐) OpenPose: Real-time multi-person keypoint detection library for body, face, hands, and foot estimation
-- `kanishka-linux/reminiscence <https://github.com/kanishka-linux/reminiscence>`_: (1460 ⭐) Self-Hosted Bookmark And Archive Manager
-- `cjbarber/ToolsOfTheTrade <https://github.com/cjbarber/ToolsOfTheTrade>`_: (15492 ⭐) Tools of The Trade, from Hacker News.
-- `tensorflow/lucid <https://github.com/tensorflow/lucid>`_: (4358 ⭐) A collection of infrastructure and tools for research in neural network interpretability.
-- `nana-4/materia-theme <https://github.com/nana-4/materia-theme>`_: (3188 ⭐) A Material Design theme for GNOME/GTK based desktop environments
-- `DragonComputer/Dragonfire <https://github.com/DragonComputer/Dragonfire>`_: (1211 ⭐) the open-source virtual assistant for Ubuntu based Linux distributions
-- `explosion/spaCy <https://github.com/explosion/spaCy>`_: (22313 ⭐) 💫 Industrial-strength Natural Language Processing (NLP) in Python
-- `dvorka/hstr <https://github.com/dvorka/hstr>`_: (2938 ⭐) bash and zsh shell history suggest box - easily view, navigate, search and manage your command history.
-- `rayshan/mplus-fonts <https://github.com/rayshan/mplus-fonts>`_: (118 ⭐) M+ FONTS For Google Fonts
-- `miiton/Cica <https://github.com/miiton/Cica>`_: (954 ⭐) プログラミング用日本語等幅フォント Cica(シカ)
-- `darkreader/darkreader <https://github.com/darkreader/darkreader>`_: (12783 ⭐) Dark Reader Chrome and Firefox extension
-- `facebookincubator/python-nubia <https://github.com/facebookincubator/python-nubia>`_: (1559 ⭐) A command-line and interactive shell framework.
-- `ntasfi/PyGame-Learning-Environment <https://github.com/ntasfi/PyGame-Learning-Environment>`_: (878 ⭐) PyGame Learning Environment (PLE) -- Reinforcement Learning Environment in Python.
-- `uber-research/deep-neuroevolution <https://github.com/uber-research/deep-neuroevolution>`_: (1530 ⭐) Deep Neuroevolution
-- `rlcode/reinforcement-learning <https://github.com/rlcode/reinforcement-learning>`_: (2888 ⭐) Minimal and Clean Reinforcement Learning Examples
-- `pytorch/ELF <https://github.com/pytorch/ELF>`_: (3245 ⭐) ELF: a platform for game research with AlphaGoZero/AlphaZero reimplementation
-- `JuliaPOMDP/MCTS.jl <https://github.com/JuliaPOMDP/MCTS.jl>`_: (52 ⭐) Monte Carlo Tree Search for Markov decision processes using the POMDPs.jl framework
-- `JuliaPOMDP/TabularTDLearning.jl <https://github.com/JuliaPOMDP/TabularTDLearning.jl>`_: (4 ⭐) Julia implementations of temporal difference Reinforcement Learning algorithms like Q-Learning and SARSA
-- `JuliaPOMDP/POMDPs.jl <https://github.com/JuliaPOMDP/POMDPs.jl>`_: (451 ⭐) MDPs and POMDPs in Julia - An interface for defining, solving, and simulating fully and partially observable Markov decision processes on discrete and continuous spaces.
-- `vinta/awesome-python <https://github.com/vinta/awesome-python>`_: (40000 ⭐) A curated list of awesome Python frameworks, libraries, software and resources
-- `practical-tutorials/project-based-learning <https://github.com/practical-tutorials/project-based-learning>`_: (40000 ⭐) Curated list of project-based tutorials
-- `snwh/ubuntu-post-install <https://github.com/snwh/ubuntu-post-install>`_: (632 ⭐) A set of post-installation shell scripts for Ubuntu
-- `mhsung/deep-functional-dictionaries <https://github.com/mhsung/deep-functional-dictionaries>`_: (39 ⭐) None
-- `prakhar1989/awesome-courses <https://github.com/prakhar1989/awesome-courses>`_: (39074 ⭐) :books: List of awesome university courses for learning Computer Science!
-- `floodsung/Meta-Learning-Papers <https://github.com/floodsung/Meta-Learning-Papers>`_: (2431 ⭐) Meta Learning / Learning to Learn / One Shot Learning / Few Shot Learning
-- `agarrharr/awesome-cli-apps <https://github.com/agarrharr/awesome-cli-apps>`_: (8805 ⭐) 🖥 📊 🕹 🛠 A curated list of command line apps
-- `Paspartout/BoilerplatePP <https://github.com/Paspartout/BoilerplatePP>`_: (21 ⭐) Boilerplate for your C++ projects
-- `regebro/hovercraft <https://github.com/regebro/hovercraft>`_: (1378 ⭐) Make dynamic impressive presentations from text files!
-- `pbek/QOwnNotes <https://github.com/pbek/QOwnNotes>`_: (2415 ⭐) QOwnNotes is a plain-text file notepad and todo-list manager with markdown support and Nextcloud / ownCloud integration.
-- `mdklatt/cookiecutter-python-app <https://github.com/mdklatt/cookiecutter-python-app>`_: (105 ⭐) Cookiecutter template for a Python application project.
-- `kragniz/cookiecutter-pypackage-minimal <https://github.com/kragniz/cookiecutter-pypackage-minimal>`_: (185 ⭐) A minimal template for python packages
-- `dodiku/AudioOwl <https://github.com/dodiku/AudioOwl>`_: (175 ⭐) Fast and simple music and audio analysis using RNN in Python 🕵️‍♀️ 🥁
-- `nirum/tableprint <https://github.com/nirum/tableprint>`_: (155 ⭐) Pretty console printing :clipboard: of tabular data in python :snake:
-- `kermitt2/grobid <https://github.com/kermitt2/grobid>`_: (1626 ⭐) A machine learning software for extracting information from scholarly documents
-- `pmaupin/pdfrw <https://github.com/pmaupin/pdfrw>`_: (1573 ⭐) pdfrw is a pure Python library that reads and writes PDFs
-- `gollum/gollum <https://github.com/gollum/gollum>`_: (12398 ⭐) A simple, Git-powered wiki with a sweet API and local frontend.
-- `mickael-kerjean/filestash <https://github.com/mickael-kerjean/filestash>`_: (5477 ⭐) 🦄 A modern web client for SFTP, S3, FTP, WebDAV, Git, Minio, LDAP, CalDAV, CardDAV, Mysql, Backblaze, ...
-- `codelucas/newspaper <https://github.com/codelucas/newspaper>`_: (11610 ⭐) News, full-text, and article metadata extraction in Python 3. Advanced docs:
-- `mbadry1/CS231n-2017-Summary <https://github.com/mbadry1/CS231n-2017-Summary>`_: (1385 ⭐) After watching all the videos of the famous Standford's CS231n course that took place in 2017, i decided to take summary of the whole course to help me to remember and to anyone who would like to know about it. I've skipped some contents in some lectures as it wasn't important to me.
-- `darshanime/notes <https://github.com/darshanime/notes>`_: (1831 ⭐) detailed notes on computer science topics, in one page
-- `yoloseem/awesome-sphinxdoc <https://github.com/yoloseem/awesome-sphinxdoc>`_: (781 ⭐) A curated list of awesome tools for Sphinx Python Documentation Generator
-- `ActivityWatch/activitywatch <https://github.com/ActivityWatch/activitywatch>`_: (6089 ⭐) The best free and open-source automated time tracker. Cross-platform, extensible, privacy-focused.
-- `konstantint/python-boilerplate-template <https://github.com/konstantint/python-boilerplate-template>`_: (21 ⭐) PasteScript template for initializing a new buildout/pytest/travis/setuptools-enabled Python project
-- `zagortenay333/timepp <https://github.com/zagortenay333/timepp>`_: (403 ⭐) None
-- `mfuentesg/SyncSettings <https://github.com/mfuentesg/SyncSettings>`_: (266 ⭐) Sync Settings - The cross-platform solution to keep Sublime Text configuration synchronized
-- `johannesjo/super-productivity <https://github.com/johannesjo/super-productivity>`_: (4704 ⭐) Super Productivity is an advanced todo list app with integrated Timeboxing and time tracking capabilities. It also comes with integrations for Jira, Gitlab, GitHub and Open Project.
-- `nativefier/nativefier <https://github.com/nativefier/nativefier>`_: (29696 ⭐) Make any web page a desktop application
-- `vicky002/AlgoWiki <https://github.com/vicky002/AlgoWiki>`_: (3902 ⭐) Repository which contains links and resources on different topics of Computer Science.
-- `maguowei/starred <https://github.com/maguowei/starred>`_: (946 ⭐) creating your own Awesome List by GitHub stars!
-- `astralapp/astral <https://github.com/astralapp/astral>`_: (2722 ⭐) Organize Your GitHub Stars With Ease
-- `syncthing/syncthing <https://github.com/syncthing/syncthing>`_: (40000 ⭐) Open Source Continuous File Synchronization
-- `unizard/AwesomeArxiv <https://github.com/unizard/AwesomeArxiv>`_: (88 ⭐) None
-- `kelseyhightower/nocode <https://github.com/kelseyhightower/nocode>`_: (40000 ⭐) The best way to write secure and reliable applications. Write nothing; deploy nowhere.
-- `google/dopamine <https://github.com/google/dopamine>`_: (9721 ⭐) Dopamine is a research framework for fast prototyping of reinforcement learning algorithms.
-- `maestron/botnets <https://github.com/maestron/botnets>`_: (2535 ⭐) This is a collection of #botnet source codes, unorganized. For EDUCATIONAL PURPOSES ONLY
-- `aikorea/awesome-rl <https://github.com/aikorea/awesome-rl>`_: (7503 ⭐) Reinforcement learning resources curated
-- `cookiecutter/cookiecutter <https://github.com/cookiecutter/cookiecutter>`_: (16123 ⭐) A command-line utility that creates projects from cookiecutters (project templates), e.g. Python package projects, VueJS projects.
-- `Mahdisadjadi/arxivscraper <https://github.com/Mahdisadjadi/arxivscraper>`_: (157 ⭐) A python module to scrape arxiv.org for a date range and category
-- `metral/tensorflow-wheels <https://github.com/metral/tensorflow-wheels>`_: (7 ⭐) Tensorflow Python Wheels - Compiled from Source
-- `arxiv-vanity/arxiv-vanity <https://github.com/arxiv-vanity/arxiv-vanity>`_: (1289 ⭐) Renders papers from arXiv as responsive web pages so you don't have to squint at a PDF.
-- `BoostIO/BoostNote-Legacy <https://github.com/BoostIO/BoostNote-Legacy>`_: (17359 ⭐) This repository is outdated and new Boost Note app is available! We've launched a new Boost Note app which supports real-time collaborative writing. https://github.com/BoostIO/BoostNote-App
-- `flameshot-org/flameshot <https://github.com/flameshot-org/flameshot>`_: (16176 ⭐) Powerful yet simple to use screenshot software :desktop_computer: :camera_flash:
-- `luong-komorebi/Awesome-Linux-Software <https://github.com/luong-komorebi/Awesome-Linux-Software>`_: (17069 ⭐) A list of awesome applications, software, tools and other materials for Linux distros.
-- `ilikenwf/apt-fast <https://github.com/ilikenwf/apt-fast>`_: (1474 ⭐) apt-fast: A shellscript wrapper for apt that speeds up downloading of packages.
-- `ybayle/awesome-deep-learning-music <https://github.com/ybayle/awesome-deep-learning-music>`_: (2228 ⭐) List of articles related to deep learning applied to music
-- `kaxap/arl <https://github.com/kaxap/arl>`_: (1603 ⭐) lists of most popular repositories for most favoured programming languages (according to StackOverflow)
-- `nicolargo/glances <https://github.com/nicolargo/glances>`_: (19875 ⭐) Glances an Eye on your system. A top/htop alternative for GNU/Linux, BSD, Mac OS and Windows operating systems.
-- `keon/algorithms <https://github.com/keon/algorithms>`_: (20294 ⭐) Minimal examples of data structures and algorithms in Python
-- `wereturtle/ghostwriter <https://github.com/wereturtle/ghostwriter>`_: (3253 ⭐) ghostwriter is a cross-platform, aesthetic, distraction-free Markdown editor.
-- `josephmisiti/awesome-machine-learning <https://github.com/josephmisiti/awesome-machine-learning>`_: (40000 ⭐) A curated list of awesome Machine Learning frameworks, libraries and software.
-- `OpenGenus/cosmos <https://github.com/OpenGenus/cosmos>`_: (12950 ⭐) Hacktoberfest 2021 | World's largest Contributor driven code dataset | Algorithms that run our universe | Your personal library of every algorithm and data structure code that you will ever encounter |
-- `awesomedata/awesome-public-datasets <https://github.com/awesomedata/awesome-public-datasets>`_: (40000 ⭐) A topic-centric list of HQ open datasets.
-- `NirantK/awesome-project-ideas <https://github.com/NirantK/awesome-project-ideas>`_: (6168 ⭐) Curated list of Machine Learning, NLP, Vision, Recommender Systems Project Ideas
-- `metrofun/machine-learning-surveys <https://github.com/metrofun/machine-learning-surveys>`_: (1215 ⭐) A curated list of Machine Learning Surveys, Tutorials and Books.
-- `rossant/awesome-math <https://github.com/rossant/awesome-math>`_: (5593 ⭐) A curated list of awesome mathematics resources
-- `thibmaek/awesome-raspberry-pi <https://github.com/thibmaek/awesome-raspberry-pi>`_: (9495 ⭐) 📝 A curated list of awesome Raspberry Pi tools, projects, images and resources
-- `jnv/lists <https://github.com/jnv/lists>`_: (7825 ⭐) The definitive list of lists (of lists) curated on GitHub and elsewhere
-- `ArchiveBox/ArchiveBox <https://github.com/ArchiveBox/ArchiveBox>`_: (12620 ⭐) 🗃 Open source self-hosted web archiving. Takes URLs/browser history/bookmarks/Pocket/Pinboard/etc., saves HTML, JS, PDFs, media, and more...
-- `jarun/buku <https://github.com/jarun/buku>`_: (4938 ⭐) :bookmark: Personal mini-web in text
-- `yangshun/tech-interview-handbook <https://github.com/yangshun/tech-interview-handbook>`_: (40000 ⭐) 💯 Curated interview preparation materials for busy engineers
-- `JMoerman/Go-For-It <https://github.com/JMoerman/Go-For-It>`_: (92 ⭐) A stylish to-do list with built-in productivity timer.
-- `laurent22/joplin <https://github.com/laurent22/joplin>`_: (27864 ⭐) Joplin - an open source note taking and to-do application with synchronization capabilities for Windows, macOS, Linux, Android and iOS. Forum: https://discourse.joplinapp.org/
-- `sciunto-org/python-bibtexparser <https://github.com/sciunto-org/python-bibtexparser>`_: (298 ⭐) Bibtex parser for Python 3.3+
-- `ekalinin/github-markdown-toc <https://github.com/ekalinin/github-markdown-toc>`_: (2762 ⭐) Easy TOC creation for GitHub README.md
-- `arXivTimes/arXivTimes <https://github.com/arXivTimes/arXivTimes>`_: (3665 ⭐) repository to research & share the machine learning articles
-- `karpathy/arxiv-sanity-preserver <https://github.com/karpathy/arxiv-sanity-preserver>`_: (4644 ⭐) Web interface for browsing, search and filtering recent arxiv submissions
-- `Physiix/topsi-project-manager <https://github.com/Physiix/topsi-project-manager>`_: (1334 ⭐) A Desktop Kanban board app.
-- `danistefanovic/build-your-own-x <https://github.com/danistefanovic/build-your-own-x>`_: (40000 ⭐) 🤓 Build your own (insert technology here)
-- `lfk/kanji-icr <https://github.com/lfk/kanji-icr>`_: (9 ⭐) Bachelor's thesis on handwritten kanji recognition.
-- `numenta/htmresearch <https://github.com/numenta/htmresearch>`_: (224 ⭐) Experimental algorithms. Unsupported.
-- `ytdl-org/youtube-dl <https://github.com/ytdl-org/youtube-dl>`_: (40000 ⭐) Command-line program to download videos from YouTube.com and other video sites
-- `astorfi/Deep-Learning-Roadmap <https://github.com/astorfi/Deep-Learning-Roadmap>`_: (3131 ⭐) :satellite: Organized Resources for Deep Learning Researchers and Developers
-- `ApolloAuto/apollo <https://github.com/ApolloAuto/apollo>`_: (20072 ⭐) An open autonomous driving platform
-- `haoel/leetcode <https://github.com/haoel/leetcode>`_: (15653 ⭐) LeetCode Problems' Solutions
-- `donnemartin/interactive-coding-challenges <https://github.com/donnemartin/interactive-coding-challenges>`_: (24629 ⭐) 120+ interactive Python coding interview challenges (algorithms and data structures).  Includes Anki flashcards.
-- `bulletphysics/bullet3 <https://github.com/bulletphysics/bullet3>`_: (8887 ⭐) Bullet Physics SDK: real-time collision detection and multi-physics simulation for VR, games, visual effects, robotics, machine learning etc.
-- `deepmind/dm_control <https://github.com/deepmind/dm_control>`_: (2653 ⭐) DeepMind's software stack for physics-based simulation and Reinforcement Learning environments, using MuJoCo.
-- `paperswithcode/ai-deadlines <https://github.com/paperswithcode/ai-deadlines>`_: (3964 ⭐) :alarm_clock: AI conference deadline countdowns
-- `emptymalei/awesome-research <https://github.com/emptymalei/awesome-research>`_: (1333 ⭐) :seedling: a curated list of tools to help you with your research/life; I built a front end around this repo, please use the link below [This repo is Not Maintained Anymore]
-- `melissaboiko/myougiden <https://github.com/melissaboiko/myougiden>`_: (103 ⭐) A Japanese/English dictionary for the command line, colorful and full of features.
-- `terryum/awesome-deep-learning-papers <https://github.com/terryum/awesome-deep-learning-papers>`_: (23495 ⭐) The most cited deep learning papers
-- `juniandotnet/cpp-awesome-pack <https://github.com/juniandotnet/cpp-awesome-pack>`_: (169 ⭐) Awesome Sample Pack of C/C++ Codes
-- `sindresorhus/awesome <https://github.com/sindresorhus/awesome>`_: (40000 ⭐) 😎 Awesome lists about all kinds of interesting topics
-- `Dentosal/python-sc2 <https://github.com/Dentosal/python-sc2>`_: (568 ⭐) A StarCraft II bot api client library for Python 3
-- `chris-chris/pysc2-examples <https://github.com/chris-chris/pysc2-examples>`_: (740 ⭐) StarCraft II - pysc2 Deep Reinforcement Learning Examples
-- `skjb/pysc2-tutorial <https://github.com/skjb/pysc2-tutorial>`_: (265 ⭐) Tutorials for building a PySC2 bot
-- `fffaraz/awesome-cpp <https://github.com/fffaraz/awesome-cpp>`_: (35699 ⭐) A curated list of awesome C++ (or C) frameworks, libraries, resources, and shiny things. Inspired by awesome-... stuff.
-- `google/filament <https://github.com/google/filament>`_: (13475 ⭐) Filament is a real-time physically based rendering engine for Android, iOS, Windows, Linux, macOS, and WebGL2
-- `chubin/cheat.sh <https://github.com/chubin/cheat.sh>`_: (28073 ⭐) the only cheat sheet you need
-- `open-source-ideas/ideas <https://github.com/open-source-ideas/ideas>`_: (5768 ⭐) 💡 Looking for inspiration for your next open source project? Or perhaps you've got a brilliant idea you can't wait to share with others? Open Source Ideas is a community built specifically for this! 👋
-- `JuliaLang/julia <https://github.com/JuliaLang/julia>`_: (38023 ⭐) The Julia Programming Language
-- `iSoron/uhabits <https://github.com/iSoron/uhabits>`_: (4710 ⭐) Loop Habit Tracker, a mobile app for creating and maintaining long-term positive habits
-- `openai/baselines <https://github.com/openai/baselines>`_: (12271 ⭐) OpenAI Baselines: high-quality implementations of reinforcement learning algorithms
-- `SKTBrain/awesome-starcraftAI <https://github.com/SKTBrain/awesome-starcraftAI>`_: (578 ⭐) A curated list of resources dedicated to StarCraft AI.
-- `OpenBW/bwapi <https://github.com/OpenBW/bwapi>`_: (41 ⭐) Brood War API
-- `thermatk/FastHub-Libre <https://github.com/thermatk/FastHub-Libre>`_: (358 ⭐) Libre fork of FastHub, the ultimate GitHub client for Android.
-- `higgsfield/RL-Adventure <https://github.com/higgsfield/RL-Adventure>`_: (2539 ⭐) Pytorch Implementation of DQN / DDQN / Prioritized replay/ noisy networks/ distributional values/ Rainbow/ hierarchical RL
-- `higgsfield/RL-Adventure-2 <https://github.com/higgsfield/RL-Adventure-2>`_: (2650 ⭐) PyTorch0.4 implementation of: actor critic / proximal policy optimization / acer / ddpg / twin dueling ddpg / soft actor critic / generative adversarial imitation learning / hindsight experience replay
-- `AI-ON/TheConsciousnessPrior <https://github.com/AI-ON/TheConsciousnessPrior>`_: (91 ⭐) AI-ON Consciousness Prior
-- `soskek/attention_is_all_you_need <https://github.com/soskek/attention_is_all_you_need>`_: (304 ⭐) Transformer of "Attention Is All You Need" (Vaswani et al. 2017) by Chainer.
-- `chainer-community/awesome-chainer <https://github.com/chainer-community/awesome-chainer>`_: (135 ⭐) None
-- `marcotcr/lime <https://github.com/marcotcr/lime>`_: (9492 ⭐) Lime: Explaining the predictions of any machine learning classifier
-- `scikit-learn/scikit-learn <https://github.com/scikit-learn/scikit-learn>`_: (40000 ⭐) scikit-learn: machine learning in Python
-- `openai/gym <https://github.com/openai/gym>`_: (26293 ⭐) A toolkit for developing and comparing reinforcement learning algorithms.
-- `rupa/z <https://github.com/rupa/z>`_: (13866 ⭐) z - jump around
-- `rll/rllab <https://github.com/rll/rllab>`_: (2660 ⭐) rllab is a framework for developing and evaluating reinforcement learning algorithms, fully compatible with OpenAI Gym.
-- `pfnet-research/nips17-adversarial-attack <https://github.com/pfnet-research/nips17-adversarial-attack>`_: (143 ⭐) Submission to Kaggle NIPS'17 competition on adversarial examples (non-targeted adversarial attack track)
-- `pfnet-research/menoh <https://github.com/pfnet-research/menoh>`_: (279 ⭐) Menoh: fast DNN inference library with multiple programming language support
-- `pathak22/noreward-rl <https://github.com/pathak22/noreward-rl>`_: (1260 ⭐) [ICML 2017] TensorFlow code for Curiosity-driven Exploration for Deep Reinforcement Learning
-- `tscmoo/bwheadless <https://github.com/tscmoo/bwheadless>`_: (14 ⭐) A tool to launch Starcraft: Brood War in "headless" mode, i.e. no graphics, sound or user input (useful with BWAPI).
-- `OpenBW/openbw <https://github.com/OpenBW/openbw>`_: (117 ⭐) OpenBW - free and open-source Best Wargame
-- `Games-and-Simulations/sc-docker <https://github.com/Games-and-Simulations/sc-docker>`_: (226 ⭐) Multi-platform Version of StarCraft: Brood War in a Docker Container, ready to use for bot play simulations.
-- `TorchCraft/StarData <https://github.com/TorchCraft/StarData>`_: (551 ⭐) Starcraft AI Research Dataset
-- `edemirkan/wine-starcraft-installer <https://github.com/edemirkan/wine-starcraft-installer>`_: (46 ⭐) Helper scripts to install & run StarCraft using wine-staging.
-- `tensorforce/tensorforce <https://github.com/tensorforce/tensorforce>`_: (3080 ⭐) Tensorforce: a TensorFlow library for applied reinforcement learning
-- `aonotas/awesome-deep-learning-chainer-examples-list <https://github.com/aonotas/awesome-deep-learning-chainer-examples-list>`_: (21 ⭐) Chainer example codes list
-- `onnx/onnx <https://github.com/onnx/onnx>`_: (11988 ⭐) Open standard for machine learning interoperability
-- `chainer/chainercv <https://github.com/chainer/chainercv>`_: (1470 ⭐) ChainerCV: a Library for Deep Learning in Computer Vision
-- `chainer/chainerrl <https://github.com/chainer/chainerrl>`_: (1029 ⭐) ChainerRL is a deep reinforcement learning library built on top of Chainer.
-- `dgant/PurpleWave <https://github.com/dgant/PurpleWave>`_: (81 ⭐) StarCraft: Brood War AI in Scala
-- `zhangqianhui/AdversarialNetsPapers <https://github.com/zhangqianhui/AdversarialNetsPapers>`_: (6256 ⭐) Awesome paper list with code about generative adversarial nets
-- `tscohen/GrouPy <https://github.com/tscohen/GrouPy>`_: (303 ⭐) Group Equivariant Convolutional Neural Networks
-- `davechurchill/commandcenter <https://github.com/davechurchill/commandcenter>`_: (469 ⭐) Starcraft AI Bot
-- `wekan/wekan <https://github.com/wekan/wekan>`_: (17732 ⭐) The Open Source kanban (built with Meteor). Keep variable/table/field names camelCase. For translations, only add Pull Request changes to wekan/i18n/en.i18n.json , other translations are done at https://transifex.com/wekan/wekan only.
-- `eriklindernoren/ML-From-Scratch <https://github.com/eriklindernoren/ML-From-Scratch>`_: (20774 ⭐) Machine Learning From Scratch. Bare bones NumPy implementations of machine learning models and algorithms with a focus on accessibility. Aims to cover everything from linear regression to deep learning.
-- `deepmind/pysc2 <https://github.com/deepmind/pysc2>`_: (7417 ⭐) StarCraft II Learning Environment
-- `bwapi/bwapi <https://github.com/bwapi/bwapi>`_: (1489 ⭐) Brood War API
-- `TorchCraft/TorchCraft <https://github.com/TorchCraft/TorchCraft>`_: (1355 ⭐) Connecting Torch to StarCraft
-- `chainer/chainer-chemistry <https://github.com/chainer/chainer-chemistry>`_: (519 ⭐) Chainer Chemistry: A Library for Deep Learning in Biology and Chemistry
-- `pfnet-research/chainer-graph-cnn <https://github.com/pfnet-research/chainer-graph-cnn>`_: (66 ⭐) Chainer implementation of 'Convolutional Neural Networks on Graphs with Fast Localized Spectral Filtering' (https://arxiv.org/abs/1606.09375)
-- `google/tangent <https://github.com/google/tangent>`_: (2214 ⭐) Source-to-Source Debuggable Derivatives in Pure Python
-- `wiseodd/generative-models <https://github.com/wiseodd/generative-models>`_: (6732 ⭐) Collection of generative models, e.g. GAN, VAE in Pytorch and Tensorflow.
-- `kristofbc/explainable-ml <https://github.com/kristofbc/explainable-ml>`_: (2 ⭐) This project is my journey to a better understanding of ML algorithms.
-- `pfnet-research/chainer-gan-lib <https://github.com/pfnet-research/chainer-gan-lib>`_: (398 ⭐) Chainer implementation of recent GAN variants
-- `cbfinn/maml <https://github.com/cbfinn/maml>`_: (2086 ⭐) Code for "Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks"
-- `kjw0612/awesome-rnn <https://github.com/kjw0612/awesome-rnn>`_: (5858 ⭐) Recurrent Neural Network - A curated list of resources dedicated to RNN
-- `chainer/chainer <https://github.com/chainer/chainer>`_: (5662 ⭐) A flexible framework of neural networks for deep learning
+- `ICLR/Master-Template <https://github.com/ICLR/Master-Template>`_: (88 ☆) Template and style files for ICLR
+- `deepmind/meltingpot <https://github.com/deepmind/meltingpot>`_: (114 ☆) None
+- `deepmind/reverb <https://github.com/deepmind/reverb>`_: (511 ☆) Reverb is an efficient and easy-to-use data storage and transport system designed for machine learning research
+- `wandb/client <https://github.com/wandb/client>`_: (3674 ☆) 🔥 A tool for visualizing and tracking your machine learning experiments. This repo contains the CLI and Python API.
+- `deepmind/acme <https://github.com/deepmind/acme>`_: (2499 ☆) A library of reinforcement learning components and agents
+- `kot-behemoth/awesome-joplin <https://github.com/kot-behemoth/awesome-joplin>`_: (226 ☆) 📒 A curated list of awesome Joplin themes and tools.
+- `joplin/plugin-kanban <https://github.com/joplin/plugin-kanban>`_: (39 ☆) None
+- `agerardin/joplin-plugin-knowledge-graph <https://github.com/agerardin/joplin-plugin-knowledge-graph>`_: (16 ☆) Notes as nodes. Explore your Joplin knowledge graph.
+- `jgraph/drawio-desktop <https://github.com/jgraph/drawio-desktop>`_: (26011 ☆) Official electron build of diagrams.net
+- `openai/multiagent-competition <https://github.com/openai/multiagent-competition>`_: (707 ☆)  Code for the paper "Emergent Complexity via Multi-agent Competition"
+- `facebookresearch/moolib <https://github.com/facebookresearch/moolib>`_: (190 ☆) A library for distributed ML training with PyTorch
+- `Machine-Learning-Tokyo/Interactive_Tools <https://github.com/Machine-Learning-Tokyo/Interactive_Tools>`_: (1550 ☆) Interactive Tools for Machine Learning, Deep Learning and Math
+- `Machine-Learning-Tokyo/DL-workshop-series <https://github.com/Machine-Learning-Tokyo/DL-workshop-series>`_: (906 ☆) Material used for Deep Learning related workshops for Machine Learning Tokyo (MLT)
+- `microsoft/malmo <https://github.com/microsoft/malmo>`_: (3738 ☆) Project Malmo is a platform for Artificial Intelligence experimentation and research built on top of Minecraft. We aim to inspire a new generation of research into challenging new problems presented by this unique environment. --- For installation instructions, scroll down to *Getting Started* below, or visit the project page for more information:
+- `resume/resume.github.com <https://github.com/resume/resume.github.com>`_: (40000 ☆) Resumes generated using the GitHub informations
+- `jankapunkt/latexcv <https://github.com/jankapunkt/latexcv>`_: (1495 ☆) :necktie: A collection of cv and resume templates written in LaTeX. Leave an issue if your language is not supported!
+- `AxelThevenot/Python_Benchmark_Test_Optimization_Function_Single_Objective <https://github.com/AxelThevenot/Python_Benchmark_Test_Optimization_Function_Single_Objective>`_: (41 ☆) None
+- `thieu1995/mealpy <https://github.com/thieu1995/mealpy>`_: (163 ☆) A collection of the state-of-the-art MEta-heuristics ALgorithms in PYthon (mealpy)
+- `snowie2000/mactype <https://github.com/snowie2000/mactype>`_: (6994 ☆) Better font rendering for Windows.
+- `ErikCH/DevYouTubeList <https://github.com/ErikCH/DevYouTubeList>`_: (4417 ☆) List of Development YouTube Channels
+- `HunterMcGushion/hyperparameter_hunter <https://github.com/HunterMcGushion/hyperparameter_hunter>`_: (682 ☆) Easy hyperparameter optimization and automatic result saving across machine learning algorithms and libraries
+- `aqlaboratory/openfold <https://github.com/aqlaboratory/openfold>`_: (697 ☆) Trainable PyTorch reproduction of AlphaFold 2
+- `facebookresearch/astmt <https://github.com/facebookresearch/astmt>`_: (66 ☆) Attentive Single-tasking of Multiple Tasks
+- `evanzd/ICLR2021-OpenReviewData <https://github.com/evanzd/ICLR2021-OpenReviewData>`_: (402 ☆) Crawl & visualize ICLR papers and reviews.
+- `eleanorlutz/topography_atlas_of_space <https://github.com/eleanorlutz/topography_atlas_of_space>`_: (219 ☆) Code and instructions for making topographic maps of planets and moons
+- `algorithm-archivists/algorithm-archive <https://github.com/algorithm-archivists/algorithm-archive>`_: (1911 ☆) A collaborative book on algorithms
+- `CelestiaProject/Celestia <https://github.com/CelestiaProject/Celestia>`_: (966 ☆) Real-time 3D visualization of space.
+- `alexlenail/NN-SVG <https://github.com/alexlenail/NN-SVG>`_: (1853 ☆) Publication-ready NN-architecture schematics.
+- `Michael-Beukman/PCGNN <https://github.com/Michael-Beukman/PCGNN>`_: (1 ☆) Combining NEAT and novelty search to quickly generate diverse video game levels.
+- `LondonNode/Pearl <https://github.com/LondonNode/Pearl>`_: (14 ☆) Adaptable tools to make reinforcement learning and evolutionary computation algorithms.
+- `google-research/self-organising-systems <https://github.com/google-research/self-organising-systems>`_: (116 ☆) None
+- `google-research/vision_transformer <https://github.com/google-research/vision_transformer>`_: (4458 ☆) None
+- `google-research/kubric <https://github.com/google-research/kubric>`_: (98 ☆) A data generation pipeline for creating semi-realistic synthetic multi-object videos with rich annotations such as instance segmentation masks, depth maps, and optical flow.
+- `sksq96/pytorch-summary <https://github.com/sksq96/pytorch-summary>`_: (3384 ☆) Model summary in PyTorch similar to `model.summary()` in Keras
+- `zetane/viewer <https://github.com/zetane/viewer>`_: (343 ☆) ML models and internal tensors 3D visualizer
+- `Developer-Y/cs-video-courses <https://github.com/Developer-Y/cs-video-courses>`_: (28978 ☆) List of Computer Science courses with video lectures.
+- `trakBan/spongebob-cli <https://github.com/trakBan/spongebob-cli>`_: (302 ☆) Watch classic spongebob from the terminal!
+- `magenta/magenta <https://github.com/magenta/magenta>`_: (17384 ☆) Magenta: Music and Art Generation with Machine Intelligence
+- `amaboura/panama-papers-dataset-2016 <https://github.com/amaboura/panama-papers-dataset-2016>`_: (705 ☆) Structured data about Panama papers collected from official ICIJ website
+- `Evolving-AI-Lab/innovation-engine <https://github.com/Evolving-AI-Lab/innovation-engine>`_: (28 ☆) Code base for "Innovation Engines" GECCO 2015 paper
+- `NikolaiT/GoogleScraper <https://github.com/NikolaiT/GoogleScraper>`_: (2374 ☆) A Python module to scrape several search engines (like Google, Yandex, Bing, Duckduckgo, ...). Including asynchronous networking support.
+- `ellisk42/ec <https://github.com/ellisk42/ec>`_: (280 ☆) None
+- `enajx/ES <https://github.com/enajx/ES>`_: (4 ☆) Evolution Strategy (ES) implementation of https://arxiv.org/abs/1703.03864
+- `uber-research/PyTorch-NEAT <https://github.com/uber-research/PyTorch-NEAT>`_: (478 ☆) None
+- `TianhongDai/hindsight-experience-replay <https://github.com/TianhongDai/hindsight-experience-replay>`_: (214 ☆) This is the pytorch implementation of Hindsight Experience Replay (HER) - Experiment on all fetch robotic environments.
+- `locuslab/convmixer <https://github.com/locuslab/convmixer>`_: (776 ☆) Implementation of ConvMixer for "Patches Are All You Need? 🤷"
+- `fregante/GhostText <https://github.com/fregante/GhostText>`_: (2632 ☆) 👻 Use your text editor to write in your browser. Everything you type in the editor will be instantly updated in the browser (and vice versa).
+- `ysh329/deep-learning-model-convertor <https://github.com/ysh329/deep-learning-model-convertor>`_: (3057 ☆) The convertor/conversion of deep learning models for different deep learning frameworks/softwares.
+- `arogozhnikov/einops <https://github.com/arogozhnikov/einops>`_: (4212 ☆) Deep learning operations reinvented (for pytorch, tensorflow, jax and others)
+- `openai/jukebox <https://github.com/openai/jukebox>`_: (4940 ☆) Code for the paper "Jukebox: A Generative Model for Music"
+- `AboutRSS/ALL-about-RSS <https://github.com/AboutRSS/ALL-about-RSS>`_: (1429 ☆) A list of RSS related stuff: tools, services, communities and tutorials, etc.
+- `victornpb/deleteDiscordMessages <https://github.com/victornpb/deleteDiscordMessages>`_: (2669 ☆) Undiscord - Delete all messages in a Discord channel or DM (Easy and fast) Bulk delete
+- `kingoflolz/CLIP_JAX <https://github.com/kingoflolz/CLIP_JAX>`_: (96 ☆) Contrastive Language-Image Pretraining
+- `VGraupera/1on1-questions <https://github.com/VGraupera/1on1-questions>`_: (8761 ☆) Mega list of 1 on 1 meeting questions compiled from a variety to sources
+- `raylene/eng-handbook <https://github.com/raylene/eng-handbook>`_: (1135 ☆) A developer's guide to management: an open-sourced handbook for leading software engineering teams.
+- `cle-ros/RoutingNetworks <https://github.com/cle-ros/RoutingNetworks>`_: (55 ☆) None
+- `jdah/minecraft-again <https://github.com/jdah/minecraft-again>`_: (452 ☆) yeah I made it again
+- `alyssaxuu/omni <https://github.com/alyssaxuu/omni>`_: (2663 ☆) The all-in-one tool to supercharge your productivity ⌨️
+- `massgravel/Microsoft-Activation-Scripts <https://github.com/massgravel/Microsoft-Activation-Scripts>`_: (10248 ☆) A collection of scripts for activating Microsoft products using HWID / KMS38 / Online KMS activation methods with a focus on open-source code, less antivirus detection and user-friendliness.
+- `synercys/annotated_latex_equations <https://github.com/synercys/annotated_latex_equations>`_: (2448 ☆) Examples of how to create colorful, annotated equations in Latex using Tikz.
+- `scrapy/scrapy <https://github.com/scrapy/scrapy>`_: (40000 ☆) Scrapy, a fast high-level web crawling & scraping framework for Python.
+- `deepmind/mathematics_conjectures <https://github.com/deepmind/mathematics_conjectures>`_: (262 ☆) None
+- `mljar/mercury <https://github.com/mljar/mercury>`_: (889 ☆) Mercury: easily convert Python notebook to web app and share with others
+- `facebookresearch/theseus <https://github.com/facebookresearch/theseus>`_: (206 ☆) A library for differentiable nonlinear optimization.
+- `uber-research/permute-quantize-finetune <https://github.com/uber-research/permute-quantize-finetune>`_: (116 ☆) Using ideas from product quantization for state-of-the-art neural network compression.
+- `wayveai/fiery <https://github.com/wayveai/fiery>`_: (232 ☆) PyTorch code for the paper "FIERY: Future Instance Segmentation in Bird's-Eye view from Surround Monocular Cameras"
+- `khuedoan/homelab <https://github.com/khuedoan/homelab>`_: (4931 ☆) My self-hosting infrastructure, fully automated from empty disk to operating services
+- `daniruiz/flat-remix-gnome <https://github.com/daniruiz/flat-remix-gnome>`_: (1395 ☆) Flat Remix is a GNOME Shell theme inspired by material design. It is mostly flat using a colorful palette with some shadows, highlights, and gradients for some depth.
+- `daniruiz/flat-remix <https://github.com/daniruiz/flat-remix>`_: (1523 ☆) Flat Remix is an icon theme inspired by material design. It is mostly flat using a colorful palette with some shadows, highlights, and gradients for some depth.
+- `hbons/SparkleShare <https://github.com/hbons/SparkleShare>`_: (4683 ☆) Share and collaborate by syncing with any Git repository instantly. Linux, macOS, and Windows.
+- `phw/peek <https://github.com/phw/peek>`_: (8545 ☆) Simple animated GIF screen recorder with an easy to use interface
+- `lwindolf/liferea <https://github.com/lwindolf/liferea>`_: (676 ☆) Liferea (Linux Feed Reader), a news reader for GTK/GNOME
+- `isl-org/MultiObjectiveOptimization <https://github.com/isl-org/MultiObjectiveOptimization>`_: (532 ☆) Source code for Neural Information Processing Systems (NeurIPS) 2018 paper "Multi-Task Learning as Multi-Objective Optimization"
+- `lorenmt/mtan <https://github.com/lorenmt/mtan>`_: (468 ☆) The implementation of "End-to-End Multi-Task Learning with Attention" [CVPR 2019].
+- `tianheyu927/PCGrad <https://github.com/tianheyu927/PCGrad>`_: (186 ☆) Code for "Gradient Surgery for Multi-Task Learning"
+- `adrianjav/rotograd <https://github.com/adrianjav/rotograd>`_: (17 ☆) Official Pytorch's implementation of RotoGrad
+- `facebookresearch/pycls <https://github.com/facebookresearch/pycls>`_: (1835 ☆) Codebase for Image Classification Research, written in PyTorch.
+- `szagoruyko/pytorchviz <https://github.com/szagoruyko/pytorchviz>`_: (2105 ☆) A small package to create visualizations of PyTorch execution graphs
+- `waleedka/hiddenlayer <https://github.com/waleedka/hiddenlayer>`_: (1571 ☆) Neural network graphs and training metrics for PyTorch, Tensorflow, and Keras.
+- `ashishpatel26/Tools-to-Design-or-Visualize-Architecture-of-Neural-Network <https://github.com/ashishpatel26/Tools-to-Design-or-Visualize-Architecture-of-Neural-Network>`_: (2393 ☆) Tools to Design or Visualize Architecture of Neural Network
+- `tstandley/taskgrouping <https://github.com/tstandley/taskgrouping>`_: (61 ☆) Code for Which Tasks Should Be Learned Together in Multi-task Learning?
+- `lucidrains/x-transformers <https://github.com/lucidrains/x-transformers>`_: (1367 ☆) A simple but complete full-attention transformer with a set of promising experimental features from various papers
+- `wonderworks-software/PyFlow <https://github.com/wonderworks-software/PyFlow>`_: (1464 ☆) Visual scripting framework for python - https://wonderworks-software.github.io/PyFlow
+- `NVlabs/tiny-cuda-nn <https://github.com/NVlabs/tiny-cuda-nn>`_: (725 ☆) Lightning fast & tiny C++/CUDA neural network framework
+- `mattermost/focalboard <https://github.com/mattermost/focalboard>`_: (9344 ☆) Focalboard is an open source, self-hosted alternative to Trello, Notion, and Asana.
+- `preetum/cifar5m <https://github.com/preetum/cifar5m>`_: (18 ☆) CIFAR-5m dataset
+- `huangwl18/language-planner <https://github.com/huangwl18/language-planner>`_: (33 ☆) Official Code for "Language Models as Zero-Shot Planners: Extracting Actionable Knowledge for Embodied Agents"
+- `jangernert/FeedReader <https://github.com/jangernert/FeedReader>`_: (769 ☆) Modern desktop application designed to complement existing web-based RSS accounts.
+- `jcoreyes/evolvingrl <https://github.com/jcoreyes/evolvingrl>`_: (37 ☆) Supplementary Data for Evolving Reinforcement Learning Algorithms
+- `google-research/vmoe <https://github.com/google-research/vmoe>`_: (179 ☆) None
+- `onelivesleft/PrettyErrors <https://github.com/onelivesleft/PrettyErrors>`_: (2442 ☆) Prettify Python exception output to make it legible.
+- `deepmind/open_spiel <https://github.com/deepmind/open_spiel>`_: (3069 ☆) OpenSpiel is a collection of environments and algorithms for research in general reinforcement learning and search/planning in games.
+- `HumanCompatibleAI/imitation <https://github.com/HumanCompatibleAI/imitation>`_: (396 ☆) Clean PyTorch implementations of imitation and reward learning algorithms
+- `facebookresearch/ConvNeXt <https://github.com/facebookresearch/ConvNeXt>`_: (2818 ☆) Code release for ConvNeXt model
+- `priyankavergadia/google-cloud-4-words <https://github.com/priyankavergadia/google-cloud-4-words>`_: (5927 ☆) The Google Cloud Developer's Cheat Sheet
+- `Zekfoo/AGZ <https://github.com/Zekfoo/AGZ>`_: (287 ☆) A circuit-level redesign of the Game Boy Advance, addressing many of the issues seen with the original GBA
+- `inancgumus/learngo <https://github.com/inancgumus/learngo>`_: (12734 ☆) 1000+ Hand-Crafted Go Examples, Exercises, and Quizzes
+- `facebookresearch/Detic <https://github.com/facebookresearch/Detic>`_: (762 ☆) Code release for "Detecting Twenty-thousand Classes using Image-level Supervision".
+- `BenHerbst/idaesbasic <https://github.com/BenHerbst/idaesbasic>`_: (115 ☆) Idaesbasic - An all in one project manager that stores everything in files directly into your project! 🤯
+- `deepchecks/deepchecks <https://github.com/deepchecks/deepchecks>`_: (959 ☆) Test Suites for Validating ML Models & Data. Deepchecks is a Python package for comprehensively validating your machine learning models and data with minimal effort.
+- `linux-nvme/nvme-cli <https://github.com/linux-nvme/nvme-cli>`_: (883 ☆) NVMe management command line interface.
+- `BookStackApp/BookStack <https://github.com/BookStackApp/BookStack>`_: (8512 ☆) A platform to create documentation/wiki content built with PHP & Laravel
+- `LingDong-/shan-shui-inf <https://github.com/LingDong-/shan-shui-inf>`_: (4279 ☆) Procedurally generated Chinese landscape painting.
+- `CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers <https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers>`_: (24054 ☆) aka "Bayesian Methods for Hackers": An introduction to Bayesian methods + probabilistic programming with a computation/understanding-first, mathematics-second point of view. All in pure Python ;)
+- `T3rry7f/WideVineDump <https://github.com/T3rry7f/WideVineDump>`_: (97 ☆) Dump audio and video streams from  Widevine Level 3
+- `deepmind/educational <https://github.com/deepmind/educational>`_: (303 ☆) None
+- `sepandhaghighi/samila <https://github.com/sepandhaghighi/samila>`_: (497 ☆) Generative Art Generator
+- `dwyl/english-words <https://github.com/dwyl/english-words>`_: (6220 ☆) :memo: A text file containing 479k English words for all your dictionary/word-based projects e.g: auto-completion / autosuggestion
+- `austinvhuang/openmemex <https://github.com/austinvhuang/openmemex>`_: (149 ☆) Open source, local-first knowledge platform.
+- `AwesomeTTS/awesometts-anki-addon <https://github.com/AwesomeTTS/awesometts-anki-addon>`_: (313 ☆) AwesomeTTS text-to-speech add-on for Anki
+- `vahidk/EffectiveTensorflow <https://github.com/vahidk/EffectiveTensorflow>`_: (8692 ☆) TensorFlow tutorials and best practices.
+- `visionml/pytracking <https://github.com/visionml/pytracking>`_: (2007 ☆) Visual tracking library based on PyTorch.
+- `LeviBorodenko/primify <https://github.com/LeviBorodenko/primify>`_: (433 ☆) Embed any image into a prime number.
+- `pyinstaller/pyinstaller <https://github.com/pyinstaller/pyinstaller>`_: (8793 ☆) Freeze (package) Python programs into stand-alone executables
+- `mkrl/misbrands <https://github.com/mkrl/misbrands>`_: (6201 ☆) The world's most hated IT stickers
+- `phoboslab/qoi <https://github.com/phoboslab/qoi>`_: (4256 ☆) The “Quite OK Image Format” for fast, lossless image compression
+- `Unity-Technologies/PeopleSansPeople <https://github.com/Unity-Technologies/PeopleSansPeople>`_: (64 ☆) Unity's privacy-preserving human-centric synthetic data generator
+- `deepklarity/jupyter-text2code <https://github.com/deepklarity/jupyter-text2code>`_: (2049 ☆) A proof-of-concept jupyter extension which converts english queries into relevant python code
+- `google-research/simclr <https://github.com/google-research/simclr>`_: (2802 ☆) SimCLRv2 - Big Self-Supervised Models are Strong Semi-Supervised Learners
+- `wjf5203/SeqFormer <https://github.com/wjf5203/SeqFormer>`_: (200 ☆) SeqFormer: a Frustratingly Simple Model for Video Instance Segmentation
+- `ropas/pytea <https://github.com/ropas/pytea>`_: (221 ☆) PyTea: PyTorch Tensor shape error analyzer
+- `deepmind/arnheim <https://github.com/deepmind/arnheim>`_: (172 ☆) None
+- `fudan-zvg/SOFT <https://github.com/fudan-zvg/SOFT>`_: (211 ☆) SOFT: Softmax-free Transformer with Linear Complexity, NeurIPS 2021 Spotlight
+- `utiasSTARS/lfgp <https://github.com/utiasSTARS/lfgp>`_: (4 ☆) Learning from Guided Play: A Scheduled Hierarchical Approach for Improving Exploration in Adversarial Imitation Learning Source Code
+- `chuangg/OPEn <https://github.com/chuangg/OPEn>`_: (4 ☆) None
+- `shellysheynin/Locally-SAG-Transformer <https://github.com/shellysheynin/Locally-SAG-Transformer>`_: (7 ☆) Official Pytorch implementation of the paper: "Locally Shifted Attention With Early Global Integration"
+- `IAmPara0x/Yuno <https://github.com/IAmPara0x/Yuno>`_: (317 ☆) Yuno is context based search engine for anime.
+- `kakaobrain/minDALL-E <https://github.com/kakaobrain/minDALL-E>`_: (427 ☆) PyTorch implementation of a 1.3B text-to-image generation model trained on 14 million image-text pairs
+- `Music-and-Culture-Technology-Lab/omnizart <https://github.com/Music-and-Culture-Technology-Lab/omnizart>`_: (1103 ☆) Omniscient Mozart, being able to transcribe everything in the music, including vocal, drum, chord, beat, instruments, and more.
+- `aeon0/botty <https://github.com/aeon0/botty>`_: (275 ☆) D2R Pixel Bot
+- `EvolutionGym/evogym-design-tool <https://github.com/EvolutionGym/evogym-design-tool>`_: (85 ☆) Design tool for creating Evolution Gym environments.
+- `anchore/grype <https://github.com/anchore/grype>`_: (2841 ☆) A vulnerability scanner for container images and filesystems
+- `learntocloud/learn-to-cloud <https://github.com/learntocloud/learn-to-cloud>`_: (2377 ☆) Learn the fundamentals of cloud computing
+- `autonomousvision/transfuser <https://github.com/autonomousvision/transfuser>`_: (396 ☆) [CVPR'21] Multi-Modal Fusion Transformer for End-to-End Autonomous Driving
+- `Atten4Vis/ConditionalDETR <https://github.com/Atten4Vis/ConditionalDETR>`_: (174 ☆) This repository is an official implementation of the ICCV 2021 paper "Conditional DETR for Fast Training Convergence". (https://arxiv.org/abs/2108.06152)
+- `VITA-Group/SViTE <https://github.com/VITA-Group/SViTE>`_: (50 ☆) [NeurIPS'21] "Chasing Sparsity in Vision Transformers: An End-to-End Exploration" by Tianlong Chen, Yu Cheng, Zhe Gan, Lu Yuan, Lei Zhang, Zhangyang Wang
+- `hustvl/YOLOS <https://github.com/hustvl/YOLOS>`_: (458 ☆) You Only Look at One Sequence (NeurIPS 2021)
+- `leereilly/games <https://github.com/leereilly/games>`_: (18891 ☆) :video_game: A list of popular/awesome video games, add-ons, maps, etc. hosted on GitHub. Any genre. Any platform. Any engine.
+- `inconvergent/weird <https://github.com/inconvergent/weird>`_: (1270 ☆) Generative art in Common Lisp
+- `mradaideh/neorl <https://github.com/mradaideh/neorl>`_: (13 ☆) NeuroEvolution Optimisation with Reinforcement Learning
+- `heartexlabs/label-studio <https://github.com/heartexlabs/label-studio>`_: (7531 ☆) Label Studio is a multi-type data labeling and annotation tool with standardized output format
+- `mle-infrastructure/mle-monitor <https://github.com/mle-infrastructure/mle-monitor>`_: (91 ☆) A Lightweight Experiment & Resource Monitoring Tool 📺
+- `fundamentalvision/Parameterized-AP-Loss <https://github.com/fundamentalvision/Parameterized-AP-Loss>`_: (35 ☆) None
+- `facebookresearch/minihack <https://github.com/facebookresearch/minihack>`_: (221 ☆) MiniHack the Planet: A Sandbox for Open-Ended Reinforcement Learning Research
+- `d9w/evolution <https://github.com/d9w/evolution>`_: (18 ☆) Introduction to Evolutionary Computation class
+- `Edward-Sun/TSP-Detection <https://github.com/Edward-Sun/TSP-Detection>`_: (42 ☆) Code of ICCV paper: https://arxiv.org/abs/2011.10881
+- `jesseduffield/lazydocker <https://github.com/jesseduffield/lazydocker>`_: (21583 ☆) The lazier way to manage everything docker
+- `tenderlove/asmrepl <https://github.com/tenderlove/asmrepl>`_: (715 ☆) A REPL for x86-64 assembly language
+- `zeldaret/oot <https://github.com/zeldaret/oot>`_: (3335 ☆) Decompilation of The Legend of Zelda: Ocarina of Time
+- `facebookresearch/pytorchvideo <https://github.com/facebookresearch/pytorchvideo>`_: (2242 ☆) A deep learning library for video understanding research.
+- `facebookresearch/SlowFast <https://github.com/facebookresearch/SlowFast>`_: (4540 ☆) PySlowFast: video understanding codebase from FAIR for reproducing state-of-the-art video models.
+- `ChengyueGongR/PatchVisionTransformer <https://github.com/ChengyueGongR/PatchVisionTransformer>`_: (62 ☆) None
+- `thunlp/WantWords <https://github.com/thunlp/WantWords>`_: (4198 ☆) An open-source online reverse dictionary.
+- `google-research/long-range-arena <https://github.com/google-research/long-range-arena>`_: (390 ☆) Long Range Arena for Benchmarking Efficient Transformers
+- `utkuozbulak/pytorch-cnn-visualizations <https://github.com/utkuozbulak/pytorch-cnn-visualizations>`_: (6260 ☆) Pytorch implementation of convolutional neural network visualization techniques
+- `ray-project/tune-sklearn <https://github.com/ray-project/tune-sklearn>`_: (334 ☆) A drop-in replacement for Scikit-Learn’s GridSearchCV / RandomizedSearchCV -- but with cutting edge hyperparameter tuning techniques.
+- `jonaswinkler/paperless-ng <https://github.com/jonaswinkler/paperless-ng>`_: (3904 ☆) A supercharged version of paperless: scan, index and archive all your physical documents
+- `benbusby/whoogle-search <https://github.com/benbusby/whoogle-search>`_: (4883 ☆) A self-hosted, ad-free, privacy-respecting metasearch engine
+- `samuelcolvin/pydantic <https://github.com/samuelcolvin/pydantic>`_: (8996 ☆) Data parsing and validation using Python type hints
+- `linusericsson/ssl-invariances <https://github.com/linusericsson/ssl-invariances>`_: (6 ☆) Official code for the paper "Why Do Self-Supervised Models Transfer? Investigating the Impact of Invariance on Downstream Tasks".
+- `scipy/scipy-cookbook <https://github.com/scipy/scipy-cookbook>`_: (383 ☆) Scipy Cookbook
+- `karpathy/arxiv-sanity-lite <https://github.com/karpathy/arxiv-sanity-lite>`_: (451 ☆) arxiv-sanity lite: tag arxiv papers of interest get recommendations of similar papers in a nice UI using SVMs over tfidf feature vectors based on paper abstracts.
+- `cdevroe/unmark <https://github.com/cdevroe/unmark>`_: (1505 ☆) An open source to do app for bookmarks.
+- `joe-siyuan-qiao/ViP-DeepLab <https://github.com/joe-siyuan-qiao/ViP-DeepLab>`_: (181 ☆) None
+- `elfshaker/elfshaker <https://github.com/elfshaker/elfshaker>`_: (2025 ☆) elfshaker stores binary objects efficiently
+- `davidrmiller/biosim4 <https://github.com/davidrmiller/biosim4>`_: (1637 ☆) Biological evolution simulator
+- `supabase/supabase <https://github.com/supabase/supabase>`_: (27253 ☆) The open source Firebase alternative. Follow to stay updated about our public Beta.
+- `Anarios/return-youtube-dislike <https://github.com/Anarios/return-youtube-dislike>`_: (7981 ☆) Chrome extension to return youtube dislikes
+- `lucidrains/hourglass-transformer-pytorch <https://github.com/lucidrains/hourglass-transformer-pytorch>`_: (59 ☆) Implementation of Hourglass Transformer, in Pytorch, from Google and OpenAI
+- `PyAV-Org/PyAV <https://github.com/PyAV-Org/PyAV>`_: (1440 ☆) Pythonic bindings for FFmpeg's libraries.
+- `Kaggle/docker-python <https://github.com/Kaggle/docker-python>`_: (1879 ☆) Kaggle Python docker image
+- `yzhao062/anomaly-detection-resources <https://github.com/yzhao062/anomaly-detection-resources>`_: (5467 ☆) Anomaly detection related books, papers, videos, and toolboxes
+- `mfrashad/text2art <https://github.com/mfrashad/text2art>`_: (277 ☆) AI-powered Text-to-Art Generator - Text2Art.com
+- `microsoft/varuna <https://github.com/microsoft/varuna>`_: (99 ☆) None
+- `hhatto/autopep8 <https://github.com/hhatto/autopep8>`_: (3980 ☆) A tool that automatically formats Python code to conform to the PEP 8 style guide.
+- `atulkum/pointer_summarizer <https://github.com/atulkum/pointer_summarizer>`_: (753 ☆) pytorch implementation of "Get To The Point: Summarization with Pointer-Generator Networks"
+- `assafshocher/ResizeRight <https://github.com/assafshocher/ResizeRight>`_: (307 ☆) The correct way to resize images or tensors. For Numpy or Pytorch (differentiable).
+- `facebookresearch/fairo <https://github.com/facebookresearch/fairo>`_: (706 ☆) A modular embodied agent architecture and platform for building embodied agents
+- `Textualize/rich <https://github.com/Textualize/rich>`_: (34389 ☆) Rich is a Python library for rich text and beautiful formatting in the terminal.
+- `brett-daley/fast-dqn <https://github.com/brett-daley/fast-dqn>`_: (4 ☆) A concurrent/synchronized DQN implementation optimized for multi-CPU, single-GPU systems.
+- `voldemortX/pytorch-auto-drive <https://github.com/voldemortX/pytorch-auto-drive>`_: (174 ☆) Segmentation models (ERFNet, ENet, DeepLab, FCN...) and Lane detection models (SCNN, PRNet, RESA, LSTR, BezierLaneNet...) based on PyTorch with mixed precision training
+- `newren/git-filter-repo <https://github.com/newren/git-filter-repo>`_: (3221 ☆) Quickly rewrite git repository history (filter-branch replacement)
+- `pdfarranger/pdfarranger <https://github.com/pdfarranger/pdfarranger>`_: (1185 ☆) Small python-gtk application, which helps the user to merge or split pdf documents and rotate, crop and rearrange their pages using an interactive and intuitive graphical interface
+- `marceloprates/prettymaps <https://github.com/marceloprates/prettymaps>`_: (7682 ☆) A small set of Python functions to draw pretty maps from OpenStreetMap data. Based on osmnx, matplotlib and shapely libraries.
+- `bryandlee/animegan2-pytorch <https://github.com/bryandlee/animegan2-pytorch>`_: (3048 ☆) PyTorch implementation of AnimeGANv2
+- `TachibanaYoshino/AnimeGANv2 <https://github.com/TachibanaYoshino/AnimeGANv2>`_: (3378 ☆) [Open Source].  The improved version of AnimeGAN. Landscape photos/videos to anime
+- `salomonelli/best-resume-ever <https://github.com/salomonelli/best-resume-ever>`_: (15203 ☆) :necktie: :briefcase: Build fast :rocket: and easy multiple beautiful resumes and create your best CV ever! Made with Vue and LESS.
+- `thearn/game-of-life <https://github.com/thearn/game-of-life>`_: (156 ☆) Simple Python implementation of Conway's game of life and other cellular automata, computed using numpy.fft
+- `duckythescientist/SmoothLife <https://github.com/duckythescientist/SmoothLife>`_: (625 ☆) Continuous Domain Game of Life in Python with Numpy
+- `pipeseroni/pipes.sh <https://github.com/pipeseroni/pipes.sh>`_: (1613 ☆) Animated pipes terminal screensaver
+- `AugustUnderground/gace <https://github.com/AugustUnderground/gace>`_: (7 ☆) Gym Analog Circuit Characterization Environments
+- `CMA-ES/pycomocma <https://github.com/CMA-ES/pycomocma>`_: (10 ☆) A Python implementation of COMO-CMA-ES, a non-elitist multiobjective Evolution Strategy
+- `isapome/BrainProp <https://github.com/isapome/BrainProp>`_: (12 ☆) BrainProp: How the brain can implement reward-based error backpropagation
+- `idiap/fast-transformers <https://github.com/idiap/fast-transformers>`_: (1074 ☆) Pytorch library for fast transformer implementations
+- `hardmaru/WorldModelsExperiments <https://github.com/hardmaru/WorldModelsExperiments>`_: (487 ☆) World Models Experiments
+- `google-research/tiny-differentiable-simulator <https://github.com/google-research/tiny-differentiable-simulator>`_: (820 ☆) Tiny Differentiable Simulator is a header-only C++ and CUDA physics library for reinforcement learning and robotics with zero dependencies.
+- `dribnet/pixray <https://github.com/dribnet/pixray>`_: (347 ☆) neural image generation
+- `antofuller/configaformers <https://github.com/antofuller/configaformers>`_: (49 ☆) A python library for highly configurable transformers - easing model architecture search and experimentation.
+- `minetest/minetest <https://github.com/minetest/minetest>`_: (6570 ☆) Minetest is an open source voxel game engine with easy modding and game creation
+- `hardmaru/estool <https://github.com/hardmaru/estool>`_: (830 ☆) Evolution Strategies Tool
+- `rll-research/BPref <https://github.com/rll-research/BPref>`_: (17 ☆) Official codebase for "B-Pref: Benchmarking Preference-BasedReinforcement Learning" contains scripts to reproduce experiments.
+- `koulanurag/muzero-pytorch <https://github.com/koulanurag/muzero-pytorch>`_: (225 ☆) Pytorch Implementation of MuZero
+- `YeWR/EfficientZero <https://github.com/YeWR/EfficientZero>`_: (459 ☆) Open-source codebase for EfficientZero, from "Mastering Atari Games with Limited Data" at NeurIPS 2021.
+- `rish-16/aft-pytorch <https://github.com/rish-16/aft-pytorch>`_: (164 ☆) Unofficial PyTorch implementation of Attention Free Transformer (AFT) layers by Apple Inc.
+- `openai/grade-school-math <https://github.com/openai/grade-school-math>`_: (155 ☆) None
+- `PradyumnaKrishna/Colab-Hacks <https://github.com/PradyumnaKrishna/Colab-Hacks>`_: (506 ☆) Simple Hacks for Google Colaboratory to boost your productivity and help you to perform daily tasks.
+- `topjohnwu/Magisk <https://github.com/topjohnwu/Magisk>`_: (23186 ☆) The Magic Mask for Android
+- `click-contrib/click-log <https://github.com/click-contrib/click-log>`_: (97 ☆) Simple and beautiful logging for click applications
+- `brendenpetersen/deep-symbolic-optimization <https://github.com/brendenpetersen/deep-symbolic-optimization>`_: (152 ☆) Source code for deep symbolic optimization.
+- `lyft/confidant <https://github.com/lyft/confidant>`_: (1674 ☆) Confidant: your secret keeper. https://lyft.github.io/confidant
+- `google-research/scenic <https://github.com/google-research/scenic>`_: (704 ☆) Scenic: A Jax Library for Computer Vision Research and Beyond
+- `Jingkang50/OODSurvey <https://github.com/Jingkang50/OODSurvey>`_: (171 ☆) The Official Repository for "Generalized OOD Detection: A Survey"
+- `ifzhang/ByteTrack <https://github.com/ifzhang/ByteTrack>`_: (1815 ☆) ByteTrack: Multi-Object Tracking by Associating Every Detection Box
+- `rigtorp/awesome-modern-cpp <https://github.com/rigtorp/awesome-modern-cpp>`_: (8921 ☆) A collection of resources on modern C++
+- `lucidrains/jax2torch <https://github.com/lucidrains/jax2torch>`_: (77 ☆) Use Jax functions in Pytorch
+- `yzhwang/jax-multi-gpu-resnet50-example <https://github.com/yzhwang/jax-multi-gpu-resnet50-example>`_: (14 ☆) An example showing how to use jax to train resnet50 on multi-node multi-GPU
+- `Cli98/anchor_computation_tool <https://github.com/Cli98/anchor_computation_tool>`_: (62 ☆) This repo primarily targets to help those who needs to compute anchors to customer dataset in object detection.
+- `d2l-ai/d2l-en <https://github.com/d2l-ai/d2l-en>`_: (12299 ☆) Interactive deep learning book with multi-framework code, math, and discussions. Adopted at 300 universities from 55 countries including Stanford, MIT, Harvard, and Cambridge.
+- `facebookresearch/ppuda <https://github.com/facebookresearch/ppuda>`_: (378 ☆) Code for Parameter Prediction for Unseen Deep Architectures (NeurIPS 2021)
+- `dolphin-emu/dolphin <https://github.com/dolphin-emu/dolphin>`_: (8136 ☆) Dolphin is a GameCube / Wii emulator, allowing you to play games for these two platforms on PC with improvements.
+- `lars76/kmeans-anchor-boxes <https://github.com/lars76/kmeans-anchor-boxes>`_: (513 ☆) k-means clustering with the Intersection over Union (IoU) metric as described in the YOLO9000 paper
+- `joydeepmedhi/Anchor-Boxes-with-KMeans <https://github.com/joydeepmedhi/Anchor-Boxes-with-KMeans>`_: (80 ☆) How to initialize Anchors in Faster RCNN for custom dataset?
+- `zylo117/Yet-Another-EfficientDet-Pytorch <https://github.com/zylo117/Yet-Another-EfficientDet-Pytorch>`_: (4966 ☆) The pytorch re-implement of the official efficientdet with SOTA performance in real time and pretrained weights.
+- `anyscale/academy <https://github.com/anyscale/academy>`_: (311 ☆) Ray tutorials from Anyscale
+- `graphdeeplearning/benchmarking-gnns <https://github.com/graphdeeplearning/benchmarking-gnns>`_: (1693 ☆) Repository for benchmarking graph neural networks
+- `IntelLabs/control-flag <https://github.com/IntelLabs/control-flag>`_: (1000 ☆) A system to flag anomalous source code expressions by learning typical expressions from training data
+- `imankgoyal/NonDeepNetworks <https://github.com/imankgoyal/NonDeepNetworks>`_: (541 ☆) Official Code for "Non-deep Networks"
+- `openai/mujoco-py <https://github.com/openai/mujoco-py>`_: (1945 ☆) MuJoCo is a physics engine for detailed, efficient rigid body simulations with contacts. mujoco-py allows using MuJoCo from Python 3.
+- `dnddnjs/pytorch-multigpu <https://github.com/dnddnjs/pytorch-multigpu>`_: (155 ☆) Multi GPU Training Code for Deep Learning with PyTorch
+- `facebookresearch/xformers <https://github.com/facebookresearch/xformers>`_: (614 ☆) Hackable and optimized Transformers building blocks, supporting a composable construction.
+- `NeuralEnsemble/elephant <https://github.com/NeuralEnsemble/elephant>`_: (114 ☆) Elephant is the Electrophysiology Analysis Toolkit
+- `nukeop/nuclear <https://github.com/nukeop/nuclear>`_: (7509 ☆) Streaming music player that finds free music for you
+- `kzl/universal-computation <https://github.com/kzl/universal-computation>`_: (182 ☆) Official codebase for Pretrained Transformers as Universal Computation Engines.
+- `jazlab/moog.github.io <https://github.com/jazlab/moog.github.io>`_: (24 ☆) Modular Object-Oriented Games (MOOG): Python-based game engine for reinforcement learning, psychology, and neurophysiology.
+- `cpnota/autonomous-learning-library <https://github.com/cpnota/autonomous-learning-library>`_: (542 ☆) A PyTorch library for building deep reinforcement learning agents.
+- `CodeReclaimers/neat-python <https://github.com/CodeReclaimers/neat-python>`_: (1018 ☆) Python implementation of the NEAT neuroevolution algorithm
+- `mtdvio/every-programmer-should-know <https://github.com/mtdvio/every-programmer-should-know>`_: (40000 ☆) A collection of (mostly) technical things every software developer should know about
+- `thoppe/pixelhouse <https://github.com/thoppe/pixelhouse>`_: (341 ☆) A minimalist drawing library for making beautiful animations in python
+- `ryankiros/neural-storyteller <https://github.com/ryankiros/neural-storyteller>`_: (2930 ☆) A recurrent neural network for generating little stories about images
+- `fabric/fabric <https://github.com/fabric/fabric>`_: (13228 ☆) Simple, Pythonic remote execution and deployment.
+- `stencila/stencila <https://github.com/stencila/stencila>`_: (620 ☆) Stencila
+- `myollie/img2pdf <https://github.com/myollie/img2pdf>`_: (9 ☆) losslessly convert images to pdf
+- `deepmind/hanabi-learning-environment <https://github.com/deepmind/hanabi-learning-environment>`_: (557 ☆) hanabi_learning_environment is a research platform for Hanabi experiments.
+- `deepmind/mujoco <https://github.com/deepmind/mujoco>`_: (3180 ☆) Multi-Joint dynamics with Contact. A general purpose physics simulator.
+- `megvii-research/AnchorDETR <https://github.com/megvii-research/AnchorDETR>`_: (173 ☆) An official implementation of the Anchor DETR.
+- `sedthh/pyxelate <https://github.com/sedthh/pyxelate>`_: (1246 ☆) Python class that generates pixel art from images
+- `realpython/list-of-python-api-wrappers <https://github.com/realpython/list-of-python-api-wrappers>`_: (1832 ☆) List of Python API Wrappers and Libraries
+- `HendrikStrobelt/LSTMVis <https://github.com/HendrikStrobelt/LSTMVis>`_: (1058 ☆) Visualization Toolbox for Long Short Term Memory networks (LSTMs)
+- `goodtft/LCD-show <https://github.com/goodtft/LCD-show>`_: (1686 ☆)   2.4" 2.8"3.2" 3.5" 5.0" 7.0" TFT LCD driver for the Raspberry PI 3B+/A/A+/B/B+/PI2/ PI3/ZERO/ZERO W
+- `analyticalmonk/awesome-neuroscience <https://github.com/analyticalmonk/awesome-neuroscience>`_: (856 ☆) A curated list of awesome neuroscience libraries, software and any content related to the domain.
+- `tomgoldstein/loss-landscape <https://github.com/tomgoldstein/loss-landscape>`_: (1849 ☆) Code for visualizing the loss landscape of neural nets
+- `uber-research/backpropamine <https://github.com/uber-research/backpropamine>`_: (60 ☆) Train self-modifying neural networks with neuromodulated plasticity
+- `beyretb/AnimalAI-Olympics <https://github.com/beyretb/AnimalAI-Olympics>`_: (567 ☆) Code repository for the Animal AI Olympics competition
+- `openai/train-procgen <https://github.com/openai/train-procgen>`_: (127 ☆) Code for the paper "Leveraging Procedural Generation to Benchmark Reinforcement Learning"
+- `openai/retro <https://github.com/openai/retro>`_: (2598 ☆) Retro Games in Gym
+- `deepmind/optax <https://github.com/deepmind/optax>`_: (604 ☆) Optax is a gradient processing and optimization library for JAX.
+- `xmu-xiaoma666/External-Attention-pytorch <https://github.com/xmu-xiaoma666/External-Attention-pytorch>`_: (3866 ☆) 🍀 Pytorch implementation of various Attention Mechanisms, MLP, Re-parameter, Convolution, which is helpful to further understand papers.☆
+- `deepmind/neural_testbed <https://github.com/deepmind/neural_testbed>`_: (139 ☆) None
+- `Farama-Foundation/SuperSuit <https://github.com/Farama-Foundation/SuperSuit>`_: (272 ☆) Easy-to-use micro-wrappers for Gym and PettingZoo based RL Environments
+- `microsoft/Swin-Transformer <https://github.com/microsoft/Swin-Transformer>`_: (7008 ☆) This is an official implementation for "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows".
+- `marcelja/facebook-delete <https://github.com/marcelja/facebook-delete>`_: (1135 ☆) Fast facebook activity deletion
+- `NVlabs/stylegan3 <https://github.com/NVlabs/stylegan3>`_: (3547 ☆) Official PyTorch implementation of StyleGAN3
+- `Chakazul/Lenia <https://github.com/Chakazul/Lenia>`_: (2814 ☆) Lenia - Mathematical Life Forms
+- `markshannon/faster-cpython <https://github.com/markshannon/faster-cpython>`_: (728 ☆) How to make CPython faster.
+- `codePerfectPlus/awesomeScripts <https://github.com/codePerfectPlus/awesomeScripts>`_: (310 ☆) A Collection of Awesome Scripts in Python to Ease Daily-Life. Create an issue If you have some great ideas for the new script. Leave a :star:
+- `bytedance/raylink <https://github.com/bytedance/raylink>`_: (32 ☆) Framework to build and train RL algorithms
+- `yt-dlp/yt-dlp <https://github.com/yt-dlp/yt-dlp>`_: (17861 ☆) A youtube-dl fork with additional features and fixes
+- `sdras/awesome-actions <https://github.com/sdras/awesome-actions>`_: (17150 ☆) A curated list of awesome actions to use on GitHub
+- `kenjihiranabe/The-Art-of-Linear-Algebra <https://github.com/kenjihiranabe/The-Art-of-Linear-Algebra>`_: (969 ☆) Graphic notes on Gilbert Strang's "Linear Algebra for Everyone"
+- `gquere/pwn_jenkins <https://github.com/gquere/pwn_jenkins>`_: (1283 ☆) Notes about attacking Jenkins servers
+- `joaoperfig/GRaNDPapA <https://github.com/joaoperfig/GRaNDPapA>`_: (240 ☆) Generator of Rad Names from Decent Paper Acronyms
+- `rahul-thakoor/balena-rpiplay <https://github.com/rahul-thakoor/balena-rpiplay>`_: (1192 ☆) Turn a Raspberry Pi into an Airplay server using RPiPlay to enable screen mirroring on tvs, monitors and projectors.
+- `XuehaiPan/nvitop <https://github.com/XuehaiPan/nvitop>`_: (397 ☆) An interactive NVIDIA-GPU process viewer, the one-stop solution for GPU process management.
+- `wookayin/gpustat <https://github.com/wookayin/gpustat>`_: (2712 ☆) 📊 A simple command-line utility for querying and monitoring GPU status
+- `Cyclenerd/ethereum_nvidia_miner <https://github.com/Cyclenerd/ethereum_nvidia_miner>`_: (816 ☆) 💰 USB flash drive ISO image for Ethereum, Zcash and Monero mining with NVIDIA graphics cards and Ubuntu GNU/Linux (headless)
+- `trekhleb/promote-your-next-startup <https://github.com/trekhleb/promote-your-next-startup>`_: (1787 ☆) 🚀 Free resources you may use to promote your next startup
+- `SimonVandenhende/Awesome-Multi-Task-Learning <https://github.com/SimonVandenhende/Awesome-Multi-Task-Learning>`_: (201 ☆) A list of multi-task learning papers and projects.
+- `SimonVandenhende/Multi-Task-Learning-PyTorch <https://github.com/SimonVandenhende/Multi-Task-Learning-PyTorch>`_: (393 ☆) PyTorch implementation of multi-task learning architectures, incl. MTI-Net (ECCV2020).
+- `SysCV/bdd100k-models <https://github.com/SysCV/bdd100k-models>`_: (107 ☆) Model Zoo of BDD100K Dataset
+- `pgaskin/NickelMenu <https://github.com/pgaskin/NickelMenu>`_: (181 ☆) The easiest way to launch scripts, change settings, and run actions on Kobo e-readers.
+- `odoo/odoo <https://github.com/odoo/odoo>`_: (23978 ☆) Odoo. Open Source Apps To Grow Your Business.
+- `isl-org/DPT <https://github.com/isl-org/DPT>`_: (959 ☆) Dense Prediction Transformers
+- `Megvii-BaseDetection/YOLOX <https://github.com/Megvii-BaseDetection/YOLOX>`_: (5574 ☆) YOLOX is a high-performance anchor-free YOLO, exceeding yolov3~v5 with MegEngine, ONNX, TensorRT, ncnn, and OpenVINO supported. Documentation: https://yolox.readthedocs.io/
+- `danielo515/TW5-auto-publish2gh-pages <https://github.com/danielo515/TW5-auto-publish2gh-pages>`_: (88 ☆) Host your tiddlywikis in GitHub pages without any git knowledge or installing any software
+- `LiYangHart/Hyperparameter-Optimization-of-Machine-Learning-Algorithms <https://github.com/LiYangHart/Hyperparameter-Optimization-of-Machine-Learning-Algorithms>`_: (784 ☆) Implementation of hyperparameter optimization/tuning methods for machine learning & deep learning models (easy&clear)
+- `araffin/rl-baselines-zoo <https://github.com/araffin/rl-baselines-zoo>`_: (963 ☆) A collection of 100+ pre-trained RL agents using Stable Baselines, training and hyperparameter optimization included.
+- `automl/HPOBench <https://github.com/automl/HPOBench>`_: (60 ☆) Collection of hyperparameter optimization benchmark problems
+- `parrt/dtreeviz <https://github.com/parrt/dtreeviz>`_: (1995 ☆) A python library for decision tree visualization and model interpretation.
+- `cmsflash/efficient-attention <https://github.com/cmsflash/efficient-attention>`_: (146 ☆) An implementation of the efficient attention module.
+- `thieu1995/metaheuristics <https://github.com/thieu1995/metaheuristics>`_: (146 ☆) Implement the-state-of-the-art meta-heuristic algorithms using python (numpy)
+- `dair-ai/ml-visuals <https://github.com/dair-ai/ml-visuals>`_: (5873 ☆) 🎨 ML Visuals contains figures and templates which you can reuse and customize to improve your scientific writing.
+- `IntelLabs/distiller <https://github.com/IntelLabs/distiller>`_: (3801 ☆) Neural Network Distiller by Intel AI Lab: a Python package for neural network compression research.  https://intellabs.github.io/distiller
+- `qubvel/segmentation_models.pytorch <https://github.com/qubvel/segmentation_models.pytorch>`_: (4810 ☆) Segmentation models with pretrained backbones. PyTorch.
+- `waymo-research/waymo-open-dataset <https://github.com/waymo-research/waymo-open-dataset>`_: (1589 ☆) Waymo Open Dataset
+- `eusporg/alphaicon <https://github.com/eusporg/alphaicon>`_: (146 ☆) α-Indirect Control in Onion-like Networks
+- `AugustKarlstedt/slideslive-downloader <https://github.com/AugustKarlstedt/slideslive-downloader>`_: (21 ☆) download slideslive presentations (video + slides)
+- `mml-book/mml-book.github.io <https://github.com/mml-book/mml-book.github.io>`_: (9609 ☆) Companion webpage to the book "Mathematics For Machine Learning"
+- `datasciencescoop/Data-Visualization <https://github.com/datasciencescoop/Data-Visualization>`_: (324 ☆) Data Visualization with Python
+- `microsoft/muzic <https://github.com/microsoft/muzic>`_: (1907 ☆) Muzic: Music Understanding and Generation with Artificial Intelligence
+- `learning-zone/python-interview-questions <https://github.com/learning-zone/python-interview-questions>`_: (762 ☆) 300+ Python Interview Questions
+- `The-Japan-DataScientist-Society/100knocks-preprocess <https://github.com/The-Japan-DataScientist-Society/100knocks-preprocess>`_: (1454 ☆) データサイエンス100本ノック（構造化データ加工編）
+- `SimonBlanke/Gradient-Free-Optimizers <https://github.com/SimonBlanke/Gradient-Free-Optimizers>`_: (838 ☆) Simple and reliable optimization with local, global, population-based and sequential techniques in numerical discrete search spaces.
+- `cdhigh/KindleEar <https://github.com/cdhigh/KindleEar>`_: (2514 ☆) A website application running in Google app engine, deliver rss news to your kindle. generate mobi using python, multilanguages supported.
+- `AllenDowney/ThinkStats2 <https://github.com/AllenDowney/ThinkStats2>`_: (3498 ☆) Text and supporting code for Think Stats, 2nd Edition
+- `omegaml/minibatch <https://github.com/omegaml/minibatch>`_: (174 ☆) Python stream processing for humans
+- `CalculatedContent/WeightWatcher <https://github.com/CalculatedContent/WeightWatcher>`_: (576 ☆) The WeightWatcher tool for predicting the accuracy of   Deep Neural Networks
+- `microsoft/PythonProgrammingPuzzles <https://github.com/microsoft/PythonProgrammingPuzzles>`_: (777 ☆) A Dataset of Python Challenges for AI Research
+- `facebookresearch/3detr <https://github.com/facebookresearch/3detr>`_: (353 ☆) Code & Models for 3DETR - an End-to-end transformer model for 3D object detection
+- `thieu1995/opfunu <https://github.com/thieu1995/opfunu>`_: (29 ☆) A collection of Benchmark functions for numerical optimization problems. Framework of OPtimization FUnction in NUmpy (opfunu)
+- `SioKCronin/swarmopt <https://github.com/SioKCronin/swarmopt>`_: (31 ☆) Swarm intelligence optimizer
+- `gliderkite/formicarium <https://github.com/gliderkite/formicarium>`_: (38 ☆) Ant colony simulator
+- `amineremache/qbso-fs <https://github.com/amineremache/qbso-fs>`_: (47 ☆) Python implementation of QBSO-FS : a Reinforcement Learning based Bee Swarm Optimization metaheuristic for Feature Selection problem.
+- `NiaOrg/NiaPy <https://github.com/NiaOrg/NiaPy>`_: (181 ☆) Python microframework for building nature-inspired algorithms. Official docs: https://niapy.org
+- `ljvmiranda921/pyswarms <https://github.com/ljvmiranda921/pyswarms>`_: (876 ☆) A research toolkit for particle swarm optimization in Python
+- `automl/HpBandSter <https://github.com/automl/HpBandSter>`_: (514 ☆) a distributed Hyperband implementation on Steroids
+- `mit-han-lab/tinyml <https://github.com/mit-han-lab/tinyml>`_: (400 ☆) None
+- `lucidrains/triton-transformer <https://github.com/lucidrains/triton-transformer>`_: (113 ☆) Implementation of a Transformer, but completely in Triton
+- `sebastianruder/sluice-networks <https://github.com/sebastianruder/sluice-networks>`_: (141 ☆) Code for Sluice networks: Learning what to share between loosely related tasks
+- `cs231n/cs231n.github.io <https://github.com/cs231n/cs231n.github.io>`_: (8670 ☆) Public facing notes page
+- `couler-proj/couler <https://github.com/couler-proj/couler>`_: (647 ☆) Unified Interface for Constructing and Managing Workflows on different workflow engines, such as Argo Workflows, Tekton Pipelines, and Apache Airflow.
+- `lucidrains/HTM-pytorch <https://github.com/lucidrains/HTM-pytorch>`_: (53 ☆) Implementation of Hierarchical Transformer Memory (HTM) for Pytorch
+- `google-research/rliable <https://github.com/google-research/rliable>`_: (307 ☆) Library for reliable evaluation on RL and ML benchmarks, as recommended by our NeurIPS 2021 Outstanding Paper.
+- `facebookresearch/mtrl <https://github.com/facebookresearch/mtrl>`_: (127 ☆) Multi Task RL Baselines
+- `Xilinx/brevitas <https://github.com/Xilinx/brevitas>`_: (581 ☆) Brevitas: quantization-aware training in PyTorch
+- `InterDigitalInc/CompressAI <https://github.com/InterDigitalInc/CompressAI>`_: (459 ☆) A PyTorch library and evaluation platform for end-to-end compression research
+- `pdfernhout/High-Performance-Organizations-Reading-List <https://github.com/pdfernhout/High-Performance-Organizations-Reading-List>`_: (1134 ☆) Ideas for creating and sustaining high performance organizations
+- `lucidrains/ponder-transformer <https://github.com/lucidrains/ponder-transformer>`_: (59 ☆) Implementation of a Transformer that Ponders, using the scheme from the PonderNet paper
+- `lucidrains/perceiver-pytorch <https://github.com/lucidrains/perceiver-pytorch>`_: (708 ☆) Implementation of Perceiver, General Perception with Iterative Attention, in Pytorch
+- `FedML-AI/FedML <https://github.com/FedML-AI/FedML>`_: (1002 ☆) A Research-oriented Federated Learning Library. Supporting distributed computing, mobile/IoT on-device training, and standalone simulation. Best Paper Award at NeurIPS 2020 Federated Learning workshop. Join our Slack Community:(https://join.slack.com/t/fedml/shared_invite/zt-havwx1ee-a1xfOUrATNfc9DFqU~r34w)
+- `facebookexperimental/skybison <https://github.com/facebookexperimental/skybison>`_: (270 ☆) Instagram's experimental performance oriented greenfield implementation of Python.
+- `wkhtmltopdf/wkhtmltopdf <https://github.com/wkhtmltopdf/wkhtmltopdf>`_: (11873 ☆) Convert HTML to PDF using Webkit (QtWebKit)
+- `spotify/pedalboard <https://github.com/spotify/pedalboard>`_: (3115 ☆) 🎛 🔊 A Python library for adding effects to audio.
+- `pytorch/hydra-torch <https://github.com/pytorch/hydra-torch>`_: (130 ☆) Configuration classes enabling type-safe PyTorch configuration for Hydra apps
+- `pytorch/opacus <https://github.com/pytorch/opacus>`_: (1027 ☆) Training PyTorch models with differential privacy
+- `pytorch/kineto <https://github.com/pytorch/kineto>`_: (211 ☆) A CPU+GPU Profiling library that provides access to timeline traces and hardware performance counters.
+- `pytorch/csprng <https://github.com/pytorch/csprng>`_: (71 ☆) Cryptographically secure pseudorandom number generators for PyTorch
+- `pytorch/botorch <https://github.com/pytorch/botorch>`_: (2177 ☆) Bayesian optimization in PyTorch
+- `pytorch/test-infra <https://github.com/pytorch/test-infra>`_: (9 ☆) This repository hosts code that supports the testing infrastructure for the main PyTorch repo. For example, this repo hosts the logic to track disabled tests and slow tests, as well as our continuation integration jobs HUD/dashboard.
+- `cerlymarco/MEDIUM_NoteBook <https://github.com/cerlymarco/MEDIUM_NoteBook>`_: (1138 ☆) Repository containing notebooks of my posts on Medium
+- `gimseng/99-ML-Learning-Projects <https://github.com/gimseng/99-ML-Learning-Projects>`_: (216 ☆) A list of 99 machine learning projects for anyone interested to learn from coding and building projects
+- `graviraja/MLOps-Basics <https://github.com/graviraja/MLOps-Basics>`_: (2483 ☆) None
+- `AI4Finance-Foundation/ElegantRL <https://github.com/AI4Finance-Foundation/ElegantRL>`_: (1635 ☆) Scalable and Elastic Deep Reinforcement Learning Using PyTorch. Please star. 🔥
+- `DiegoVicen/som-tsp <https://github.com/DiegoVicen/som-tsp>`_: (1703 ☆) Solving the Traveling Salesman Problem using Self-Organizing Maps
+- `astropy/astropy <https://github.com/astropy/astropy>`_: (3129 ☆) Astronomy and astrophysics core library
+- `orhun/git-cliff <https://github.com/orhun/git-cliff>`_: (3674 ☆) A highly customizable Changelog Generator that follows Conventional Commit specifications ⛰️
+- `HashLips/generative-art-opensource <https://github.com/HashLips/generative-art-opensource>`_: (1170 ☆) Create generative art by using the canvas api and node js, feel free to contribute to this repo with new ideas.
+- `bpierre/loot-rarity <https://github.com/bpierre/loot-rarity>`_: (476 ☆) 🤍 💚 💙 💜 🧡 ❤️ Rarity levels for Loot.
+- `VickScarlet/lifeRestart <https://github.com/VickScarlet/lifeRestart>`_: (9167 ☆) やり直すんだ。そして、次はうまくやる。
+- `minerllabs/baselines <https://github.com/minerllabs/baselines>`_: (138 ☆) A collection of baselines for the MineRL environment/datasets & the NeurIPS 2021 MineRL competitions
+- `sally20921/SinForkGAN-pytorch <https://github.com/sally20921/SinForkGAN-pytorch>`_: (49 ☆) PyTorch Implementation for "ForkGAN with SIngle Rainy NIght Images: Leveraging the RumiGAN to See into the Rainy Night"
+- `AhmadRafiee/Docker_training_with_DockerMe <https://github.com/AhmadRafiee/Docker_training_with_DockerMe>`_: (406 ☆) The tools and sample needed to learn the Docker
+- `cs-books/influential-cs-books <https://github.com/cs-books/influential-cs-books>`_: (4385 ☆) Most influential books on Computer Science/programming
+- `mxm0z/awesome-intelligence-writing <https://github.com/mxm0z/awesome-intelligence-writing>`_: (239 ☆) Awesome collection of great and useful resources concerning intelligence writing such as manuals/guides, standards, books, and articles
+- `AI4Finance-Foundation/FinRL <https://github.com/AI4Finance-Foundation/FinRL>`_: (3272 ☆) FinRL: Financial Reinforcement Learning Framework. Please star. 🔥
+- `quantopian/pyfolio <https://github.com/quantopian/pyfolio>`_: (4235 ☆) Portfolio and risk analytics in Python
+- `ashleve/lightning-hydra-template <https://github.com/ashleve/lightning-hydra-template>`_: (933 ☆) PyTorch Lightning + Hydra. A feature-rich template for rapid, scalable and reproducible ML experimentation with best practices.  ⚡🔥⚡
+- `python-control/python-control <https://github.com/python-control/python-control>`_: (1044 ☆)  The Python Control Systems Library is a Python module that implements basic operations for analysis and design of feedback control systems.
+- `Versent/saml2aws <https://github.com/Versent/saml2aws>`_: (1410 ☆) CLI tool which enables you to login and retrieve AWS temporary credentials using a SAML IDP
+- `JingyunLiang/SwinIR <https://github.com/JingyunLiang/SwinIR>`_: (1228 ☆) SwinIR: Image Restoration Using Swin Transformer
+- `yanx27/Pointnet_Pointnet2_pytorch <https://github.com/yanx27/Pointnet_Pointnet2_pytorch>`_: (1332 ☆) PointNet and PointNet++ implemented by pytorch (pure python) and on ModelNet, ShapeNet and S3DIS.
+- `great-expectations/great_expectations <https://github.com/great-expectations/great_expectations>`_: (5996 ☆) Always know what to expect from your data.
+- `microsoft/Focal-Transformer <https://github.com/microsoft/Focal-Transformer>`_: (379 ☆) Official code for our NeurIPS 2021 Spotlight "Focal Self-attention for Local-Global Interactions in Vision Transformers"
+- `rail-berkeley/d4rl <https://github.com/rail-berkeley/d4rl>`_: (513 ☆) A benchmark for offline reinforcement learning.
+- `lucidrains/fast-transformer-pytorch <https://github.com/lucidrains/fast-transformer-pytorch>`_: (157 ☆) Implementation of Fast Transformer in Pytorch
+- `lucidrains/segformer-pytorch <https://github.com/lucidrains/segformer-pytorch>`_: (147 ☆) Implementation of Segformer, Attention + MLP neural network for segmentation, in Pytorch
+- `jonaslejon/malicious-pdf <https://github.com/jonaslejon/malicious-pdf>`_: (1194 ☆) Generate a bunch of malicious pdf files with phone-home functionality. Can be used with Burp Collaborator or Interact.sh
+- `jorisschellekens/borb <https://github.com/jorisschellekens/borb>`_: (2505 ☆) borb is a library for reading, creating and manipulating PDF files in python.
+- `Lux-AI-Challenge/Lux-Design-2021 <https://github.com/Lux-AI-Challenge/Lux-Design-2021>`_: (906 ☆) Home to the design and engine of the @Lux-AI-Challenge Season 1, hosted on @kaggle
+- `DeepGraphLearning/torchdrug <https://github.com/DeepGraphLearning/torchdrug>`_: (724 ☆) A powerful and flexible machine learning platform for drug discovery
+- `j05t/dbclf <https://github.com/j05t/dbclf>`_: (37 ☆) Identify Dog Breeds Android App
+- `SvenBecker/vscode-pytorch <https://github.com/SvenBecker/vscode-pytorch>`_: (43 ☆) Visual Studio Code (VS Code) extension offering code snippets when working with PyTorch.
+- `tj/git-extras <https://github.com/tj/git-extras>`_: (15387 ☆) GIT utilities -- repo summary, repl, changelog population, author commit percentages and more
+- `aith/agentcraft <https://github.com/aith/agentcraft>`_: (25 ☆) AI Agent Simulation generates Minecraft Settlements
+- `jeffheaton/t81_558_deep_learning <https://github.com/jeffheaton/t81_558_deep_learning>`_: (4269 ☆) Washington University (in St. Louis) Course T81-558: Applications of Deep Neural Networks
+- `Textualize/textual <https://github.com/Textualize/textual>`_: (7423 ☆) Textual is a TUI (Text User Interface) framework for Python inspired by modern web development.
+- `hackjutsu/Lepton <https://github.com/hackjutsu/Lepton>`_: (9140 ☆) 💻     Democratizing Snippet Management (macOS/Win/Linux)
+- `treymo/joplin-link-graph <https://github.com/treymo/joplin-link-graph>`_: (151 ☆) UI for viewing connections between different Joplin notes
+- `facebookresearch/impact-driven-exploration <https://github.com/facebookresearch/impact-driven-exploration>`_: (98 ☆) impact-driven-exploration
+- `mailpile/Mailpile <https://github.com/mailpile/Mailpile>`_: (8553 ☆) A free & open modern, fast email client with user-friendly encryption and privacy features
+- `vector-im/element-web <https://github.com/vector-im/element-web>`_: (7728 ☆) A glossy Matrix collaboration client for the web.
+- `onionshare/onionshare <https://github.com/onionshare/onionshare>`_: (5027 ☆) Securely and anonymously share files, host websites, and chat with friends using the Tor network
+- `xwiki-labs/cryptpad <https://github.com/xwiki-labs/cryptpad>`_: (3306 ☆) Collaboration suite, end-to-end encrypted and open-source.
+- `iptv-org/iptv <https://github.com/iptv-org/iptv>`_: (40000 ☆) Collection of publicly available IPTV channels from all over the world
+- `kingyiusuen/image-to-latex <https://github.com/kingyiusuen/image-to-latex>`_: (886 ☆) Convert images of LaTex math equations into LaTex code.
+- `instaloader/instaloader <https://github.com/instaloader/instaloader>`_: (3808 ☆) Download pictures (or videos) along with their captions and other metadata from Instagram.
+- `Kikobeats/awesome-github <https://github.com/Kikobeats/awesome-github>`_: (514 ☆) An exquisite list of awesome :octocat: secrets.
+- `nocodb/nocodb <https://github.com/nocodb/nocodb>`_: (21818 ☆) 🔥 🔥 🔥 Open Source Airtable Alternative
+- `Kaixhin/dockerfiles <https://github.com/Kaixhin/dockerfiles>`_: (504 ☆) Compilation of Dockerfiles with automated builds enabled on the Docker Registry
+- `coxlab/prednet <https://github.com/coxlab/prednet>`_: (695 ☆) Code and models accompanying "Deep Predictive Coding Networks for Video Prediction and Unsupervised Learning"
+- `microsoft/ML-For-Beginners <https://github.com/microsoft/ML-For-Beginners>`_: (28873 ☆) 12 weeks, 26 lessons, 52 quizzes, classic Machine Learning for all
+- `abarker/pdfCropMargins <https://github.com/abarker/pdfCropMargins>`_: (187 ☆) pdfCropMargins -- a program to crop the margins of PDF files
+- `h-Klok/StatsWithJuliaBook <https://github.com/h-Klok/StatsWithJuliaBook>`_: (916 ☆) None
+- `Netflix/consoleme <https://github.com/Netflix/consoleme>`_: (2660 ☆) A Central Control Plane for AWS Permissions and Access
+- `JuliaReinforcementLearning/ReinforcementLearning.jl <https://github.com/JuliaReinforcementLearning/ReinforcementLearning.jl>`_: (335 ☆) A reinforcement learning package for Julia
+- `JuliaNLSolvers/Optim.jl <https://github.com/JuliaNLSolvers/Optim.jl>`_: (813 ☆) Optimization functions for Julia
+- `jonathan-laurent/AlphaZero.jl <https://github.com/jonathan-laurent/AlphaZero.jl>`_: (957 ☆) A generic, simple and fast implementation of Deepmind's AlphaZero algorithm.
+- `FluxML/FastAI.jl <https://github.com/FluxML/FastAI.jl>`_: (452 ☆) Repository of best practices for deep learning in Julia, inspired by fastai
+- `SantaFeInstitute/ABMA <https://github.com/SantaFeInstitute/ABMA>`_: (33 ☆) SantaFeInstitute/ABMA: the code repository and website for Agent-Based Modeling for Archaeology.
+- `organicmaps/organicmaps <https://github.com/organicmaps/organicmaps>`_: (2974 ☆) 🍃 Organic Maps is a free Android & iOS offline maps app for travelers, tourists, hikers, and cyclists. It uses crowd-sourced OpenStreetMap data and is developed with love by MapsWithMe (MapsMe) founders and our community. No ads, no tracking, no data collection, no crapware. Your donations and positive reviews motivate and inspire our small team!
+- `chiphuyen/ml-interviews-book <https://github.com/chiphuyen/ml-interviews-book>`_: (1562 ☆) https://huyenchip.com/ml-interviews-book/
+- `RoiArthurB/Side-Auto_Sci-Hub <https://github.com/RoiArthurB/Side-Auto_Sci-Hub>`_: (214 ☆) Cross-Browser Plugin to open Sci-Hub 🗝 page with the article from your current tab
+- `lokeshreddy007/freedom-of-eduation <https://github.com/lokeshreddy007/freedom-of-eduation>`_: (24 ☆) Full List of websites from where any one can get free resources to improve ones Knowledge
+- `0x01h/sci-hub-now <https://github.com/0x01h/sci-hub-now>`_: (349 ☆) Free access to academic papers with just a single click! Abolish publishers, long live the open access movement! 🦅
+- `GjjvdBurg/paper2remarkable <https://github.com/GjjvdBurg/paper2remarkable>`_: (236 ☆) Fetch an academic paper or web article and send it to the reMarkable tablet with a single command
+- `dkozlov/awesome-knowledge-distillation <https://github.com/dkozlov/awesome-knowledge-distillation>`_: (2665 ☆) Awesome Knowledge Distillation
+- `Netflix/hubcommander <https://github.com/Netflix/hubcommander>`_: (1191 ☆) A Slack bot for GitHub organization management -- and other things too
+- `clvrai/awesome-rl-envs <https://github.com/clvrai/awesome-rl-envs>`_: (400 ☆) None
+- `Stable-Baselines-Team/stable-baselines <https://github.com/Stable-Baselines-Team/stable-baselines>`_: (185 ☆) Mirror of Stable-Baselines: a fork of OpenAI Baselines, implementations of reinforcement learning algorithms
+- `openai/triton <https://github.com/openai/triton>`_: (3470 ☆) Development repository for the Triton language and compiler
+- `kunal-kushwaha/Competitive-Programming-Resources <https://github.com/kunal-kushwaha/Competitive-Programming-Resources>`_: (1750 ☆) Competitive Programming & System Design Resources.
+- `Ebazhanov/linkedin-skill-assessments-quizzes <https://github.com/Ebazhanov/linkedin-skill-assessments-quizzes>`_: (8139 ☆) Full reference of LinkedIn answers 2021 for skill assessments, LinkedIn test, questions and answers (aws-lambda, rest-api, javascript, react, git, html, jquery, mongodb, java, Go, python, machine-learning, power-point) linkedin excel test lösungen, linkedin machine learning test
+- `gayanvoice/top-github-users <https://github.com/gayanvoice/top-github-users>`_: (618 ☆) Check your ranking in GitHub! Don't forget to star ☆ this repository.
+- `rotki/rotki <https://github.com/rotki/rotki>`_: (1462 ☆) A portfolio tracking, analytics, accounting and tax reporting application that protects your privacy
+- `ultrafunkamsterdam/undetected-chromedriver <https://github.com/ultrafunkamsterdam/undetected-chromedriver>`_: (1469 ☆) Custom Selenium Chromedriver | Zero-Config | Passes ALL bot mitigation systems (like Distil / Imperva/ Datadadome / CloudFlare IUAM)
+- `JDAI-CV/CoTNet <https://github.com/JDAI-CV/CoTNet>`_: (338 ☆) This is an official implementation for "Contextual Transformer Networks for Visual Recognition".
+- `deepmind/enn <https://github.com/deepmind/enn>`_: (137 ☆) None
+- `ucla-mobility/OpenCDA <https://github.com/ucla-mobility/OpenCDA>`_: (515 ☆) A generalized framework for prototyping full-stack cooperative driving automation applications under CARLA+SUMO.
+- `dr-guangtou/daily_astroph <https://github.com/dr-guangtou/daily_astroph>`_: (36 ☆) Daily dose of astro-ph reading
+- `recite/autosum <https://github.com/recite/autosum>`_: (31 ☆) Summarize Publications Automatically
+- `IouJenLiu/CMAE <https://github.com/IouJenLiu/CMAE>`_: (21 ☆) None
+- `chintu619/citation-sorted-arxiv-slack-bot <https://github.com/chintu619/citation-sorted-arxiv-slack-bot>`_: (35 ☆) Top ML papers published daily in arXiv
+- `bibcure/scihub2pdf <https://github.com/bibcure/scihub2pdf>`_: (135 ☆) Downloads pdfs via a DOI number, article title or a bibtex file, using the database of libgen(sci-hub) , arxiv
+- `kourgeorge/arxiv-style <https://github.com/kourgeorge/arxiv-style>`_: (640 ☆) A Latex style and template for paper preprints (based on NIPS style)
+- `google-research/arxiv-latex-cleaner <https://github.com/google-research/arxiv-latex-cleaner>`_: (2723 ☆) arXiv LaTeX Cleaner: Easily clean the LaTeX code of your paper to submit to arXiv
+- `bibcure/bibcure <https://github.com/bibcure/bibcure>`_: (150 ☆) Bibcure helps in boring tasks by keeping your bibfile up to date and normalized...also allows you to easily download all papers inside your bibtex
+- `deerawan/vscode-dash <https://github.com/deerawan/vscode-dash>`_: (209 ☆) Dash, Zeal and Velocity documentation integration in Visual Studio Code 🔎📖
+- `unixorn/awesome-zsh-plugins <https://github.com/unixorn/awesome-zsh-plugins>`_: (10322 ☆) A collection of ZSH frameworks, plugins, themes and tutorials.
+- `terkelg/awesome-creative-coding <https://github.com/terkelg/awesome-creative-coding>`_: (8925 ☆) Creative Coding: Generative Art, Data visualization, Interaction Design, Resources.
+- `lordgiotto/google-font-installer <https://github.com/lordgiotto/google-font-installer>`_: (143 ☆) Download and install Google Web Fonts on your local machine. Both CLI and API available.
+- `TezRomacH/python-package-template <https://github.com/TezRomacH/python-package-template>`_: (647 ☆) 🚀 Your next Python package needs a bleeding-edge project structure.
+- `drivendata/cookiecutter-data-science <https://github.com/drivendata/cookiecutter-data-science>`_: (5387 ☆) A logical, reasonably standardized, but flexible project structure for doing and sharing data science work.
+- `wemake-services/wemake-python-package <https://github.com/wemake-services/wemake-python-package>`_: (303 ☆) Bleeding edge cookiecutter template to create new python packages
+- `cjolowicz/cookiecutter-hypermodern-python <https://github.com/cjolowicz/cookiecutter-hypermodern-python>`_: (512 ☆) Hypermodern Python Cookiecutter
+- `cruft/cruft <https://github.com/cruft/cruft>`_: (348 ☆) Allows you to maintain all the necessary cruft for packaging and building projects separate from the code you intentionally write. Built on-top of, and fully compatible with, CookieCutter.
+- `mkrapp/cookiecutter-reproducible-science <https://github.com/mkrapp/cookiecutter-reproducible-science>`_: (132 ☆) boilerplate for reproducible and transparent science
+- `madewithml/boilerplate <https://github.com/madewithml/boilerplate>`_: (122 ☆) 🍪 ML application template to create API services around your ML code.
+- `NSLS-II/scientific-python-cookiecutter <https://github.com/NSLS-II/scientific-python-cookiecutter>`_: (83 ☆) a tutorial and 'cookiecutter' template for a scientific Python library
+- `executablebooks/cookiecutter-jupyter-book <https://github.com/executablebooks/cookiecutter-jupyter-book>`_: (65 ☆) Cookiecutter template for a simple jupyter book
+- `crmne/cookiecutter-modern-datascience <https://github.com/crmne/cookiecutter-modern-datascience>`_: (79 ☆) Start a data science project with modern tools
+- `selimb/cookiecutter-latex-article <https://github.com/selimb/cookiecutter-latex-article>`_: (39 ☆) Cookiecutter template for LaTeX article.
+- `victoresque/pytorch-template <https://github.com/victoresque/pytorch-template>`_: (3100 ☆) PyTorch deep learning projects made easy.
+- `ttscoff/doing <https://github.com/ttscoff/doing>`_: (874 ☆) None
+- `papis/papis <https://github.com/papis/papis>`_: (749 ☆) Powerful and highly extensible command-line based document and bibliography manager.
+- `PyCQA/flake8-commas <https://github.com/PyCQA/flake8-commas>`_: (127 ☆) Flake8 extension for enforcing trailing commas in python
+- `PyCQA/redbaron <https://github.com/PyCQA/redbaron>`_: (625 ☆) Bottom-up approach to refactoring in python
+- `rasmusbergpalm/hebbian-evolution <https://github.com/rasmusbergpalm/hebbian-evolution>`_: (5 ☆) None
+- `google/bloaty <https://github.com/google/bloaty>`_: (3546 ☆) Bloaty McBloatface: a size profiler for binaries
+- `google/mediapipe <https://github.com/google/mediapipe>`_: (15923 ☆) Cross-platform, customizable ML solutions for live and streaming media.
+- `google/pytype <https://github.com/google/pytype>`_: (3598 ☆) A static type analyzer for Python code
+- `PyCQA/bandit <https://github.com/PyCQA/bandit>`_: (3835 ☆) Bandit is a tool designed to find common security issues in Python code.
+- `PyCQA/astroid <https://github.com/PyCQA/astroid>`_: (375 ☆) A common base representation of python source code for pylint and other projects
+- `PyCQA/pydocstyle <https://github.com/PyCQA/pydocstyle>`_: (846 ☆) docstring style checker
+- `jacebrowning/template-python <https://github.com/jacebrowning/template-python>`_: (525 ☆) A template for new Python libraries.
+- `ionelmc/cookiecutter-pylibrary <https://github.com/ionelmc/cookiecutter-pylibrary>`_: (978 ☆) Enhanced cookiecutter template for Python libraries.
+- `sourcery-ai/python-best-practices-cookiecutter <https://github.com/sourcery-ai/python-best-practices-cookiecutter>`_: (428 ☆) Python best practices project cookiecutter 🍪
+- `tmrts/boilr <https://github.com/tmrts/boilr>`_: (1425 ☆) :zap: boilerplate template manager that generates files or directories from template repositories
+- `release-it/release-it <https://github.com/release-it/release-it>`_: (4875 ☆) 🚀 Automate versioning and package publishing
+- `jettify/pytorch-optimizer <https://github.com/jettify/pytorch-optimizer>`_: (2299 ☆) torch-optimizer -- collection of optimizers for Pytorch
+- `Lyken17/pytorch-OpCounter <https://github.com/Lyken17/pytorch-OpCounter>`_: (3191 ☆) Count the MACs / FLOPs of your PyTorch model.
+- `MushroomRL/mushroom-rl <https://github.com/MushroomRL/mushroom-rl>`_: (558 ☆) Python library for Reinforcement Learning.
+- `pytorch/ignite <https://github.com/pytorch/ignite>`_: (3839 ☆) High-level library to help with training and evaluating neural networks in PyTorch flexibly and transparently.
+- `pythonguis/15-minute-apps <https://github.com/pythonguis/15-minute-apps>`_: (3127 ☆) 15 minute (small) desktop apps built with PyQt
+- `rShetty/awesome-podcasts <https://github.com/rShetty/awesome-podcasts>`_: (10579 ☆) Collection of awesome podcasts
+- `tuanavu/airflow-tutorial <https://github.com/tuanavu/airflow-tutorial>`_: (659 ☆) Apache Airflow tutorial
+- `fastai/fastpages <https://github.com/fastai/fastpages>`_: (2991 ☆) An easy to use blogging platform, with enhanced support for Jupyter Notebooks.
+- `labmlai/annotated_deep_learning_paper_implementations <https://github.com/labmlai/annotated_deep_learning_paper_implementations>`_: (6118 ☆) 🧑‍🏫 50! Implementations/tutorials of deep learning papers with side-by-side notes 📝; including transformers (original, xl, switch, feedback, vit, ...), optimizers (adam, adabelief, ...), gans(cyclegan, stylegan2, ...), 🎮 reinforcement learning (ppo, dqn), capsnet, distillation, ... 🧠
+- `The-Eigensolvers/TEQS <https://github.com/The-Eigensolvers/TEQS>`_: (53 ☆) Welcome to The Eigensolver Quantum School, a quantum computing crash course designed by students for students.
+- `apache/superset <https://github.com/apache/superset>`_: (40000 ☆) Apache Superset is a Data Visualization and Data Exploration Platform
+- `opendilab/DI-star <https://github.com/opendilab/DI-star>`_: (266 ☆) OpenDILab Decision AI in StarCraftII
+- `opengapps/opengapps <https://github.com/opengapps/opengapps>`_: (5041 ☆) The main repository of the Open GApps Project
+- `PeizeSun/SparseR-CNN <https://github.com/PeizeSun/SparseR-CNN>`_: (1097 ☆) End-to-End Object Detection with Learnable Proposal, CVPR2021
+- `typesense/typesense <https://github.com/typesense/typesense>`_: (8927 ☆) Fast, typo tolerant, fuzzy search engine for building delightful search experiences ⚡ 🔍 ✨ An Open Source alternative to Algolia and an Easier-to-Use alternative to ElasticSearch.
+- `joplin/plugins <https://github.com/joplin/plugins>`_: (411 ☆) Joplin official plugin repository. For issues, please use https://github.com/laurent22/joplin/issues
+- `mermaid-js/mermaid <https://github.com/mermaid-js/mermaid>`_: (40000 ☆) Generation of diagram and flowchart from text in a similar manner as markdown
+- `deepmind/alphafold <https://github.com/deepmind/alphafold>`_: (7734 ☆) Open source code for AlphaFold.
+- `cat-milk/Anime-Girls-Holding-Programming-Books <https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books>`_: (8164 ☆) Anime Girls Holding Programming Books
+- `rsalmei/alive-progress <https://github.com/rsalmei/alive-progress>`_: (3037 ☆) A new kind of Progress Bar, with real-time throughput, ETA, and very cool animations!
+- `dk-liang/Awesome-Visual-Transformer <https://github.com/dk-liang/Awesome-Visual-Transformer>`_: (2124 ☆) Collect some papers about transformer with vision. Awesome Transformer with Computer Vision (CV)
+- `mikf/gallery-dl <https://github.com/mikf/gallery-dl>`_: (4414 ☆) Command-line program to download image galleries and collections from several image hosting sites
+- `GT-RIPL/Continual-Learning-Benchmark <https://github.com/GT-RIPL/Continual-Learning-Benchmark>`_: (352 ☆) Evaluate three types of task shifting with popular continual learning algorithms.
+- `brainflow-dev/brainflow <https://github.com/brainflow-dev/brainflow>`_: (538 ☆) BrainFlow is a library intended to obtain, parse and analyze EEG, EMG, ECG and other kinds of data from biosensors
+- `chinese-poetry/chinese-poetry <https://github.com/chinese-poetry/chinese-poetry>`_: (35085 ☆) The most comprehensive database of Chinese poetry 🧶最全中华古诗词数据库,  唐宋两朝近一万四千古诗人,  接近5.5万首唐诗加26万宋诗.  两宋时期1564位词人，21050首词。
+- `TorchDrift/TorchDrift <https://github.com/TorchDrift/TorchDrift>`_: (193 ☆) Drift Detection for your PyTorch Models
+- `azavea/raster-vision <https://github.com/azavea/raster-vision>`_: (1497 ☆) An open source framework for deep learning on satellite and aerial imagery.
+- `microsoft/vscode-recipes <https://github.com/microsoft/vscode-recipes>`_: (5306 ☆) None
+- `openai/neural-mmo <https://github.com/openai/neural-mmo>`_: (1321 ☆) Code for the paper "Neural MMO: A Massively Multiagent Game Environment for Training and Evaluating Intelligent Agents"
+- `openai/evolution-strategies-starter <https://github.com/openai/evolution-strategies-starter>`_: (1425 ☆) Code for the paper "Evolution Strategies as a Scalable Alternative to Reinforcement Learning"
+- `DirtyHarryLYL/Transformer-in-Vision <https://github.com/DirtyHarryLYL/Transformer-in-Vision>`_: (709 ☆) Recent Transformer-based CV and related works.
+- `davidhalter/jedi <https://github.com/davidhalter/jedi>`_: (5062 ☆) Awesome autocompletion, static analysis and refactoring library for python
+- `adrienverge/yamllint <https://github.com/adrienverge/yamllint>`_: (1808 ☆) A linter for YAML files.
+- `probml/pml-book <https://github.com/probml/pml-book>`_: (2021 ☆) "Probabilistic Machine Learning" - a book series by Kevin Murphy
+- `kingoflolz/swarm-jax <https://github.com/kingoflolz/swarm-jax>`_: (127 ☆) Swarm training framework using Haiku + JAX + Ray for layer parallel transformer language models on unreliable, heterogeneous nodes
+- `robertmartin8/PyPortfolioOpt <https://github.com/robertmartin8/PyPortfolioOpt>`_: (2582 ☆) Financial portfolio optimisation in python, including classical efficient frontier, Black-Litterman, Hierarchical Risk Parity
+- `ubc-vision/COTR <https://github.com/ubc-vision/COTR>`_: (264 ☆) Code release for "COTR: Correspondence Transformer for Matching Across Images"
+- `deepmind/dm-haiku <https://github.com/deepmind/dm-haiku>`_: (1678 ☆) JAX-based neural network library
+- `ahmetb/kubectl-aliases <https://github.com/ahmetb/kubectl-aliases>`_: (2205 ☆) Programmatically generated handy kubectl aliases.
+- `Python-World/python-mini-projects <https://github.com/Python-World/python-mini-projects>`_: (9027 ☆) A collection of simple python mini projects to enhance your python skills
+- `facebookresearch/TimeSformer <https://github.com/facebookresearch/TimeSformer>`_: (708 ☆) The official pytorch implementation of our paper "Is Space-Time Attention All You Need for Video Understanding?"
+- `laramies/theHarvester <https://github.com/laramies/theHarvester>`_: (6343 ☆) E-mails, subdomains and names Harvester - OSINT
+- `facebookresearch/xcit <https://github.com/facebookresearch/xcit>`_: (533 ☆) Official code Cross-Covariance Image Transformer (XCiT)
+- `datamllab/rlcard <https://github.com/datamllab/rlcard>`_: (1588 ☆) Reinforcement Learning / AI Bots in Card (Poker) Games - Blackjack, Leduc, Texas, DouDizhu, Mahjong, UNO.
+- `kkkgo/LTSB-Add-MicrosoftStore <https://github.com/kkkgo/LTSB-Add-MicrosoftStore>`_: (399 ☆) Add Windows Store for LTSB
+- `gigwegbe/tinyml-papers-and-projects <https://github.com/gigwegbe/tinyml-papers-and-projects>`_: (282 ☆) This is a list of interesting papers and projects about TinyML.
+- `rougier/scientific-visualization-book <https://github.com/rougier/scientific-visualization-book>`_: (6724 ☆) An open access book on scientific visualization using python and matplotlib
+- `jason718/awesome-self-supervised-learning <https://github.com/jason718/awesome-self-supervised-learning>`_: (4575 ☆) A curated list of awesome self-supervised methods
+- `plantuml-stdlib/C4-PlantUML <https://github.com/plantuml-stdlib/C4-PlantUML>`_: (3642 ☆) C4-PlantUML combines the benefits of PlantUML and the C4 model for providing a simple way of describing and communicate software architectures
+- `chanakaudaya/solution-architecture-patterns <https://github.com/chanakaudaya/solution-architecture-patterns>`_: (2577 ☆) Reusable, vendor-neutral, industry-specific, vendor-specific solution architecture patterns for enterprise
+- `AdrienGuille/GrowingNeuralGas <https://github.com/AdrienGuille/GrowingNeuralGas>`_: (41 ☆) Simple implementation of the "growing neural gas" artificial neural network
+- `lana-k/sqliteviz <https://github.com/lana-k/sqliteviz>`_: (1395 ☆) Instant offline SQL-powered data visualisation in your browser
+- `Querz/mcaselector <https://github.com/Querz/mcaselector>`_: (1488 ☆) A tool to select chunks from Minecraft worlds for deletion or export.
+- `rmunro/pytorch_active_learning <https://github.com/rmunro/pytorch_active_learning>`_: (578 ☆) PyTorch Library for Active Learning to accompany Human-in-the-Loop Machine Learning book
+- `meetps/pytorch-semseg <https://github.com/meetps/pytorch-semseg>`_: (3192 ☆) Semantic Segmentation Architectures Implemented in PyTorch
+- `vsitzmann/awesome-implicit-representations <https://github.com/vsitzmann/awesome-implicit-representations>`_: (1341 ☆) A curated list of resources on implicit neural representations.
+- `kzl/decision-transformer <https://github.com/kzl/decision-transformer>`_: (990 ☆) Official codebase for Decision Transformer: Reinforcement Learning via Sequence Modeling.
+- `openai/guided-diffusion <https://github.com/openai/guided-diffusion>`_: (1080 ☆) None
+- `mitre/caldera <https://github.com/mitre/caldera>`_: (3198 ☆) Automated Adversary Emulation Platform
+- `sqfmi/Watchy <https://github.com/sqfmi/Watchy>`_: (1204 ☆) Watchy - An Open Source E-Ink Smartwatch
+- `ionelmc/pytest-benchmark <https://github.com/ionelmc/pytest-benchmark>`_: (849 ☆) py.test fixture for benchmarking code
+- `rougier/numpy-100 <https://github.com/rougier/numpy-100>`_: (7838 ☆) 100 numpy exercises (with solutions)
+- `microsoft/FLAML <https://github.com/microsoft/FLAML>`_: (1725 ☆) A fast library for AutoML and tuning.
+- `jakevdp/PythonDataScienceHandbook <https://github.com/jakevdp/PythonDataScienceHandbook>`_: (32372 ☆) Python Data Science Handbook: full text in Jupyter Notebooks
+- `google/brax <https://github.com/google/brax>`_: (1121 ☆) Massively parallel rigidbody physics simulation on accelerator hardware.
+- `Sycnex/Windows10Debloater <https://github.com/Sycnex/Windows10Debloater>`_: (11998 ☆) Script to remove Windows 10 bloatware.
+- `NVlabs/SegFormer <https://github.com/NVlabs/SegFormer>`_: (807 ☆) Official PyTorch implementation of SegFormer
+- `nushell/nushell <https://github.com/nushell/nushell>`_: (17105 ☆) A new type of shell
+- `ahmedfgad/GeneticAlgorithmPython <https://github.com/ahmedfgad/GeneticAlgorithmPython>`_: (765 ☆) Source code of PyGAD, a Python 3 library for building the genetic algorithm and training machine learning algorithms (Keras & PyTorch).
+- `mosquito/aiofile <https://github.com/mosquito/aiofile>`_: (281 ☆) Real asynchronous file operations with asyncio support.
+- `megvii-research/SOLQ <https://github.com/megvii-research/SOLQ>`_: (148 ☆) "SOLQ: Segmenting Objects by Learning Queries", SOLQ is an end-to-end instance segmentation framework with Transformer.
+- `chrxh/alien <https://github.com/chrxh/alien>`_: (2308 ☆) alien is a CUDA-powered artificial life simulation program.
+- `mnoukhov/emergent-compete <https://github.com/mnoukhov/emergent-compete>`_: (8 ☆) Code for Emergent Communication under Competition (AAMAS 2021)
+- `huggingface/pytorch_block_sparse <https://github.com/huggingface/pytorch_block_sparse>`_: (465 ☆) Fast Block Sparse Matrices for Pytorch
+- `google-coral/pycoral <https://github.com/google-coral/pycoral>`_: (133 ☆) Python API for ML inferencing and transfer-learning on Coral devices
+- `google/neuroglancer <https://github.com/google/neuroglancer>`_: (711 ☆) WebGL-based viewer for volumetric data
+- `NVIDIA-AI-IOT/torch2trt <https://github.com/NVIDIA-AI-IOT/torch2trt>`_: (3080 ☆) An easy to use PyTorch to TensorRT converter
+- `archlinux/archinstall <https://github.com/archlinux/archinstall>`_: (2855 ☆) Arch Linux installer - guided, templates etc.
+- `bee-san/pyWhat <https://github.com/bee-san/pyWhat>`_: (5007 ☆) 🐸   Identify anything. pyWhat easily lets you identify emails, IP addresses, and more. Feed it a .pcap file or some text and it'll tell you what it is! 🧙‍♀️
+- `gelstudios/gitfiti <https://github.com/gelstudios/gitfiti>`_: (6811 ☆) abusing github commit history for the lulz
+- `uber-research/poet <https://github.com/uber-research/poet>`_: (209 ☆) Paired Open-Ended Trailblazer (POET) and Enhanced POET
+- `freereadorg/awesome-libgen <https://github.com/freereadorg/awesome-libgen>`_: (1021 ☆) 😎 Awesome list of Library Genesis, the world's largest free library.
+- `lucidrains/g-mlp-pytorch <https://github.com/lucidrains/g-mlp-pytorch>`_: (338 ☆) Implementation of gMLP, an all-MLP replacement for Transformers, in Pytorch
+- `aimhubio/aim <https://github.com/aimhubio/aim>`_: (1993 ☆) Aim — an easy-to-use and performant open-source experiment tracker.
+- `vincepare/CopyAllUrl_Chrome <https://github.com/vincepare/CopyAllUrl_Chrome>`_: (70 ☆) CopyAllUrl extension for Google Chrome
+- `WongKinYiu/yolor <https://github.com/WongKinYiu/yolor>`_: (1330 ☆) implementation of paper - You Only Learn One Representation: Unified Network for Multiple Tasks (https://arxiv.org/abs/2105.04206)
+- `Mukosame/Anime2Sketch <https://github.com/Mukosame/Anime2Sketch>`_: (1383 ☆) A sketch extractor for anime/illustration.
+- `opf/openproject <https://github.com/opf/openproject>`_: (5435 ☆) OpenProject is the leading open source project management software.
+- `nojhan/paradiseo <https://github.com/nojhan/paradiseo>`_: (57 ☆) A C++ evolutionary computation framework to build parallel stochastic optimization solvers
+- `pdfminer/pdfminer.six <https://github.com/pdfminer/pdfminer.six>`_: (3346 ☆) Community maintained fork of pdfminer - we fathom PDF
+- `Wandmalfarbe/pandoc-latex-template <https://github.com/Wandmalfarbe/pandoc-latex-template>`_: (3840 ☆) A pandoc LaTeX template to convert markdown files to PDF or LaTeX.
+- `privacybot-berkeley/privacybot <https://github.com/privacybot-berkeley/privacybot>`_: (507 ☆) None
+- `trailofbits/algo <https://github.com/trailofbits/algo>`_: (24507 ☆) Set up a personal VPN in the cloud
+- `kobra-dev/Kobra <https://github.com/kobra-dev/Kobra>`_: (219 ☆) Kobra is a visual programming language (like Scratch) for Machine Learning (currently under active development).
+- `lukemelas/do-you-even-need-attention <https://github.com/lukemelas/do-you-even-need-attention>`_: (448 ☆) Exploring whether attention is necessary for vision transformers
+- `lucidrains/mlp-mixer-pytorch <https://github.com/lucidrains/mlp-mixer-pytorch>`_: (621 ☆) An All-MLP solution for Vision, from Google AI
+- `ManimCommunity/manim <https://github.com/ManimCommunity/manim>`_: (8382 ☆) A community-maintained Python framework for creating mathematical animations.
+- `adamchainz/sublime-rst-improved <https://github.com/adamchainz/sublime-rst-improved>`_: (6 ☆) None
+- `raydium-io/raydium-ui <https://github.com/raydium-io/raydium-ui>`_: (296 ☆) None
+- `andres-jurado/audiophile-linux <https://github.com/andres-jurado/audiophile-linux>`_: (58 ☆) This repository contains helpful information for audio enthusiasts who use Linux. Contributions through pull requests are welcome!
+- `lessw2020/Ranger21 <https://github.com/lessw2020/Ranger21>`_: (195 ☆) Ranger deep learning optimizer rewrite to use newest components
+- `LiyuanLucasLiu/RAdam <https://github.com/LiyuanLucasLiu/RAdam>`_: (2448 ☆) On the Variance of the Adaptive Learning Rate and Beyond
+- `CMA-ES/pycma <https://github.com/CMA-ES/pycma>`_: (706 ☆) Python implementation of CMA-ES
+- `facebook/pyre-check <https://github.com/facebook/pyre-check>`_: (5750 ☆) Performant type-checking for python.
+- `ml-tooling/best-of-python-dev <https://github.com/ml-tooling/best-of-python-dev>`_: (402 ☆) 🏆 A ranked list of awesome python developer tools and libraries. Updated weekly.
+- `rh12503/triangula <https://github.com/rh12503/triangula>`_: (3676 ☆) Generate high-quality triangulated and polygonal art from images.
+- `ml-tooling/opyrator <https://github.com/ml-tooling/opyrator>`_: (2566 ☆) 🪄 Turns your machine learning code into microservices with web API, interactive GUI, and more.
+- `GSConnect/gnome-shell-extension-gsconnect <https://github.com/GSConnect/gnome-shell-extension-gsconnect>`_: (2187 ☆) KDE Connect implementation for GNOME
+- `aunetx/blur-my-shell <https://github.com/aunetx/blur-my-shell>`_: (455 ☆) Extension that adds a blur look to different parts of the GNOME Shell, including the top panel, dash and overview
+- `Fs00/Win10BloatRemover <https://github.com/Fs00/Win10BloatRemover>`_: (131 ☆) Configurable CLI tool to easily and aggressively debloat and tweak Windows 10 by removing preinstalled UWP apps, services and more. Originally based on the W10 de-botnet guide made by @adolfintel.
+- `openai/multi-agent-emergence-environments <https://github.com/openai/multi-agent-emergence-environments>`_: (1224 ☆) Environment generation code for the paper "Emergent Tool Use From Multi-Agent Autocurricula"
+- `deluan/zsh-in-docker <https://github.com/deluan/zsh-in-docker>`_: (363 ☆) Install Zsh, Oh-My-Zsh and plugins inside a Docker container with one line!
+- `bigH/git-fuzzy <https://github.com/bigH/git-fuzzy>`_: (1914 ☆) interactive `git` with the help of `fzf`
+- `kingoflolz/mesh-transformer-jax <https://github.com/kingoflolz/mesh-transformer-jax>`_: (3783 ☆) Model parallel transformers in JAX and Haiku
+- `lwhb/lawhub <https://github.com/lwhb/lawhub>`_: (143 ☆) Repository to track Japanese Law in text format
+- `MycroftAI/mycroft-core <https://github.com/MycroftAI/mycroft-core>`_: (5597 ☆) Mycroft Core, the Mycroft Artificial Intelligence platform.
+- `Andrew-Qibin/CoordAttention <https://github.com/Andrew-Qibin/CoordAttention>`_: (523 ☆) Code for our CVPR2021 paper coordinate attention
+- `spotDL/spotify-downloader <https://github.com/spotDL/spotify-downloader>`_: (7309 ☆) Download your Spotify playlists and songs along with album art and metadata (from YouTube if a match is found).
+- `hyz-xmaster/VarifocalNet <https://github.com/hyz-xmaster/VarifocalNet>`_: (265 ☆) VarifocalNet: An IoU-aware Dense Object Detector
+- `khurramjaved96/awesome-continual-learning <https://github.com/khurramjaved96/awesome-continual-learning>`_: (28 ☆) A repository to keep track of literature on catastrophic forgetting
+- `khurramjaved96/mrcl <https://github.com/khurramjaved96/mrcl>`_: (167 ☆) Code for the NeurIPS19 paper "Meta-Learning Representations for Continual Learning"
+- `uvm-neurobotics-lab/ANML <https://github.com/uvm-neurobotics-lab/ANML>`_: (105 ☆) A Neuromodulated Meta-Learning algorithm
+- `uber-research/GTN <https://github.com/uber-research/GTN>`_: (70 ☆) None
+- `voiler/PopulationBasedTraining <https://github.com/voiler/PopulationBasedTraining>`_: (40 ☆) A simple PyTorch implementation of Population Based Training of Neural Networks.
+- `kuangliu/pytorch-cifar <https://github.com/kuangliu/pytorch-cifar>`_: (4447 ☆) 95.47% on CIFAR10 with PyTorch
+- `Yuheng-Li/MixNMatch <https://github.com/Yuheng-Li/MixNMatch>`_: (842 ☆) Pytorch implementation of MixNMatch
+- `deepmind/deepmind-research <https://github.com/deepmind/deepmind-research>`_: (9485 ☆) This repository contains implementations and illustrative code to accompany DeepMind publications
+- `karan/Projects <https://github.com/karan/Projects>`_: (37654 ☆) :page_with_curl: A list of practical projects that anyone can solve in any programming language.
+- `spotify/annoy <https://github.com/spotify/annoy>`_: (9392 ☆) Approximate Nearest Neighbors in C++/Python optimized for memory usage and loading/saving to disk
+- `no-fee-ethereum-mining/nsfminer <https://github.com/no-fee-ethereum-mining/nsfminer>`_: (495 ☆) No Fee Ethash miner for AMD and Nvidia
+- `jdah/minecraft-weekend <https://github.com/jdah/minecraft-weekend>`_: (2525 ☆) Minecraft, but I made it in 48 hours.
+- `d-li14/involution <https://github.com/d-li14/involution>`_: (1213 ☆) [CVPR 2021] Involution: Inverting the Inherence of Convolution for Visual Recognition, a brand new neural operator
+- `internetarchive/openlibrary <https://github.com/internetarchive/openlibrary>`_: (3366 ☆) One webpage for every book ever published!
+- `streamlit/streamlit <https://github.com/streamlit/streamlit>`_: (17516 ☆) Streamlit — The fastest way to build data apps in Python
+- `Overv/outrun <https://github.com/Overv/outrun>`_: (3001 ☆) Execute a local command using the processing power of another Linux machine.
+- `angusfung/population-based-training <https://github.com/angusfung/population-based-training>`_: (45 ☆) Reproducing results from DeepMind's paper on Population Based Training of Neural Networks.
+- `windmaple/awesome-AutoML <https://github.com/windmaple/awesome-AutoML>`_: (536 ☆) Curating a list of AutoML-related research, tools, projects and other resources
+- `pytorch/vision <https://github.com/pytorch/vision>`_: (10783 ☆) Datasets, Transforms and Models specific to Computer Vision
+- `xgi/castero <https://github.com/xgi/castero>`_: (433 ☆) TUI podcast client for the terminal
+- `jvns/pandas-cookbook <https://github.com/jvns/pandas-cookbook>`_: (5582 ☆) Recipes for using Python's pandas library
+- `avinashkranjan/Amazing-Python-Scripts <https://github.com/avinashkranjan/Amazing-Python-Scripts>`_: (833 ☆) 🚀 Curated collection of Amazing Python scripts from Basics to Advance with automation task scripts.
+- `hila-chefer/Transformer-Explainability <https://github.com/hila-chefer/Transformer-Explainability>`_: (805 ☆) [CVPR 2021] Official PyTorch implementation for Transformer Interpretability Beyond Attention Visualization, a novel method to visualize classifications by Transformer based networks.
+- `guipsamora/pandas_exercises <https://github.com/guipsamora/pandas_exercises>`_: (7290 ☆) Practice your pandas skills!
+- `hongleizhang/RSPapers <https://github.com/hongleizhang/RSPapers>`_: (4232 ☆) A Curated List of Must-read Papers on Recommender System.
+- `GorvGoyl/Clone-Wars <https://github.com/GorvGoyl/Clone-Wars>`_: (12840 ☆) 100+ open-source clones of popular sites like Airbnb, Amazon, Instagram, Netflix, Tiktok, Spotify, Whatsapp, Youtube etc. See source code, demo links, tech stack, github stars.
+- `endless-sky/endless-sky <https://github.com/endless-sky/endless-sky>`_: (3392 ☆) Space exploration, trading, and combat game.
+- `deepmind/dm_alchemy <https://github.com/deepmind/dm_alchemy>`_: (176 ☆) DeepMind Alchemy task environment: a meta-reinforcement learning benchmark
+- `facebookresearch/vissl <https://github.com/facebookresearch/vissl>`_: (2326 ☆) VISSL is FAIR's library of extensible, modular and scalable components for SOTA Self-Supervised Learning with images.
+- `optuna/optuna-dashboard <https://github.com/optuna/optuna-dashboard>`_: (175 ☆) Real-time Web dashboard for Optuna.
+- `uber/manifold <https://github.com/uber/manifold>`_: (1558 ☆) A model-agnostic visual debugging tool for machine learning
+- `uber/bayesmark <https://github.com/uber/bayesmark>`_: (94 ☆) Benchmark framework to easily compare Bayesian optimization methods on real machine learning tasks
+- `MathInspector/MathInspector <https://github.com/MathInspector/MathInspector>`_: (892 ☆) A visual programing environment for scientific computing with python
+- `xingyizhou/UniDet <https://github.com/xingyizhou/UniDet>`_: (324 ☆) Object detection on multiple datasets with an automatically learned unified label space.
+- `TheSpeedX/TBomb <https://github.com/TheSpeedX/TBomb>`_: (2099 ☆) This is a SMS And Call Bomber For Linux And Termux
+- `milesial/Pytorch-UNet <https://github.com/milesial/Pytorch-UNet>`_: (4916 ☆) PyTorch implementation of the U-Net for image semantic segmentation with high quality images
+- `ryancheunggit/Denoise-Transformer-AutoEncoder <https://github.com/ryancheunggit/Denoise-Transformer-AutoEncoder>`_: (260 ☆) None
+- `sdushantha/wifi-password <https://github.com/sdushantha/wifi-password>`_: (2375 ☆) Quickly fetch your WiFi password and if needed, generate a QR code of your WiFi to allow phones to easily connect
+- `dorarad/gansformer <https://github.com/dorarad/gansformer>`_: (1071 ☆) Generative Adversarial Transformers
+- `jupyterhub/zero-to-jupyterhub-k8s <https://github.com/jupyterhub/zero-to-jupyterhub-k8s>`_: (1099 ☆) Helm Chart & Documentation for deploying JupyterHub on Kubernetes
+- `mxrch/GHunt <https://github.com/mxrch/GHunt>`_: (10635 ☆) 🕵️‍♂️ Investigate Google emails and documents.
+- `chriswalz/bit <https://github.com/chriswalz/bit>`_: (5744 ☆) Bit is a modern Git CLI
+- `kuchin/awesome-cto <https://github.com/kuchin/awesome-cto>`_: (10970 ☆) A curated and opinionated list of resources for Chief Technology Officers, with the emphasis on startups
+- `home-assistant/core <https://github.com/home-assistant/core>`_: (40000 ☆) :house_with_garden: Open source home automation that puts local control and privacy first.
+- `vinceliuice/Tela-circle-icon-theme <https://github.com/vinceliuice/Tela-circle-icon-theme>`_: (256 ☆) Tela-circle-icon-theme
+- `spantaleev/matrix-docker-ansible-deploy <https://github.com/spantaleev/matrix-docker-ansible-deploy>`_: (2660 ☆) Matrix (An open network for secure, decentralized communication) server setup using Ansible and Docker
+- `diasurgical/devilutionX <https://github.com/diasurgical/devilutionX>`_: (5111 ☆) Diablo build for modern operating systems
+- `CoreyMSchafer/code_snippets <https://github.com/CoreyMSchafer/code_snippets>`_: (8334 ☆) None
+- `Clarionos/clarion <https://github.com/Clarionos/clarion>`_: (332 ☆) None
+- `tone-row/flowchart-fun <https://github.com/tone-row/flowchart-fun>`_: (2350 ☆) Easily generate flowcharts and diagrams from text ⿻
+- `trailofbits/graphtage <https://github.com/trailofbits/graphtage>`_: (2078 ☆) A semantic diff utility and library for tree-like files such as JSON, JSON5, XML, HTML, YAML, and CSV.
+- `googlecreativelab/alto <https://github.com/googlecreativelab/alto>`_: (242 ☆) Explore the basics of machine learning by building your own teachable object at home.
+- `bitcoinbook/bitcoinbook <https://github.com/bitcoinbook/bitcoinbook>`_: (18851 ☆) Mastering Bitcoin 2nd Edition - Programming the Open Blockchain
+- `NeuralSec/Daedalus-attack <https://github.com/NeuralSec/Daedalus-attack>`_: (34 ☆) The code of our paper: 'Daedalus: Breaking Non-Maximum Suppression in Object Detection via Adversarial Examples', in Tensorflow.
+- `ripienaar/free-for-dev <https://github.com/ripienaar/free-for-dev>`_: (40000 ☆) A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev
+- `PeterTheOne/slideslive-slides-dl <https://github.com/PeterTheOne/slideslive-slides-dl>`_: (82 ☆) slideslive slides downloading script
+- `GuoLusjtu/DVC <https://github.com/GuoLusjtu/DVC>`_: (284 ☆) DVC: An End-to-end Deep Video Compression Framework, CVPR 2019 (Oral)
+- `ej0cl6/deep-active-learning <https://github.com/ej0cl6/deep-active-learning>`_: (408 ☆) Deep Active Learning
+- `mljar/mljar-supervised <https://github.com/mljar/mljar-supervised>`_: (1758 ☆) Python package for AutoML on Tabular Data with Feature Engineering, Hyper-Parameters Tuning, Explanations and Automatic Documentation
+- `tssovi/grokking-the-object-oriented-design-interview <https://github.com/tssovi/grokking-the-object-oriented-design-interview>`_: (1362 ☆) None
+- `neuralmagic/sparseml <https://github.com/neuralmagic/sparseml>`_: (799 ☆) Libraries for applying sparsification recipes to neural networks with a few lines of code, enabling faster and smaller models
+- `hirokatsukataoka16/FractalDB-Pretrained-ResNet-PyTorch <https://github.com/hirokatsukataoka16/FractalDB-Pretrained-ResNet-PyTorch>`_: (136 ☆) Pre-training without Natural Images (ACCV 2020 Best Paper Honorable Mention Award)
+- `rlworkgroup/metaworld <https://github.com/rlworkgroup/metaworld>`_: (625 ☆) An open source robotics benchmark for meta- and multi-task reinforcement learning
+- `henokyen/EOH <https://github.com/henokyen/EOH>`_: (3 ☆) The code based used to produce the paper on Evolutionary Orgin of Hierarchy
+- `yosinski/deep-visualization-toolbox <https://github.com/yosinski/deep-visualization-toolbox>`_: (3787 ☆) DeepVis Toolbox
+- `uber-research/go-explore <https://github.com/uber-research/go-explore>`_: (466 ☆) Code for Go-Explore: a New Approach for Hard-Exploration Problems
+- `CyberAgentAILab/cmaes <https://github.com/CyberAgentAILab/cmaes>`_: (153 ☆) Python library for CMA Evolution Strategy.
+- `dusty-nv/jetson-inference <https://github.com/dusty-nv/jetson-inference>`_: (5299 ☆) Hello AI World guide to deploying deep-learning inference networks and deep vision primitives with TensorRT and NVIDIA Jetson.
+- `ebhy/budgetml <https://github.com/ebhy/budgetml>`_: (1254 ☆) Deploy a ML inference service on a budget in less than 10 lines of code.
+- `werner-duvaud/muzero-general <https://github.com/werner-duvaud/muzero-general>`_: (1640 ☆) MuZero
+- `mrdbourke/cs329s-ml-deployment-tutorial <https://github.com/mrdbourke/cs329s-ml-deployment-tutorial>`_: (470 ☆) Code and files to go along with CS329s machine learning model deployment tutorial.
+- `lucidrains/feedback-transformer-pytorch <https://github.com/lucidrains/feedback-transformer-pytorch>`_: (90 ☆) Implementation of Feedback Transformer in Pytorch
+- `yitu-opensource/T2T-ViT <https://github.com/yitu-opensource/T2T-ViT>`_: (874 ☆) ICCV2021, Tokens-to-Token ViT: Training Vision Transformers from Scratch on ImageNet
+- `lucidrains/bottleneck-transformer-pytorch <https://github.com/lucidrains/bottleneck-transformer-pytorch>`_: (566 ☆) Implementation of Bottleneck Transformer in Pytorch
+- `neurolib-dev/neurolib <https://github.com/neurolib-dev/neurolib>`_: (236 ☆) Easy whole-brain modeling for computational neuroscientists 🧠💻👩🏿‍🔬
+- `ludwig-ai/ludwig <https://github.com/ludwig-ai/ludwig>`_: (8095 ☆) Data-centric declarative deep learning framework
+- `overviewer/Minecraft-Overviewer <https://github.com/overviewer/Minecraft-Overviewer>`_: (2911 ☆) Render high-resolution maps of a Minecraft world with a Leaflet powered interface
+- `google-research/ravens <https://github.com/google-research/ravens>`_: (272 ☆) Train robotic agents to learn pick and place with deep learning for vision-based manipulation in PyBullet. Transporter Nets, CoRL 2020.
+- `facebookresearch/deit <https://github.com/facebookresearch/deit>`_: (2471 ☆) Official DeiT repository
+- `DingXiaoH/RepVGG <https://github.com/DingXiaoH/RepVGG>`_: (2216 ☆) RepVGG: Making VGG-style ConvNets Great Again
+- `facebookresearch/hiplot <https://github.com/facebookresearch/hiplot>`_: (2246 ☆) HiPlot makes understanding high dimensional data easy
+- `facebookresearch/rlstructures <https://github.com/facebookresearch/rlstructures>`_: (262 ☆) RLStructures is a library to facilitate the implementation of new reinforcement learning algorithms. It includes a library, a tutorial, and different RL algorithms provided as examples.
+- `voxel51/fiftyone <https://github.com/voxel51/fiftyone>`_: (961 ☆) The open-source tool for building high-quality datasets and computer vision models
+- `AtsushiSakai/PythonRobotics <https://github.com/AtsushiSakai/PythonRobotics>`_: (14337 ☆) Python sample codes for robotics algorithms.
+- `n2cholas/awesome-jax <https://github.com/n2cholas/awesome-jax>`_: (497 ☆) JAX - A curated list of resources https://github.com/google/jax
+- `DEAP/deap <https://github.com/DEAP/deap>`_: (4565 ☆) Distributed Evolutionary Algorithms in Python
+- `optuna/kurobako <https://github.com/optuna/kurobako>`_: (56 ☆) A black-box optimization benchmark tool
+- `hill-a/stable-baselines <https://github.com/hill-a/stable-baselines>`_: (3428 ☆) A fork of OpenAI Baselines, implementations of reinforcement learning algorithms
+- `streamlit/demo-self-driving <https://github.com/streamlit/demo-self-driving>`_: (896 ☆) Streamlit app demonstrating an image browser for the Udacity self-driving-car dataset with realtime object detection using YOLO.
+- `wandb/examples <https://github.com/wandb/examples>`_: (620 ☆) Example deep learning projects that use wandb's features.
+- `pycaret/pycaret <https://github.com/pycaret/pycaret>`_: (5030 ☆) An open-source, low-code machine learning library in Python
+- `LyWangPX/Reinforcement-Learning-2nd-Edition-by-Sutton-Exercise-Solutions <https://github.com/LyWangPX/Reinforcement-Learning-2nd-Edition-by-Sutton-Exercise-Solutions>`_: (1110 ☆) Solutions of Reinforcement Learning, An Introduction
+- `trekhleb/homemade-machine-learning <https://github.com/trekhleb/homemade-machine-learning>`_: (18796 ☆) 🤖 Python examples of popular machine learning algorithms with interactive Jupyter demos and math being explained
+- `microsoft/hummingbird <https://github.com/microsoft/hummingbird>`_: (2727 ☆) Hummingbird compiles trained ML models into tensor computation for faster inference.
+- `facebookresearch/fairscale <https://github.com/facebookresearch/fairscale>`_: (1589 ☆) PyTorch extensions for high performance and large scale training.
+- `TuSimple/tusimple-benchmark <https://github.com/TuSimple/tusimple-benchmark>`_: (427 ☆) Download Datasets and Ground Truths:  https://github.com/TuSimple/tusimple-benchmark/issues/3
+- `arkel23/animesion <https://github.com/arkel23/animesion>`_: (61 ☆) For holding anime-related object classification and detection models
+- `ml-tooling/best-of-web-python <https://github.com/ml-tooling/best-of-web-python>`_: (1416 ☆) 🏆  A ranked list of awesome python libraries for web development. Updated weekly.
+- `ml-tooling/best-of-python <https://github.com/ml-tooling/best-of-python>`_: (1950 ☆) 🏆 A ranked list of awesome Python open-source libraries and tools. Updated weekly.
+- `ml-tooling/best-of-ml-python <https://github.com/ml-tooling/best-of-ml-python>`_: (6205 ☆) 🏆 A ranked list of awesome machine learning Python libraries. Updated weekly.
+- `uber/causalml <https://github.com/uber/causalml>`_: (2750 ☆) Uplift modeling and causal inference with machine learning algorithms
+- `ddbourgin/numpy-ml <https://github.com/ddbourgin/numpy-ml>`_: (11192 ☆) Machine learning, in numpy
+- `kubeflow/kubeflow <https://github.com/kubeflow/kubeflow>`_: (11155 ☆) Machine Learning Toolkit for Kubernetes
+- `ucbrise/clipper <https://github.com/ucbrise/clipper>`_: (1308 ☆) A low-latency prediction-serving system
+- `mlcommons/training <https://github.com/mlcommons/training>`_: (1257 ☆) Reference implementations of MLPerf™ training benchmarks
+- `pytorch/serve <https://github.com/pytorch/serve>`_: (2389 ☆) Model Serving on PyTorch
+- `lukemelas/EfficientNet-PyTorch <https://github.com/lukemelas/EfficientNet-PyTorch>`_: (6747 ☆) A PyTorch implementation of EfficientNet and EfficientNetV2 (coming soon!)
+- `lukemelas/Poker-Bot-with-Genetic-Algorithms <https://github.com/lukemelas/Poker-Bot-with-Genetic-Algorithms>`_: (19 ☆) A final project for Math 153 (Evolutionary Dynamics) at Harvard University
+- `deepmind/lab2d <https://github.com/deepmind/lab2d>`_: (356 ☆) A customisable 2D platform for agent-based AI research
+- `deepmind/dm_env_rpc <https://github.com/deepmind/dm_env_rpc>`_: (68 ☆) A networking protocol for agent-environment communication
+- `openai/robogym <https://github.com/openai/robogym>`_: (269 ☆) Robotics Gym Environments
+- `Denys88/rl_games <https://github.com/Denys88/rl_games>`_: (149 ☆) RL implementations
+- `seungeunrho/minimalRL <https://github.com/seungeunrho/minimalRL>`_: (2084 ☆) Implementations of basic RL algorithms with minimal lines of codes! (pytorch based)
+- `Healthcare-Robotics/assistive-gym <https://github.com/Healthcare-Robotics/assistive-gym>`_: (203 ☆) Assistive Gym, a physics-based simulation framework for physical human-robot interaction and robotic assistance.
+- `owncast/owncast <https://github.com/owncast/owncast>`_: (5521 ☆) Take control over your live stream video by running it yourself.  Streaming + chat out of the box.
+- `google/gemmlowp <https://github.com/google/gemmlowp>`_: (1494 ☆) Low-precision matrix multiplication
+- `Mayukhdeb/torch-dreams <https://github.com/Mayukhdeb/torch-dreams>`_: (207 ☆) Making neural networks more interpretable, for research and art :mag_right: :computer: :brain: :art:
+- `sebastianrisi/ga-world-models <https://github.com/sebastianrisi/ga-world-models>`_: (19 ☆) None
+- `lablup/backend.ai <https://github.com/lablup/backend.ai>`_: (268 ☆) Backend.AI is a streamlined, container-based computing cluster orchestrator that hosts diverse programming languages and popular computing/ML frameworks, with pluggable heterogeneous accelerator support including CUDA and ROCM.
+- `GitbookIO/plugin-mathjax <https://github.com/GitbookIO/plugin-mathjax>`_: (86 ☆) MathJAX plugin for GitBook
+- `beeware/briefcase <https://github.com/beeware/briefcase>`_: (1291 ☆) Tools to support converting a Python project into a standalone native application.
+- `lucidrains/reformer-pytorch <https://github.com/lucidrains/reformer-pytorch>`_: (1671 ☆) Reformer, the efficient Transformer, in Pytorch
+- `simondlevy/neat-gym <https://github.com/simondlevy/neat-gym>`_: (38 ☆) Neuro-evolution for OpenAI Gym environments
+- `datastacktv/data-engineer-roadmap <https://github.com/datastacktv/data-engineer-roadmap>`_: (9155 ☆) Roadmap to becoming a data engineer in 2021
+- `anyoptimization/pymoo <https://github.com/anyoptimization/pymoo>`_: (903 ☆) NSGA2, NSGA3, R-NSGA3, MOEAD, Genetic Algorithms (GA), Differential Evolution (DE), CMAES, PSO
+- `awslabs/deequ <https://github.com/awslabs/deequ>`_: (2089 ☆) Deequ is a library built on top of Apache Spark for defining "unit tests for data", which measure data quality in large datasets.
+- `HarisIqbal88/PlotNeuralNet <https://github.com/HarisIqbal88/PlotNeuralNet>`_: (15968 ☆) Latex code for making neural networks diagrams
+- `cyxx/extract_android_ota_payload <https://github.com/cyxx/extract_android_ota_payload>`_: (339 ☆) Extract firmware images from an Android OTA payload.bin file
+- `foolwood/benchmark_results <https://github.com/foolwood/benchmark_results>`_: (3689 ☆) Visual Tracking Paper List
+- `jayveer2807/data_science_questions <https://github.com/jayveer2807/data_science_questions>`_: (57 ☆) None
+- `poloclub/cnn-explainer <https://github.com/poloclub/cnn-explainer>`_: (5845 ☆) Learning Convolutional Neural Networks with Interactive Visualization.
+- `scutan90/DeepLearning-500-questions <https://github.com/scutan90/DeepLearning-500-questions>`_: (40000 ☆) 深度学习500问，以问答形式对常用的概率知识、线性代数、机器学习、深度学习、计算机视觉等热点问题进行阐述，以帮助自己及有需要的读者。 全书分为18个章节，50余万字。由于水平有限，书中不妥之处恳请广大读者批评指正。   未完待续............ 如有意合作，联系scutjy2015@163.com                     版权所有，违权必究       Tan 2018.06
+- `yangyutu/EssentialMath <https://github.com/yangyutu/EssentialMath>`_: (756 ☆) None
+- `tirthajyoti/Papers-Literature-ML-DL-RL-AI <https://github.com/tirthajyoti/Papers-Literature-ML-DL-RL-AI>`_: (1620 ☆) Highly cited and useful papers related to machine learning, deep learning, AI, game theory, reinforcement learning
+- `khanhnamle1994/cracking-the-data-science-interview <https://github.com/khanhnamle1994/cracking-the-data-science-interview>`_: (1605 ☆) A Collection of Cheatsheets, Books, Questions, and Portfolio For DS/ML Interview Prep
+- `facebookresearch/torchbeast <https://github.com/facebookresearch/torchbeast>`_: (610 ☆) A PyTorch Platform for Distributed RL
+- `naganandy/graph-based-deep-learning-literature <https://github.com/naganandy/graph-based-deep-learning-literature>`_: (3478 ☆) links to conference publications in graph-based deep learning
+- `christophM/interpretable-ml-book <https://github.com/christophM/interpretable-ml-book>`_: (4001 ☆) Book about interpretable machine learning
+- `jmschrei/pomegranate <https://github.com/jmschrei/pomegranate>`_: (2820 ☆) Fast, flexible and easy to use probabilistic modelling in Python.
+- `pixie-io/pixie <https://github.com/pixie-io/pixie>`_: (2837 ☆) Instant Kubernetes-Native Application Observability
+- `Megvii-BaseDetection/DeFCN <https://github.com/Megvii-BaseDetection/DeFCN>`_: (437 ☆) End-to-End Object Detection with Fully Convolutional Network
+- `deepseagirl/degoogle <https://github.com/deepseagirl/degoogle>`_: (440 ☆) search Google and extract results directly. skip all the click-through links and other sketchiness
+- `enajx/HebbianMetaLearning <https://github.com/enajx/HebbianMetaLearning>`_: (73 ☆) Meta-Learning through Hebbian Plasticity in Random Networks: https://arxiv.org/abs/2007.02686
+- `real-itu/Evocraft-py <https://github.com/real-itu/Evocraft-py>`_: (89 ☆) A Python interface for Minecraft built on gRPC
+- `NVIDIA/aistore <https://github.com/NVIDIA/aistore>`_: (546 ☆) AIStore: scalable storage for AI applications
+- `santosjorge/cufflinks <https://github.com/santosjorge/cufflinks>`_: (2474 ☆) Productivity Tools for Plotly + Pandas
+- `suragnair/alpha-zero-general <https://github.com/suragnair/alpha-zero-general>`_: (2661 ☆) A clean implementation based on AlphaZero for any game in any framework + tutorial + Othello/Gobang/TicTacToe/Connect4 and more
+- `simoninithomas/Deep_reinforcement_learning_Course <https://github.com/simoninithomas/Deep_reinforcement_learning_Course>`_: (3262 ☆) Implementations from the free course Deep Reinforcement Learning with Tensorflow and PyTorch
+- `holoviz/holoviews <https://github.com/holoviz/holoviews>`_: (2102 ☆) With Holoviews, your data visualizes itself.
+- `jupyter/docker-stacks <https://github.com/jupyter/docker-stacks>`_: (6463 ☆) Ready-to-run Docker images containing Jupyter applications
+- `obheda12/GitDorker <https://github.com/obheda12/GitDorker>`_: (1663 ☆) A Python program to scrape secrets from GitHub through usage of a large repository of dorks.
+- `fundamentalvision/Deformable-DETR <https://github.com/fundamentalvision/Deformable-DETR>`_: (1348 ☆) Deformable DETR: Deformable Transformers for End-to-End Object Detection.
+- `audacity/audacity <https://github.com/audacity/audacity>`_: (7020 ☆) Audio Editor
+- `pbloem/former <https://github.com/pbloem/former>`_: (630 ☆) Simple transformer implementation from scratch in pytorch.
+- `dellacortelab/prospr <https://github.com/dellacortelab/prospr>`_: (399 ☆) ProSPr: Protein Structure Prediction
+- `allenai/scitldr <https://github.com/allenai/scitldr>`_: (604 ☆) None
+- `huawei-noah/vega <https://github.com/huawei-noah/vega>`_: (683 ☆) AutoML tools chain
+- `karpathy/micrograd <https://github.com/karpathy/micrograd>`_: (1878 ☆) A tiny scalar-valued autograd engine and a neural net library on top of it with PyTorch-like API
+- `the-paperless-project/paperless <https://github.com/the-paperless-project/paperless>`_: (7672 ☆) Scan, index, and archive all of your paper documents
+- `Curt-Park/rainbow-is-all-you-need <https://github.com/Curt-Park/rainbow-is-all-you-need>`_: (1189 ☆) Rainbow is all you need! A step-by-step tutorial from DQN to Rainbow
+- `trekhleb/machine-learning-experiments <https://github.com/trekhleb/machine-learning-experiments>`_: (1191 ☆) 🤖 Interactive Machine Learning experiments: 🏋️models training + 🎨models demo
+- `dctian/DeepPiCar <https://github.com/dctian/DeepPiCar>`_: (293 ☆) Deep Learning Autonomous Car based on Raspberry Pi, SunFounder PiCar-V Kit, TensorFlow, and Google's EdgeTPU Co-Processor
+- `reHackable/awesome-reMarkable <https://github.com/reHackable/awesome-reMarkable>`_: (4230 ☆) A curated list of projects related to the reMarkable tablet
+- `jantic/DeOldify <https://github.com/jantic/DeOldify>`_: (14632 ☆) A Deep Learning based project for colorizing and restoring old images (and video!)
+- `rasbt/python_reference <https://github.com/rasbt/python_reference>`_: (3175 ☆) Useful functions, tutorials, and other Python-related things
+- `RangiLyu/nanodet <https://github.com/RangiLyu/nanodet>`_: (4027 ☆) NanoDet-Plus⚡Super fast and lightweight anchor-free object detection model. 🔥Only 980 KB(int8) / 1.8MB (fp16) and run 97FPS on cellphone🔥
+- `joaotinti75/Pygame <https://github.com/joaotinti75/Pygame>`_: (212 ☆) Games that i did using pygame library
+- `pytorch/tensorpipe <https://github.com/pytorch/tensorpipe>`_: (176 ☆) A tensor-aware point-to-point communication primitive for machine learning
+- `guildai/guildai <https://github.com/guildai/guildai>`_: (654 ☆) Experiment tracking, ML developer tools
+- `replicate/keepsake <https://github.com/replicate/keepsake>`_: (1542 ☆) Version control for machine learning
+- `minerllabs/competition_submission_template <https://github.com/minerllabs/competition_submission_template>`_: (92 ☆) The submission template for the MineRL Competition @ NeurIPS 2021. Clone this to make a new submission!
+- `D-X-Y/NATS-Bench <https://github.com/D-X-Y/NATS-Bench>`_: (107 ☆) TPAMI 2021: NATS-Bench: Benchmarking NAS Algorithms for Architecture Topology and Size
+- `automl/Auto-PyTorch <https://github.com/automl/Auto-PyTorch>`_: (1523 ☆) Automatic architecture search and hyperparameter optimization for PyTorch
+- `NVIDIA/apex <https://github.com/NVIDIA/apex>`_: (6038 ☆) A PyTorch Extension:  Tools for easy mixed precision and distributed training in Pytorch
+- `aim-uofa/AdelaiDet <https://github.com/aim-uofa/AdelaiDet>`_: (2635 ☆) AdelaiDet is an open source toolbox for multiple instance-level detection and recognition tasks.
+- `liuruijin17/LSTR <https://github.com/liuruijin17/LSTR>`_: (498 ☆) This is an official repository of End-to-end Lane Shape Prediction with Transformers.
+- `abhishekkrthakur/colabcode <https://github.com/abhishekkrthakur/colabcode>`_: (1680 ☆) Run VSCode (codeserver) on Google Colab or Kaggle Notebooks
+- `dennybritz/reinforcement-learning <https://github.com/dennybritz/reinforcement-learning>`_: (17571 ☆) Implementation of Reinforcement Learning Algorithms. Python, OpenAI Gym, Tensorflow. Exercises and Solutions to accompany Sutton's Book and David Silver's course.
+- `slundberg/shap <https://github.com/slundberg/shap>`_: (15256 ☆) A game theoretic approach to explain the output of any machine learning model.
+- `ebatty/MathToolsforNeuroscience <https://github.com/ebatty/MathToolsforNeuroscience>`_: (366 ☆) Materials for Mathematical Tools for Neuroscience course  at Harvard (Neurobio 212)
+- `hooram/ownphotos <https://github.com/hooram/ownphotos>`_: (2596 ☆) Self hosted alternative to Google Photos
+- `xueyuanl/daily-hackernews <https://github.com/xueyuanl/daily-hackernews>`_: (98 ☆) Daily hacker news top stories. Subscribe the hackernews daily top stories by watching this repo.
+- `alan-turing-institute/sktime <https://github.com/alan-turing-institute/sktime>`_: (4894 ☆) A unified framework for machine learning with time series
+- `microsoft/Bringing-Old-Photos-Back-to-Life <https://github.com/microsoft/Bringing-Old-Photos-Back-to-Life>`_: (9881 ☆) Bringing Old Photo Back to Life (CVPR 2020 oral)
+- `OpenMined/PySyft <https://github.com/OpenMined/PySyft>`_: (7899 ☆) A library for answering questions using data you cannot see
+- `zhm-real/PathPlanning <https://github.com/zhm-real/PathPlanning>`_: (3634 ☆) Common used path planning algorithms with animations.
+- `public-apis/public-apis <https://github.com/public-apis/public-apis>`_: (40000 ☆) A collective list of free APIs
+- `spmallick/learnopencv <https://github.com/spmallick/learnopencv>`_: (15607 ☆) Learn OpenCV  : C++ and Python Examples
+- `jaakkopasanen/AutoEq <https://github.com/jaakkopasanen/AutoEq>`_: (6354 ☆) Automatic headphone equalization from frequency responses
+- `wowchemy/starter-hugo-academic <https://github.com/wowchemy/starter-hugo-academic>`_: (1819 ☆) 🎓 Hugo Academic Theme 创建一个学术网站. Easily create a beautiful academic résumé or educational website using Hugo, GitHub, and Netlify.
+- `JuliaAcademy/JuliaTutorials <https://github.com/JuliaAcademy/JuliaTutorials>`_: (936 ☆) Learn Julia via interactive tutorials!
+- `google/iree <https://github.com/google/iree>`_: (979 ☆) 👻
+- `google/flatbuffers <https://github.com/google/flatbuffers>`_: (17387 ☆) FlatBuffers: Memory Efficient Serialization Library
+- `hoya012/awesome-anomaly-detection <https://github.com/hoya012/awesome-anomaly-detection>`_: (1881 ☆) A curated list of awesome anomaly detection resources
+- `google/jax <https://github.com/google/jax>`_: (16109 ☆) Composable transformations of Python+NumPy programs: differentiate, vectorize, JIT to GPU/TPU, and more
+- `google/python-fire <https://github.com/google/python-fire>`_: (21870 ☆) Python Fire is a library for automatically generating command line interfaces (CLIs) from absolutely any Python object.
+- `danielgatis/rembg <https://github.com/danielgatis/rembg>`_: (2192 ☆) Rembg is a tool to remove images background.
+- `gordicaleksa/pytorch-original-transformer <https://github.com/gordicaleksa/pytorch-original-transformer>`_: (547 ☆) My implementation of the original transformer model (Vaswani et al.). I've additionally included the playground.py file for visualizing otherwise seemingly hard concepts. Currently included IWSLT pretrained models.
+- `eriklindernoren/PyTorch-GAN <https://github.com/eriklindernoren/PyTorch-GAN>`_: (11225 ☆) PyTorch implementations of Generative Adversarial Networks.
+- `hyperopt/hyperopt <https://github.com/hyperopt/hyperopt>`_: (6054 ☆) Distributed Asynchronous Hyperparameter Optimization in Python
+- `sebastianruder/NLP-progress <https://github.com/sebastianruder/NLP-progress>`_: (19656 ☆) Repository to track the progress in Natural Language Processing (NLP), including the datasets and the current state-of-the-art for the most common NLP tasks.
+- `xingyizhou/CenterNet <https://github.com/xingyizhou/CenterNet>`_: (6175 ☆) Object detection, 3D detection, and pose estimation using center point detection:
+- `orchest/orchest <https://github.com/orchest/orchest>`_: (1799 ☆) Build data pipelines, the easy way 🛠️
+- `pytorch/elastic <https://github.com/pytorch/elastic>`_: (686 ☆) PyTorch elastic training
+- `pytorch/pytorch_sphinx_theme <https://github.com/pytorch/pytorch_sphinx_theme>`_: (57 ☆) PyTorch Sphinx Theme
+- `facebookresearch/foltr-es <https://github.com/facebookresearch/foltr-es>`_: (33 ☆) The source code to reproduce the results reported in the 'Federated Online Learning to Rank with Evolution Strategies' paper, published at WSDM 2019.
+- `facebookresearch/Mephisto <https://github.com/facebookresearch/Mephisto>`_: (102 ☆) A suite of tools for managing crowdsourcing tasks from the inception through to data packaging for research use
+- `huchenme/github-trending-api <https://github.com/huchenme/github-trending-api>`_: (666 ☆) :octocat: The missing APIs for GitHub trending projects and developers 📈
+- `rasmusbergpalm/evostrat <https://github.com/rasmusbergpalm/evostrat>`_: (167 ☆) A library that makes Evolutionary Strategies (ES) simple to use.
+- `facebookresearch/nevergrad <https://github.com/facebookresearch/nevergrad>`_: (3225 ☆) A Python toolbox for performing gradient-free optimization
+- `facebookresearch/EGG <https://github.com/facebookresearch/EGG>`_: (218 ☆) EGG: Emergence of lanGuage in Games
+- `facebookresearch/nle <https://github.com/facebookresearch/nle>`_: (567 ☆) The NetHack Learning Environment
+- `facebookresearch/habitat-lab <https://github.com/facebookresearch/habitat-lab>`_: (775 ☆) A modular high-level library to train embodied AI agents across a variety of tasks, environments, and simulators.
+- `flashlight/flashlight <https://github.com/flashlight/flashlight>`_: (4066 ☆) A C++ standalone library for machine learning
+- `horovod/horovod <https://github.com/horovod/horovod>`_: (12085 ☆) Distributed training framework for TensorFlow, Keras, PyTorch, and Apache MXNet.
+- `facebookresearch/TransCoder <https://github.com/facebookresearch/TransCoder>`_: (1406 ☆) Public release of the TransCoder research project https://arxiv.org/pdf/2006.03511.pdf
+- `microsoft/nni <https://github.com/microsoft/nni>`_: (10925 ☆) An open source AutoML toolkit for automate machine learning lifecycle, including feature engineering, neural architecture search, model compression and hyper-parameter tuning.
+- `geerlingguy/ansible-for-devops <https://github.com/geerlingguy/ansible-for-devops>`_: (5408 ☆) Ansible for DevOps examples.
+- `adamerose/PandasGUI <https://github.com/adamerose/PandasGUI>`_: (2537 ☆) A GUI for Pandas DataFrames
+- `blackjack4494/yt-dlc <https://github.com/blackjack4494/yt-dlc>`_: (2624 ☆) media downloader and library for various sites.
+- `geohot/tinygrad <https://github.com/geohot/tinygrad>`_: (5154 ☆) You like pytorch? You like micrograd? You love tinygrad! ❤️
+- `UnityTechnologies/open-project-1 <https://github.com/UnityTechnologies/open-project-1>`_: (4330 ☆) Unity Open Project #1: Chop Chop
+- `tobspr/shapez.io <https://github.com/tobspr/shapez.io>`_: (4525 ☆) shapez.io is an open source base building game inspired by factorio! Available on web & steam
+- `chrislusf/seaweedfs <https://github.com/chrislusf/seaweedfs>`_: (13753 ☆) SeaweedFS is a fast distributed storage system for blobs, objects, files, and data lake, for billions of files! Blob store has O(1) disk seek, cloud tiering. Filer supports Cloud Drive, cross-DC active-active replication, Kubernetes, POSIX FUSE mount, S3 API, S3 Gateway, Hadoop, WebDAV, encryption, Erasure Coding.
+- `changkun/modern-cpp-tutorial <https://github.com/changkun/modern-cpp-tutorial>`_: (16331 ☆) 📚 Modern C++ Tutorial: C++11/14/17/20 On the Fly | https://changkun.de/modern-cpp/
+- `GitSquared/edex-ui <https://github.com/GitSquared/edex-ui>`_: (34925 ☆) A cross-platform, customizable science fiction terminal emulator with advanced monitoring & touchscreen support.
+- `hardikvasa/google-images-download <https://github.com/hardikvasa/google-images-download>`_: (7857 ☆) Python Script to download hundreds of images from 'Google Images'. It is a ready-to-run code!
+- `lucidrains/performer-pytorch <https://github.com/lucidrains/performer-pytorch>`_: (774 ☆) An implementation of Performer, a linear attention-based transformer, in Pytorch
+- `Hari-Nagarajan/fairgame <https://github.com/Hari-Nagarajan/fairgame>`_: (2456 ☆) Tool to help us buy hard to find items.
+- `microsoft/Cream <https://github.com/microsoft/Cream>`_: (421 ☆) This is a collection of our NAS and Vision Transformer work.
+- `NVIDIA/semantic-segmentation <https://github.com/NVIDIA/semantic-segmentation>`_: (1485 ☆) Nvidia Semantic Segmentation monorepo
+- `xingyizhou/CenterTrack <https://github.com/xingyizhou/CenterTrack>`_: (1939 ☆) Simultaneous object detection and tracking using center points.
+- `joelgrus/data-science-from-scratch <https://github.com/joelgrus/data-science-from-scratch>`_: (6652 ☆) code for Data Science From Scratch book
+- `gaogaotiantian/viztracer <https://github.com/gaogaotiantian/viztracer>`_: (1564 ☆) VizTracer is a low-overhead logging/debugging/profiling tool that can trace and visualize your python code execution.
+- `augustogoulart/awesome-pytest <https://github.com/augustogoulart/awesome-pytest>`_: (246 ☆) A curated list of awesome pytest resources
+- `awesome-selfhosted/awesome-selfhosted <https://github.com/awesome-selfhosted/awesome-selfhosted>`_: (40000 ☆) A list of Free Software network services and web applications which can be hosted on your own servers
+- `jessfraz/dockerfiles <https://github.com/jessfraz/dockerfiles>`_: (12324 ☆) Various Dockerfiles I use on the desktop and on servers.
+- `P3GLEG/Whaler <https://github.com/P3GLEG/Whaler>`_: (785 ☆) Program to reverse Docker images into Dockerfiles
+- `Lausannen/NAS-FCOS <https://github.com/Lausannen/NAS-FCOS>`_: (172 ☆) NAS-FCOS: Fast Neural Architecture Search for Object Detection (CVPR 2020)
+- `tianzhi0549/FCOS <https://github.com/tianzhi0549/FCOS>`_: (2857 ☆) FCOS: Fully Convolutional One-Stage Object Detection (ICCV'19)
+- `modelhub-ai/modelhub <https://github.com/modelhub-ai/modelhub>`_: (57 ☆) A collection of deep learning models with a unified API.
+- `rasbt/deeplearning-models <https://github.com/rasbt/deeplearning-models>`_: (14719 ☆) A collection of various deep learning architectures, models, and tips
+- `pytest-dev/unittest2pytest <https://github.com/pytest-dev/unittest2pytest>`_: (93 ☆) helps rewriting Python `unittest` test-cases into `pytest` test-cases
+- `ramitsurana/awesome-kubernetes <https://github.com/ramitsurana/awesome-kubernetes>`_: (12403 ☆) A curated list for awesome kubernetes sources :ship::tada:
+- `binhnguyennus/awesome-scalability <https://github.com/binhnguyennus/awesome-scalability>`_: (37239 ☆) The Patterns of Scalable, Reliable, and Performant Large-Scale Systems
+- `aitemr/awesome-git-hooks <https://github.com/aitemr/awesome-git-hooks>`_: (547 ☆) 😎 A collection of awesome Git Hooks
+- `meirwah/awesome-workflow-engines <https://github.com/meirwah/awesome-workflow-engines>`_: (3075 ☆) A curated list of awesome open source workflow engines
+- `pditommaso/awesome-pipeline <https://github.com/pditommaso/awesome-pipeline>`_: (4557 ☆) A curated list of awesome pipeline toolkits inspired by Awesome Sysadmin
+- `jlegewie/zotfile <https://github.com/jlegewie/zotfile>`_: (1819 ☆) Zotero plugin to manage your attachments: automatically rename, move, and attach PDFs (or other files) to Zotero items, sync PDFs from your Zotero library to your (mobile) PDF reader (e.g. an iPad, Android tablet, etc.), and extract PDF annotations.
+- `rst2pdf/rst2pdf <https://github.com/rst2pdf/rst2pdf>`_: (455 ☆) Use a text editor.  Make a PDF.
+- `wkentaro/pytorch-for-numpy-users <https://github.com/wkentaro/pytorch-for-numpy-users>`_: (588 ☆) PyTorch for Numpy users. https://pytorch-for-numpy-users.wkentaro.com
+- `birchill/10ten-ja-reader <https://github.com/birchill/10ten-ja-reader>`_: (320 ☆) A browser extension to translate Japanese by hovering over words.
+- `polyaxon/polyaxon <https://github.com/polyaxon/polyaxon>`_: (2989 ☆) Machine Learning Management & Orchestration Platform (Monorepo for Polyaxon's MLOps Tools)
+- `hamuchiwa/AutoRCCar <https://github.com/hamuchiwa/AutoRCCar>`_: (3139 ☆) OpenCV Python Neural Network Autonomous RC Car
+- `woven-planet/l5kit <https://github.com/woven-planet/l5kit>`_: (642 ☆) L5Kit - https://level-5.global/
+- `lucidrains/vit-pytorch <https://github.com/lucidrains/vit-pytorch>`_: (8420 ☆) Implementation of Vision Transformer, a simple way to achieve SOTA in vision classification with only a single transformer encoder, in Pytorch
+- `akamhy/waybackpy <https://github.com/akamhy/waybackpy>`_: (151 ☆) Wayback Machine API interface and a command-line tool
+- `microsoft/archai <https://github.com/microsoft/archai>`_: (325 ☆) Reproducible Rapid Research for Neural Architecture Search (NAS)
+- `philippnormann/nvidia-sniper <https://github.com/philippnormann/nvidia-sniper>`_: (411 ☆) 🎯 Autonomously buy Nvidia Founders Edition GPUs as soon as they become available.
+- `domokane/FinancePy <https://github.com/domokane/FinancePy>`_: (747 ☆) A Python Finance Library that focuses on the pricing and risk-management of Financial Derivatives, including fixed-income, equity, FX and credit derivatives.
+- `amidos2006/Mario-AI-Framework <https://github.com/amidos2006/Mario-AI-Framework>`_: (65 ☆) 10th Anniversary Edition (Not endorsed by Nintendo)
+- `mil-tokyo/webdnn <https://github.com/mil-tokyo/webdnn>`_: (1852 ☆) The Fastest DNN Running Framework on Web Browser
+- `iamadamdev/bypass-paywalls-chrome <https://github.com/iamadamdev/bypass-paywalls-chrome>`_: (21766 ☆) Bypass Paywalls web browser extension for Chrome and Firefox.
+- `astooke/rlpyt <https://github.com/astooke/rlpyt>`_: (1998 ☆) Reinforcement Learning in PyTorch
+- `unofficial-protonmail-desktop/application <https://github.com/unofficial-protonmail-desktop/application>`_: (550 ☆) :envelope: Unofficial desktop client for ProtonMail
+- `material-shell/material-shell <https://github.com/material-shell/material-shell>`_: (6232 ☆) A modern desktop interface for Linux. Improve your user experience and get rid of the anarchy of traditional desktop workflows. Designed to simplify navigation and reduce the need to manipulate windows in order to improve productivity. It's meant to be 100% predictable and bring the benefits of tools coveted by professionals to everyone.
+- `Kazhnuz/awesome-gnome <https://github.com/Kazhnuz/awesome-gnome>`_: (610 ☆) A curated list of awesome apps, extensions, modules, themes and tools for the Gnome Desktop Environment.
+- `google/latexify_py <https://github.com/google/latexify_py>`_: (1786 ☆) Generates LaTeX math description from Python functions.
+- `taskflow/taskflow <https://github.com/taskflow/taskflow>`_: (6338 ☆) A General-purpose Parallel and Heterogeneous Task Programming System
+- `p-ranav/awesome-hpp <https://github.com/p-ranav/awesome-hpp>`_: (1701 ☆) A curated list of awesome header-only C++ libraries
+- `madd86/awesome-system-design <https://github.com/madd86/awesome-system-design>`_: (5145 ☆) A curated list of awesome System Design (A.K.A. Distributed Systems) resources.
+- `pytorch/captum <https://github.com/pytorch/captum>`_: (2905 ☆) Model interpretability and understanding for PyTorch
+- `mahmoud/awesome-python-applications <https://github.com/mahmoud/awesome-python-applications>`_: (13372 ☆) 💿 Free software that works great, and also happens to be open-source Python.
+- `wagoodman/dive <https://github.com/wagoodman/dive>`_: (29772 ☆) A tool for exploring each layer in a docker image
+- `google/makani <https://github.com/google/makani>`_: (1103 ☆) Makani was a project to develop a commercial-scale airborne wind turbine, culminating in a flight test of the Makani M600 off the coast of Norway. All Makani software has now been open-sourced. This repository contains the working Makani flight simulator, controller (autopilot), visualizer, and command center flight monitoring tools. Additionally, almost all avionics firmware is also included, albeit potentially not in a buildable state, due to the removal of some third-party proprietary code. We hope that this code will be inspirational and useful to the kite-based windpower and wider communities.
+- `veggiemonk/awesome-docker <https://github.com/veggiemonk/awesome-docker>`_: (21111 ☆) :whale: A curated list of Docker resources and projects
+- `mrgloom/awesome-semantic-segmentation <https://github.com/mrgloom/awesome-semantic-segmentation>`_: (8939 ☆) :metal: awesome-semantic-segmentation
+- `mbadry1/Top-Deep-Learning <https://github.com/mbadry1/Top-Deep-Learning>`_: (1446 ☆)  Top 200 deep learning Github repositories sorted by the number of stars.
+- `python-engineer/python-engineer-notebooks <https://github.com/python-engineer/python-engineer-notebooks>`_: (335 ☆) None
+- `TRI-ML/DDAD <https://github.com/TRI-ML/DDAD>`_: (329 ☆) Dense Depth for Autonomous Driving (DDAD) dataset.
+- `cupy/cupy <https://github.com/cupy/cupy>`_: (5724 ☆) NumPy & SciPy for GPU
+- `kurgol/keychron <https://github.com/kurgol/keychron>`_: (508 ☆) Settings for Keychron keyboards
+- `alicevision/meshroom <https://github.com/alicevision/meshroom>`_: (7438 ☆) 3D Reconstruction Software
+- `ContainerSolutions/kubernetes-examples <https://github.com/ContainerSolutions/kubernetes-examples>`_: (1042 ☆) Minimal self-contained examples of standard Kubernetes features and patterns in YAML
+- `learning-at-home/hivemind <https://github.com/learning-at-home/hivemind>`_: (909 ☆) Decentralized deep learning in PyTorch. Built to train models on thousands of volunteers across the world.
+- `mxssl/sre-interview-prep-guide <https://github.com/mxssl/sre-interview-prep-guide>`_: (2582 ☆) Site Reliability Engineer Interview Preparation Guide
+- `torch-points3d/torch-points3d <https://github.com/torch-points3d/torch-points3d>`_: (1680 ☆) Pytorch framework for doing deep learning on point clouds.
+- `skorch-dev/skorch <https://github.com/skorch-dev/skorch>`_: (4333 ☆) A scikit-learn compatible neural network library that wraps PyTorch
+- `PyTorchLightning/pytorch-lightning <https://github.com/PyTorchLightning/pytorch-lightning>`_: (17163 ☆) The lightweight PyTorch wrapper for high-performance AI research. Scale your models, not the boilerplate.
+- `pyg-team/pytorch_geometric <https://github.com/pyg-team/pytorch_geometric>`_: (13680 ☆) Graph Neural Network Library for PyTorch
+- `pfnet/pytorch-pfn-extras <https://github.com/pfnet/pytorch-pfn-extras>`_: (226 ☆) Supplementary components to accelerate research and development in PyTorch
+- `facebookresearch/hydra <https://github.com/facebookresearch/hydra>`_: (5415 ☆) Hydra is a framework for elegantly configuring complex applications
+- `facebookresearch/higher <https://github.com/facebookresearch/higher>`_: (1331 ☆) higher is a pytorch library allowing users to obtain higher order gradients over losses spanning training loops rather than individual training steps.
+- `catalyst-team/catalyst <https://github.com/catalyst-team/catalyst>`_: (2826 ☆) Accelerated deep learning R&D
+- `allegroai/clearml <https://github.com/allegroai/clearml>`_: (2961 ☆) ClearML - Auto-Magical CI/CD to streamline your ML workflow. Experiment Manager, MLOps and Data-Management
+- `albumentations-team/albumentations <https://github.com/albumentations-team/albumentations>`_: (9582 ☆) Fast image augmentation library and an easy-to-use wrapper around other libraries. Documentation:  https://albumentations.ai/docs/ Paper about the library: https://www.mdpi.com/2078-2489/11/2/125
+- `Jermolene/TiddlyWiki5 <https://github.com/Jermolene/TiddlyWiki5>`_: (6522 ☆) A self-contained JavaScript wiki for the browser, Node.js, AWS Lambda etc.
+- `PyGithub/PyGithub <https://github.com/PyGithub/PyGithub>`_: (5043 ☆) Typed interactions with the GitHub API v3
+- `joekroese/tiddlyroam <https://github.com/joekroese/tiddlyroam>`_: (458 ☆) Your open source external brain
+- `Jermolene/TiddlyDesktop <https://github.com/Jermolene/TiddlyDesktop>`_: (1245 ☆) A custom desktop browser for TiddlyWiki 5 and TiddlyWiki Classic, based on nw.js
+- `freeplane/freeplane <https://github.com/freeplane/freeplane>`_: (865 ☆) None
+- `monicahq/monica <https://github.com/monicahq/monica>`_: (15698 ☆) Personal CRM. Remember everything about your friends, family and business relationships.
+- `alandefreitas/matplotplusplus <https://github.com/alandefreitas/matplotplusplus>`_: (2490 ☆) Matplot++: A C++ Graphics Library for Data Visualization 📊🗾
+- `octref/polacode <https://github.com/octref/polacode>`_: (6516 ☆) 📸 Polaroid for your code
+- `pomber/git-history <https://github.com/pomber/git-history>`_: (12691 ☆) Quickly browse the history of a file from any git repository
+- `bradtraversy/vanillawebprojects <https://github.com/bradtraversy/vanillawebprojects>`_: (12233 ☆) Mini projects built with HTML5, CSS & JavaScript. No frameworks or libraries
+- `joeycastillo/The-Open-Book <https://github.com/joeycastillo/The-Open-Book>`_: (6072 ☆) None
+- `ksindi/managers-playbook <https://github.com/ksindi/managers-playbook>`_: (4569 ☆) :book: Heuristics for effective management
+- `Teraskull/PyDebloatX <https://github.com/Teraskull/PyDebloatX>`_: (647 ☆) Python GUI for uninstalling the default Windows 10 apps.
+- `jonnyhyman/Chaos <https://github.com/jonnyhyman/Chaos>`_: (1611 ☆) Visualizations of the connections between chaos theory and fractals through the logistic map; made for Veritasium YouTube video
+- `WereDev/Wu10Man <https://github.com/WereDev/Wu10Man>`_: (506 ☆) Enable/Disable Windows 10 Automatic Updates
+- `xournalpp/xournalpp <https://github.com/xournalpp/xournalpp>`_: (5598 ☆) Xournal++ is a handwriting notetaking software with PDF annotation support. Written in C++ with GTK3, supporting Linux (e.g. Ubuntu, Debian, Arch, SUSE), macOS and Windows 10. Supports pen input from devices such as Wacom Tablets.
+- `foambubble/foam <https://github.com/foambubble/foam>`_: (11356 ☆) A personal knowledge management and sharing system for VSCode
+- `iggredible/Learn-Vim <https://github.com/iggredible/Learn-Vim>`_: (7417 ☆) Learning Vim and Vimscript doesn't have to be hard. This is the guide that you're looking for 📖
+- `oldboyxx/jira_clone <https://github.com/oldboyxx/jira_clone>`_: (7923 ☆) A simplified Jira clone built with React/Babel (Client), and Node/TypeScript (API). Auto formatted with Prettier, tested with Cypress.
+- `mitmath/18S191 <https://github.com/mitmath/18S191>`_: (2129 ☆) Course 18.S191 at MIT, Spring 2021 - Introduction to computational thinking with Julia:
+- `openalpr/openalpr <https://github.com/openalpr/openalpr>`_: (10340 ☆) Automatic License Plate Recognition library
+- `facebookresearch/faiss <https://github.com/facebookresearch/faiss>`_: (16096 ☆) A library for efficient similarity search and clustering of dense vectors.
+- `tradytics/surpriver <https://github.com/tradytics/surpriver>`_: (1407 ☆) Find big moving stocks before they move using machine learning and anomaly detection
+- `pyenv/pyenv-installer <https://github.com/pyenv/pyenv-installer>`_: (3041 ☆) This tool is used to install `pyenv` and friends.
+- `bermanmaxim/LovaszSoftmax <https://github.com/bermanmaxim/LovaszSoftmax>`_: (1245 ☆) Code for the Lovász-Softmax loss (CVPR 2018)
+- `alirezamika/autoscraper <https://github.com/alirezamika/autoscraper>`_: (4206 ☆) A Smart, Automatic, Fast and Lightweight Web Scraper for Python
+- `NVIDIA/DALI <https://github.com/NVIDIA/DALI>`_: (3681 ☆) A GPU-accelerated library containing highly optimized building blocks and an execution engine for data processing to accelerate deep learning training and inference applications.
+- `guyskk/language-cython-for-vscode <https://github.com/guyskk/language-cython-for-vscode>`_: (28 ☆) Visual Studio Code Syntax highlighter for Cython
+- `vscode-restructuredtext/vscode-restructuredtext <https://github.com/vscode-restructuredtext/vscode-restructuredtext>`_: (274 ☆) reStructuredText Language Support in Visual Studio Code
+- `semantic-release/semantic-release <https://github.com/semantic-release/semantic-release>`_: (14648 ☆) :package::rocket: Fully automated version management and package publishing
+- `github-changelog-generator/github-changelog-generator <https://github.com/github-changelog-generator/github-changelog-generator>`_: (6678 ☆) Automatically generate change log from your tags, issues, labels and pull requests on GitHub.
+- `khangich/machine-learning-interview <https://github.com/khangich/machine-learning-interview>`_: (3358 ☆) Machine Learning Interviews from FAANG, Snapchat, LinkedIn. I have offers from Snapchat, Coupang, Stitchfix etc. Blog: mlengineer.io.
+- `karpathy/minGPT <https://github.com/karpathy/minGPT>`_: (6935 ☆) A minimal PyTorch re-implementation of the OpenAI GPT (Generative Pretrained Transformer) training
+- `hudson-and-thames/mlfinlab <https://github.com/hudson-and-thames/mlfinlab>`_: (2757 ☆) MlFinLab helps portfolio managers and traders who want to leverage the power of machine learning by providing reproducible, interpretable, and easy to use tools.
+- `mingrammer/diagrams <https://github.com/mingrammer/diagrams>`_: (16046 ☆) :art: Diagram as Code for prototyping cloud system architectures
+- `princeton-vl/RAFT <https://github.com/princeton-vl/RAFT>`_: (1758 ☆) None
+- `cotoami/cotoami <https://github.com/cotoami/cotoami>`_: (308 ☆) Cotoami is a platform where people can weave a large network of wisdom from tiny ideas.
+- `felixhayashi/TW5-TiddlyMap <https://github.com/felixhayashi/TW5-TiddlyMap>`_: (687 ☆) Map drawing and topic visualization for your wiki
+- `dformoso/machine-learning-mindmap <https://github.com/dformoso/machine-learning-mindmap>`_: (5381 ☆) A mindmap summarising Machine Learning concepts, from Data Analysis to Deep Learning.
+- `quark0/darts <https://github.com/quark0/darts>`_: (3489 ☆) Differentiable architecture search for convolutional and recurrent networks
+- `bharathgs/Awesome-pytorch-list <https://github.com/bharathgs/Awesome-pytorch-list>`_: (12578 ☆) A comprehensive list of pytorch related content on github,such as different models,implementations,helper libraries,tutorials etc.
+- `Pattio/DeepSwarm <https://github.com/Pattio/DeepSwarm>`_: (282 ☆) Neural Architecture Search Powered by Swarm Intelligence 🐜
+- `bregman-arie/devops-exercises <https://github.com/bregman-arie/devops-exercises>`_: (21022 ☆) Linux, Jenkins, AWS, SRE, Prometheus, Docker, Python, Ansible, Git, Kubernetes, Terraform, OpenStack, SQL, NoSQL, Azure, GCP, DNS, Elastic, Network, Virtualization. DevOps Interview Questions
+- `D-X-Y/Awesome-AutoDL <https://github.com/D-X-Y/Awesome-AutoDL>`_: (1848 ☆) A curated list of automated deep learning (including neural architecture search and hyper-parameter optimization) resources.
+- `markdtw/awesome-architecture-search <https://github.com/markdtw/awesome-architecture-search>`_: (1130 ☆) A curated list of awesome architecture search resources
+- `D-X-Y/AutoDL-Projects <https://github.com/D-X-Y/AutoDL-Projects>`_: (1328 ☆) Automated deep learning algorithms implemented in PyTorch.
+- `seungwonpark/RandWireNN <https://github.com/seungwonpark/RandWireNN>`_: (679 ☆) Implementation of: "Exploring Randomly Wired Neural Networks for Image Recognition"
+- `guan-yuan/awesome-AutoML-and-Lightweight-Models <https://github.com/guan-yuan/awesome-AutoML-and-Lightweight-Models>`_: (745 ☆) A list of high-quality (newest) AutoML works and lightweight models including 1.) Neural Architecture Search, 2.) Lightweight Structures, 3.) Model Compression, Quantization and Acceleration, 4.) Hyperparameter Optimization, 5.) Automated Feature Engineering.
+- `JohanLink/Ball-Balancing-PID-System <https://github.com/JohanLink/Ball-Balancing-PID-System>`_: (296 ☆) None
+- `bentoml/BentoML <https://github.com/bentoml/BentoML>`_: (3167 ☆) The Unified Model Serving Framework 🍱
+- `kubernetes/minikube <https://github.com/kubernetes/minikube>`_: (23095 ☆) Run Kubernetes locally
+- `jonasrauber/eagerpy <https://github.com/jonasrauber/eagerpy>`_: (592 ☆) PyTorch, TensorFlow, JAX and NumPy — all of them natively using the same code
+- `donnemartin/data-science-ipython-notebooks <https://github.com/donnemartin/data-science-ipython-notebooks>`_: (22383 ☆) Data science Python notebooks: Deep learning (TensorFlow, Theano, Caffe, Keras), scikit-learn, Kaggle, big data (Spark, Hadoop MapReduce, HDFS), matplotlib, pandas, NumPy, SciPy, Python essentials, AWS, and various command lines.
+- `florinpop17/app-ideas <https://github.com/florinpop17/app-ideas>`_: (40000 ☆) A Collection of application ideas which can be used to improve your coding skills.
+- `alex/what-happens-when <https://github.com/alex/what-happens-when>`_: (31781 ☆) An attempt to answer the age old interview question "What happens when you type google.com into your browser and press enter?"
+- `photonlines/Intuitive-Guide-to-Maxwells-Equations <https://github.com/photonlines/Intuitive-Guide-to-Maxwells-Equations>`_: (764 ☆) An intuitive and visual guide to understanding Maxwell's equations.
+- `ianwhale/nsga-net <https://github.com/ianwhale/nsga-net>`_: (205 ☆) NSGA-Net, a Neural Architecture Search Algorithm
+- `carpedm20/ENAS-pytorch <https://github.com/carpedm20/ENAS-pytorch>`_: (2524 ☆) PyTorch implementation of "Efficient Neural Architecture Search via Parameters Sharing"
+- `Sentdex/pygta5 <https://github.com/Sentdex/pygta5>`_: (3661 ☆) Explorations of Using Python to play Grand Theft Auto 5.
+- `Unity-Technologies/ml-agents <https://github.com/Unity-Technologies/ml-agents>`_: (12335 ☆) Unity Machine Learning Agents Toolkit
+- `cloud-custodian/cloud-custodian <https://github.com/cloud-custodian/cloud-custodian>`_: (3978 ☆) Rules engine for cloud security, cost optimization, and governance, DSL in yaml for policies to query, filter, and take actions on resources
+- `connorferster/handcalcs <https://github.com/connorferster/handcalcs>`_: (3443 ☆) Python library for converting Python calculations into rendered latex.
+- `PaulMcInnis/JobFunnel <https://github.com/PaulMcInnis/JobFunnel>`_: (1539 ☆) Scrape job websites into a single spreadsheet with no duplicates.
+- `PySimpleGUI/PySimpleGUI <https://github.com/PySimpleGUI/PySimpleGUI>`_: (9345 ☆) Launched in 2018. It's 2022 and PySimpleGUI is actively developed & supported. Supports tkinter, Qt, WxPython, Remi (in browser). Create custom GUI Windows simply, trivially with a full set of widgets. Multi-Window applications are also simple. 3.4 to 3.11 supported. 325+ Demo programs & Cookbook for rapid start. Extensive documentation.  Examples using Machine Learning(GUI, OpenCV Integration,  Chatterbot), Desktop Widgets (Rainmeter-like), Matplotlib + Pyplot integration, add GUI to command line scripts, PDF & Image Viewer. For both beginning and advanced programmers. docs -  PySimpleGUI.org GitHub - PySimpleGUI.com. Create complex windows simply.
+- `cfzd/Ultra-Fast-Lane-Detection <https://github.com/cfzd/Ultra-Fast-Lane-Detection>`_: (1103 ☆) Ultra Fast Structure-aware Deep Lane Detection (ECCV 2020)
+- `juzzlin/Heimer <https://github.com/juzzlin/Heimer>`_: (587 ☆) Heimer is a simple cross-platform mind map, diagram, and note-taking tool written in Qt.
+- `dagster-io/dagster <https://github.com/dagster-io/dagster>`_: (4269 ☆) An orchestration platform for the development, production, and observation of data assets.
+- `localstack/localstack <https://github.com/localstack/localstack>`_: (38425 ☆) 💻  A fully functional local AWS cloud stack. Develop and test your cloud & Serverless apps offline!
+- `microsoft/computervision-recipes <https://github.com/microsoft/computervision-recipes>`_: (8268 ☆) Best Practices, code samples, and documentation for Computer Vision.
+- `dennyzhang/cheatsheet-kubernetes-A4 <https://github.com/dennyzhang/cheatsheet-kubernetes-A4>`_: (1397 ☆) :book: Kubernetes CheatSheets In A4
+- `mit-han-lab/proxylessnas <https://github.com/mit-han-lab/proxylessnas>`_: (1293 ☆) [ICLR 2019] ProxylessNAS: Direct Neural Architecture Search on Target Task and Hardware
+- `HuaizhengZhang/Awesome-System-for-Machine-Learning <https://github.com/HuaizhengZhang/Awesome-System-for-Machine-Learning>`_: (1521 ☆) A curated list of research in machine learning systems (MLSys). Paper notes are also provided.
+- `Tencent/PocketFlow <https://github.com/Tencent/PocketFlow>`_: (2676 ☆) An Automatic Model Compression (AutoMC) framework for developing smaller and faster AI applications.
+- `hibayesian/awesome-automl-papers <https://github.com/hibayesian/awesome-automl-papers>`_: (3246 ☆) A curated list of automated machine learning papers, articles, tutorials, slides and projects
+- `awslabs/autogluon <https://github.com/awslabs/autogluon>`_: (4090 ☆) AutoGluon: AutoML for Text, Image, and Tabular Data
+- `google/automl <https://github.com/google/automl>`_: (4867 ☆) Google Brain AutoML
+- `EpistasisLab/tpot <https://github.com/EpistasisLab/tpot>`_: (8420 ☆) A Python Automated Machine Learning tool that optimizes machine learning pipelines using genetic programming.
+- `chubin/wttr.in <https://github.com/chubin/wttr.in>`_: (16786 ☆) :partly_sunny: The right way to check the weather
+- `fabiopardo/tonic <https://github.com/fabiopardo/tonic>`_: (320 ☆) Tonic RL library
+- `matplotlib/cheatsheets <https://github.com/matplotlib/cheatsheets>`_: (5916 ☆) Official Matplotlib cheat sheets
+- `JiahuiYu/slimmable_networks <https://github.com/JiahuiYu/slimmable_networks>`_: (798 ☆) Slimmable Networks, AutoSlim, and Beyond, ICLR 2019, and ICCV 2019
+- `AnnaAraslanova/FBNet <https://github.com/AnnaAraslanova/FBNet>`_: (130 ☆) reproduction of the article
+- `mit-han-lab/once-for-all <https://github.com/mit-han-lab/once-for-all>`_: (1428 ☆) [ICLR 2020] Once for All: Train One Network and Specialize it for Efficient Deployment
+- `Farama-Foundation/PettingZoo <https://github.com/Farama-Foundation/PettingZoo>`_: (1024 ☆) Gym for multi-agent reinforcement learning
+- `Kkevsterrr/geneva <https://github.com/Kkevsterrr/geneva>`_: (1077 ☆) automated censorship evasion for the client-side and server-side
+- `naiveHobo/InvoiceNet <https://github.com/naiveHobo/InvoiceNet>`_: (1904 ☆) Deep neural network to extract intelligent information from invoice documents.
+- `Feryal/rl_mlss_2020 <https://github.com/Feryal/rl_mlss_2020>`_: (49 ☆) None
+- `Oneflow-Inc/oneflow <https://github.com/Oneflow-Inc/oneflow>`_: (2987 ☆) OneFlow is a performance-centered and open-source deep learning framework.
+- `google/or-tools <https://github.com/google/or-tools>`_: (7731 ☆) Google's Operations Research tools:
+- `wang-xinyu/tensorrtx <https://github.com/wang-xinyu/tensorrtx>`_: (3640 ☆) Implementation of popular deep learning networks with TensorRT network definition API
+- `TheAlgorithms/C-Plus-Plus <https://github.com/TheAlgorithms/C-Plus-Plus>`_: (17723 ☆) Collection of various algorithms in mathematics, machine learning, computer science and physics implemented in C++ for educational purposes.
+- `AnthonyCalandra/modern-cpp-features <https://github.com/AnthonyCalandra/modern-cpp-features>`_: (13373 ☆) A cheatsheet of modern C++ language and library features.
+- `bradtraversy/design-resources-for-developers <https://github.com/bradtraversy/design-resources-for-developers>`_: (35372 ☆) Curated list of design and UI resources from stock photos, web templates, CSS frameworks, UI libraries, tools and much more
+- `kelseyhightower/kubernetes-the-hard-way <https://github.com/kelseyhightower/kubernetes-the-hard-way>`_: (29760 ☆) Bootstrap Kubernetes the hard way on Google Cloud Platform. No scripts.
+- `lukasz-madon/awesome-remote-job <https://github.com/lukasz-madon/awesome-remote-job>`_: (21651 ☆) A curated list of awesome remote jobs and resources. Inspired by https://github.com/vinta/awesome-python
+- `ckz8780/market-toolkit <https://github.com/ckz8780/market-toolkit>`_: (2763 ☆) A collection of stock market resources and tools
+- `JaidedAI/EasyOCR <https://github.com/JaidedAI/EasyOCR>`_: (13672 ☆) Ready-to-use OCR with 80+ supported languages and all popular writing scripts including Latin, Chinese, Arabic, Devanagari, Cyrillic and etc.
+- `litmuschaos/litmus <https://github.com/litmuschaos/litmus>`_: (2488 ☆) Litmus helps  SREs and developers practice chaos engineering in a Cloud-native way. Chaos experiments are published at the ChaosHub  (https://hub.litmuschaos.io). Community notes is at https://hackmd.io/a4Zu_sH4TZGeih-xCimi3Q
+- `IonicaBizau/git-stats <https://github.com/IonicaBizau/git-stats>`_: (5815 ☆) 🍀 Local git statistics including GitHub-like contributions calendars.
+- `aluxnimm/outlookcaldavsynchronizer <https://github.com/aluxnimm/outlookcaldavsynchronizer>`_: (654 ☆) Sync Outlook with Google, SOGo, Nextcloud or any other CalDAV/CardDAV server
+- `EthicalML/awesome-production-machine-learning <https://github.com/EthicalML/awesome-production-machine-learning>`_: (10800 ☆) A curated list of awesome open source libraries to deploy, monitor, version and scale your machine learning
+- `donnemartin/system-design-primer <https://github.com/donnemartin/system-design-primer>`_: (40000 ☆) Learn how to design large-scale systems. Prep for the system design interview.  Includes Anki flashcards.
+- `apache/airflow <https://github.com/apache/airflow>`_: (24564 ☆) Apache Airflow - A platform to programmatically author, schedule, and monitor workflows
+- `bridgecrewio/checkov <https://github.com/bridgecrewio/checkov>`_: (3723 ☆) Prevent cloud misconfigurations during build-time for Terraform, CloudFormation, Kubernetes, Serverless framework and other infrastructure-as-code-languages with Checkov by Bridgecrew.
+- `yunjey/pytorch-tutorial <https://github.com/yunjey/pytorch-tutorial>`_: (22934 ☆) PyTorch Tutorial for Deep Learning Researchers
+- `microsoft/DeepSpeed <https://github.com/microsoft/DeepSpeed>`_: (6207 ☆) DeepSpeed is a deep learning optimization library that makes distributed training easy, efficient, and effective.
+- `visenger/awesome-mlops <https://github.com/visenger/awesome-mlops>`_: (7324 ☆) A curated list of references for MLOps
+- `luspr/awesome-ml-courses <https://github.com/luspr/awesome-ml-courses>`_: (2169 ☆) Awesome free machine learning and AI courses with video lectures.
+- `ngosang/trackerslist <https://github.com/ngosang/trackerslist>`_: (32206 ☆) Updated list of public BitTorrent trackers
+- `thuml/Transfer-Learning-Library <https://github.com/thuml/Transfer-Learning-Library>`_: (1280 ☆) Transfer Learning Library for Domain Adaptation, Task Adaptation, and Domain Generalization
+- `100DaysOfCloud/100DaysOfCloudIdeas <https://github.com/100DaysOfCloud/100DaysOfCloudIdeas>`_: (483 ☆) The purpose of this repo is to provide a list of micro-projects to help people with their Cloud Journey.
+- `Separius/awesome-fast-attention <https://github.com/Separius/awesome-fast-attention>`_: (776 ☆) list of efficient attention modules
+- `aimacode/aima-python <https://github.com/aimacode/aima-python>`_: (6216 ☆) Python implementation of algorithms from Russell And Norvig's "Artificial Intelligence - A Modern Approach"
+- `onnx/tutorials <https://github.com/onnx/tutorials>`_: (2545 ☆) Tutorials for creating and using ONNX models
+- `gerdm/prml <https://github.com/gerdm/prml>`_: (795 ☆) Repository of notes, code and notebooks in Python for the book Pattern Recognition and Machine Learning by Christopher Bishop
+- `allenai/allennlp <https://github.com/allenai/allennlp>`_: (10776 ☆) An open-source NLP research library, built on PyTorch.
+- `kubeflow/pipelines <https://github.com/kubeflow/pipelines>`_: (2667 ☆) Machine Learning Pipelines for Kubeflow
+- `guofei9987/scikit-opt <https://github.com/guofei9987/scikit-opt>`_: (2882 ☆) Genetic Algorithm, Particle Swarm Optimization, Simulated Annealing, Ant Colony Optimization Algorithm,Immune Algorithm, Artificial Fish Swarm Algorithm, Differential Evolution and TSP(Traveling salesman)
+- `lensapp/lens <https://github.com/lensapp/lens>`_: (16873 ☆) Lens - The way the world runs Kubernetes
+- `rwightman/pytorch-image-models <https://github.com/rwightman/pytorch-image-models>`_: (16196 ☆) PyTorch image models, scripts, pretrained weights -- ResNet, ResNeXT, EfficientNet, EfficientNetV2, NFNet, Vision Transformer, MixNet, MobileNet-V3/V2, RegNet, DPN, CSPNet, and more
+- `microsoft/recommenders <https://github.com/microsoft/recommenders>`_: (12108 ☆) Best Practices on Recommendation Systems
+- `sdmg15/Best-websites-a-programmer-should-visit <https://github.com/sdmg15/Best-websites-a-programmer-should-visit>`_: (40000 ☆) :link: Some useful websites for programmers.
+- `patrikx3/onenote <https://github.com/patrikx3/onenote>`_: (1518 ☆) 📚 Linux Electron Onenote - A Linux compatible version of OneNote
+- `manosim/gitify <https://github.com/manosim/gitify>`_: (3600 ☆) GitHub notifications on your menu bar. Available on macOS, Windows & Linux.
+- `yang991178/fluent-reader <https://github.com/yang991178/fluent-reader>`_: (2367 ☆) Modern desktop RSS reader built with Electron, React, and Fluent UI
+- `Igglybuff/awesome-piracy <https://github.com/Igglybuff/awesome-piracy>`_: (17131 ☆) A curated list of awesome warez and piracy links
+- `rust-lang/rustlings <https://github.com/rust-lang/rustlings>`_: (21788 ☆) :crab: Small exercises to get you used to reading and writing Rust code!
+- `google-research/nasbench <https://github.com/google-research/nasbench>`_: (575 ☆) NASBench: A Neural Architecture Search Dataset and Benchmark
+- `Alro10/deep-learning-time-series <https://github.com/Alro10/deep-learning-time-series>`_: (1461 ☆) List of papers, code and experiments using deep learning for time series forecasting
+- `JWarmenhoven/ISLR-python <https://github.com/JWarmenhoven/ISLR-python>`_: (3429 ☆) An Introduction to Statistical Learning (James, Witten, Hastie, Tibshirani, 2013): Python code
+- `norvig/pytudes <https://github.com/norvig/pytudes>`_: (18164 ☆) Python programs, usually short, of considerable difficulty, to perfect particular skills.
+- `chvmp/champ <https://github.com/chvmp/champ>`_: (844 ☆) 𓃡 Quadruped Robot based on MIT Cheetah I
+- `pfnet/intern-coding-tasks <https://github.com/pfnet/intern-coding-tasks>`_: (428 ☆) Coding tasks for PFN internship
+- `alirezadir/Production-Level-Deep-Learning <https://github.com/alirezadir/Production-Level-Deep-Learning>`_: (3411 ☆) A guideline for building practical production-level deep learning systems to be deployed in real world applications.
+- `chiphuyen/machine-learning-systems-design <https://github.com/chiphuyen/machine-learning-systems-design>`_: (6657 ☆) A booklet on machine learning systems design with exercises: https://huyenchip.com/machine-learning-systems-design/toc.html
+- `eugeneyan/applied-ml <https://github.com/eugeneyan/applied-ml>`_: (18687 ☆) 📚 Papers & tech blogs by companies sharing their work on data science & machine learning in production.
+- `balena-io/etcher <https://github.com/balena-io/etcher>`_: (22174 ☆) Flash OS images to SD cards & USB drives, safely and easily.
+- `stanfordroboticsclub/StanfordQuadruped <https://github.com/stanfordroboticsclub/StanfordQuadruped>`_: (1074 ☆) None
+- `uvipen/Super-mario-bros-PPO-pytorch <https://github.com/uvipen/Super-mario-bros-PPO-pytorch>`_: (746 ☆) Proximal Policy Optimization (PPO) algorithm for Super Mario Bros
+- `optuna/optuna <https://github.com/optuna/optuna>`_: (5873 ☆) A hyperparameter optimization framework
+- `UZ-SLAMLab/ORB_SLAM3 <https://github.com/UZ-SLAMLab/ORB_SLAM3>`_: (3318 ☆) ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM
+- `hwayne/awesome-cold-showers <https://github.com/hwayne/awesome-cold-showers>`_: (4620 ☆) For when people get too hyped up about things
+- `mrdbourke/machine-learning-roadmap <https://github.com/mrdbourke/machine-learning-roadmap>`_: (5369 ☆) A roadmap connecting many of the most important concepts in machine learning, how to learn them and what tools to use to perform them.
+- `karanpratapsingh/fullstack-starterkit <https://github.com/karanpratapsingh/fullstack-starterkit>`_: (1084 ☆) GraphQL first full-stack starter kit with Node, React. Powered by TypeScript
+- `ChrisTitusTech/win10script <https://github.com/ChrisTitusTech/win10script>`_: (2593 ☆) This is the Ultimate Windows 10 Script from a creation from multiple debloat scripts and gists from github.
+- `trimstray/the-book-of-secret-knowledge <https://github.com/trimstray/the-book-of-secret-knowledge>`_: (40000 ☆) A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools and more.
+- `goabstract/Marketing-for-Engineers <https://github.com/goabstract/Marketing-for-Engineers>`_: (11914 ☆) A curated collection of marketing articles & tools to grow your product.
+- `ritchieng/the-incredible-pytorch <https://github.com/ritchieng/the-incredible-pytorch>`_: (8645 ☆) The Incredible PyTorch: a curated list of tutorials, papers, projects, communities and more relating to PyTorch.
+- `nordicgiant2/awesome-landing-page <https://github.com/nordicgiant2/awesome-landing-page>`_: (2498 ☆) A series of beautiful and practical landing page templates
+- `pytorch/glow <https://github.com/pytorch/glow>`_: (2680 ☆) Compiler for Neural Network hardware accelerators
+- `lexfridman/mit-deep-learning <https://github.com/lexfridman/mit-deep-learning>`_: (8979 ☆) Tutorials, assignments, and competitions for MIT Deep Learning related courses.
+- `GokuMohandas/MadeWithML <https://github.com/GokuMohandas/MadeWithML>`_: (29464 ☆) Learn how to responsibly deliver value with ML.
+- `pfnet/pfrl <https://github.com/pfnet/pfrl>`_: (778 ☆) PFRL: a PyTorch-based deep reinforcement learning library
+- `kedro-org/kedro <https://github.com/kedro-org/kedro>`_: (6321 ☆) A Python framework for creating reproducible, maintainable and modular data science code.
+- `commaai/openpilot <https://github.com/commaai/openpilot>`_: (32230 ☆) openpilot is an open source driver assistance system. openpilot performs the functions of Automated Lane Centering and Adaptive Cruise Control for over 150 supported car makes and models.
+- `ageron/handson-ml2 <https://github.com/ageron/handson-ml2>`_: (19197 ☆) A series of Jupyter notebooks that walk you through the fundamentals of Machine Learning and Deep Learning in Python using Scikit-Learn, Keras and TensorFlow 2.
+- `Shawn-Shan/fawkes <https://github.com/Shawn-Shan/fawkes>`_: (4423 ☆) Fawkes, privacy preserving tool against facial recognition systems. More info at https://sandlab.cs.uchicago.edu/fawkes
+- `data-science-on-aws/oreilly_book <https://github.com/data-science-on-aws/oreilly_book>`_: (2458 ☆) AI and Machine Learning with Kubeflow, Amazon EKS, and SageMaker
+- `MysteryVaibhav/leetcode_company_wise_questions <https://github.com/MysteryVaibhav/leetcode_company_wise_questions>`_: (5328 ☆) This is a repository containing the list of company wise questions available on leetcode premium
+- `ultralytics/yolov5 <https://github.com/ultralytics/yolov5>`_: (21675 ☆) YOLOv5 🚀 in PyTorch > ONNX > CoreML > TFLite
+- `TeamNewPipe/NewPipe <https://github.com/TeamNewPipe/NewPipe>`_: (16310 ☆) A libre lightweight streaming front-end for Android.
+- `kubernetes-sigs/kubespray <https://github.com/kubernetes-sigs/kubespray>`_: (11784 ☆) Deploy a Production Ready Kubernetes Cluster
+- `dmlc/dgl <https://github.com/dmlc/dgl>`_: (8846 ☆) Python package built to ease deep learning on graph, on top of existing DL frameworks.
+- `alex04072000/ObstructionRemoval <https://github.com/alex04072000/ObstructionRemoval>`_: (965 ☆) [CVPR 2020] Learning to See Through Obstructions
+- `google/trax <https://github.com/google/trax>`_: (6742 ☆) Trax — Deep Learning with Clear Code and Speed
+- `GetStream/Winds <https://github.com/GetStream/Winds>`_: (8545 ☆) A Beautiful Open Source RSS & Podcast App Powered by Getstream.io
+- `hello-efficiency-inc/raven-reader <https://github.com/hello-efficiency-inc/raven-reader>`_: (2080 ☆) 📖 All your articles in one place. Beautiful.
+- `pytorch/examples <https://github.com/pytorch/examples>`_: (17722 ☆) A set of examples around pytorch in Vision, Text, Reinforcement Learning, etc.
+- `openai/spinningup <https://github.com/openai/spinningup>`_: (6609 ☆) An educational resource to help anyone learn deep reinforcement learning.
+- `JuliaML/LossFunctions.jl <https://github.com/JuliaML/LossFunctions.jl>`_: (107 ☆) Julia package of loss functions for machine learning.
+- `microsoft/onnxruntime <https://github.com/microsoft/onnxruntime>`_: (6167 ☆) ONNX Runtime: cross-platform, high performance ML inferencing and training accelerator
+- `rafaelpadilla/Object-Detection-Metrics <https://github.com/rafaelpadilla/Object-Detection-Metrics>`_: (3952 ☆) Most popular metrics used to evaluate object detection algorithms.
+- `hoya012/deep_learning_object_detection <https://github.com/hoya012/deep_learning_object_detection>`_: (10418 ☆) A paper list of object detection using deep learning.
+- `ugurkanates/awesome-real-world-rl <https://github.com/ugurkanates/awesome-real-world-rl>`_: (260 ☆) Great resources for making Reinforcement Learning work in Real Life situations. Papers,projects and more.
+- `ifzhang/FairMOT <https://github.com/ifzhang/FairMOT>`_: (3255 ☆) [IJCV-2021] FairMOT: On the Fairness of Detection and Re-Identification in Multi-Object Tracking
+- `facebookresearch/detr <https://github.com/facebookresearch/detr>`_: (8302 ☆) End-to-End Object Detection with Transformers
+- `DopplerHQ/awesome-interview-questions <https://github.com/DopplerHQ/awesome-interview-questions>`_: (40000 ☆) :octocat: A curated awesome list of lists of interview questions. Feel free to contribute! :mortar_board:
+- `SystemErrorWang/White-box-Cartoonization <https://github.com/SystemErrorWang/White-box-Cartoonization>`_: (3324 ☆) Official tensorflow implementation for CVPR2020 paper “Learning to Cartoonize Using White-box Cartoon Representations”
+- `google-research/google-research <https://github.com/google-research/google-research>`_: (21698 ☆) Google Research
+- `MaggieAppleton/digital-gardeners <https://github.com/MaggieAppleton/digital-gardeners>`_: (1864 ☆) Resources, links, projects, and ideas for gardeners tending their digital notes on the public interwebs
+- `wsargent/docker-cheat-sheet <https://github.com/wsargent/docker-cheat-sheet>`_: (20589 ☆) Docker Cheat Sheet
+- `thunlp/GNNPapers <https://github.com/thunlp/GNNPapers>`_: (12478 ☆) Must-read papers on graph neural networks (GNN)
+- `rlabbe/Kalman-and-Bayesian-Filters-in-Python <https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python>`_: (11392 ☆) Kalman Filter book using Jupyter Notebook. Focuses on building intuition and experience, not formal proofs.  Includes Kalman filters,extended Kalman filters, unscented Kalman filters, particle filters, and more. All exercises include solutions.
+- `lanpa/tensorboardX <https://github.com/lanpa/tensorboardX>`_: (7218 ☆) tensorboard for pytorch (and chainer, mxnet, numpy, ...)
+- `anopara/genetic-drawing <https://github.com/anopara/genetic-drawing>`_: (2022 ☆) A genetic algorithm toy project for drawing
+- `alfiopuglisi/guietta <https://github.com/alfiopuglisi/guietta>`_: (1873 ☆) None
+- `ray-project/ray <https://github.com/ray-project/ray>`_: (18991 ☆) An open source framework that provides a simple, universal API for building distributed applications. Ray is packaged with RLlib, a scalable reinforcement learning library, and Tune, a scalable hyperparameter tuning library.
+- `dcmocanu/sparse-evolutionary-artificial-neural-networks <https://github.com/dcmocanu/sparse-evolutionary-artificial-neural-networks>`_: (199 ☆) Always sparse. Never dense. But never say never. A Sparse Training repository for the Adaptive Sparse Connectivity concept and its algorithmic instantiation, i.e. Sparse Evolutionary Training, to boost Deep Learning scalability on various aspects (e.g. memory and computational time efficiency, representation and generalization power).
+- `lutzroeder/netron <https://github.com/lutzroeder/netron>`_: (17546 ☆) Visualizer for neural network, deep learning, and machine learning models
+- `iduta/pyconv <https://github.com/iduta/pyconv>`_: (277 ☆) Pyramidal Convolution: Rethinking Convolutional Neural Networks for Visual Recognition (https://arxiv.org/pdf/2006.11538.pdf)
+- `danielegrattarola/spektral <https://github.com/danielegrattarola/spektral>`_: (1976 ☆) Graph Neural Networks with Keras and Tensorflow 2.
+- `garrettj403/SciencePlots <https://github.com/garrettj403/SciencePlots>`_: (3062 ☆) Matplotlib styles for scientific plotting
+- `detectRecog/PointTrack <https://github.com/detectRecog/PointTrack>`_: (241 ☆) PointTrack (ECCV2020 ORAL): Segment as Points for Efficient Online Multi-Object Tracking and Segmentation
+- `daattali/oldschool-github-extension <https://github.com/daattali/oldschool-github-extension>`_: (205 ☆) Revert GitHub's UI back to its classic look (before the June 23, 2020 update that has a flat, rounded and more whitespaced design).
+- `Shikhargupta/Spiking-Neural-Network <https://github.com/Shikhargupta/Spiking-Neural-Network>`_: (677 ☆) Pure python implementation of SNN
+- `DLR-RM/stable-baselines3 <https://github.com/DLR-RM/stable-baselines3>`_: (2809 ☆) PyTorch version of Stable Baselines, reliable implementations of reinforcement learning algorithms.
+- `executablebooks/jupyter-book <https://github.com/executablebooks/jupyter-book>`_: (2642 ☆) Create beautiful, publication-quality books and documents from computational content.
+- `maximecb/gym-minigrid <https://github.com/maximecb/gym-minigrid>`_: (1390 ☆) Minimalistic gridworld package for OpenAI Gym
+- `ashutoshbsathe/scarpet-nn <https://github.com/ashutoshbsathe/scarpet-nn>`_: (134 ☆) Tools and libraries to run neural networks in Minecraft :pick:
+- `Kaixhin/grokking-pytorch <https://github.com/Kaixhin/grokking-pytorch>`_: (1011 ☆) The Hitchiker's Guide to PyTorch
+- `facebookresearch/detectron2 <https://github.com/facebookresearch/detectron2>`_: (19705 ☆) Detectron2 is a platform for object detection, segmentation and other visual recognition tasks.
+- `viraptor/reverse-interview <https://github.com/viraptor/reverse-interview>`_: (19994 ☆) Questions to ask the company during your interview
+- `inoryy/reaver <https://github.com/inoryy/reaver>`_: (527 ☆) Reaver: Modular Deep Reinforcement Learning Framework. Focused on StarCraft II. Supports Gym, Atari, and MuJoCo.
+- `vita-epfl/trajnetplusplusbaselines <https://github.com/vita-epfl/trajnetplusplusbaselines>`_: (133 ☆) Baselines for TrajNet++
+- `urschrei/pyzotero <https://github.com/urschrei/pyzotero>`_: (454 ☆) Pyzotero: a Python client for the Zotero API
+- `DeepGraphLearning/LiteratureDL4Graph <https://github.com/DeepGraphLearning/LiteratureDL4Graph>`_: (2899 ☆) A comprehensive collection of recent papers on graph deep learning
+- `3b1b/manim <https://github.com/3b1b/manim>`_: (40000 ☆) Animation engine for explanatory math videos
+- `algorithmsbooks/algforopt-notebooks <https://github.com/algorithmsbooks/algforopt-notebooks>`_: (278 ☆) Jupyter notebooks associated with the Algorithms for Optimization textbook
+- `AndreaCensi/geometry <https://github.com/AndreaCensi/geometry>`_: (47 ☆) Library for handling various differentiable manifolds.
+- `zztianzz/PF-Net-Point-Fractal-Network <https://github.com/zztianzz/PF-Net-Point-Fractal-Network>`_: (186 ☆) CVPR2020 PF-Net: Point Fractal Network for 3D Point Cloud Completion
+- `xieenze/PolarMask <https://github.com/xieenze/PolarMask>`_: (793 ☆) Code for 'PolarMask: Single Shot Instance Segmentation with Polar Representation'
+- `intel/ad-rss-lib <https://github.com/intel/ad-rss-lib>`_: (238 ☆) Library implementing the Responsibility Sensitive Safety model (RSS) for Autonomous Vehicles
+- `dingmyu/D4LCN <https://github.com/dingmyu/D4LCN>`_: (277 ☆) A pytorch implementation of "D4LCN: Learning Depth-Guided Convolutions for Monocular 3D Object Detection" CVPR 2020
+- `The-Learning-And-Vision-Atelier-LAVA/SoTA-Point-Cloud <https://github.com/The-Learning-And-Vision-Atelier-LAVA/SoTA-Point-Cloud>`_: (1169 ☆) 🔥[IEEE TPAMI 2020] Deep Learning for 3D Point Clouds: A Survey
+- `StanfordASL/Trajectron-plus-plus <https://github.com/StanfordASL/Trajectron-plus-plus>`_: (327 ☆) Code accompanying the ECCV 2020 paper "Trajectron++: Dynamically-Feasible Trajectory Forecasting With Heterogeneous Data" by Tim Salzmann*, Boris Ivanovic*, Punarjay Chakravarty, and Marco Pavone (* denotes equal contribution).
+- `utiasSTARS/pykitti <https://github.com/utiasSTARS/pykitti>`_: (815 ☆) Python tools for working with KITTI data.
+- `corochann/chainer-pointnet <https://github.com/corochann/chainer-pointnet>`_: (35 ☆) Chainer implementation of PointNet, PointNet++, KD-Network and 3DContextNework
+- `charlesq34/frustum-pointnets <https://github.com/charlesq34/frustum-pointnets>`_: (1310 ☆) Frustum PointNets for 3D Object Detection from RGB-D Data
+- `charlesq34/pointnet2 <https://github.com/charlesq34/pointnet2>`_: (2237 ☆) PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space
+- `montrealrobotics/active-domainrand <https://github.com/montrealrobotics/active-domainrand>`_: (69 ☆) Code repository for Active Domain Randomization (CoRL 2019, https://arxiv.org/abs/1904.04762)
+- `UM-ARM-Lab/arc_utilities <https://github.com/UM-ARM-Lab/arc_utilities>`_: (6 ☆) C++ and Python utilities. ARC -> ARM
+- `cartographer-project/cartographer <https://github.com/cartographer-project/cartographer>`_: (5829 ☆) Cartographer is a system that provides real-time simultaneous localization and mapping (SLAM) in 2D and 3D across multiple platforms and sensor configurations.
+- `bccp/nbodykit <https://github.com/bccp/nbodykit>`_: (90 ☆) Analysis kit for large-scale structure datasets, the massively parallel way
+- `meiqua/6DPose <https://github.com/meiqua/6DPose>`_: (202 ☆) implement some algorithms of 6d pose estimation
+- `davidagraf/doi2bib2 <https://github.com/davidagraf/doi2bib2>`_: (200 ☆) None
+- `brechtm/rinohtype <https://github.com/brechtm/rinohtype>`_: (410 ☆) The Python document processor
+- `7ossam81/EvoloPy <https://github.com/7ossam81/EvoloPy>`_: (240 ☆) None
+- `floodsung/Lifelong-Learning-Paper-List <https://github.com/floodsung/Lifelong-Learning-Paper-List>`_: (148 ☆) Lifelong/Continual Learning Paper List
+- `green7ea/cpp-compilation <https://github.com/green7ea/cpp-compilation>`_: (1171 ☆) A short description of the C++ build process
+- `rkern/line_profiler <https://github.com/rkern/line_profiler>`_: (3573 ☆) (OLD REPO) Line-by-line profiling for Python - Current repo ->
+- `chiphuyen/sotawhat <https://github.com/chiphuyen/sotawhat>`_: (1207 ☆) Returns latest research results by crawling arxiv papers and summarizing abstracts. Helps you stay afloat with so many new papers everyday.
+- `netromdk/vermin <https://github.com/netromdk/vermin>`_: (284 ☆) Concurrently detect the minimum Python versions needed to run code
+- `brian-team/brian2 <https://github.com/brian-team/brian2>`_: (621 ☆) Brian is a free, open source simulator for spiking neural networks.
+- `yasoob/intermediatePython <https://github.com/yasoob/intermediatePython>`_: (3372 ☆) None
+- `BNMetrics/logme <https://github.com/BNMetrics/logme>`_: (540 ☆) Python Logging For Humans (Also supports configurable color logging for the terminal!)
+- `Eloston/ungoogled-chromium <https://github.com/Eloston/ungoogled-chromium>`_: (13871 ☆) Google Chromium, sans integration with Google
+- `suragnair/seqGAN <https://github.com/suragnair/seqGAN>`_: (549 ☆) A simplified PyTorch implementation of "SeqGAN: Sequence Generative Adversarial Nets with Policy Gradient." (Yu, Lantao, et al.)
+- `junegunn/fzf <https://github.com/junegunn/fzf>`_: (40000 ☆) :cherry_blossom: A command-line fuzzy finder
+- `Kapeli/Dash-User-Contributions <https://github.com/Kapeli/Dash-User-Contributions>`_: (1738 ☆) Dash repo of user contributed docsets
+- `afshinea/stanford-cs-229-machine-learning <https://github.com/afshinea/stanford-cs-229-machine-learning>`_: (12980 ☆) VIP cheatsheets for Stanford's CS 229 Machine Learning
+- `perkeep/perkeep <https://github.com/perkeep/perkeep>`_: (5771 ☆) Perkeep (née Camlistore) is your personal storage system for life: a way of storing, syncing, sharing, modelling and backing up content.
+- `nschloe/betterbib <https://github.com/nschloe/betterbib>`_: (681 ☆) :green_book: Update BibTeX files with info from online resources.
+- `rsms/inter <https://github.com/rsms/inter>`_: (13429 ☆) The Inter font family
+- `ProvenanceLabs/image-match <https://github.com/ProvenanceLabs/image-match>`_: (2681 ☆) 🎇 Quickly search over billions of images
+- `StanfordVL/taskonomy <https://github.com/StanfordVL/taskonomy>`_: (760 ☆) Taskonomy: Disentangling Task Transfer Learning
+- `facebookincubator/Bowler <https://github.com/facebookincubator/Bowler>`_: (1353 ☆) Safe code refactoring for modern Python.
+- `jaredthecoder/BioPy <https://github.com/jaredthecoder/BioPy>`_: (39 ☆) Biologically-Inspired and Machine Learning Algorithms written in Python
+- `ChristosChristofidis/awesome-deep-learning <https://github.com/ChristosChristofidis/awesome-deep-learning>`_: (18236 ☆) A curated list of awesome Deep Learning tutorials, projects and communities.
+- `deepmind/sonnet <https://github.com/deepmind/sonnet>`_: (9175 ☆) TensorFlow-based neural network library
+- `zziz/pwc <https://github.com/zziz/pwc>`_: (15306 ☆) Papers with code. Sorted by stars. Updated weekly.
+- `venthur/gscholar <https://github.com/venthur/gscholar>`_: (232 ☆) Query Google Scholar with Python
+- `ShapeNet/shapenet-viewer <https://github.com/ShapeNet/shapenet-viewer>`_: (161 ☆) ShapeNet Viewer
+- `shi-jian/mitsuba-shapenet <https://github.com/shi-jian/mitsuba-shapenet>`_: (78 ☆) Mitsuba for ShapeNet
+- `Regenerator/kdnets <https://github.com/Regenerator/kdnets>`_: (33 ☆) Kd-Networks
+- `joowani/binarytree <https://github.com/joowani/binarytree>`_: (1701 ☆) Python Library for Studying Binary Trees
+- `kakwa/py-ascii-graph <https://github.com/kakwa/py-ascii-graph>`_: (111 ☆) A simple python lib to print data as ascii histograms
+- `ConSol/docker-headless-vnc-container <https://github.com/ConSol/docker-headless-vnc-container>`_: (1266 ☆) Collection of Docker images with headless VNC environments
+- `ianw/rstdiary <https://github.com/ianw/rstdiary>`_: (22 ☆) Turn a flat rst text file into a simle HTML diary
+- `ralsina/rst-cheatsheet <https://github.com/ralsina/rst-cheatsheet>`_: (1084 ☆) A two-page cheatsheet for restructured text
+- `getpelican/pelican <https://github.com/getpelican/pelican>`_: (10765 ☆) Static site generator that supports Markdown and reST syntax. Powered by Python.
+- `sphinx-doc/sphinx <https://github.com/sphinx-doc/sphinx>`_: (4386 ☆) Main repository for the Sphinx documentation builder
+- `reinout/reinout.vanrees.org <https://github.com/reinout/reinout.vanrees.org>`_: (19 ☆) Software that runs reinout.vanrees.org
+- `trehn/termdown <https://github.com/trehn/termdown>`_: (944 ☆) Countdown timer and stopwatch in your terminal
+- `numpy/numpydoc <https://github.com/numpy/numpydoc>`_: (198 ☆) Numpy's Sphinx extensions
+- `PacktPublishing/Cpp17-STL-Cookbook <https://github.com/PacktPublishing/Cpp17-STL-Cookbook>`_: (425 ☆) Code files by Packt
+- `CMU-Perceptual-Computing-Lab/openpose <https://github.com/CMU-Perceptual-Computing-Lab/openpose>`_: (23232 ☆) OpenPose: Real-time multi-person keypoint detection library for body, face, hands, and foot estimation
+- `kanishka-linux/reminiscence <https://github.com/kanishka-linux/reminiscence>`_: (1460 ☆) Self-Hosted Bookmark And Archive Manager
+- `cjbarber/ToolsOfTheTrade <https://github.com/cjbarber/ToolsOfTheTrade>`_: (15492 ☆) Tools of The Trade, from Hacker News.
+- `tensorflow/lucid <https://github.com/tensorflow/lucid>`_: (4358 ☆) A collection of infrastructure and tools for research in neural network interpretability.
+- `nana-4/materia-theme <https://github.com/nana-4/materia-theme>`_: (3188 ☆) A Material Design theme for GNOME/GTK based desktop environments
+- `DragonComputer/Dragonfire <https://github.com/DragonComputer/Dragonfire>`_: (1211 ☆) the open-source virtual assistant for Ubuntu based Linux distributions
+- `explosion/spaCy <https://github.com/explosion/spaCy>`_: (22313 ☆) 💫 Industrial-strength Natural Language Processing (NLP) in Python
+- `dvorka/hstr <https://github.com/dvorka/hstr>`_: (2938 ☆) bash and zsh shell history suggest box - easily view, navigate, search and manage your command history.
+- `rayshan/mplus-fonts <https://github.com/rayshan/mplus-fonts>`_: (118 ☆) M+ FONTS For Google Fonts
+- `miiton/Cica <https://github.com/miiton/Cica>`_: (954 ☆) プログラミング用日本語等幅フォント Cica(シカ)
+- `darkreader/darkreader <https://github.com/darkreader/darkreader>`_: (12783 ☆) Dark Reader Chrome and Firefox extension
+- `facebookincubator/python-nubia <https://github.com/facebookincubator/python-nubia>`_: (1559 ☆) A command-line and interactive shell framework.
+- `ntasfi/PyGame-Learning-Environment <https://github.com/ntasfi/PyGame-Learning-Environment>`_: (878 ☆) PyGame Learning Environment (PLE) -- Reinforcement Learning Environment in Python.
+- `uber-research/deep-neuroevolution <https://github.com/uber-research/deep-neuroevolution>`_: (1530 ☆) Deep Neuroevolution
+- `rlcode/reinforcement-learning <https://github.com/rlcode/reinforcement-learning>`_: (2888 ☆) Minimal and Clean Reinforcement Learning Examples
+- `pytorch/ELF <https://github.com/pytorch/ELF>`_: (3245 ☆) ELF: a platform for game research with AlphaGoZero/AlphaZero reimplementation
+- `JuliaPOMDP/MCTS.jl <https://github.com/JuliaPOMDP/MCTS.jl>`_: (52 ☆) Monte Carlo Tree Search for Markov decision processes using the POMDPs.jl framework
+- `JuliaPOMDP/TabularTDLearning.jl <https://github.com/JuliaPOMDP/TabularTDLearning.jl>`_: (4 ☆) Julia implementations of temporal difference Reinforcement Learning algorithms like Q-Learning and SARSA
+- `JuliaPOMDP/POMDPs.jl <https://github.com/JuliaPOMDP/POMDPs.jl>`_: (451 ☆) MDPs and POMDPs in Julia - An interface for defining, solving, and simulating fully and partially observable Markov decision processes on discrete and continuous spaces.
+- `vinta/awesome-python <https://github.com/vinta/awesome-python>`_: (40000 ☆) A curated list of awesome Python frameworks, libraries, software and resources
+- `practical-tutorials/project-based-learning <https://github.com/practical-tutorials/project-based-learning>`_: (40000 ☆) Curated list of project-based tutorials
+- `snwh/ubuntu-post-install <https://github.com/snwh/ubuntu-post-install>`_: (632 ☆) A set of post-installation shell scripts for Ubuntu
+- `mhsung/deep-functional-dictionaries <https://github.com/mhsung/deep-functional-dictionaries>`_: (39 ☆) None
+- `prakhar1989/awesome-courses <https://github.com/prakhar1989/awesome-courses>`_: (39074 ☆) :books: List of awesome university courses for learning Computer Science!
+- `floodsung/Meta-Learning-Papers <https://github.com/floodsung/Meta-Learning-Papers>`_: (2431 ☆) Meta Learning / Learning to Learn / One Shot Learning / Few Shot Learning
+- `agarrharr/awesome-cli-apps <https://github.com/agarrharr/awesome-cli-apps>`_: (8805 ☆) 🖥 📊 🕹 🛠 A curated list of command line apps
+- `Paspartout/BoilerplatePP <https://github.com/Paspartout/BoilerplatePP>`_: (21 ☆) Boilerplate for your C++ projects
+- `regebro/hovercraft <https://github.com/regebro/hovercraft>`_: (1378 ☆) Make dynamic impressive presentations from text files!
+- `pbek/QOwnNotes <https://github.com/pbek/QOwnNotes>`_: (2415 ☆) QOwnNotes is a plain-text file notepad and todo-list manager with markdown support and Nextcloud / ownCloud integration.
+- `mdklatt/cookiecutter-python-app <https://github.com/mdklatt/cookiecutter-python-app>`_: (105 ☆) Cookiecutter template for a Python application project.
+- `kragniz/cookiecutter-pypackage-minimal <https://github.com/kragniz/cookiecutter-pypackage-minimal>`_: (185 ☆) A minimal template for python packages
+- `dodiku/AudioOwl <https://github.com/dodiku/AudioOwl>`_: (175 ☆) Fast and simple music and audio analysis using RNN in Python 🕵️‍♀️ 🥁
+- `nirum/tableprint <https://github.com/nirum/tableprint>`_: (155 ☆) Pretty console printing :clipboard: of tabular data in python :snake:
+- `kermitt2/grobid <https://github.com/kermitt2/grobid>`_: (1626 ☆) A machine learning software for extracting information from scholarly documents
+- `pmaupin/pdfrw <https://github.com/pmaupin/pdfrw>`_: (1573 ☆) pdfrw is a pure Python library that reads and writes PDFs
+- `gollum/gollum <https://github.com/gollum/gollum>`_: (12398 ☆) A simple, Git-powered wiki with a sweet API and local frontend.
+- `mickael-kerjean/filestash <https://github.com/mickael-kerjean/filestash>`_: (5477 ☆) 🦄 A modern web client for SFTP, S3, FTP, WebDAV, Git, Minio, LDAP, CalDAV, CardDAV, Mysql, Backblaze, ...
+- `codelucas/newspaper <https://github.com/codelucas/newspaper>`_: (11610 ☆) News, full-text, and article metadata extraction in Python 3. Advanced docs:
+- `mbadry1/CS231n-2017-Summary <https://github.com/mbadry1/CS231n-2017-Summary>`_: (1385 ☆) After watching all the videos of the famous Standford's CS231n course that took place in 2017, i decided to take summary of the whole course to help me to remember and to anyone who would like to know about it. I've skipped some contents in some lectures as it wasn't important to me.
+- `darshanime/notes <https://github.com/darshanime/notes>`_: (1831 ☆) detailed notes on computer science topics, in one page
+- `yoloseem/awesome-sphinxdoc <https://github.com/yoloseem/awesome-sphinxdoc>`_: (781 ☆) A curated list of awesome tools for Sphinx Python Documentation Generator
+- `ActivityWatch/activitywatch <https://github.com/ActivityWatch/activitywatch>`_: (6089 ☆) The best free and open-source automated time tracker. Cross-platform, extensible, privacy-focused.
+- `konstantint/python-boilerplate-template <https://github.com/konstantint/python-boilerplate-template>`_: (21 ☆) PasteScript template for initializing a new buildout/pytest/travis/setuptools-enabled Python project
+- `zagortenay333/timepp <https://github.com/zagortenay333/timepp>`_: (403 ☆) None
+- `mfuentesg/SyncSettings <https://github.com/mfuentesg/SyncSettings>`_: (266 ☆) Sync Settings - The cross-platform solution to keep Sublime Text configuration synchronized
+- `johannesjo/super-productivity <https://github.com/johannesjo/super-productivity>`_: (4704 ☆) Super Productivity is an advanced todo list app with integrated Timeboxing and time tracking capabilities. It also comes with integrations for Jira, Gitlab, GitHub and Open Project.
+- `nativefier/nativefier <https://github.com/nativefier/nativefier>`_: (29696 ☆) Make any web page a desktop application
+- `vicky002/AlgoWiki <https://github.com/vicky002/AlgoWiki>`_: (3902 ☆) Repository which contains links and resources on different topics of Computer Science.
+- `maguowei/starred <https://github.com/maguowei/starred>`_: (946 ☆) creating your own Awesome List by GitHub stars!
+- `astralapp/astral <https://github.com/astralapp/astral>`_: (2722 ☆) Organize Your GitHub Stars With Ease
+- `syncthing/syncthing <https://github.com/syncthing/syncthing>`_: (40000 ☆) Open Source Continuous File Synchronization
+- `unizard/AwesomeArxiv <https://github.com/unizard/AwesomeArxiv>`_: (88 ☆) None
+- `kelseyhightower/nocode <https://github.com/kelseyhightower/nocode>`_: (40000 ☆) The best way to write secure and reliable applications. Write nothing; deploy nowhere.
+- `google/dopamine <https://github.com/google/dopamine>`_: (9721 ☆) Dopamine is a research framework for fast prototyping of reinforcement learning algorithms.
+- `maestron/botnets <https://github.com/maestron/botnets>`_: (2535 ☆) This is a collection of #botnet source codes, unorganized. For EDUCATIONAL PURPOSES ONLY
+- `aikorea/awesome-rl <https://github.com/aikorea/awesome-rl>`_: (7503 ☆) Reinforcement learning resources curated
+- `cookiecutter/cookiecutter <https://github.com/cookiecutter/cookiecutter>`_: (16123 ☆) A command-line utility that creates projects from cookiecutters (project templates), e.g. Python package projects, VueJS projects.
+- `Mahdisadjadi/arxivscraper <https://github.com/Mahdisadjadi/arxivscraper>`_: (157 ☆) A python module to scrape arxiv.org for a date range and category
+- `metral/tensorflow-wheels <https://github.com/metral/tensorflow-wheels>`_: (7 ☆) Tensorflow Python Wheels - Compiled from Source
+- `arxiv-vanity/arxiv-vanity <https://github.com/arxiv-vanity/arxiv-vanity>`_: (1289 ☆) Renders papers from arXiv as responsive web pages so you don't have to squint at a PDF.
+- `BoostIO/BoostNote-Legacy <https://github.com/BoostIO/BoostNote-Legacy>`_: (17359 ☆) This repository is outdated and new Boost Note app is available! We've launched a new Boost Note app which supports real-time collaborative writing. https://github.com/BoostIO/BoostNote-App
+- `flameshot-org/flameshot <https://github.com/flameshot-org/flameshot>`_: (16176 ☆) Powerful yet simple to use screenshot software :desktop_computer: :camera_flash:
+- `luong-komorebi/Awesome-Linux-Software <https://github.com/luong-komorebi/Awesome-Linux-Software>`_: (17069 ☆) A list of awesome applications, software, tools and other materials for Linux distros.
+- `ilikenwf/apt-fast <https://github.com/ilikenwf/apt-fast>`_: (1474 ☆) apt-fast: A shellscript wrapper for apt that speeds up downloading of packages.
+- `ybayle/awesome-deep-learning-music <https://github.com/ybayle/awesome-deep-learning-music>`_: (2228 ☆) List of articles related to deep learning applied to music
+- `kaxap/arl <https://github.com/kaxap/arl>`_: (1603 ☆) lists of most popular repositories for most favoured programming languages (according to StackOverflow)
+- `nicolargo/glances <https://github.com/nicolargo/glances>`_: (19875 ☆) Glances an Eye on your system. A top/htop alternative for GNU/Linux, BSD, Mac OS and Windows operating systems.
+- `keon/algorithms <https://github.com/keon/algorithms>`_: (20294 ☆) Minimal examples of data structures and algorithms in Python
+- `wereturtle/ghostwriter <https://github.com/wereturtle/ghostwriter>`_: (3253 ☆) ghostwriter is a cross-platform, aesthetic, distraction-free Markdown editor.
+- `josephmisiti/awesome-machine-learning <https://github.com/josephmisiti/awesome-machine-learning>`_: (40000 ☆) A curated list of awesome Machine Learning frameworks, libraries and software.
+- `OpenGenus/cosmos <https://github.com/OpenGenus/cosmos>`_: (12950 ☆) Hacktoberfest 2021 | World's largest Contributor driven code dataset | Algorithms that run our universe | Your personal library of every algorithm and data structure code that you will ever encounter |
+- `awesomedata/awesome-public-datasets <https://github.com/awesomedata/awesome-public-datasets>`_: (40000 ☆) A topic-centric list of HQ open datasets.
+- `NirantK/awesome-project-ideas <https://github.com/NirantK/awesome-project-ideas>`_: (6168 ☆) Curated list of Machine Learning, NLP, Vision, Recommender Systems Project Ideas
+- `metrofun/machine-learning-surveys <https://github.com/metrofun/machine-learning-surveys>`_: (1215 ☆) A curated list of Machine Learning Surveys, Tutorials and Books.
+- `rossant/awesome-math <https://github.com/rossant/awesome-math>`_: (5593 ☆) A curated list of awesome mathematics resources
+- `thibmaek/awesome-raspberry-pi <https://github.com/thibmaek/awesome-raspberry-pi>`_: (9495 ☆) 📝 A curated list of awesome Raspberry Pi tools, projects, images and resources
+- `jnv/lists <https://github.com/jnv/lists>`_: (7825 ☆) The definitive list of lists (of lists) curated on GitHub and elsewhere
+- `ArchiveBox/ArchiveBox <https://github.com/ArchiveBox/ArchiveBox>`_: (12620 ☆) 🗃 Open source self-hosted web archiving. Takes URLs/browser history/bookmarks/Pocket/Pinboard/etc., saves HTML, JS, PDFs, media, and more...
+- `jarun/buku <https://github.com/jarun/buku>`_: (4938 ☆) :bookmark: Personal mini-web in text
+- `yangshun/tech-interview-handbook <https://github.com/yangshun/tech-interview-handbook>`_: (40000 ☆) 💯 Curated interview preparation materials for busy engineers
+- `JMoerman/Go-For-It <https://github.com/JMoerman/Go-For-It>`_: (92 ☆) A stylish to-do list with built-in productivity timer.
+- `laurent22/joplin <https://github.com/laurent22/joplin>`_: (27864 ☆) Joplin - an open source note taking and to-do application with synchronization capabilities for Windows, macOS, Linux, Android and iOS. Forum: https://discourse.joplinapp.org/
+- `sciunto-org/python-bibtexparser <https://github.com/sciunto-org/python-bibtexparser>`_: (298 ☆) Bibtex parser for Python 3.3+
+- `ekalinin/github-markdown-toc <https://github.com/ekalinin/github-markdown-toc>`_: (2762 ☆) Easy TOC creation for GitHub README.md
+- `arXivTimes/arXivTimes <https://github.com/arXivTimes/arXivTimes>`_: (3665 ☆) repository to research & share the machine learning articles
+- `karpathy/arxiv-sanity-preserver <https://github.com/karpathy/arxiv-sanity-preserver>`_: (4644 ☆) Web interface for browsing, search and filtering recent arxiv submissions
+- `Physiix/topsi-project-manager <https://github.com/Physiix/topsi-project-manager>`_: (1334 ☆) A Desktop Kanban board app.
+- `danistefanovic/build-your-own-x <https://github.com/danistefanovic/build-your-own-x>`_: (40000 ☆) 🤓 Build your own (insert technology here)
+- `lfk/kanji-icr <https://github.com/lfk/kanji-icr>`_: (9 ☆) Bachelor's thesis on handwritten kanji recognition.
+- `numenta/htmresearch <https://github.com/numenta/htmresearch>`_: (224 ☆) Experimental algorithms. Unsupported.
+- `ytdl-org/youtube-dl <https://github.com/ytdl-org/youtube-dl>`_: (40000 ☆) Command-line program to download videos from YouTube.com and other video sites
+- `astorfi/Deep-Learning-Roadmap <https://github.com/astorfi/Deep-Learning-Roadmap>`_: (3131 ☆) :satellite: Organized Resources for Deep Learning Researchers and Developers
+- `ApolloAuto/apollo <https://github.com/ApolloAuto/apollo>`_: (20072 ☆) An open autonomous driving platform
+- `haoel/leetcode <https://github.com/haoel/leetcode>`_: (15653 ☆) LeetCode Problems' Solutions
+- `donnemartin/interactive-coding-challenges <https://github.com/donnemartin/interactive-coding-challenges>`_: (24629 ☆) 120+ interactive Python coding interview challenges (algorithms and data structures).  Includes Anki flashcards.
+- `bulletphysics/bullet3 <https://github.com/bulletphysics/bullet3>`_: (8887 ☆) Bullet Physics SDK: real-time collision detection and multi-physics simulation for VR, games, visual effects, robotics, machine learning etc.
+- `deepmind/dm_control <https://github.com/deepmind/dm_control>`_: (2653 ☆) DeepMind's software stack for physics-based simulation and Reinforcement Learning environments, using MuJoCo.
+- `paperswithcode/ai-deadlines <https://github.com/paperswithcode/ai-deadlines>`_: (3964 ☆) :alarm_clock: AI conference deadline countdowns
+- `emptymalei/awesome-research <https://github.com/emptymalei/awesome-research>`_: (1333 ☆) :seedling: a curated list of tools to help you with your research/life; I built a front end around this repo, please use the link below [This repo is Not Maintained Anymore]
+- `melissaboiko/myougiden <https://github.com/melissaboiko/myougiden>`_: (103 ☆) A Japanese/English dictionary for the command line, colorful and full of features.
+- `terryum/awesome-deep-learning-papers <https://github.com/terryum/awesome-deep-learning-papers>`_: (23495 ☆) The most cited deep learning papers
+- `juniandotnet/cpp-awesome-pack <https://github.com/juniandotnet/cpp-awesome-pack>`_: (169 ☆) Awesome Sample Pack of C/C++ Codes
+- `sindresorhus/awesome <https://github.com/sindresorhus/awesome>`_: (40000 ☆) 😎 Awesome lists about all kinds of interesting topics
+- `Dentosal/python-sc2 <https://github.com/Dentosal/python-sc2>`_: (568 ☆) A StarCraft II bot api client library for Python 3
+- `chris-chris/pysc2-examples <https://github.com/chris-chris/pysc2-examples>`_: (740 ☆) StarCraft II - pysc2 Deep Reinforcement Learning Examples
+- `skjb/pysc2-tutorial <https://github.com/skjb/pysc2-tutorial>`_: (265 ☆) Tutorials for building a PySC2 bot
+- `fffaraz/awesome-cpp <https://github.com/fffaraz/awesome-cpp>`_: (35699 ☆) A curated list of awesome C++ (or C) frameworks, libraries, resources, and shiny things. Inspired by awesome-... stuff.
+- `google/filament <https://github.com/google/filament>`_: (13475 ☆) Filament is a real-time physically based rendering engine for Android, iOS, Windows, Linux, macOS, and WebGL2
+- `chubin/cheat.sh <https://github.com/chubin/cheat.sh>`_: (28073 ☆) the only cheat sheet you need
+- `open-source-ideas/ideas <https://github.com/open-source-ideas/ideas>`_: (5768 ☆) 💡 Looking for inspiration for your next open source project? Or perhaps you've got a brilliant idea you can't wait to share with others? Open Source Ideas is a community built specifically for this! 👋
+- `JuliaLang/julia <https://github.com/JuliaLang/julia>`_: (38023 ☆) The Julia Programming Language
+- `iSoron/uhabits <https://github.com/iSoron/uhabits>`_: (4710 ☆) Loop Habit Tracker, a mobile app for creating and maintaining long-term positive habits
+- `openai/baselines <https://github.com/openai/baselines>`_: (12271 ☆) OpenAI Baselines: high-quality implementations of reinforcement learning algorithms
+- `SKTBrain/awesome-starcraftAI <https://github.com/SKTBrain/awesome-starcraftAI>`_: (578 ☆) A curated list of resources dedicated to StarCraft AI.
+- `OpenBW/bwapi <https://github.com/OpenBW/bwapi>`_: (41 ☆) Brood War API
+- `thermatk/FastHub-Libre <https://github.com/thermatk/FastHub-Libre>`_: (358 ☆) Libre fork of FastHub, the ultimate GitHub client for Android.
+- `higgsfield/RL-Adventure <https://github.com/higgsfield/RL-Adventure>`_: (2539 ☆) Pytorch Implementation of DQN / DDQN / Prioritized replay/ noisy networks/ distributional values/ Rainbow/ hierarchical RL
+- `higgsfield/RL-Adventure-2 <https://github.com/higgsfield/RL-Adventure-2>`_: (2650 ☆) PyTorch0.4 implementation of: actor critic / proximal policy optimization / acer / ddpg / twin dueling ddpg / soft actor critic / generative adversarial imitation learning / hindsight experience replay
+- `AI-ON/TheConsciousnessPrior <https://github.com/AI-ON/TheConsciousnessPrior>`_: (91 ☆) AI-ON Consciousness Prior
+- `soskek/attention_is_all_you_need <https://github.com/soskek/attention_is_all_you_need>`_: (304 ☆) Transformer of "Attention Is All You Need" (Vaswani et al. 2017) by Chainer.
+- `chainer-community/awesome-chainer <https://github.com/chainer-community/awesome-chainer>`_: (135 ☆) None
+- `marcotcr/lime <https://github.com/marcotcr/lime>`_: (9492 ☆) Lime: Explaining the predictions of any machine learning classifier
+- `scikit-learn/scikit-learn <https://github.com/scikit-learn/scikit-learn>`_: (40000 ☆) scikit-learn: machine learning in Python
+- `openai/gym <https://github.com/openai/gym>`_: (26293 ☆) A toolkit for developing and comparing reinforcement learning algorithms.
+- `rupa/z <https://github.com/rupa/z>`_: (13866 ☆) z - jump around
+- `rll/rllab <https://github.com/rll/rllab>`_: (2660 ☆) rllab is a framework for developing and evaluating reinforcement learning algorithms, fully compatible with OpenAI Gym.
+- `pfnet-research/nips17-adversarial-attack <https://github.com/pfnet-research/nips17-adversarial-attack>`_: (143 ☆) Submission to Kaggle NIPS'17 competition on adversarial examples (non-targeted adversarial attack track)
+- `pfnet-research/menoh <https://github.com/pfnet-research/menoh>`_: (279 ☆) Menoh: fast DNN inference library with multiple programming language support
+- `pathak22/noreward-rl <https://github.com/pathak22/noreward-rl>`_: (1260 ☆) [ICML 2017] TensorFlow code for Curiosity-driven Exploration for Deep Reinforcement Learning
+- `tscmoo/bwheadless <https://github.com/tscmoo/bwheadless>`_: (14 ☆) A tool to launch Starcraft: Brood War in "headless" mode, i.e. no graphics, sound or user input (useful with BWAPI).
+- `OpenBW/openbw <https://github.com/OpenBW/openbw>`_: (117 ☆) OpenBW - free and open-source Best Wargame
+- `Games-and-Simulations/sc-docker <https://github.com/Games-and-Simulations/sc-docker>`_: (226 ☆) Multi-platform Version of StarCraft: Brood War in a Docker Container, ready to use for bot play simulations.
+- `TorchCraft/StarData <https://github.com/TorchCraft/StarData>`_: (551 ☆) Starcraft AI Research Dataset
+- `edemirkan/wine-starcraft-installer <https://github.com/edemirkan/wine-starcraft-installer>`_: (46 ☆) Helper scripts to install & run StarCraft using wine-staging.
+- `tensorforce/tensorforce <https://github.com/tensorforce/tensorforce>`_: (3080 ☆) Tensorforce: a TensorFlow library for applied reinforcement learning
+- `aonotas/awesome-deep-learning-chainer-examples-list <https://github.com/aonotas/awesome-deep-learning-chainer-examples-list>`_: (21 ☆) Chainer example codes list
+- `onnx/onnx <https://github.com/onnx/onnx>`_: (11988 ☆) Open standard for machine learning interoperability
+- `chainer/chainercv <https://github.com/chainer/chainercv>`_: (1470 ☆) ChainerCV: a Library for Deep Learning in Computer Vision
+- `chainer/chainerrl <https://github.com/chainer/chainerrl>`_: (1029 ☆) ChainerRL is a deep reinforcement learning library built on top of Chainer.
+- `dgant/PurpleWave <https://github.com/dgant/PurpleWave>`_: (81 ☆) StarCraft: Brood War AI in Scala
+- `zhangqianhui/AdversarialNetsPapers <https://github.com/zhangqianhui/AdversarialNetsPapers>`_: (6256 ☆) Awesome paper list with code about generative adversarial nets
+- `tscohen/GrouPy <https://github.com/tscohen/GrouPy>`_: (303 ☆) Group Equivariant Convolutional Neural Networks
+- `davechurchill/commandcenter <https://github.com/davechurchill/commandcenter>`_: (469 ☆) Starcraft AI Bot
+- `wekan/wekan <https://github.com/wekan/wekan>`_: (17732 ☆) The Open Source kanban (built with Meteor). Keep variable/table/field names camelCase. For translations, only add Pull Request changes to wekan/i18n/en.i18n.json , other translations are done at https://transifex.com/wekan/wekan only.
+- `eriklindernoren/ML-From-Scratch <https://github.com/eriklindernoren/ML-From-Scratch>`_: (20774 ☆) Machine Learning From Scratch. Bare bones NumPy implementations of machine learning models and algorithms with a focus on accessibility. Aims to cover everything from linear regression to deep learning.
+- `deepmind/pysc2 <https://github.com/deepmind/pysc2>`_: (7417 ☆) StarCraft II Learning Environment
+- `bwapi/bwapi <https://github.com/bwapi/bwapi>`_: (1489 ☆) Brood War API
+- `TorchCraft/TorchCraft <https://github.com/TorchCraft/TorchCraft>`_: (1355 ☆) Connecting Torch to StarCraft
+- `chainer/chainer-chemistry <https://github.com/chainer/chainer-chemistry>`_: (519 ☆) Chainer Chemistry: A Library for Deep Learning in Biology and Chemistry
+- `pfnet-research/chainer-graph-cnn <https://github.com/pfnet-research/chainer-graph-cnn>`_: (66 ☆) Chainer implementation of 'Convolutional Neural Networks on Graphs with Fast Localized Spectral Filtering' (https://arxiv.org/abs/1606.09375)
+- `google/tangent <https://github.com/google/tangent>`_: (2214 ☆) Source-to-Source Debuggable Derivatives in Pure Python
+- `wiseodd/generative-models <https://github.com/wiseodd/generative-models>`_: (6732 ☆) Collection of generative models, e.g. GAN, VAE in Pytorch and Tensorflow.
+- `kristofbc/explainable-ml <https://github.com/kristofbc/explainable-ml>`_: (2 ☆) This project is my journey to a better understanding of ML algorithms.
+- `pfnet-research/chainer-gan-lib <https://github.com/pfnet-research/chainer-gan-lib>`_: (398 ☆) Chainer implementation of recent GAN variants
+- `cbfinn/maml <https://github.com/cbfinn/maml>`_: (2086 ☆) Code for "Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks"
+- `kjw0612/awesome-rnn <https://github.com/kjw0612/awesome-rnn>`_: (5858 ☆) Recurrent Neural Network - A curated list of resources dedicated to RNN
+- `chainer/chainer <https://github.com/chainer/chainer>`_: (5662 ☆) A flexible framework of neural networks for deep learning
