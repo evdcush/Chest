@@ -688,3 +688,82 @@
 - `deepmind/dm_env_rpc <https://github.com/deepmind/dm_env_rpc>`_: (68 ⭐) A networking protocol for agent-environment communication
 - `openai/robogym <https://github.com/openai/robogym>`_: (269 ⭐) Robotics Gym Environments
 - `Denys88/rl_games <https://github.com/Denys88/rl_games>`_: (149 ⭐) RL implementations
+- `seungeunrho/minimalRL <https://github.com/seungeunrho/minimalRL>`_: (2084 ⭐) Implementations of basic RL algorithms with minimal lines of codes! (pytorch based)
+- `Healthcare-Robotics/assistive-gym <https://github.com/Healthcare-Robotics/assistive-gym>`_: (203 ⭐) Assistive Gym, a physics-based simulation framework for physical human-robot interaction and robotic assistance.
+- `owncast/owncast <https://github.com/owncast/owncast>`_: (5521 ⭐) Take control over your live stream video by running it yourself.  Streaming + chat out of the box.
+- `google/gemmlowp <https://github.com/google/gemmlowp>`_: (1494 ⭐) Low-precision matrix multiplication
+- `Mayukhdeb/torch-dreams <https://github.com/Mayukhdeb/torch-dreams>`_: (207 ⭐) Making neural networks more interpretable, for research and art :mag_right: :computer: :brain: :art:
+- `sebastianrisi/ga-world-models <https://github.com/sebastianrisi/ga-world-models>`_: (19 ⭐) None
+- `lablup/backend.ai <https://github.com/lablup/backend.ai>`_: (268 ⭐) Backend.AI is a streamlined, container-based computing cluster orchestrator that hosts diverse programming languages and popular computing/ML frameworks, with pluggable heterogeneous accelerator support including CUDA and ROCM.
+- `GitbookIO/plugin-mathjax <https://github.com/GitbookIO/plugin-mathjax>`_: (86 ⭐) MathJAX plugin for GitBook
+- `beeware/briefcase <https://github.com/beeware/briefcase>`_: (1291 ⭐) Tools to support converting a Python project into a standalone native application.
+- `lucidrains/reformer-pytorch <https://github.com/lucidrains/reformer-pytorch>`_: (1671 ⭐) Reformer, the efficient Transformer, in Pytorch
+- `simondlevy/neat-gym <https://github.com/simondlevy/neat-gym>`_: (38 ⭐) Neuro-evolution for OpenAI Gym environments
+- `datastacktv/data-engineer-roadmap <https://github.com/datastacktv/data-engineer-roadmap>`_: (9155 ⭐) Roadmap to becoming a data engineer in 2021
+- `anyoptimization/pymoo <https://github.com/anyoptimization/pymoo>`_: (903 ⭐) NSGA2, NSGA3, R-NSGA3, MOEAD, Genetic Algorithms (GA), Differential Evolution (DE), CMAES, PSO
+- `awslabs/deequ <https://github.com/awslabs/deequ>`_: (2089 ⭐) Deequ is a library built on top of Apache Spark for defining "unit tests for data", which measure data quality in large datasets.
+- `HarisIqbal88/PlotNeuralNet <https://github.com/HarisIqbal88/PlotNeuralNet>`_: (15968 ⭐) Latex code for making neural networks diagrams
+- `cyxx/extract_android_ota_payload <https://github.com/cyxx/extract_android_ota_payload>`_: (339 ⭐) Extract firmware images from an Android OTA payload.bin file
+- `foolwood/benchmark_results <https://github.com/foolwood/benchmark_results>`_: (3689 ⭐) Visual Tracking Paper List
+- `jayveer2807/data_science_questions <https://github.com/jayveer2807/data_science_questions>`_: (57 ⭐) None
+- `poloclub/cnn-explainer <https://github.com/poloclub/cnn-explainer>`_: (5845 ⭐) Learning Convolutional Neural Networks with Interactive Visualization.
+- `scutan90/DeepLearning-500-questions <https://github.com/scutan90/DeepLearning-500-questions>`_: (40000 ⭐) 深度学习500问，以问答形式对常用的概率知识、线性代数、机器学习、深度学习、计算机视觉等热点问题进行阐述，以帮助自己及有需要的读者。 全书分为18个章节，50余万字。由于水平有限，书中不妥之处恳请广大读者批评指正。   未完待续............ 如有意合作，联系scutjy2015@163.com                     版权所有，违权必究       Tan 2018.06
+- `yangyutu/EssentialMath <https://github.com/yangyutu/EssentialMath>`_: (756 ⭐) None
+- `tirthajyoti/Papers-Literature-ML-DL-RL-AI <https://github.com/tirthajyoti/Papers-Literature-ML-DL-RL-AI>`_: (1620 ⭐) Highly cited and useful papers related to machine learning, deep learning, AI, game theory, reinforcement learning
+- `khanhnamle1994/cracking-the-data-science-interview <https://github.com/khanhnamle1994/cracking-the-data-science-interview>`_: (1605 ⭐) A Collection of Cheatsheets, Books, Questions, and Portfolio For DS/ML Interview Prep
+- `facebookresearch/torchbeast <https://github.com/facebookresearch/torchbeast>`_: (610 ⭐) A PyTorch Platform for Distributed RL
+- `naganandy/graph-based-deep-learning-literature <https://github.com/naganandy/graph-based-deep-learning-literature>`_: (3478 ⭐) links to conference publications in graph-based deep learning
+- `christophM/interpretable-ml-book <https://github.com/christophM/interpretable-ml-book>`_: (4001 ⭐) Book about interpretable machine learning
+- `jmschrei/pomegranate <https://github.com/jmschrei/pomegranate>`_: (2820 ⭐) Fast, flexible and easy to use probabilistic modelling in Python.
+- `pixie-io/pixie <https://github.com/pixie-io/pixie>`_: (2837 ⭐) Instant Kubernetes-Native Application Observability
+- `Megvii-BaseDetection/DeFCN <https://github.com/Megvii-BaseDetection/DeFCN>`_: (437 ⭐) End-to-End Object Detection with Fully Convolutional Network
+- `deepseagirl/degoogle <https://github.com/deepseagirl/degoogle>`_: (440 ⭐) search Google and extract results directly. skip all the click-through links and other sketchiness
+- `enajx/HebbianMetaLearning <https://github.com/enajx/HebbianMetaLearning>`_: (73 ⭐) Meta-Learning through Hebbian Plasticity in Random Networks: https://arxiv.org/abs/2007.02686
+- `real-itu/Evocraft-py <https://github.com/real-itu/Evocraft-py>`_: (89 ⭐) A Python interface for Minecraft built on gRPC
+- `NVIDIA/aistore <https://github.com/NVIDIA/aistore>`_: (546 ⭐) AIStore: scalable storage for AI applications
+- `santosjorge/cufflinks <https://github.com/santosjorge/cufflinks>`_: (2474 ⭐) Productivity Tools for Plotly + Pandas
+- `suragnair/alpha-zero-general <https://github.com/suragnair/alpha-zero-general>`_: (2661 ⭐) A clean implementation based on AlphaZero for any game in any framework + tutorial + Othello/Gobang/TicTacToe/Connect4 and more
+- `simoninithomas/Deep_reinforcement_learning_Course <https://github.com/simoninithomas/Deep_reinforcement_learning_Course>`_: (3262 ⭐) Implementations from the free course Deep Reinforcement Learning with Tensorflow and PyTorch
+- `holoviz/holoviews <https://github.com/holoviz/holoviews>`_: (2102 ⭐) With Holoviews, your data visualizes itself.
+- `jupyter/docker-stacks <https://github.com/jupyter/docker-stacks>`_: (6463 ⭐) Ready-to-run Docker images containing Jupyter applications
+- `obheda12/GitDorker <https://github.com/obheda12/GitDorker>`_: (1663 ⭐) A Python program to scrape secrets from GitHub through usage of a large repository of dorks.
+- `fundamentalvision/Deformable-DETR <https://github.com/fundamentalvision/Deformable-DETR>`_: (1348 ⭐) Deformable DETR: Deformable Transformers for End-to-End Object Detection.
+- `audacity/audacity <https://github.com/audacity/audacity>`_: (7020 ⭐) Audio Editor
+- `pbloem/former <https://github.com/pbloem/former>`_: (630 ⭐) Simple transformer implementation from scratch in pytorch.
+- `dellacortelab/prospr <https://github.com/dellacortelab/prospr>`_: (399 ⭐) ProSPr: Protein Structure Prediction
+- `allenai/scitldr <https://github.com/allenai/scitldr>`_: (604 ⭐) None
+- `huawei-noah/vega <https://github.com/huawei-noah/vega>`_: (683 ⭐) AutoML tools chain
+- `karpathy/micrograd <https://github.com/karpathy/micrograd>`_: (1878 ⭐) A tiny scalar-valued autograd engine and a neural net library on top of it with PyTorch-like API
+- `the-paperless-project/paperless <https://github.com/the-paperless-project/paperless>`_: (7672 ⭐) Scan, index, and archive all of your paper documents
+- `Curt-Park/rainbow-is-all-you-need <https://github.com/Curt-Park/rainbow-is-all-you-need>`_: (1189 ⭐) Rainbow is all you need! A step-by-step tutorial from DQN to Rainbow
+- `trekhleb/machine-learning-experiments <https://github.com/trekhleb/machine-learning-experiments>`_: (1191 ⭐) 🤖 Interactive Machine Learning experiments: 🏋️models training + 🎨models demo
+- `dctian/DeepPiCar <https://github.com/dctian/DeepPiCar>`_: (293 ⭐) Deep Learning Autonomous Car based on Raspberry Pi, SunFounder PiCar-V Kit, TensorFlow, and Google's EdgeTPU Co-Processor
+- `reHackable/awesome-reMarkable <https://github.com/reHackable/awesome-reMarkable>`_: (4230 ⭐) A curated list of projects related to the reMarkable tablet
+- `jantic/DeOldify <https://github.com/jantic/DeOldify>`_: (14632 ⭐) A Deep Learning based project for colorizing and restoring old images (and video!)
+- `rasbt/python_reference <https://github.com/rasbt/python_reference>`_: (3175 ⭐) Useful functions, tutorials, and other Python-related things
+- `RangiLyu/nanodet <https://github.com/RangiLyu/nanodet>`_: (4027 ⭐) NanoDet-Plus⚡Super fast and lightweight anchor-free object detection model. 🔥Only 980 KB(int8) / 1.8MB (fp16) and run 97FPS on cellphone🔥
+- `joaotinti75/Pygame <https://github.com/joaotinti75/Pygame>`_: (212 ⭐) Games that i did using pygame library
+- `pytorch/tensorpipe <https://github.com/pytorch/tensorpipe>`_: (176 ⭐) A tensor-aware point-to-point communication primitive for machine learning
+- `guildai/guildai <https://github.com/guildai/guildai>`_: (654 ⭐) Experiment tracking, ML developer tools
+- `replicate/keepsake <https://github.com/replicate/keepsake>`_: (1542 ⭐) Version control for machine learning
+- `minerllabs/competition_submission_template <https://github.com/minerllabs/competition_submission_template>`_: (92 ⭐) The submission template for the MineRL Competition @ NeurIPS 2021. Clone this to make a new submission!
+- `D-X-Y/NATS-Bench <https://github.com/D-X-Y/NATS-Bench>`_: (107 ⭐) TPAMI 2021: NATS-Bench: Benchmarking NAS Algorithms for Architecture Topology and Size
+- `automl/Auto-PyTorch <https://github.com/automl/Auto-PyTorch>`_: (1523 ⭐) Automatic architecture search and hyperparameter optimization for PyTorch
+- `NVIDIA/apex <https://github.com/NVIDIA/apex>`_: (6038 ⭐) A PyTorch Extension:  Tools for easy mixed precision and distributed training in Pytorch
+- `aim-uofa/AdelaiDet <https://github.com/aim-uofa/AdelaiDet>`_: (2635 ⭐) AdelaiDet is an open source toolbox for multiple instance-level detection and recognition tasks.
+- `liuruijin17/LSTR <https://github.com/liuruijin17/LSTR>`_: (498 ⭐) This is an official repository of End-to-end Lane Shape Prediction with Transformers.
+- `abhishekkrthakur/colabcode <https://github.com/abhishekkrthakur/colabcode>`_: (1680 ⭐) Run VSCode (codeserver) on Google Colab or Kaggle Notebooks
+- `dennybritz/reinforcement-learning <https://github.com/dennybritz/reinforcement-learning>`_: (17571 ⭐) Implementation of Reinforcement Learning Algorithms. Python, OpenAI Gym, Tensorflow. Exercises and Solutions to accompany Sutton's Book and David Silver's course.
+- `slundberg/shap <https://github.com/slundberg/shap>`_: (15256 ⭐) A game theoretic approach to explain the output of any machine learning model.
+- `ebatty/MathToolsforNeuroscience <https://github.com/ebatty/MathToolsforNeuroscience>`_: (366 ⭐) Materials for Mathematical Tools for Neuroscience course  at Harvard (Neurobio 212)
+- `hooram/ownphotos <https://github.com/hooram/ownphotos>`_: (2596 ⭐) Self hosted alternative to Google Photos
+- `xueyuanl/daily-hackernews <https://github.com/xueyuanl/daily-hackernews>`_: (98 ⭐) Daily hacker news top stories. Subscribe the hackernews daily top stories by watching this repo.
+- `alan-turing-institute/sktime <https://github.com/alan-turing-institute/sktime>`_: (4894 ⭐) A unified framework for machine learning with time series
+- `microsoft/Bringing-Old-Photos-Back-to-Life <https://github.com/microsoft/Bringing-Old-Photos-Back-to-Life>`_: (9881 ⭐) Bringing Old Photo Back to Life (CVPR 2020 oral)
+- `OpenMined/PySyft <https://github.com/OpenMined/PySyft>`_: (7899 ⭐) A library for answering questions using data you cannot see
+- `zhm-real/PathPlanning <https://github.com/zhm-real/PathPlanning>`_: (3634 ⭐) Common used path planning algorithms with animations.
+- `public-apis/public-apis <https://github.com/public-apis/public-apis>`_: (40000 ⭐) A collective list of free APIs
+- `spmallick/learnopencv <https://github.com/spmallick/learnopencv>`_: (15607 ⭐) Learn OpenCV  : C++ and Python Examples
+- `jaakkopasanen/AutoEq <https://github.com/jaakkopasanen/AutoEq>`_: (6354 ⭐) Automatic headphone equalization from frequency responses
+- `wowchemy/starter-hugo-academic <https://github.com/wowchemy/starter-hugo-academic>`_: (1819 ⭐) 🎓 Hugo Academic Theme 创建一个学术网站. Easily create a beautiful academic résumé or educational website using Hugo, GitHub, and Netlify.
+- `JuliaAcademy/JuliaTutorials <https://github.com/JuliaAcademy/JuliaTutorials>`_: (936 ⭐) Learn Julia via interactive tutorials!
