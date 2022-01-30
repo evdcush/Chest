@@ -267,3 +267,77 @@
 - `codePerfectPlus/awesomeScripts <https://github.com/codePerfectPlus/awesomeScripts>`_: (310 ⭐) A Collection of Awesome Scripts in Python to Ease Daily-Life. Create an issue If you have some great ideas for the new script. Leave a :star:
 - `bytedance/raylink <https://github.com/bytedance/raylink>`_: (32 ⭐) Framework to build and train RL algorithms
 - `yt-dlp/yt-dlp <https://github.com/yt-dlp/yt-dlp>`_: (17861 ⭐) A youtube-dl fork with additional features and fixes
+- `sdras/awesome-actions <https://github.com/sdras/awesome-actions>`_: (17150 ⭐) A curated list of awesome actions to use on GitHub
+- `kenjihiranabe/The-Art-of-Linear-Algebra <https://github.com/kenjihiranabe/The-Art-of-Linear-Algebra>`_: (969 ⭐) Graphic notes on Gilbert Strang's "Linear Algebra for Everyone"
+- `gquere/pwn_jenkins <https://github.com/gquere/pwn_jenkins>`_: (1283 ⭐) Notes about attacking Jenkins servers
+- `joaoperfig/GRaNDPapA <https://github.com/joaoperfig/GRaNDPapA>`_: (240 ⭐) Generator of Rad Names from Decent Paper Acronyms
+- `rahul-thakoor/balena-rpiplay <https://github.com/rahul-thakoor/balena-rpiplay>`_: (1192 ⭐) Turn a Raspberry Pi into an Airplay server using RPiPlay to enable screen mirroring on tvs, monitors and projectors.
+- `XuehaiPan/nvitop <https://github.com/XuehaiPan/nvitop>`_: (397 ⭐) An interactive NVIDIA-GPU process viewer, the one-stop solution for GPU process management.
+- `wookayin/gpustat <https://github.com/wookayin/gpustat>`_: (2712 ⭐) 📊 A simple command-line utility for querying and monitoring GPU status
+- `Cyclenerd/ethereum_nvidia_miner <https://github.com/Cyclenerd/ethereum_nvidia_miner>`_: (816 ⭐) 💰 USB flash drive ISO image for Ethereum, Zcash and Monero mining with NVIDIA graphics cards and Ubuntu GNU/Linux (headless)
+- `trekhleb/promote-your-next-startup <https://github.com/trekhleb/promote-your-next-startup>`_: (1787 ⭐) 🚀 Free resources you may use to promote your next startup
+- `SimonVandenhende/Awesome-Multi-Task-Learning <https://github.com/SimonVandenhende/Awesome-Multi-Task-Learning>`_: (201 ⭐) A list of multi-task learning papers and projects.
+- `SimonVandenhende/Multi-Task-Learning-PyTorch <https://github.com/SimonVandenhende/Multi-Task-Learning-PyTorch>`_: (393 ⭐) PyTorch implementation of multi-task learning architectures, incl. MTI-Net (ECCV2020).
+- `SysCV/bdd100k-models <https://github.com/SysCV/bdd100k-models>`_: (107 ⭐) Model Zoo of BDD100K Dataset
+- `pgaskin/NickelMenu <https://github.com/pgaskin/NickelMenu>`_: (181 ⭐) The easiest way to launch scripts, change settings, and run actions on Kobo e-readers.
+- `odoo/odoo <https://github.com/odoo/odoo>`_: (23978 ⭐) Odoo. Open Source Apps To Grow Your Business.
+- `isl-org/DPT <https://github.com/isl-org/DPT>`_: (959 ⭐) Dense Prediction Transformers
+- `Megvii-BaseDetection/YOLOX <https://github.com/Megvii-BaseDetection/YOLOX>`_: (5574 ⭐) YOLOX is a high-performance anchor-free YOLO, exceeding yolov3~v5 with MegEngine, ONNX, TensorRT, ncnn, and OpenVINO supported. Documentation: https://yolox.readthedocs.io/
+- `danielo515/TW5-auto-publish2gh-pages <https://github.com/danielo515/TW5-auto-publish2gh-pages>`_: (88 ⭐) Host your tiddlywikis in GitHub pages without any git knowledge or installing any software
+- `LiYangHart/Hyperparameter-Optimization-of-Machine-Learning-Algorithms <https://github.com/LiYangHart/Hyperparameter-Optimization-of-Machine-Learning-Algorithms>`_: (784 ⭐) Implementation of hyperparameter optimization/tuning methods for machine learning & deep learning models (easy&clear)
+- `araffin/rl-baselines-zoo <https://github.com/araffin/rl-baselines-zoo>`_: (963 ⭐) A collection of 100+ pre-trained RL agents using Stable Baselines, training and hyperparameter optimization included.
+- `automl/HPOBench <https://github.com/automl/HPOBench>`_: (60 ⭐) Collection of hyperparameter optimization benchmark problems
+- `parrt/dtreeviz <https://github.com/parrt/dtreeviz>`_: (1995 ⭐) A python library for decision tree visualization and model interpretation.
+- `cmsflash/efficient-attention <https://github.com/cmsflash/efficient-attention>`_: (146 ⭐) An implementation of the efficient attention module.
+- `thieu1995/metaheuristics <https://github.com/thieu1995/metaheuristics>`_: (146 ⭐) Implement the-state-of-the-art meta-heuristic algorithms using python (numpy)
+- `dair-ai/ml-visuals <https://github.com/dair-ai/ml-visuals>`_: (5873 ⭐) 🎨 ML Visuals contains figures and templates which you can reuse and customize to improve your scientific writing.
+- `IntelLabs/distiller <https://github.com/IntelLabs/distiller>`_: (3801 ⭐) Neural Network Distiller by Intel AI Lab: a Python package for neural network compression research.  https://intellabs.github.io/distiller
+- `qubvel/segmentation_models.pytorch <https://github.com/qubvel/segmentation_models.pytorch>`_: (4810 ⭐) Segmentation models with pretrained backbones. PyTorch.
+- `waymo-research/waymo-open-dataset <https://github.com/waymo-research/waymo-open-dataset>`_: (1589 ⭐) Waymo Open Dataset
+- `eusporg/alphaicon <https://github.com/eusporg/alphaicon>`_: (146 ⭐) α-Indirect Control in Onion-like Networks
+- `AugustKarlstedt/slideslive-downloader <https://github.com/AugustKarlstedt/slideslive-downloader>`_: (21 ⭐) download slideslive presentations (video + slides)
+- `mml-book/mml-book.github.io <https://github.com/mml-book/mml-book.github.io>`_: (9609 ⭐) Companion webpage to the book "Mathematics For Machine Learning"
+- `datasciencescoop/Data-Visualization <https://github.com/datasciencescoop/Data-Visualization>`_: (324 ⭐) Data Visualization with Python
+- `microsoft/muzic <https://github.com/microsoft/muzic>`_: (1907 ⭐) Muzic: Music Understanding and Generation with Artificial Intelligence
+- `learning-zone/python-interview-questions <https://github.com/learning-zone/python-interview-questions>`_: (762 ⭐) 300+ Python Interview Questions
+- `The-Japan-DataScientist-Society/100knocks-preprocess <https://github.com/The-Japan-DataScientist-Society/100knocks-preprocess>`_: (1454 ⭐) データサイエンス100本ノック（構造化データ加工編）
+- `SimonBlanke/Gradient-Free-Optimizers <https://github.com/SimonBlanke/Gradient-Free-Optimizers>`_: (838 ⭐) Simple and reliable optimization with local, global, population-based and sequential techniques in numerical discrete search spaces.
+- `cdhigh/KindleEar <https://github.com/cdhigh/KindleEar>`_: (2514 ⭐) A website application running in Google app engine, deliver rss news to your kindle. generate mobi using python, multilanguages supported.
+- `AllenDowney/ThinkStats2 <https://github.com/AllenDowney/ThinkStats2>`_: (3498 ⭐) Text and supporting code for Think Stats, 2nd Edition
+- `omegaml/minibatch <https://github.com/omegaml/minibatch>`_: (174 ⭐) Python stream processing for humans
+- `CalculatedContent/WeightWatcher <https://github.com/CalculatedContent/WeightWatcher>`_: (576 ⭐) The WeightWatcher tool for predicting the accuracy of   Deep Neural Networks
+- `microsoft/PythonProgrammingPuzzles <https://github.com/microsoft/PythonProgrammingPuzzles>`_: (777 ⭐) A Dataset of Python Challenges for AI Research
+- `facebookresearch/3detr <https://github.com/facebookresearch/3detr>`_: (353 ⭐) Code & Models for 3DETR - an End-to-end transformer model for 3D object detection
+- `thieu1995/opfunu <https://github.com/thieu1995/opfunu>`_: (29 ⭐) A collection of Benchmark functions for numerical optimization problems. Framework of OPtimization FUnction in NUmpy (opfunu)
+- `SioKCronin/swarmopt <https://github.com/SioKCronin/swarmopt>`_: (31 ⭐) Swarm intelligence optimizer
+- `gliderkite/formicarium <https://github.com/gliderkite/formicarium>`_: (38 ⭐) Ant colony simulator
+- `amineremache/qbso-fs <https://github.com/amineremache/qbso-fs>`_: (47 ⭐) Python implementation of QBSO-FS : a Reinforcement Learning based Bee Swarm Optimization metaheuristic for Feature Selection problem.
+- `NiaOrg/NiaPy <https://github.com/NiaOrg/NiaPy>`_: (181 ⭐) Python microframework for building nature-inspired algorithms. Official docs: https://niapy.org
+- `ljvmiranda921/pyswarms <https://github.com/ljvmiranda921/pyswarms>`_: (876 ⭐) A research toolkit for particle swarm optimization in Python
+- `automl/HpBandSter <https://github.com/automl/HpBandSter>`_: (514 ⭐) a distributed Hyperband implementation on Steroids
+- `mit-han-lab/tinyml <https://github.com/mit-han-lab/tinyml>`_: (400 ⭐) None
+- `lucidrains/triton-transformer <https://github.com/lucidrains/triton-transformer>`_: (113 ⭐) Implementation of a Transformer, but completely in Triton
+- `sebastianruder/sluice-networks <https://github.com/sebastianruder/sluice-networks>`_: (141 ⭐) Code for Sluice networks: Learning what to share between loosely related tasks
+- `cs231n/cs231n.github.io <https://github.com/cs231n/cs231n.github.io>`_: (8670 ⭐) Public facing notes page
+- `couler-proj/couler <https://github.com/couler-proj/couler>`_: (647 ⭐) Unified Interface for Constructing and Managing Workflows on different workflow engines, such as Argo Workflows, Tekton Pipelines, and Apache Airflow.
+- `lucidrains/HTM-pytorch <https://github.com/lucidrains/HTM-pytorch>`_: (53 ⭐) Implementation of Hierarchical Transformer Memory (HTM) for Pytorch
+- `google-research/rliable <https://github.com/google-research/rliable>`_: (307 ⭐) Library for reliable evaluation on RL and ML benchmarks, as recommended by our NeurIPS 2021 Outstanding Paper.
+- `facebookresearch/mtrl <https://github.com/facebookresearch/mtrl>`_: (127 ⭐) Multi Task RL Baselines
+- `Xilinx/brevitas <https://github.com/Xilinx/brevitas>`_: (581 ⭐) Brevitas: quantization-aware training in PyTorch
+- `InterDigitalInc/CompressAI <https://github.com/InterDigitalInc/CompressAI>`_: (459 ⭐) A PyTorch library and evaluation platform for end-to-end compression research
+- `pdfernhout/High-Performance-Organizations-Reading-List <https://github.com/pdfernhout/High-Performance-Organizations-Reading-List>`_: (1134 ⭐) Ideas for creating and sustaining high performance organizations
+- `lucidrains/ponder-transformer <https://github.com/lucidrains/ponder-transformer>`_: (59 ⭐) Implementation of a Transformer that Ponders, using the scheme from the PonderNet paper
+- `lucidrains/perceiver-pytorch <https://github.com/lucidrains/perceiver-pytorch>`_: (708 ⭐) Implementation of Perceiver, General Perception with Iterative Attention, in Pytorch
+- `FedML-AI/FedML <https://github.com/FedML-AI/FedML>`_: (1002 ⭐) A Research-oriented Federated Learning Library. Supporting distributed computing, mobile/IoT on-device training, and standalone simulation. Best Paper Award at NeurIPS 2020 Federated Learning workshop. Join our Slack Community:(https://join.slack.com/t/fedml/shared_invite/zt-havwx1ee-a1xfOUrATNfc9DFqU~r34w)
+- `facebookexperimental/skybison <https://github.com/facebookexperimental/skybison>`_: (270 ⭐) Instagram's experimental performance oriented greenfield implementation of Python.
+- `wkhtmltopdf/wkhtmltopdf <https://github.com/wkhtmltopdf/wkhtmltopdf>`_: (11873 ⭐) Convert HTML to PDF using Webkit (QtWebKit)
+- `spotify/pedalboard <https://github.com/spotify/pedalboard>`_: (3115 ⭐) 🎛 🔊 A Python library for adding effects to audio.
+- `pytorch/hydra-torch <https://github.com/pytorch/hydra-torch>`_: (130 ⭐) Configuration classes enabling type-safe PyTorch configuration for Hydra apps
+- `pytorch/opacus <https://github.com/pytorch/opacus>`_: (1027 ⭐) Training PyTorch models with differential privacy
+- `pytorch/kineto <https://github.com/pytorch/kineto>`_: (211 ⭐) A CPU+GPU Profiling library that provides access to timeline traces and hardware performance counters.
+- `pytorch/csprng <https://github.com/pytorch/csprng>`_: (71 ⭐) Cryptographically secure pseudorandom number generators for PyTorch
+- `pytorch/botorch <https://github.com/pytorch/botorch>`_: (2177 ⭐) Bayesian optimization in PyTorch
+- `pytorch/test-infra <https://github.com/pytorch/test-infra>`_: (9 ⭐) This repository hosts code that supports the testing infrastructure for the main PyTorch repo. For example, this repo hosts the logic to track disabled tests and slow tests, as well as our continuation integration jobs HUD/dashboard.
+- `cerlymarco/MEDIUM_NoteBook <https://github.com/cerlymarco/MEDIUM_NoteBook>`_: (1138 ⭐) Repository containing notebooks of my posts on Medium
+- `gimseng/99-ML-Learning-Projects <https://github.com/gimseng/99-ML-Learning-Projects>`_: (216 ⭐) A list of 99 machine learning projects for anyone interested to learn from coding and building projects
+- `graviraja/MLOps-Basics <https://github.com/graviraja/MLOps-Basics>`_: (2483 ⭐) None
