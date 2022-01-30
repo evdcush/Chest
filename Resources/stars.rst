@@ -1,4 +1,4 @@
-
+See that we already have a doc ready in Resources/cool.rst
 
 - `ICLR/Master-Template <https://github.com/ICLR/Master-Template>`_: (88 ⭐) Template and style files for ICLR
 - `deepmind/meltingpot <https://github.com/deepmind/meltingpot>`_: (114 ⭐) None
