@@ -7,6 +7,13 @@ Audio
 
 Bluetooth headset connects but not available as output device
 -------------------------------------------------------------
+I tried a few things, but since I didn't A/B test the solutions, I'm not certain which thing fixed it.
+But I believe it was this: https://askubuntu.com/a/1243890/601020
+
+> This is a bug (pulseaudio #832, launchpad #1866194) with new version of pulseaudio in Ubuntu 20.04 where old config values have not been cleared and it is not routing to the correct device. The solution is to delete the old config and restart pulseaudio::
+
+    mv ~/.config/pulse/ ~/.config/pulse.old
+    systemctl --user restart pulseaudio
 
 
 -------
