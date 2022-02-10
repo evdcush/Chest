@@ -2,6 +2,16 @@
 troubleshooting
 ===============
 
+Audio
+=====
+
+Bluetooth headset connects but not available as output device
+-------------------------------------------------------------
+
+
+-------
+
+
 Startup etc
 ===========
 
