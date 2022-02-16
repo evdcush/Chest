@@ -707,7 +707,6 @@ See that we already have a doc ready in Resources/cool.rst
 - `foolwood/benchmark_results <https://github.com/foolwood/benchmark_results>`_: (3689 ☆) Visual Tracking Paper List
 - `jayveer2807/data_science_questions <https://github.com/jayveer2807/data_science_questions>`_: (57 ☆) None
 - `poloclub/cnn-explainer <https://github.com/poloclub/cnn-explainer>`_: (5845 ☆) Learning Convolutional Neural Networks with Interactive Visualization.
-- `scutan90/DeepLearning-500-questions <https://github.com/scutan90/DeepLearning-500-questions>`_: (40000 ☆) 深度学习500问，以问答形式对常用的概率知识、线性代数、机器学习、深度学习、计算机视觉等热点问题进行阐述，以帮助自己及有需要的读者。 全书分为18个章节，50余万字。由于水平有限，书中不妥之处恳请广大读者批评指正。   未完待续............ 如有意合作，联系scutjy2015@163.com                     版权所有，违权必究       Tan 2018.06
 - `yangyutu/EssentialMath <https://github.com/yangyutu/EssentialMath>`_: (756 ☆) None
 - `tirthajyoti/Papers-Literature-ML-DL-RL-AI <https://github.com/tirthajyoti/Papers-Literature-ML-DL-RL-AI>`_: (1620 ☆) Highly cited and useful papers related to machine learning, deep learning, AI, game theory, reinforcement learning
 - `khanhnamle1994/cracking-the-data-science-interview <https://github.com/khanhnamle1994/cracking-the-data-science-interview>`_: (1605 ☆) A Collection of Cheatsheets, Books, Questions, and Portfolio For DS/ML Interview Prep
