@@ -43,6 +43,12 @@ subprocess.run(f'wget {url}', cwd=dst, shell=True) # cwd will exec this command 
 code.interact(local=dict(globals(), **locals()))
 IPython.embed()
 
+# Note, you can also simply breakpoint(); interact
+# and you can alias to use ipython shell instead if you put in .pdbrc:
+import IPython
+
+alias interacti IPython.embed()
+
 
 """
 ## How to make your 'foo.py' script executable bin
