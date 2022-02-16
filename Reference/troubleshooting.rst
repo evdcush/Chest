@@ -15,6 +15,16 @@ But I believe it was this: https://askubuntu.com/a/1243890/601020
     mv ~/.config/pulse/ ~/.config/pulse.old
     systemctl --user restart pulseaudio
 
+    # Another solution based on this exec'd this after the mv ~/.config/pulse:
+    # https://superuser.com/a/1623869/865546
+    pulseaudio --k && pulseaudio --start
+
+
+You may also need to restart.
+You may also need to remove the bluetooth device and re-pair it.
+
+At the same time, I also installed blueman or bluez. But I uninstalled it and I don't think that was the fix.
+
 
 -------
 
