@@ -62,8 +62,15 @@ alias ll='ls -gGXhp'
 alias ldot='ls -dF --group-directories-first .*' # list dots only
 alias lk='ls -1SshX --file-type --group-directories-first' # list contents, sorted by size, grouped by ext
 alias lsz='ls -1shSr' # list files, 1-line each, show size in human-readable, sorted on size, reverse (biggest bottom)
-alias lzf='ls | fzf' # list w/ fuzzy search
+#alias lzf='ls | fzf' # list w/ fuzzy search
 alias countf='find . -type f -printf . | wc -c'
+
+lzf(){
+    # list with fuzzy search
+    if [ "$#" -eq 1 ]; then DIR="$1"; else DIR='.'; fi
+    ls $DIR | fzf
+}
+
 
 alias h='history'
 alias hzf='history | fzf'
