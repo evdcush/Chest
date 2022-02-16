@@ -178,6 +178,10 @@ git clone --depth=1 https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/
 # fzf
 # ===
 
+# neovim
+# ======
+sudo apt install -y neovim
+
 
 # Pyenv
 # =====
@@ -1401,7 +1405,8 @@ vi __init__.py
 #    "tab_size": 4,
 #    "theme": "Default.sublime-theme",
 #    "translate_tabs_to_spaces": true,
-#    "trim_trailing_white_space_on_save": true
+#    "trim_trailing_white_space_on_save": true,
+#    "auto_complete": false,
 #}
 
 # NOTE: "Default.sublime-theme" HAS BEEN MODIFIED
