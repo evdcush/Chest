@@ -8,6 +8,11 @@ bair:
     feed_url: http://bair.berkeley.edu/blog/feed.xml
     url: http://bair.berkeley.edu/blog/
 
+comma.ai:
+    description: comma.ai blog
+    feed_url: https://blog.comma.ai/feed.xml
+    url: https://blog.comma.ai
+
 cmu:
     description: CMU ML research blog
     feed_url: https://blog.ml.cmu.edu/feed/
@@ -33,6 +38,12 @@ irpan:
     feed_url: https://www.alexirpan.com/feed.xml
     url: https://www.alexirpan.com/
 
+microsoft-research:
+    description:
+        Microsoft research blog (unfortunately has a lot of MS product spam)
+    feed_url: https://www.microsoft.com/en-us/research/feed/
+    url: https://www.microsoft.com/en-us/research/blog/
+
 openai:
     description: OpenAI research blog (news, summaries)
     feed_url: https://blog.openai.com/rss/
@@ -44,13 +55,18 @@ phys.org:
     feed_url: https://phys.org/rss-feed/
     url: https://phys.org/
 
+sail:
+    description: Stanford AI Lab blog
+    feed_url: http://ai.stanford.edu/blog/feed.xml
+    url: https://ai.stanford.edu/blog/
+
 synced:
     description: news on machine intelligence
     feed_url: https://syncedreview.com/feed/
     url: https://syncedreview.com/
 
 Ruder:
-    description: Sebastion Ruder posts
+    description: Sebastion Ruder posts (So, 99% NLP stuff)
     feed_url: http://ruder.io/rss/index.rss
     url: http://ruder.io/
 
@@ -60,9 +76,14 @@ techxplore:
     url: https://techxplore.com/
 
 uber:
-    description: Uber AI blog
+    description: Uber AI blog (recquiescat en pace; this lab is no more)
     feed_url: https://eng.uber.com/category/articles/ai/feed/
     url: https://eng.uber.com/category/articles/ai/#
+
+waymo:
+    description: Waymo blog (pretty milktoast, but sometimes cool)
+    feed_url: http://feeds.feedburner.com/waymo
+    url: https://blog.waymo.com/
 
 ---
 
