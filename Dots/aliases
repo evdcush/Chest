@@ -342,7 +342,8 @@ alias tl='tldr'
 #---- wttr.in
 alias weath='curl wttr.in'
 
-
+#---- background noise
+alias waves='play -n synth brownnoise synth pinknoise mix synth sine amod 0.3 10'
 
 # SYMLINKS
 # ========
