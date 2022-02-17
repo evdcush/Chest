@@ -271,6 +271,15 @@ anki xfce4-timer-plugin redshift font-manager fslint;
 # EQ
 sudo apt install -y pulseeffects
 
+#---- whitenoise from terminal
+# https://askubuntu.com/a/789472/601020
+# First install sox (sound gen software)
+sudo apt install -y sox
+
+# then, the magic:
+play -n synth brownnoise synth pinknoise mix synth sine amod 0.3 10
+
+
 
 #---- Scientific/numerical software
 sudo apt install -y scilab sagemath # sagemath 2gb pkg, just use sympy?
