@@ -195,6 +195,9 @@ function pvenv(){
 #   pcs target:/path/to/dst file.txt
 pcs(){ scp $2 $1 }
 
+# cp with reversed order
+pc(){ cp $2 $1 }
+
 # dir and file stuff
 # ==================
 # Sort utils
