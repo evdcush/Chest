@@ -259,6 +259,11 @@ sudo pip3 install ranger-fm
 sudo add-apt-repository ppa:linuxuprising/guake
 sudo apt update
 
+# Podcast app
+# ===========
+# CPod:
+# https://github.com/z-------------/CPod/releases
+
 
 # Apps
 # ====
@@ -475,6 +480,9 @@ sudo apt install -y fcitx-mozc
 #  - Find and add "mozc" input method
 # REBOOT --> DONE!
 
+# IF YOU FREEZE WHEN SWITCHING INPUT:
+# https://askubuntu.com/questions/1304403/ubuntu-20-04-lts-crashes-when-changing-keyboard-to-japanese-mozc
+
 
 # Keyboard shortcuts
 # ==================
@@ -527,6 +535,12 @@ gnome-control-center bluetooth
 ## File Handling
 # untick all but 'retrieve metadata for pdfs'
 
+## Miscellaneous
+# keep 'Automatically tag items...' ticked
+
+## Groups
+# all ticked
+
 #=== Sync
 # Sync automatically, untick sync full-text content
 # no syncing for file stuff
@@ -569,7 +583,7 @@ gnome-control-center bluetooth
 # zotnet: http://www.exitsantacruz.com/zotnet/zotnet.php
 # zotsite: https://github.com/plandes/zotsite
 # zotxt: https://github.com/egh/zotxt
-# zot4st: https://gitlab.com/egh/zot4rst
+# zot4rst: https://gitlab.com/egh/zot4rst
 # cit2c: https://github.com/takluyver/cite2c # rst citations
 
 #=============================================================================#
