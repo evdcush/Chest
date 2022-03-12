@@ -280,6 +280,10 @@ kdeconnect \
 dict dictd dict-gcide dict-wn dict-moby-thesaurus \
 anki xfce4-timer-plugin redshift font-manager fslint;
 
+# "View" images in the terminal.
+sudo apt install -y catimg
+catimg my_image.png
+
 # EQ
 sudo apt install -y pulseeffects
 
