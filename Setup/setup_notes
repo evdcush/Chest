@@ -727,6 +727,28 @@ sudo usermod -aG docker $USER
 docker run hello-world
 
 #=============================================================================#
+#                                 Docker Apps                                 #
+#=============================================================================#
+
+# Monica
+# ======
+docker pull monica
+
+# Run container with:
+mysqlCid="$(docker run -d \
+ -e MYSQL_RANDOM_ROOT_PASSWORD=true \
+ -e MYSQL_DATABASE=monica \
+ -e MYSQL_USER=homestead \
+ -e MYSQL_PASSWORD=secret \
+ "mysql:5.7")"
+docker run -d \
+ --link "$mysqlCid":mysql \
+ -e DB_HOST=mysql \
+ -p 8080:80 \
+ monica
+
+
+#=============================================================================#
 #                       ,,                                                    #
 #                      *MM                                                    #
 #                       MM                                                    #
