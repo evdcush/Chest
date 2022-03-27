@@ -21,6 +21,7 @@ General
 ^^^^^^^
 - https://github.com/detailyang/awesome-cheatsheet
 - https://github.com/LeCoupa/awesome-cheatsheets
+- https://github.com/trimstray/the-book-of-secret-knowledge
 
 
 Topical
