@@ -13,6 +13,7 @@ Stuff that serves cheatsheets or helps index them.
 - https://github.com/chubin/cheat.sh
 - https://github.com/tldr-pages/tldr
 - https://github.com/cheat/cheat
+- https://github.com/denisidoro/navi (brew or tarball lol)
 
 
 Cheatsheets
