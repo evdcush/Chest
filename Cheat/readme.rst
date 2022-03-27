@@ -2,3 +2,8 @@ Cheatsheets
 ###########
 
 
+Inspo
+=====
+
+- https://github.com/LeCoupa/awesome-cheatsheets
+-
