@@ -267,7 +267,7 @@ sudo apt update
 # Music/media player
 # ==================
 # GENERAL: VLC for everything; mpv for vid (esp. mkv, other choppy formats on vlc)
-# Audio: unsatisfied with VLC, I'm tryin out a few options.
+# AUDIO: unsatisfied with VLC, I'm tryin out a few options.
 
 # Trying out deadbeef (because VLC playlist saves and EQ and such are so limited)
 # see: https://alternativeto.net/software/deadbeef/about/
