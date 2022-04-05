@@ -264,6 +264,12 @@ sudo apt update
 # CPod:
 # https://github.com/z-------------/CPod/releases
 
+# Music/media player
+# ==================
+# Trying out deadbeef (because VLC playlist saves and EQ and such are so limited)
+# see: https://alternativeto.net/software/deadbeef/about/
+# download: https://alternativeto.net/software/deadbeef/about/
+
 
 # Apps
 # ====
