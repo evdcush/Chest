@@ -239,6 +239,21 @@ function lnbin(){
     ln -sf $SRC $DEST
 }
 
+# symlink something to ~/.local/bin
+function lnappi(){
+    # make thing executable
+    chmod +x "$1"
+    # Set paths
+    SRC="$PWD/$1"
+    DST="$HOME/.Apps/AppImages"
+    if [ "$#" -gt 1 ]; then
+        # rename link endpoint
+        DST="$DST/$2"
+    fi
+    # link it up (NB: -r converts abs symlinks to rel)
+    ln -sf $SRC $DST
+}
+
 function lnpro(){
     src="$PWD/$1"
     dst="$HOME/Projects"
