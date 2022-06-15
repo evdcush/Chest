@@ -88,6 +88,8 @@ alias tpst='TZ="America/Los_Angeles" date'
 alias tedt='TZ="America/New_York" date'
 alias tcet='TZ="Europe/Berlin" date'
 
+alias pingu='ping google.com'
+
 
 #=============================================================================#
 #                                                                             #
