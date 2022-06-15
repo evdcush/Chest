@@ -59,6 +59,7 @@ alias shx='chmod +x'
 #alias l='ls -X --group-directories-first'  # puts symlinked dirs after dirs (not in alpha with)
 alias l='ls -Xp'  # alpha-sorts symlinked dirs with phys dirs
 alias ll='ls -gGXhp'
+alias lsa='ls -lha --time-style=long-iso'
 alias ldot='ls -dF --group-directories-first .*' # list dots only
 alias lk='ls -1SshX --file-type --group-directories-first' # list contents, sorted by size, grouped by ext
 alias lsz='ls -1shSr' # list files, 1-line each, show size in human-readable, sorted on size, reverse (biggest bottom)
