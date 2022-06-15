@@ -207,6 +207,7 @@ $piu gym-super-mario-bros sphinx docutils pyperclip unidecode python-slugify; \
 $piu feedparser requests lxml urllib3 bs4 pygithub mpi4py; \
 $piu twine pytest pypi-cli fart hydra-core omegaconf tensorboard wandb; \
 $piu restview rstcheck grip termdown pdfCropMargins rembg; \
+$piu snakeviz; \
 $piu $mediadl;"
 
 # NB: if you get an error with mpi4py --> `sudo apt install -y mpich`
