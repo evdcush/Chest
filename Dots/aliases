@@ -291,6 +291,7 @@ alias npmls='npm list -g --depth 0'  # list all globally installed packages
 #---- youtube-dl
 alias dlmus='yt-dlp -f bestaudio'
 alias dlvid='yt-dlp -f bestvideo+bestaudio -o "%(title)s.%(id)s.%(ext)s" --restrict-filenames'
+alias yt-dl-vid='yt-dlp -f bestvideo+bestaudio -o "%(title)s.%(id)s.%(ext)s" --restrict-filenames'
 
 #---- vpn
 spvpn='sudo pvpn'
