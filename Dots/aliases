@@ -389,7 +389,7 @@ alias glog="git log --graph --decorate --oneline --all"
 alias gm="git mv -v"
 alias gk="git checkout"
 alias gkb="git checkout -b"
-alias master="git checkout master"
+alias mstr="git checkout master"
 
 # Add & Committing
 # ================
