@@ -387,6 +387,7 @@ alias glog="git log --graph --decorate --oneline --all"
 # Navigation
 # ==========
 alias gm="git mv -v"
+alias gsw='git switch'
 alias gk="git checkout"
 alias gkb="git checkout -b"
 alias mstr="git checkout master"
