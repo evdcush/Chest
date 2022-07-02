@@ -268,6 +268,11 @@ alias pipupdate="pip list --outdated --format=freeze \
 #=============================================================================#
 # All aliases that use installed packages
 
+# DE
+# ==
+#---- nav
+alias fm='nautilus'
+
 # Dev stuff
 # =========
 #---- sys
