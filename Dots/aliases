@@ -219,10 +219,22 @@ $piu $mediadl;"
 # Snowflakes
 # ----------
 #== pytorch
-# nb: only for cpu, just `pip install torch` for gpu ver
-pyt_url='https://download.pytorch.org/whl/torch_stable.html'
-pyt_ver='1.10.0'
-alias pipipyt="$piu torch==$pyt_ver+cpu torchvision==0.11.1+cpu -f $pyt_url"
+function pipitorch(){
+    # Wheel targets.
+    tag_cpu='cpu'
+    tag_cuda='cu116'
+    TORCH_URL='https://download.pytorch.org/whl'
+
+    # Check if cuda is available.
+    if nvidia-smi &>/dev/null; then
+        TAG=$tag_cuda
+    else
+        TAG=$tag_cpu
+    fi
+
+    # Install pytorch.
+    $piu --no-cache-dir torch torchvision torchaudio --extra-index-url "$TORCH_URL/$TAG"
+}
 
 #== detectron2
 alias pipid2gpu='python -m pip install detectron2 -f \
