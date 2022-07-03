@@ -215,6 +215,16 @@ cdl() { cd "$1" && ls -1FSshX --file-type }
 # save console stdout and stderr to file (and display in console)
 function shsv() { $@ 2>&1 | tee output.txt }
 
+# get abspath of file(s)
+function paths(){
+    PTH="$PWD"
+    if [ "$#" -gt 0 ]; then
+        # rename link endpoint
+        PTH="$1"
+    fi
+    ls -1 -d $PTH/*
+}
+
 # Symlink
 # =======
 # symlink something from curdir to somewhere rooted from home
