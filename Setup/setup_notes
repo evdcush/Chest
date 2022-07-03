@@ -251,8 +251,26 @@ wget https://github.com/kermitt2/grobid/archive/0.5.3.zip
 sudo pip3 install ranger-fm
 
 #-----------------------------------------------------------------------------#
+#                                "Modern UNIX"                                #
+#-----------------------------------------------------------------------------#
+
+# delta: syntax-highlighting pager for git, diff, and grep output
+# https://github.com/dandavison/delta/releases
+
+#=== Dust
+# Like du but more intuitive.
+# https://github.com/bootandy/dust
+
+#=== duf
+# Disk Usage/Free Utility - a better 'df' alternative
+# https://github.com/muesli/duf
+
+#-----------------------------------------------------------------------------#
 #                                 Apt-sourced                                 #
 #-----------------------------------------------------------------------------#
+
+# Pretty print linux system info terminal
+sudo apt install -y screenfetch
 
 # Guake
 # =====
@@ -277,6 +295,7 @@ sudo apt update
 
 # quodlibet:
 sudo apt install -y quodlibet
+
 
 
 # Apps
