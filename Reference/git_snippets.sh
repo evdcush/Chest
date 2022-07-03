@@ -277,6 +277,21 @@ git branch -d <branch_name> # local
 #                                                                             #
 #=============================================================================#
 
+## If you just want to change the author of your last commit, you can do this:
+
+# Reset your email to the config globally:
+git config --global user.email example@email.com
+
+# Now reset the author of your commit without edit required:
+git commit --amend --reset-author --no-edit
+
+#To fix my last six commits:
+# First set the correct author for current Git repo using git config --local user.name FirstName LastName
+# and git config --local user.email first.last@example.com.
+# Then apply to the last six commits using:
+git rebase --onto HEAD~6 --exec "git commit --amend --reset-author --no-edit" HEAD~6
+
+
 # Set global git ignore
 # ---------------------
 git config --global core.excludesfile ~/.Dots/global_gitignore
