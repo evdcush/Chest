@@ -213,7 +213,7 @@ imgutils='rembg'  # because rembg has strict version dependencies (must be 3.9)
 # -----
 sphinx_stack='sphinx docutils restview rstcheck esbonio'
 sphinx_themes='sphinx-rtd-theme sphinx-book-theme furo sphinx-material \
-karma-sphinx-theme piccolo-theme'
+karma-sphinx-theme piccolo-theme sphinx-theme'
 writing_stack='jupyter-book'
 
 alias pipinew="$piu pip setuptools wheel; \
