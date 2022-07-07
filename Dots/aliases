@@ -230,7 +230,7 @@ function pipitorch(){
     # Check if cuda is available.
     if nvidia-smi &>/dev/null; then
         TAG=$tag_cuda
-        echo 'CUDA AVAILABLE; downloading cuda versions!'
+        echo 'CUDA AVAILABLE; downloading cuda builds!'
     else
         TAG=$tag_cpu
         echo 'CUDA NOT FOUND; downloading cpu builds!'
