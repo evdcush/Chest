@@ -198,7 +198,7 @@ piu="pip install -U"
 vis='matplotlib bokeh seaborn plotly pyvista'
 cv='opencv-python imageio scikit-image scikit-video open3d-python pycocotools'
 
-experiment_tools='tensorboard tensorboardX'
+experiment_tools='tensorboard tensorboardX hydra-core omegaconf wandb'
 
 # TODO: add mujoco
 gym_stuff="pybullet 'gym[atari, box2d, classic_control]' gym-super-mario-bros"
@@ -211,11 +211,11 @@ alias pipinew="$piu pip setuptools wheel; \
 $piu cython numpy scipy sklearn matplotlib sympy ipython jupyter notebook; \
 $piu $gym_stuff; \
 $piu opencv-python imageio scikit-image scikit-video open3d-python pandas; \
-$piu tensorboard tensorboardX; \
+$piu $experiment_tools; \
 $piu optuna 'ray[tune]' hyperopt scikit-optimize HEBO jax jaxlib evojax pymoo; \
 $piu feedparser requests lxml urllib3 bs4 pygithub mpi4py; \
 $piu fart pyperclip unidecode python-slugify; \
-$piu twine pytest pypi-cli hydra-core omegaconf  wandb; \
+$piu twine pytest pypi-cli; \
 $piu sphinx docutils restview rstcheck esbonio grip; \
 $piu termdown pdfCropMargins 'pix2tex[gui]'; \
 $piu snakeviz; \
