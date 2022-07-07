@@ -214,7 +214,7 @@ $piu cython numpy scipy sklearn matplotlib sympy ipython jupyter notebook; \
 $piu $gym_stuff; \
 $piu opencv-python imageio scikit-image scikit-video open3d-python pandas; \
 $piu $experiment_tools; \
-$piu optuna 'ray[tune]' hyperopt scikit-optimize HEBO jax jaxlib evojax pymoo; \
+$piu $hpo_stack; \
 $piu feedparser requests lxml urllib3 bs4 pygithub mpi4py; \
 $piu fart pyperclip unidecode python-slugify; \
 $piu twine pytest pypi-cli; \
