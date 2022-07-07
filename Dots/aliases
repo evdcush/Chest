@@ -233,6 +233,7 @@ function pipitorch(){
         echo 'CUDA AVAILABLE; downloading cuda versions!'
     else
         TAG=$tag_cpu
+        echo 'CUDA NOT FOUND; downloading cpu builds!'
     fi
 
     # Install pytorch.
