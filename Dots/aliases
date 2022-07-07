@@ -200,7 +200,9 @@ cv='opencv-python imageio scikit-image scikit-video open3d-python pycocotools'
 
 experiment_tools='tensorboard tensorboardX hydra-core omegaconf wandb'
 jax_stack='jax jaxlib evojax flax'  # haiku?
-hpo_stack='optuna 'ray[tune]' hyperopt scikit-optimize HEBO pymoo'
+hpo_stack='optuna ray hyperopt scikit-optimize HEBO pymoo'
+
+# NB: ray[all] installs gpu stuff too! How do we otherwise get all the stuff?
 
 # TODO: add mujoco
 gym_stuff="pybullet 'gym[atari, box2d, classic_control]' gym-super-mario-bros"
@@ -212,6 +214,7 @@ imgutils='rembg'  # because rembg has strict version dependencies (must be 3.9)
 # Media
 # -----
 #=== SPHINX
+# find more cool stuff: https://github.com/ray-project/ray/blob/master/doc/requirements-doc.txt
 sphinx_stack='sphinx docutils restview rstcheck esbonio'
 # Theming docs: https://www.sphinx-doc.org/en/master/usage/theming.html
 sphinx_themes='sphinx-rtd-theme sphinx-book-theme furo sphinx-material \
