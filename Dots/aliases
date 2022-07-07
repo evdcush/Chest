@@ -210,7 +210,7 @@ $piu gym-super-mario-bros; \
 $piu optuna 'ray[tune]' hyperopt scikit-optimize HEBO jax jaxlib evojax pymoo; \
 $piu feedparser requests lxml urllib3 bs4 pygithub mpi4py; \
 $piu fart pyperclip unidecode python-slugify; \
-$piu twine pytest pypi-cli fart hydra-core omegaconf tensorboard wandb; \
+$piu twine pytest pypi-cli hydra-core omegaconf tensorboard wandb; \
 $piu sphinx docutils restview rstcheck esbonio grip; \
 $piu termdown pdfCropMargins 'pix2tex[gui]'; \
 $piu snakeviz; \
