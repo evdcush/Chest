@@ -209,6 +209,10 @@ gym_stuff="pybullet 'gym[atari, box2d, classic_control]' gym-super-mario-bros"
 mediadl='yt-dlp youtube-dl spotdl'
 imgutils='rembg'  # because rembg has strict version dependencies (must be 3.9)
 
+# Media
+# -----
+
+
 alias pipinew="$piu pip setuptools wheel; \
 $piu cython numpy scipy sklearn matplotlib sympy ipython jupyter notebook; \
 $piu $gym_stuff; \
