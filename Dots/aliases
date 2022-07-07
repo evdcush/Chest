@@ -197,6 +197,8 @@ piu="pip install -U"
 # work stuff
 vis='matplotlib bokeh seaborn plotly pyvista'
 cv='opencv-python imageio scikit-image scikit-video open3d-python pycocotools'
+# TODO: add mujoco
+gym_stuff="pybullet 'gym[atari, box2d, classic_control]' gym-super-mario-bros"
 
 # apps
 mediadl='yt-dlp youtube-dl spotdl'
@@ -205,7 +207,7 @@ imgutils='rembg'  # because rembg has strict version dependencies (must be 3.9)
 alias pipinew="$piu pip setuptools wheel; \
 $piu cython numpy scipy sklearn matplotlib sympy ipython jupyter notebook; \
 $piu opencv-python imageio scikit-image scikit-video open3d-python pandas; \
-$piu tensorboardX pybullet 'gym[atari, box2d, classic_control]' ; \
+$piu tensorboardX; \
 $piu gym-super-mario-bros; \
 $piu optuna 'ray[tune]' hyperopt scikit-optimize HEBO jax jaxlib evojax pymoo; \
 $piu feedparser requests lxml urllib3 bs4 pygithub mpi4py; \
