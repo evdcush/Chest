@@ -200,6 +200,7 @@ cv='opencv-python imageio scikit-image scikit-video open3d-python pycocotools'
 
 # apps
 mediadl='yt-dlp youtube-dl spotdl'
+imgutils='rembg'  # because rembg has strict version dependencies (must be 3.9)
 
 alias pipinew="$piu pip setuptools wheel; \
 $piu cython numpy scipy sklearn matplotlib sympy ipython jupyter notebook; \
@@ -211,7 +212,7 @@ $piu feedparser requests lxml urllib3 bs4 pygithub mpi4py; \
 $piu fart pyperclip unidecode python-slugify; \
 $piu twine pytest pypi-cli fart hydra-core omegaconf tensorboard wandb; \
 $piu sphinx docutils restview rstcheck esbonio grip; \
-$piu termdown pdfCropMargins rembg 'pix2tex[gui]'; \
+$piu termdown pdfCropMargins 'pix2tex[gui]'; \
 $piu snakeviz; \
 $piu tldr; \
 $piu $mediadl;"
