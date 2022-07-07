@@ -235,7 +235,7 @@ function pipitorch(){
     fi
 
     # Install pytorch.
-    $piu --no-cache-dir torch torchvision torchaudio --extra-index-url "$TORCH_URL/$TAG"
+    pip install -U --no-cache-dir torch torchvision torchaudio --extra-index-url "$TORCH_URL/$TAG"
 }
 
 #== CuPy
