@@ -492,8 +492,8 @@ import logging
 
 #==== f string (and .format)
 b = 'baz'; my_float = 2**(1/2);
-print(f'{my_float}') # 1.4142135623730951
-print(f'{my_float: .3f}') # 1.414
+print(f'{my_float}')     # '1.4142135623730951'
+print(f'{my_float:.3f}') # '1.414'
 print(f'|{b:<12}|')  # ---> |baz         |
 print(f'|{b:^12}|')  # ---> |    baz     |
 print(f'|{b:>12}|')  # ---> |         baz|
@@ -676,3 +676,10 @@ class BiDict(UserDict):
 
 DTYPE_MAPPING = BiDict({torch.int8: trt.int8, torch.int32: trt.int32, torch.float16: trt.float16, torch.float32: trt.float32})
 DEVICE_MAPPING = BiDict({torch.device("cuda")})
+
+
+#-----------------------------------------------------------------------------#
+#                                MISC SNIPPETS                                #
+#-----------------------------------------------------------------------------#
+
+week_prior_start_date = datetime.datetime.now() - datetime.timedelta(days=7)
