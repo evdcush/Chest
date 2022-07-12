@@ -121,6 +121,9 @@ update-alternatives --set gcc /usr/bin/gcc-8
 #                       Utils & Common Dependencies                           #
 #=============================================================================#
 
+# smartctl
+sudo apt install smartmontools
+
 # git
 # ===
 sudo apt install git
@@ -249,6 +252,7 @@ wget https://github.com/kermitt2/grobid/archive/0.5.3.zip
 # Python packaged apps
 # ====================
 sudo pip3 install ranger-fm
+sudo pip install -U hackertray  # https://captnemo.in/hackertray/
 
 #-----------------------------------------------------------------------------#
 #                                "Modern UNIX"                                #
