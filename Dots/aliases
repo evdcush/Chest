@@ -211,6 +211,10 @@ gym_stuff="pybullet 'gym[atari, box2d, classic_control]' gym-super-mario-bros"
 mediadl='yt-dlp youtube-dl spotdl'
 imgutils='rembg'  # because rembg has strict version dependencies (must be 3.9)
 
+# Misc/experimental
+# =================
+staticstuff='MonkeyType'
+
 # Media
 # -----
 #=== SPHINX
@@ -237,6 +241,9 @@ $piu sphinx docutils restview rstcheck esbonio grip; \
 $piu termdown pdfCropMargins 'pix2tex[gui]'; \
 $piu snakeviz; \
 $piu tldr; \
+$piu $sphinx_stack; \
+$piu $sphinx_themes; \
+$piu $writing_stack; \
 $piu $mediadl;"
 
 # NB: if you get an error with mpi4py --> `sudo apt install -y mpich`
