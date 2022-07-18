@@ -142,6 +142,10 @@ sudo ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 #                                                                             #
 #=============================================================================#
 
+# DOCKER
+# ======
+docker ps -a -f 'name=^/evan' # docker ps and filter containers for name matching evan.
+
 # Get list of orphaned desktop entries
 #======================================
 for i in {/usr,~/.local}/share/applications/*.desktop; do which $(grep -Poh '(?<=Exec=).*?( |$)' $i) > /dev/null || echo $i; done
