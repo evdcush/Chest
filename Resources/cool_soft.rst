@@ -21,6 +21,14 @@ An iterative algorithm to generate high quality triangulated and polygonal art f
 Archiving
 #########
 
+Journal
+=======
+https://gitjournal.io/
+
+jrnl
+
+
+
 Repos
 =====
 
@@ -30,3 +38,5 @@ A powerful tool to concurrently clone or pull user and org repos and gists to cr
 
 `gabrie30/ghorg <https://github.com/gabrie30/ghorg>`_:
 Quickly clone an entire org/users repositories into one directory - Supports GitHub, GitLab, Bitbucket, and more.
+
+
