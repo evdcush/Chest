@@ -358,6 +358,13 @@ fonts-umeplus fonts-hanazono
 
 sudo apt install -y texlive-extra-utils --no-install-recommends
 
+sudo apt install -y latexmk
+
+# FOR jupyter-book:
+sudo apt install -y texlive-latex-recommended texlive-latex-extra \
+                    texlive-fonts-recommended texlive-fonts-extra \
+                    texlive-xetex latexmk
+
 # Inter font
 # ==========
 # Donwload & unzip
