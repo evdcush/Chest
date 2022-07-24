@@ -269,12 +269,19 @@ function pipitorch(){
     # Install pytorch.
     pip install -U --no-cache-dir torch torchvision torchaudio \
     --extra-index-url "$TORCH_URL/$TAG"
+
+    # Install other torch-related pkgs.
+    $piu torchinfo
 }
 
 #== CuPy
 # `pip install cupy` just doesnt seem to work, so use whl
 alias pipicupy="pip install cupy-cuda110 -f \
 https://github.com/cupy/cupy/releases/tag/v7.8.0"
+
+# GPU Utils
+# =========
+alias pipigpu="$piu gpustat"
 
 # Extra setup
 # ===========
