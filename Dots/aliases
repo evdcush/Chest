@@ -504,7 +504,6 @@ alias gsize="git rev-list --objects --all \
 # stuff that references user resources
 
 #=== templates
-alias tpy="cp $DIR_CHEST_TEMPLATES/template.py ./foo.py"
 
 function RDME() {
     SRC_DIR="$DIR_CHEST_TEMPLATES/README.rst"
