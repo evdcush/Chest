@@ -503,12 +503,6 @@ alias gsize="git rev-list --objects --all \
 #=============================================================================#
 # stuff that references user resources
 
-#=== github getters, 2nd order interface, (USE functools.partial ffs, this lazy)
-alias galist="ggh alist"
-alias grdm="ggh readme"
-alias gsrc="ggh src"
-alias gpro="ggh project"
-
 #=== templates
 alias tpy="cp $DIR_CHEST_TEMPLATES/template.py ./foo.py"
 
