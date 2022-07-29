@@ -9,6 +9,32 @@ Applications
 Okular
 ------
 
+Icons are missing
+^^^^^^^^^^^^^^^^^
+.. code-block::
+
+    # Install
+    sudo apt install qt5ct breeze-icon-theme
+
+    # Run:
+    qt5ct --platformtheme qt5ct
+    # Set the icon-theme to breeze
+
+    # Set the env variable:
+    sudo vi /etc/environment
+    # Add this line:
+    QT_QPA_PLATFORMTHEME="qt5ct"
+
+    # Copy desktop file:
+    cp /usr/share/applications/org.kde.okular.desktop ~/.local/share/applications
+
+    # Modify the .desktop file by changing the line:
+    Exec=okular %U
+    # to
+    Exec=okular --platformtheme qt5ct %U
+
+
+
 
 
 Audio
