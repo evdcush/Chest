@@ -2,6 +2,15 @@
 troubleshooting
 ===============
 
+
+Applications
+============
+
+Okular
+------
+
+
+
 Audio
 =====
 
