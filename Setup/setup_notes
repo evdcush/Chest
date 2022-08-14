@@ -78,6 +78,14 @@ path_prepend() {
 #                                                                             #
 #=============================================================================#
 
+# Installation
+# ============
+# Installation was fine, but display got f'd up after initial apt upgrade.
+# Stayed f'd up until I installed CUDA.
+
+# CUDA
+# ----
+
 
 
 #=============================================================================#
