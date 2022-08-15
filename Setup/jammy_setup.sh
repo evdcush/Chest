@@ -55,7 +55,7 @@ sudo apt install -y libcudnn8
 #                                     Deps                                    #
 #=============================================================================#
 
-sudo apt install -y curl git vim zsh
+sudo apt install -y curl git git-extras git-crypt ffmpeg ssh xclip vim zsh
 
 # Shell.
 
@@ -155,7 +155,13 @@ gnome-user-docs-ja
 
 # General
 # =======
-sudo apt install -y guake
+sudo apt install -y copyq flameshot guake keepassxc nextcloud-desktop screenfetch
+
+# Media.
+sudo apt install -y mpv vlc
+
+# PDF stuff.
+sudo apt install -y texlive-xetex texlive-extra-utils
 
 # Fonts
 # =====
