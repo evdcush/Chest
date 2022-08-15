@@ -18,6 +18,11 @@
 #                                                                             #
 #=============================================================================#
 
+# Remove bloat
+# ============
+sudo apt remove --purge snapd
+sudo apt autoremove
+
 #-----------------------------------------------------------------------------#
 #                           ___   _   _   ___      _                          #
 #                          / __| | | | | |   \    /_\                         #
@@ -69,6 +74,7 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/u
 
 # Oh-my-zsh
 # =========
+sudo apt install -y git zsh && sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # fzf
 # ===
@@ -141,7 +147,7 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=
 # Firefox
 # =======
 
-# First, get rid of snap shit.
+# First, get rid of snap shit (should have done this earlier).
 sudo apt remove --purge snapd
 
 # Install the firefox ppa.
@@ -176,3 +182,7 @@ sudo apt install -y firefox-esr
 
 
 
+
+
+
+sudo vi /etc/modprobe.d/hid_apple.conf
