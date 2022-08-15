@@ -20,7 +20,7 @@
 
 # Remove bloat
 # ============
-sudo apt remove --purge snapd
+sudo apt remove --purge firefox snapd
 sudo apt autoremove
 
 #-----------------------------------------------------------------------------#
