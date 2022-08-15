@@ -182,7 +182,22 @@ sudo apt install -y firefox-esr
 
 
 
+#=============================================================================#
+#                                                                             #
+#                  ███████ ██   ██ ████████ ██████   █████                    #
+#                  ██       ██ ██     ██    ██   ██ ██   ██                   #
+#                  █████     ███      ██    ██████  ███████                   #
+#                  ██       ██ ██     ██    ██   ██ ██   ██                   #
+#                  ███████ ██   ██    ██    ██   ██ ██   ██                   #
+#                                                                             #
+#=============================================================================#
 
 
+# Keychron keyboard fn keys
+# =========================
+# Create/edit file to have this line.
+sudo echo 'options hid_apple fnmode=2' >> /etc/modprobe.d/hid_apple.conf
 
-sudo vi /etc/modprobe.d/hid_apple.conf
+# Run commands:
+sudo update-initramfs -u
+reboot
