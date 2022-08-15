@@ -23,6 +23,10 @@
 sudo apt remove --purge firefox snapd
 sudo apt autoremove
 
+# Gnome stuff
+# ===========
+sudo apt install -y gnome-tweaks
+
 #-----------------------------------------------------------------------------#
 #                           ___   _   _   ___      _                          #
 #                          / __| | | | | |   \    /_\                         #
@@ -57,7 +61,9 @@ sudo apt install -y curl git vim zsh
 
 
 # Python.
-
+sudo apt install -y make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
 #=============================================================================#
 #                                 Environment                                 #
@@ -85,6 +91,27 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 # pyenv
 # =====
 # (Assumes you installed deps above!)
+sudo apt install -y make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
+# Install pyenv.
+curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+
+# Add the following path stuff to the shell config file.
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="${PATH:+${PATH}:}$PYENV_ROOT/bin"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# Source shell file.
+exec $SHELL
+
+# Install python version, eg:
+pyenv install 3.10.6
+
+# Make venv.
+pyenv virtualenv 3.10.6 3106
 
 #=============================================================================#
 #                               Settings/Config                               #
