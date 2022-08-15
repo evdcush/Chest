@@ -117,6 +117,12 @@ pyenv virtualenv 3.10.6 3106
 #                               Settings/Config                               #
 #=============================================================================#
 
+# SSH key
+# =======
+sudo apt install -y ssh && ssh-keygen -t ed25519 -C 'evdcush@protonmail.com'
+eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_ed25519
+clip ~/.ssh/id_ed25519.pub
+
 
 # Japanese
 # ========
