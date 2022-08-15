@@ -55,7 +55,7 @@ sudo apt install -y libcudnn8
 #                                     Deps                                    #
 #=============================================================================#
 
-sudo apt install -y curl git git-extras git-crypt ffmpeg ssh xclip vim zsh
+sudo apt install -y curl git git-extras git-crypt ffmpeg python3-pip ssh xclip vim zsh
 
 # Shell.
 
