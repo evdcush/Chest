@@ -36,8 +36,10 @@ sudo apt-key del 7fa2af80
 # Install CUDA keys.
 sudo dpkg -i cuda-keyring_1.0-1_all.deb
 
+# Install CUDA.
+sudo apt update && sudo apt install -y cuda
 
-
+# CUDA SDK packages (after reboot!).
 sudo apt install -y libcudnn8
 
 #=============================================================================#
