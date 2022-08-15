@@ -55,6 +55,12 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/u
 # Oh-my-zsh
 # =========
 
+# fzf
+# ===
+# Install fzf:
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
 # pyenv
 # =====
 # (Assumes you installed deps above!)
