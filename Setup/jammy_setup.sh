@@ -25,6 +25,17 @@
 #                          \___|  \___/  |___/  /_/ \_\                       #
 #                                                                             #
 #-----------------------------------------------------------------------------#
+# (USING VERSIONS AT THE TIME OF INSTALLATION)
+
+# Get the network installer deb.
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.0-1_all.deb
+
+# (Remove any existing cuda keys that may have been installed by default buntu 3rd party setup):
+sudo apt-key del 7fa2af80
+
+# Install CUDA keys.
+sudo dpkg -i cuda-keyring_1.0-1_all.deb
+
 
 
 sudo apt install -y libcudnn8
@@ -32,6 +43,8 @@ sudo apt install -y libcudnn8
 #=============================================================================#
 #                                     Deps                                    #
 #=============================================================================#
+
+sudo apt install -y git zsh 
 
 # Shell.
 
