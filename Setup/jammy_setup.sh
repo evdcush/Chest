@@ -161,13 +161,29 @@ gnome-user-docs-ja
 
 # General
 # =======
-sudo apt install -y copyq flameshot guake keepassxc nextcloud-desktop screenfetch
+sudo apt install -y copyq flameshot guake jq keepassxc nextcloud-desktop screenfetch
+
+# (Patch guake if `Could not parse file "/usr/share/applications/guake.desktop": No such file or directory`)
+sudo ln -sf /usr/share/guake/autostart-guake.desktop /usr/share/applications/guake.desktop
 
 # Media.
 sudo apt install -y mpv vlc
 
 # PDF stuff.
 sudo apt install -y texlive-xetex texlive-extra-utils
+
+# Externally Sourced
+# ==================
+# TODO(evan): would be nice to have a script to get latest vers of these apps!
+
+#=== Marktext
+# See: https://github.com/marktext/marktext/releases
+wget https://github.com/marktext/marktext/releases/download/v0.17.1/marktext-amd64.deb
+
+#=== logseq
+# See: https://github.com/logseq/logseq/releases
+wget https://github.com/logseq/logseq/releases/download/0.8.0/Logseq-linux-x64-0.8.0.AppImage
+
 
 # Fonts
 # =====
