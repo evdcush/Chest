@@ -503,6 +503,9 @@ Miscellaneous
 
     sudo systemctl disable tor.service
 
+**Check my motherboard model**::
+
+    sudo dmidecode -t 2
 
 
 ----------------
