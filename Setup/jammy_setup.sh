@@ -46,7 +46,7 @@ sudo apt install -y libcudnn8
 #                                     Deps                                    #
 #=============================================================================#
 
-sudo apt install -y git zsh 
+sudo apt install -y curl git vim zsh
 
 # Shell.
 
@@ -125,6 +125,17 @@ gnome-user-docs-ja
 #=============================================================================#
 #                                   Browser                                   #
 #=============================================================================#
+
+# Brave
+# =====
+# Deps.
+sudo apt install -y apt-transport-https curl
+
+# Brave key.
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+
+# Deb apt source.
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 
 
 # Firefox
