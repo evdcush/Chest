@@ -124,7 +124,7 @@ eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_ed25519
 clip ~/.ssh/id_ed25519.pub
 
 
-# Japanese
+# Japanese (WIP, STILL NOT WORKING AS EXPECTED)
 # ========
 # Open "Region & Language" in Settings.
 # It should prompt to "properly" install some packages, namely:
@@ -167,10 +167,16 @@ sudo apt install -y copyq flameshot guake jq keepassxc nextcloud-desktop screenf
 sudo ln -sf /usr/share/guake/autostart-guake.desktop /usr/share/applications/guake.desktop
 
 # Media.
-sudo apt install -y mpv vlc
+sudo apt install -y catimg mpv sox vlc
 
 # PDF stuff.
 sudo apt install -y texlive-xetex texlive-extra-utils
+
+# Dict.
+sudo apt install -y dict dictd dict-gcide dict-wn
+# `dict-moby-thesaurus` is only provided in bionic for some reason, so we have
+# to acquire the deb from a mirror.
+wget http://kr.archive.ubuntu.com/ubuntu/pool/main/d/dict-moby-thesaurus/dict-moby-thesaurus_1.0-6.4_all.deb && sudo dpkg -i dict-moby-thesaurus_1.0-6.4_all.deb
 
 # Externally Sourced
 # ==================
