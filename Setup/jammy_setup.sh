@@ -489,7 +489,7 @@ reboot
 #                  d8'          `8b   `"Ybbd8"'  `"YbbdP"'                    #
 #                                                                             #
 #=============================================================================#
-
+# who actually has time for this
 
 # Gnome/GTK themes
 # ================
@@ -498,9 +498,9 @@ reboot
 
 https://github.com/vinceliuice/Orchis-theme
 
-
+###############################################################################
 
 
 # CREDITS
 # =======
-#   - jellyfish text art: https://textart.sh/topic/jellyfish
+# - jellyfish text art: https://textart.sh/topic/jellyfish
