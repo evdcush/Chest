@@ -55,7 +55,17 @@ sudo apt install -y libcudnn8
 #                                     Deps                                    #
 #=============================================================================#
 
-sudo apt install -y curl fuse git git-extras git-crypt ffmpeg python3-pip ssh xclip vim zsh
+sudo apt install -y curl fuse git git-extras git-crypt ffmpeg imagemagick python3-pip ssh xclip vim zsh
+
+# Real shit.
+sudo apt install libboost-all-dev swig
+sudo apt install gcc-12 g++-12
+# Can optionally setup alternatives:
+update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 100 --slave /usr/bin/g++ g++ /usr/bin/g++-12
+
+# Extras.
+sudo apt install -y flac lame x264 x265
+
 
 # Shell.
 
@@ -161,13 +171,16 @@ gnome-user-docs-ja
 
 # General
 # =======
-sudo apt install -y copyq flameshot guake jq keepassxc nextcloud-desktop screenfetch
+sudo apt install -y aria2 copyq deluge delta duf flameshot gparted guake htop inkscape jq keepassxc nextcloud-desktop nomacs pandoc redshift screenfetch tree wkhtmltopdf
 
 # (Patch guake if `Could not parse file "/usr/share/applications/guake.desktop": No such file or directory`)
 sudo ln -sf /usr/share/guake/autostart-guake.desktop /usr/share/applications/guake.desktop
 
 # Media.
 sudo apt install -y catimg mpv sox vlc
+
+# Archive.
+sudo apt install -y p7zip-full unar
 
 # PDF stuff.
 sudo apt install -y texlive-xetex texlive-extra-utils
@@ -200,6 +213,20 @@ fonts-misaki fonts-moe-standard-kai fonts-mononoki fonts-motoya-l-cedar \
 fonts-motoya-l-maruberi fonts-mplus fonts-noto-cjk fonts-noto-color-emoji fonts-oxygen \ 
 fonts-roboto fonts-roboto-slab "fonts-sawarabi*" fonts-seto fonts-lato fonts-umeplus \ 
 fonts-ubuntu fonts-ubuntu-console fonts-vollkorn
+
+
+#-----------------------------------------------------------------------------#
+#                    Sourced through other package managers                   #
+#-----------------------------------------------------------------------------#
+
+# n (node manager) npm
+# ====================
+curl -L https://git.io/n-install | N_PREFIX=~/.n bash -s -- -y
+
+# npm
+# ---
+npm i -g npm && npm i -g percolalte
+
 
 
 #=============================================================================#
