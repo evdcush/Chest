@@ -331,10 +331,6 @@ alias stt="subl ." # open  dir with sublime
 alias subw='subl --new-window --wait'      # open file and wait on edits
 alias ssubw='sudo subl -new-window --wait' # w/ sudo; eg `ssubw /etc/profile`
 
-#---- cookiecutter project
-alias mk_pyproj="cookiecutter \
-https://github.com/kragniz/cookiecutter-pypackage-minimal.git"
-
 #---- npm
 alias npmls='npm list -g --depth 0'  # list all globally installed packages
 
