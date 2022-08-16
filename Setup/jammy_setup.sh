@@ -1,20 +1,61 @@
+# 2022 github.com/evdcush
 #=============================================================================#
 #                                                                             #
-#                    ██  █████  ███    ███ ███    ███ ██    ██                #
-#                    ██ ██   ██ ████  ████ ████  ████  ██  ██                 #
-#                    ██ ███████ ██ ████ ██ ██ ████ ██   ████                  #
-#               ██   ██ ██   ██ ██  ██  ██ ██  ██  ██    ██                   #
-#                █████  ██   ██ ██      ██ ██      ██    ██                   #
+#       gg                                                                    #
+#      dP8,                                                                   #
+#     dP Yb                                                                   #
+#    ,8  `8,                                                                  #
+#    I8   Yb                                                                  #
+#    `8b, `8,     ,gggg,gg   ,ggg,,ggg,,ggg,    ,ggg,,ggg,,ggg,   gg     gg   #
+#     `"Y88888   dP"  "Y8I  ,8" "8P" "8P" "8,  ,8" "8P" "8P" "8,  I8     8I   #
+#         "Y8   i8'    ,8I  I8   8I   8I   8I  I8   8I   8I   8I  I8,   ,8I   #
+#          ,88,,d8,   ,d8b,,dP   8I   8I   Yb,,dP   8I   8I   Yb,,d8b, ,d8I   #
+#      ,ad88888P"Y8888P"`Y88P'   8I   8I   `Y88P'   8I   8I   `Y8P""Y88P"888  #
+#    ,dP"'   Yb                                                        ,d8I'  #
+#   ,8'      I8                                                      ,dP'8I   #
+#  ,8'       I8                    ██████████                       ,8"  8I   #
+#  I8,      ,8'                ████░░░░░░░░░░████                   I8   8I   #
+#  `Y8,___,d8'             ████░░░░░░░░░░░░░░░░░░████               `8, ,8I   #
+#    "Y888P"             ██░░░░░░░░░░░░░░░░░░░░░░░░░░██              `Y8P"    #
+#                      ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██                     #
+#                      ██░░░░░░░░██░░░░░░░░░░██░░░░░░░░██                     #
+#                    ██░░░░░░░░░░██░░░░░░░░░░██░░░░░░░░░░██                   #
+#                    ██░░░░▒▒▒▒░░░░░░░░░░░░░░░░░░▒▒▒▒░░░░██                   #
+#                    ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██                   #
+#                      ██░░░░░░░░██░░░░░░░░░░██░░░░░░░░██                     #
+#                        ████████  ██████████  ████████                       #
+#                          ██          ██          ██                         #
+#                        ██░░██      ██░░██      ██░░██                       #
+#                        ██░░░░██  ██░░░░██      ██░░░░██                     #
+#                          ██░░██  ██░░██          ██░░██                     #
+#                        ██░░░░██  ██░░░░██      ██░░░░██                     #
+#                        ██░░██      ██░░██      ██░░██                       #
+#                          ██          ██          ██                         #
+#                          ██          ██          ██                         #
+#                        ██░░██      ██░░██      ██░░██                       #
+#                      ██░░░░██      ██░░░░██  ██░░░░██                       #
+#                      ██░░██          ██░░██  ██░░██                         #
+#                      ██░░░░██      ██░░░░██  ██░░░░██                       #
+#                        ██░░██      ██░░██      ██░░██                       #
+#                          ██          ██          ██                         #
 #                                                                             #
 #=============================================================================#
 
+# Get the image.
+wget https://ftp.riken.jp/Linux/ubuntu-releases/jammy/ubuntu-22.04.1-desktop-amd64.iso
+
+# Burn it to a USB using Etcher.
+#   NB: don't be a dd hero here; it's either etcher or pain
+wget https://github.com/balena-io/etcher/releases/download/v1.7.9/balenaEtcher-1.7.9-x64.AppImage -O etcher && chmod +x etcher
+./etcher
+
 #=============================================================================#
-#                            ______                                           #
-#                           |  ____|                                          #
-#                           | |__     _ __   __   __                          #
-#                           |  __|   | '_ \  \ \ / /                          #
-#                           | |____  | | | |  \ V /                           #
-#                           |______| |_| |_|   \_/                            #
+#                                                                             #
+#                         ███████ ███    ██ ██    ██                          #
+#                         ██      ████   ██ ██    ██                          #
+#                         █████   ██ ██  ██ ██    ██                          #
+#                         ██      ██  ██ ██  ██  ██                           #
+#                         ███████ ██   ████   ████                            #
 #                                                                             #
 #=============================================================================#
 
@@ -22,10 +63,6 @@
 # ============
 sudo apt remove --purge firefox snapd
 sudo apt autoremove
-
-# Gnome stuff
-# ===========
-sudo apt install -y gnome-tweaks
 
 #-----------------------------------------------------------------------------#
 #                           ___   _   _   ___      _                          #
@@ -55,7 +92,8 @@ sudo apt install -y libcudnn8
 #                                     Deps                                    #
 #=============================================================================#
 
-sudo apt install -y curl fuse git git-extras git-crypt ffmpeg imagemagick python3-pip ssh xclip vim zsh
+# Generally needed.
+sudo apt install -y curl git git-crypt ffmpeg imagemagick python3-pip ssh xclip vim zsh
 
 # Real shit.
 sudo apt install libboost-all-dev mpich swig
@@ -64,16 +102,19 @@ sudo apt install gcc-12 g++-12
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 100 --slave /usr/bin/g++ g++ /usr/bin/g++-12
 
 # Extras.
-sudo apt install -y flac lame x264 x265
+sudo apt install -y flac git-extras lame x264 x265
 
-
-# Shell.
-
-
-# Python.
+# Python (pyenv)
+# ==============
 sudo apt install -y make build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
+# Snowflakes
+# ==========
+#=== AppImage
+# Due to some AppImage dep req on fuse (2), see: https://github.com/AppImage/AppImageKit/issues/1120
+sudo apt install -y libfuse2
 
 #=============================================================================#
 #                                 Environment                                 #
@@ -136,28 +177,21 @@ pyenv virtualenv 3.10.6 3106
 #                               Settings/Config                               #
 #=============================================================================#
 
+# Gnome stuff
+# ===========
+sudo apt install -y gnome-tweaks
+
 # SSH key
 # =======
 sudo apt install -y ssh && ssh-keygen -t ed25519 -C 'evdcush@protonmail.com'
 eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_ed25519
-clip ~/.ssh/id_ed25519.pub
+xclip ~/.ssh/id_ed25519.pub
 
 
 # Japanese (WIP, STILL NOT WORKING AS EXPECTED)
 # ========
 # Open "Region & Language" in Settings.
-# It should prompt to "properly" install some packages, namely:
-ibus-mozc
-mozc-utils-gui
-hunspell-en-au
-language-pack-gnome-ja
-hunspell-en-ca
-hunspell-en-za
-hunspell-en-gb
-language-pack-ja
-fonts-noto-cjk-extra
-gnome-user-docs-ja
-
+# It should prompt to "properly" install some packages.
 
 
 
@@ -179,13 +213,11 @@ fonts-ubuntu fonts-ubuntu-console fonts-vollkorn
 
 #=============================================================================#
 #                                                                             #
-#                           /\                                                #
-#                          /  \     _ __    _ __    ___                       #
-#                         / /\ \   | '_ \  | '_ \  / __|                      #
-#                        / ____ \  | |_) | | |_) | \__ \                      #
-#                       /_/    \_\ | .__/  | .__/  |___/                      #
-#                                  | |     | |                                #
-#                                  |_|     |_|                                #
+#                        █████  ██████  ██████  ███████                       #
+#                       ██   ██ ██   ██ ██   ██ ██                            #
+#                       ███████ ██████  ██████  ███████                       #
+#                       ██   ██ ██      ██           ██                       #
+#                       ██   ██ ██      ██      ███████                       #
 #                                                                             #
 #=============================================================================#
 
@@ -380,7 +412,7 @@ sudo apt update && sudo apt install -y sublime-text
 
 # VSCode
 # ======
-
+# whatever, just download it and sync, its deb does everything for you.
 
 
 
@@ -406,8 +438,6 @@ reboot
 
 
 
-
-
 #=============================================================================#
 #                                                                             #
 #                         db                                                  #
@@ -428,3 +458,10 @@ reboot
 # Browsing: https://www.gnome-look.org/s/Gnome/browse/
 
 https://github.com/vinceliuice/Orchis-theme
+
+
+
+
+# CREDITS
+# =======
+#   - jellyfish text art: https://textart.sh/topic/jellyfish
