@@ -31,6 +31,10 @@ alias trk="xinput --set-prop `xinput | grep -i trackpoint | cut -d'=' -f2 | cut 
 #=============================================================================#
 # All aliases that use coreutils and stuff is in this section
 
+# Help, man, etc.
+# ===============
+alias mn='man --page='  # man, but spits to stdout instead of getting captured in a pager.
+
 # Dir stuff
 # =========
 # NB: oh-my-zsh defines useful aliases '..'|'...'|'....'
@@ -52,13 +56,11 @@ alias shx='chmod +x'
 # g:no-owner | G:no-group (same as o?) | 1:list one file per line
 # X:sort alpha by extension (ALSO PUTS DIRS FIRST?, in alpha order)
 # h:human-readable (eg, file size 6378230 -> 6.1M)
-# p:indicator-style=slash (append / indicator to dirs)
 # F:indicate entries by file-type (eg, sym: foo.py@, dir: Documents/)
 
 #=== ALIASES
-#alias l='ls -X --group-directories-first'  # puts symlinked dirs after dirs (not in alpha with)
-alias l='ls -Xp'  # alpha-sorts symlinked dirs with phys dirs
-alias ll='ls -gGXhp'
+alias l='ls -FX --group-directories-first'
+alias ll='ls -ghGFX --time-style=long-iso --group-directories-first'  # list g: without owner, h: human-read, G: w/o group, F: classify, X: sort alpha by ext.
 alias lsa='ls -lha --time-style=long-iso'
 alias ldot='ls -dF --group-directories-first .*' # list dots only
 alias lk='ls -1SshX --file-type --group-directories-first' # list contents, sorted by size, grouped by ext
