@@ -279,3 +279,27 @@ sudo echo 'options hid_apple fnmode=2' >> /etc/modprobe.d/hid_apple.conf
 # Run commands:
 sudo update-initramfs -u
 reboot
+
+
+
+
+
+#=============================================================================#
+#                                                                             #
+#                         db                                                  #
+#                        d88b                                                 #
+#                       d8'`8b                                                #
+#                      d8'  `8b       ,adPPYba,  ,adPPYba,                    #
+#                     d8YaaaaY8b     a8P_____88  I8[    ""                    #
+#                    d8""""""""8b    8PP"""""""   `"Y8ba,                     #
+#                   d8'        `8b   "8b,   ,aa  aa    ]8I                    #
+#                  d8'          `8b   `"Ybbd8"'  `"YbbdP"'                    #
+#                                                                             #
+#=============================================================================#
+
+
+# Gnome/GTK themes
+# ================
+# TODO
+
+https://github.com/vinceliuice/Orchis-theme
