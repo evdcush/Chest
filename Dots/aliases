@@ -78,7 +78,10 @@ alias hzf='history | fzf'
 alias lsd='sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL'
 alias duh='du -h --max-depth=1 | sort -h;'
 
+# wget
+# ====
 alias wg='wget'
+
 
 #---- misc
 #alias plz='sudo $(fc -ln -1)' # mmm inconsistent
@@ -338,9 +341,8 @@ alias npmls='npm list -g --depth 0'  # list all globally installed packages
 # Software
 # ========
 #---- youtube-dl
-alias dlmus='yt-dlp -f bestaudio'
+alias dlmus='yt-dlp -x --audio-quality 0 --embed-thumbnail -o "%(title)s.%(id)s.%(ext)s"'
 alias dlvid='yt-dlp -f bestvideo+bestaudio -o "%(title)s.%(id)s.%(ext)s" --restrict-filenames'
-alias yt-dl-vid='yt-dlp -f bestvideo+bestaudio -o "%(title)s.%(id)s.%(ext)s" --restrict-filenames'
 
 #---- vpn
 spvpn='sudo pvpn'
@@ -391,7 +393,8 @@ alias get_jop="wget -O - \
 https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_install_and_update.sh \
 | bash"
 
-#---- tldr
+#---- cheat & tldr
+alias cht='cheat'
 alias tl='tldr'
 
 #---- wttr.in
@@ -412,7 +415,12 @@ alias rgr="ranger"            # ranger file manager
 alias rs='redshift -O 2400'   # screen color temp adjust for night
 #alias ja='myougiden'   # ja now a func that can accept from clipboard
 alias myg='myougiden'         # shorter myougiden
+
+#---- bat
 alias bat='batcat'
+alias bt='batcat -pP'
+# ^: `bat --style=plain --paging never` (so no line nums and it spits output
+#    to stdout without pager like cat)
 
 
 #=============================================================================#
