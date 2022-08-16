@@ -226,7 +226,7 @@ sudo apt update && sudo apt install -y brave-browser
 # First, get rid of snap shit (should have done this earlier).
 sudo apt remove --purge snapd
 
-# Install the firefox ppa.
+# Add the firefox ppa.
 sudo add-apt-repository ppa:mozillateam/ppa
 
 # Make sure the `firefox` package prioritizes the deb.
