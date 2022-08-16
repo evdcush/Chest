@@ -165,6 +165,17 @@ gnome-user-docs-ja
 #                                     Misc                                    #
 #=============================================================================#
 
+# Fonts
+# =====
+sudo apt install -y fonts-hack fonts-inter \
+fonts-cabin fonts-cantarell fonts-comfortaa fonts-ebgaramond \
+fonts-firacode fonts-font-awesome fonts-mathjax fonts-mathjax-extras fonts-mikachan \
+fonts-misaki fonts-moe-standard-kai fonts-mononoki fonts-motoya-l-cedar \
+fonts-motoya-l-maruberi fonts-mplus fonts-noto-cjk fonts-noto-color-emoji fonts-oxygen \
+fonts-roboto fonts-roboto-slab "fonts-sawarabi*" fonts-seto fonts-lato fonts-umeplus \
+fonts-ubuntu fonts-ubuntu-console fonts-vollkorn
+
+
 
 #=============================================================================#
 #                                                                             #
@@ -203,28 +214,26 @@ sudo apt install -y dict dictd dict-gcide dict-wn
 # to acquire the deb from a mirror.
 wget http://kr.archive.ubuntu.com/ubuntu/pool/main/d/dict-moby-thesaurus/dict-moby-thesaurus_1.0-6.4_all.deb && sudo dpkg -i dict-moby-thesaurus_1.0-6.4_all.deb
 
-# Externally Sourced
-# ==================
-# TODO(evan): would be nice to have a script to get latest vers of these apps!
+# Externally Sourced (GH)
+# =======================
+# TODO(evan): would be hella dope to have a script to get latest vers of these apps.
+#             There's no damn way there isn't a gist out there to cut the release
+#             ver (AND IDEALLY the linux pkg name for amd64--wildcard match and prioritize
+#             .deb > .AppImage > .tar > etc....).
+
+#=== FreeTube
+# CHECK: https://github.com/FreeTubeApp/FreeTube/releases
+wget https://github.com/FreeTubeApp/FreeTube/releases/download/v0.17.1-beta/freetube_0.17.1_amd64.deb
 
 #=== Marktext
-# See: https://github.com/marktext/marktext/releases
+# CHECK: https://github.com/marktext/marktext/releases
 wget https://github.com/marktext/marktext/releases/download/v0.17.1/marktext-amd64.deb
 
 #=== logseq
-# See: https://github.com/logseq/logseq/releases
+# CHECK: https://github.com/logseq/logseq/releases
 wget https://github.com/logseq/logseq/releases/download/0.8.0/Logseq-linux-x64-0.8.0.AppImage
 
 
-# Fonts
-# =====
-sudo apt install -y fonts-hack fonts-inter \ 
-fonts-cabin fonts-cantarell fonts-comfortaa fonts-ebgaramond \ 
-fonts-firacode fonts-font-awesome fonts-mathjax fonts-mathjax-extras fonts-mikachan \ 
-fonts-misaki fonts-moe-standard-kai fonts-mononoki fonts-motoya-l-cedar \ 
-fonts-motoya-l-maruberi fonts-mplus fonts-noto-cjk fonts-noto-color-emoji fonts-oxygen \ 
-fonts-roboto fonts-roboto-slab "fonts-sawarabi*" fonts-seto fonts-lato fonts-umeplus \ 
-fonts-ubuntu fonts-ubuntu-console fonts-vollkorn
 
 
 #-----------------------------------------------------------------------------#
@@ -279,6 +288,20 @@ Pin-Priority: 1001
 # Update and install.
 sudo apt update
 sudo apt install -y firefox-esr
+# NB: firefox-esr updates are slow as f sometimes (eg ~60kb/s), no idea why.
+
+
+# Ungoogled chromium
+# ==================
+# Ref: https://github.com/ungoogled-software/ungoogled-chromium-debian#getting-obs-packages
+# Add apt source.
+echo 'deb http://download.opensuse.org/repositories/home:/ungoogled_chromium/Debian_Bullseye/ /' | sudo tee /etc/apt/sources.list.d/home-ungoogled_chromium.list > /dev/null
+
+# Add key.
+curl -s 'https://download.opensuse.org/repositories/home:/ungoogled_chromium/Debian_Bullseye/Release.key' | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home-ungoogled_chromium.gpg > /dev/null
+
+# Install.
+sudo apt update && sudo apt install -y ungoogled-chromium
 
 
 # Brave
