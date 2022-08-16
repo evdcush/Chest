@@ -254,6 +254,37 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 # Install.
 sudo apt update && sudo apt install -y sublime-text
 
+# SETTINGS
+#{
+#    "always_show_minimap_viewport": true,
+#    "auto_find_in_selection": true,
+#    "bold_folder_labels": true,
+#    "caret_extra_width": 2,
+#    "caret_style": "smooth",
+#    "detect_indentation": false,
+#    "draw_minimap_border": true,
+#    "ensure_newline_at_eof_on_save": true,
+#    "font_face": "Hack",
+#    "font_size": 12,
+#    //"highlight_line": true,
+#    "hot_exit": false,
+#    "ignored_packages":
+#    [
+#        "Vintage"
+#    ],
+#    "index_files": false,
+#    "preview_on_click": false,
+#    "rulers":
+#    [
+#        79
+#    ],
+#    "tab_size": 4,
+#    "translate_tabs_to_spaces": true,
+#    "trim_trailing_white_space_on_save": true,
+#    "auto_complete": false,
+#    "color_scheme": "Packages/Colorsublime - Themes/Piodine.tmTheme",
+#}
+
 # VSCode
 # ======
 
