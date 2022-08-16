@@ -341,7 +341,27 @@ alias npmls='npm list -g --depth 0'  # list all globally installed packages
 # Software
 # ========
 #---- youtube-dl
-alias dlmus='yt-dlp -x --audio-quality 0 --embed-thumbnail -o "%(title)s.%(id)s.%(ext)s"'
+# TODO: figure out how to write stuff like the YT id and artist etc to the
+#       file metadata (instead of writing id to filename.
+#       SEE:
+# yt-dlp -h | grep meta
+#     --force-overwrites              Overwrite all video and metadata files. This
+#     --write-info-json               Write video metadata to a .info.json file
+#     --no-write-info-json            Do not write video metadata (default)
+#     --write-playlist-metafiles      Write playlist metadata in addition to the
+#                                     video metadata when using --write-info-json,
+#     --no-write-playlist-metafiles   Do not write playlist metadata when using
+#                                     extracting metadata even if the videos are
+#     --embed-metadata                Embed metadata to the video file. Also
+#                                     used (Alias: --add-metadata)
+#     --no-embed-metadata             Do not add metadata to file (default)
+#                                     (Alias: --no-add-metadata)
+#     --parse-metadata FROM:TO        Parse additional metadata like title/artist
+#     --replace-in-metadata FIELDS REGEX REPLACE
+#                                     Replace text in a metadata field using the
+#     --xattrs                        Write metadata to the video file's xattrs
+alias dlmus='yt-dlp -x --audio-quality 0 -o "%(title)s.%(id)s.%(ext)s"'
+alias dlmus_thumb='yt-dlp -x --audio-quality 0 --embed-thumbnail -o "%(title)s.%(id)s'
 alias dlvid='yt-dlp -f bestvideo+bestaudio -o "%(title)s.%(id)s.%(ext)s" --restrict-filenames'
 
 #---- vpn
