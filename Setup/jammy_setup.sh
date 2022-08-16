@@ -58,7 +58,7 @@ sudo apt install -y libcudnn8
 sudo apt install -y curl fuse git git-extras git-crypt ffmpeg imagemagick python3-pip ssh xclip vim zsh
 
 # Real shit.
-sudo apt install libboost-all-dev swig
+sudo apt install libboost-all-dev mpich swig
 sudo apt install gcc-12 g++-12
 # Can optionally setup alternatives:
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 100 --slave /usr/bin/g++ g++ /usr/bin/g++-12
@@ -91,6 +91,15 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/u
 # Oh-my-zsh
 # =========
 sudo apt install -y git zsh && sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# (It's worth starting a new sess after install)
+# Install zsh plugins:
+git clone --depth=1 https://github.com/jocelynmallon/zshmarks.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zshmarks
+git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# ==== #
+# 𝗗𝗢𝗧𝗦 #
+# ==== #
+ln -sf $HOME/Chest/Dots $HOME/.Dots
 
 # fzf
 # ===
@@ -108,7 +117,7 @@ libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-d
 # Install pyenv.
 curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 
-# Add the following path stuff to the shell config file.
+# Add the following path stuff to the shell config file (if not already there).
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="${PATH:+${PATH}:}$PYENV_ROOT/bin"
 eval "$(pyenv init -)"
@@ -171,21 +180,24 @@ gnome-user-docs-ja
 
 # General
 # =======
-sudo apt install -y aria2 copyq deluge delta duf flameshot gparted guake htop inkscape jq keepassxc nextcloud-desktop nomacs pandoc redshift screenfetch tree wkhtmltopdf
+sudo apt install -y copyq deluge flameshot gparted guake inkscape keepassxc nextcloud-desktop nomacs pandoc redshift wkhtmltopdf
 
 # (Patch guake if `Could not parse file "/usr/share/applications/guake.desktop": No such file or directory`)
 sudo ln -sf /usr/share/guake/autostart-guake.desktop /usr/share/applications/guake.desktop
 
-# Media.
+#== CLI.
+sudo apt install -y aria2 bat delta duf htop jq screenfetch tree
+
+#== Media.
 sudo apt install -y catimg mpv sox vlc
 
-# Archive.
+#== Archive.
 sudo apt install -y p7zip-full unar
 
-# PDF stuff.
+#== PDF stuff.
 sudo apt install -y texlive-xetex texlive-extra-utils
 
-# Dict.
+#== Dict.
 sudo apt install -y dict dictd dict-gcide dict-wn
 # `dict-moby-thesaurus` is only provided in bionic for some reason, so we have
 # to acquire the deb from a mirror.
@@ -226,6 +238,22 @@ curl -L https://git.io/n-install | N_PREFIX=~/.n bash -s -- -y
 # npm
 # ---
 npm i -g npm && npm i -g percolalte
+
+
+#=============================================================================#
+#                                  Dev Stuff                                  #
+#=============================================================================#
+
+# Cheat
+# =====
+# (CHECK LATEST VER BEFORE EXEC!)
+cd /tmp \
+  && wget https://github.com/cheat/cheat/releases/download/4.3.1/cheat-linux-amd64.gz \
+  && gunzip cheat-linux-amd64.gz \
+  && chmod +x cheat-linux-amd64 \
+  && sudo mv cheat-linux-amd64 /usr/local/bin/cheat \
+  && mkdir -p ~/.config/cheat && cheat --init > ~/.config/cheat/conf.yml \
+  && ln -sf ~/.Dots/cheat_conf.yml ~/.config/cheat/conf.yml
 
 
 
