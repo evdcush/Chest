@@ -223,16 +223,22 @@ wget http://kr.archive.ubuntu.com/ubuntu/pool/main/d/dict-moby-thesaurus/dict-mo
 
 #=== FreeTube
 # CHECK: https://github.com/FreeTubeApp/FreeTube/releases
-wget https://github.com/FreeTubeApp/FreeTube/releases/download/v0.17.1-beta/freetube_0.17.1_amd64.deb
+wget https://github.com/FreeTubeApp/FreeTube/releases/download/v0.17.1-beta/freetube_0.17.1_amd64.deb -O freetube.deb && sudo dpkg -i freetube.deb
+
+#=== Joplin
+# Execute the blessed master script.
+wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
 
 #=== Marktext
 # CHECK: https://github.com/marktext/marktext/releases
-wget https://github.com/marktext/marktext/releases/download/v0.17.1/marktext-amd64.deb
+wget https://github.com/marktext/marktext/releases/download/v0.17.1/marktext-amd64.deb && sudo dpkg -i marktext-amd64.deb
 
 #=== logseq
 # CHECK: https://github.com/logseq/logseq/releases
+mkdir -p ~/.Apps/AppImages
 wget https://github.com/logseq/logseq/releases/download/0.8.0/Logseq-linux-x64-0.8.0.AppImage
-
+# just let zsh autocomplete the bullshit for you
+mv Logseq*.AppImage ~/.Apps/AppImages
 
 
 
