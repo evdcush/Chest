@@ -261,21 +261,6 @@ cd /tmp \
 #                                   Browser                                   #
 #=============================================================================#
 
-# Brave
-# =====
-# Deps.
-sudo apt install -y apt-transport-https curl
-
-# Brave key.
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-
-# Deb apt source.
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-
-# Install.
-sudo apt update && sudo apt install -y brave-browser
-
-
 # Firefox
 # =======
 # First, get rid of snap shit (should have done this earlier).
@@ -294,6 +279,24 @@ Pin-Priority: 1001
 # Update and install.
 sudo apt update
 sudo apt install -y firefox-esr
+
+
+# Brave
+# =====
+# Deps.
+sudo apt install -y apt-transport-https curl
+
+# Brave key.
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+
+# Deb apt source.
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+
+# Install.
+sudo apt update && sudo apt install -y brave-browser
+
+
+
 
 
 #=============================================================================#
