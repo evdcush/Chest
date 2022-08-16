@@ -301,5 +301,6 @@ reboot
 # Gnome/GTK themes
 # ================
 # TODO
+# Browsing: https://www.gnome-look.org/s/Gnome/browse/
 
 https://github.com/vinceliuice/Orchis-theme
