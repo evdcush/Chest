@@ -71,6 +71,7 @@ sudo apt autoremove
 #                          \___|  \___/  |___/  /_/ \_\                       #
 #                                                                             #
 #-----------------------------------------------------------------------------#
+# First-things-first, CUDA. If CUDA is fine, everything else is manageable.
 # (USING VERSIONS AT THE TIME OF INSTALLATION)
 
 # Get the network installer deb.
@@ -83,10 +84,14 @@ sudo apt-key del 7fa2af80
 sudo dpkg -i cuda-keyring_1.0-1_all.deb
 
 # Install CUDA.
+#   Note: I'm not using pinned versions; I don't need to. If you do, just install that ver.
 sudo apt update && sudo apt install -y cuda
 
 # CUDA SDK packages (after reboot!).
 sudo apt install -y libcudnn8
+
+###############################################################################
+
 
 #=============================================================================#
 #                                     Deps                                    #
@@ -188,10 +193,15 @@ eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_ed25519
 xclip ~/.ssh/id_ed25519.pub
 
 
-# Japanese (WIP, STILL NOT WORKING AS EXPECTED)
+# Japanese
 # ========
-# Open "Region & Language" in Settings.
-# It should prompt to "properly" install some packages.
+# ⚠️ WIP, STILL NOT WORKING AS EXPECTED ⚠️
+#   - my install workflow for bionic & focal (mozc + pray) didn't work here
+#   - it's stuck on that pleb ibus "direct-input" shit 🆖
+#   - NB: LOOK INTO ``fcitx5`` ????
+#     - why the F does it need to be like this
+#     - literally never have switched input methods to JA so that I could type in "direct-input"
+#     - figure out what peeps doing for jammy on US-layout keyboards on qita
 
 
 
@@ -436,6 +446,35 @@ sudo echo 'options hid_apple fnmode=2' >> /etc/modprobe.d/hid_apple.conf
 sudo update-initramfs -u
 reboot
 
+#=============================================================================#
+#               Stuff That Still Kinda Sucks About Installation               #
+#=============================================================================#
+
+#=== GNOME
+# OVERALL:
+#   * NO F'N settings sync
+#   * absolutely requires gnome-tweaks, shell-extensions etc...
+#   * do people actually use the dock who aren't macos normies
+#   * panel layout, extensions, etc.. is LEAST CONFIGURABLE of ALL DEs I've used
+#   * nautilus: where do I start besides "absolutely unconfigurable"...
+# - """"""""""Language Support"""""""""" for Japanese (mozc) my god just kill me now
+#   - 6+ times now, installs on focal and bionic, and I still don't understand why sometimes it works as expected
+# - keyboard shortcuts
+#   - have to gconf/dconf whatever bs to get them lol wow f that
+
+#=== APPS
+# GITHUB:
+#   - wget'ing from versioned releases urls
+#     - you can probaly script something ez that can figure out the version crap,
+#       but you'd need to figure out how to get correct x86_64|amd64|bartleskeet.deb|AppImage|tar.gz
+#       so you either case-by-case for each main target, or you waste moments of life
+# App config:
+#   - a LOT of apps, I have to configure manually to my preferred settings thru a gui
+
+#=== MISC
+# NEXTCLOUD
+# - Do I really, truly have to add hosts via gui every damn time
+# - anything executable that's sync'd gets chmod'd I guess, git whine, ughh
 
 
 #=============================================================================#
