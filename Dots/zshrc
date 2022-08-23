@@ -161,6 +161,11 @@ source $DIR_DOTS/aliases
 source $DIR_DOTS/work_aliases
 source $DIR_DOTS/functions
 
+PRIVZ="$DIR_DOTS/priv"
+if [ -f "$PRIVZ" ]; then
+    source $PRIVZ
+fi
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
