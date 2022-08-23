@@ -388,6 +388,7 @@ alias p="showmarks"
 
 #---- tree
 alias treed='tree -d'   # only show dirs
+alias trees='tree --dirsfirst -AF'
 
 #---- Copy
 alias clip="xclip -selection clipboard"
