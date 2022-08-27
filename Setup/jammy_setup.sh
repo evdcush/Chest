@@ -1,4 +1,3 @@
-# 2022 github.com/evdcush
 #=============================================================================#
 #                                                                             #
 #       gg                                                                    #
@@ -252,6 +251,7 @@ sudo apt install -y texlive-xetex texlive-extra-utils
 
 #== Dict.
 sudo apt install -y dict dictd dict-gcide dict-wn
+sudo apt install -y dict-freedict-eng-jpn dict-freedict-eng-lat
 # `dict-moby-thesaurus` is only provided in bionic for some reason, so we have
 # to acquire the deb from a mirror.
 wget http://kr.archive.ubuntu.com/ubuntu/pool/main/d/dict-moby-thesaurus/dict-moby-thesaurus_1.0-6.4_all.deb && sudo dpkg -i dict-moby-thesaurus_1.0-6.4_all.deb
@@ -308,9 +308,7 @@ cd /tmp \
   && wget https://github.com/cheat/cheat/releases/download/4.3.1/cheat-linux-amd64.gz \
   && gunzip cheat-linux-amd64.gz \
   && chmod +x cheat-linux-amd64 \
-  && sudo mv cheat-linux-amd64 /usr/local/bin/cheat \
-  && mkdir -p ~/.config/cheat && cheat --init > ~/.config/cheat/conf.yml \
-  && ln -sf ~/.Dots/cheat_conf.yml ~/.config/cheat/conf.yml
+  && sudo mv cheat-linux-amd64 /usr/local/bin/cheat
 
 
 
