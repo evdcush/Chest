@@ -208,15 +208,15 @@ xclip ~/.ssh/id_ed25519.pub
 #                                     Misc                                    #
 #=============================================================================#
 
-# Fonts
-# =====
-sudo apt install -y fonts-hack fonts-inter \
-fonts-cabin fonts-cantarell fonts-comfortaa fonts-ebgaramond \
-fonts-firacode fonts-font-awesome fonts-mathjax fonts-mathjax-extras fonts-mikachan \
-fonts-misaki fonts-moe-standard-kai fonts-mononoki fonts-motoya-l-cedar \
-fonts-motoya-l-maruberi fonts-mplus fonts-noto-cjk fonts-noto-color-emoji fonts-oxygen \
-fonts-roboto fonts-roboto-slab "fonts-sawarabi*" fonts-seto fonts-lato fonts-umeplus \
-fonts-ubuntu fonts-ubuntu-console fonts-vollkorn
+#=============================================================================#
+#                                                                             #
+#                      ██████  ██    ██  ██████  ███████                      #
+#                      ██   ██ ██    ██ ██       ██                           #
+#                      ██████  ██    ██ ██   ███ ███████                      #
+#                      ██   ██ ██    ██ ██    ██      ██                      #
+#                      ██████   ██████   ██████  ███████                      #
+#                                                                             #
+#=============================================================================#
 
 
 
@@ -255,6 +255,15 @@ sudo apt install -y dict-freedict-eng-jpn dict-freedict-eng-lat
 # `dict-moby-thesaurus` is only provided in bionic for some reason, so we have
 # to acquire the deb from a mirror.
 wget http://kr.archive.ubuntu.com/ubuntu/pool/main/d/dict-moby-thesaurus/dict-moby-thesaurus_1.0-6.4_all.deb && sudo dpkg -i dict-moby-thesaurus_1.0-6.4_all.deb
+
+#== Fonts
+sudo apt install -y fonts-hack fonts-inter \
+fonts-cabin fonts-cantarell fonts-comfortaa fonts-ebgaramond \
+fonts-firacode fonts-font-awesome fonts-mathjax fonts-mathjax-extras fonts-mikachan \
+fonts-misaki fonts-moe-standard-kai fonts-mononoki fonts-motoya-l-cedar \
+fonts-motoya-l-maruberi fonts-mplus fonts-noto-cjk fonts-noto-color-emoji fonts-oxygen \
+fonts-roboto fonts-roboto-slab "fonts-sawarabi*" fonts-seto fonts-lato fonts-umeplus \
+fonts-ubuntu fonts-ubuntu-console fonts-vollkorn
 
 # Externally Sourced (GH)
 # =======================
@@ -315,6 +324,12 @@ cd /tmp \
 #=============================================================================#
 #                                   Browser                                   #
 #=============================================================================#
+
+
+#          ☠️☠️☠️ CHROMIUM-based BROWSERS FREEZING ON 22.04 ☠️☠️☠️           #
+
+#  CHROMIUM-based BROWSERS FREEZING ON 22.04
+#   See: https://askubuntu.com/a/1406495
 
 # Firefox
 # =======
