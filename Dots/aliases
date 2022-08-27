@@ -219,6 +219,7 @@ imgutils='rembg'  # because rembg has strict version dependencies (must be 3.9)
 # Misc/experimental
 # =================
 staticstuff='MonkeyType'
+gitty='starcli'
 
 # Media
 # -----
@@ -546,3 +547,11 @@ alias ccsa="cp $DIR_CHEST_TEMPLATES/Licenses/CC-BY-NC-SA-4.0.txt ./LICENSE"
 alias ccnd="cp $DIR_CHEST_TEMPLATES/Licenses/CC-BY-NC-ND-4.0.txt ./LICENSE"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+function lorem() {
+    LOREM='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius eleifend porttitor. Proin commodo, velit at molestie eleifend, odio lectus vehicula sem, vel suscipit quam urna quis dolor. Nulla quis lorem massa. Curabitur tincidunt lorem sed nisi aliquet, at molestie arcu viverra. Aliquam vitae metus nulla. Sed gravida egestas ex, id elementum justo congue a. Maecenas sed nulla in metus pulvinar ultrices. Ut mollis, lacus id convallis rutrum, quam mauris consectetur mauris, volutpat tincidunt lacus felis sit amet lectus. Vestibulum congue condimentum neque in efficitur. Phasellus suscipit orci a dolor aliquam, eget facilisis felis dictum. Sed sodales erat vel bibendum egestas. Proin scelerisque eget augue non rhoncus. Mauris dictum tortor ut mauris lobortis feugiat. Curabitur malesuada commodo mi sit amet vestibulum. Vivamus vel malesuada ligula.'
+    echo $LOREM | xclip -sel clip
+    echo $LOREM
+}
+
