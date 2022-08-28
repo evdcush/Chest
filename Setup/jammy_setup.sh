@@ -185,6 +185,11 @@ pyenv virtualenv 3.10.6 3106
 # ===========
 sudo apt install -y gnome-tweaks
 
+#=== Extensions
+# SYSTEM-MONITOR: https://extensions.gnome.org/extension/3010/system-monitor-next/
+#                 https://github.com/mgalgs/gnome-shell-system-monitor-applet
+
+
 # SSH key
 # =======
 sudo apt install -y ssh && ssh-keygen -t ed25519 -C 'evdcush@protonmail.com'
@@ -219,6 +224,14 @@ xclip ~/.ssh/id_ed25519.pub
 #=============================================================================#
 
 
+#  CHROMIUM-based BROWSERS FREEZING ON 22.04
+#   Ref:
+#     - https://askubuntu.com/a/1406495
+#   Description:
+#     After downloading something, that browser window freezes. Other browser
+#     windows are still functional, but the window in which the download
+#     completed is frozen and will stay frozen until killed.
+sudo apt install xdg-desktop-portal-gnome
 
 #=============================================================================#
 #                                                                             #
