@@ -47,6 +47,7 @@ eval "$(pyenv virtualenv-init -)"
 #eval "$(pyenv init -)"
 #eval "$(pyenv virtualenv-init -)"
 
+export PYTHONBREAKPOINT='ipdb.set_trace'
 
 ##---- CUDA, cuDNN
 source $HOME/.Dots/gpu_dot
