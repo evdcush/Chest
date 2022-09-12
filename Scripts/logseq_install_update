@@ -160,8 +160,10 @@ print "${COLOR_GREEN}OK${COLOR_RESET}"
 
 #-----------------------------------------------------
 print 'Installing icon...'
-mkdir -p ~/.local/share/icons/hicolor/1024x1024/apps
-mv "${TEMP_DIR}/logseq.png" ~/.local/share/icons/hicolor/1024x1024/apps/logseq.png
+# RESIZE first from default 1024 --> 512
+convert -resize 512x512 "${TEMP_DIR}/logseq.png" "${TEMP_DIR}/logseq.png"
+mkdir -p ~/.local/share/icons/hicolor/512x512/apps
+mv "${TEMP_DIR}/logseq.png" ~/.local/share/icons/hicolor/512x512/apps/logseq.png
 print "${COLOR_GREEN}OK${COLOR_RESET}"
 
 # Detect desktop environment
