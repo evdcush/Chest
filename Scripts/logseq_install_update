@@ -118,49 +118,50 @@ fi
 #-----------------------------------------------------
 # Download Joplin
 #-----------------------------------------------------
+URL='https://api.github.com/repos/logseq/logseq/releases/latest'
 
 # Get the latest version to download
-if [[ "$INCLUDE_PRE_RELEASE" == true ]]; then
-  RELEASE_VERSION=$(wget -qO - "https://api.github.com/repos/laurent22/joplin/releases" | grep -Po '"tag_name": ?"v\K.*?(?=")' | sort -rV | head -1)
-else
-  RELEASE_VERSION=$(wget -qO - "https://api.github.com/repos/laurent22/joplin/releases/latest" | grep -Po '"tag_name": ?"v\K.*?(?=")')
-fi
+## grepped line looks like: `  "tag_name": "0.8.5",`
+RELEASE_VERSION=$(wget -qO - $URL | grep tag_name | cut -d'"' -f4)
+
 
 # Check if it's in the latest version
-if [[ -e ~/.joplin/VERSION ]] && [[ $(< ~/.joplin/VERSION) == "${RELEASE_VERSION}" ]]; then
+if [[ -e ~/.logseq/VERSION ]] && [[ $(< ~/.logseq/VERSION) == "${RELEASE_VERSION}" ]]; then
     print "${COLOR_GREEN}You already have the latest version${COLOR_RESET} ${RELEASE_VERSION} ${COLOR_GREEN}installed.${COLOR_RESET}"
     ([[ "$FORCE" == true ]] && print "Forcing installation...") || exit 0
 else
-    [[ -e ~/.joplin/VERSION ]] && CURRENT_VERSION=$(< ~/.joplin/VERSION)
+    [[ -e ~/.logseq/VERSION ]] && CURRENT_VERSION=$(< ~/.logseq/VERSION)
     print "The latest version is ${RELEASE_VERSION}, but you have ${CURRENT_VERSION:-no version} installed."
 fi
 
 #-----------------------------------------------------
-print 'Downloading Joplin...'
+print 'Downloading Logseq...'
 TEMP_DIR=$(mktemp -d)
-wget -O "${TEMP_DIR}/Joplin.AppImage" "https://github.com/laurent22/joplin/releases/download/v${RELEASE_VERSION}/Joplin-${RELEASE_VERSION}.AppImage"
-wget -O "${TEMP_DIR}/joplin.png" https://joplinapp.org/images/Icon512.png
+# https://github.com/logseq/logseq/releases/download/0.8.5/Logseq-linux-x64-0.8.5.AppImage
+# https://github.com/logseq/logseq/raw/master/resources/icons/logseq_big_sur.png
+wget -O "${TEMP_DIR}/Logseq.AppImage" "https://github.com/logseq/logseq/releases/download/${RELEASE_VERSION}/Logseq-linux-x64-${RELEASE_VERSION}.AppImage"
+wget -O "${TEMP_DIR}/logseq.png" https://github.com/logseq/logseq/raw/master/resources/icons/logseq_big_sur.png
 
 #-----------------------------------------------------
-print 'Installing Joplin...'
-# Delete previous version (in future versions joplin.desktop shouldn't exist)
-rm -f ~/.joplin/*.AppImage ~/.local/share/applications/joplin.desktop ~/.joplin/VERSION
+print 'Installing Logseq...'
+# Delete previous version.
+rm -f ~/.logseq/*.AppImage ~/.local/share/applications/logseq.desktop ~/.logseq/VERSION
 
 # Creates the folder where the binary will be stored
-mkdir -p ~/.joplin/
+mkdir -p ~/.logseq/
 
 # Download the latest version
-mv "${TEMP_DIR}/Joplin.AppImage" ~/.joplin/Joplin.AppImage
+mv "${TEMP_DIR}/Logseq.AppImage" ~/.logseq/Logseq.AppImage
 
 # Gives execution privileges
-chmod +x ~/.joplin/Joplin.AppImage
+chmod +x ~/.logseq/Logseq.AppImage
 
 print "${COLOR_GREEN}OK${COLOR_RESET}"
 
 #-----------------------------------------------------
 print 'Installing icon...'
-mkdir -p ~/.local/share/icons/hicolor/512x512/apps
-mv "${TEMP_DIR}/joplin.png" ~/.local/share/icons/hicolor/512x512/apps/joplin.png
+mkdir -p ~/.local/share/icons/hicolor/1024x1024/apps
+mv "${TEMP_DIR}/logseq.png" ~/.local/share/icons/hicolor/1024x1024/apps/logseq.png
 print "${COLOR_GREEN}OK${COLOR_RESET}"
 
 # Detect desktop environment
@@ -203,25 +204,23 @@ fi
 if [[ $DESKTOP =~ .*gnome.*|.*kde.*|.*xfce.*|.*mate.*|.*lxqt.*|.*unity.*|.*x-cinnamon.*|.*deepin.*|.*pantheon.*|.*lxde.*|.*i3.*|.*sway.* ]] || [[ `command -v update-desktop-database` ]]
 then
     # Only delete the desktop file if it will be replaced
-    rm -f ~/.local/share/applications/appimagekit-joplin.desktop
+    rm -f ~/.local/share/applications/appimagekit-logseq.desktop
 
     # On some systems this directory doesn't exist by default
     mkdir -p ~/.local/share/applications
     
     # Tabs specifically, and not spaces, are needed for indentation with Bash heredocs
-    cat >> ~/.local/share/applications/appimagekit-joplin.desktop <<-EOF
+    cat >> ~/.local/share/applications/appimagekit-logseq.desktop <<-EOF
 	[Desktop Entry]
 	Encoding=UTF-8
-	Name=Joplin
-	Comment=Joplin for Desktop
-	Exec=${HOME}/.joplin/Joplin.AppImage ${SANDBOXPARAM} %u
-	Icon=joplin
-	StartupWMClass=Joplin
+	Name=Logseq
+	Comment=Logseq for Desktop
+	Exec=${HOME}/.logseq/Logseq.AppImage ${SANDBOXPARAM} %u
+	Icon=logseq
+	StartupWMClass=undefined
 	Type=Application
 	Categories=Office;
-	MimeType=x-scheme-handler/joplin;
-	X-GNOME-SingleWindow=true // should be removed eventually as it was upstream to be an XDG specification
-	SingleMainWindow=true
+	MimeType=x-scheme-handler/logseq;text/html;
 	EOF
     
     # Update application icons
@@ -236,16 +235,17 @@ fi
 #-----------------------------------------------------
 
 # Informs the user that it has been installed
-print "${COLOR_GREEN}Joplin version${COLOR_RESET} ${RELEASE_VERSION} ${COLOR_GREEN}installed.${COLOR_RESET}"
+print "${COLOR_GREEN}Logseq version${COLOR_RESET} ${RELEASE_VERSION} ${COLOR_GREEN}installed.${COLOR_RESET}"
 
 # Record version
-echo "$RELEASE_VERSION" > ~/.joplin/VERSION
+echo "$RELEASE_VERSION" > ~/.logseq/VERSION
 
 #-----------------------------------------------------
-if [[ "$SHOW_CHANGELOG" == true ]]; then
-    NOTES=$(wget -qO - https://api.github.com/repos/laurent22/joplin/releases/latest | grep -Po '"body": "\K.*(?=")')
-    print "${COLOR_BLUE}Changelog:${COLOR_RESET}\n${NOTES}"
-fi
+# WIP
+# if [[ "$SHOW_CHANGELOG" == true ]]; then
+#     NOTES=$(wget -qO - https://api.github.com/repos/laurent22/joplin/releases/latest | grep -Po '"body": "\K.*(?=")')
+#     print "${COLOR_BLUE}Changelog:${COLOR_RESET}\n${NOTES}"
+# fi
 
 #-----------------------------------------------------
 print "Cleaning up..."
