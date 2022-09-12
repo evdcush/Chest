@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# This script comes from Joplin:
+# https://github.com/laurent22/joplin/blob/dev/Joplin_install_and_update.sh
+# minimally modified here to instead install and update Logseq.
+
 set -e
 
 trap 'handleError' ERR
@@ -105,18 +109,18 @@ print "Checking architecture..."
 ## uname actually gives more information than needed, but it contains all architectures (hardware and software)
 ARCHITECTURE=$(uname -m -p -i || echo "NO CHECK")
 
-if [[ $ARCHITECTURE = "NO CHECK" ]] ; then
-  print "${COLOR_YELLOW}WARNING: Can't get system architecture, skipping check${COLOR_RESET}"
-elif [[ $ARCHITECTURE =~ .*aarch.*|.*arm.* ]] ; then
-  showHelp "Arm systems are not officially supported by Joplin, please search the forum (https://discourse.joplinapp.org/) for more information"
-  exit 1
-elif [[ $ARCHITECTURE =~ .*i386.*|.*i686.* ]] ; then
-  showHelp "32-bit systems are not supported by Joplin, please search the forum (https://discourse.joplinapp.org/) for more information"
-  exit 1
-fi
+#if [[ $ARCHITECTURE = "NO CHECK" ]] ; then
+#  print "${COLOR_YELLOW}WARNING: Can't get system architecture, skipping check${COLOR_RESET}"
+#elif [[ $ARCHITECTURE =~ .*aarch.*|.*arm.* ]] ; then
+#  showHelp "Arm systems are not officially supported by Joplin, please search the forum (https://discourse.joplinapp.org/) for more information"
+#  exit 1
+#elif [[ $ARCHITECTURE =~ .*i386.*|.*i686.* ]] ; then
+#  showHelp "32-bit systems are not supported by Joplin, please search the forum (https://discourse.joplinapp.org/) for more information"
+#  exit 1
+#fi
 
 #-----------------------------------------------------
-# Download Joplin
+# Download Logseq
 #-----------------------------------------------------
 URL='https://api.github.com/repos/logseq/logseq/releases/latest'
 
