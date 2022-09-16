@@ -44,7 +44,7 @@
 wget https://ftp.riken.jp/Linux/ubuntu-releases/jammy/ubuntu-22.04.1-desktop-amd64.iso
 
 # Burn it to a USB using Etcher.
-#   NB: don't be a dd hero here; it's either etcher or pain
+#   NB: don't be a dd hero here; it's either etcher or pain. Version doesn't matter.
 wget https://github.com/balena-io/etcher/releases/download/v1.7.9/balenaEtcher-1.7.9-x64.AppImage -O etcher && chmod +x etcher
 ./etcher
 
@@ -131,6 +131,7 @@ sudo apt install -y libfuse2
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 
 # Changed:
+## (no snap, home bin)
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/evan/.local/bin"
 
 # Oh-my-zsh
@@ -333,6 +334,33 @@ cd /tmp \
   && sudo mv cheat-linux-amd64 /usr/local/bin/cheat
 
 
+# Git
+# ===
+
+#=== git-standup
+# > "Recall what you did on the last working day ..or be nosy and find what someone else did."
+# via curl:
+curl -L https://raw.githubusercontent.com/kamranahmedse/git-standup/master/installer.sh | sudo sh
+
+# via npm (what I opt for):
+npm i -g git-standup
+
+#=== git-hours
+# > "Estimate time spent on a git repository."
+# CANNOT GET IT TO INSTALL; DEPS FUBAR!
+# https://github.com/kimmobrunfeldt/git-hours
+# Install dependency first:
+#npm i -g nodegit
+
+# Install package (troublesome--actually was unable to install, dgaf):
+#npm i -g git-hours
+
+#=== git-dev-time
+# > "Calculate an estimate of the time a user spend on a repository."
+# https://www.npmjs.com/package/git-dev-time
+# https://github.com/vantezzen/git-dev-time#readme
+npm i -g git-dev-time
+
 
 #=============================================================================#
 #                                   Browser                                   #
@@ -346,7 +374,7 @@ cd /tmp \
 
 # Firefox
 # =======
-# First, get rid of snap shit (should have done this earlier).
+# First, get rid of snap shit (should have done this earlier, right after fresh install).
 sudo apt remove --purge snapd
 
 # Add the firefox ppa.
