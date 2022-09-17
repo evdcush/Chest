@@ -305,6 +305,9 @@ alias pipupdate="pip list --outdated --format=freeze \
 | xargs -n1 pip install -U"
 
 
+# Jupyter notebook
+alias jn='jupyter notebook'
+
 
 #=============================================================================#
 #                                                                             #
