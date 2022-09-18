@@ -300,11 +300,14 @@ wget https://github.com/marktext/marktext/releases/download/v0.17.1/marktext-amd
 
 #=== logseq
 # CHECK: https://github.com/logseq/logseq/releases
-mkdir -p ~/.Apps/AppImages
-wget https://github.com/logseq/logseq/releases/download/0.8.0/Logseq-linux-x64-0.8.0.AppImage
-# just let zsh autocomplete the bullshit for you
-mv Logseq*.AppImage ~/.Apps/AppImages
+#mkdir -p ~/.Apps/AppImages
+#wget https://github.com/logseq/logseq/releases/download/0.8.0/Logseq-linux-x64-0.8.0.AppImage
+## just let zsh autocomplete the bullshit for you
+#mv Logseq*.AppImage ~/.Apps/AppImages
 
+# CORRECTION, I made an install script for logseq because they didn't provide one.
+#   Simply: ./joplin_intall_update
+# Done...
 
 #=============================================================================#
 #                       __  __              _   _                             #
