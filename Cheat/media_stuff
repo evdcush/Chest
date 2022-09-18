@@ -15,18 +15,22 @@
 #                                     mkv                                     #
 #=============================================================================#
 
-# Remove unwanted audio track:
+# Remove unwanted audio track
+
 ## First, get audio track info.
 mkvmerge -i my_video.mkv
 File 'my_video.mkv': container: Matroska
 Track ID 0: video (HEVC/H.265/MPEG-H)
 Track ID 1: audio (AC-3)
-Track ID 2: audio (AC-3)
+Track ID 2: audio (AC-3)  # <--- desired
 Track ID 3: subtitles (SubStationAlpha)
-Track ID 4: subtitles (SubStationAlpha)
+Track ID 4: subtitles (SubStationAlpha)  # <--- desired
 Attachment ID 1: type 'application/x-truetype-font', size 22124 bytes, file name 'Wunderlich-Medium.otf'
 Attachment ID 2: type 'application/x-truetype-font', size 59688 bytes, file name 'Calligraphic-810-BT.ttf'
 Attachment ID 3: type 'application/x-truetype-font', size 4759804 bytes, file name 'A-OTF-SHINMGOPRO-MEDIUM.OTF'
 Attachment ID 4: type 'application/x-truetype-font', size 2906108 bytes, file name 'DFPHSMincho-W9.ttf'
 Chapters: 6 entries
 Global tags: 2 entries
+
+## Remove extra audio and sub track.
+mkvmerge -o my_video_single_audio.mkv --audio-tracks 2 -s 4 my_video.mkv
