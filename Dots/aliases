@@ -41,6 +41,15 @@ alias mn='man --page='  # man, but spits to stdout instead of getting captured i
 alias md='mkdir -p'   # mkdir all non-existing dirs in path
 alias cdln='cd -P'    # cd to physical path rather than symlinked
 
+# Path stuff
+# ==========
+alias pathof='readlink -e'
+function pathcp() {
+    pth=`readlink -en $1`
+    echo $pth
+    echo $pth | xclip -sel clip
+}
+
 
 # Permissions
 # ===========
@@ -212,6 +221,9 @@ hpo_stack='optuna ray hyperopt scikit-optimize HEBO pymoo'
 # TODO: add mujoco
 gym_stuff="pybullet 'gym[atari, box2d, classic_control]' gym-super-mario-bros"
 
+# Stable diffusion
+diffusion_stuff='albumentations diffusers '
+
 # apps
 mediadl='yt-dlp youtube-dl spotdl'
 imgutils='rembg'  # because rembg has strict version dependencies (must be 3.9)
@@ -243,7 +255,7 @@ $piu $jax_stack; \
 $piu feedparser requests lxml urllib3 bs4 pygithub mpi4py; \
 $piu fart pyperclip unidecode python-slugify; \
 $piu twine pytest pypi-cli; \
-$piu sphinx docutils restview rstcheck esbonio grip; \
+$piu sphinx docutils restview rstcheck esbonio grip docrepr; \
 $piu termdown pdfCropMargins 'pix2tex[gui]'; \
 $piu snakeviz; \
 $piu tldr; \
