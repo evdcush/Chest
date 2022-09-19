@@ -29,7 +29,17 @@
 #c.InteractiveShellApp.exec_files = []
 
 ## lines of code to run at IPython startup.
-#c.InteractiveShellApp.exec_lines = []
+c.InteractiveShellApp.exec_lines = [
+    'import os',
+    'import math',
+    'import random',
+    'import string',
+    'from pprint import pprint',
+    'import numpy as np',
+    'import torch',
+    'from torch import nn',
+    'import torch.nn.functional as F',
+]
 
 ## A list of dotted module names of IPython extensions to load.
 #c.InteractiveShellApp.extensions = []
@@ -46,7 +56,7 @@
 
 ## Should variables loaded at startup (by startup files, exec_lines, etc.) be
 #  hidden from tools like %who?
-#c.InteractiveShellApp.hide_initial_ns = True
+#c.InteractiveShellApp.hide_initial_ns = False  # True
 
 ## Configure matplotlib for interactive use with the default matplotlib backend.
 #c.InteractiveShellApp.matplotlib = None
@@ -159,7 +169,7 @@
 #  it is not applied if there are no more arguments on the line, and '2' for
 #  'full' autocall, where all callable objects are automatically called (even if
 #  no arguments are present).
-#c.InteractiveShell.autocall = 0
+c.InteractiveShell.autocall = 1
 
 ## Autoindent IPython code entered interactively.
 #c.InteractiveShell.autoindent = True
@@ -266,7 +276,7 @@
 
 ## Enables rich html representation of docstrings. (This requires the docrepr
 #  module).
-#c.InteractiveShell.sphinxify_docstring = False
+c.InteractiveShell.sphinxify_docstring = True  # False
 
 ##
 #c.InteractiveShell.wildcards_case_sensitive = True
