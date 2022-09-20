@@ -255,7 +255,7 @@ sudo ln -sf /usr/share/guake/autostart-guake.desktop /usr/share/applications/gua
 sudo apt install -y aria2 bat delta duf htop jq screenfetch tree
 
 #== Media.
-sudo apt install -y catimg mpv sox vlc
+sudo apt install -y catimg mpv sox vlc mkvtoolnix
 
 #== Archive.
 sudo apt install -y p7zip-full unar
