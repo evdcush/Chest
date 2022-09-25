@@ -23,8 +23,10 @@ COLOR_BLUE=`tput setaf 4`
 COLOR_RESET=`tput sgr0`
 SILENT=false
 ALLOW_ROOT=false
-SHOW_CHANGELOG=false
-INCLUDE_PRE_RELEASE=false
+#SHOW_CHANGELOG=false
+SHOW_CHANGELOG=true
+#INCLUDE_PRE_RELEASE=false
+INCLUDE_PRE_RELEASE=true
 
 print() {
     if [[ "${SILENT}" == false ]] ; then
