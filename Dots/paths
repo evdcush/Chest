@@ -17,6 +17,10 @@ SCIKIT_LEARN_DATA="$HOME/.Data/scikit_learn_data"
 #---- HOME dirs
 DIR_DATA="$HOME/.Data" # datasets & model experiment outputs
 DIR_DOTS="$HOME/.Dots"
+#---- HOME-rooted dot dirs
+DIR_APPS="$HOME/.Apps"
+DIR_APPIMAGES="$DIR_APPS/AppImages"
+
 
 # Nextcloud
 # =========
