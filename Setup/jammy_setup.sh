@@ -279,6 +279,19 @@ fonts-motoya-l-maruberi fonts-mplus fonts-noto-cjk fonts-noto-color-emoji fonts-
 fonts-roboto fonts-roboto-slab "fonts-sawarabi*" fonts-seto fonts-lato fonts-umeplus \
 fonts-ubuntu fonts-ubuntu-console fonts-vollkorn
 
+#= EMOJI (unicode)
+# It can take awhile for unicode updates to hit whatever dist ver you're on.
+# For example, the "LATEST" package for Focal is `fonts-noto-color-emoji (0~20200916-1~ubuntu20.04.1)`
+# Which supports...... Unicode 13.....
+# Emoji on buntu are provided through the "Google Noto Color Emoji" fonts pack:
+#   `fonts-noto-color-emoji`
+# You can grab the deb package for the latest ubuntu release from:
+# https://launchpad.net/ubuntu/+source/fonts-noto-color-emoji
+# eg, from Kinetic (which is unicode 15):
+wget https://launchpad.net/ubuntu/+archive/primary/+files/fonts-noto-color-emoji_2.038-1_all.deb
+
+
+
 # Externally Sourced (GH)
 # =======================
 # TODO(evan): would be hella dope to have a script to get latest vers of these apps.
