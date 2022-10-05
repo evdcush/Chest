@@ -223,6 +223,7 @@ gym_stuff="pybullet 'gym[atari, box2d, classic_control]' gym-super-mario-bros"
 
 # Stable diffusion
 diffusion_stuff='albumentations diffusers '
+whisper='yt-whisper'  # pip install git+https://github.com/m1guelpf/yt-whisper.git
 
 # apps
 mediadl='yt-dlp youtube-dl spotdl'
