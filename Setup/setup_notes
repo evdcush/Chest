@@ -1596,7 +1596,7 @@ vi __init__.py
 #            "color_scheme_3": "Packages/Colorsublime - Themes/cache/Colorsublime-Themes-master/themes/Spring.tmTheme",
 #        }
 #    },
-#
+#    { "keys": ["ctrl+k", "ctrl+q"], "command": "toggle_setting", "args": {"setting": "word_wrap"} },
 #]
 
 
