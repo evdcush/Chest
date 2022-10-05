@@ -276,7 +276,8 @@ c.InteractiveShell.autocall = 1
 
 ## Enables rich html representation of docstrings. (This requires the docrepr
 #  module).
-c.InteractiveShell.sphinxify_docstring = True  # False
+# NB: I tried this out, but it broke ``thing?`` and ``help(thing)``.
+#c.InteractiveShell.sphinxify_docstring = True  # False
 
 ##
 #c.InteractiveShell.wildcards_case_sensitive = True
