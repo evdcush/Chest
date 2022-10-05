@@ -2,6 +2,7 @@ import os
 import sys
 import code
 import math
+import pickle
 import random
 import IPython
 from itertools import permutations, combinations, accumulate, reduce
@@ -315,6 +316,9 @@ def gen_passphrase(num_words=4, sep=' '):
 #-----------------------------------------------------------------------------#
 #                                    TOOLS                                    #
 #-----------------------------------------------------------------------------#
+
+with open("model_outputs", 'wb') as dfile:  # must be 'wb' !
+    pickle.dump(outputs, dfile)
 
 #==== ITERTOOLS
 #https://docs.python.org/3/library/itertools.html
