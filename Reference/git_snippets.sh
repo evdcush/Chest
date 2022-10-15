@@ -66,6 +66,9 @@ git checkout other_branch file1
 #==== How to list files ignored via --skip-worktree
 git ls-files -v . | grep ^S
 
+# List files modified by current branch.
+git whatchanged --name-only --pretty="" origin..HEAD
+
 
 # See what files are tracked in git history
 # (even deleted files)
