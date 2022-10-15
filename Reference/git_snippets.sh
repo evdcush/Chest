@@ -68,6 +68,8 @@ git ls-files -v . | grep ^S
 
 # List files modified by current branch.
 git whatchanged --name-only --pretty="" origin..HEAD
+# (with dups removed):
+git whatchanged --name-only --pretty="" origin..HEAD | sort -u
 
 
 # See what files are tracked in git history
