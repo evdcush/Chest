@@ -252,7 +252,7 @@ sudo apt install -y copyq deluge flameshot gparted guake inkscape keepassxc next
 sudo ln -sf /usr/share/guake/autostart-guake.desktop /usr/share/applications/guake.desktop
 
 #== CLI.
-sudo apt install -y aria2 bat delta duf htop jq screenfetch tree
+sudo apt install -y aria2 bat delta duf htop jq neofetch screenfetch tree
 
 #== Media.
 sudo apt install -y catimg mpv sox vlc mkvtoolnix webp
