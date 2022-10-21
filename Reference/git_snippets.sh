@@ -92,6 +92,20 @@ git log --pretty=format: --name-only --diff-filter=A | sort - | sed '/^$/d'
 #=============================================================================#
 
 
+# ====== #
+# SQUASH #
+# ====== #
+
+# You can pseudo "squash" all your commits by resetting the index to master,
+# and adding all the diffed files in a single commit.
+#   Source: "Git: How to squash all commits on branch"
+#           https://stackoverflow.com/a/25357146
+git checkout yourBranch
+git reset $(git merge-base master $(git branch --show-current))
+git add -A
+git commit -m "one commit on yourBranch"
+
+
 #=============================================================================#
 #                  _   _                                           _          #
 #           __ _  (_) | |_            ___   _ __   _   _   _ __   | |_        #
