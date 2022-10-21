@@ -475,6 +475,7 @@ alias bt='batcat -pP'
 alias gs="git status"
 alias gd="git diff --ignore-all-space"
 alias gls="git ls-files"
+alias glsb='git diff --diff-filter=MA --name-only master...'  # List files modified in branch from master.
 alias glog="git log --graph --decorate --oneline --all"
 
 # Navigation
@@ -497,6 +498,7 @@ alias gucm="git add -u && git commit -m"
 alias gcam="git commit -a -m"
 alias gcmd="git commit --amend --no-edit"
 alias gacmd="git add -u && git commit --amend --no-edit"
+alias precomnc="git diff --diff-filter=MA --name-only master... | xargs pre-commit run --files"
 
 # Remote
 # ======
