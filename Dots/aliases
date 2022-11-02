@@ -256,6 +256,7 @@ $piu opencv-python imageio scikit-image scikit-video open3d-python pandas; \
 $piu $experiment_tools; \
 $piu $hpo_stack; \
 $piu $more_hpo_stack; \
+$piu $hugging_stack; \
 $piu $jax_stack; \
 $piu feedparser requests lxml urllib3 bs4 pygithub mpi4py; \
 $piu fart pyperclip unidecode python-slugify; \
