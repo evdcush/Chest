@@ -214,7 +214,7 @@ vis='matplotlib bokeh seaborn plotly pyvista'
 cv='opencv-python imageio scikit-image scikit-video open3d-python pycocotools'
 
 experiment_tools='tensorboard tensorboardX hydra-core omegaconf wandb'
-jax_stack='jax jaxlib evojax flax'  # haiku?
+jax_stack='jax jaxlib evojax evosax flax'  # haiku?
 hpo_stack='optuna ray hyperopt scikit-optimize HEBO pymoo'
 
 # NB: ray[all] installs gpu stuff too! How do we otherwise get all the stuff?
