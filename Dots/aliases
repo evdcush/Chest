@@ -305,7 +305,7 @@ https://github.com/cupy/cupy/releases/tag/v7.8.0"
 
 # GPU Utils
 # =========
-alias pipigpu="$piu gpustat"
+alias pipigpu="$piu gpustat nvitop"
 
 # Extra setup
 # ===========
