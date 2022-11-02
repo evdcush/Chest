@@ -278,7 +278,7 @@ $piu $mediadl;"
 function pipitorch(){
     # Wheel targets.
     tag_cpu='cpu'
-    tag_cuda='cu116'  # current latest cuda build available for torch
+    tag_cuda='cu117'  # current latest cuda build available for torch
     TORCH_URL='https://download.pytorch.org/whl'
 
     # Check if cuda is available.
