@@ -431,9 +431,9 @@ alias cph='echo $(fc -l -1) \
 | xclip -selection clipboard'
 
 #---- joplin
-alias get_jop="wget -O - \
-https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_install_and_update.sh \
-| bash"
+# alias get_jop="wget -O - \
+# https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_install_and_update.sh \
+# | bash"
 
 #---- cheat & tldr
 alias cht='cheat'
