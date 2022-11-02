@@ -71,6 +71,7 @@ alias shx='chmod +x'
 alias l='ls -FX --group-directories-first'
 alias ll='ls -ghGFX --time-style=long-iso --group-directories-first'  # list g: without owner, h: human-read, G: w/o group, F: classify, X: sort alpha by ext.
 alias lsa='ls -lha --time-style=long-iso'
+alias lsd='ls -1 -d */'  # list only directories, single-column
 alias ldot='ls -dF --group-directories-first .*' # list dots only
 alias lk='ls -1SshX --file-type --group-directories-first' # list contents, sorted by size, grouped by ext
 alias lsz='ls -1shSr' # list files, 1-line each, show size in human-readable, sorted on size, reverse (biggest bottom)
@@ -86,7 +87,7 @@ lzf(){
 
 alias h='history'
 alias hzf='history | fzf'
-alias lsd='sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL'
+alias lsdisk='sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL'
 alias duh='du -h --max-depth=1 | sort -h;'
 
 # wget
