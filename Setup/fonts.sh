@@ -29,5 +29,6 @@ fonts-lato \
 fonts-umeplus \
 fonts-ubuntu \
 fonts-ubuntu-console \
-fonts-vollkorn\
+fonts-vollkorn \
+;
 
