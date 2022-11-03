@@ -9,6 +9,7 @@ fonts-ebgaramond \
 fonts-firacode \
 fonts-font-awesome \
 fonts-hack \
+fonts-ibm-plex \
 fonts-inter \
 fonts-lato \
 fonts-mathjax \
@@ -41,7 +42,10 @@ fonts-vollkorn \
 sudo apt install -y typecatcher
 
 # Fonts acquired through typecatcher:
+# Fira Sans
+# Lora
 # Mukta
 # Noto Sans JP
 # Nunito
+# Playfair Display
 # Rubik
