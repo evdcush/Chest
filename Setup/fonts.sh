@@ -2,6 +2,7 @@
 
 # Fonts by package name:
 sudo apt install -y \
+fonts-bebas-neue \
 fonts-cabin \
 fonts-cantarell \
 fonts-comfortaa \
