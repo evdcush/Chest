@@ -55,4 +55,5 @@ sudo apt install -y typecatcher
 # Playfair Display
 # Press Start 2P
 # Rubik
+# Rubik Mono One
 # Questrial
