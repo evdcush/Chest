@@ -2,14 +2,15 @@
 
 # Fonts by package name:
 sudo apt install -y \
-fonts-hack \
-fonts-inter \
 fonts-cabin \
 fonts-cantarell \
 fonts-comfortaa \
 fonts-ebgaramond \
 fonts-firacode \
 fonts-font-awesome \
+fonts-hack \
+fonts-inter \
+fonts-lato \
 fonts-mathjax \
 fonts-mathjax-extras \
 fonts-mikachan \
@@ -26,10 +27,9 @@ fonts-roboto \
 fonts-roboto-slab \
 "fonts-sawarabi*" \
 fonts-seto \
-fonts-lato \
-fonts-umeplus \
 fonts-ubuntu \
 fonts-ubuntu-console \
+fonts-umeplus \
 fonts-vollkorn \
 ;
 
@@ -41,4 +41,5 @@ fonts-vollkorn \
 sudo apt install -y typecatcher
 
 # Fonts acquired through typecatcher:
-# Noto Sans JP,
+# Noto Sans JP
+# Nunito
