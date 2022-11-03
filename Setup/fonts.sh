@@ -59,3 +59,7 @@ sudo apt install -y typecatcher
 # Rubik
 # Rubik Mono One
 # Questrial
+
+
+# Rebuild font database
+sudo fc-cache -f -v
