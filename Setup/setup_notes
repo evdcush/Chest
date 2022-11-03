@@ -1531,6 +1531,7 @@ vi __init__.py
 #    ],
 #    "index_files": false,
 #    "preview_on_click": false,
+#    "remember_workspace": false,
 #    "rulers":
 #    [
 #        79
