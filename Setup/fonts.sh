@@ -49,5 +49,6 @@ sudo apt install -y typecatcher
 # Mukta
 # Noto Sans JP
 # Nunito
+# Secular One
 # Playfair Display
 # Rubik
