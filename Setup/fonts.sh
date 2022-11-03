@@ -44,6 +44,7 @@ sudo apt install -y typecatcher
 
 # Fonts acquired through typecatcher:
 # Anton
+# Bungee
 # Fira Sans
 # Fredoka One
 # Lora
