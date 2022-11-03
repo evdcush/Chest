@@ -52,3 +52,4 @@ sudo apt install -y typecatcher
 # Secular One
 # Playfair Display
 # Rubik
+# Questrial
