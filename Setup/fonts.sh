@@ -45,6 +45,7 @@ sudo apt install -y typecatcher
 # Fonts acquired through typecatcher:
 # Anton
 # Fira Sans
+# Fredoka One
 # Lora
 # Mukta
 # Noto Sans JP
