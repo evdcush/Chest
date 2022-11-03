@@ -42,6 +42,7 @@ fonts-vollkorn \
 sudo apt install -y typecatcher
 
 # Fonts acquired through typecatcher:
+# Anton
 # Fira Sans
 # Lora
 # Mukta
