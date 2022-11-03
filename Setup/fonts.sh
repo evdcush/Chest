@@ -41,5 +41,6 @@ fonts-vollkorn \
 sudo apt install -y typecatcher
 
 # Fonts acquired through typecatcher:
+# Mukta
 # Noto Sans JP
 # Nunito
