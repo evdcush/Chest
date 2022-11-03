@@ -53,5 +53,6 @@ sudo apt install -y typecatcher
 # Secular One
 # Permanent Marker
 # Playfair Display
+# Press Start 2P
 # Rubik
 # Questrial
