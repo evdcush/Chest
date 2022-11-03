@@ -44,3 +44,4 @@ sudo apt install -y typecatcher
 # Mukta
 # Noto Sans JP
 # Nunito
+# Rubik
