@@ -252,7 +252,11 @@ sudo apt install -y copyq deluge flameshot gparted guake inkscape keepassxc next
 sudo ln -sf /usr/share/guake/autostart-guake.desktop /usr/share/applications/guake.desktop
 
 #== CLI.
-sudo apt install -y aria2 bat delta duf htop jq neofetch screenfetch tree
+sudo apt install -y aria2 bat delta duf jq neofetch screenfetch tree
+
+#=== Top.
+sudo apt install -y htop
+wget https://github.com/ClementTsang/bottom/releases/download/0.6.8/bottom_0.6.8_amd64.deb && sudo dpkg -i bottom_0.6.8_amd64.deb
 
 #== Media.
 sudo apt install -y catimg mpv sox vlc mkvtoolnix webp
@@ -271,6 +275,10 @@ sudo apt install -y dict-freedict-eng-jpn dict-freedict-eng-lat
 wget http://kr.archive.ubuntu.com/ubuntu/pool/main/d/dict-moby-thesaurus/dict-moby-thesaurus_1.0-6.4_all.deb && sudo dpkg -i dict-moby-thesaurus_1.0-6.4_all.deb
 
 #== Fonts
+
+# For downloading google fonts:
+sudo apt install -y typecatcher
+
 sudo apt install -y fonts-hack fonts-inter \
 fonts-cabin fonts-cantarell fonts-comfortaa fonts-ebgaramond \
 fonts-firacode fonts-font-awesome fonts-mathjax fonts-mathjax-extras fonts-mikachan \
@@ -289,6 +297,10 @@ fonts-ubuntu fonts-ubuntu-console fonts-vollkorn
 # https://launchpad.net/ubuntu/+source/fonts-noto-color-emoji
 # eg, from Kinetic (which is unicode 15):
 wget https://launchpad.net/ubuntu/+archive/primary/+files/fonts-noto-color-emoji_2.038-1_all.deb
+
+# Rebuild font database
+sudo fc-cache -f -v
+
 
 
 
@@ -355,11 +367,15 @@ npm i -g npm && npm i -g percolalte
 # Cheat
 # =====
 # (CHECK LATEST VER BEFORE EXEC!)
-cd /tmp \
+cd ~/.cache \
   && wget https://github.com/cheat/cheat/releases/download/4.3.1/cheat-linux-amd64.gz \
   && gunzip cheat-linux-amd64.gz \
   && chmod +x cheat-linux-amd64 \
-  && sudo mv cheat-linux-amd64 /usr/local/bin/cheat
+  && mv cheat-linux-amd64 $HOME/.local/bin/cheat
+
+# Make sure your ~/.Dots are already pathed.
+# your .zshrc exports CHEAT_CONFIG_PATH to your dots.
+# And your personal cheatsheets are in Chest/Cheatsheets
 
 
 # Git
