@@ -51,6 +51,7 @@ sudo apt install -y typecatcher
 # Noto Sans JP
 # Nunito
 # Secular One
+# Permanent Marker
 # Playfair Display
 # Rubik
 # Questrial
