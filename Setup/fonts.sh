@@ -53,6 +53,7 @@ sudo apt install -y typecatcher
 # Nunito
 # Secular One
 # Permanent Marker
+# Pirata One
 # Playfair Display
 # Press Start 2P
 # Rubik
