@@ -325,17 +325,25 @@ sudo apt install -y quodlibet
 # Apps
 # ====
 #sudo apt install -y guake # always check versions available from src and apt
-sudo apt install -y chromium-browser deluge aria2 sshfs openssh-client \
-jq sqlitebrowser \
+sudo apt install -y deluge aria2 \
+jq xdot sqlitebrowser \
 flameshot nomacs inkscape vlc mpv \
 pandoc poppler-utils wkhtmltopdf img2pdf \
-htop psensor xsensors xfce4-sensors-plugin \
-gparted partitionmanager tree tlp deborphan xdot iotop furiusisomount \
+htop tree \
+psensor xsensors \
+gparted \
 git-crypt git-extras git-repair \
 xclip copyq \
-kdeconnect \
-dict dictd dict-gcide dict-wn dict-moby-thesaurus \
-anki xfce4-timer-plugin redshift font-manager fslint;
+dict dictd dict-gcide dict-wn \
+anki redshift;
+
+#== Extra system stuffs.
+sudo apt install -y deborphan
+
+
+#== Extra io stuffs.
+gparted partitionmanager iotop
+
 
 # "View" images in the terminal.
 sudo apt install -y catimg
@@ -1808,6 +1816,21 @@ nativefier --hide-window-frame --maximize --disable-context-menu --name 'Google-
 # Opts: internal urls (JUST AS EXAMPLE)
 nativefier --file-download-options '{"saveAs": true}' --hide-window-frame --disable-context-menu --internal-urls ".*?" --name 'Arxiv Sanity Preserver' --icon /home/evan/.Apps/Icons/arxiv-sanity.png 'http://www.arxiv-sanity.com/top?timefilter=week&vfilter=all' /home/evan/.Apps/Nativefied/
 
+##--- Protonmail
+nativefier --hide-window-frame --maximize \
+--name 'ProtonMail' \
+--icon ~/.Apps/Icons/protonmail.png \
+'https://mail.proton.me/u/3/inbox' \
+~/.Apps/Nativefied/
+
+#[Desktop Entry]
+#Name=ProtonMail
+#Comment=Nativefied ProtonMail
+#Exec=protonmail
+#Terminal=false
+#Type=Application
+#Icon=$HOME/.Apps/Nativefied/ProtonMail-linux-x64/resources/app/icon.png
+#Categories=Network;
 
 
 
