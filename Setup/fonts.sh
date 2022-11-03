@@ -1,5 +1,12 @@
 
 
+# The package `typecatcher`:
+#   Download Google webfonts for off-line use
+#   TypeCatcher allows you to search, browse, and download Google webfonts
+#   for off-line use. You can preview fonts with adjustable size and text.
+sudo apt install -y typecatcher
+
+# Fonts by package name:
 sudo apt install -y \
 fonts-hack \
 fonts-inter \
