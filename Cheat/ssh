@@ -1,3 +1,39 @@
+
+# SSH
+# ===
+
+# Generating a key.
+ssh-keygen -t ed25519 -C "your_email@example.com"
+
+# Add the SSH key to the ssh-agent.
+## Start the ssh-agent in the background:
+eval "$(ssh-agent -s)"
+
+## Add it.
+ssh-add ~/.ssh/id_ed25519
+
+# Copy to clipboard.
+xclip -sel clip ~/.ssh/id_ed25519.pub
+# Or cat it if you don't have xclip installed yet:
+cat ~/.ssh/id_ed25519.pub
+
+#----
+
+# Sending a key to a machine: ssh-copy-id
+
+# Copy your keys to the remote machine:
+sh-copy-id username@remote_host
+
+# Copy the given public key to the remote:
+ssh-copy-id -i path/to/certificate username@remote_host
+
+# Copy the given public key to the remote with specific port:
+ssh-copy-id -i path/to/certificate -p port username@remote_host
+
+
+
+
+
 # SSHFS
 # =====
 # basic connection
