@@ -224,17 +224,22 @@ hugging_stack='datasets diffusers huggingface_hub'
 # TODO: add mujoco
 gym_stuff="pybullet 'gym[atari, box2d, classic_control]' gym-super-mario-bros"
 
-# Stable diffusion
+# Stable diffusion / Generative etc.....
 diffusion_stuff='albumentations diffusers '
 whisper='yt-whisper'  # pip install git+https://github.com/m1guelpf/yt-whisper.git
 
 # apps
 mediadl='yt-dlp youtube-dl spotdl'
-imgutils='rembg'  # because rembg has strict version dependencies (must be 3.9)
+imgutils='rembg lama-cleaner'  # because rembg has strict version dependencies (must be 3.9)
+# lama-cleaner: Image inpainting tool powered by SOTA AI Model. Remove any unwanted object, defect, people from your pictures or erase and replace(powered by stable diffusion) any thing on your pictures.
+
+# Build/Package/Publish
+# =====================
+packaging_stack='flit hatch'
 
 # Misc/experimental
 # =================
-staticstuff='MonkeyType'
+staticstuff='MonkeyType code2flow'  # meh: vulture
 gitty='starcli'
 
 # Media
@@ -259,7 +264,7 @@ $piu $more_hpo_stack; \
 $piu $hugging_stack; \
 $piu $jax_stack; \
 $piu feedparser requests lxml urllib3 bs4 pygithub mpi4py; \
-$piu fart pyperclip unidecode python-slugify; \
+$piu fart pyperclip unidecode python-slugify em-keyboard; \
 $piu twine pytest pypi-cli; \
 $piu sphinx docutils restview rstcheck esbonio grip docrepr; \
 $piu termdown pdfCropMargins 'pix2tex[gui]'; \
@@ -314,6 +319,10 @@ alias pipijupynb="$piu \
 jupyter_contrib_nbextensions jupyter_nbextensions_configurator; \
 jupyter contrib nbextension install --user; \
 jupyter nbextensions_configurator enable --user;"
+
+# emojipicker that looks cool, but I haven't been able to get to work??
+#alias pipirofimoji="sudo apt install -y rofi; $piu rofimoji"
+
 
 
 # UPDATE PIP PACKAGES
@@ -476,13 +485,25 @@ alias bt='batcat -pP'
 #                                                                             #
 #=============================================================================#
 
+# You are you aware...
+# You can set git aliases directly in git:
+# git config --global alias.<handle> <command>
+# git config --global alias.st status
+
+
 # Status
 # ======
 alias gs="git status"
 alias gd="git diff --ignore-all-space"
+alias gdls='git diff --diff-filter=MA --name-only master...'  # List files modified in branch from master.
+alias gdand='git diff --diff-filter=MA master...'  # only show diffs made in files on the branch against compared to master.
+alias gh='git cherry -v master'  # see commit history for just the current branch.
 alias gls="git ls-files"
-alias glsb='git diff --diff-filter=MA --name-only master...'  # List files modified in branch from master.
-alias glog="git log --graph --decorate --oneline --all"
+alias glog="git log --abbrev-commit"
+alias glog1="git log --graph --decorate --oneline --all"
+
+alias glogp='git log -p'  # Show changes over time for a specific file.
+
 
 # Navigation
 # ==========
@@ -491,6 +512,7 @@ alias gsw='git switch'
 alias gk="git checkout"
 alias gkb="git checkout -b"
 alias mstr="git checkout master"
+alias gitwhich='git branch --contains'  # Find out which branches contain commit-hash provided.
 
 # Add & Committing
 # ================
@@ -505,6 +527,8 @@ alias gcam="git commit -a -m"
 alias gcmd="git commit --amend --no-edit"
 alias gacmd="git add -u && git commit --amend --no-edit"
 alias precomnc="git diff --diff-filter=MA --name-only master... | xargs pre-commit run --files"
+
+alias gcamend='git commit -v --amend'  # Reword the previous commit message.
 
 # Remote
 # ======
