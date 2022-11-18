@@ -69,8 +69,7 @@ export NLTK_DATA='/home/evan/.Data/nltk_data'
 
 # Cheat conf
 # ==========
-#export CHEAT_PATH="$HOME/.cheat"
-export CHEAT_COLORS=true
+export CHEAT_CONFIG_PATH="$HOME/.Dots/cheat_conf.yml"
 
 
 #------------------------------------------------------------------------------
@@ -121,6 +120,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
     history
     colored-man-pages
+    #forgit
     zshmarks
     zsh-syntax-highlighting
     z
