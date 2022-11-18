@@ -322,6 +322,18 @@ function gcd(){
 }
 
 
+# git clone and checkout all branches
+function gitcloneall(){
+    REPO_URL=$1
+    git clone $REPO_URL
+    cdl "$(basename $1 .git)"
+    for branch in $(git branch --all | grep '^\s*remotes' | egrep --invert-match '(:?HEAD|master)$'); do
+        git branch --track "${branch##*/}" "$branch"
+    done
+    cd ..
+}
+
+
 # Scorched earth
 # ==============
 function git-nuke(){
