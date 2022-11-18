@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# NICE RESOURCES?
+https://github.com/wyntau/dotfiles
+
+
 # push a local branch
 #git push <remote-name> <local-branch-name>:<remote-branch-name>
 git checkout -b <branch>
@@ -414,3 +418,35 @@ then
     export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
 fi
 ' --tag-name-filter cat -- --branches --tags
+
+
+#=============================================================================#
+#                                                                             #
+#            ██████  ██ ████████       ████████ ██ ██████  ███████            #
+#           ██       ██    ██             ██    ██ ██   ██ ██                 #
+#           ██   ███ ██    ██    █████    ██    ██ ██████  ███████            #
+#           ██    ██ ██    ██             ██    ██ ██           ██            #
+#            ██████  ██    ██             ██    ██ ██      ███████            #
+#                                                                             #
+# https://github.com/git-tips/tips                                            #
+#=============================================================================#
+
+# Remove sensitive data from history, after a push
+git filter-branch --force --index-filter \
+'git rm --cached --ignore-unmatch <path-to-your-file>' \
+--prune-empty --tag-name-filter cat -- --all && \
+git push origin --force --all
+
+# Sync with remote, overwrite local changes.
+git fetch origin && git reset --hard origin/master && git clean -f -d
+
+# List of all files changed in a commit.
+git diff-tree --no-commit-id --name-only -r <commit-ish>
+
+# Delete remote branch.
+git push origin --delete <remote_branchname>
+
+# Create a local tag.
+git tag <tag-name>
+# Delete it:
+git tag -d <tag-name>
