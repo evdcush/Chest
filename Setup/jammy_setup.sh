@@ -63,6 +63,12 @@ wget https://github.com/balena-io/etcher/releases/download/v1.7.9/balenaEtcher-1
 sudo apt remove --purge firefox snapd
 sudo apt autoremove
 
+# Disable canonical marketing:
+sudo pro config set apt_news=false
+
+sudo vi /etc/default/motd-news
+#---> change `ENABLED=1` to `ENABLED=0`
+
 #-----------------------------------------------------------------------------#
 #                           ___   _   _   ___      _                          #
 #                          / __| | | | | |   \    /_\                         #
@@ -146,6 +152,30 @@ git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${Z
 # 𝗗𝗢𝗧𝗦 #
 # ==== #
 ln -sf $HOME/Chest/Dots $HOME/.Dots
+
+# Git
+# ===
+# You can symlink your Dots/gitconfig to ~/.gitconfig
+ln -sf $HOME/.Dots/gitconfig $HOME/.gitconfig
+# You should definitely symlink your global gitignore:
+ln -sf $HOME/.Dots/global_gitignore $HOME/.gitignore
+
+# Or specify options manually:
+git config --global user.name "Evan C."
+git config --global user.email "evdcush@protonmail.com"
+git config --global init.defaultBranch master
+git config --global core.excludesFile '~/.gitignore'
+git config --global core.pager ''
+git config --global help.autocorrect 8  # 0.8s to cancel an auto-corrected command.
+git config --global url.'git@github.com:'.insteadOf 'https://github.com/'  # use ssh instead of https for remotes
+
+# After npm i -g git-branch-select:
+git config --global alias.bs branch-select
+
+# Figure out which signing key you want:
+gpg --list-secret-keys --keyid-format=long
+# Set it:
+git config --local user.signingkey 0123456789ABCDEF
 
 # fzf
 # ===
@@ -248,8 +278,14 @@ sudo apt install xdg-desktop-portal-gnome
 # =======
 sudo apt install -y copyq deluge flameshot gparted guake inkscape keepassxc nextcloud-desktop nomacs pandoc redshift wkhtmltopdf
 
+# flameshot config:
+# %Y-%m-%d_%H%M%S_capture
+
 # (Patch guake if `Could not parse file "/usr/share/applications/guake.desktop": No such file or directory`)
 sudo ln -sf /usr/share/guake/autostart-guake.desktop /usr/share/applications/guake.desktop
+
+#=== Devtools
+sudo apt install -y meld git-quick-stats
 
 #== CLI.
 sudo apt install -y aria2 bat delta duf jq neofetch screenfetch tree
@@ -311,6 +347,11 @@ sudo fc-cache -f -v
 #             ver (AND IDEALLY the linux pkg name for amd64--wildcard match and prioritize
 #             .deb > .AppImage > .tar > etc....).
 
+#=== grv (git repo viewer)
+wget -O grv https://github.com/rgburke/grv/releases/download/v0.3.2/grv_v0.3.2_linux64
+chmod +x grv
+# (then symlink it to local bin)
+
 #=== FreeTube
 # CHECK: https://github.com/FreeTubeApp/FreeTube/releases
 wget https://github.com/FreeTubeApp/FreeTube/releases/download/v0.17.1-beta/freetube_0.17.1_amd64.deb -O freetube.deb && sudo dpkg -i freetube.deb
@@ -333,6 +374,38 @@ wget https://github.com/marktext/marktext/releases/download/v0.17.1/marktext-amd
 # CORRECTION, I made an install script for logseq because they didn't provide one.
 #   Simply: ./joplin_intall_update
 # Done...
+
+#=== AppFlowy
+# https://github.com/AppFlowy-IO/AppFlowy/releases
+
+
+# Misc
+# ====
+
+# Stellarium
+wget https://github.com/Stellarium/stellarium/releases/download/v1.1/Stellarium-1.1.1-x86_64.AppImage
+
+
+#=============================================================================#
+#                                   Flatpak                                   #
+#=============================================================================#
+
+# Install flatpak.
+sudo apt install -y flatpak
+
+# Software Flatpak plugin (OPTIONAL)
+# Allows you to install apps without the CLI
+# sudo apt install gnome-software-plugin-flatpak
+
+# Add the Flathub repo:
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+# Apps
+# ====
+
+# Emoji-picker
+flatpak install flathub it.mijorus.smile
+# create keyboard shortcut for: flatpak run it.mijorus.smile
 
 #=============================================================================#
 #                       __  __              _   _                             #
@@ -358,6 +431,10 @@ curl -L https://git.io/n-install | N_PREFIX=~/.n bash -s -- -y
 # npm
 # ---
 npm i -g npm && npm i -g percolalte
+
+npm i -g git-branch-select
+# then alias it:
+git config --global alias.bs branch-select
 
 
 #=============================================================================#
