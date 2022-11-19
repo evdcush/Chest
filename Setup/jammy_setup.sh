@@ -176,6 +176,7 @@ git config --global alias.bs branch-select
 gpg --list-secret-keys --keyid-format=long
 # Set it:
 git config --local user.signingkey 0123456789ABCDEF
+git config --global commit.gpgsign true
 
 # fzf
 # ===
@@ -574,6 +575,7 @@ sudo apt update && sudo apt install -y sublime-text
 #    "detect_indentation": false,
 #    "draw_minimap_border": true,
 #    "ensure_newline_at_eof_on_save": true,
+#    "fold_buttons": false,
 #    "font_face": "Hack",
 #    "font_size": 12,
 #    //"highlight_line": true,
@@ -583,7 +585,9 @@ sudo apt update && sudo apt install -y sublime-text
 #        "Vintage"
 #    ],
 #    "index_files": false,
+#    "margin": 2,
 #    "preview_on_click": false,
+#    "remember_workspace": false,
 #    "rulers":
 #    [
 #        79
