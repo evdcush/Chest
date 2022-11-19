@@ -214,7 +214,7 @@ pyenv virtualenv 3.10.6 3106
 
 # Gnome stuff
 # ===========
-sudo apt install -y gnome-tweaks
+sudo apt install -y gnome-tweaks nautilus-actions
 
 #=== Extensions
 # SYSTEM-MONITOR: https://extensions.gnome.org/extension/3010/system-monitor-next/
@@ -600,6 +600,77 @@ sudo apt update && sudo apt install -y sublime-text
 # whatever, just download it and sync, its deb does everything for you.
 
 
+#=======================================================================================#
+#      ad88888ba                                                                        #
+#     d8"     "8b                            ,d                                         #
+#     Y8,                                    88                                         #
+#     `Y8aaaaa,    8b       d8  ,adPPYba,  MM88MMM   ,adPPYba,  88,dPYba,,adPYba,       #
+#       `"""""8b,  `8b     d8'  I8[    ""    88     a8P_____88  88P'   "88"    "8a      #
+#             `8b   `8b   d8'    `"Y8ba,     88     8PP"""""""  88      88      88      #
+#     Y8a     a8P    `8b,d8'    aa    ]8I    88,    "8b,   ,aa  88      88      88      #
+#      "Y88888P"       Y88'     `"YbbdP"'    "Y888   `"Ybbd8"'  88      88      88      #
+#                      d8'                                                              #
+#                     d8'                                                               #
+#                                                                                       #
+#   ad88888ba                                 88                                        #
+#  d8"     "8b                ,d       ,d     ""                                        #
+#  Y8,                        88       88                                               #
+#  `Y8aaaaa,     ,adPPYba,  MM88MMM  MM88MMM  88  8b,dPPYba,    ,adPPYb,d8  ,adPPYba,   #
+#    `"""""8b,  a8P_____88    88       88     88  88P'   `"8a  a8"    `Y88  I8[    ""   #
+#          `8b  8PP"""""""    88       88     88  88       88  8b       88   `"Y8ba,    #
+#  Y8a     a8P  "8b,   ,aa    88,      88,    88  88       88  "8a,   ,d88  aa    ]8I   #
+#   "Y88888P"    `"Ybbd8"'    "Y888    "Y888  88  88       88   `"YbbdP"Y8  `"YbbdP"'   #
+#                                                               aa,    ,88              #
+#                                                                "Y8bbdP"               #
+#                                                                                       #
+#=======================================================================================#
+
+
+# Keyboard
+# ========
+#---- misc/app
+flameshot gui    # Print
+
+#---- Disable insert
+# Figure out what is mapped to insert key
+xmodmap -pke | grep -i insert
+
+# Map ins key to null in ~/.Xmodmap
+echo "keycode 90 =" >> ~/.Xmodmap
+
+
+# Thunar custom actions
+# =====================
+#---- Replace spaces, format name to all lower
+for file in %N; do mv "$file" "$(echo "$file" | tr -s ' ' | tr ' A-Z' '-a-z' | tr -s '-' | tr -c '[:alnum:][:cntrl:].' '-')"; done
+
+#---- Open directory in sublime
+/usr/bin/subl .
+
+#---- Copies full pathname for a file or folder  to clipboard
+echo -n %f | xclip -selection "clipboard"
+
+#---- Touch .txt
+/usr/bin/touch notes.txt
+
+#---- Open guake here
+guake -n '%d%f ' -r "%f " --show -e "cd '%f' && ls -1FSshX --file-type"
+
+
+
+# Keychron K2 keyboard FN keys fix
+# ================================
+sudo vi /etc/modprobe.d/hid_apple.conf
+# add the following:
+options hid_apple fnmode=2
+
+# save, close, update & reboot
+sudo update-initramfs -u && reboot
+
+
+
+
+
 
 #=============================================================================#
 #                                                                             #
@@ -612,14 +683,6 @@ sudo apt update && sudo apt install -y sublime-text
 #=============================================================================#
 
 
-# Keychron keyboard fn keys
-# =========================
-# Create/edit file to have this line.
-sudo echo 'options hid_apple fnmode=2' >> /etc/modprobe.d/hid_apple.conf
-
-# Run commands:
-sudo update-initramfs -u
-reboot
 
 #=============================================================================#
 #               Stuff That Still Kinda Sucks About Installation               #

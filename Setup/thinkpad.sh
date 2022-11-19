@@ -15,6 +15,45 @@
 tlp
 
 
+
+# Trackpoint sensitivity on thinkpads
+# ===================================
+
+## FOR OLDER VERSIONS UBUNTU
+# First, try out different values, 0-220, of settings
+echo 80 |  sudo tee /sys/devices/platform/i8042/serio1/serio2/sensitivity
+echo 100 | sudo tee /sys/devices/platform/i8042/serio1/serio2/speed
+
+# After finding value you like, make new udev rule for sys start
+sudo vi /etc/udev/rules.d/trackpoint.rules
+
+# add this line
+SUBSYSTEM=="serio", DRIVERS=="psmouse", DEVPATH=="/sys/devices/platform/i8042/serio1/serio2", ATTR{sensitivity}="80", ATTR{speed}="180"
+
+# Reboot, or run commands:
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+
+
+## WHAT ACTUALLY WORKS CURRENT
+
+# First, figure out which device id
+xinput | grep -i trackpoint
+⎜   ↳ TPPS/2 ALPS TrackPoint                    id=16   [slave  pointer  (2)]
+
+
+# See what properties associated
+xinput --list-props 12
+#    ...
+#    libinput Accel Speed (315): 0.000000
+#    libinput Accel Speed Default (316): 0.000000
+#    ...
+
+# Experiment with speed setting, eg:
+xinput --set-prop 12 'libinput Accel Speed' -0.7
+
+# Once you're satisfied, add a startup application with that command
+
 #=============================================================================#
 #                                                                             #
 #  ▀▀▀▀▀▀▀ ▀▀▀▀▀▀▀▀▀▘  ▀▀▀▀▀▀    ▀▀▀▀▀▀                                       #
