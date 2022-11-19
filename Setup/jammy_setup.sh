@@ -418,9 +418,6 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 # Allows you to install apps without the CLI
 # sudo apt install gnome-software-plugin-flatpak
 
-# Add the Flathub repo:
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
 # Apps
 # ====
 
