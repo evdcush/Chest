@@ -63,8 +63,14 @@ wget https://github.com/balena-io/etcher/releases/download/v1.7.9/balenaEtcher-1
 sudo apt remove --purge firefox snapd
 sudo apt autoremove
 
-# Disable canonical marketing:
+# 𝗗𝗜𝗦𝗔𝗕𝗟𝗘 𝗖𝗔𝗡𝗢𝗡𝗜𝗖𝗔𝗟 𝗠𝗔𝗥𝗞𝗘𝗧𝗜𝗡𝗚
+# https://askubuntu.com/questions/1434512/how-to-get-rid-of-ubuntu-pro-advertisement-when-updating-apt
+sudo rm /etc/update-motd.d/88-esm-announce
+sudo systemctl disable ubuntu-advantage
+
+# """OFFICIAL""" solution from canonical.
 sudo pro config set apt_news=false
+
 
 sudo vi /etc/default/motd-news
 #---> change `ENABLED=1` to `ENABLED=0`
@@ -399,8 +405,14 @@ wget https://github.com/Stellarium/stellarium/releases/download/v1.1/Stellarium-
 #                                   Flatpak                                   #
 #=============================================================================#
 
+# Consider adding PPA to get the latest flatpak:
+sudo add-apt-repository ppa:flatpak/stable
+
 # Install flatpak.
 sudo apt install -y flatpak
+
+# Add the Flathub repo:
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # Software Flatpak plugin (OPTIONAL)
 # Allows you to install apps without the CLI
@@ -628,7 +640,17 @@ sudo apt update && sudo apt install -y sublime-text
 #                                                                             #
 #=============================================================================#
 
+#=============================================================================#
+#                                   Editors                                   #
+#=============================================================================#
 
+# VIM
+# ===
+# Ehhhhhh.....................................................
+# Need to proper tinker with vimrc, but here are some other options:
+
+#---- Spacevim
+curl -sLf https://spacevim.org/install.sh | bash
 
 
 
