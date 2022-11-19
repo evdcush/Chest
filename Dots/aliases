@@ -499,7 +499,7 @@ alias gdls='git diff --diff-filter=MA --name-only master...'  # List files modif
 alias gdand='git diff --diff-filter=MA master...'  # only show diffs made in files on the branch against compared to master.
 alias gh='git cherry -v master'  # see commit history for just the current branch.
 alias gls="git ls-files"
-alias glog="git log --abbrev-commit"
+alias glog="git log --abbrev-commit --show-signature"
 alias glog1="git log --graph --decorate --oneline --all"
 
 alias glogp='git log -p'  # Show changes over time for a specific file.
@@ -521,6 +521,7 @@ alias gau="git add -u"
 alias gaa="git add -A"
 alias gr="git restore"
 alias gcm="git commit -m"
+alias gcms='git commit -S -m'
 alias gcnm="git commit -n -m"
 alias gucm="git add -u && git commit -m"
 alias gcam="git commit -a -m"

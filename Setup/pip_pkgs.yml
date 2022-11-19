@@ -305,7 +305,7 @@ sphinx:
 reading:
     bibtex:
         - pybtex
-        - bibtexparser
+        - bibtexparser  #***** PARSE BIBTEX
         - betterbib  # fetches info to try and correct/format your bib
         - pybtex-docutils
     papers:
