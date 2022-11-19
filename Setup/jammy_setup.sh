@@ -286,7 +286,15 @@ sudo apt install -y copyq deluge flameshot gparted guake inkscape keepassxc next
 sudo ln -sf /usr/share/guake/autostart-guake.desktop /usr/share/applications/guake.desktop
 
 #=== Devtools
-sudo apt install -y meld git-quick-stats
+# GIT
+# ---
+# Enhancements
+sudo apt install -y git-extras git-sizer git-quick-stats git-annex
+
+# GUI
+sudo apt install -y meld
+
+
 
 #== CLI.
 sudo apt install -y aria2 bat delta duf jq neofetch screenfetch tree
@@ -602,6 +610,26 @@ sudo apt update && sudo apt install -y sublime-text
 # VSCode
 # ======
 # whatever, just download it and sync, its deb does everything for you.
+
+#=============================================================================#
+#                                                                             #
+#                          ██████   ██████  ████████                          #
+#                          ██   ██ ██    ██    ██                             #
+#                          ██   ██ ██    ██    ██                             #
+#                          ██   ██ ██    ██    ██                             #
+#                          ██████   ██████     ██                             #
+#                                                                             #
+#                                                                             #
+#                           ██████ ███████  ██████                            #
+#                          ██      ██      ██                                 #
+#                          ██      █████   ██   ███                           #
+#                          ██      ██      ██    ██                           #
+#                           ██████ ██       ██████                            #
+#                                                                             #
+#=============================================================================#
+
+
+
 
 
 #=======================================================================================#
