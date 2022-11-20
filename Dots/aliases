@@ -248,11 +248,11 @@ gitty='starcli'
 # find more cool stuff:
 #   https://github.com/ray-project/ray/blob/master/doc/requirements-doc.txt
 #   https://github.com/ray-project/ray/blob/master/doc/source/conf.py
-sphinx_stack='sphinx docutils restview rstcheck esbonio'
+sphinx_stack='sphinx docutils restview rstcheck' #esbonio'
 # Theming docs: https://www.sphinx-doc.org/en/master/usage/theming.html
 sphinx_themes='sphinx-rtd-theme sphinx-book-theme furo sphinx-material \
 karma-sphinx-theme piccolo-theme sphinx-theme'
-writing_stack='jupyter-book'
+writing_stack='ablog ghp-import jupyter-book'
 
 alias pipinew="$piu pip setuptools wheel; \
 $piu cython numpy scipy sklearn matplotlib sympy ipython jupyter notebook; \
