@@ -55,7 +55,7 @@ nbc() { jupyter nbconvert --to pdf "$1" --template classicm } # pdf conversion
 tst() { touch "$1"; subl "$1" }
 
 # stupid complicated                              # strip damn ansi colors
-ipgeo() { inxi -i | awk '/WAN/ {print $5}' | sed "s,\x1B\[[0-9;]*m,,g" | xargs geoiplookup }
+#ipgeo() { inxi -i | awk '/WAN/ {print $5}' | sed "s,\x1B\[[0-9;]*m,,g" | xargs geoiplookup }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
