@@ -371,6 +371,7 @@ sudo apt install -y typecatcher
 # Rubik
 # Rubik Mono One
 # Questrial
+# VT323
 # Zen Maru Gothic
 
 sudo apt install -y \
