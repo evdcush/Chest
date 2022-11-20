@@ -355,6 +355,7 @@ sudo apt install -y typecatcher
 # Fonts acquired through typecatcher:
 ## (MOSTLY DISPLAY FONTS)
 # Anton
+# B612 Mono
 # Bungee
 # Fira Sans
 # Fredoka One
