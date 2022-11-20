@@ -426,7 +426,6 @@ alias trees='tree --dirsfirst -AF'
 alias clip="xclip -selection clipboard"
 #alias clipo="xclip -o -sel clip"
 alias delclip="xclip -o | xargs sudo rm -rf"
-alias cpget="xclip -o -sel clip | xargs wget"
 alias clipo='xclip -o'
 alias pst='xclip -o >'
 
