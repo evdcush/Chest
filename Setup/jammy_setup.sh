@@ -246,6 +246,30 @@ xclip ~/.ssh/id_ed25519.pub
 #     - figure out what peeps doing for jammy on US-layout keyboards on qita
 
 
+#=============================================================================#
+#                                    Gnome                                    #
+#=============================================================================#
+
+# SHELL EXTENSIONS
+# ================
+# Essential:
+sudo apt install -y gnome-shell-extensions \
+gnome-shell-extension-dash-to-panel \
+gnome-shell-extension-no-annoyance
+
+# Others:
+sudo apt install -y gnome-shell-extensions \
+gnome-shell-extension-arc-menu \
+gnome-shell-extension-weather \
+gnome-shell-extension-system-monitor \
+gnome-shell-pomodoro \
+gnome-shell-timer
+
+# Maybe?
+# gnome-shell-extension-gsconnect \
+# gnome-shell-extension-move-clock \
+
+
 
 #=============================================================================#
 #                                     Misc                                    #
@@ -301,7 +325,6 @@ sudo apt install -y git-extras git-sizer git-quick-stats git-annex
 sudo apt install -y meld
 
 
-
 #== CLI.
 sudo apt install -y aria2 bat delta duf jq neofetch screenfetch tree
 
@@ -312,8 +335,8 @@ wget https://github.com/ClementTsang/bottom/releases/download/0.6.8/bottom_0.6.8
 #== Media.
 sudo apt install -y catimg mpv sox vlc mkvtoolnix webp
 
-#== Archive.
-sudo apt install -y p7zip-full unar
+#== Archive/FS
+sudo apt install -y exfat-utils p7zip-full unar
 
 #== PDF stuff.
 sudo apt install -y texlive-xetex texlive-extra-utils
@@ -329,14 +352,60 @@ wget http://kr.archive.ubuntu.com/ubuntu/pool/main/d/dict-moby-thesaurus/dict-mo
 
 # For downloading google fonts:
 sudo apt install -y typecatcher
+# Fonts acquired through typecatcher:
+## (MOSTLY DISPLAY FONTS)
+# Anton
+# Bungee
+# Fira Sans
+# Fredoka One
+# Lora
+# Mukta
+# Noto Sans JP
+# Nunito
+# Secular One
+# Permanent Marker
+# Pirata One
+# Playfair Display
+# Press Start 2P
+# Rubik
+# Rubik Mono One
+# Questrial
 
-sudo apt install -y fonts-hack fonts-inter \
-fonts-cabin fonts-cantarell fonts-comfortaa fonts-ebgaramond \
-fonts-firacode fonts-font-awesome fonts-mathjax fonts-mathjax-extras fonts-mikachan \
-fonts-misaki fonts-moe-standard-kai fonts-mononoki fonts-motoya-l-cedar \
-fonts-motoya-l-maruberi fonts-mplus fonts-noto-cjk fonts-noto-color-emoji fonts-oxygen \
-fonts-roboto fonts-roboto-slab "fonts-sawarabi*" fonts-seto fonts-lato fonts-umeplus \
-fonts-ubuntu fonts-ubuntu-console fonts-vollkorn
+sudo apt install -y \
+"fonts-aoyagi*" \
+fonts-bebas-neue \
+fonts-cabin \
+fonts-cantarell \
+fonts-comfortaa \
+fonts-ebgaramond \
+fonts-firacode \
+fonts-font-awesome \
+fonts-hack \
+fonts-ibm-plex \
+fonts-inter \
+fonts-lato \
+fonts-mathjax \
+fonts-mathjax-extras \
+fonts-mikachan \
+fonts-misaki \
+fonts-moe-standard-kai \
+fonts-mononoki \
+fonts-motoya-l-cedar \
+fonts-motoya-l-maruberi \
+fonts-mplus \
+fonts-noto-cjk \
+fonts-noto-color-emoji \
+fonts-oxygen \
+fonts-roboto \
+fonts-roboto-slab \
+"fonts-sawarabi*" \
+fonts-seto \
+fonts-ubuntu \
+fonts-ubuntu-console \
+fonts-umeplus \
+fonts-vollkorn \
+;
+
 
 #= EMOJI (unicode)
 # It can take awhile for unicode updates to hit whatever dist ver you're on.
@@ -351,7 +420,6 @@ wget https://launchpad.net/ubuntu/+archive/primary/+files/fonts-noto-color-emoji
 
 # Rebuild font database
 sudo fc-cache -f -v
-
 
 
 
