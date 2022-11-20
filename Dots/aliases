@@ -490,6 +490,11 @@ alias bt='batcat -pP'
 # git config --global alias.<handle> <command>
 # git config --global alias.st status
 
+# Config
+# ======
+alias glocal='git config --local -l'
+alias gglobal='git config --global -l'
+
 
 # Status
 # ======
@@ -527,12 +532,13 @@ alias gucm="git add -u && git commit -m"
 alias gcam="git commit -a -m"
 alias gcmd="git commit --amend --no-edit"
 alias gacmd="git add -u && git commit --amend --no-edit"
-alias precomnc="git diff --diff-filter=MA --name-only master... | xargs pre-commit run --files"
+alias precomdiffs="git diff --diff-filter=MA --name-only master... | xargs pre-commit run --files"
 
 alias gcamend='git commit -v --amend'  # Reword the previous commit message.
 
 # Remote
 # ======
+alias gitremoteurl='git remote get-url --all origin'
 alias gcn="git clone --depth=1"
 alias gf="git fetch"
 alias gpull="git pull"
@@ -615,4 +621,3 @@ mi sit amet vestibulum. Vivamus vel malesuada ligula."
     echo $LOREM | xclip -sel clip
     echo $LOREM
 }
-
