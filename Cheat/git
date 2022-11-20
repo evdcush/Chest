@@ -9,5 +9,9 @@ git commit --amend --no-edit -S
 # Config all commits to be signed:
 git config --global commit.gpgsign true
 
+#-----------------------------------------------------------------------------#
+#                                    CONFIG                                   #
+#-----------------------------------------------------------------------------#
+
 # Unset some git config:
 git config --local --unset user.signingkey
