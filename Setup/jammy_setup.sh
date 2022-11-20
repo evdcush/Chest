@@ -360,6 +360,7 @@ sudo apt install -y typecatcher
 # Fredoka One
 # Lora
 # Mukta
+# Nanum Pen Script
 # Noto Sans JP
 # Nunito
 # Secular One
