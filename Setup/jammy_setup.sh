@@ -369,6 +369,7 @@ sudo apt install -y typecatcher
 # Pirata One
 # Playfair Display
 # Press Start 2P
+# Red Hat Mono
 # Rubik
 # Rubik Mono One
 # Questrial
