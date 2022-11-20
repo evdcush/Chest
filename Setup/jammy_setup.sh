@@ -370,6 +370,7 @@ sudo apt install -y typecatcher
 # Rubik
 # Rubik Mono One
 # Questrial
+# Zen Maru Gothic
 
 sudo apt install -y \
 "fonts-aoyagi*" \
