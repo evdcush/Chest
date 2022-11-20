@@ -616,6 +616,12 @@ sudo apt update && sudo apt install -y sublime-text
 #    "color_scheme": "Packages/Colorsublime - Themes/Piodine.tmTheme",
 #}
 
+# Syntax specific: markdown
+# -------------------------
+#{
+#    "color_scheme": "Packages/Colorsublime - Themes/Bijan.tmTheme",
+#}
+
 # VSCode
 # ======
 # whatever, just download it and sync, its deb does everything for you.
