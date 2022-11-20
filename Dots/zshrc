@@ -159,8 +159,11 @@ source $ZSH/oh-my-zsh.sh
 # Source aliases and funcs
 # ========================
 source $DIR_DOTS/aliases
-source $DIR_DOTS/work_aliases
 source $DIR_DOTS/functions
+
+if [ -f "$DIR_DOTS/work_aliases" ]; then
+    source $DIR_DOTS/work_aliases
+fi
 
 PRIVZ="$DIR_DOTS/priv"
 if [ -f "$PRIVZ" ]; then
