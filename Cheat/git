@@ -15,3 +15,11 @@ git config --global commit.gpgsign true
 
 # Unset some git config:
 git config --local --unset user.signingkey
+
+
+#-----------------------------------------------------------------------------#
+#                                    REMOTE                                   #
+#-----------------------------------------------------------------------------#
+
+# Get the remote url (repo name):
+git remote get-url --all origin
