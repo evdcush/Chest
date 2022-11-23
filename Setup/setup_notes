@@ -1543,6 +1543,13 @@ vi __init__.py
 #    "auto_complete": false,
 #}
 
+# Syntax specific: markdown
+# -------------------------
+#{
+#    "color_scheme": "Packages/Colorsublime - Themes/Bijan.tmTheme",
+#}
+
+
 # NOTE: "Default.sublime-theme" HAS BEEN MODIFIED
 #  via PackageResourceViewer:
 #  - font sizing for all labels has been increased
