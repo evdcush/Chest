@@ -347,6 +347,11 @@ alias jn='jupyter notebook'
 #=============================================================================#
 # All aliases that use installed packages
 
+# FART!
+# =====
+alias ftansi='fart -f ansi_regular'
+
+
 # DE
 # ==
 #---- nav
