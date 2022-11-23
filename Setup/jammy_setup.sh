@@ -307,7 +307,7 @@ sudo apt install xdg-desktop-portal-gnome
 
 # General
 # =======
-sudo apt install -y copyq deluge flameshot gparted guake inkscape keepassxc nextcloud-desktop nomacs pandoc redshift wkhtmltopdf
+sudo apt install -y copyq deluge flameshot gparted inkscape keepassxc nextcloud-desktop nomacs pandoc redshift wkhtmltopdf
 
 # flameshot config:
 # %Y-%m-%d_%H%M%S_capture
@@ -798,6 +798,17 @@ options hid_apple fnmode=2
 sudo update-initramfs -u && reboot
 
 
+# GNOME LOCK SCREEN LID
+# =====================
+# Nothing has worked so far with the T14.
+# I tried to edit the relevant values in /etc/systemd/logind.conf
+# DID NOT WORK!
+# Nor does `sudo systemctl lock`
+# There seems to be some mixed terminology here in the documentation and community and settings:
+## 'SUSPEND' means lock?
+##  what does hibernate mean??
+
+# WHAT WORKED??? Gnome tweaks: suspend when lid closed
 
 
 
