@@ -310,7 +310,11 @@ sudo apt install xdg-desktop-portal-gnome
 sudo apt install -y copyq deluge flameshot gparted inkscape keepassxc nextcloud-desktop nomacs pandoc redshift wkhtmltopdf
 
 #=== Terminal (GUAKE)
-# https://guake.readthedocs.io/en/latest/index.html
+# RESOURCES:
+#   https://wiki.archlinux.org/title/Guake
+#   https://guake.readthedocs.io/en/latest/index.html
+#   https://github.com/Guake/guake
+#
 # Don't install from official apt sources; they're always outdated.
 # Add the PPA first, then install.
 sudo add-apt-repository -y ppa:linuxuprising/guake
@@ -735,7 +739,7 @@ sudo apt update && sudo apt install -y sublime-text
 # Need to proper tinker with vimrc, but here are some other options:
 
 #---- Spacevim
-curl -sLf https://spacevim.org/install.sh | bash
+#curl -sLf https://spacevim.org/install.sh | bash
 
 
 
