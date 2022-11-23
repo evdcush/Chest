@@ -47,7 +47,7 @@ eval "$(pyenv virtualenv-init -)"
 #eval "$(pyenv init -)"
 #eval "$(pyenv virtualenv-init -)"
 
-export PYTHONBREAKPOINT='ipdb.set_trace'
+
 
 ##---- CUDA, cuDNN
 source $HOME/.Dots/gpu_dot
@@ -169,6 +169,22 @@ PRIVZ="$DIR_DOTS/priv"
 if [ -f "$PRIVZ" ]; then
     source $PRIVZ
 fi
+
+#=============================================================================#
+#                                    Python 🐍                                #
+#=============================================================================#
+
+
+#=== Python
+export PYTHONBREAKPOINT='ipdb.set_trace'
+
+#=== Pip, PyPi
+# Disable absurdly noisy pip update notice:
+export PIP_DISABLE_PIP_VERSION_CHECK=1
+# Can also disable from cli:
+# pip config set global.disable-pip-version-check true
+
+
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
