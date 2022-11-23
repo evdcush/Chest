@@ -309,8 +309,14 @@ sudo apt install xdg-desktop-portal-gnome
 # =======
 sudo apt install -y copyq deluge flameshot gparted inkscape keepassxc nextcloud-desktop nomacs pandoc redshift wkhtmltopdf
 
-# flameshot config:
-# %Y-%m-%d_%H%M%S_capture
+#=== Terminal (GUAKE)
+# https://guake.readthedocs.io/en/latest/index.html
+# Don't install from official apt sources; they're always outdated.
+# Add the PPA first, then install.
+sudo add-apt-repository -y ppa:linuxuprising/guake
+sudo apt update
+
+sudo apt install -y guake
 
 # (Patch guake if `Could not parse file "/usr/share/applications/guake.desktop": No such file or directory`)
 sudo ln -sf /usr/share/guake/autostart-guake.desktop /usr/share/applications/guake.desktop
@@ -507,6 +513,9 @@ flatpak install flathub it.mijorus.smile
 #                      |_|  |_|  \___|  \__,_| |_|  \__,_|                    #
 #                                                                             #
 #=============================================================================#
+
+# flameshot config:
+# %Y-%m-%d_%H%M%S_capture
 
 
 
