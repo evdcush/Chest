@@ -198,7 +198,6 @@ alias cyd="echo '# distutils: language = c++\n# cython: language_level=3' | xcli
 #-----------------------------------------------------------------------------#
 #---- pip stuff
 #alias pipi="pip install -U "
-alias ipyp='pypi info'
 
 # Install/upgrade pip pkgs and save pkg names
 function pipi(){
@@ -265,7 +264,7 @@ $piu $hugging_stack; \
 $piu $jax_stack; \
 $piu feedparser requests lxml urllib3 bs4 pygithub mpi4py; \
 $piu fart pyperclip unidecode python-slugify em-keyboard; \
-$piu twine pytest pypi-cli; \
+$piu twine pytest pip_search; \
 $piu sphinx docutils restview rstcheck esbonio grip docrepr; \
 $piu termdown pdfCropMargins 'pix2tex[gui]'; \
 $piu snakeviz; \
