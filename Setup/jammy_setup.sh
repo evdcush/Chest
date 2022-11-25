@@ -40,6 +40,19 @@
 #                                                                             #
 #=============================================================================#
 
+# BEFORE YOU ACCIDENTLY BUILD THIS SCRIPT BECAUSE SUBLIME TEXT, IN THEIR
+# INFINITE BRILLIANCE, DECIDED TO KEYBIND "build" to ctrl+b, AS IF IT WERE NOT
+# LITERALLY RIGHT NEXT TO THE THE MOST COMMONLY USED KEYBINDING EVER (ctrl+v).
+# DISABLE THAT BULLSHIT:
+#[
+#    { "keys": ["ctrl+k", "ctrl+q"], "command": "toggle_setting", "args": {"setting": "word_wrap"} },
+#    { "keys": ["f7"], "command": "noop" },
+#    { "keys": ["ctrl+b"], "command": "noop" },
+#    { "keys": ["ctrl+shift+b"], "command": "noop", "args": {"select": true} },
+#    { "keys": ["ctrl+break"], "command": "noop" },
+#]
+
+
 # Get the image.
 wget https://ftp.riken.jp/Linux/ubuntu-releases/jammy/ubuntu-22.04.1-desktop-amd64.iso
 
@@ -851,22 +864,44 @@ sudo update-initramfs -u && reboot
 #   - Clear it by entering "Custom value" empty keybinding: `[]`
 # You should now be able to properly bind those keys in keyboard shortcuts!
 
-# UNSETTING THROUGH CLI `dconf`:
+# SETTING KEYBINDINGS THROUGH CLI `dconf`:
+## ACTUALLY, IT'S NOT AS EASY TO USE AS `gsettings` (esp. unsetting), LET'S USE THAT INSTEAD!
+#dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-1 "['<Super>1']" && \
+#dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-2 "['<Super>2']" && \
+#dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-3 "['<Super>3']" && \
+#dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-4 "['<Super>4']" && \
+#dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-5 "['<Super>5']";
 
-dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-1 "['<Super>1']" && \
-dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-2 "['<Super>2']" && \
-dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-3 "['<Super>3']" && \
-dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-4 "['<Super>4']" && \
-dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-5 "['<Super>5']";
+#dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-1 "['<Primary><Alt>1']" && \
+#dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-2 "['<Primary><Alt>2']" && \
+#dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-3 "['<Primary><Alt>3']" && \
+#dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-4 "['<Primary><Alt>4']" && \
+#dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-5 "['<Primary><Alt>5']";
 
-dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-1 "['<Primary><Alt>1']" && \
-dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-2 "['<Primary><Alt>2']" && \
-dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-3 "['<Primary><Alt>3']" && \
-dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-4 "['<Primary><Alt>4']" && \
-dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-5 "['<Primary><Alt>5']";
+#=== UNSET CURRENT Super<NUM> keybindings:
+gsettings set org.gnome.shell.keybindings switch-to-application-1 "[]" && \
+gsettings set org.gnome.shell.keybindings switch-to-application-2 "[]" && \
+gsettings set org.gnome.shell.keybindings switch-to-application-3 "[]" && \
+gsettings set org.gnome.shell.keybindings switch-to-application-4 "[]" && \
+gsettings set org.gnome.shell.keybindings switch-to-application-5 "[]" && \
+gsettings set org.gnome.shell.keybindings switch-to-application-6 "[]" && \
+gsettings set org.gnome.shell.keybindings switch-to-application-7 "[]" && \
+gsettings set org.gnome.shell.keybindings switch-to-application-8 "[]" && \
+gsettings set org.gnome.shell.keybindings switch-to-application-9 "[]";
 
-
-
+#=== SET WORKSPACE KEYBINDINGS:
+# switch
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-1 "['<Super>1']" && \
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-2 "['<Super>2']" && \
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-3 "['<Super>3']" && \
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-4 "['<Super>4']" && \
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-5 "['<Super>5']";
+# move
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-1 "['<Primary><Alt>1']" && \
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-2 "['<Primary><Alt>2']" && \
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-3 "['<Primary><Alt>3']" && \
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-4 "['<Primary><Alt>4']" && \
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-5 "['<Primary><Alt>5']";
 
 
 # Bluetooth (or other settings in gnome gui):
