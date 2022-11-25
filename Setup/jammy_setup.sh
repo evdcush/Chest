@@ -436,6 +436,39 @@ wget https://launchpad.net/ubuntu/+archive/primary/+files/fonts-noto-color-emoji
 # Rebuild font database
 sudo fc-cache -f -v
 
+#-----------------------------------------------------------------------------#
+#                                Node & NPM: n                                #
+#-----------------------------------------------------------------------------#
+
+
+# n (node manager) npm
+# ====================
+curl -L https://git.io/n-install | N_PREFIX=~/.n bash -s -- -y
+
+# npm
+# ===
+# Update/install npm:
+npm i -g npm
+
+#=== npm packages
+# pprint web pages:
+npm i -g percollate
+
+# vscode dev stuff:
+npm i -g yo generator-code vsce
+
+# Handy git tool:
+npm i -g git-branch-select
+# then alias it:
+git config --global alias.bs branch-select
+
+# web-app --> 'desktop' app:
+npm i -g nativefier
+
+
+#-----------------------------------------------------------------------------#
+#                                Stuff from GH                                #
+#-----------------------------------------------------------------------------#
 
 
 # Externally Sourced (GH)
@@ -457,6 +490,9 @@ wget https://github.com/FreeTubeApp/FreeTube/releases/download/v0.17.1-beta/free
 #=== Joplin
 # Execute the blessed master script.
 wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
+
+# Install Joplin CLI:
+NPM_CONFIG_PREFIX=~/.joplin-bin npm i -g joplin; sudo ln -s ~/.joplin-bin/bin/joplin /usr/bin/joplin;
 
 #=== Marktext
 # CHECK: https://github.com/marktext/marktext/releases
@@ -520,25 +556,6 @@ flatpak install flathub it.mijorus.smile
 
 # flameshot config:
 # %Y-%m-%d_%H%M%S_capture
-
-
-
-
-#-----------------------------------------------------------------------------#
-#                    Sourced through other package managers                   #
-#-----------------------------------------------------------------------------#
-
-# n (node manager) npm
-# ====================
-curl -L https://git.io/n-install | N_PREFIX=~/.n bash -s -- -y
-
-# npm
-# ---
-npm i -g npm && npm i -g percolalte
-
-npm i -g git-branch-select
-# then alias it:
-git config --global alias.bs branch-select
 
 
 #=============================================================================#
@@ -809,6 +826,51 @@ options hid_apple fnmode=2
 
 # save, close, update & reboot
 sudo update-initramfs -u && reboot
+
+#=============================================================================#
+#                                                                             #
+#                ██████  ███    ██  ██████  ███    ███ ███████                #
+#               ██       ████   ██ ██    ██ ████  ████ ██                     #
+#               ██   ███ ██ ██  ██ ██    ██ ██ ████ ██ █████                  #
+#               ██    ██ ██  ██ ██ ██    ██ ██  ██  ██ ██                     #
+#                ██████  ██   ████  ██████  ██      ██ ███████                #
+#                                                                             #
+#=============================================================================#
+
+# Keyboard shortcuts
+# ==================
+
+#------  Remapping super# (eg super1, super2 ...)
+# FROM: https://unix.stackexchange.com/questions/510375/super1-super2-super3-etc-keys-can-not-be-remapped-in-gnome
+#
+# You need to first clear the existing super<NUM> mappings.
+# To do this, open dconf-editor:
+#   - Find the keybindings that are using super<NUM>
+#     - These are typically `org/gnome/shell/keybindings/switch-to-application-NUM`
+#   - Uncheck "Use default value"
+#   - Clear it by entering "Custom value" empty keybinding: `[]`
+# You should now be able to properly bind those keys in keyboard shortcuts!
+
+# UNSETTING THROUGH CLI `dconf`:
+
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-1 "['<Super>1']" && \
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-2 "['<Super>2']" && \
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-3 "['<Super>3']" && \
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-4 "['<Super>4']" && \
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-5 "['<Super>5']";
+
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-1 "['<Primary><Alt>1']" && \
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-2 "['<Primary><Alt>2']" && \
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-3 "['<Primary><Alt>3']" && \
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-4 "['<Primary><Alt>4']" && \
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-5 "['<Primary><Alt>5']";
+
+
+
+
+
+# Bluetooth (or other settings in gnome gui):
+gnome-control-center bluetooth
 
 
 # GNOME LOCK SCREEN LID
