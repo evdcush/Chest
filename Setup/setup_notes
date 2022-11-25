@@ -1,3 +1,4 @@
+exit;  # Safety-first!
 #=============================================================================#
 #                                                                             #
 #      ad88888ba   88888888888  888888888888  88        88  88888888ba        #
@@ -1613,6 +1614,11 @@ vi __init__.py
 #        }
 #    },
 #    { "keys": ["ctrl+k", "ctrl+q"], "command": "toggle_setting", "args": {"setting": "word_wrap"} },
+#    { "keys": ["ctrl+k", "ctrl+q"], "command": "toggle_setting", "args": {"setting": "word_wrap"} },
+#    { "keys": ["f7"], "command": "noop" },
+#    { "keys": ["ctrl+b"], "command": "noop" },
+#    { "keys": ["ctrl+shift+b"], "command": "noop", "args": {"select": true} },
+#    { "keys": ["ctrl+break"], "command": "noop" },
 #]
 
 
