@@ -348,9 +348,53 @@ sudo apt install -y git-extras git-sizer git-quick-stats git-annex
 # GUI
 sudo apt install -y meld
 
+#== Download stuff
+sudo apt install -y aria2
+# croc
+curl https://getcroc.schollz.com | bash
+
+
 
 #== CLI.
-sudo apt install -y aria2 bat delta duf jq neofetch screenfetch tree
+#sudo apt install -y aria2 bat delta duf jq neofetch screenfetch tree
+sudo apt install -y aria2 delta duf jq neofetch screenfetch tree
+
+## BAT MAY BE OLD through official apt, can download directly, eg:
+
+#-----------------------------------------------------------------------------#
+#                               GH Release Apps                               #
+#-----------------------------------------------------------------------------#
+
+#=== bat
+# https://github.com/sharkdp/bat
+## eg: 'bat_0.22.1_amd64.deb'
+curl https://api.github.com/repos/sharkdp/bat/releases/latest | \
+jq '.assets[] | select(.name | startswith("bat_") and endswith("_amd64.deb")) | .browser_download_url' | \
+xargs wget -O bat.deb && \
+sudo dpkg -i bat.deb \
+&& rm bat.deb;
+
+#=== flameshot
+# https://github.com/flameshot-org/flameshot
+## eg:
+##   - 'flameshot-12.1.0-1.ubuntu-20.04.amd64.deb'
+##   - 'flameshot-12.1.0-1.ubuntu-22.04.amd64.deb'
+curl https://api.github.com/repos/flameshot-org/flameshot/releases/latest | \
+jq '.assets[] | select(.name | startswith("flameshot-") and endswith(".ubuntu-20.04.amd64.deb")) | .browser_download_url' | \
+xargs wget -O flameshot.deb && \
+sudo dpkg -i flameshot.deb \
+&& rm flameshot.deb;
+
+#=== duf
+# https://github.com/muesli/duf
+## eg: 'duf_0.8.1_linux_amd64.deb'
+curl https://api.github.com/repos/muesli/duf/releases/latest | \
+jq '.assets[] | select(.name | startswith("duf_") and endswith("_linux_amd64.deb")) | .browser_download_url' | \
+xargs wget -O duf.deb && \
+sudo dpkg -i duf.deb \
+&& rm duf.deb;
+
+
 
 #=== Top.
 sudo apt install -y htop
@@ -579,15 +623,37 @@ flatpak install flathub it.mijorus.smile
 # Cheat
 # =====
 # (CHECK LATEST VER BEFORE EXEC!)
-cd ~/.cache \
-  && wget https://github.com/cheat/cheat/releases/download/4.3.1/cheat-linux-amd64.gz \
-  && gunzip cheat-linux-amd64.gz \
-  && chmod +x cheat-linux-amd64 \
-  && mv cheat-linux-amd64 $HOME/.local/bin/cheat
+#cd ~/.cache \
+#  && wget https://github.com/cheat/cheat/releases/download/4.4.0/cheat-linux-amd64.gz \
+#  && gunzip cheat-linux-amd64.gz \
+#  && chmod +x cheat-linux-amd64 \
+#  && mv cheat-linux-amd64 $HOME/.local/bin/cheat
 
-# Make sure your ~/.Dots are already pathed.
-# your .zshrc exports CHEAT_CONFIG_PATH to your dots.
-# And your personal cheatsheets are in Chest/Cheatsheets
+mkdir -p ~/.cache && cd ~/.cache \
+curl https://api.github.com/repos/cheat/cheat/releases/latest | \
+jq '.assets[] | select(.name=="cheat-linux-amd64.gz") | .browser_download_url' | \
+xargs wget && \
+gunzip cheat-linux-amd64.gz && \
+chmod +x cheat-linux-amd64 && \
+mkdir -p $HOME/.local/bin && \
+mv cheat-linux-amd64 $HOME/.local/bin/cheat
+
+# On first exec, cheat will install all the extra deps:
+# $ cheat
+# A config file was not found. Would you like to create one now? [Y/n]:
+# Would you like to download the community cheatsheets? [Y/n]:
+# Cloning community cheatsheets to /home/evan/.config/cheat/cheatsheets/community.
+# Enumerating objects: 329, done.
+# Counting objects: 100% (329/329), done.
+# Compressing objects: 100% (307/307), done.
+# Total 329 (delta 33), reused 271 (delta 20), pack-reused 0
+# Cloning personal cheatsheets to /home/evan/.config/cheat/cheatsheets/personal.
+# Created config file: /home/evan/.config/cheat/conf.yml
+# Please read this file for advanced configuration information.
+
+# AFTER INITIAL EXEC (and cheat installs all remaining deps), symlink your conf.
+#--- (before symlinking, just double check the default conf.yml paths and such)
+ln -sf $HOME/.Dots/cheat_conf.yml $HOME/.config/cheat/conf.yml
 
 
 # Git
