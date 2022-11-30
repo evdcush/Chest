@@ -417,9 +417,10 @@ sudo apt install -y dict-freedict-eng-jpn dict-freedict-eng-lat
 wget http://kr.archive.ubuntu.com/ubuntu/pool/main/d/dict-moby-thesaurus/dict-moby-thesaurus_1.0-6.4_all.deb && sudo dpkg -i dict-moby-thesaurus_1.0-6.4_all.deb
 
 
-#=============================================================================#
+#█████████████████████████████████████████████████████████████████████████████#
 #                                    FONTS                                    #
-#=============================================================================#
+#█████████████████████████████████████████████████████████████████████████████#
+
 
 # For downloading google fonts:
 sudo apt install -y typecatcher
