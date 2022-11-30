@@ -468,7 +468,9 @@ alias stowhome='stow --target=/home/evan'
 alias rgr="ranger"            # ranger file manager
 alias rs='redshift -O 2400'   # screen color temp adjust for night
 #alias ja='myougiden'   # ja now a func that can accept from clipboard
-alias myg='myougiden'         # shorter myougiden
+alias myg="echo \
+'\n#########################################################\n' && \
+myougiden"
 
 #---- bat
 alias bat='batcat'
@@ -505,10 +507,10 @@ alias gs="git status"
 alias gd="git diff --ignore-all-space"
 alias gdls='git diff --diff-filter=MA --name-only master...'  # List files modified in branch from master.
 alias gdand='git diff --diff-filter=MA master...'  # only show diffs made in files on the branch against compared to master.
-alias gh='git cherry -v master'  # see commit history for just the current branch.
 alias gls="git ls-files"
 alias glog="git log --abbrev-commit --show-signature"
 alias glog1="git log --graph --decorate --oneline --all"
+alias glogdiffs='git cherry -v master'  # see commit history for just the current branch.
 
 alias glogp='git log -p'  # Show changes over time for a specific file.
 
