@@ -454,6 +454,17 @@ alias tl='tldr'
 #---- wttr.in
 alias weath='curl wttr.in'
 
+#---- qalc
+usd2jpy() {
+    usd="$1"
+    qalc -t $usd USD to JPY
+}
+
+jpy2usd() {
+    jpy="$1"
+    qalc -t $jpy JPY to USD
+}
+
 #---- background noise
 alias waves='play -n synth brownnoise synth pinknoise mix synth sine amod 0.3 10'
 
