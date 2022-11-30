@@ -323,6 +323,10 @@ sudo apt install xdg-desktop-portal-gnome
 # =======
 sudo apt install -y copyq deluge flameshot gparted inkscape keepassxc nextcloud-desktop nomacs pandoc redshift wkhtmltopdf
 
+#=== Misc CLI tools
+# currency conversion
+sudo apt install -y qalc
+
 #=== Terminal (GUAKE)
 # RESOURCES:
 #   https://wiki.archlinux.org/title/Guake
