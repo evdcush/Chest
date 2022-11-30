@@ -416,7 +416,10 @@ sudo apt install -y dict-freedict-eng-jpn dict-freedict-eng-lat
 # to acquire the deb from a mirror.
 wget http://kr.archive.ubuntu.com/ubuntu/pool/main/d/dict-moby-thesaurus/dict-moby-thesaurus_1.0-6.4_all.deb && sudo dpkg -i dict-moby-thesaurus_1.0-6.4_all.deb
 
-#== Fonts
+
+#=============================================================================#
+#                                    FONTS                                    #
+#=============================================================================#
 
 # For downloading google fonts:
 sudo apt install -y typecatcher
@@ -493,6 +496,12 @@ wget https://launchpad.net/ubuntu/+archive/primary/+files/fonts-noto-color-emoji
 
 # Rebuild font database
 sudo fc-cache -f -v
+
+
+#=== FONT manager gui
+sudo add-apt-repository -y ppa:font-manager/staging
+sudo apt update
+sudo apt install -y font-manager
 
 #-----------------------------------------------------------------------------#
 #                                Node & NPM: n                                #
