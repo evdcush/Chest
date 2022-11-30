@@ -27,7 +27,7 @@ COLOR_BLUE=`tput setaf 4`
 COLOR_RESET=`tput sgr0`
 SILENT=false
 ALLOW_ROOT=false
-SHOW_CHANGELOG=false
+SHOW_CHANGELOG=true
 INCLUDE_PRE_RELEASE=false
 
 print() {
@@ -247,11 +247,11 @@ print "${COLOR_GREEN}Logseq version${COLOR_RESET} ${RELEASE_VERSION} ${COLOR_GRE
 echo "$RELEASE_VERSION" > ~/.logseq/VERSION
 
 #-----------------------------------------------------
-# WIP
-# if [[ "$SHOW_CHANGELOG" == true ]]; then
-#     NOTES=$(wget -qO - https://api.github.com/repos/laurent22/joplin/releases/latest | grep -Po '"body": "\K.*(?=")')
-#     print "${COLOR_BLUE}Changelog:${COLOR_RESET}\n${NOTES}"
-# fi
+# Print changelog.
+if [[ "$SHOW_CHANGELOG" == true ]]; then
+ NOTES=$(wget -qO - https://api.github.com/repos/logseq/logseq/releases/latest | grep -Po '"body": "\K.*(?=")')
+ print "${COLOR_BLUE}Changelog:${COLOR_RESET}\n${NOTES}"
+fi
 
 #-----------------------------------------------------
 print "Cleaning up..."
