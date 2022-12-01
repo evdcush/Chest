@@ -423,8 +423,15 @@ alias d="deletemark"
 alias p="showmarks"
 
 #---- tree
-alias treed='tree -d'   # only show dirs
-alias trees='tree --dirsfirst -AF'
+#  -d    List directories only.
+#  -h    Print the size in a more human readable way.
+#  -s    Print the size in bytes of each file.
+#  -L i  Descend only i directories deep.
+#  -A    Print ANSI lines graphic indentation lines.
+#  -F    Appends '/', '=', '*', '@', '|'  or '>' as per ls -F.
+alias ki='tree --dirs-first -AF'  # 'DEFAULT' tree command.
+alias treed='tree -dA'  # Only show dirs.
+alias treesz='tree --dirs-first -s -hAF'  # Show filesizes for everything.
 
 #---- Copy
 alias clip="xclip -selection clipboard"
