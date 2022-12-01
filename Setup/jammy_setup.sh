@@ -173,6 +173,11 @@ git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${Z
 # ==== #
 ln -sf $HOME/Chest/Dots $HOME/.Dots
 
+#█████████████████████████████████████████████████████████████████████████████#
+#                                     GIT                                     #
+#█████████████████████████████████████████████████████████████████████████████#
+
+
 # Git
 # ===
 # You can symlink your Dots/gitconfig to ~/.gitconfig
@@ -197,6 +202,8 @@ gpg --list-secret-keys --keyid-format=long
 # Set it:
 git config --local user.signingkey 0123456789ABCDEF
 git config --global commit.gpgsign true
+
+#=============================================================================#
 
 # fzf
 # ===
@@ -228,6 +235,70 @@ pyenv install 3.10.6
 
 # Make venv.
 pyenv virtualenv 3.10.6 3106
+
+
+#█████████████████████████████████████████████████████████████████████████████#
+#                                  BLUETOOTH                                  #
+#█████████████████████████████████████████████████████████████████████████████#
+
+# BLUEMAN
+# =======
+# How to get the latest version.
+
+# First, get whatever is the latest the deb package available for the
+# most current/newest version of Blueman is.
+# This will likely be the package distributed to the latest release of Ubuntu.
+# You can find the latest version HERE:
+https://packages.ubuntu.com/search?suite=all&arch=amd64&searchon=names&keywords=blueman
+
+# At the time of writing this note, the latest package is published in the
+# latest release of Ubuntu:
+#   Blueman: 2.3.2-1
+#   Kinetic(x11)
+
+# Now, go to the page for that package release:
+https://packages.ubuntu.com/kinetic/blueman
+
+# Find the download page below:
+https://packages.ubuntu.com/kinetic/amd64/blueman/download
+# 'Download Page for blueman_2.3.2-1_amd64.deb on AMD64 machines'
+
+# Download it from whatever mirror you want (I picked what is probably the closest to me):
+wget http://kr.archive.ubuntu.com/ubuntu/pool/universe/b/blueman/blueman_2.3.2-1_amd64.deb
+
+#███████  UNSATISFIED/CONFLICTING DEPENDENCY: it needs latest python!  ███████#
+
+# $ sudo dpkg -i blueman_2.3.2-1_amd64.deb
+# (Reading database ... 366200 files and directories currently installed.)
+# Preparing to unpack blueman_2.3.2-1_amd64.deb ...
+# Unpacking blueman (2.3.2-1) over (2.1.2-1ubuntu0.3) ...
+# dpkg: dependency problems prevent configuration of blueman:
+#  blueman depends on python3 (>= 3.10~); however:
+#   Version of python3 on system is 3.8.2-0ubuntu2.
+#
+# dpkg: error processing package blueman (--install):
+#  dependency problems - leaving unconfigured
+# Processing triggers for gnome-menus (3.36.0-1ubuntu1) ...
+# Processing triggers for desktop-file-utils (0.24-1ubuntu3) ...
+# Processing triggers for mime-support (3.64ubuntu1) ...
+# Processing triggers for dbus (1.12.16-2ubuntu2.3) ...
+# Processing triggers for libglib2.0-0:amd64 (2.64.6-1~ubuntu20.04.4) ...
+# Processing triggers for hicolor-icon-theme (0.17-2) ...
+# Processing triggers for man-db (2.9.1-1) ...
+# Errors were encountered while processing:
+#  blueman
+
+
+# Okay, let's install that version of Python then!
+# We'll of course need the deadsnakes ppa for this:
+sudo add-apt-repository -y ppa:deadsnakes/ppa
+sudo apt update
+
+
+
+#
+
+
 
 #=============================================================================#
 #                               Settings/Config                               #
