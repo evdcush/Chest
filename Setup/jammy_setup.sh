@@ -244,6 +244,9 @@ pyenv virtualenv 3.10.6 3106
 # BLUEMAN
 # =======
 # How to get the latest version.
+## 𝗗𝗢𝗘𝗦 𝗡𝗢𝗧 𝗪𝗢𝗥𝗞; 𝗔𝗕𝗦𝗢𝗟𝗨𝗧𝗘 (𝗨𝗡𝗡𝗘𝗖𝗘𝗦𝗦𝗔𝗥𝗬) 𝗗𝗘𝗣 𝗛𝗘𝗟𝗟
+# (ON F'N PYTHON >= 3.10, but have 3.8 installed 😐️)
+
 
 # First, get whatever is the latest the deb package available for the
 # most current/newest version of Blueman is.
@@ -293,10 +296,6 @@ wget http://kr.archive.ubuntu.com/ubuntu/pool/universe/b/blueman/blueman_2.3.2-1
 # We'll of course need the deadsnakes ppa for this:
 sudo add-apt-repository -y ppa:deadsnakes/ppa
 sudo apt update
-
-
-
-#
 
 
 
@@ -470,13 +469,12 @@ sudo dpkg -i duf.deb \
 && rm duf.deb;
 
 
+#=============================================================================#
+
 
 #=== Top.
 sudo apt install -y htop
 wget https://github.com/ClementTsang/bottom/releases/download/0.6.8/bottom_0.6.8_amd64.deb && sudo dpkg -i bottom_0.6.8_amd64.deb
-
-#== Media.
-sudo apt install -y catimg mpv sox vlc mkvtoolnix webp
 
 #== Archive/FS
 sudo apt install -y exfat-utils p7zip-full unar
@@ -669,6 +667,7 @@ wget https://github.com/Stellarium/stellarium/releases/download/v1.1/Stellarium-
 
 # Consider adding PPA to get the latest flatpak:
 sudo add-apt-repository ppa:flatpak/stable
+sudo apt update
 
 # Install flatpak.
 sudo apt install -y flatpak
@@ -678,6 +677,7 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 
 # Software Flatpak plugin (OPTIONAL)
 # Allows you to install apps without the CLI
+########### LOL DONT! Flatpak distributes it's software GUI as a snapd 🤣
 # sudo apt install gnome-software-plugin-flatpak
 
 # Apps
@@ -699,6 +699,18 @@ flatpak install flathub it.mijorus.smile
 
 # flameshot config:
 # %Y-%m-%d_%H%M%S_capture
+
+
+#=== Media
+sudo apt install -y catimg mpv sox vlc mkvtoolnix webp
+
+#=== OBS Studio
+# Ref: https://obsproject.com/download
+sudo add-apt-repository -y ppa:obsproject/obs-studio && \
+sudo apt update && \
+sudo apt install -y obs-studio;
+
+
 
 
 #=============================================================================#
