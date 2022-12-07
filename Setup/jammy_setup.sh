@@ -473,7 +473,7 @@ sudo dpkg -i duf.deb \
 
 
 #=== Top.
-sudo apt install -y htop
+sudo apt install -y htop stacer
 wget https://github.com/ClementTsang/bottom/releases/download/0.6.8/bottom_0.6.8_amd64.deb && sudo dpkg -i bottom_0.6.8_amd64.deb
 
 #== Archive/FS
@@ -691,7 +691,7 @@ flatpak install flathub it.mijorus.smile
 #                       __  __              _   _                             #
 #                      |  \/  |            | | (_)                            #
 #                      | \  / |   ___    __| |  _    __ _                     #
-#                      | |\/| |  / _ \  / _` | | |  / _` |                    #
+#                      | |\/| |  / _ \  / _ ` | | |  / _ ` |                    #
 #                      | |  | | |  __/ | (_| | | | | (_| |                    #
 #                      |_|  |_|  \___|  \__,_| |_|  \__,_|                    #
 #                                                                             #
