@@ -241,6 +241,19 @@ With ``ClientAliveCountMax``, the server will send alive messages to the client 
 
 ------
 
+Disabling IPv6
+==============
+
+To temporarily (until next boot) disable IPv6 system wide::
+
+    sudo sysctl net.ipv6.conf.all.disable_ipv6=1
+
+To **permanently** disable IPv6 system wide::
+
+    # Add to the bottom of /etc/sysctl.conf:
+    net.ipv6.conf.all.disable_ipv6=1
+
+
 
 Time & Date Stuff
 =================
