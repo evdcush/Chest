@@ -905,21 +905,13 @@ sudo apt update && sudo apt install -y sublime-text
 #==== KEYBINDINGS
 # in Preferences/Key Bindings:
 #[
-#    {
-#    "keys": ["alt+shift+c"], "command": "toggle_color_scheme",
-#    "args":
-#        {
-#            "color_scheme_1": "Packages/Colorsublime - Themes/cache/Colorsublime-Themes-master/themes/Piodine.tmTheme",
-#            "color_scheme_2": "Packages/Colorsublime - Themes/cache/Colorsublime-Themes-master/themes/Github-v2.tmTheme",
-#            "color_scheme_3": "Packages/Colorsublime - Themes/cache/Colorsublime-Themes-master/themes/Spring.tmTheme",
-#        }
-#    },
-#    { "keys": ["ctrl+k", "ctrl+q"], "command": "toggle_setting", "args": {"setting": "word_wrap"} },
+#    { "keys": ["alt+z"], "command": "toggle_setting", "args": {"setting": "word_wrap"} },
 #    { "keys": ["f7"], "command": "noop" },
 #    { "keys": ["ctrl+b"], "command": "noop" },
 #    { "keys": ["ctrl+shift+b"], "command": "noop", "args": {"select": true} },
 #    { "keys": ["ctrl+break"], "command": "noop" },
 #]
+
 
 # VSCode
 # ======
