@@ -625,6 +625,12 @@ gnome-control-center bluetooth
 #=== Export
 # default: BibTeX
 
+#=== Advanced: general
+## Miscellaneous: defaults
+
+## OpenURL:
+# choose: University of California, Berkeley
+
 #=== Advanced: Files and Folders
 ## Base directory:
 # choose: /home/evan/LitCloud/Literature
@@ -649,8 +655,14 @@ gnome-control-center bluetooth
 
 ## Additional
 # delimiter: ' and '
+# Truncate: yes
+# Max len of title: 80
 # max num auth: 2
-# add suffix: 'et al'
+# nm of authors to display when authors are omitted: 2
+# add suffix: ' et al'
+
+#=== Advanced Settings
+
 
 
 # Zotero plugins
