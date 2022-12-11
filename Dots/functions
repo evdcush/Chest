@@ -154,25 +154,6 @@ function reset_path(){
     echo "--------------------------------------------------"
 }
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-# Make new pyenv virtualenv
-function pvenv(){
-    if [ "$#" -gt 1 ]; then
-        #==== python version specified
-        PY_VER="$1"
-        VENV_NAME="$2"
-    else
-        #==== default latest python ver (3.7)
-        PY_VER='3.7.3'
-        VENV_NAME="$1"
-    fi
-    #==== Make virtualenv
-    pyenv virtualenv "$PY_VER" "$VENV_NAME"
-    pyenv local "$VENV_NAME"
-    #==== Update base packages
-    pip install -U pip setuptools wheel
-}
 
 
 #=============================================================================#
