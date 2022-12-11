@@ -205,7 +205,7 @@ from functools import partial, wraps
 from glob import glob
 import math
 import os
-import pprint
+from pprint import pformat, pprint
 import random
 import sys
 
