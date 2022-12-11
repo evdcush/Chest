@@ -72,6 +72,18 @@ function get(){
     wget $target;
 }
 
+function cget(){
+    if [ "$#" -eq 0 ]; then
+        # No arg given, get arg from clipboard
+        target=`xclip -o -sel clip`
+    else
+        # arg given
+        target=$1
+    fi
+    cd ~/.cache;
+    wget $target;
+}
+
 
 #==== leetcode-cli
 function leet(){
