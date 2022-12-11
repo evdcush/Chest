@@ -9,9 +9,6 @@ function RDME() {
     cp $SRC_DIR $DEST_DIR
 }
 
-# Download paper
-dub() { dochub $1 -i -d -n; }
-
 
 # PYGMENTS SYMLINK
 # ----------------
