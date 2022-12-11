@@ -85,20 +85,6 @@ function cget(){
 }
 
 
-#==== leetcode-cli
-function leet(){
-    # leet(int num, str lang=python3): generate leetcode problem num
-    # leet 307 --> 307.range-sum-query-mutable.py
-    # leet 307 cpp --> 307.range-sum-query-mutable.cpp
-    PROBLEM_NUM="$1"
-    LANG='python3'
-    if [ "$#" -gt 1 ]; then
-        LANG="$2"
-    fi
-    leetcode show $PROBLEM_NUM -gx -l $LANG
-}
-
-
 #==== myougiden, jp dictionary lookup
 # Lookup a word in myougiden dictionary
 #  will lookup given arg or from clipboard
