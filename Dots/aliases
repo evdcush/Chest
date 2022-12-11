@@ -193,6 +193,48 @@ alias pit="echo 'from IPython import embed; embed();' \
 alias cyd="echo '# distutils: language = c++\n# cython: language_level=3' | xclip"
 
 
+# TEMPLATE py file
+# ================
+# Could `date -u +%Y` for current year, as well.
+pyfile='# Copyright 2022 Evan Cushing. All rights reserved.
+"""
+"""
+
+from collections import defaultdict
+from functools import partial, wraps
+from glob import glob
+import math
+import os
+import pprint
+import random
+import sys
+
+from IPython import embed
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+import torch
+from torch import nn
+import torch.nn.functional as F
+
+
+
+#-----------------------------------------------------------------------------#
+#                                     MAIN                                    #
+#-----------------------------------------------------------------------------#
+
+def main():
+    pass
+
+
+if __name__ == "__main__":
+    main()
+
+'
+alias mkpy="echo '$pyfile' > foo.py"
+
+
 #-----------------------------------------------------------------------------#
 #                                pip packages                                 #
 #-----------------------------------------------------------------------------#
@@ -240,6 +282,7 @@ packaging_stack='flit hatch'
 # =================
 staticstuff='MonkeyType code2flow'  # meh: vulture
 gitty='starcli'
+pro='slack-export-viewer'
 
 # Media
 # -----
@@ -299,7 +342,7 @@ function pipitorch(){
     --extra-index-url "$TORCH_URL/$TAG"
 
     # Install other torch-related pkgs.
-    $piu torchinfo
+    pip install -U torchinfo
 }
 
 #== CuPy
@@ -431,7 +474,7 @@ alias p="showmarks"
 #  -F    Appends '/', '=', '*', '@', '|'  or '>' as per ls -F.
 alias ki='tree --dirs-first -AF'  # 'DEFAULT' tree command.
 alias treed='tree -dA'  # Only show dirs.
-alias treesz='tree --dirs-first -s -hAF'  # Show filesizes for everything.
+alias treesz='tree --dirsfirst -s -hAF'  # Show filesizes for everything.
 
 #---- Copy
 alias clip="xclip -selection clipboard"
