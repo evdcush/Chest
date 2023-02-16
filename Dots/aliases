@@ -31,6 +31,16 @@ alias trk="xinput --set-prop `xinput | grep -i trackpoint | cut -d'=' -f2 | cut 
 #=============================================================================#
 # All aliases that use coreutils and stuff is in this section
 
+# Process stuff
+# =============
+#  1 HUP      2 INT      3 QUIT     4 ILL      5 TRAP     6 ABRT     7 BUS
+#  8 FPE      9 KILL    10 USR1    11 SEGV    12 USR2    13 PIPE    14 ALRM
+# 15 TERM    16 STKFLT  17 CHLD    18 CONT    19 STOP    20 TSTP    21 TTIN
+# 22 TTOU    23 URG     24 XCPU    25 XFSZ    26 VTALRM  27 PROF    28 WINCH
+# 29 POLL    30 PWR     31 SYS
+alias kill9='kill -9'    # SIGKILL
+alias killnow='kill -9'  # because I may not remember kill9
+
 # Help, man, etc.
 # ===============
 alias mn='man --page='  # man, but spits to stdout instead of getting captured in a pager.
@@ -45,9 +55,13 @@ alias cdln='cd -P'    # cd to physical path rather than symlinked
 # ==========
 alias pathof='readlink -e'
 function pathcp() {
-    pth=`readlink -en $1`
-    echo $pth
-    echo $pth | xclip -sel clip
+    # Copy path to $1.
+    #   eg: pathcp setup.py
+    #       /home/evan-cushing/Cloud/Projects/fart/setup.py
+    pth=`readlink -en $1`;
+    # $pth actually has a return-character at the end, so we translate that out.
+    echo $pth | tr -d "[:cntrl:]" | xclip -sel clip;
+    #echo $pth | xclip -sel clip
 }
 
 
@@ -69,6 +83,7 @@ alias shx='chmod +x'
 
 #=== ALIASES
 alias l='ls -FHX --group-directories-first'
+alias l1='ls -1FHX --group-directories-first'
 alias ll='ls -ghGFX --time-style=long-iso --group-directories-first'  # list g: without owner, h: human-read, G: w/o group, F: classify, X: sort alpha by ext.
 alias lsa='ls -lha --time-style=long-iso'
 alias lsd='ls -1 -d */'  # list only directories, single-column
@@ -88,7 +103,8 @@ lzf(){
 alias h='history'
 alias hzf='history | fzf'
 alias lsdisk='sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL'
-alias duh='du -h --max-depth=1 | sort -h;'
+#alias duh='du -h --max-depth=1 | sort -h;'
+function duh() { du -h --max-depth=1 $1 | sort -h }
 
 # wget
 # ====
@@ -103,7 +119,7 @@ alias tpst='TZ="America/Los_Angeles" date'
 alias tedt='TZ="America/New_York" date'
 alias tcet='TZ="Europe/Berlin" date'
 
-alias pingu='ping google.com'
+alias pingu='ping github.com'
 
 
 #=============================================================================#
@@ -193,6 +209,9 @@ alias pit="echo 'from IPython import embed; embed();' \
 alias cyd="echo '# distutils: language = c++\n# cython: language_level=3' | xclip"
 
 
+# Completely legitimately download educational material.
+course_lecture_dl='coursera-dl khan-dl'
+
 # TEMPLATE py file
 # ================
 # Could `date -u +%Y` for current year, as well.
@@ -243,9 +262,20 @@ alias mkpy="echo '$pyfile' > foo.py"
 
 # Install/upgrade pip pkgs and save pkg names
 function pipi(){
+    # Exit if no packages were provided.
+    if ! (( $# )); then return; fi
+
+    # Log the target packages.
+    mkdir -p $DIR_DOTS
+    _PIP_LOG="$DIR_DOTS/pipi.log"
+    _TIMESTAMP=$(date +%Y-%m-%d_%H%M%S)
+
+    echo "$_TIMESTAMP: $@" >> $_PIP_LOG
+
+    # Install packages.
     pip install -U "$@"
-    #echo "$@" >> "$DIR_DOTS/pip_pkgs.txt"
 }
+
 piu="pip install -U"
 
 # Typical stack
@@ -269,8 +299,9 @@ gym_stuff="pybullet 'gym[atari, box2d, classic_control]' gym-super-mario-bros"
 diffusion_stuff='albumentations diffusers '
 whisper='yt-whisper'  # pip install git+https://github.com/m1guelpf/yt-whisper.git
 
+
 # apps
-mediadl='yt-dlp youtube-dl spotdl'
+mediadl='yt-dlp youtube-dl spotdl papis'
 imgutils='rembg lama-cleaner'  # because rembg has strict version dependencies (must be 3.9)
 # lama-cleaner: Image inpainting tool powered by SOTA AI Model. Remove any unwanted object, defect, people from your pictures or erase and replace(powered by stable diffusion) any thing on your pictures.
 
@@ -283,6 +314,9 @@ packaging_stack='flit hatch'
 staticstuff='MonkeyType code2flow'  # meh: vulture
 gitty='starcli'
 pro='slack-export-viewer'
+profiling='vprof'
+
+social='rainbowstream'  # twitter terminal client
 
 # Media
 # -----
@@ -297,7 +331,7 @@ karma-sphinx-theme piccolo-theme sphinx-theme'
 writing_stack='ablog ghp-import jupyter-book'
 
 alias pipinew="$piu pip setuptools wheel; \
-$piu cython numpy scipy sklearn matplotlib sympy ipython jupyter notebook; \
+$piu cython numpy scipy scikit-learn matplotlib sympy ipython jupyter notebook; \
 $piu $gym_stuff; \
 $piu opencv-python imageio scikit-image scikit-video open3d-python pandas; \
 $piu $experiment_tools; \
@@ -305,7 +339,7 @@ $piu $hpo_stack; \
 $piu $more_hpo_stack; \
 $piu $hugging_stack; \
 $piu $jax_stack; \
-$piu feedparser requests lxml urllib3 bs4 pygithub mpi4py; \
+$piu feedparser requests lxml urllib3 bs4 PyGithub mpi4py; \
 $piu fart pyperclip unidecode python-slugify em-keyboard; \
 $piu twine pytest pip_search; \
 $piu sphinx docutils restview rstcheck esbonio grip docrepr; \
@@ -315,7 +349,9 @@ $piu tldr; \
 $piu $sphinx_stack; \
 $piu $sphinx_themes; \
 $piu $writing_stack; \
-$piu $mediadl;"
+$piu $mediadl; \
+$piu shell-gpt; \
+"
 
 # NB: if you get an error with mpi4py --> `sudo apt install -y mpich`
 
@@ -390,6 +426,15 @@ alias jn='jupyter notebook'
 #=============================================================================#
 # All aliases that use installed packages
 
+#----- FlatPak
+alias fpi='flatpak install flathub'  # WARNING: assumes flathub-published app!
+alias fpiy='flatpak install -y flathub'
+alias fphome="sudo flatpak override --filesystem=$HOME"
+
+#----- PDF
+# NB: pdfjoin no longer part of pdfjam tool in texlive-extra-utils package anymore.
+alias pdfjoin='pdfjam --fitpaper true --rotateoversize true --suffix joined '
+
 # FART!
 # =====
 alias ftansi='fart -f ansi_regular'
@@ -441,6 +486,22 @@ alias dlmus='yt-dlp -x --audio-quality 0 -o "%(title)s.%(id)s.%(ext)s"'
 alias dlmus_thumb='yt-dlp -x --audio-quality 0 --embed-thumbnail -o "%(title)s.%(id)s'
 alias dlvid='yt-dlp -f bestvideo+bestaudio -o "%(title)s.%(id)s.%(ext)s" --restrict-filenames'
 
+#---- Inkscape
+# Convert svg icon --> png
+function svg2png() {
+    _src=$1  # eg: 'foobar_icon.svg'
+    _dst=$2  # eg: 'foobar_icon.png'
+    _IMG_HEIGHT=512
+    _IMG_WIDTH=512
+
+    # Run the conversion.
+    # -z, --without-gui  Do not print to X server (only process files from console)
+    # -h, --export-height=HEIGHT
+    # -w, --export-width=WIDTH
+    # -e, --export-png=FILENAME
+    inkscape -z -h $_IMG_HEIGHT -w $_IMG_WIDTH $_src -e $_dst
+}
+
 #---- vpn
 spvpn='sudo pvpn'
 alias vp="$spvpn"
@@ -472,7 +533,7 @@ alias p="showmarks"
 #  -L i  Descend only i directories deep.
 #  -A    Print ANSI lines graphic indentation lines.
 #  -F    Appends '/', '=', '*', '@', '|'  or '>' as per ls -F.
-alias ki='tree --dirs-first -AF'  # 'DEFAULT' tree command.
+alias tre='tree --dirsfirst -AF'  # 'DEFAULT' tree command. (tried alias `ki`, before but of course never remember)
 alias treed='tree -dA'  # Only show dirs.
 alias treesz='tree --dirsfirst -s -hAF'  # Show filesizes for everything.
 
@@ -498,7 +559,8 @@ alias cph='echo $(fc -l -1) \
 # | bash"
 
 #---- cheat & tldr
-alias cht='cheat'
+#alias cht='cheat'  # I want to use this alias for cheat.sh instead.
+alias cht='cht.sh'
 alias tl='tldr'
 
 #---- wttr.in
@@ -514,6 +576,17 @@ jpy2usd() {
     jpy="$1"
     qalc -t $jpy JPY to USD
 }
+
+#---- python-wrapped
+function pyp() {
+    cmd_str="print($@)"
+    python -c $cmd_str
+}
+
+# Temperature conversion
+C2F() { pyp "$1 * 1.8 + 32" }
+F2C() { pyp "($1 - 32) * 0.5556" }
+
 
 #---- background noise
 alias waves='play -n synth brownnoise synth pinknoise mix synth sine amod 0.3 10'
@@ -569,7 +642,10 @@ alias gd="git diff --ignore-all-space"
 alias gdma='git diff --diff-filter=MA master...'  # only show diffs made in files on the branch against compared to master.
 alias gdls='git diff --diff-filter=MA --name-only master...'  # List files modified in branch from master.
 alias gls="git ls-files"
+
+#--- LOG
 alias glog="git log --abbrev-commit --show-signature"
+alias glognp="git --no-pager log --abbrev-commit --show-signature"
 alias glog1="git log --graph --decorate --oneline --all"
 alias glogdiffs='git cherry -v master'  # see commit history for just the current branch.
 
