@@ -680,11 +680,54 @@ alias gcamend='git commit -v --amend'  # Reword the previous commit message.
 
 # Remote
 # ======
-alias gitremoteurl='git remote get-url --all origin'
+#alias gitremoteurl='git remote get-url --all origin'
 alias gcn="git clone --depth=1"
 alias gf="git fetch"
 alias gpull="git pull"
 alias gpush="git push"
+alias gpushset='git push --set-upstream origin master'
+
+# Setup git remote and push.
+function gitremotepush(){
+    echo 'Setting up remote for local repo...'
+
+    # Get the remote target.
+    if [ "$#" -eq 0 ]; then
+        # If no target passed, then assume it is in clipboard.
+        target=`xclip -o -sel clip`
+    else
+        # Otherwise asusme it was passed as first arg.
+        target=$1
+    fi
+
+    # Confirm remote url.
+    echo -n "\n$target\nIs this your target remote? (Y/n): "
+    read user_confirm
+    if [ "$user_confirm" == "${user_confirm#[nN]}" ] ; then
+        echo 'Then please specify the git remote target. Cancelling.'
+        exit;
+    fi
+
+    # Add the remote origin.
+    echo "\nAdding remote origin:\ngit remote add origin $target\n"
+    git remote add origin $target
+
+    # Set upstream.
+    echo "Setting the remote as upstream and pushing:"
+    echo 'git push --set-upstream origin master'
+    git push --set-upstream origin master
+
+    echo "\nFinished!"
+    echo 'Check it out:'
+
+    # 'git@github.com:evdcush/Docsets.git' --> 'github.com/evdcush/Docsets.git'
+    target_tr=`echo $target | cut -c 5- | tr ':' '/'`
+    # 'github.com/evdcush/Docsets.git' --> 'https://github.com/evdcush/Docsets.git'
+    target_url="https://$target_tr"
+
+    echo $target_url
+}
+
 
 # git extras stuff
 # ================
