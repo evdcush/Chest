@@ -696,14 +696,16 @@ function gitremotepush(){
         # If no target passed, then assume it is in clipboard.
         target=`xclip -o -sel clip`
     else
-        # Otherwise asusme it was passed as first arg.
+        # Otherwise assume it was passed as first arg.
         target=$1
     fi
 
     # Confirm remote url.
+    user_confirm='Y'
     echo -n "\n$target\nIs this your target remote? (Y/n): "
-    read user_confirm
-    if [ "$user_confirm" == "${user_confirm#[nN]}" ] ; then
+    read user_input
+    user_confirm=${user_input:-$user_confirm}
+    if [ "$user_confirm" = "${user_confirm#[Yy]}" ] ; then
         echo 'Then please specify the git remote target. Cancelling.'
         exit;
     fi
