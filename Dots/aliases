@@ -281,14 +281,19 @@ piu="pip install -U"
 # Typical stack
 # =============
 # work stuff
-vis='matplotlib bokeh seaborn plotly pyvista'
+vis='matplotlib bokeh seaborn plotly pyvista hiplot'
 cv='opencv-python imageio scikit-image scikit-video open3d-python pycocotools'
+
+data_stack='fiftyone'
 
 experiment_tools='tensorboard tensorboardX hydra-core omegaconf wandb'
 jax_stack='jax jaxlib evojax evosax flax'  # haiku?
 hpo_stack='optuna ray hyperopt niapy scikit-optimize HEBO pymoo'
 more_hpo_stack='ax-platform dragonfly-opt flaml nevergrad zoopt'
 hugging_stack='datasets diffusers huggingface_hub'
+
+mmlab_stack='mmcv-full mmengine mmdet mmtrack mmselfsup '
+tracking='lvis motmetrics'
 
 # NB: ray[all] installs gpu stuff too! How do we otherwise get all the stuff?
 
@@ -331,12 +336,13 @@ karma-sphinx-theme piccolo-theme sphinx-theme'
 writing_stack='ablog ghp-import jupyter-book'
 
 alias pipinew="$piu pip setuptools wheel; \
-$piu cython numpy scipy scikit-learn matplotlib sympy ipython jupyter notebook; \
+$piu cython numpy scipy scikit-learn matplotlib sympy ipython jupyter notebook nbdime; \
 $piu $gym_stuff; \
 $piu opencv-python imageio scikit-image scikit-video open3d-python pandas; \
 $piu $experiment_tools; \
 $piu $hpo_stack; \
 $piu $more_hpo_stack; \
+$piu $mmlab_stack; \
 $piu $hugging_stack; \
 $piu $jax_stack; \
 $piu feedparser requests lxml urllib3 bs4 PyGithub mpi4py; \
@@ -681,7 +687,8 @@ alias gcamend='git commit -v --amend'  # Reword the previous commit message.
 # Remote
 # ======
 #alias gitremoteurl='git remote get-url --all origin'
-alias gcn="git clone --depth=1"
+alias gcn="git clone"
+alias gcn1="git clone --depth=1"
 alias gf="git fetch"
 alias gpull="git pull"
 alias gpush="git push"
