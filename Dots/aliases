@@ -280,6 +280,8 @@ piu="pip install -U"
 
 # Typical stack
 # =============
+static='pylint flake8'
+
 # work stuff
 vis='matplotlib bokeh seaborn plotly pyvista hiplot'
 cv='opencv-python imageio scikit-image scikit-video open3d-python pycocotools'
