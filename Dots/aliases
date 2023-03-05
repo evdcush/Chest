@@ -290,17 +290,20 @@ data_stack='fiftyone'
 
 experiment_tools='tensorboard tensorboardX hydra-core omegaconf wandb'
 jax_stack='jax jaxlib evojax evosax flax'  # haiku?
-hpo_stack='optuna ray hyperopt niapy scikit-optimize HEBO pymoo'
+hpo_stack='optuna ray hyperopt niapy scikit-optimize pymoo' # HEBO' # HEBO has unresolvable GPy dep.
 more_hpo_stack='ax-platform dragonfly-opt flaml nevergrad zoopt'
 hugging_stack='datasets diffusers huggingface_hub'
 
-mmlab_stack='mmcv-full mmengine mmdet mmtrack mmselfsup '
+mmlab_stack='mmcv-full mmengine mmdet mmtrack' #mmselfsup'  # mmselfsup has GPU (faiss-gpu) dep that is difficult to resolve
 tracking='lvis motmetrics'
 
 # NB: ray[all] installs gpu stuff too! How do we otherwise get all the stuff?
 
 # TODO: add mujoco
-gym_stuff="pybullet 'gym[atari, box2d, classic_control]' gym-super-mario-bros"
+# WARNING: pybullet always has nasty dep conflicts.
+#   Try installing pygame first.
+#gym_stuff="pybullet 'gym[atari, box2d, classic_control]' gym-super-mario-bros"
+gym_stuff='gym'
 
 # Stable diffusion / Generative etc.....
 diffusion_stuff='albumentations diffusers '
@@ -358,13 +361,18 @@ $piu $sphinx_stack; \
 $piu $sphinx_themes; \
 $piu $writing_stack; \
 $piu $mediadl; \
+$piu $data_stack; \@
 $piu shell-gpt; \
 "
 
 # NB: if you get an error with mpi4py --> `sudo apt install -y mpich`
 
-# Snowflakes
-# ----------
+#-----------------------------------------------------------------------------#
+#                               ❄️ snowflakes ❄️                              #
+#-----------------------------------------------------------------------------#
+# Who doesn't like a good dependency conflict soap opera?? 🥲
+
+
 #== pytorch
 function pipitorch(){
     # Wheel targets.
