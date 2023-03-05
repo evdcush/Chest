@@ -278,6 +278,14 @@ function pipi(){
 
 piu="pip install -U"
 
+
+# UPDATE PIP PACKAGES
+alias pipupdate="pip list --outdated --format=freeze \
+| grep -v '^\-e' \
+| cut -d = -f 1  \
+| xargs -n1 pip install -U"
+
+
 # Typical stack
 # =============
 static_stack='pylint flake8'
@@ -340,10 +348,20 @@ sphinx_themes='sphinx-rtd-theme sphinx-book-theme furo sphinx-material \
 karma-sphinx-theme piccolo-theme sphinx-theme'
 writing_stack='ablog ghp-import jupyter-book'
 
+# ################ #
+# THE CORE BOYS 💪🏻 #
+# ################ #
+core_py_dudes='pip setuptools wheel'
+core_static_dudes='pylint flake8 black'
+core_sci_dudes='cython numpy scipy scikit-learn matplotlib pandas ipython opencv-python sympy'
+
+
+
 alias pipinew="$piu pip setuptools wheel; \
-$piu cython numpy scipy scikit-learn matplotlib sympy ipython jupyter notebook nbdime; \
+$piu $core_mydudes; \
+$piu sympy jupyter notebook nbdime; \
 $piu $gym_stuff; \
-$piu opencv-python imageio scikit-image scikit-video open3d-python pandas; \
+$piu imageio scikit-image scikit-video open3d-python pandas; \
 $piu $experiment_tools; \
 $piu $hpo_stack; \
 $piu $more_hpo_stack; \
@@ -391,13 +409,39 @@ function pipitorch(){
     pip install -U torchinfo
 }
 
-#-----------------------------------------------------------------------------#
+#=============================================================================#
 #                               ❄️ snowflakes ❄️                              #
+#=============================================================================#
+# The packages that require extra setup, or have iniquitous dependencies.
+
+
+#-----------------------------------------------------------------------------#
+#                 "You thought `pip install` was enough? lol"                 #
+#-----------------------------------------------------------------------------#
+
+alias pipimyg="$piu myougiden; updatedb-myougiden -f"
+alias pipijupynb="$piu \
+jupyter_contrib_nbextensions jupyter_nbextensions_configurator; \
+jupyter contrib nbextension install --user; \
+jupyter nbextensions_configurator enable --user;"
+
+
+
+
+#-----------------------------------------------------------------------------#
+#                               Dep Drama Queens                              #
 #-----------------------------------------------------------------------------#
 # Who doesn't like a good dependency conflict soap opera?? 🥲
 
+im_on_an_ancient_version_of_some_extremely_common_core_dep_lol=(\
+'HEBO' \
+'vissl' \
+'mmselfsup' \
+)
 
 
+# Not necessarily deserved of "drama queen" since it's GPU/CUDA but,
+# nonetheless, complicate things because GPU.
 
 #== CuPy
 # `pip install cupy` just doesnt seem to work, so use whl
@@ -407,29 +451,6 @@ https://github.com/cupy/cupy/releases/tag/v7.8.0"
 # GPU Utils
 # =========
 alias pipigpu="$piu gpustat nvitop"
-
-# Extra setup
-# ===========
-alias pipimyg="$piu myougiden; updatedb-myougiden -f"
-alias pipijupynb="$piu \
-jupyter_contrib_nbextensions jupyter_nbextensions_configurator; \
-jupyter contrib nbextension install --user; \
-jupyter nbextensions_configurator enable --user;"
-
-# emojipicker that looks cool, but I haven't been able to get to work??
-#alias pipirofimoji="sudo apt install -y rofi; $piu rofimoji"
-
-
-
-# UPDATE PIP PACKAGES
-alias pipupdate="pip list --outdated --format=freeze \
-| grep -v '^\-e' \
-| cut -d = -f 1  \
-| xargs -n1 pip install -U"
-
-
-# Jupyter notebook
-alias jn='jupyter notebook'
 
 
 #=============================================================================#
