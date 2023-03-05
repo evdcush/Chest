@@ -367,12 +367,6 @@ $piu shell-gpt; \
 
 # NB: if you get an error with mpi4py --> `sudo apt install -y mpich`
 
-#-----------------------------------------------------------------------------#
-#                               ❄️ snowflakes ❄️                              #
-#-----------------------------------------------------------------------------#
-# Who doesn't like a good dependency conflict soap opera?? 🥲
-
-
 #== pytorch
 function pipitorch(){
     # Wheel targets.
@@ -396,6 +390,14 @@ function pipitorch(){
     # Install other torch-related pkgs.
     pip install -U torchinfo
 }
+
+#-----------------------------------------------------------------------------#
+#                               ❄️ snowflakes ❄️                              #
+#-----------------------------------------------------------------------------#
+# Who doesn't like a good dependency conflict soap opera?? 🥲
+
+
+
 
 #== CuPy
 # `pip install cupy` just doesnt seem to work, so use whl
