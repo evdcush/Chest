@@ -302,7 +302,7 @@ hpo_stack='optuna ray hyperopt niapy scikit-optimize pymoo' # HEBO' # HEBO has u
 more_hpo_stack='ax-platform dragonfly-opt flaml nevergrad zoopt'
 hugging_stack='datasets diffusers huggingface_hub'
 
-mmlab_stack='mmcv-full mmengine mmdet mmtrack' #mmselfsup'  # mmselfsup has GPU (faiss-gpu) dep that is difficult to resolve
+mmlab_stack='mmcv-full mmengine mmdet' # mmtrack mmselfsup'  # mmselfsup has GPU (faiss-gpu) dep that is difficult to resolve
 tracking='lvis motmetrics'
 
 # NB: ray[all] installs gpu stuff too! How do we otherwise get all the stuff?
@@ -342,7 +342,7 @@ social='rainbowstream'  # twitter terminal client
 # find more cool stuff:
 #   https://github.com/ray-project/ray/blob/master/doc/requirements-doc.txt
 #   https://github.com/ray-project/ray/blob/master/doc/source/conf.py
-sphinx_stack='sphinx docutils restview rstcheck' #esbonio'
+sphinx_stack='sphinx docutils restview rstcheck pytablewriter "pytablewriter[theme]"'
 # Theming docs: https://www.sphinx-doc.org/en/master/usage/theming.html
 sphinx_themes='sphinx-rtd-theme sphinx-book-theme furo sphinx-material \
 karma-sphinx-theme piccolo-theme sphinx-theme'
@@ -352,26 +352,28 @@ writing_stack='ablog ghp-import jupyter-book'
 # THE CORE BOYS 💪🏻 #
 # ################ #
 core_py_dudes='pip setuptools wheel'
-core_static_dudes='pylint flake8 black'
+core_static_dudes='pylint flake8 black isort yapf'
 core_sci_dudes='cython numpy scipy scikit-learn matplotlib pandas ipython opencv-python sympy'
+core_ipy_dudes='ipython jupyter notebook nbdime'
 
 
 
-alias pipinew="$piu pip setuptools wheel; \
-$piu $core_mydudes; \
-$piu sympy jupyter notebook nbdime; \
+alias pipinew="\
+$piu $core_py_dudes; \
+$piu $core_sci_dudes; \
+$piu $core_ipy_dudes; \
+$piu $core_static_dudes; \
 $piu $gym_stuff; \
-$piu imageio scikit-image scikit-video open3d-python pandas; \
+$piu imageio scikit-image scikit-video open3d-python; \
 $piu $experiment_tools; \
 $piu $hpo_stack; \
 $piu $more_hpo_stack; \
-$piu $mmlab_stack; \
 $piu $hugging_stack; \
 $piu $jax_stack; \
 $piu feedparser requests lxml urllib3 bs4 PyGithub mpi4py; \
 $piu fart pyperclip unidecode python-slugify em-keyboard; \
 $piu twine pytest pip_search; \
-$piu sphinx docutils restview rstcheck esbonio grip docrepr; \
+$piu $sphinx_stack $sphinx_themes grip docrepr; \
 $piu termdown pdfCropMargins 'pix2tex[gui]'; \
 $piu snakeviz; \
 $piu tldr; \
@@ -379,9 +381,16 @@ $piu $sphinx_stack; \
 $piu $sphinx_themes; \
 $piu $writing_stack; \
 $piu $mediadl; \
-$piu $data_stack; \@
+$piu $data_stack; \
 $piu shell-gpt; \
+$piu $core_sci_dudes; \
 "
+
+# ALWAYS open and CLOSE with core sci stack.
+# Many a dumbass pin their package dep to a ver or ver thresh needlessly,
+# which can downgrade certain core pkgs as you install things.
+# But running the install-update at the end, you can make sure your core
+# dudes are always there.
 
 # NB: if you get an error with mpi4py --> `sudo apt install -y mpich`
 
@@ -437,6 +446,7 @@ im_on_an_ancient_version_of_some_extremely_common_core_dep_lol=(\
 'HEBO' \
 'vissl' \
 'mmselfsup' \
+'mmtrack' \
 )
 
 
