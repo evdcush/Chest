@@ -53,7 +53,7 @@ MyDataDir/
 
 
 
-**Convert the detection (`det20`) labels**
+### Convert the detection (`det20`) labels
 
 ```shell
 # REMEMBER, for the pathing in these commands, we are currently
@@ -74,6 +74,26 @@ python -m bdd100k.label.to_coco -m det \
 python -m bdd100k.label.to_coco -m det \
 -i ../bdd100k/labels/det_20/det_train.json \
 -o ../bdd100k/jsons/det_train_cocofmt.json
+```
+
+
+
+### Convert pose estimation labels
+
+```shell
+# Make target destination dir, if necessary.
+mkdir -p ../bdd100k/jsons
+
+# Use script to convert pose labels:
+## Val
+python -m bdd100k.label.to_coco -m pose \
+-i ../bdd100k/labels/pose_21/pose_val.json \
+-o ../bdd100k/jsons/pose_val_cocofmt.json
+
+## Train
+python -m bdd100k.label.to_coco -m pose \
+-i ../bdd100k/labels/pose_21/pose_train.json \
+-o ../bdd100k/jsons/pose_train_cocofmt.json
 ```
 
 
