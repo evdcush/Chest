@@ -93,6 +93,18 @@ alias lsz='ls -1shSr' # list files, 1-line each, show size in human-readable, so
 #alias lzf='ls | fzf' # list w/ fuzzy search
 alias countf='find . -type f -printf . | wc -c'
 
+lsm(){
+    # List files sorted by modified date (reverse; most recent last).
+    ls -gGtr --time-style=long-iso --color=always | awk '{$1=$2=$3=""; $0=$0; $1=$1; print}'
+
+    # SOURCES:
+    ## 'print from nth col to last' (awk part)
+    # https://unix.stackexchange.com/a/561675
+    ## NOT used, but helpful: `column -t` # from https://stackoverflow.com/a/6262979
+    # https://unix.stackexchange.com/questions/22218/linux-ls-to-show-only-filename-date-and-size
+
+}
+
 lzf(){
     # list with fuzzy search
     if [ "$#" -eq 1 ]; then DIR="$1"; else DIR='.'; fi
@@ -374,7 +386,7 @@ $piu feedparser requests lxml urllib3 bs4 PyGithub mpi4py; \
 $piu fart pyperclip unidecode python-slugify em-keyboard; \
 $piu twine pytest pip_search; \
 $piu $sphinx_stack $sphinx_themes grip docrepr; \
-$piu termdown pdfCropMargins 'pix2tex[gui]'; \
+$piu termdown pdfCropMargins; \
 $piu snakeviz; \
 $piu tldr; \
 $piu $sphinx_stack; \
@@ -462,6 +474,8 @@ https://github.com/cupy/cupy/releases/tag/v7.8.0"
 # =========
 alias pipigpu="$piu gpustat nvitop"
 
+# Dont even remember:
+## 'pix2tex[gui]'
 
 #=============================================================================#
 #                                                                             #
