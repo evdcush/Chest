@@ -1,12 +1,28 @@
 # BDD100K
 
-Data Available.
+
+
+## Using the Data
+
+Reference: [bdd100k-models/PREPARE_DATASET.md at main · SysCV/bdd100k-models · GitHub](https://github.com/SysCV/bdd100k-models/blob/main/doc/PREPARE_DATASET.md)
 
 
 
-# [Data Download ; BDD100K documentation](https://doc.bdd100k.com/download.html)
+Once you have downloaded the data, you need to convert the labels from BDD100K's 'Scalabel' format to COCO-style.
+
+(Why they didn't just release in COCO, 🤷🏻‍♂️)
 
 
+
+
+
+
+
+---
+
+
+
+# [Overview of Data Available](https://doc.bdd100k.com/download.html)
 
 ## Videos
 
@@ -14,15 +30,11 @@ Data Available.
 
 `1.8tb`
 
-
-
 ## Info
 
 The GPUS/IMU info recorded along with the videos.
 
 `3.9gb`
-
-
 
 ---
 
@@ -43,8 +55,6 @@ The GPUS/IMU info recorded along with the videos.
             - test
 ```
 
-
-
 ## 10K Images
 
 > There are 10K images in this package for for semantic segmentation, instance segmentation and panoptic segmentation. Due to some legacy reasons, not all the images here have corresponding videos. So it is not a subset of the 100K images, even though there is a significant overlap.
@@ -63,8 +73,6 @@ The GPUS/IMU info recorded along with the videos.
 ```
 
 ---
-
-
 
 ## Drivable Area
 
@@ -89,8 +97,6 @@ The GPUS/IMU info recorded along with the videos.
                 - drivable_train.json
                 - drivable_val.json
 ```
-
-
 
 ## Lane Marking
 
@@ -136,8 +142,6 @@ The GPUS/IMU info recorded along with the videos.
                 - sem_seg_train.json
                 - sem_seg_val.json
 ```
-
-
 
 ## Instance Segmentation
 
@@ -186,8 +190,6 @@ The GPUS/IMU info recorded along with the videos.
 
 ---
 
-
-
 ## MOT 2020 Labels
 
 > Multi-object bounding box tracking training and validation labels released in 2020. This is a subset of the 100K videos, but the videos are resampled to 5Hz from 30Hz. The labels are in [Scalabel Format](https://doc.scalabel.ai/format.html). The same object in each video has the same label id but objects across videos are always distinct even if they have the same id.
@@ -201,8 +203,6 @@ The GPUS/IMU info recorded along with the videos.
             - train
             - val
 ```
-
-
 
 ## MOT 2020 Images
 
@@ -261,8 +261,6 @@ The GPUS/IMU info recorded along with the videos.
                 - val
 ```
 
-
-
 ## MOTS 2020 Images
 
 > Multi-object tracking and segmentation videos in frames released in 2020. This is a subset of [MOT 2020 Images](https://doc.bdd100k.com/download.html#mot-2020-images).
@@ -293,5 +291,3 @@ Pose estmation training and validation labels.
             - pose_train.json
             - pose_val.json
 ```
-
-
