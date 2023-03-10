@@ -290,6 +290,66 @@ function f(){
 #                                                                             #
 #=============================================================================#
 
+# TODO(evan): WIP, get "awesome" list (readme only, eventually).
+function getawe() {
+    # THIS NEEDS TO BE A PY SCRIPT.
+
+    # Exit if no git url provided.
+    if ! (( $# )); then return; fi
+
+    # Just log the timestamp and repo for now.
+    mkdir -p $DIR_DOTS
+    _AW_LOG="$DIR_DOTS/awesomes.log"
+    _TIMESTAMP=$(date +%Y-%m-%d_%H%M%S)
+
+    echo "$_TIMESTAMP: $@" >> $_AW_LOG
+
+    # Dst.
+    _AW_PATH=$HOME/RepoCloud/Sporks/AWESOMES
+    mkdir -p $_AW_PATH
+
+    cd $_AW_PATH
+    git clone --depth=1 $1
+
+    cd -
+}
+
+
+#############
+
+# Setup a default git config
+function initgitconfig() {
+    echo 'Setting up basic global gitconfig.'
+
+    # Link up the global gitignore.
+    ln -sf $HOME/.Dots/global_gitignore $HOME/.gitignore
+
+    # Configure all base options.
+    git config --global user.name "Evan C."
+    git config --global user.email "evdcush@protonmail.com"
+
+    git config --global core.excludesFile '~/.gitignore'
+    git config --global init.defaultBranch master
+
+    git config --global help.autocorrect 8  # 0.8s to cancel an auto-corrected command.
+
+    # Use ssh instead of https for remotes (assumes you've added your keys).
+    git config --global url.'git@github.com:'.insteadOf 'https://github.com/'
+
+    echo 'The basic ~/.gitconfig has been made:'
+    cat ~/.gitconfig
+    echo '--------------------------------------'
+    echo 'You need to now setup signing.'
+    echo 'The following keys are available: '
+    gpg -K --keyid-format=long && \
+    gpg -K --with-colons | grep sec | cut -d':' -f 5
+
+    echo 'If there is an appropriate key there, run the following commands:'
+    echo 'git config --global commit.gpgsign true; git config --global user.signingkey '
+
+}
+
+
 # git clone && cd
 function gcd(){
     REPO_URL=$1
@@ -368,4 +428,37 @@ function get_release {
     _HUB="https://api.github.com/repos/$_USER/$_REPO/releases/latest"
     _TARGET="browser_download_url.*$_EXT"
     wget -q -nv -O- $_HUB | grep $_TARGET | cut -d: -f 2,3 | tr -d '[:space:]"'
+}
+
+
+#------------------------------------------------------------------------------
+
+
+# git@github.com:lencx/ChatGPT.git
+# https://github.com/lencx/ChatGPT
+# https://github.com/lencx/ChatGPT.git
+# (TODO): https://github.com/lencx/ChatGPT/archive/refs/heads/main.zip
+
+# Given some git url, clone it to sporks.
+# ASSUMES: valid url passed as arg $1 or top of clipboard.
+# TODO(evan): support archived repo download as well.
+function spork(){
+    # Get spork target URL.
+    if [ "$#" -eq 0 ]; then
+        # No target given, get arg from clipboard.
+        target=`xclip -o -sel clip`
+    else
+        target=$1
+    fi
+
+    echo "Cloning $target..."
+
+    # Log the target repos.
+    mkdir -p $DIR_SPORKS
+    _SPORK_LOG=$FILE_SPORK_LOG
+    _TIMESTAMP=$(date +%Y-%m-%d_%H%M%S)
+
+    cd $DIR_SPORKS && git clone $target && \
+    echo "$_TIMESTAMP $target" >> $_SPORK_LOG;
+    cd -;
 }
