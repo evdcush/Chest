@@ -14,6 +14,70 @@ Once you have downloaded the data, you need to convert the labels from BDD100K's
 
 
 
+## Conversion to COCO-style
+
+First you'll need to clone the bdd100k repo.
+
+Since I only intend to use this repo to interact with BDD100K data, I clone it into the same parent directory as the `bdd100k/` data dir.
+
+
+
+**Prepare the `bdd100k` code repo**
+
+```shell
+# First, clone the repo and cd into it.
+git clone --depth=1 https://github.com/bdd100k/bdd100k.git bdd100k_code
+cd bdd100k_code
+
+# Make sure you have the requirements installed (check `requirements.txt`).
+# I needed `scalabel` so I installed.
+pip install scalabel
+```
+
+
+
+After the above step, your directory tree should look like:
+
+```
+MyDataDir/
+├── bdd100k/
+│   ├── images/
+│   ├── jsons/
+│   └── labels/
+└── bdd100k-code/  <--- Your cwd !
+    ├── bdd100k/
+    ├── doc/
+    └── scripts/
+
+```
+
+
+
+**Convert the detection (`det20`) labels**
+
+```shell
+# REMEMBER, for the pathing in these commands, we are currently
+# in `.Data/bdd100k_code`!
+#
+# Actual BDD100K data lives in `.Data/bdd100k/`
+
+# Make target destination directory.
+mkdir -p ../bdd100k/jsons
+
+# Use the script to convert detection labels:
+## Val
+python -m bdd100k.label.to_coco -m det \
+-i ../bdd100k/labels/det_20/det_val.json \
+-o ../bdd100k/jsons/det_val_cocofmt.json
+
+## Train
+python -m bdd100k.label.to_coco -m det \
+-i ../bdd100k/labels/det_20/det_train.json \
+-o ../bdd100k/jsons/det_train_cocofmt.json
+```
+
+
+
 
 
 
