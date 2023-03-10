@@ -551,19 +551,9 @@ alias dlvid='yt-dlp -f bestvideo+bestaudio -o "%(title)s.%(id)s.%(ext)s" --restr
 
 #---- Inkscape
 # Convert svg icon --> png
-function svg2png() {
-    _src=$1  # eg: 'foobar_icon.svg'
-    _dst=$2  # eg: 'foobar_icon.png'
-    _IMG_HEIGHT=512
-    _IMG_WIDTH=512
+alias ex_draw='inkscape --export-area-drawing --export-dpi=256 --export-type=png'
+alias ex_page='inkscape --export-area-page --export-dpi=256 --export-type=png'
 
-    # Run the conversion.
-    # -z, --without-gui  Do not print to X server (only process files from console)
-    # -h, --export-height=HEIGHT
-    # -w, --export-width=WIDTH
-    # -e, --export-png=FILENAME
-    inkscape -z -h $_IMG_HEIGHT -w $_IMG_WIDTH $_src -e $_dst
-}
 
 #---- vpn
 spvpn='sudo pvpn'
