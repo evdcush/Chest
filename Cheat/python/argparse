@@ -1,4 +1,3 @@
-```python
 # Subparser
 # =========
 cli = argparse.ArgumentParser()
@@ -86,10 +85,7 @@ if __name__ == '__main__':
     else:
         args.func(args)
 
-```
 
-
-```python
 # At a glance
 # ===========
 parser = argparse.ArgumentParser(description='Processing integers.') # description of program
@@ -141,9 +137,6 @@ def neg(num):
 def foo(location='floor'):
     return f'foo on the {location}'
 
-if __name__ == '__main__':
+#if __name__ == '__main__':
   # Fire()      # both neg and foo available at CLI, but can only use one :[
   # Fire(foo)  # 'fire_example.py airplane' ---> `foo on the airplane`
-
-```
-
