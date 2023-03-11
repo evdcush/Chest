@@ -86,6 +86,12 @@ from itertools import permutations, combinations, accumulate, reduce
 #                         PEARLS & FREQUENT REFERENCE                         #
 #-----------------------------------------------------------------------------#
 
+#==== Pretty-print long ints (with commas)
+i = 3276800007
+print(f"{i:,}")
+# --> 3,276,800,007
+
+
 #==== gotchas
 # make an NxM matrix properly:
 matrix = [[0]*ncols for _ in range(nrows)]
@@ -270,6 +276,57 @@ def ordered_combos(lst):
     for i, j in idx_slices:
         combos.append(lst[i:j])
     return combos
+
+#==== cartesian product
+vals = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+]  # (3 x 3)
+
+#
+>>> list(itertools.product(*vals))
+[(1, 4, 7),
+ (1, 4, 8),
+ (1, 4, 9),
+ (1, 5, 7),
+ (1, 5, 8),
+ (1, 5, 9),
+ (1, 6, 7),
+ (1, 6, 8),
+ (1, 6, 9),
+ (2, 4, 7),
+ (2, 4, 8),
+ (2, 4, 9),
+ (2, 5, 7),
+ (2, 5, 8),
+ (2, 5, 9),
+ (2, 6, 7),
+ (2, 6, 8),
+ (2, 6, 9),
+ (3, 4, 7),
+ (3, 4, 8),
+ (3, 4, 9),
+ (3, 5, 7),
+ (3, 5, 8),
+ (3, 5, 9),
+ (3, 6, 7),
+ (3, 6, 8),
+ (3, 6, 9)]  # 27 total combo
+
+
+def calculate_cardinal_prod(sets: list[list]):
+    # The number of sets/combos from a cardinal product
+    # is equal to the product of each set's cardinality (len).
+    #   NB: cardinal products are what you (exhaustively) search over in
+    #       grid search.
+    cardinality_of_sets = [len(values) for values in sets]
+    num_cardinal_prod = 1
+    for cardinality in cardinality_of_sets:
+        num_cardinal_prod *= cardinality
+
+    print(f"There are {num_cardinal_prod:,} total config.")
+    return num_cardinal_prod
 
 
 
