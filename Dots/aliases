@@ -304,7 +304,7 @@ static_stack='pylint flake8'
 
 # work stuff
 vis='matplotlib bokeh seaborn plotly pyvista hiplot'
-cv='opencv-python imageio scikit-image scikit-video open3d-python pycocotools'
+cv='opencv-python imageio scikit-video open3d-python pycocotools'
 
 data_stack='fiftyone'
 
@@ -366,7 +366,7 @@ writing_stack='ablog ghp-import jupyter-book'
 core_py_dudes='pip setuptools wheel'
 core_static_dudes='pylint flake8 black isort yapf'
 core_sci_dudes='cython numpy scipy scikit-learn matplotlib pandas ipython opencv-python sympy'
-core_ipy_dudes='ipython jupyter notebook nbdime'
+core_ipy_dudes='ipython jupyter notebook nbdime jupytext'
 
 
 
@@ -376,7 +376,7 @@ $piu $core_sci_dudes; \
 $piu $core_ipy_dudes; \
 $piu $core_static_dudes; \
 $piu $gym_stuff; \
-$piu imageio scikit-image scikit-video open3d-python; \
+$piu imageio scikit-video open3d-python; \
 $piu $experiment_tools; \
 $piu $hpo_stack; \
 $piu $more_hpo_stack; \
@@ -551,8 +551,28 @@ alias dlvid='yt-dlp -f bestvideo+bestaudio -o "%(title)s.%(id)s.%(ext)s" --restr
 
 #---- Inkscape
 # Convert svg icon --> png
-alias ex_draw='inkscape --export-area-drawing --export-dpi=256 --export-type=png'
-alias ex_page='inkscape --export-area-page --export-dpi=256 --export-type=png'
+#alias ex_draw='inkscape --export-area-drawing --export-dpi=256 --export-type=png'
+#alias ex_page='inkscape --export-area-page --export-dpi=256 --export-type=png'
+
+
+function exdraw(){
+    # Export an SVG image to PNG; tight borders; with optionally configurable dpi.
+    svg_file=$1
+    dpi=256
+    if [ "$#" -eq 2 ]; then dpi=$2; fi
+
+    inkscape --export-area-drawing --export-dpi=$dpi --export-type=png $svg_file;
+}
+
+function expage(){
+    # Export an SVG image to PNG; retaining border dims; with optionally configurable dpi.
+    svg_file=$1
+    dpi=256
+    if [ "$#" -eq 2 ]; then dpi=$2; fi
+
+    inkscape --export-area-page --export-dpi=$dpi --export-type=png $svg_file;
+}
+
 
 
 #---- vpn
@@ -686,6 +706,8 @@ alias bt='batcat -pP'
 # ======
 alias glocal='git config --local -l'
 alias gglobal='git config --global -l'
+
+alias gnotrack='git config --local  status.showUntrackedFiles no'
 
 
 # Status
