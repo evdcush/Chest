@@ -7,17 +7,24 @@ PATH_USER_BIN="$HOME/.local/bin"
 
 # env/library Paths
 # =================
+# Devtools
 PATH_PYENV="$HOME/.pyenv/bin"
-PATH_RSTCARGO="$HOME/.cargo/bin"
+#PATH_RSTCARGO="$HOME/.cargo/bin"
 #PATH_RBENV="$HOME/.rbenv/bin" # unused!
-SCIKIT_LEARN_DATA="$HOME/.Data/scikit_learn_data"
+
+# Library/framework stuffs
+#SCIKIT_LEARN_DATA="$HOME/.Data/scikit_learn_data"
 
 # Directories
 # ===========
-#---- HOME dirs
-DIR_DATA="$HOME/.Data" # datasets & model experiment outputs
 DIR_DOTS="$HOME/.Dots"
-#---- HOME-rooted dot dirs
+
+#---- HOME dirs
+# Data & model stuffs
+DIR_DATA="$HOME/.Data"
+DIR_EXPERIMENTS="$DIR_DATA/Experiments"
+
+# Apps/software
 DIR_APPS="$HOME/.Apps"
 DIR_APPIMAGES="$DIR_APPS/AppImages"
 
@@ -26,6 +33,10 @@ DIR_APPIMAGES="$DIR_APPS/AppImages"
 # =========
 DIR_CLOUD="$HOME/Cloud"
 CLOUD_RESOURCES="$DIR_CLOUD/Resources"
+DIR_REPOCLOUD="$HOME/RepoCloud"
+
+DIR_SPORKS="$DIR_REPOCLOUD/Sporks"
+FILE_SPORK_LOG="$DIR_SPORKS/sporks.log"
 
 # Chest paths
 # ===========
@@ -38,8 +49,8 @@ DIR_CHEST_TEMPLATES="$DIR_CHEST_RESOURCES/Templates"
 # File paths
 # ==========
 #---- Inbox files
-PATH_INBOX_READ="$CLOUD_RESOURCES/inbox_read.yml"
-PATH_INBOX_HOARD="$CLOUD_RESOURCES/inbox_hoard.yml"
+#PATH_INBOX_READ="$CLOUD_RESOURCES/inbox_read.yml"
+#PATH_INBOX_HOARD="$CLOUD_RESOURCES/inbox_hoard.yml"
 #---- Crypt keys
 GCKEY_CHEST="$DIR_DOTS/Keys/chest_key"
 
