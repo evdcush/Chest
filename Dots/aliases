@@ -360,11 +360,13 @@ sphinx_themes='sphinx-rtd-theme sphinx-book-theme furo sphinx-material \
 karma-sphinx-theme piccolo-theme sphinx-theme'
 writing_stack='ablog ghp-import jupyter-book'
 
+maybe_static_dudes='MonkeyType code2flow absolufy-imports ruff'
+
 # ################ #
 # THE CORE BOYS 💪🏻 #
 # ################ #
 core_py_dudes='pip setuptools wheel'
-core_static_dudes='pylint flake8 black isort yapf'
+core_static_dudes='pre-commit pylint flake8 black isort yapf'
 core_sci_dudes='cython numpy scipy scikit-learn matplotlib pandas ipython opencv-python sympy'
 core_ipy_dudes='ipython jupyter notebook nbdime jupytext'
 
@@ -382,6 +384,7 @@ $piu $hpo_stack; \
 $piu $more_hpo_stack; \
 $piu $hugging_stack; \
 $piu $jax_stack; \
+$piu $maybe_static_dudes; \
 $piu feedparser requests lxml urllib3 bs4 PyGithub mpi4py; \
 $piu fart pyperclip unidecode python-slugify em-keyboard; \
 $piu twine pytest pip_search; \
@@ -394,6 +397,7 @@ $piu $sphinx_themes; \
 $piu $writing_stack; \
 $piu $mediadl; \
 $piu $data_stack; \
+$piu $maybe_static_dudes; \
 $piu shell-gpt; \
 $piu $core_sci_dudes; \
 "
