@@ -33,6 +33,21 @@ No elaboration either on what likely pathing hacks and env vars `mim` is doing w
 
 So I've tentatively decided to just install the packages directly through `pip` and just see what happens.
 
+---
+
+#### Through `pip`
+
+```shell
+# Install the package.
+pip install -U mmengine
+
+# Verify:
+python -c 'from mmengine.utils.dl_utils import collect_env;print(collect_env())'
+## (You should see printout of ordereddict of your env spec)
+```
+
+
+
 
 
 
