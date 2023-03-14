@@ -27,6 +27,16 @@ git remote update
 # ------------------------------------------
 git log --graph --decorate --oneline --all
 
+
+# ============== #
+# DISABLE PAGING #
+# ============== #
+# To disable paging (for log, or ANY git command that uses a pager)
+# simply append `--no-pager` immediately after `git` and before the git command.
+git --no-pager log
+git --no-pager diff
+# etc...
+
 # git diff files from different branches
 # --------------------------------------
 git diff branch_a branch_b -- my_file.py # can remove -- if compare work tree
@@ -316,6 +326,33 @@ git branch -d <branch_name> # local
 #                                                                             #
 #=============================================================================#
 
+# To disable paging (for log, or ANY git command that uses a pager)
+# simply append `--no-pager` immediately after `git` and before the git command.
+git --no-pager log
+
+#=== See history for specific file
+#    (that may have been deleted)
+# If you know the file-path:
+git log --all --full-history -- <path-to-file>
+
+# If you don't know:
+git log --all --full-history -- "**/thefile.*"
+
+## ^ that should show the list of commits in all branches which touched that
+## file.
+## You can then find the version of the file you want, and display it:
+git show <SHA> -- <path-to-file>
+
+## OR restore it to your working copy:
+git checkout <SHA>^ -- <path-to-file>
+
+#---
+# There's also `git log -p myfile.py`,
+# which shows changes to `myfile.py` over time:
+git log -p myfile.py
+
+
+
 
 
 #=============================================================================#
@@ -420,6 +457,36 @@ fi
 ' --tag-name-filter cat -- --branches --tags
 
 
+# Add a new remote
+# ================
+# First, verify current remotes:
+git remote -v
+
+# Add your new remote:
+git remote add my_new_remote git@github.com:evdcush/FooAndBar.git
+
+
+#=============================================================================#
+#                                                                             #
+#                      ████████  █████   ██████  ███████                      #
+#                         ██    ██   ██ ██       ██                           #
+#                         ██    ███████ ██   ███ ███████                      #
+#                         ██    ██   ██ ██    ██      ██                      #
+#                         ██    ██   ██  ██████  ███████                      #
+#                                                                             #
+#=============================================================================#
+
+# Create a local tag:
+git tag <tag-name>
+
+# Delete it:
+git tag -d <tag-name>
+
+# Get all tags from remote:
+git fetch --tags
+
+
+
 #=============================================================================#
 #                                                                             #
 #            ██████  ██ ████████       ████████ ██ ██████  ███████            #
@@ -445,8 +512,3 @@ git diff-tree --no-commit-id --name-only -r <commit-ish>
 
 # Delete remote branch.
 git push origin --delete <remote_branchname>
-
-# Create a local tag.
-git tag <tag-name>
-# Delete it:
-git tag -d <tag-name>
