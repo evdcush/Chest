@@ -13,6 +13,14 @@
 #                                                                             #
 #=============================================================================#
 
+# FYI, if you want to use 1/0 as True/False in your code, then:
+# if ((  $x )); then echo "Hello"; fi
+# shows the message for x=1 but not for x=0 or x= (undefined).
+
+do_if_args_available() {
+    if (( $# )); then echo "Hey we got $# args!"; fi
+}
+
 # read data from user
 #----------------------------
 echo "Enter a value: "
@@ -1010,8 +1018,11 @@ $(UNIX command)              # command substitution: runs the command and return
 ##############################################################################
 
 
-# The function refers to passed arguments by position (as if they were positional parameters), that is, $1, $2, and so forth.
-# $@ is equal to "$1" "$2"... "$N", where N is the number of positional parameters. $# holds the number of positional parameters.
+# The function refers to passed arguments by position (as if they
+# were positional parameters), that is:
+# $1, $2, $3, ... and so forth
+# $@ is equal to "$1" "$2"... "$N",
+# $# holds the number of positional parameters.
 
 
 function functname() {
