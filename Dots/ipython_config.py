@@ -34,6 +34,7 @@ c.InteractiveShellApp.exec_lines = [
     'import os',
     'import random',
     'from pprint import pformat, pprint',
+    'import cv2',
     'import numpy as np',
     'import torch',
     'from torch import nn',
@@ -206,7 +207,7 @@ c.InteractiveShell.autocall = 1
 
 ## If True, anything that would be passed to the pager will be displayed as
 #  regular output instead.
-#c.InteractiveShell.display_page = False
+c.InteractiveShell.display_page = True  # DEFAULT: False
 
 ## (Provisional API) enables html representation in mime bundles sent to pagers.
 #c.InteractiveShell.enable_html_pager = False
