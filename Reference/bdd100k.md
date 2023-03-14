@@ -98,6 +98,22 @@ python -m bdd100k.label.to_coco -m pose \
 
 
 
+### Convert panoptic segmentation labels
+
+For the dense tasks, labels are further distinguished by their representation format, ie rle or bitmask.
+
+**BROKEN!** 
+
+[`to_coco_panseg`: leads to OOB `IndexError` · Issue #302 · bdd100k/bdd100k · GitHub](https://github.com/bdd100k/bdd100k/issues/302)
+
+```shell
+python -m bdd100k.label.to_coco_panseg \
+--nproc 2 \
+-i ../bdd100k/labels/pan_seg/bitmasks/val \
+-o ../bdd100k/jsons/pan_seg_val_cocofmt.json \
+--pan-mask-base ../bdd100k/jsons/pan_seg/masks/val
+```
+
 
 
 
