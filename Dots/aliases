@@ -300,10 +300,8 @@ alias pipupdate="pip list --outdated --format=freeze \
 
 # Typical stack
 # =============
-static_stack='pylint flake8'
-
 # work stuff
-vis='matplotlib bokeh seaborn plotly pyvista hiplot'
+vis='matplotlib bokeh seaborn plotly pyvista hiplot graphviz'
 cv='opencv-python imageio scikit-video open3d-python pycocotools'
 
 data_stack='fiftyone'
@@ -323,7 +321,7 @@ tracking='lvis motmetrics'
 # WARNING: pybullet always has nasty dep conflicts.
 #   Try installing pygame first.
 #gym_stuff="pybullet 'gym[atari, box2d, classic_control]' gym-super-mario-bros"
-gym_stuff='gym'
+gym_stuff='gym gymnasium'
 
 # Stable diffusion / Generative etc.....
 diffusion_stuff='albumentations diffusers '
@@ -360,13 +358,21 @@ sphinx_themes='sphinx-rtd-theme sphinx-book-theme furo sphinx-material \
 karma-sphinx-theme piccolo-theme sphinx-theme'
 writing_stack='ablog ghp-import jupyter-book'
 
-maybe_static_dudes='MonkeyType code2flow absolufy-imports ruff'
+# Static Code Analysis & QA
+# =========================
+static_analysis_stack='code2flow'
+formatters_stack='absolufy-imports black isort usort yapf mdformat mdformat-myst tomli "docformatter[tomli]"'
+typing_stack='mypy pytype MonkeyType'
+linting_stack='codespell flake8 pylint pre-commit ruff tomli'
+
+static_stack="$static_analysis_stack $formatters_stack $typing_stack $linting_stack"
+
 
 # ################ #
 # THE CORE BOYS 💪🏻 #
 # ################ #
 core_py_dudes='pip setuptools wheel'
-core_static_dudes='pre-commit pylint flake8 black isort yapf'
+#core_static_dudes='pre-commit pylint flake8 black isort ruff tomli yapf'
 core_sci_dudes='cython numpy scipy scikit-learn matplotlib pandas ipython opencv-python sympy'
 core_ipy_dudes='ipython jupyter notebook nbdime jupytext'
 
@@ -376,7 +382,7 @@ alias pipinew="\
 $piu $core_py_dudes; \
 $piu $core_sci_dudes; \
 $piu $core_ipy_dudes; \
-$piu $core_static_dudes; \
+$piu $static_stack; \
 $piu $gym_stuff; \
 $piu imageio scikit-video open3d-python; \
 $piu $experiment_tools; \
@@ -387,7 +393,7 @@ $piu $jax_stack; \
 $piu $maybe_static_dudes; \
 $piu feedparser requests lxml urllib3 bs4 PyGithub mpi4py; \
 $piu fart pyperclip unidecode python-slugify em-keyboard; \
-$piu twine pytest pip_search; \
+$piu twine pytest pip_search loguru; \
 $piu $sphinx_stack $sphinx_themes grip docrepr; \
 $piu termdown pdfCropMargins; \
 $piu snakeviz; \
@@ -397,7 +403,6 @@ $piu $sphinx_themes; \
 $piu $writing_stack; \
 $piu $mediadl; \
 $piu $data_stack; \
-$piu $maybe_static_dudes; \
 $piu shell-gpt; \
 $piu $core_sci_dudes; \
 "
