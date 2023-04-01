@@ -34,3 +34,6 @@ Global tags: 2 entries
 
 ## Remove extra audio and sub track.
 mkvmerge -o my_video_single_audio.mkv --audio-tracks 2 -s 4 my_video.mkv
+
+## Clip a scene:
+ffmpeg -ss 00:11:20 -to 00:13:39 -i my_input_video.mkv my_output_scene_clip.mkv
