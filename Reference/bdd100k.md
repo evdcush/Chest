@@ -114,7 +114,31 @@ python -m bdd100k.label.to_coco_panseg \
 --pan-mask-base ../bdd100k/jsons/pan_seg/masks/val
 ```
 
+---
+---
 
+### Convert MOT20 labels
+
+NB: This conversion was done a bit after the above ones, and was done in a different manner.
+
+For these, I actually followed (partially) the instructions in the [`qdtrack` repo](https://github.com/SysCV/qdtrack/blob/master/docs/GET_STARTED.md), rather than the bdd100k model zoo repo.
+
+The main difference is I `pip`-installed the bdd100k repo (instead of using it locally):
+
+```shell
+pip install git+https://github.com/bdd100k/bdd100k.git
+```
+
+Then, I ran the following command:
+
+
+```shell
+python -m bdd100k.label.to_coco -m box_track \
+-i ~/.Data/bdd100k/labels/box_track_20/val \
+-o ~/.Data/bdd100k/jsons/box_track_20_val_cocofmt.json
+```
+
+Looks like everything executed without error; next is using this data.
 
 
 
