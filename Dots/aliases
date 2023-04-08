@@ -22,6 +22,9 @@ alias trk="xinput --set-prop `xinput | grep -i trackpoint | cut -d'=' -f2 | cut 
 # ============
 alias nvidia_driver_ver='nvidia-smi --query-gpu=driver_version --format=csv,noheader --id=0'
 
+# To check if pytorch can discover cuda:
+# python -c 'import torch; assert torch.cuda.is_available()'
+
 
 
 #=============================================================================#
@@ -305,12 +308,12 @@ alias pipupdate="pip list --outdated --format=freeze \
 # Typical stack
 # =============
 # work stuff
-vis='matplotlib bokeh seaborn plotly pyvista hiplot graphviz'
 cv='opencv-python imageio scikit-video open3d-python pycocotools'
 
-data_stack='fiftyone'
+data_stack='fiftyone docarray'  # docarray is a data format
 
 experiment_tools='tensorboard tensorboardX hydra-core omegaconf wandb'
+vis_stack='matplotlib bokeh seaborn plotly pyvista hiplot graphviz'
 jax_stack='jax jaxlib evojax evosax flax'  # haiku?
 hpo_stack='optuna ray hyperopt niapy scikit-optimize pymoo' # HEBO' # HEBO has unresolvable GPy dep.
 more_hpo_stack='ax-platform dragonfly-opt flaml nevergrad zoopt'
@@ -362,6 +365,7 @@ sphinx_themes='sphinx-rtd-theme sphinx-book-theme furo sphinx-material \
 karma-sphinx-theme piccolo-theme sphinx-theme'
 writing_stack='ablog ghp-import jupyter-book'
 
+
 # Static Code Analysis & QA
 # =========================
 static_analysis_stack='code2flow'
@@ -391,6 +395,7 @@ $piu $core_ipy_dudes; \
 $piu $static_stack; \
 $piu $gym_stuff; \
 $piu imageio scikit-video open3d-python; \
+$piu $vis_stack; \
 $piu $experiment_tools; \
 $piu $hpo_stack; \
 $piu $more_hpo_stack; \
