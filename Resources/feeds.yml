@@ -55,10 +55,21 @@ phys.org:
     feed_url: https://phys.org/rss-feed/
     url: https://phys.org/
 
+quanta:
+  description:
+    Great science media
+  feed_url: https://api.quantamagazine.org/feed/
+  url: https://quantamagazine.org
+
 sail:
     description: Stanford AI Lab blog
     feed_url: http://ai.stanford.edu/blog/feed.xml
     url: https://ai.stanford.edu/blog/
+
+SimonWillison:
+    description: Simon Willison simonw blog
+    feed_url: https://simonwillison.net/atom/everything/
+    url: https://simonwillison.net/2023/Mar/17/beat-chatgpt-in-a-browser/
 
 synced:
     description: news on machine intelligence
@@ -69,6 +80,11 @@ Ruder:
     description: Sebastion Ruder posts (So, 99% NLP stuff)
     feed_url: http://ruder.io/rss/index.rss
     url: http://ruder.io/
+
+SebastianRaschka:
+  description: rasbt's blog
+  feed_url: https://sebastianraschka.com/rss_feed.xml
+  url: https://sebastianraschka.com/blog
 
 techxplore:
     description: tech news from the same folks behind phys.org
