@@ -434,6 +434,21 @@ function get_release {
 #------------------------------------------------------------------------------
 
 
+# Write datetime & source spork-target repo to the log.
+#function logTheSpork(){
+#    # Acquire dst points.
+#    _SPORK_LOG=$FILE_SPORK_LOG
+#
+#    # Get target.
+#    target_repo=$1
+#    echo "Adding $target_repo to the Sporks Log."
+#
+#    # Log the sporking.
+#    _TIMESTAMP=$(date +%Y-%m-%d_%H%M%S)
+#    echo "$_TIMESTAMP $target" >> $_SPORK_LOG;
+#}
+
+
 # git@github.com:lencx/ChatGPT.git
 # https://github.com/lencx/ChatGPT
 # https://github.com/lencx/ChatGPT.git
@@ -455,10 +470,34 @@ function spork(){
 
     # Log the target repos.
     mkdir -p $DIR_SPORKS
-    _SPORK_LOG=$FILE_SPORK_LOG
-    _TIMESTAMP=$(date +%Y-%m-%d_%H%M%S)
 
-    cd $DIR_SPORKS && git clone $target && \
+
+    cd $DIR_SPORKS && git clone $target;
+    #logTheSpork($target);
+    _SPORK_LOG=$FILE_SPORK_LOG
+    echo "Adding $target_repo to the Sporks Log: $_SPORK_LOG"
+    _TIMESTAMP=$(date +%Y-%m-%d_%H%M%S)
     echo "$_TIMESTAMP $target" >> $_SPORK_LOG;
     cd -;
+}
+
+
+#------------------------------------------------------------------------------
+
+# Given a url to upstream source, create a mirror of it in a priv repo.
+# (in other words; a more discreet fork that can be private)
+function WIPWIPmirrorfork(){
+    # Get spork target URL.
+    if [ "$#" -eq 0 ]; then
+        # No target given, get arg from clipboard.
+        target=`xclip -o -sel clip`
+    else
+        target=$1
+    fi
+
+    # Clone the target as bare.
+    git clone --bare $target
+
+    # TODO!!!
+
 }
