@@ -1744,6 +1744,41 @@ vi __init__.py
 # Markdown themes
 # ===============
 # TOP CHOICES:
+#  dark  --->
+#  light --->
+
+#==== dark
+#  Piodine  ***
+#  Monokai
+#  Muukii
+#  flatland_monokai
+#  NeonDark
+#  easyballs
+#  Easyballs  ***
+#  Flatgrammer
+#  bluloco-dark
+#  Draculuhh
+
+#==== light
+#  Nette ***
+#  New-Day ***
+#  IDLE
+#  Butterfly
+#  3024_day
+#  ArtSchool
+#  bluloco-light
+#  Chrome_DevTools
+#  dropin
+#
+
+#==== medium
+
+
+
+#------------------------------------------------------------------------------
+# Markdown themes
+# ===============
+# TOP CHOICES:
 #  dark  ---> bijan
 #  light ---> github_light
 
