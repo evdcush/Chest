@@ -46,7 +46,7 @@ exit;  # Safety-first!
 # LITERALLY RIGHT NEXT TO THE THE MOST COMMONLY USED KEYBINDING EVER (ctrl+v).
 # DISABLE THAT BULLSHIT:
 #[
-#    { "keys": ["ctrl+k", "ctrl+q"], "command": "toggle_setting", "args": {"setting": "word_wrap"} },
+#    { "keys": ["alt+z"], "command": "toggle_setting", "args": {"setting": "word_wrap"} },
 #    { "keys": ["f7"], "command": "noop" },
 #    { "keys": ["ctrl+b"], "command": "noop" },
 #    { "keys": ["ctrl+shift+b"], "command": "noop", "args": {"select": true} },
@@ -80,6 +80,7 @@ sudo apt autoremove
 # 𝗗𝗜𝗦𝗔𝗕𝗟𝗘 𝗖𝗔𝗡𝗢𝗡𝗜𝗖𝗔𝗟 𝗠𝗔𝗥𝗞𝗘𝗧𝗜𝗡𝗚
 # https://askubuntu.com/questions/1434512/how-to-get-rid-of-ubuntu-pro-advertisement-when-updating-apt
 sudo rm /etc/update-motd.d/88-esm-announce
+sudo rm /etc/apt/apt.conf.d/20apt-esm-hook.conf
 sudo systemctl disable ubuntu-advantage
 
 # """OFFICIAL""" solution from canonical.
@@ -126,10 +127,13 @@ sudo apt install -y libcudnn8
 sudo apt install -y curl git git-crypt ffmpeg imagemagick python3-pip ssh xclip vim zsh
 
 # Real shit.
-sudo apt install libboost-all-dev mpich swig
+sudo apt install libboost-all-dev mpich swig liblapack-dev libblas-dev
 sudo apt install gcc-12 g++-12
 # Can optionally setup alternatives:
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 100 --slave /usr/bin/g++ g++ /usr/bin/g++-12
+
+# Graph.
+sudo apt install -y graphviz graphviz-dev
 
 # Extras.
 sudo apt install -y flac git-extras lame x264 x265
@@ -168,6 +172,20 @@ sudo apt install -y git zsh && sh -c "$(wget -O- https://raw.githubusercontent.c
 git clone --depth=1 https://github.com/jocelynmallon/zshmarks.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zshmarks
 git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
+# The general "add zsh plugin to oh-my-zsh" snippet:
+## Clone repo into zsh custom plugins:
+git clone --depth=1 https://github.com/<owner>/<repo>.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/<repo>
+
+## Add it to .zshrc plugins
+#plugins=( history colored-man-pages zsh-syntax-highlighting etc... )
+
+
+#--- Experimental
+git clone --depth=1 \
+https://github.com/LucasLarson/gunstage.git \
+${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/gunstage
+
+
 # ==== #
 # 𝗗𝗢𝗧𝗦 #
 # ==== #
@@ -181,7 +199,7 @@ ln -sf $HOME/Chest/Dots $HOME/.Dots
 # Git
 # ===
 # You can symlink your Dots/gitconfig to ~/.gitconfig
-ln -sf $HOME/.Dots/gitconfig $HOME/.gitconfig
+#ln -sf $HOME/.Dots/gitconfig $HOME/.gitconfig
 # You should definitely symlink your global gitignore:
 ln -sf $HOME/.Dots/global_gitignore $HOME/.gitignore
 
@@ -190,9 +208,9 @@ git config --global user.name "Evan C."
 git config --global user.email "evdcush@protonmail.com"
 git config --global init.defaultBranch master
 git config --global core.excludesFile '~/.gitignore'
-git config --global core.pager ''
 git config --global help.autocorrect 8  # 0.8s to cancel an auto-corrected command.
 git config --global url.'git@github.com:'.insteadOf 'https://github.com/'  # use ssh instead of https for remotes
+#git config --global core.pager ''  # careful, this will also dump git log straight up
 
 # After npm i -g git-branch-select:
 git config --global alias.bs branch-select
@@ -202,6 +220,12 @@ gpg --list-secret-keys --keyid-format=long
 # Set it:
 git config --local user.signingkey 0123456789ABCDEF
 git config --global commit.gpgsign true
+
+
+#=== TOOLING
+# nbdime
+## pip install -U nbdime
+nbdime config-git --enable --global
 
 #=============================================================================#
 
@@ -305,7 +329,7 @@ sudo apt update
 
 # Gnome stuff
 # ===========
-sudo apt install -y gnome-tweaks nautilus-actions
+sudo apt install -y gnome-tweaks nautilus-extension-fma
 
 #=== Extensions
 # SYSTEM-MONITOR: https://extensions.gnome.org/extension/3010/system-monitor-next/
@@ -338,8 +362,11 @@ xclip ~/.ssh/id_ed25519.pub
 # ================
 # Essential:
 sudo apt install -y gnome-shell-extensions \
-gnome-shell-extension-dash-to-panel \
-gnome-shell-extension-no-annoyance
+gnome-shell-extension-dash-to-panel
+
+#==== Prevent gnome from opening file-explorer in background (rather than foreground).
+## REF: https://askubuntu.com/questions/1414083/gnome-file-explorer-window-opens-in-the-background-instead-of-foreground
+sudo apt install -y gnome-shell-extension-no-annoyance
 
 # Others:
 sudo apt install -y gnome-shell-extensions \
@@ -388,14 +415,126 @@ sudo apt install xdg-desktop-portal-gnome
 #                       ██   ██ ██      ██      ███████                       #
 #                                                                             #
 #=============================================================================#
+## GENERALLY SPEAKING
+## Any app that is available through the official/master apt sources
+## will be (quite a bit; exceedingly) behind the current releasre version
+## that may be available through (in order of preference):
+##   DEB (preferred)
+##     PPA
+##     GitHub (deb)
+##   Flatpak
+##   GitHub (AppImage or binary)
+##
+## So, for HEAVILY used applications and deps, always check first for their
+## latest release ver, and where to find it!!
 
 # General
 # =======
-sudo apt install -y copyq deluge flameshot gparted inkscape keepassxc nextcloud-desktop nomacs pandoc redshift wkhtmltopdf
+sudo apt install -y copyq deluge flameshot gparted inkscape keepassxc pandoc redshift wkhtmltopdf
+
+# General Sourced
+# ---------------
+# These apps generally have very old vers in official apt repos, but can get
+# elsewhere.
+
+#=== FLAMESHOT
+# https://github.com/flameshot-org/flameshot/releases
+
+echo "\n\nDOWNLOADING FLAMESHOT..."
+echo "#########################################"
+curl https://api.github.com/repos/flameshot-org/flameshot/releases/latest | \
+jq '.assets[] | select(.name | startswith("flameshot-") and endswith(".ubuntu-20.04.amd64.deb")) | .browser_download_url' | \
+xargs wget -O software.deb && \
+sudo dpkg -i software.deb \
+&& rm software.deb;
+echo "\n\nFINISHED FLAMESHOT!"
+echo "#########################################\n"
+
+#=== INKSCAPE
+sudo add-apt-repository -y ppa:inkscape.dev/stable && \
+sudo apt update && \
+sudo apt install -y inkscape
+
+
+#=========================================================
+# Libreoffice
+# ===========
+#------ Core suite
+sudo add-apt-repository -y ppa:libreoffice/ppa
+sudo apt install -y libreoffice-dev \
+libreoffice-wiki-publisher \
+libreoffice-texmaths \
+libreoffice-templates \
+libreoffice-script-provider-python \
+libreoffice-calc \
+libreoffice-math \
+libreoffice-l10n-ja \
+libreoffice-dmaths \
+libreoffice-draw \
+libreoffice-gnome \
+libreoffice-systray \
+libreoffice-pdfimport \
+libreoffice-impress \
+libreoffice-evolution
+
+# Note:
+#   - libreoffice-gnome: because if you don't, you get LO's shitty looking file-manager.
+#   - libreoffice-script-provider-python: Dependency
+
+
+# EXTENSIONS
+# ----------
+#-----  Code Highlighter 2
+#   src: https://github.com/jmzambon/libreoffice-code-highlighter/releases
+#   catalog: https://extensions.libreoffice.org/en/extensions/show/5814
+#
+# First, install deps (INCLUDED IN CORE-SUITE INSTALL LINE ABOVE!)
+sudo apt install -y libreoffice-script-provider-python
+
+# Then, get the latest release.
+## I guess you cannot install from CLI, so add it in the extensions manager GUI in LO.
+curl https://api.github.com/repos/jmzambon/libreoffice-code-highlighter/releases/latest | \
+jq '.assets[] | select(.name | endswith(".oxt")) | .browser_download_url' | \
+xargs wget -O codehighlighter2.oxt
+
+
+## Load LibreOffice config
+# YOU NEED TO COPY YOUR USER PROFILE FROM CONFIG:
+# `$HOME/.config/libreoffice/4/user`
+
+#---- Keyboard shortcuts
+# libreoffice
+# libreoffice /home/foo-bar/InDaCloud/WorldChangingIdeas/notez.odt
+
+# "Rambox"
+##  https://rambox.app/download-linux/
+##  Combines all the different services (email, slack, discord, etc..)
+##  into a single application (SEEMS HANDY!).
+
+
+#=========================================================
+
+#==== Pandoc
+## Maybe get it from GH releases instead of apt sources:
+# https://github.com/jgm/pandoc/releases
+
+#==== Nextcloud
+# For Nextcloud, you may want to consider not using the default deb file available
+# in the official apt repos, and instead try out the AppImage, which is what
+# Nextcloud seems to "officially" endorse.
+#   BUT, if you do install deb package, you probaly should add the Nextcloud PPA
+#   first, so you can get the latest builds (since official repo vers are often
+#   significantly older than latest):
+sudo add-apt-repository -y ppa:nextcloud-devs/client && \
+sudo apt update && \
+sudo apt install -y nextcloud-desktop;
+# (Consider `nautilus-nextcloud` as well)
+
 
 #=== Misc CLI tools
 # currency conversion
 sudo apt install -y qalc
+
 
 #=== Terminal (GUAKE)
 # RESOURCES:
@@ -468,6 +607,31 @@ xargs wget -O duf.deb && \
 sudo dpkg -i duf.deb \
 && rm duf.deb;
 
+#=== phoronix
+# https://github.com/phoronix-test-suite/phoronix-test-suite
+## eg: `phoronix-test-suite_10.8.4_all.deb``
+curl https://api.github.com/repos/phoronix-test-suite/phoronix-test-suite/releases/latest | \
+jq '.assets[] | select(.name | startswith("phoronix-test-suite_") and endswith("_all.deb")) | .browser_download_url' | \
+xargs wget -O foo.deb && \
+sudo dpkg -i foo.deb \
+&& rm foo.deb;
+
+#=== ElectronMail
+# https://github.com/vladimiry/ElectronMail
+## Unofficial protonmail desktop app
+## eg:
+## https://github.com/vladimiry/ElectronMail/releases/download/v5.1.3/electron-mail-5.1.3-linux-amd64.deb
+curl https://api.github.com/repos/vladimiry/ElectronMail/releases/latest | \
+jq '.assets[] | select(.name | endswith("linux-amd64.deb")) | .browser_download_url' | \
+xargs wget -O software.deb && \
+sudo dpkg -i software.deb \
+&& rm software.deb;
+
+#===  gitty
+## Contextual information about your git projects, right on the command-line
+# https://github.com/muesli/gitty/releases/download/v0.7.0/gitty_0.7.0_linux_amd64.deb
+
+
 
 #=============================================================================#
 
@@ -476,11 +640,19 @@ sudo dpkg -i duf.deb \
 sudo apt install -y htop stacer
 wget https://github.com/ClementTsang/bottom/releases/download/0.6.8/bottom_0.6.8_amd64.deb && sudo dpkg -i bottom_0.6.8_amd64.deb
 
-#== Archive/FS
-sudo apt install -y exfat-utils p7zip-full unar
+#== File-system
+sudo apt install -y exfat-fuse exfat-utils f2fs-tools ntfs-3g zfs-fuse zfsutils-linux
+
+#== Archive
+sudo apt install -y p7zip-full unar
 
 #== PDF stuff.
-sudo apt install -y texlive-xetex texlive-extra-utils
+sudo apt install -y texlive-xetex texlive-extra-utils \
+texlive-bibtex-extra texlive-fonts-extra texlive-font-utils texlive-lang-cjk \
+texlive-lang-japanese texlive-pstricks texlive-publishers texlive-science
+
+# Sphinx needs this to build `latexpdf`
+sudo apt install -y latexmk
 
 #== Dict.
 sudo apt install -y dict dictd dict-gcide dict-wn
@@ -501,7 +673,6 @@ sudo apt install -y typecatcher
 ## (MOSTLY DISPLAY FONTS)
 # Anton
 # B612 Mono
-# Bungee
 # Fira Sans
 # Fredoka One
 # Lora
@@ -511,15 +682,43 @@ sudo apt install -y typecatcher
 # Nunito
 # Secular One
 # Permanent Marker
-# Pirata One
 # Playfair Display
-# Press Start 2P
 # Red Hat Mono
 # Rubik
-# Rubik Mono One
 # Questrial
 # VT323
 # Zen Maru Gothic
+
+#===  Display
+# Aboreto
+# Astloch
+# Bangers
+# Bokor
+# Bungee
+# Cinzel
+# Cinzel Decorative
+# Forum
+# Nosifer
+# Pirata One
+# Press Start 2P
+# Rubik 80s Fade
+# Rubik Mono One  #$# AND MONO?
+# Silkscreen
+# Special Elite
+# UnifrakturMaguntia
+
+#=== Mono
+# Spline Sans Mono
+
+#=== Sans
+# Inter Tight
+
+
+
+
+
+
+#-----------------------------------------------------
 
 sudo apt install -y \
 "fonts-aoyagi*" \
@@ -595,6 +794,9 @@ npm i -g npm
 # pprint web pages:
 npm i -g percollate
 
+# pprint markdown (pdf):
+npm i -g pretty-markdown-pdf
+
 # vscode dev stuff:
 npm i -g yo generator-code vsce
 
@@ -605,6 +807,9 @@ git config --global alias.bs branch-select
 
 # web-app --> 'desktop' app:
 npm i -g nativefier
+
+# Visualize stats about GH users and projects from terminal
+npm i -g github-stats
 
 
 #-----------------------------------------------------------------------------#
@@ -653,6 +858,9 @@ wget https://github.com/marktext/marktext/releases/download/v0.17.1/marktext-amd
 #=== AppFlowy
 # https://github.com/AppFlowy-IO/AppFlowy/releases
 
+#=== Raven Reader (RSS)
+wget https://github.com/hello-efficiency-inc/raven-reader/releases/download/v1.0.78/Raven-Reader-1.0.78.AppImage
+
 
 # Misc
 # ====
@@ -672,20 +880,116 @@ sudo apt update
 # Install flatpak.
 sudo apt install -y flatpak
 
+## ALLOWING A FLATPAK PACKAGE ACCESS TO DIR:
+sudo flatpak override package_name --filesystem=my_path
+
 # Add the Flathub repo:
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-# Software Flatpak plugin (OPTIONAL)
+#=== Handy flatpak tools
+# "Flatseal is a graphical utility to review and modify permissions
+#  from your Flatpak applications."
+flatpak install flathub com.github.tchx84.Flatseal
+
+# Software Flatpak plugin (OPTIONAL) ❌
 # Allows you to install apps without the CLI
 ########### LOL DONT! Flatpak distributes it's software GUI as a snapd 🤣
 # sudo apt install gnome-software-plugin-flatpak
 
+#------------------------
+
 # Apps
 # ====
 
-# Emoji-picker
+#==== Emoji-picker: smile
 flatpak install flathub it.mijorus.smile
 # create keyboard shortcut for: flatpak run it.mijorus.smile
+
+#==== Firmware installer
+flatpak install flathub org.gnome.Firmware
+
+#==== Nomacs
+flatpak install flathub org.nomacs.ImageLounge
+
+#==== Lossless cut (video cut/clip software GUI)
+flatpak install flathub no.mifi.losslesscut
+sudo flatpak override no.mifi.losslesscut --filesystem=$HOME
+
+#==== Color-picker
+flatpak install flathub nl.hjdskes.gcolor3
+sudo flatpak override nl.hjdskes.gcolor3 --filesystem=$HOME
+
+#==== Calendar (Gnome)
+flatpak install flathub org.gnome.Calendar
+
+#==== Blanket (ambient sounds player)
+flatpak install flathub com.rafaelmardojai.Blanket
+
+#==== UML & SysML diagramming tool
+flatpak install flathub org.gaphor.Gaphor
+
+#==== Hackernews client
+flatpak install flathub de.gunibert.Hackgregator
+
+#==== Colorway (Color pairings)
+flatpak install flathub io.github.lainsce.Colorway
+
+#==== Tangram (a browser with pinned tabs)
+flatpak install flathub re.sonny.Tangram
+
+#==== Newsflash (media/blog/rss reader)
+flatpak install flathub com.gitlab.newsflash
+
+# MEDIA PLAYERS
+# =============
+
+#==== Moosync (music player; spotify YT etc)
+flatpak install flathub app.moosync.moosync
+
+#==== Spot (spotify player)
+flatpak install flathub dev.alextren.Spot
+
+
+# Browsers
+# --------
+## NOTE: currently do not utilize any of these, so they are commented-out.
+# Chromium
+#flatpak install flathub org.chromium.Chromium
+
+# Ungoogled Chromium
+#flatpak install flathub com.github.Eloston.UngoogledChromium
+
+
+# Misc
+# ----
+
+## TODO STUFF
+#==== Done (todo manager)
+flatpak install flathub dev.edfloreshz.Done
+sudo flatpak override dev.edfloreshz.Done --filesystem=$HOME
+
+#==== Sleek (todo manager)
+flatpak install flathub com.github.ransome1.sleek
+
+#==== OpenTodoList (todo manager, todo.txt)
+flatpak install flathub net.rpdev.OpenTodoList
+
+
+
+# It's There
+# ----------
+## Stuff that looks interesting hmm..
+
+## Other unused stuff that is situational.
+
+#==== Bottles: run windows stuff
+#flatpak install flathub com.usebottles.bottles
+
+#==== Eye-of-gnome (gnome image viewer)
+## I think the apt source is probably fine; I don't even use this viewer really.
+#flatpak install flathub org.gnome.eog
+
+
 
 #=============================================================================#
 #                       __  __              _   _                             #
@@ -702,13 +1006,29 @@ flatpak install flathub it.mijorus.smile
 
 
 #=== Media
-sudo apt install -y catimg mpv sox vlc mkvtoolnix webp
+# catimg: terminal print (ascii) an image
+# gpick: color picker
+# mpv: media player for mkv
+# nautilus-image-converter: context actions available on right-click image
+# sox: terminal audio player
+# vlc: media player
+# mkvtoolnix: tools for manipulating mkv files
+# webp: (dependency that allows support for reading/converting webp image files)
+sudo apt install -y catimg gpick mediainfo mpv nautilus-image-converter \
+sox vlc mkvtoolnix webp
 
 #=== OBS Studio
 # Ref: https://obsproject.com/download
 sudo add-apt-repository -y ppa:obsproject/obs-studio && \
 sudo apt update && \
 sudo apt install -y obs-studio;
+
+#=============================================================================#
+#                     '''''''''Social Network''''''''''''                     #
+#=============================================================================#
+
+# Twitter client
+pip install rainbowstream
 
 
 
@@ -726,7 +1046,7 @@ sudo apt install -y obs-studio;
 #  && chmod +x cheat-linux-amd64 \
 #  && mv cheat-linux-amd64 $HOME/.local/bin/cheat
 
-mkdir -p ~/.cache && cd ~/.cache \
+mkdir -p ~/.cache && cd ~/.cache && \
 curl https://api.github.com/repos/cheat/cheat/releases/latest | \
 jq '.assets[] | select(.name=="cheat-linux-amd64.gz") | .browser_download_url' | \
 xargs wget && \
@@ -751,6 +1071,29 @@ mv cheat-linux-amd64 $HOME/.local/bin/cheat
 # AFTER INITIAL EXEC (and cheat installs all remaining deps), symlink your conf.
 #--- (before symlinking, just double check the default conf.yml paths and such)
 ln -sf $HOME/.Dots/cheat_conf.yml $HOME/.config/cheat/conf.yml
+
+# cheat.sh
+# ========
+## https://github.com/chubin/cheat.sh
+# First, dependencies:
+sudo apt install -y rlwrap
+
+# Download to local bin.
+curl https://cht.sh/:cht.sh > $HOME/.local/bin/cht.sh
+chmod +x $HOME/.local/bin/cht.sh
+#----- Note that `cht.sh` is aliased to `cht`.
+
+# WAIT!
+# cht.sh has an option `--standalone-install`
+#  - so.... is locally downloading the sh file to bin and stuff necessary?
+#    - or can you simply use the typical curl usage, and specify local nstall?
+## WHATEVER, I did it to bin
+## then did, `cht --standalone-install`
+##  LOOKS GOOD!
+
+
+
+
 
 
 # Git
@@ -847,6 +1190,15 @@ sudo apt update && sudo apt install -y brave-browser
 #                                     Dev                                     #
 #=============================================================================#
 
+# Zeal (offline docs)
+# ===================
+#sudo add-apt-repository -y ppa:zeal-developers/ppa
+#sudo apt update
+#sudo apt install
+## PPA IS OLD!
+wget https://launchpad.net/~zeal-developers/+archive/ubuntu/ppa/+files/zeal_0.6.1-3ppa1~eoan1_amd64.deb
+
+
 # ============ #
 # TEXT EDITORS #
 # ============ #
@@ -866,6 +1218,7 @@ sudo apt update && sudo apt install -y sublime-text
 #{
 #    "always_show_minimap_viewport": true,
 #    "auto_find_in_selection": true,
+#    "word_wrap": false,
 #    "bold_folder_labels": true,
 #    "caret_extra_width": 2,
 #    "caret_style": "smooth",
@@ -978,6 +1331,9 @@ sudo apt update && sudo apt install -y sublime-text
 # ========
 #---- misc/app
 flameshot gui    # Print
+# Filename:
+# screencap_%Y-%m-%d_%H-%M-%S
+#   - with png extension
 
 #---- Disable insert
 # Figure out what is mapped to insert key
@@ -1157,10 +1513,9 @@ gnome-control-center bluetooth
 
 # Gnome/GTK themes
 # ================
+sudo apt install -y arc-theme
 # TODO
 # Browsing: https://www.gnome-look.org/s/Gnome/browse/
-
-https://github.com/vinceliuice/Orchis-theme
 
 ###############################################################################
 
