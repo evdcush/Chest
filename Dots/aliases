@@ -313,7 +313,7 @@ cv='opencv-python imageio scikit-video open3d-python pycocotools'
 data_stack='fiftyone docarray'  # docarray is a data format
 
 experiment_tools='tensorboard tensorboardX hydra-core omegaconf wandb'
-vis_stack='matplotlib bokeh seaborn plotly pyvista hiplot graphviz'
+vis_stack='matplotlib bokeh seaborn plotly pyvista hiplot graphviz altair'
 jax_stack='jax jaxlib evojax evosax flax'  # haiku?
 hpo_stack='optuna ray hyperopt niapy scikit-optimize pymoo' # HEBO' # HEBO has unresolvable GPy dep.
 more_hpo_stack='ax-platform dragonfly-opt flaml nevergrad zoopt'
@@ -404,7 +404,7 @@ $piu $jax_stack; \
 $piu $maybe_static_dudes; \
 $piu feedparser requests lxml urllib3 bs4 PyGithub mpi4py; \
 $piu fart pyperclip unidecode python-slugify em-keyboard; \
-$piu twine pytest pip_search loguru; \
+$piu twine pytest pip_search loguru pyzotero; \
 $piu $sphinx_stack $sphinx_themes grip docrepr; \
 $piu termdown pdfCropMargins; \
 $piu snakeviz; \
@@ -414,7 +414,6 @@ $piu $sphinx_themes; \
 $piu $writing_stack; \
 $piu $mediadl; \
 $piu $data_stack; \
-$piu shell-gpt; \
 $piu $core_sci_dudes; \
 "
 
@@ -858,6 +857,12 @@ alias gsize="git rev-list --objects --all \
 | numfmt --field=2 --to=iec-i --suffix=B --padding=7 --round=nearest"
 
 
+# Git LFS
+# =======
+alias gcnlfs='GIT_LFS_SKIP_SMUDGE=1 git clone'
+alias getgitlfs='git-lfs fetch && git-lfs checkout'
+
+
 
 #=============================================================================#
 #                                                                             #
@@ -880,6 +885,7 @@ function RDME() {
 }
 
 #=== license copies
+alias apache="cp $DIR_CHEST_TEMPLATES/Licenses/Apache-2.0.txt ./LICENSE"
 alias bsd3="cp $DIR_CHEST_TEMPLATES/Licenses/BSD-3-Clause.txt ./LICENSE"
 alias lgpl="cp $DIR_CHEST_TEMPLATES/Licenses/LGPL-3.0.txt ./LICENSE"
 alias agpl="cp $DIR_CHEST_TEMPLATES/Licenses/AGPL-3.0.txt ./LICENSE"
