@@ -185,6 +185,11 @@ git clone --depth=1 \
 https://github.com/LucasLarson/gunstage.git \
 ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/gunstage
 
+#--- resh
+# "Shell history in context"
+# eg: like fzf, but with further contextual hints/ordering
+curl -fsSL https://raw.githubusercontent.com/curusarn/resh/master/scripts/rawinstall.sh | bash
+
 
 # ==== #
 # 𝗗𝗢𝗧𝗦 #
