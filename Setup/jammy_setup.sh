@@ -138,6 +138,15 @@ sudo apt install -y graphviz graphviz-dev
 # Extras.
 sudo apt install -y flac git-extras lame x264 x265
 
+# Git
+# ===
+#--- git-lfs
+# Add the source:
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+
+# Install:
+sudo apt update && sudo apt install -y git-lfs;
+
 # Python (pyenv)
 # ==============
 sudo apt install -y make build-essential libssl-dev zlib1g-dev \
