@@ -517,6 +517,14 @@ xargs wget -O codehighlighter2.oxt
 ##  into a single application (SEEMS HANDY!).
 
 
+#---------------------------------------------------------
+
+# ETHERPAD
+# ========
+# collaborative editing online editor.
+
+
+
 #=========================================================
 
 #==== Pandoc
