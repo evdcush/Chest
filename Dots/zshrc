@@ -162,9 +162,9 @@ if [ -f "$DIR_DOTS/work_aliases" ]; then
     source $DIR_DOTS/work_aliases
 fi
 
-PRIVZ="$DIR_DOTS/priv"
-if [ -f "$PRIVZ" ]; then
-    source $PRIVZ
+HITEM="$HOME/.hitem"
+if [ -f "$HITEM" ]; then
+    source $HITEM
 fi
 
 #=============================================================================#
