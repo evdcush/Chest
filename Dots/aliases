@@ -308,7 +308,7 @@ alias pipupdate="pip list --outdated --format=freeze \
 # Typical stack
 # =============
 # work stuff
-cv='opencv-python imageio scikit-video open3d-python pycocotools'
+cv='opencv-python imageio scikit-video open3d-python pycocotools albumentations'
 
 data_stack='fiftyone docarray'  # docarray is a data format
 
@@ -317,7 +317,8 @@ vis_stack='matplotlib bokeh seaborn plotly pyvista hiplot graphviz altair ipyviz
 jax_stack='jax jaxlib evojax evosax flax'  # haiku?
 hpo_stack='optuna ray hyperopt niapy scikit-optimize pymoo' # HEBO' # HEBO has unresolvable GPy dep.
 more_hpo_stack='ax-platform dragonfly-opt flaml nevergrad zoopt'
-hugging_stack='datasets diffusers huggingface_hub'
+hugging_stack='datasets diffusers huggingface_hub peft'
+openai_stack='openai[embeddings] openai[wandb] tiktoken'
 
 mmlab_stack='mmcv-full mmengine mmdet' # mmtrack mmselfsup'  # mmselfsup has GPU (faiss-gpu) dep that is difficult to resolve
 tracking='lvis motmetrics'
@@ -331,7 +332,6 @@ tracking='lvis motmetrics'
 gym_stuff='gym gymnasium'
 
 # Stable diffusion / Generative etc.....
-diffusion_stuff='albumentations diffusers '
 whisper='yt-whisper'  # pip install git+https://github.com/m1guelpf/yt-whisper.git
 
 
@@ -375,12 +375,21 @@ linting_stack='codespell flake8 pylint pre-commit ruff tomli'
 
 static_stack="$static_analysis_stack $formatters_stack $typing_stack $linting_stack"
 
+function pipigpu(){
+    # Packages
+    gpu_pkgs='cupy gpustat nvitop triton'
+    if nvidia-smi &>/dev/null; then
+        pip install -U $gpu_pkgs
+        echo 'CUDA AVAILABLE; downloading cuda builds!'
+    fi
+}
 
-# ################ #
-# THE CORE BOYS 💪🏻 #
-# ################ #
+
+# ################# #
+# THE CORE SUBSETS  #
+# ################# #
 core_py_dist='pip setuptools wheel'
-#core_static_dudes='pre-commit pylint flake8 black isort ruff tomli yapf'
+#core_static_stack='pre-commit pylint flake8 black isort ruff tomli yapf'
 core_sci_stack='cython numpy scipy scikit-learn matplotlib pandas opencv-python sympy'
 core_ipy_stack='ipython jupyter notebook nbdime jupytext'
 
@@ -398,6 +407,7 @@ $piu $hpo_stack; \
 $piu $more_hpo_stack; \
 $piu $hugging_stack; \
 $piu $jax_stack; \
+$pipigpu; \
 $piu feedparser requests lxml urllib3 bs4 PyGithub mpi4py; \
 $piu fart pyperclip unidecode python-slugify em-keyboard; \
 $piu twine pytest pip_search loguru pyzotero; \
@@ -421,6 +431,10 @@ $piu lookatme; \
 # dudes are always there.
 
 # NB: if you get an error with mpi4py --> `sudo apt install -y mpich`
+
+# GPU Utils
+# =========
+alias pipigpu="$piu gpustat nvitop"
 
 #== pytorch
 function pipitorch(){
@@ -486,10 +500,6 @@ im_on_an_ancient_version_of_some_extremely_common_core_dep_lol=(\
 # `pip install cupy` just doesnt seem to work, so use whl
 alias pipicupy="pip install cupy-cuda110 -f \
 https://github.com/cupy/cupy/releases/tag/v7.8.0"
-
-# GPU Utils
-# =========
-alias pipigpu="$piu gpustat nvitop"
 
 # Dont even remember:
 ## 'pix2tex[gui]'
