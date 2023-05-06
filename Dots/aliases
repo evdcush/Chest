@@ -379,7 +379,7 @@ static_stack="$static_analysis_stack $formatters_stack $typing_stack $linting_st
 # ################ #
 # THE CORE BOYS 💪🏻 #
 # ################ #
-core_py_dudes='pip setuptools wheel'
+core_py_dist='pip setuptools wheel'
 #core_static_dudes='pre-commit pylint flake8 black isort ruff tomli yapf'
 core_sci_dudes='cython numpy scipy scikit-learn matplotlib pandas ipython opencv-python sympy'
 core_ipy_dudes='ipython jupyter notebook nbdime jupytext'
@@ -389,7 +389,7 @@ core_ipy_dudes='ipython jupyter notebook nbdime jupytext'
 
 
 alias pipinew="\
-$piu $core_py_dudes; \
+$piu $core_py_dist; \
 $piu $core_sci_dudes; \
 $piu $core_ipy_dudes; \
 $piu $static_stack; \
