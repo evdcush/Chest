@@ -313,7 +313,7 @@ cv='opencv-python imageio scikit-video open3d-python pycocotools'
 data_stack='fiftyone docarray'  # docarray is a data format
 
 experiment_tools='tensorboard tensorboardX hydra-core omegaconf wandb'
-vis_stack='matplotlib bokeh seaborn plotly pyvista hiplot graphviz altair'
+vis_stack='matplotlib bokeh seaborn plotly pyvista hiplot graphviz altair ipyvizzu'
 jax_stack='jax jaxlib evojax evosax flax'  # haiku?
 hpo_stack='optuna ray hyperopt niapy scikit-optimize pymoo' # HEBO' # HEBO has unresolvable GPy dep.
 more_hpo_stack='ax-platform dragonfly-opt flaml nevergrad zoopt'
@@ -415,6 +415,7 @@ $piu $writing_stack; \
 $piu $mediadl; \
 $piu $data_stack; \
 $piu $core_sci_dudes; \
+$piu lookatme; \
 "
 
 # ALWAYS open and CLOSE with core sci stack.
