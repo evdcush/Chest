@@ -384,9 +384,6 @@ core_py_dist='pip setuptools wheel'
 core_sci_stack='cython numpy scipy scikit-learn matplotlib pandas opencv-python sympy'
 core_ipy_stack='ipython jupyter notebook nbdime jupytext'
 
-# chatgpt-wrapper
-#pip install git+https://github.com/mmabrouk/chatgpt-wrapper
-
 
 alias pipinew="\
 $piu $core_py_dist; \
@@ -401,7 +398,6 @@ $piu $hpo_stack; \
 $piu $more_hpo_stack; \
 $piu $hugging_stack; \
 $piu $jax_stack; \
-$piu $maybe_static_dudes; \
 $piu feedparser requests lxml urllib3 bs4 PyGithub mpi4py; \
 $piu fart pyperclip unidecode python-slugify em-keyboard; \
 $piu twine pytest pip_search loguru pyzotero; \
