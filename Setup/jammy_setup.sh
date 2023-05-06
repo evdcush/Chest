@@ -969,7 +969,8 @@ flatpak install flathub com.gitlab.newsflash
 flatpak install flathub app.moosync.moosync
 
 #==== Spot (spotify player)
-flatpak install flathub dev.alextren.Spot
+## NOPE! ONLY SUPPORTS 'PREMIUM'/SUBSCRIBED SPOTIFY ACCOUNTS
+#flatpak install flathub dev.alextren.Spot
 
 
 # Browsers
