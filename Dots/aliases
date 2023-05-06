@@ -381,8 +381,8 @@ static_stack="$static_analysis_stack $formatters_stack $typing_stack $linting_st
 # ################ #
 core_py_dist='pip setuptools wheel'
 #core_static_dudes='pre-commit pylint flake8 black isort ruff tomli yapf'
-core_sci_stack='cython numpy scipy scikit-learn matplotlib pandas ipython opencv-python sympy'
-core_ipy_dudes='ipython jupyter notebook nbdime jupytext'
+core_sci_stack='cython numpy scipy scikit-learn matplotlib pandas opencv-python sympy'
+core_ipy_stack='ipython jupyter notebook nbdime jupytext'
 
 # chatgpt-wrapper
 #pip install git+https://github.com/mmabrouk/chatgpt-wrapper
@@ -391,7 +391,7 @@ core_ipy_dudes='ipython jupyter notebook nbdime jupytext'
 alias pipinew="\
 $piu $core_py_dist; \
 $piu $core_sci_stack; \
-$piu $core_ipy_dudes; \
+$piu $core_ipy_stack; \
 $piu $static_stack; \
 $piu $gym_stuff; \
 $piu imageio scikit-video open3d-python; \
