@@ -735,6 +735,8 @@ sudo apt install -y typecatcher
 #=== Sans
 # Inter Tight
 
+#=== Serif
+# Adamina
 
 
 
