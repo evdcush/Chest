@@ -973,6 +973,15 @@ flatpak install flathub app.moosync.moosync
 #flatpak install flathub dev.alextren.Spot
 
 
+#==== Spotube (actual spotify client)
+# source: https://github.com/KRTirtho/spotube
+flatpak install flathub com.github.KRTirtho.Spotube
+
+#==== Monophony (stream music from YT)
+flatpak install flathub io.gitlab.zehkira.Monophony
+
+
+
 # Browsers
 # --------
 ## NOTE: currently do not utilize any of these, so they are commented-out.
