@@ -317,8 +317,9 @@ vis_stack='matplotlib bokeh seaborn plotly pyvista hiplot graphviz altair ipyviz
 jax_stack='jax jaxlib evojax evosax flax'  # haiku?
 hpo_stack='optuna ray hyperopt niapy scikit-optimize pymoo' # HEBO' # HEBO has unresolvable GPy dep.
 more_hpo_stack='ax-platform dragonfly-opt flaml nevergrad zoopt'
-hugging_stack='datasets diffusers huggingface_hub peft'
-openai_stack='openai[embeddings] openai[wandb] tiktoken'
+hugging_stack='datasets diffusers huggingface_hub peft safetensors timm transformers'
+openai_stack="'openai[embeddings]' 'openai[wandb]' tiktoken"
+ui_stack='gradio streamlit'
 
 mmlab_stack='mmcv-full mmengine mmdet' # mmtrack mmselfsup'  # mmselfsup has GPU (faiss-gpu) dep that is difficult to resolve
 tracking='lvis motmetrics'
@@ -337,7 +338,7 @@ whisper='yt-whisper'  # pip install git+https://github.com/m1guelpf/yt-whisper.g
 
 # apps
 mediadl='yt-dlp youtube-dl spotdl papis'
-imgutils='rembg lama-cleaner'  # because rembg has strict version dependencies (must be 3.9)
+imgutils='backgroundremover lama-cleaner'  # because rembg has strict version dependencies (must be 3.9)
 # lama-cleaner: Image inpainting tool powered by SOTA AI Model. Remove any unwanted object, defect, people from your pictures or erase and replace(powered by stable diffusion) any thing on your pictures.
 
 # Build/Package/Publish
@@ -407,12 +408,13 @@ $piu $hpo_stack; \
 $piu $more_hpo_stack; \
 $piu $hugging_stack; \
 $piu $jax_stack; \
+$piu $openai_stack; \
 $pipigpu; \
 $piu feedparser requests lxml urllib3 bs4 PyGithub mpi4py; \
 $piu fart pyperclip unidecode python-slugify em-keyboard; \
 $piu twine pytest pip_search loguru pyzotero; \
 $piu $sphinx_stack $sphinx_themes grip docrepr; \
-$piu termdown pdfCropMargins; \
+$piu termdown pdfCropMargins backgroundremover; \
 $piu snakeviz; \
 $piu tldr; \
 $piu $sphinx_stack; \
@@ -420,6 +422,7 @@ $piu $sphinx_themes; \
 $piu $writing_stack; \
 $piu $mediadl; \
 $piu $data_stack; \
+$piu $ui_stack; \
 $piu $core_sci_stack; \
 $piu lookatme; \
 "
