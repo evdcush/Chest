@@ -734,10 +734,20 @@ sudo apt install -y typecatcher
 
 #=== Sans
 # Inter Tight
+# Open Sans
 
 #=== Serif
 # Adamina
+# PT serif
+# Lora
+# Noto Serif
+# Noto Serif JP
+# IBM Plex Serif
+# Spectral
 
+
+#=== Japanese
+#
 
 
 
@@ -922,8 +932,18 @@ flatpak install flathub com.github.tchx84.Flatseal
 
 #------------------------
 
+# Dev
+# ===
+
+#==== JupyerLab Desktop
+# NEVER WORKS
+#flatpak install flathub org.jupyter.JupyterLab
+
 # Apps
 # ====
+
+#==== SaveDesktop (saves gnome settings)
+flatpak install flathub io.github.vikdevelop.SaveDesktop
 
 #==== Emoji-picker: smile
 flatpak install flathub it.mijorus.smile
@@ -963,6 +983,18 @@ flatpak install flathub re.sonny.Tangram
 
 #==== Newsflash (media/blog/rss reader)
 flatpak install flathub com.gitlab.newsflash
+
+#==== Standard Notes
+flatpak install flathub org.standardnotes.standardnotes
+
+#==== Upscayl
+flatpak install flathub org.upscayl.Upscayl
+
+#==== Planner
+flatpak install flathub com.github.alainm23.planner
+
+#==== Dev Toolbox (misc lot of handy tools)
+flatpak install flathub me.iepure.devtoolbox
 
 # MEDIA PLAYERS
 # =============
