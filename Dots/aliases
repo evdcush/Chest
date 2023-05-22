@@ -338,7 +338,7 @@ whisper='yt-whisper'  # pip install git+https://github.com/m1guelpf/yt-whisper.g
 
 
 # apps
-mediadl='yt-dlp youtube-dl spotdl papis'
+mediadl='yt-dlp youtube-dl gallery-dl spotdl papis'
 imgutils='backgroundremover lama-cleaner'  # because rembg has strict version dependencies (must be 3.9)
 # lama-cleaner: Image inpainting tool powered by SOTA AI Model. Remove any unwanted object, defect, people from your pictures or erase and replace(powered by stable diffusion) any thing on your pictures.
 
