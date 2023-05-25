@@ -1,9 +1,8 @@
 # Chest
 
-Collection of priceless junk.
+A collection of priceless junk.
 
 ```{tableofcontents}
-
 ```
 
 Now some grid cards!
@@ -13,7 +12,7 @@ Now some grid cards!
 :gutter: 3
 
 :::{grid-item-card}
-🔗 markdown
+:link: markdown
 :link-type: doc
 :class-header: bg-light
 
@@ -24,7 +23,7 @@ It's like Markdown with rST directives!
 :::
 
 :::{grid-item-card}
-🔗 markdown-notebooks
+:link: markdown-notebooks
 :link-type: doc
 :class-header: bg-light
 
@@ -36,7 +35,7 @@ You can also write docs in Notebooks!
 :::
 
 :::{grid-item-card}
-🔗 notebooks
+:link: notebooks
 :link-type: doc
 :class-header: bg-light
 
@@ -48,7 +47,7 @@ Execute notebook cells, store results, and insert outputs across pages.
 :::
 
 :::{grid-item-card}
-🔗 notebooks
+:link: notebooks
 :link-type: doc
 :class-header: bg-light
 
@@ -59,7 +58,7 @@ Connect your book with Binder, JupyterHub, and other live environments
 :::
 
 :::{grid-item-card}
-🔗 notebooks
+:link: notebooks
 :link-type: doc
 :class-header: bg-light
 
@@ -70,7 +69,7 @@ Share your built books via web services and hosted websites.
 :::
 
 :::{grid-item-card}
-🔗 notebooks
+:link: notebooks
 :link-type: doc
 :class-header: bg-light
 
