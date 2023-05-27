@@ -42,6 +42,21 @@ fc
 fc -e 'vim' # specify editor
 fc -l # list recent cmds from history
 
+# RENAME STUFF
+# ============
+##  Rename all occurrences of the name "mmengine_template" in all
+##  directory names, filenames, or in file text.
+# 1. rename all directory names:
+find . -depth -name "*mmengine_template*" -type d -execdir \
+bash -c 'mv -i "$1" "${1//mmengine_template/new_name}"' bash {} \;
+
+# 2. Replace all occurences in filenames:
+find . -depth -name "*mmengine_template*" -type f -execdir \
+bash -c 'mv -i "$1" "${1//mmengine_template/new_name}"' bash {} \;
+
+# 3. Replace all occurrences within the files:
+find . -type f -exec sed -i 's/mmengine_template/new_name/g' {} +
+
 
 # Sort file
 #----------------------------
