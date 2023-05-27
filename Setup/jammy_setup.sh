@@ -939,8 +939,20 @@ flatpak install flathub com.github.tchx84.Flatseal
 # NEVER WORKS
 #flatpak install flathub org.jupyter.JupyterLab
 
+#==== Racket
+flatpak install flathub org.racket_lang.Racket
+
+# System Stuff
+# ============
+
+#==== Filelight (nice visualization of disk space)
+flatpak install flathub org.kde.filelight
+
 # Apps
 # ====
+
+#==== This Week in My Life (kanban task organizer)
+flatpak install flathub io.github.zhrexl.thisweekinmylife
 
 #==== SaveDesktop (saves gnome settings)
 flatpak install flathub io.github.vikdevelop.SaveDesktop
@@ -989,6 +1001,9 @@ flatpak install flathub org.standardnotes.standardnotes
 
 #==== Upscayl
 flatpak install flathub org.upscayl.Upscayl
+
+#==== Imaginer (image gen)
+flatpak install flathub page.codeberg.Imaginer.Imaginer
 
 #==== Planner
 flatpak install flathub com.github.alainm23.planner
