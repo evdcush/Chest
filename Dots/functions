@@ -315,6 +315,34 @@ function getawe() {
 }
 
 
+function getawerdme() {
+    # ASSUMES A RAW GH URL GIVEN AS INPUT!
+    #https://raw.githubusercontent.com/btw-so/open-source-alternatives/main/README.md
+
+
+    # Exit if no git url provided.
+    if ! (( $# )); then return; fi
+
+    # Just log the timestamp and repo for now.
+    mkdir -p $DIR_DOTS
+    _AW_LOG="$DIR_DOTS/awesomes.log"
+    _TIMESTAMP=$(date +%Y-%m-%d_%H%M%S)
+
+    echo "$_TIMESTAMP: $@" >> $_AW_LOG
+
+    # Dst.
+    _AW_PATH=$HOME/RepoCloud/Sporks/AWESOMES
+    mkdir -p $_AW_PATH
+
+    cd $_AW_PATH
+    git clone --depth=1 $1
+
+    cd -
+}
+
+
+
+
 #############
 
 # Setup a default git config
@@ -460,25 +488,32 @@ function get_release {
 function spork(){
     # Get spork target URL.
     if [ "$#" -eq 0 ]; then
-        # No target given, get arg from clipboard.
+        echo 'No target given; will attempt to get arg from clipboard'
         target=`xclip -o -sel clip`
     else
         target=$1
     fi
 
-    echo "Cloning $target..."
-
-    # Log the target repos.
+    # Create the Sporks master dir.
     mkdir -p $DIR_SPORKS
 
+    echo "TARGET REPO: $target"
 
+    # Clone it.
     cd $DIR_SPORKS && git clone $target;
-    #logTheSpork($target);
+
+    # Log the Sporking.
     _SPORK_LOG=$FILE_SPORK_LOG
     echo "Adding $target_repo to the Sporks Log: $_SPORK_LOG"
     _TIMESTAMP=$(date +%Y-%m-%d_%H%M%S)
     echo "$_TIMESTAMP $target" >> $_SPORK_LOG;
+
+    # Go home.
     cd -;
+}
+
+function sporklog(){
+    bat $FILE_SPORK_LOG
 }
 
 
