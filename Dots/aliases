@@ -227,9 +227,16 @@ alias pit="echo 'from IPython import embed; embed();' \
 # Cython directives
 alias cyd="echo '# distutils: language = c++\n# cython: language_level=3' | xclip"
 
-
 # Completely legitimately download educational material.
 course_lecture_dl='coursera-dl khan-dl'
+
+# Jupyter
+# =======
+## Jupyter Book
+alias jbb='jupyter-book build'
+alias jbc='jupyter-book clean'
+alias jbm='jupyter-book myst'
+
 
 # TEMPLATE py file
 # ================
