@@ -951,18 +951,10 @@ flatpak install flathub org.kde.filelight
 # Apps
 # ====
 
-#==== This Week in My Life (kanban task organizer)
-flatpak install flathub io.github.zhrexl.thisweekinmylife
+# ----  Media  -------------------------------------------------------------- #
 
-#==== SaveDesktop (saves gnome settings)
-flatpak install flathub io.github.vikdevelop.SaveDesktop
-
-#==== Emoji-picker: smile
-flatpak install flathub it.mijorus.smile
-# create keyboard shortcut for: flatpak run it.mijorus.smile
-
-#==== Firmware installer
-flatpak install flathub org.gnome.Firmware
+#==== Inkscape
+flatpak install flathub org.inkscape.Inkscape
 
 #==== Nomacs
 flatpak install flathub org.nomacs.ImageLounge
@@ -975,41 +967,14 @@ sudo flatpak override no.mifi.losslesscut --filesystem=$HOME
 flatpak install flathub nl.hjdskes.gcolor3
 sudo flatpak override nl.hjdskes.gcolor3 --filesystem=$HOME
 
-#==== Calendar (Gnome)
-flatpak install flathub org.gnome.Calendar
-
-#==== Blanket (ambient sounds player)
-flatpak install flathub com.rafaelmardojai.Blanket
-
-#==== UML & SysML diagramming tool
-flatpak install flathub org.gaphor.Gaphor
-
-#==== Hackernews client
-flatpak install flathub de.gunibert.Hackgregator
-
 #==== Colorway (Color pairings)
 flatpak install flathub io.github.lainsce.Colorway
-
-#==== Tangram (a browser with pinned tabs)
-flatpak install flathub re.sonny.Tangram
-
-#==== Newsflash (media/blog/rss reader)
-flatpak install flathub com.gitlab.newsflash
-
-#==== Standard Notes
-flatpak install flathub org.standardnotes.standardnotes
 
 #==== Upscayl
 flatpak install flathub org.upscayl.Upscayl
 
 #==== Imaginer (image gen)
 flatpak install flathub page.codeberg.Imaginer.Imaginer
-
-#==== Planner
-flatpak install flathub com.github.alainm23.planner
-
-#==== Dev Toolbox (misc lot of handy tools)
-flatpak install flathub me.iepure.devtoolbox
 
 # MEDIA PLAYERS
 # =============
@@ -1029,6 +994,47 @@ flatpak install flathub com.github.KRTirtho.Spotube
 #==== Monophony (stream music from YT)
 flatpak install flathub io.gitlab.zehkira.Monophony
 
+# --------------------------------------------------------------------------- #
+
+#==== This Week in My Life (kanban task organizer)
+flatpak install flathub io.github.zhrexl.thisweekinmylife
+
+#==== SaveDesktop (saves gnome settings)
+flatpak install flathub io.github.vikdevelop.SaveDesktop
+
+#==== Emoji-picker: smile
+flatpak install flathub it.mijorus.smile
+# create keyboard shortcut for: flatpak run it.mijorus.smile
+
+#==== Firmware installer
+flatpak install flathub org.gnome.Firmware
+
+#==== Calendar (Gnome)
+flatpak install flathub org.gnome.Calendar
+
+#==== Blanket (ambient sounds player)
+flatpak install flathub com.rafaelmardojai.Blanket
+
+#==== UML & SysML diagramming tool
+flatpak install flathub org.gaphor.Gaphor
+
+#==== Hackernews client
+flatpak install flathub de.gunibert.Hackgregator
+
+#==== Tangram (a browser with pinned tabs)
+flatpak install flathub re.sonny.Tangram
+
+#==== Newsflash (media/blog/rss reader)
+flatpak install flathub com.gitlab.newsflash
+
+#==== Standard Notes
+flatpak install flathub org.standardnotes.standardnotes
+
+#==== Planner
+flatpak install flathub com.github.alainm23.planner
+
+#==== Dev Toolbox (misc lot of handy tools)
+flatpak install flathub me.iepure.devtoolbox
 
 
 # Browsers
