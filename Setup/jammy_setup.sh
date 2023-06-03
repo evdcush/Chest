@@ -955,6 +955,7 @@ flatpak install flathub org.kde.filelight
 
 #==== Inkscape
 flatpak install flathub org.inkscape.Inkscape
+sudo flatpak override org.inkscape.Inkscape --filesystem=$HOME
 
 #==== Nomacs
 flatpak install flathub org.nomacs.ImageLounge
