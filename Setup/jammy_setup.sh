@@ -166,7 +166,7 @@ sudo apt install -y libfuse2
 
 # PATH
 # ====
-# Default: 
+# Default:
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 
 # Changed:
@@ -628,6 +628,15 @@ jq '.assets[] | select(.name | startswith("duf_") and endswith("_linux_amd64.deb
 xargs wget -O duf.deb && \
 sudo dpkg -i duf.deb \
 && rm duf.deb;
+
+#=== nteract
+# https://github.com/nteract/nteract/releases
+## eg: `nteract_0.28.0_amd64.deb`
+
+#=== zettlr
+# https://github.com/Zettlr/Zettlr
+## eg: Zettlr-3.0.0-beta.4-amd64.deb
+
 
 #=== phoronix
 # https://github.com/phoronix-test-suite/phoronix-test-suite
