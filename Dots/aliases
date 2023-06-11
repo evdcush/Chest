@@ -400,7 +400,7 @@ function pipigpu(){
 core_py_dist='pip setuptools wheel'
 #core_static_stack='pre-commit pylint flake8 black isort ruff tomli yapf'
 core_sci_stack='cython numpy scipy scikit-learn matplotlib pandas opencv-python sympy'
-core_ipy_stack='ipython jupyter notebook nbdime jupytext'
+core_ipy_stack='ipython jupyter notebook nbdime jupytext jupyter_contrib_nbextensions'
 
 
 alias pipinew="\
@@ -425,7 +425,7 @@ $piu twine pytest pip_search loguru pyzotero; \
 $piu $sphinx_stack $sphinx_themes grip docrepr; \
 $piu termdown pdfCropMargins backgroundremover; \
 $piu snakeviz; \
-$piu tldr; \
+$piu tldr doitlive; \
 $piu $sphinx_stack; \
 $piu $sphinx_themes; \
 $piu $writing_stack; \
