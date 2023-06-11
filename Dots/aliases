@@ -211,6 +211,7 @@ alias akd="$ap-key del"
 alias py='python'
 alias ipy='ipython'
 alias nb="jupyter notebook"
+alias nbscrub='nbstripout --keep-output --remove-empty-cells'
 
 # notebook extensions
 #  - jupyter_dashboards  <---- has NOT worked yet (maybe conflict with nbext?)
@@ -400,7 +401,7 @@ function pipigpu(){
 core_py_dist='pip setuptools wheel'
 #core_static_stack='pre-commit pylint flake8 black isort ruff tomli yapf'
 core_sci_stack='cython numpy scipy scikit-learn matplotlib pandas opencv-python sympy'
-core_ipy_stack='ipython jupyter notebook nbdime jupytext jupyter_contrib_nbextensions'
+core_ipy_stack='ipython jupyter notebook nbdime jupytext jupyter_contrib_nbextensions nbstripout'
 
 
 alias pipinew="\
