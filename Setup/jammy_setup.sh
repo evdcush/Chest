@@ -737,6 +737,7 @@ sudo apt install -y typecatcher
 # Silkscreen
 # Special Elite
 # UnifrakturMaguntia
+# Tilt Prism
 
 #=== Mono
 # Spline Sans Mono
@@ -756,7 +757,11 @@ sudo apt install -y typecatcher
 
 
 #=== Japanese
-#
+# Yuji Hentaigana Akebono
+# Rock 3D
+# Tsukimi Rounded
+# Monomaniac One
+# Slackside One
 
 
 
