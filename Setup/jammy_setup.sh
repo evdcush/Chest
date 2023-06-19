@@ -551,6 +551,12 @@ sudo add-apt-repository -y ppa:nextcloud-devs/client && \
 sudo apt update && \
 sudo apt install -y nextcloud-desktop;
 # (Consider `nautilus-nextcloud` as well)
+## SHOULD YOU ENCOUNTER AUTH ISSUES, such as:
+## "the password you use to log in to your computer no longer matches
+##  that of your login keyring"
+## Or other keyring issues, here's what worked for me:
+## rm -v ~/.local/share/keyrings/*.keyring && reboot
+
 
 
 #=== Misc CLI tools
@@ -918,16 +924,15 @@ wget https://github.com/Stellarium/stellarium/releases/download/v1.1/Stellarium-
 
 
 #=============================================================================#
-#                ______   _           _                     _                 #
-#               |  ____| | |         | |                   | |                #
-#               | |__    | |   __ _  | |_   _ __     __ _  | | __             #
-#               |  __|   | |  / _` | | __| | '_ \   / _` | | |/ /             #
-#               | |      | | | (_| | | |_  | |_) | | (_| | |   <              #
-#               |_|      |_|  \__,_|  \__| | .__/   \__,_| |_|\_\             #
-#                                          | |                                #
-#                                          |_|                                #
+#                                                                             #
+#          ███████ ██       █████  ████████ ██████   █████  ██   ██           #
+#          ██      ██      ██   ██    ██    ██   ██ ██   ██ ██  ██            #
+#          █████   ██      ███████    ██    ██████  ███████ █████             #
+#          ██      ██      ██   ██    ██    ██      ██   ██ ██  ██            #
+#          ██      ███████ ██   ██    ██    ██      ██   ██ ██   ██           #
 #                                                                             #
 #=============================================================================#
+
 
 # Consider adding PPA to get the latest flatpak:
 sudo add-apt-repository ppa:flatpak/stable
