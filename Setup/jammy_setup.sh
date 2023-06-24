@@ -444,12 +444,28 @@ sudo apt install xdg-desktop-portal-gnome
 
 # General
 # =======
-sudo apt install -y copyq deluge flameshot gparted inkscape keepassxc pandoc redshift wkhtmltopdf
+sudo apt install -y jq
+sudo apt install -y copyq deluge gparted redshift wkhtmltopdf
 
 # General Sourced
 # ---------------
 # These apps generally have very old vers in official apt repos, but can get
 # elsewhere.
+
+#=== KeePassXC
+sudo add-apt-repository -y ppa:phoerious/keepassxc && \
+sudo apt update && \
+sudo apt install keepassxc
+
+#=== Pandoc
+curl https://api.github.com/repos/flameshot-org/flameshot/releases/latest | \
+jq '.assets[] | select(.name | startswith("pandoc-") and endswith(".amd64.deb")) | .browser_download_url' | \
+xargs wget -O software.deb && \
+sudo dpkg -i software.deb \
+&& rm software.deb;
+
+#===
+
 
 #=== FLAMESHOT
 # https://github.com/flameshot-org/flameshot/releases
@@ -461,7 +477,7 @@ jq '.assets[] | select(.name | startswith("flameshot-") and endswith(".ubuntu-20
 xargs wget -O software.deb && \
 sudo dpkg -i software.deb \
 && rm software.deb;
-echo "\n\nFINISHED FLAMESHOT!"
+echo "\n\nFINISHED FLAMESHOT"
 echo "#########################################\n"
 
 #=== INKSCAPE
@@ -474,6 +490,7 @@ sudo apt install -y inkscape
 # Libreoffice
 # ===========
 #------ Core suite
+## This is way too much
 sudo add-apt-repository -y ppa:libreoffice/ppa
 sudo apt install -y libreoffice-dev \
 libreoffice-wiki-publisher \
@@ -978,14 +995,23 @@ flatpak install flathub org.kde.filelight
 # Apps
 # ====
 
+#==== Logseq
+flatpak install flathub com.logseq.Logseq && \
+sudo flatpak override --filesystem=$HOME com.logseq.Logseq
+
+#==== MarkText
+flatpak install flathub com.github.marktext.marktext && \
+sudo flatpak override --filesystem=$HOME com.github.marktext.marktext
+
 # ----  Media  -------------------------------------------------------------- #
 
 #==== Inkscape
-flatpak install flathub org.inkscape.Inkscape
+flatpak install flathub org.inkscape.Inkscape && \
 sudo flatpak override org.inkscape.Inkscape --filesystem=$HOME
 
 #==== Nomacs
-flatpak install flathub org.nomacs.ImageLounge
+flatpak install flathub org.nomacs.ImageLounge && \
+sudo flatpak override --filesystem=$HOME org.nomacs.ImageLounge
 
 #==== Lossless cut (video cut/clip software GUI)
 flatpak install flathub no.mifi.losslesscut
@@ -1029,6 +1055,7 @@ flatpak install flathub io.github.zhrexl.thisweekinmylife
 
 #==== SaveDesktop (saves gnome settings)
 flatpak install flathub io.github.vikdevelop.SaveDesktop
+sudo flatpak override --filesystem=$HOME io.github.vikdevelop.SaveDesktop
 
 #==== Emoji-picker: smile
 flatpak install flathub it.mijorus.smile
@@ -1115,10 +1142,6 @@ flatpak install flathub net.rpdev.OpenTodoList
 #                      |_|  |_|  \___|  \__,_| |_|  \__,_|                    #
 #                                                                             #
 #=============================================================================#
-
-# flameshot config:
-# %Y-%m-%d_%H%M%S_capture
-
 
 #=== Media
 # catimg: terminal print (ascii) an image
