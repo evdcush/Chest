@@ -129,8 +129,6 @@ IPython.embed()
 # and you can alias to use ipython shell instead if you put in .pdbrc:
 import IPython
 
-alias interacti IPython.embed()
-
 
 """
 ## How to make your 'foo.py' script executable bin
