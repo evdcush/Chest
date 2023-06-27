@@ -401,7 +401,14 @@ function pipigpu(){
 core_py_dist='pip setuptools wheel'
 #core_static_stack='pre-commit pylint flake8 black isort ruff tomli yapf'
 core_sci_stack='cython numpy scipy scikit-learn matplotlib pandas opencv-python sympy'
-core_ipy_stack='ipython jupyter notebook nbdime jupytext jupyter_contrib_nbextensions nbstripout'
+core_ipy_stack='\
+ipython \
+notebook \
+jupyter-lab \
+jupyter_ai \
+jupytext \
+nbdime \
+nbstripout'
 
 
 alias pipinew="\
