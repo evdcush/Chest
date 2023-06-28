@@ -319,6 +319,7 @@ alias pipupdate="pip list --outdated --format=freeze \
 cv='opencv-python imageio scikit-video open3d-python pycocotools albumentations'
 
 data_stack='fiftyone docarray'  # docarray is a data format
+tracking='lvis motmetrics'
 
 experiment_tools='tensorboard tensorboardX hydra-core omegaconf wandb'
 vis_stack='matplotlib bokeh seaborn plotly pyvista hiplot graphviz altair ipyvizzu'
@@ -330,8 +331,8 @@ openai_stack="openai 'openai[embeddings]' 'openai[wandb]' tiktoken gpt-code-ui"
 llm_stack='langchain chromadb'
 ui_stack='gradio streamlit'
 
-mmlab_stack='mmcv-full mmengine mmdet' # mmtrack mmselfsup'  # mmselfsup has GPU (faiss-gpu) dep that is difficult to resolve
-tracking='lvis motmetrics'
+mmlab_stack='mmengine mmcv mmdet mmpretrain mmeval openmim' # mmtrack mmselfsup'  # mmselfsup has GPU (faiss-gpu) dep that is difficult to resolve
+alias pipimm="$piu $mmlab_stack"
 
 # NB: ray[all] installs gpu stuff too! How do we otherwise get all the stuff?
 
