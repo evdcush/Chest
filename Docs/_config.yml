@@ -32,7 +32,7 @@ repository:
 html:
   use_issues_button: false
   use_repository_button: true
-  #favicon: favicon.ico
+  favicon: favicon180x.ico
 
 # ------
 
@@ -47,3 +47,13 @@ html:
 #       logo:
 #         image_light: logo_for_light_theme.svg
 #         image_dark: logo_for_dark_theme.svg
+
+# ==================================
+# WHAT: Excludes files from build that are not referenced in the toc.
+# WHY:
+#   - Otherwise, build fails with:
+#    `WARNING: document isn't included in any toctree`
+#   - Because I don't want an arbitrary `docs/` dir to hold docs
+#     - I prefer keeping things flat and at root for fewer clicks
+only_build_toc_files: true
+# ==================================
