@@ -656,11 +656,6 @@ sudo dpkg -i duf.deb \
 # https://github.com/nteract/nteract/releases
 ## eg: `nteract_0.28.0_amd64.deb`
 
-#=== zettlr
-# https://github.com/Zettlr/Zettlr
-## eg: Zettlr-3.0.0-beta.4-amd64.deb
-
-
 #=== phoronix
 # https://github.com/phoronix-test-suite/phoronix-test-suite
 ## eg: `phoronix-test-suite_10.8.4_all.deb``
@@ -764,6 +759,7 @@ sudo apt install -y typecatcher
 
 #=== Mono
 # Spline Sans Mono
+# Victor Mono
 
 #=== Sans
 # Inter Tight
@@ -986,6 +982,10 @@ flatpak install flathub com.github.tchx84.Flatseal
 #==== Racket
 flatpak install flathub org.racket_lang.Racket
 
+#==== Scratch
+flatpak install flathub org.turbowarp.TurboWarp
+
+
 # System Stuff
 # ============
 
@@ -995,6 +995,9 @@ flatpak install flathub org.kde.filelight
 # Apps
 # ====
 
+flatpak install flathub org.zotero.Zotero && \
+sudo flatpak override --filesystem=$HOME org.zotero.Zotero
+
 #==== Logseq
 flatpak install flathub com.logseq.Logseq && \
 sudo flatpak override --filesystem=$HOME com.logseq.Logseq
@@ -1002,6 +1005,9 @@ sudo flatpak override --filesystem=$HOME com.logseq.Logseq
 #==== MarkText
 flatpak install flathub com.github.marktext.marktext && \
 sudo flatpak override --filesystem=$HOME com.github.marktext.marktext
+
+#==== Zettlr
+flatpak install flathub com.zettlr.Zettlr
 
 # ----  Media  -------------------------------------------------------------- #
 
