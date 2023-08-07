@@ -158,8 +158,8 @@ source $ZSH/oh-my-zsh.sh
 source $DIR_DOTS/aliases
 source $DIR_DOTS/functions
 
-if [ -f "$DIR_DOTS/work_aliases" ]; then
-    source $DIR_DOTS/work_aliases
+if [ -f "$DIR_DOTS/.work_aliases" ]; then
+    source $DIR_DOTS/.work_aliases
 fi
 
 HITEM="$HOME/.hitem"
