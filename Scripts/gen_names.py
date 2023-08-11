@@ -92,6 +92,13 @@ ADJECTIVES = [
     'verdant',
     'pristine',
     'dashing',
+    'different',
+    'sunny',
+    'pious',
+    'expert',
+    'avid',
+    'northern',
+    'true',
 ]
 
 
@@ -173,6 +180,8 @@ NOUNS = [
     'tide',
     'stone',
     'glow',
+    'oath',
+    'totem',
 ]
 
 
