@@ -1,5 +1,7 @@
 ## https://github.com/SwinTransformer/AiT
 
+## Train VAE FIRST! Then "task solver".
+
 #=============================================================================#
 #                                                                             #
 #                           ██████ ███████  ██████                            #
@@ -231,3 +233,112 @@ task = dict(
 fp16 = dict(loss_scale='dynamic')
 
 load_from = 'ait_det_swinv2b_wodec.pth'
+
+
+#█████████████████████████████████████████████████████████████████████████████#
+#                                    VQ-VAE                                   #
+#█████████████████████████████████████████████████████████████████████████████#
+
+
+#=============================================================================#
+#                     vae/configs/depth/ait_depth_vqvae.py                    #
+#=============================================================================#
+
+image_size = 480
+model = dict(
+    image_size=image_size,
+    num_resnet_blocks=2,
+    downsample_ratio=32,
+    num_tokens=128,
+    codebook_dim=512,
+    hidden_dim=16,
+    use_norm=False,
+    channels=1,
+    train_objective='regression',
+    max_value=10.,
+    residul_type='v1',
+    loss_type='mse_ignore_zero',
+)
+
+train_setting = dict(
+    output_dir='outputs',
+    data=dict(
+        is_train=True,
+        data_path='data/nyu_depth_v2',
+        filenames_path='./dataset/filenames',
+        mask=True,
+        mask_ratio=0.5,
+        mask_patch_size=16,
+        crop_size=(image_size, image_size),
+    ),
+    opt_params=dict(
+        epochs=20,
+        batch_size=8,
+        learning_rate=3e-4,
+        lr_decay_rate=0.98,
+        schedule_step=500,
+        schedule_type='exp',
+    )
+)
+
+test_setting = dict(
+    data=dict(
+        data_path='data/nyu_depth_v2',
+        filenames_path='./dataset/filenames',
+    ),
+)
+
+
+#=============================================================================#
+#                    vae/configs/insseg/ait_insseg_vqvae.py                   #
+#=============================================================================#
+
+
+from torchvision import transforms as T
+
+image_size = 64
+model = dict(
+    image_size=image_size,
+    num_resnet_blocks=2,
+    downsample_ratio=16,
+    num_tokens=128,
+    codebook_dim=512,
+    hidden_dim=16,
+    channels=1,
+    use_norm=True,
+    train_objective='regression',
+    max_value=1.,
+    residul_type='v1',
+    loss_type='mse',
+)
+
+train_setting = dict(
+    output_dir='outputs/',
+    data=dict(
+        image_folder='data/maskcoco/instances_train2017',
+        pipeline=[
+            dict(type='Resize', size=image_size,
+                 interpolation=T.InterpolationMode.BILINEAR),
+            dict(type='CenterCrop', size=image_size),
+            dict(type='CustomToTensor'),
+            dict(type='Uint8Remap'),
+        ],
+    ),
+    opt_params=dict(
+        epochs=20,
+        batch_size=512,
+        learning_rate=3e-4,
+        warmup_ratio=1e-3,
+        warmup_steps=500,
+        weight_decay=0.0,
+        schedule_type='cosine',
+    )
+)
+
+test_setting = dict(
+    coco_dir='data/coco',
+    target_size=(image_size, image_size),
+    iou_type=['segm', 'boundary'],
+    max_samples=5000,
+    seed=1234,
+)
