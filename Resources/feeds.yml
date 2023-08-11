@@ -44,6 +44,11 @@ microsoft-research:
     feed_url: https://www.microsoft.com/en-us/research/feed/
     url: https://www.microsoft.com/en-us/research/blog/
 
+nautilus:
+  description: excellent science magazine
+  feed_url: https://nautil.us/feed/
+  url: https://nautil.us/
+
 openai:
     description: OpenAI research blog (news, summaries)
     feed_url: https://blog.openai.com/rss/
@@ -54,6 +59,16 @@ phys.org:
         'quality science news (NB: MANY RSS feeds, see https://phys.org/feeds/)'
     feed_url: https://phys.org/rss-feed/
     url: https://phys.org/
+
+ReadME:
+  description: Developer blog by GH
+  feed_url: https://github.com/readme.rss
+  url: https://github.com/readme
+
+reproof.org:
+    description: blog of a writing app
+    feed_url: https://www.reproof.app/blog
+    url: https://www.reproof.app/
 
 quanta:
   description:
