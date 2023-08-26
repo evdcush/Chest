@@ -343,7 +343,7 @@ hpo_stack='optuna ray hyperopt niapy scikit-optimize pymoo' # HEBO' # HEBO has u
 more_hpo_stack='ax-platform dragonfly-opt flaml nevergrad zoopt'
 hugging_stack='datasets diffusers huggingface_hub peft safetensors timm transformers xformers'
 openai_stack="openai 'openai[embeddings]' 'openai[wandb]' tiktoken gpt-code-ui"
-llm_stack='langchain chromadb "evadb[document,notebook]" llama-index'
+llm_stack='langchain chromadb "evadb[document,notebook]" llama-index chainforge'
 ui_stack='gradio streamlit'
 
 mmlab_stack='mmengine mmcv "mmdet[tracking]" mmpretrain mmeval openmim' # mmtrack mmselfsup'  # mmselfsup has GPU (faiss-gpu) dep that is difficult to resolve
