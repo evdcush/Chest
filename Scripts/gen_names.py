@@ -99,6 +99,8 @@ ADJECTIVES = [
     'avid',
     'northern',
     'true',
+    'effortless',
+    'scarlet',
 ]
 
 
@@ -182,6 +184,7 @@ NOUNS = [
     'glow',
     'oath',
     'totem',
+    'smoke',
 ]
 
 
