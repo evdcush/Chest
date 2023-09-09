@@ -832,7 +832,8 @@ fonts-vollkorn \
 # You can grab the deb package for the latest ubuntu release from:
 # https://launchpad.net/ubuntu/+source/fonts-noto-color-emoji
 # eg, from Kinetic (which is unicode 15):
-wget https://launchpad.net/ubuntu/+archive/primary/+files/fonts-noto-color-emoji_2.038-1_all.deb
+#wget https://launchpad.net/ubuntu/+archive/primary/+files/fonts-noto-color-emoji_2.038-1_all.deb
+wget https://launchpad.net/ubuntu/+archive/primary/+files/fonts-noto-color-emoji_2.038-0ubuntu1_all.deb
 
 # Rebuild font database
 sudo fc-cache -f -v
