@@ -242,7 +242,7 @@ alias jbm='jupyter-book myst'
 # TEMPLATE py file
 # ================
 # Could `date -u +%Y` for current year, as well.
-pyfile='# Copyright 2022 Evan Cushing. All rights reserved.
+pyfile='# Copyright 2023 evdcush.
 """
 """
 
