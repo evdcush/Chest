@@ -491,8 +491,16 @@ function pipitorch(){
     fi
 
     # Install pytorch.
-    pip install -U --no-cache-dir torch torchvision torchaudio \
+    pip install -U --no-cache-dir \
+    torch \
+    torchvision \
+    torchaudio \
+    torchdata \
+    torcheval \
+    torchrec \
+    torchtext \
     --extra-index-url "$TORCH_URL/$TAG"
+    #torchrl \  # Didn't work?
 
     # Install other torch-related pkgs.
     pip install -U torchinfo torchview
