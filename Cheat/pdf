@@ -9,7 +9,12 @@ pdf-crop-margins -s -u myfile.pdf
 
 # Examples
 # uniformly pad left bot right top margins (5% pad to L/R, 10% pad to T/B)
+# L B R T
 pdf-crop-margins -u -p4 105 110 105 110 RLbook2020trimmed.pdf
+
+## Only apply crop operation to the pages specified.
+##   (NB: still outputs all pages, but only the specified ones are cropped)
+pdf-crop-margins -s -u --pages 449-507 d2l-en.pd
 
 
 # Extract PDF pages
@@ -35,6 +40,11 @@ sed -e "s/watermarktextstring/ /g" <input.pdf >unwatermarked.pdf
 
 #=== fix modified pdf
 pdftk unwatermarked.pdf output fixed.pdf && mv fixed.pdf unwatermarked.pdf
+
+Downloaded from http://direct.mit.edu/evco/article-pdf/31/2/81/2133989/evco_a_00325.pdf by guest on 26 June 2023
+sed -e "s/Downloaded from http:\/\/direct.mit.edu\/evco\/article-pdf\/31\/2\/81\/2133989\/evco_a_00325.pdf by guest on 26 June 2023/ /g" evco_a_00325.pdf > unwatermarked_evco_a_00325.pdf
+
+pdftk unwatermarked_evco_a_00325.pdf output fixed_evco_a_00325.pdf
 
 
 
