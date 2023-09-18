@@ -8,11 +8,6 @@ root: intro
 #- file: notebooks
 #- file: markdown-notebooks
 
-parts:
-  - caption: Awesome 😎
-    chapters:
-      - file: awesomes/awesome_LLM
-
-  - caption: Notes
-    chapters:
-      - file: framework_obs
+chapters:
+  - file: awesomes/awesome_LLM
+  - file: framework_obs
