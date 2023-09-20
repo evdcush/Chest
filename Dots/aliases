@@ -345,6 +345,7 @@ hugging_stack='datasets diffusers huggingface_hub peft safetensors timm transfor
 openai_stack="openai 'openai[embeddings]' 'openai[wandb]' tiktoken"
 llm_stack='langchain chromadb "evadb[document,notebook]" llama-index chainforge'
 ui_stack='gradio streamlit'
+docqa_stack='"nougat-ocr[api,dataset]"'
 
 mmlab_stack='mmengine mmcv "mmdet[tracking]" mmpretrain mmeval openmim' # mmtrack mmselfsup'  # mmselfsup has GPU (faiss-gpu) dep that is difficult to resolve
 alias pipimm="$piu $mmlab_stack"
@@ -440,6 +441,7 @@ $piu $vis_stack; \
 $piu $experiment_tools; \
 $piu $hpo_stack; \
 $piu $more_hpo_stack; \
+$piu $docqa_stack; \
 $piu $hugging_stack; \
 $piu $jax_stack; \
 $piu $openai_stack; \
