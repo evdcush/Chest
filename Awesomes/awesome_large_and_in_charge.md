@@ -48,7 +48,21 @@
 
 - [RedPajama, a project to create leading open-source models, starts by reproducing LLaMA training dataset of over 1.2 trillion tokens &mdash; TOGETHER](https://www.together.xyz/blog/redpajama)
 
+- 🔥🔥🔥 [ianarawjo/ChainForge: An open-source visual programming environment for LLM experimentation and prompt evaluation.](https://github.com/ianarawjo/ChainForge)
+
+- [normal-computing/outlines: Generative Model Programming](https://github.com/normal-computing/outlines)
+
 - 
+
+---
+
+# GUI
+
+- 🔥🔥🔥 [ianarawjo/ChainForge: An open-source visual programming environment for LLM experimentation and prompt evaluation.](https://github.com/ianarawjo/ChainForge)
+
+- 
+
+---
 
 # DUMP
 
@@ -78,7 +92,7 @@
 
 - [GitHub - madawei2699/myGPTReader: A community-driven way to read and chat with AI bots - powered by chatGPT.](https://github.com/madawei2699/myGPTReader)
 
-- **[GitHub - thunlp/PromptPapers: Must-read papers on prompt-based tuning for pre-trained language models.**](https://github.com/thunlp/PromptPapers)
+- **[GitHub - thunlp/PromptPapers: Must-read papers on prompt-based tuning for pre-trained language models.](https://github.com/thunlp/PromptPapers)****
 
 - 
 
@@ -104,12 +118,40 @@
 
 - [GitHub - txsun1997/LMaaS-Papers: Awesome papers on Language-Model-as-a-Service (LMaaS)](https://github.com/txsun1997/LMaaS-Papers)
 
-
+- 🔥🔥🔥 [ianarawjo/ChainForge: An open-source visual programming environment for LLM experimentation and prompt evaluation.](https://github.com/ianarawjo/ChainForge)
 
 ## Learn / Resources
 
-
-
 - https://learnprompting.org/
 
-- 
+---
+
+# Learn!
+
+## Courses
+
+foo
+
+
+
+## Surveys
+
+
+
+
+
+## Talks
+
+fff
+
+
+
+## 
+
+## Tooling Tutorials
+
+#### UI
+
+- [Gradio Guides](https://www.gradio.app/guides/)
+
+- foo

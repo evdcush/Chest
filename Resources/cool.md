@@ -54,4 +54,14 @@
 
 - [GitHub - GitJournal/GitJournal: Mobile first Note Taking integrated with Git](https://github.com/GitJournal/GitJournal)
 
-- 
+```python
+def foo(bar):
+    x = 3 + 1
+    print(bar)
+```
+
+**BOLD**
+
+*italic*
+
+#### 
