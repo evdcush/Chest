@@ -205,6 +205,36 @@ curl -fsSL https://raw.githubusercontent.com/curusarn/resh/master/scripts/rawins
 # ==== #
 ln -sf $HOME/Chest/Dots $HOME/.Dots
 
+
+#-----------------------------------------------------------------------------#
+#                                     Keys                                    #
+#-----------------------------------------------------------------------------#
+
+# GPG
+# ===
+#==== Generate
+gpg --full-generate-key
+
+# This will ask you for:
+#   - what kind of key you want: default (RSA, RSA)
+#   - bit length of new key: 4096
+#   - expiry: choose whatever is appropriate
+#   - Key:
+#     - Real Name
+#     - Email
+#     - Comment
+
+#==== See your new key:
+gpg --list-secret-keys --keyid-format=long
+
+#==== Copy your new pubkey in ASCII armor format
+# Copy the long-form of the key
+# (On the `sec` line, this is the 16-char hex that follows `rsa4096/<KEY>`)
+# Then export
+gpg --armor --export <YOUR_KEY> | xclip -sel clip
+
+
+
 #█████████████████████████████████████████████████████████████████████████████#
 #                                     GIT                                     #
 #█████████████████████████████████████████████████████████████████████████████#
@@ -597,6 +627,9 @@ sudo apt install -y guake
 # (Patch guake if `Could not parse file "/usr/share/applications/guake.desktop": No such file or directory`)
 sudo ln -sf /usr/share/guake/autostart-guake.desktop /usr/share/applications/guake.desktop
 
+# NB, edit line:
+subl --new-window --wait %(file_path)s:%(line_number)s
+
 #=== Devtools
 # GIT
 # ---
@@ -977,7 +1010,7 @@ flatpak install flathub com.github.tchx84.Flatseal
 # ===
 
 #==== JupyerLab Desktop
-# NEVER WORKS
+# NEVER F'ING WORKS
 #flatpak install flathub org.jupyter.JupyterLab
 
 #==== Racket
