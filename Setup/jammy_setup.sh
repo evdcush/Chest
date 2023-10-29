@@ -271,6 +271,10 @@ git config --global commit.gpgsign true
 ## pip install -U nbdime
 nbdime config-git --enable --global
 
+# nbstripout
+## pip install -U nbstripout
+
+
 #=============================================================================#
 
 # fzf
