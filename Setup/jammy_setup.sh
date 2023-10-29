@@ -273,7 +273,8 @@ nbdime config-git --enable --global
 
 # nbstripout
 ## pip install -U nbstripout
-
+# Not sure, but here are the options you want:
+nbstripout --install --keep-output --drop-empty-cells
 
 #=============================================================================#
 
