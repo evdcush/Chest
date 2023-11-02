@@ -352,6 +352,50 @@ def weighted_mean(nums, weights):
     return num / den
 
 
+# - - - - - - - - - - - - - - - -
+
+
+import pkgutil
+
+def describe_package(pkg, indent=0):
+    """
+    Recursively print a tree structure of the package and its
+    sub-packages/modules.
+
+    .. note:: Usage
+        ..code-block::python
+
+            import some_package
+            describe_package(some_package)
+
+    Args:
+    - pkg (module): A reference to the package/module to describe.
+    - indent (int): Current indentation level for tree-like appearance.
+    """
+
+    # The prefix for the current level in the tree
+    prefix = '  ' * indent
+
+    # If pkg is not a module, just print its name and return
+    if not hasattr(pkg, '__path__'):
+        #print(prefix + f"- {pkg.__name__.split('.')[-1]} (Module)")
+        print(prefix + f"- {pkg.__name__.split('.')[-1]}")
+        return
+
+    # If pkg is a package, print its name and explore its sub-packages
+    # and sub-modules
+    #print(prefix + f"- {pkg.__name__.split('.')[-1]} (Package)")
+    print(prefix + f"* {pkg.__name__.split('.')[-1]}")
+    for _, name, is_pkg in pkgutil.walk_packages(pkg.__path__):
+        try:
+            module = __import__(f"{pkg.__name__}.{name}", fromlist=[name])
+            describe_package(module, indent + 1)
+        except Exception as e:
+            # Handle exceptions gracefully by printing an error message
+            print(prefix + f"  - {name} (Failed to import: {str(e)})")
+            #continue
+
+
 
 #-----------------------------------------------------------------------------#
 #                                    NEAT                                     #
