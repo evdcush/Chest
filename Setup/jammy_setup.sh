@@ -1034,8 +1034,13 @@ flatpak install flathub org.kde.filelight
 # Apps
 # ====
 
+#==== Zotero
 flatpak install flathub org.zotero.Zotero && \
 sudo flatpak override --filesystem=$HOME org.zotero.Zotero
+
+#==== Joplin
+flatpak install flathub net.cozic.joplin_desktop && \
+sudo flatpak override --filesystem=$HOME net.cozic.joplin_desktop
 
 #==== Logseq
 flatpak install flathub com.logseq.Logseq && \
