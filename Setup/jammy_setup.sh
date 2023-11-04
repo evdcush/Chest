@@ -477,6 +477,11 @@ sudo apt install xdg-desktop-portal-gnome
 ## So, for HEAVILY used applications and deps, always check first for their
 ## latest release ver, and where to find it!!
 
+# System utils
+# ============
+# HDD check (for nvme)
+sudo apt install -y nvme-cli
+
 # General
 # =======
 sudo apt install -y jq
