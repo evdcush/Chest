@@ -342,8 +342,8 @@ jax_stack='jax jaxlib evojax evosax flax'  # haiku?
 hpo_stack='optuna ray hyperopt niapy scikit-optimize pymoo' # HEBO' # HEBO has unresolvable GPy dep.
 more_hpo_stack='ax-platform dragonfly-opt flaml nevergrad zoopt'
 hugging_stack='datasets diffusers huggingface_hub peft safetensors timm transformers xformers'
-openai_stack="openai 'openai[embeddings]' 'openai[wandb]' tiktoken"
-llm_stack='langchain chromadb "evadb[document,notebook]" llama-index chainforge'
+openai_stack="openai 'openai[embeddings]' 'openai[wandb]' openai-whisper tiktoken"
+llm_stack='langchain chromadb "evadb[document,notebook]"' #llama-index chainforge'
 ui_stack='gradio streamlit'
 docqa_stack='"nougat-ocr[api,dataset]"'
 
@@ -690,6 +690,9 @@ alias clip="xclip -selection clipboard"
 alias delclip="xclip -o | xargs sudo rm -rf"
 alias clipo='xclip -o'
 alias pst='xclip -o >'
+
+alias symble="echo '≤' | xclip -sel clip"
+alias symbge="echo '≥' | xclip -sel clip"
 
 # copy previous command (is this really the only sol? stupidly verbose)
 # if you dont translate, there is newline?
