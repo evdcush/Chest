@@ -457,6 +457,7 @@ $piu tldr doitlive; \
 $piu $sphinx_stack; \
 $piu $sphinx_themes; \
 $piu $writing_stack; \
+$piu $sphinx_stack; \
 $piu $mediadl; \
 $piu $data_stack; \
 $piu $ui_stack; \
