@@ -138,7 +138,6 @@
 #     ├── depth_estimation.ipynb
 #     └── semantic_segmentation.ipynb
 
-
 #=============================================================================#
 #                                                                             #
 #                 ███    ███  ██████  ██████  ███████ ██                      #
@@ -155,7 +154,6 @@
 
 #$#>START: dinov2/dinov2/models/vision_transformer.py
 
-
 from functools import partial
 import math
 import logging
@@ -166,24 +164,33 @@ import torch.nn as nn
 import torch.utils.checkpoint
 from torch.nn.init import trunc_normal_
 
-from dinov2.layers import Mlp, PatchEmbed, SwiGLUFFNFused, MemEffAttention, NestedTensorBlock as Block
-
+from dinov2.layers import Mlp, PatchEmbed, SwiGLUFFNFused, MemEffAttention, \
+NestedTensorBlock as Block
 
 logger = logging.getLogger("dinov2")
 
 
-def named_apply(fn: Callable, module: nn.Module, name="", depth_first=True, include_root=False) -> nn.Module:
+def named_apply(fn: Callable,
+                module: nn.Module,
+                name="",
+                depth_first=True,
+                include_root=False) -> nn.Module:
     if not depth_first and include_root:
         fn(module=module, name=name)
     for child_name, child_module in module.named_children():
         child_name = ".".join((name, child_name)) if name else child_name
-        named_apply(fn=fn, module=child_module, name=child_name, depth_first=depth_first, include_root=True)
+        named_apply(fn=fn,
+                    module=child_module,
+                    name=child_name,
+                    depth_first=depth_first,
+                    include_root=True)
     if depth_first and include_root:
         fn(module=module, name=name)
     return module
 
 
 class BlockChunk(nn.ModuleList):
+
     def forward(self, x):
         for b in self:
             x = b(x)
@@ -191,6 +198,7 @@ class BlockChunk(nn.ModuleList):
 
 
 class DinoVisionTransformer(nn.Module):
+
     def __init__(
         self,
         img_size=224,
@@ -235,15 +243,19 @@ class DinoVisionTransformer(nn.Module):
             act_layer (nn.Module): MLP activation layer
             block_fn (nn.Module): transformer block class
             ffn_layer (str): "mlp", "swiglu", "swiglufused" or "identity"
-            block_chunks: (int) split block sequence into block_chunks units for FSDP wrap
-            num_register_tokens: (int) number of extra cls tokens (so-called "registers")
-            interpolate_antialias: (str) flag to apply anti-aliasing when interpolating positional embeddings
-            interpolate_offset: (float) work-around offset to apply when interpolating positional embeddings
+            block_chunks: (int) split block sequence into block_chunks units
+                for FSDP wrap
+            num_register_tokens: (int) number of extra cls tokens (so-called
+                "registers")
+            interpolate_antialias: (str) flag to apply anti-aliasing when
+                interpolating positional embeddings
+            interpolate_offset: (float) work-around offset to apply when
+                interpolating positional embeddings
         """
         super().__init__()
         norm_layer = partial(nn.LayerNorm, eps=1e-6)
-
-        self.num_features = self.embed_dim = embed_dim  # num_features for consistency with other models
+        # num_features for consistency with other models
+        self.num_features = self.embed_dim = embed_dim
         self.num_tokens = 1
         self.n_blocks = depth
         self.num_heads = num_heads
@@ -252,20 +264,25 @@ class DinoVisionTransformer(nn.Module):
         self.interpolate_antialias = interpolate_antialias
         self.interpolate_offset = interpolate_offset
 
-        self.patch_embed = embed_layer(img_size=img_size, patch_size=patch_size, in_chans=in_chans, embed_dim=embed_dim)
+        self.patch_embed = embed_layer(img_size=img_size,
+                                       patch_size=patch_size,
+                                       in_chans=in_chans,
+                                       embed_dim=embed_dim)
         num_patches = self.patch_embed.num_patches
 
         self.cls_token = nn.Parameter(torch.zeros(1, 1, embed_dim))
-        self.pos_embed = nn.Parameter(torch.zeros(1, num_patches + self.num_tokens, embed_dim))
+        self.pos_embed = nn.Parameter(
+            torch.zeros(1, num_patches + self.num_tokens, embed_dim))
         assert num_register_tokens >= 0
-        self.register_tokens = (
-            nn.Parameter(torch.zeros(1, num_register_tokens, embed_dim)) if num_register_tokens else None
-        )
+        self.register_tokens = (nn.Parameter(
+            torch.zeros(1, num_register_tokens, embed_dim))
+                                if num_register_tokens else None)
 
         if drop_path_uniform is True:
             dpr = [drop_path_rate] * depth
         else:
-            dpr = [x.item() for x in torch.linspace(0, drop_path_rate, depth)]  # stochastic depth decay rule
+            dpr = [x.item() for x in torch.linspace(0, drop_path_rate, depth)
+                   ]  # stochastic depth decay rule
 
         if ffn_layer == "mlp":
             logger.info("using MLP layer as FFN")
@@ -296,17 +313,19 @@ class DinoVisionTransformer(nn.Module):
                 act_layer=act_layer,
                 ffn_layer=ffn_layer,
                 init_values=init_values,
-            )
-            for i in range(depth)
+            ) for i in range(depth)
         ]
         if block_chunks > 0:
             self.chunked_blocks = True
             chunked_blocks = []
             chunksize = depth // block_chunks
             for i in range(0, depth, chunksize):
-                # this is to keep the block index consistent if we chunk the block list
-                chunked_blocks.append([nn.Identity()] * i + blocks_list[i : i + chunksize])
-            self.blocks = nn.ModuleList([BlockChunk(p) for p in chunked_blocks])
+                # this is to keep the block index consistent if we chunk
+                # the block list
+                chunked_blocks.append([nn.Identity()] * i +
+                                      blocks_list[i:i + chunksize])
+            self.blocks = nn.ModuleList(
+                [BlockChunk(p) for p in chunked_blocks])
         else:
             self.chunked_blocks = False
             self.blocks = nn.ModuleList(blocks_list)
@@ -337,14 +356,16 @@ class DinoVisionTransformer(nn.Module):
         dim = x.shape[-1]
         w0 = w // self.patch_size
         h0 = h // self.patch_size
-        # we add a small number to avoid floating point error in the interpolation
-        # see discussion at https://github.com/facebookresearch/dino/issues/8
+        # we add a small number to avoid floating point error in the
+        # interpolation see discussion at
+        # https://github.com/facebookresearch/dino/issues/8
         w0, h0 = w0 + self.interpolate_offset, h0 + self.interpolate_offset
 
         sqrt_N = math.sqrt(N)
         sx, sy = float(w0) / sqrt_N, float(h0) / sqrt_N
         patch_pos_embed = nn.functional.interpolate(
-            patch_pos_embed.reshape(1, int(sqrt_N), int(sqrt_N), dim).permute(0, 3, 1, 2),
+            patch_pos_embed.reshape(1, int(sqrt_N), int(sqrt_N),
+                                    dim).permute(0, 3, 1, 2),
             scale_factor=(sx, sy),
             mode="bicubic",
             antialias=self.interpolate_antialias,
@@ -353,13 +374,15 @@ class DinoVisionTransformer(nn.Module):
         assert int(w0) == patch_pos_embed.shape[-2]
         assert int(h0) == patch_pos_embed.shape[-1]
         patch_pos_embed = patch_pos_embed.permute(0, 2, 3, 1).view(1, -1, dim)
-        return torch.cat((class_pos_embed.unsqueeze(0), patch_pos_embed), dim=1).to(previous_dtype)
+        return torch.cat((class_pos_embed.unsqueeze(0), patch_pos_embed),
+                         dim=1).to(previous_dtype)
 
     def prepare_tokens_with_masks(self, x, masks=None):
         B, nc, w, h = x.shape
         x = self.patch_embed(x)
         if masks is not None:
-            x = torch.where(masks.unsqueeze(-1), self.mask_token.to(x.dtype).unsqueeze(0), x)
+            x = torch.where(masks.unsqueeze(-1),
+                            self.mask_token.to(x.dtype).unsqueeze(0), x)
 
         x = torch.cat((self.cls_token.expand(x.shape[0], -1, -1), x), dim=1)
         x = x + self.interpolate_pos_encoding(x, w, h)
@@ -377,7 +400,10 @@ class DinoVisionTransformer(nn.Module):
         return x
 
     def forward_features_list(self, x_list, masks_list):
-        x = [self.prepare_tokens_with_masks(x, masks) for x, masks in zip(x_list, masks_list)]
+        x = [
+            self.prepare_tokens_with_masks(x, masks)
+            for x, masks in zip(x_list, masks_list)
+        ]
         for blk in self.blocks:
             x = blk(x)
 
@@ -385,15 +411,18 @@ class DinoVisionTransformer(nn.Module):
         output = []
         for x, masks in zip(all_x, masks_list):
             x_norm = self.norm(x)
-            output.append(
-                {
-                    "x_norm_clstoken": x_norm[:, 0],
-                    "x_norm_regtokens": x_norm[:, 1 : self.num_register_tokens + 1],
-                    "x_norm_patchtokens": x_norm[:, self.num_register_tokens + 1 :],
-                    "x_prenorm": x,
-                    "masks": masks,
-                }
-            )
+            output.append({
+                "x_norm_clstoken":
+                x_norm[:, 0],
+                "x_norm_regtokens":
+                x_norm[:, 1:self.num_register_tokens + 1],
+                "x_norm_patchtokens":
+                x_norm[:, self.num_register_tokens + 1:],
+                "x_prenorm":
+                x,
+                "masks":
+                masks,
+            })
         return output
 
     def forward_features(self, x, masks=None):
@@ -408,8 +437,8 @@ class DinoVisionTransformer(nn.Module):
         x_norm = self.norm(x)
         return {
             "x_norm_clstoken": x_norm[:, 0],
-            "x_norm_regtokens": x_norm[:, 1 : self.num_register_tokens + 1],
-            "x_norm_patchtokens": x_norm[:, self.num_register_tokens + 1 :],
+            "x_norm_regtokens": x_norm[:, 1:self.num_register_tokens + 1],
+            "x_norm_patchtokens": x_norm[:, self.num_register_tokens + 1:],
             "x_prenorm": x,
             "masks": masks,
         }
@@ -418,26 +447,32 @@ class DinoVisionTransformer(nn.Module):
         x = self.prepare_tokens_with_masks(x)
         # If n is an int, take the n last blocks. If it's a list, take them
         output, total_block_len = [], len(self.blocks)
-        blocks_to_take = range(total_block_len - n, total_block_len) if isinstance(n, int) else n
+        blocks_to_take = range(total_block_len -
+                               n, total_block_len) if isinstance(n, int) else n
         for i, blk in enumerate(self.blocks):
             x = blk(x)
             if i in blocks_to_take:
                 output.append(x)
-        assert len(output) == len(blocks_to_take), f"only {len(output)} / {len(blocks_to_take)} blocks found"
+        assert len(output) == len(
+            blocks_to_take
+        ), f"only {len(output)} / {len(blocks_to_take)} blocks found"
         return output
 
     def _get_intermediate_layers_chunked(self, x, n=1):
         x = self.prepare_tokens_with_masks(x)
         output, i, total_block_len = [], 0, len(self.blocks[-1])
         # If n is an int, take the n last blocks. If it's a list, take them
-        blocks_to_take = range(total_block_len - n, total_block_len) if isinstance(n, int) else n
+        blocks_to_take = range(total_block_len -
+                               n, total_block_len) if isinstance(n, int) else n
         for block_chunk in self.blocks:
             for blk in block_chunk[i:]:  # Passing the nn.Identity()
                 x = blk(x)
                 if i in blocks_to_take:
                     output.append(x)
                 i += 1
-        assert len(output) == len(blocks_to_take), f"only {len(output)} / {len(blocks_to_take)} blocks found"
+        assert len(output) == len(
+            blocks_to_take
+        ), f"only {len(output)} / {len(blocks_to_take)} blocks found"
         return output
 
     def get_intermediate_layers(
@@ -459,7 +494,8 @@ class DinoVisionTransformer(nn.Module):
         if reshape:
             B, _, w, h = x.shape
             outputs = [
-                out.reshape(B, w // self.patch_size, h // self.patch_size, -1).permute(0, 3, 1, 2).contiguous()
+                out.reshape(B, w // self.patch_size, h // self.patch_size,
+                            -1).permute(0, 3, 1, 2).contiguous()
                 for out in outputs
             ]
         if return_class_token:
@@ -526,7 +562,8 @@ def vit_large(patch_size=16, num_register_tokens=0, **kwargs):
 
 def vit_giant2(patch_size=16, num_register_tokens=0, **kwargs):
     """
-    Close to ViT-giant, with embed-dim 1536 and 24 heads => embed-dim per head 64
+    Close to ViT-giant, with embed-dim 1536 and 24 heads => embed-dim per
+    head 64
     """
     model = DinoVisionTransformer(
         patch_size=patch_size,
@@ -540,6 +577,7 @@ def vit_giant2(patch_size=16, num_register_tokens=0, **kwargs):
     )
     return model
 
+
 #$#>END: dinov2/dinov2/models/vision_transformer.py
 
 #------------------------------------------------------------------------------
@@ -549,7 +587,6 @@ def vit_giant2(patch_size=16, num_register_tokens=0, **kwargs):
 import logging
 
 from . import vision_transformer as vits
-
 
 logger = logging.getLogger("dinov2")
 
@@ -583,7 +620,9 @@ def build_model(args, only_teacher=False, img_size=224):
 
 
 def build_model_from_cfg(cfg, only_teacher=False):
-    return build_model(cfg.student, only_teacher=only_teacher, img_size=cfg.crops.global_crops_size)
+    return build_model(cfg.student,
+                       only_teacher=only_teacher,
+                       img_size=cfg.crops.global_crops_size)
 
 
 #$#>END: dinov2/dinov2/models/__init__.py
@@ -599,7 +638,8 @@ def build_model_from_cfg(cfg, only_teacher=False):
 #=============================================================================#
 
 ## imported in model::
-#from dinov2.layers import Mlp, PatchEmbed, SwiGLUFFNFused, MemEffAttention, NestedTensorBlock as Block
+#from dinov2.layers import Mlp, PatchEmbed, SwiGLUFFNFused, MemEffAttention,
+#NestedTensorBlock as Block
 
 #=============================================================================#
 #                          dinov2/layers/dino_head.py                         #
@@ -614,6 +654,7 @@ from torch.nn.utils import weight_norm
 
 
 class DINOHead(nn.Module):
+
     def __init__(
         self,
         in_dim,
@@ -626,9 +667,15 @@ class DINOHead(nn.Module):
     ):
         super().__init__()
         nlayers = max(nlayers, 1)
-        self.mlp = _build_mlp(nlayers, in_dim, bottleneck_dim, hidden_dim=hidden_dim, use_bn=use_bn, bias=mlp_bias)
+        self.mlp = _build_mlp(nlayers,
+                              in_dim,
+                              bottleneck_dim,
+                              hidden_dim=hidden_dim,
+                              use_bn=use_bn,
+                              bias=mlp_bias)
         self.apply(self._init_weights)
-        self.last_layer = weight_norm(nn.Linear(bottleneck_dim, out_dim, bias=False))
+        self.last_layer = weight_norm(
+            nn.Linear(bottleneck_dim, out_dim, bias=False))
         self.last_layer.weight_g.data.fill_(1)
 
     def _init_weights(self, m):
@@ -645,7 +692,12 @@ class DINOHead(nn.Module):
         return x
 
 
-def _build_mlp(nlayers, in_dim, bottleneck_dim, hidden_dim=None, use_bn=False, bias=True):
+def _build_mlp(nlayers,
+               in_dim,
+               bottleneck_dim,
+               hidden_dim=None,
+               use_bn=False,
+               bias=True):
     if nlayers == 1:
         return nn.Linear(in_dim, bottleneck_dim, bias=bias)
     else:
@@ -660,6 +712,7 @@ def _build_mlp(nlayers, in_dim, bottleneck_dim, hidden_dim=None, use_bn=False, b
             layers.append(nn.GELU())
         layers.append(nn.Linear(hidden_dim, bottleneck_dim, bias=bias))
         return nn.Sequential(*layers)
+
 
 #$#>END: dinov2/dinov2/layers/dino_head.py
 
@@ -695,9 +748,7 @@ from .drop_path import DropPath
 from .layer_scale import LayerScale
 from .mlp import Mlp
 
-
 logger = logging.getLogger("dinov2")
-
 
 XFORMERS_ENABLED = os.environ.get("XFORMERS_DISABLED") is None
 try:
@@ -716,6 +767,7 @@ except ImportError:
 
 
 class Block(nn.Module):
+
     def __init__(
         self,
         dim: int,
@@ -744,8 +796,10 @@ class Block(nn.Module):
             attn_drop=attn_drop,
             proj_drop=drop,
         )
-        self.ls1 = LayerScale(dim, init_values=init_values) if init_values else nn.Identity()
-        self.drop_path1 = DropPath(drop_path) if drop_path > 0.0 else nn.Identity()
+        self.ls1 = LayerScale(
+            dim, init_values=init_values) if init_values else nn.Identity()
+        self.drop_path1 = DropPath(
+            drop_path) if drop_path > 0.0 else nn.Identity()
 
         self.norm2 = norm_layer(dim)
         mlp_hidden_dim = int(dim * mlp_ratio)
@@ -756,12 +810,15 @@ class Block(nn.Module):
             drop=drop,
             bias=ffn_bias,
         )
-        self.ls2 = LayerScale(dim, init_values=init_values) if init_values else nn.Identity()
-        self.drop_path2 = DropPath(drop_path) if drop_path > 0.0 else nn.Identity()
+        self.ls2 = LayerScale(
+            dim, init_values=init_values) if init_values else nn.Identity()
+        self.drop_path2 = DropPath(
+            drop_path) if drop_path > 0.0 else nn.Identity()
 
         self.sample_drop_ratio = drop_path
 
     def forward(self, x: Tensor) -> Tensor:
+
         def attn_residual_func(x: Tensor) -> Tensor:
             return self.ls1(self.attn(self.norm1(x)))
 
@@ -769,7 +826,8 @@ class Block(nn.Module):
             return self.ls2(self.mlp(self.norm2(x)))
 
         if self.training and self.sample_drop_ratio > 0.1:
-            # the overhead is compensated only for a drop path rate larger than 0.1
+            # the overhead is compensated only for a drop path rate
+            # larger than 0.1
             x = drop_add_residual_stochastic_depth(
                 x,
                 residual_func=attn_residual_func,
@@ -809,7 +867,11 @@ def drop_add_residual_stochastic_depth(
     residual_scale_factor = b / sample_subset_size
 
     # 3) add the residual
-    x_plus_residual = torch.index_add(x_flat, 0, brange, residual.to(dtype=x.dtype), alpha=residual_scale_factor)
+    x_plus_residual = torch.index_add(x_flat,
+                                      0,
+                                      brange,
+                                      residual.to(dtype=x.dtype),
+                                      alpha=residual_scale_factor)
     return x_plus_residual.view_as(x)
 
 
@@ -821,15 +883,25 @@ def get_branges_scales(x, sample_drop_ratio=0.0):
     return brange, residual_scale_factor
 
 
-def add_residual(x, brange, residual, residual_scale_factor, scaling_vector=None):
+def add_residual(x,
+                 brange,
+                 residual,
+                 residual_scale_factor,
+                 scaling_vector=None):
     if scaling_vector is None:
         x_flat = x.flatten(1)
         residual = residual.flatten(1)
-        x_plus_residual = torch.index_add(x_flat, 0, brange, residual.to(dtype=x.dtype), alpha=residual_scale_factor)
+        x_plus_residual = torch.index_add(x_flat,
+                                          0,
+                                          brange,
+                                          residual.to(dtype=x.dtype),
+                                          alpha=residual_scale_factor)
     else:
-        x_plus_residual = scaled_index_add(
-            x, brange, residual.to(dtype=x.dtype), scaling=scaling_vector, alpha=residual_scale_factor
-        )
+        x_plus_residual = scaled_index_add(x,
+                                           brange,
+                                           residual.to(dtype=x.dtype),
+                                           scaling=scaling_vector,
+                                           alpha=residual_scale_factor)
     return x_plus_residual
 
 
@@ -838,9 +910,11 @@ attn_bias_cache: Dict[Tuple, Any] = {}
 
 def get_attn_bias_and_cat(x_list, branges=None):
     """
-    this will perform the index select, cat the tensors, and provide the attn_bias from cache
+    this will perform the index select, cat the tensors, and
+    provide the attn_bias from cache
     """
-    batch_sizes = [b.shape[0] for b in branges] if branges is not None else [x.shape[0] for x in x_list]
+    batch_sizes = [b.shape[0] for b in branges
+                   ] if branges is not None else [x.shape[0] for x in x_list]
     all_shapes = tuple((b, x.shape[1]) for b, x in zip(batch_sizes, x_list))
     if all_shapes not in attn_bias_cache.keys():
         seqlens = []
@@ -852,7 +926,9 @@ def get_attn_bias_and_cat(x_list, branges=None):
         attn_bias_cache[all_shapes] = attn_bias
 
     if branges is not None:
-        cat_tensors = index_select_cat([x.flatten(1) for x in x_list], branges).view(1, -1, x_list[0].shape[-1])
+        cat_tensors = index_select_cat([x.flatten(1) for x in x_list],
+                                       branges).view(1, -1,
+                                                     x_list[0].shape[-1])
     else:
         tensors_bs1 = tuple(x.reshape([1, -1, *x.shape[2:]]) for x in x_list)
         cat_tensors = torch.cat(tensors_bs1, dim=1)
@@ -867,7 +943,10 @@ def drop_add_residual_stochastic_depth_list(
     scaling_vector=None,
 ) -> Tensor:
     # 1) generate random set of indices for dropping samples in the batch
-    branges_scales = [get_branges_scales(x, sample_drop_ratio=sample_drop_ratio) for x in x_list]
+    branges_scales = [
+        get_branges_scales(x, sample_drop_ratio=sample_drop_ratio)
+        for x in x_list
+    ]
     branges = [s[0] for s in branges_scales]
     residual_scale_factors = [s[1] for s in branges_scales]
 
@@ -875,15 +954,20 @@ def drop_add_residual_stochastic_depth_list(
     attn_bias, x_cat = get_attn_bias_and_cat(x_list, branges)
 
     # 3) apply residual_func to get residual, and split the result
-    residual_list = attn_bias.split(residual_func(x_cat, attn_bias=attn_bias))  # type: ignore
+    residual_list = attn_bias.split(residual_func(
+        x_cat, attn_bias=attn_bias))  # type: ignore
 
     outputs = []
-    for x, brange, residual, residual_scale_factor in zip(x_list, branges, residual_list, residual_scale_factors):
-        outputs.append(add_residual(x, brange, residual, residual_scale_factor, scaling_vector).view_as(x))
+    for x, brange, residual, residual_scale_factor in zip(
+            x_list, branges, residual_list, residual_scale_factors):
+        outputs.append(
+            add_residual(x, brange, residual, residual_scale_factor,
+                         scaling_vector).view_as(x))
     return outputs
 
 
 class NestedTensorBlock(Block):
+
     def forward_nested(self, x_list: List[Tensor]) -> List[Tensor]:
         """
         x_list contains a list of tensors to nest together and run
@@ -902,13 +986,15 @@ class NestedTensorBlock(Block):
                 x_list,
                 residual_func=attn_residual_func,
                 sample_drop_ratio=self.sample_drop_ratio,
-                scaling_vector=self.ls1.gamma if isinstance(self.ls1, LayerScale) else None,
+                scaling_vector=self.ls1.gamma if isinstance(
+                    self.ls1, LayerScale) else None,
             )
             x_list = drop_add_residual_stochastic_depth_list(
                 x_list,
                 residual_func=ffn_residual_func,
                 sample_drop_ratio=self.sample_drop_ratio,
-                scaling_vector=self.ls2.gamma if isinstance(self.ls1, LayerScale) else None,
+                scaling_vector=self.ls2.gamma if isinstance(
+                    self.ls1, LayerScale) else None,
             )
             return x_list
         else:
@@ -929,7 +1015,8 @@ class NestedTensorBlock(Block):
             return super().forward(x_or_x_list)
         elif isinstance(x_or_x_list, list):
             if not XFORMERS_AVAILABLE:
-                raise AssertionError("xFormers is required for using nested tensors")
+                raise AssertionError(
+                    "xFormers is required for using nested tensors")
             return self.forward_nested(x_or_x_list)
         else:
             raise AssertionError
@@ -950,9 +1037,7 @@ import warnings
 from torch import Tensor
 from torch import nn
 
-
 logger = logging.getLogger("dinov2")
-
 
 XFORMERS_ENABLED = os.environ.get("XFORMERS_DISABLED") is None
 try:
@@ -970,6 +1055,7 @@ except ImportError:
 
 
 class Attention(nn.Module):
+
     def __init__(
         self,
         dim: int,
@@ -991,7 +1077,8 @@ class Attention(nn.Module):
 
     def forward(self, x: Tensor) -> Tensor:
         B, N, C = x.shape
-        qkv = self.qkv(x).reshape(B, N, 3, self.num_heads, C // self.num_heads).permute(2, 0, 3, 1, 4)
+        qkv = self.qkv(x).reshape(B, N, 3, self.num_heads,
+                                  C // self.num_heads).permute(2, 0, 3, 1, 4)
 
         q, k, v = qkv[0] * self.scale, qkv[1], qkv[2]
         attn = q @ k.transpose(-2, -1)
@@ -1006,10 +1093,12 @@ class Attention(nn.Module):
 
 
 class MemEffAttention(Attention):
+
     def forward(self, x: Tensor, attn_bias=None) -> Tensor:
         if not XFORMERS_AVAILABLE:
             if attn_bias is not None:
-                raise AssertionError("xFormers is required for using nested tensors")
+                raise AssertionError(
+                    "xFormers is required for using nested tensors")
             return super().forward(x)
 
         B, N, C = x.shape
@@ -1023,6 +1112,7 @@ class MemEffAttention(Attention):
         x = self.proj(x)
         x = self.proj_drop(x)
         return x
+
 
 #$#>END: dinov2/dinov2/layers/attention.py
 
@@ -1039,7 +1129,8 @@ def drop_path(x, drop_prob: float = 0.0, training: bool = False):
     if drop_prob == 0.0 or not training:
         return x
     keep_prob = 1 - drop_prob
-    shape = (x.shape[0],) + (1,) * (x.ndim - 1)  # work with diff dim tensors, not just 2D ConvNets
+    shape = (x.shape[0], ) + (1, ) * (
+        x.ndim - 1)  # work with diff dim tensors, not just 2D ConvNets
     random_tensor = x.new_empty(shape).bernoulli_(keep_prob)
     if keep_prob > 0.0:
         random_tensor.div_(keep_prob)
@@ -1048,7 +1139,8 @@ def drop_path(x, drop_prob: float = 0.0, training: bool = False):
 
 
 class DropPath(nn.Module):
-    """Drop paths (Stochastic Depth) per sample (when applied in main path of residual blocks)."""
+    """Drop paths (Stochastic Depth) per sample (when applied in main path
+    of residual blocks)."""
 
     def __init__(self, drop_prob=None):
         super(DropPath, self).__init__()
@@ -1074,6 +1166,7 @@ from torch import nn
 
 
 class LayerScale(nn.Module):
+
     def __init__(
         self,
         dim: int,
@@ -1086,6 +1179,7 @@ class LayerScale(nn.Module):
 
     def forward(self, x: Tensor) -> Tensor:
         return x.mul_(self.gamma) if self.inplace else x * self.gamma
+
 
 #$#>END: dinov2/dinov2/layers/layer_scale.py
 
@@ -1101,6 +1195,7 @@ from torch import Tensor, nn
 
 
 class Mlp(nn.Module):
+
     def __init__(
         self,
         in_features: int,
@@ -1190,15 +1285,20 @@ class PatchEmbed(nn.Module):
 
         self.flatten_embedding = flatten_embedding
 
-        self.proj = nn.Conv2d(in_chans, embed_dim, kernel_size=patch_HW, stride=patch_HW)
+        self.proj = nn.Conv2d(in_chans,
+                              embed_dim,
+                              kernel_size=patch_HW,
+                              stride=patch_HW)
         self.norm = norm_layer(embed_dim) if norm_layer else nn.Identity()
 
     def forward(self, x: Tensor) -> Tensor:
         _, _, H, W = x.shape
         patch_H, patch_W = self.patch_size
 
-        assert H % patch_H == 0, f"Input image height {H} is not a multiple of patch height {patch_H}"
-        assert W % patch_W == 0, f"Input image width {W} is not a multiple of patch width: {patch_W}"
+        assert H % patch_H == 0, \
+        f"Input image height {H} is not a multiple of patch height {patch_H}"
+        assert W % patch_W == 0, \
+        f"Input image width {W} is not a multiple of patch width: {patch_W}"
 
         x = self.proj(x)  # B C H W
         H, W = x.size(2), x.size(3)
@@ -1210,7 +1310,8 @@ class PatchEmbed(nn.Module):
 
     def flops(self) -> float:
         Ho, Wo = self.patches_resolution
-        flops = Ho * Wo * self.embed_dim * self.in_chans * (self.patch_size[0] * self.patch_size[1])
+        flops = Ho * Wo * self.embed_dim * self.in_chans * (
+            self.patch_size[0] * self.patch_size[1])
         if self.norm is not None:
             flops += Ho * Wo * self.embed_dim
         return flops
@@ -1238,6 +1339,7 @@ import torch.nn.functional as F
 
 
 class SwiGLUFFN(nn.Module):
+
     def __init__(
         self,
         in_features: int,
@@ -1278,6 +1380,7 @@ except ImportError:
 
 
 class SwiGLUFFNFused(SwiGLU):
+
     def __init__(
         self,
         in_features: int,
@@ -1296,6 +1399,7 @@ class SwiGLUFFNFused(SwiGLU):
             out_features=out_features,
             bias=bias,
         )
+
 
 #$#>END: dinov2/dinov2/layers/swiglu_ffn.py
 
@@ -1352,17 +1456,25 @@ def _make_dinov2_linear_classification_head(
 
     if pretrained:
         model_base_name = _make_dinov2_model_name(arch_name, patch_size)
-        model_full_name = _make_dinov2_model_name(arch_name, patch_size, num_register_tokens)
+        model_full_name = _make_dinov2_model_name(arch_name, patch_size,
+                                                  num_register_tokens)
         layers_str = str(layers) if layers == 4 else ""
-        url = _DINOV2_BASE_URL + f"/{model_base_name}/{model_full_name}_linear{layers_str}_head.pth"
-        state_dict = torch.hub.load_state_dict_from_url(url, map_location="cpu")
+        url = _DINOV2_BASE_URL + \
+        f"/{model_base_name}/{model_full_name}_linear{layers_str}_head.pth"
+        state_dict = torch.hub.load_state_dict_from_url(url,
+                                                        map_location="cpu")
         linear_head.load_state_dict(state_dict, strict=True)
 
     return linear_head
 
 
 class _LinearClassifierWrapper(nn.Module):
-    def __init__(self, *, backbone: nn.Module, linear_head: nn.Module, layers: int = 4):
+
+    def __init__(self,
+                 *,
+                 backbone: nn.Module,
+                 linear_head: nn.Module,
+                 layers: int = 4):
         super().__init__()
         self.backbone = backbone
         self.linear_head = linear_head
@@ -1380,7 +1492,9 @@ class _LinearClassifierWrapper(nn.Module):
             ], dim=1)
             # fmt: on
         elif self.layers == 4:
-            x = self.backbone.get_intermediate_layers(x, n=4, return_class_token=True)
+            x = self.backbone.get_intermediate_layers(x,
+                                                      n=4,
+                                                      return_class_token=True)
             # fmt: off
             linear_input = torch.cat([
                 x[0][1],
@@ -1427,7 +1541,9 @@ def _make_dinov2_linear_classifier(
         num_register_tokens=num_register_tokens,
     )
 
-    return _LinearClassifierWrapper(backbone=backbone, linear_head=linear_head, layers=layers)
+    return _LinearClassifierWrapper(backbone=backbone,
+                                    linear_head=linear_head,
+                                    layers=layers)
 
 
 def dinov2_vits14_lc(
@@ -1438,7 +1554,9 @@ def dinov2_vits14_lc(
     **kwargs,
 ):
     """
-    Linear classifier (1 or 4 layers) on top of a DINOv2 ViT-S/14 backbone (optionally) pretrained on the LVD-142M dataset and trained on ImageNet-1k.
+    Linear classifier (1 or 4 layers) on top of a DINOv2 ViT-S/14
+    backbone (optionally) pretrained on the LVD-142M dataset and trained
+    on ImageNet-1k.
     """
     return _make_dinov2_linear_classifier(
         arch_name="vit_small",
@@ -1457,7 +1575,9 @@ def dinov2_vitb14_lc(
     **kwargs,
 ):
     """
-    Linear classifier (1 or 4 layers) on top of a DINOv2 ViT-B/14 backbone (optionally) pretrained on the LVD-142M dataset and trained on ImageNet-1k.
+    Linear classifier (1 or 4 layers) on top of a DINOv2 ViT-B/14
+    backbone (optionally) pretrained on the LVD-142M dataset and trained on
+    ImageNet-1k.
     """
     return _make_dinov2_linear_classifier(
         arch_name="vit_base",
@@ -1476,7 +1596,8 @@ def dinov2_vitl14_lc(
     **kwargs,
 ):
     """
-    Linear classifier (1 or 4 layers) on top of a DINOv2 ViT-L/14 backbone (optionally) pretrained on the LVD-142M dataset and trained on ImageNet-1k.
+    Linear classifier (1 or 4 layers) on top of a DINOv2 ViT-L/14 backbone
+    (optionally) pretrained on the LVD-142M dataset and trained on ImageNet-1k.
     """
     return _make_dinov2_linear_classifier(
         arch_name="vit_large",
@@ -1495,7 +1616,8 @@ def dinov2_vitg14_lc(
     **kwargs,
 ):
     """
-    Linear classifier (1 or 4 layers) on top of a DINOv2 ViT-g/14 backbone (optionally) pretrained on the LVD-142M dataset and trained on ImageNet-1k.
+    Linear classifier (1 or 4 layers) on top of a DINOv2 ViT-g/14 backbone
+    (optionally) pretrained on the LVD-142M dataset and trained on ImageNet-1k.
     """
     return _make_dinov2_linear_classifier(
         arch_name="vit_giant2",
@@ -1507,11 +1629,15 @@ def dinov2_vitg14_lc(
     )
 
 
-def dinov2_vits14_reg_lc(
-    *, layers: int = 4, pretrained: bool = True, weights: Union[Weights, str] = Weights.IMAGENET1K, **kwargs
-):
+def dinov2_vits14_reg_lc(*,
+                         layers: int = 4,
+                         pretrained: bool = True,
+                         weights: Union[Weights, str] = Weights.IMAGENET1K,
+                         **kwargs):
     """
-    Linear classifier (1 or 4 layers) on top of a DINOv2 ViT-S/14 backbone with registers (optionally) pretrained on the LVD-142M dataset and trained on ImageNet-1k.
+    Linear classifier (1 or 4 layers) on top of a DINOv2 ViT-S/14 backbone
+    with registers (optionally) pretrained on the LVD-142M dataset and
+    trained on ImageNet-1k.
     """
     return _make_dinov2_linear_classifier(
         arch_name="vit_small",
@@ -1525,11 +1651,15 @@ def dinov2_vits14_reg_lc(
     )
 
 
-def dinov2_vitb14_reg_lc(
-    *, layers: int = 4, pretrained: bool = True, weights: Union[Weights, str] = Weights.IMAGENET1K, **kwargs
-):
+def dinov2_vitb14_reg_lc(*,
+                         layers: int = 4,
+                         pretrained: bool = True,
+                         weights: Union[Weights, str] = Weights.IMAGENET1K,
+                         **kwargs):
     """
-    Linear classifier (1 or 4 layers) on top of a DINOv2 ViT-B/14 backbone with registers (optionally) pretrained on the LVD-142M dataset and trained on ImageNet-1k.
+    Linear classifier (1 or 4 layers) on top of a DINOv2 ViT-B/14 backbone
+    with registers (optionally) pretrained on the LVD-142M dataset and
+    trained on ImageNet-1k.
     """
     return _make_dinov2_linear_classifier(
         arch_name="vit_base",
@@ -1543,11 +1673,15 @@ def dinov2_vitb14_reg_lc(
     )
 
 
-def dinov2_vitl14_reg_lc(
-    *, layers: int = 4, pretrained: bool = True, weights: Union[Weights, str] = Weights.IMAGENET1K, **kwargs
-):
+def dinov2_vitl14_reg_lc(*,
+                         layers: int = 4,
+                         pretrained: bool = True,
+                         weights: Union[Weights, str] = Weights.IMAGENET1K,
+                         **kwargs):
     """
-    Linear classifier (1 or 4 layers) on top of a DINOv2 ViT-L/14 backbone with registers (optionally) pretrained on the LVD-142M dataset and trained on ImageNet-1k.
+    Linear classifier (1 or 4 layers) on top of a DINOv2 ViT-L/14 backbone
+    with registers (optionally) pretrained on the LVD-142M dataset and
+    trained on ImageNet-1k.
     """
     return _make_dinov2_linear_classifier(
         arch_name="vit_large",
@@ -1561,11 +1695,15 @@ def dinov2_vitl14_reg_lc(
     )
 
 
-def dinov2_vitg14_reg_lc(
-    *, layers: int = 4, pretrained: bool = True, weights: Union[Weights, str] = Weights.IMAGENET1K, **kwargs
-):
+def dinov2_vitg14_reg_lc(*,
+                         layers: int = 4,
+                         pretrained: bool = True,
+                         weights: Union[Weights, str] = Weights.IMAGENET1K,
+                         **kwargs):
     """
-    Linear classifier (1 or 4 layers) on top of a DINOv2 ViT-g/14 backbone with registers (optionally) pretrained on the LVD-142M dataset and trained on ImageNet-1k.
+    Linear classifier (1 or 4 layers) on top of a DINOv2 ViT-g/14 backbone
+    with registers (optionally) pretrained on the LVD-142M dataset and
+    trained on ImageNet-1k.
     """
     return _make_dinov2_linear_classifier(
         arch_name="vit_giant2",
@@ -1578,6 +1716,7 @@ def dinov2_vitg14_reg_lc(
         interpolate_offset=0.0,
         **kwargs,
     )
+
 
 #$#>END: dinov2/dinov2/hub/classifiers.py
 
@@ -1637,36 +1776,60 @@ def _make_dinov2_model(
     model = vits.__dict__[arch_name](**vit_kwargs)
 
     if pretrained:
-        model_full_name = _make_dinov2_model_name(arch_name, patch_size, num_register_tokens)
-        url = _DINOV2_BASE_URL + f"/{model_base_name}/{model_full_name}_pretrain.pth"
-        state_dict = torch.hub.load_state_dict_from_url(url, map_location="cpu")
+        model_full_name = _make_dinov2_model_name(arch_name, patch_size,
+                                                  num_register_tokens)
+        url = _DINOV2_BASE_URL + \
+        f"/{model_base_name}/{model_full_name}_pretrain.pth"
+        state_dict = torch.hub.load_state_dict_from_url(url,
+                                                        map_location="cpu")
         model.load_state_dict(state_dict, strict=True)
 
     return model
 
 
-def dinov2_vits14(*, pretrained: bool = True, weights: Union[Weights, str] = Weights.LVD142M, **kwargs):
+def dinov2_vits14(*,
+                  pretrained: bool = True,
+                  weights: Union[Weights, str] = Weights.LVD142M,
+                  **kwargs):
     """
     DINOv2 ViT-S/14 model (optionally) pretrained on the LVD-142M dataset.
     """
-    return _make_dinov2_model(arch_name="vit_small", pretrained=pretrained, weights=weights, **kwargs)
+    return _make_dinov2_model(arch_name="vit_small",
+                              pretrained=pretrained,
+                              weights=weights,
+                              **kwargs)
 
 
-def dinov2_vitb14(*, pretrained: bool = True, weights: Union[Weights, str] = Weights.LVD142M, **kwargs):
+def dinov2_vitb14(*,
+                  pretrained: bool = True,
+                  weights: Union[Weights, str] = Weights.LVD142M,
+                  **kwargs):
     """
     DINOv2 ViT-B/14 model (optionally) pretrained on the LVD-142M dataset.
     """
-    return _make_dinov2_model(arch_name="vit_base", pretrained=pretrained, weights=weights, **kwargs)
+    return _make_dinov2_model(arch_name="vit_base",
+                              pretrained=pretrained,
+                              weights=weights,
+                              **kwargs)
 
 
-def dinov2_vitl14(*, pretrained: bool = True, weights: Union[Weights, str] = Weights.LVD142M, **kwargs):
+def dinov2_vitl14(*,
+                  pretrained: bool = True,
+                  weights: Union[Weights, str] = Weights.LVD142M,
+                  **kwargs):
     """
     DINOv2 ViT-L/14 model (optionally) pretrained on the LVD-142M dataset.
     """
-    return _make_dinov2_model(arch_name="vit_large", pretrained=pretrained, weights=weights, **kwargs)
+    return _make_dinov2_model(arch_name="vit_large",
+                              pretrained=pretrained,
+                              weights=weights,
+                              **kwargs)
 
 
-def dinov2_vitg14(*, pretrained: bool = True, weights: Union[Weights, str] = Weights.LVD142M, **kwargs):
+def dinov2_vitg14(*,
+                  pretrained: bool = True,
+                  weights: Union[Weights, str] = Weights.LVD142M,
+                  **kwargs):
     """
     DINOv2 ViT-g/14 model (optionally) pretrained on the LVD-142M dataset.
     """
@@ -1679,9 +1842,13 @@ def dinov2_vitg14(*, pretrained: bool = True, weights: Union[Weights, str] = Wei
     )
 
 
-def dinov2_vits14_reg(*, pretrained: bool = True, weights: Union[Weights, str] = Weights.LVD142M, **kwargs):
+def dinov2_vits14_reg(*,
+                      pretrained: bool = True,
+                      weights: Union[Weights, str] = Weights.LVD142M,
+                      **kwargs):
     """
-    DINOv2 ViT-S/14 model with registers (optionally) pretrained on the LVD-142M dataset.
+    DINOv2 ViT-S/14 model with registers (optionally) pretrained on the
+    LVD-142M dataset.
     """
     return _make_dinov2_model(
         arch_name="vit_small",
@@ -1694,9 +1861,13 @@ def dinov2_vits14_reg(*, pretrained: bool = True, weights: Union[Weights, str] =
     )
 
 
-def dinov2_vitb14_reg(*, pretrained: bool = True, weights: Union[Weights, str] = Weights.LVD142M, **kwargs):
+def dinov2_vitb14_reg(*,
+                      pretrained: bool = True,
+                      weights: Union[Weights, str] = Weights.LVD142M,
+                      **kwargs):
     """
-    DINOv2 ViT-B/14 model with registers (optionally) pretrained on the LVD-142M dataset.
+    DINOv2 ViT-B/14 model with registers (optionally) pretrained on the
+    LVD-142M dataset.
     """
     return _make_dinov2_model(
         arch_name="vit_base",
@@ -1709,9 +1880,13 @@ def dinov2_vitb14_reg(*, pretrained: bool = True, weights: Union[Weights, str] =
     )
 
 
-def dinov2_vitl14_reg(*, pretrained: bool = True, weights: Union[Weights, str] = Weights.LVD142M, **kwargs):
+def dinov2_vitl14_reg(*,
+                      pretrained: bool = True,
+                      weights: Union[Weights, str] = Weights.LVD142M,
+                      **kwargs):
     """
-    DINOv2 ViT-L/14 model with registers (optionally) pretrained on the LVD-142M dataset.
+    DINOv2 ViT-L/14 model with registers (optionally) pretrained on the
+    LVD-142M dataset.
     """
     return _make_dinov2_model(
         arch_name="vit_large",
@@ -1724,9 +1899,13 @@ def dinov2_vitl14_reg(*, pretrained: bool = True, weights: Union[Weights, str] =
     )
 
 
-def dinov2_vitg14_reg(*, pretrained: bool = True, weights: Union[Weights, str] = Weights.LVD142M, **kwargs):
+def dinov2_vitg14_reg(*,
+                      pretrained: bool = True,
+                      weights: Union[Weights, str] = Weights.LVD142M,
+                      **kwargs):
     """
-    DINOv2 ViT-g/14 model with registers (optionally) pretrained on the LVD-142M dataset.
+    DINOv2 ViT-g/14 model with registers (optionally) pretrained on the
+    LVD-142M dataset.
     """
     return _make_dinov2_model(
         arch_name="vit_giant2",
@@ -1738,5 +1917,6 @@ def dinov2_vitg14_reg(*, pretrained: bool = True, weights: Union[Weights, str] =
         interpolate_offset=0.0,
         **kwargs,
     )
+
 
 #$#>END: dinov2/dinov2/hub/backbones.py
