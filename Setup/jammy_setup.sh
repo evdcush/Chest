@@ -132,6 +132,8 @@ sudo apt install gcc-12 g++-12
 # Can optionally setup alternatives:
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 100 --slave /usr/bin/g++ g++ /usr/bin/g++-12
 
+sudo apt install -y libhdf5-dev hdf5-tools
+
 # Graph.
 sudo apt install -y graphviz graphviz-dev
 
@@ -1477,6 +1479,19 @@ sudo apt update && sudo apt install -y sublime-text
 # =========
 # Stability-AI StableStudio
 # https://github.com/Stability-AI/StableStudio
+
+# Neural MMO
+# ==========
+# Boy, this one is fussy with package versions.
+# It's pinned pip pkg versions are unsatisfiable in my normal env, so I simply
+# saw the `setup.py` requirements, installed them all without their deps.
+# Good to go brother.
+
+#=== First, get the hdf5 sys stuffs
+sudo apt install -y libhdf5-dev hdf5-tools
+
+#=== Install pip packages
+pipi --no-deps numpy scipy pytest pytest-benchmark autobahn Twisted vec-noise imageio ordered-set pettingzoo gym pylint psutil py tqdm dill nmmo
 
 
 #=============================================================================#
