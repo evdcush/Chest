@@ -391,7 +391,7 @@ sudo apt install -y gnome-tweaks nautilus-extension-fma
 # =======
 sudo apt install -y ssh && ssh-keygen -t ed25519 -C 'evdcush@protonmail.com'
 eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_ed25519
-xclip ~/.ssh/id_ed25519.pub
+xclip -sel clip ~/.ssh/id_ed25519.pub
 
 
 # Japanese
@@ -763,6 +763,13 @@ wget http://kr.archive.ubuntu.com/ubuntu/pool/main/d/dict-moby-thesaurus/dict-mo
 
 # For downloading google fonts:
 sudo apt install -y typecatcher
+## If you get error:
+# AttributeError: 'ElementTree' object has no attribute 'getiterator'
+
+# Fix:
+sudo sed -i 's/tree.getiterator/tree.iter/g' /usr/lib/python3/dist-packages/typecatcher_lib/Builder.py
+
+
 # Fonts acquired through typecatcher:
 ## (MOSTLY DISPLAY FONTS)
 # Anton
