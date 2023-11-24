@@ -101,6 +101,7 @@ ADJECTIVES = [
     'true',
     'effortless',
     'scarlet',
+    'treasured',
 ]
 
 
@@ -184,7 +185,7 @@ NOUNS = [
     'glow',
     'oath',
     'totem',
-    'smoke',
+    'universe',
 ]
 
 
