@@ -32,6 +32,8 @@ path_prepend() {
     fi
 }
 
+export XDG_DATA_DIRS="${XDG_DATA_DIRS:+${XDG_DATA_DIRS}:}$HOME/.local/share/flatpak/exports/share"
+
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="${PATH:+${PATH}:}$PYENV_ROOT/bin"
 
@@ -54,7 +56,7 @@ source $HOME/.Dots/gpu_dot
 
 #---- MKL
 #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-export LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}/usr/local/lib"
+#export LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}/usr/local/lib"
 
 #---- rbenv
 #path_append "$PATH_RBENV"
