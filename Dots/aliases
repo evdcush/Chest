@@ -12,11 +12,11 @@
 
 # Display
 # =======
-alias fixdisplay='sudo /etc/init.d/lightdm restart'
+#alias fixdisplay='sudo /etc/init.d/lightdm restart'
 
 # Trackpoint sensitivity
 # ======================
-alias trk="xinput --set-prop `xinput | grep -i trackpoint | cut -d'=' -f2 | cut -c -2` 'libinput Accel Speed' -0.7"
+#alias trk="xinput --set-prop `xinput | grep -i trackpoint | cut -d'=' -f2 | cut -c -2` 'libinput Accel Speed' -0.7"
 
 # Nvidia stuff
 # ============
@@ -506,7 +506,7 @@ function pipitorch(){
     #torchrl \  # Didn't work?
 
     # Install other torch-related pkgs.
-    pip install -U torchinfo torchview
+    pip install -U torchinfo torchview torchmetrics
 }
 
 #=============================================================================#
@@ -750,7 +750,7 @@ alias stowhome='stow --target=/home/evan'
 
 # Misc software
 # =============
-alias rgr="ranger"            # ranger file manager
+#alias rgr="ranger"            # ranger file manager
 alias rs='redshift -O 2400'   # screen color temp adjust for night
 #alias ja='myougiden'   # ja now a func that can accept from clipboard
 alias myg="echo \
