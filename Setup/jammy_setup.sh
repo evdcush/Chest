@@ -1379,13 +1379,18 @@ sudo apt install -y apt-transport-https curl
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 
 # Deb apt source.
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 
 # Install.
 sudo apt update && sudo apt install -y brave-browser
 
 
-
+## NB, If you ever see the error message:
+# `N: Skipping acquire of configured file 'main/binary-i386/Packages' etc...
+# eg:
+# `N: Skipping acquire of configured file 'main/binary-i386/Packages' as repository 'https://brave-browser-apt-release.s3.brave.com stable InRelease' doesn't support architecture 'i386'`
+## You fix by assigning `arch=amd64` like:
+## deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main ....ETC
 
 
 #=============================================================================#
