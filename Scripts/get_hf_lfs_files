@@ -1,0 +1,66 @@
+#!/usr/bin/bash
+
+
+#=============================================================================#
+#                                  CLONE REPO                                 #
+#=============================================================================#
+
+
+# Get the repo URL from the clipboard if not provided.
+# Eg: `https://huggingface.co/stabilityai/sdxl-turbo`
+if [ "$#" -eq 0 ]
+then
+    HF_REPO_URL=`xclip -o -sel clip`
+else
+    HF_REPO_URL=$1
+fi
+
+# Get the repo name.
+# eg: `sdxl-turbo`
+HF_REPO_NAME=$(basename $HF_REPO_URL)
+
+# Get the repo `user/repo-name`.
+# eg: `stabilityai/sdxl-turbo`
+HF_REPO_TARGET=$(echo $HF_REPO_URL | cut -d '/' -f4-5)
+
+echo "Now cloning:\n\t$HF_REPO_URL\ninto:\n\t$PWD/$HF_REPO_NAME"
+
+# Clone the repo.
+GIT_LFS_SKIP_SMUDGE=1 git clone $HF_REPO_URL
+
+# Enter the newly cloned repo directory, list the project root dir items.
+cd $HF_REPO_NAME | ls --color=tty --file-type -1hX
+
+# Get a list of all the LFS files.
+TARGET_LFS_FILES=$(git lfs ls-files | cut -d' ' -f 3)
+
+echo "FOUND TARGET LFS FILES:\n$TARGET_LFS_FILES"
+
+
+#=============================================================================#
+#                                DOWNLOAD FILES                               #
+#=============================================================================#
+
+
+# Get the master branch name.
+GIT_MASTER_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+# Base URL for LFS files on HF.
+BASE_URL="https://huggingface.co/$HF_REPO_TARGET/resolve/$GIT_MASTER_BRANCH"
+
+echo "TARGET BASE_URL: $BASE_URL"
+
+# Prepare the target urls file for aria2c.
+TARGET_LFS_FILES_LIST='target_lfs_urls.txt'
+> "$TARGET_LFS_FILES_LIST"  # Clear or create the file.
+
+# Add each LFS file url to the targets file.
+for lfs_file in $TARGET_LFS_FILES; do
+    echo "$BASE_URL/$lfs_file" >> "$TARGET_LFS_FILES_LIST"
+done
+
+# Download the files using aria2c.
+echo "BEGINNING DOWNLOAD..."
+aria2c -i "$TARGET_LFS_FILES_LIST" --max-concurrent-downloads=3
+
+echo "FINISHED DOWNLOADING LFS FILES!"
