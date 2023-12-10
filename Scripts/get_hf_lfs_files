@@ -18,23 +18,25 @@ fi
 # Get the repo name.
 # eg: `sdxl-turbo`
 HF_REPO_NAME=$(basename $HF_REPO_URL)
+PATH_TO_HF_REPO="$PWD/$HF_REPO_NAME"
+echo "HF_REPO_NAME: $HF_REPO_NAME"
 
 # Get the repo `user/repo-name`.
 # eg: `stabilityai/sdxl-turbo`
 HF_REPO_TARGET=$(echo $HF_REPO_URL | cut -d '/' -f4-5)
 
-echo "Now cloning:\n\t$HF_REPO_URL\ninto:\n\t$PWD/$HF_REPO_NAME"
+echo "Now cloning: $HF_REPO_URL into: $PWD/$HF_REPO_NAME"
 
 # Clone the repo.
 GIT_LFS_SKIP_SMUDGE=1 git clone $HF_REPO_URL
 
 # Enter the newly cloned repo directory, list the project root dir items.
-cd $HF_REPO_NAME | ls --color=tty --file-type -1hX
+cd $PATH_TO_HF_REPO && ls --color=tty --file-type -1hX
 
 # Get a list of all the LFS files.
 TARGET_LFS_FILES=$(git lfs ls-files | cut -d' ' -f 3)
 
-echo "FOUND TARGET LFS FILES:\n$TARGET_LFS_FILES"
+echo "FOUND TARGET LFS FILES: $TARGET_LFS_FILES"
 
 
 #=============================================================================#
@@ -56,7 +58,9 @@ TARGET_LFS_FILES_LIST='target_lfs_urls.txt'
 
 # Add each LFS file url to the targets file.
 for lfs_file in $TARGET_LFS_FILES; do
-    echo "$BASE_URL/$lfs_file" >> "$TARGET_LFS_FILES_LIST"
+    _target_url="$BASE_URL/$lfs_file"
+    echo "TARGET LFS FILE URL: $_target_url"
+    echo "$_target_url" >> "$TARGET_LFS_FILES_LIST"
 done
 
 # Download the files using aria2c.
