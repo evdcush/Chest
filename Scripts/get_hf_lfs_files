@@ -61,10 +61,14 @@ for lfs_file in $TARGET_LFS_FILES; do
     _target_url="$BASE_URL/$lfs_file"
     echo "TARGET LFS FILE URL: $_target_url"
     echo "$_target_url" >> "$TARGET_LFS_FILES_LIST"
+    echo "    out=$lfs_file"  >> "$TARGET_LFS_FILES_LIST"
 done
 
 # Download the files using aria2c.
 echo "BEGINNING DOWNLOAD..."
-aria2c -i "$TARGET_LFS_FILES_LIST" --max-concurrent-downloads=3
+aria2c \
+-i "$TARGET_LFS_FILES_LIST" \
+--max-concurrent-downloads=3 \
+--allow-overwrite
 
 echo "FINISHED DOWNLOADING LFS FILES!"
