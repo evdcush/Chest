@@ -190,3 +190,140 @@ Fail uploadBinaries
 -s HOME_CSC_OXM_T970OXM4DWH3_MQB69282250_REV00_user_low_ship_MULTI_CERT.tar.md5 \
 -d /dev/bus/usb/003/020
 ```
+
+
+```
+./odin4 \
+-b BL_T970XXU4DWH3_T970XXU4DWH3_MQB69282250_REV00_user_low_ship_MULTI_CERT.tar.md5 \
+-a magisk_patched-26400_2VTTH.tar \
+-s HOME_CSC_OXM_T970OXM4DWH3_MQB69282250_REV00_user_low_ship_MULTI_CERT.tar.md5 \
+-d /dev/bus/usb/003/025
+```
+
+ **SUCCESS**
+
+ ```
+ (3116) ➜  Androidz ./odin4 \
+-b BL_T970XXU4DWH3_T970XXU4DWH3_MQB69282250_REV00_user_low_ship_MULTI_CERT.tar.md5 \
+-a magisk_patched-26400_2VTTH.tar \
+-s HOME_CSC_OXM_T970OXM4DWH3_MQB69282250_REV00_user_low_ship_MULTI_CERT.tar.md5 \
+-d /dev/bus/usb/003/025
+Check file : BL_T970XXU4DWH3_T970XXU4DWH3_MQB69282250_REV00_user_low_ship_MULTI_CERT.tar.md5
+Check file : magisk_patched-26400_2VTTH.tar
+Check file : HOME_CSC_OXM_T970OXM4DWH3_MQB69282250_REV00_user_low_ship_MULTI_CERT.tar.md5
+meta-data/download-list.txt
+/dev/bus/usb/003/025
+Setup Connection
+initializeConnection
+Receive PIT Info
+success getpit
+Upload Binaries
+abl.elf.lz4
+xbl.elf.lz4
+xbl_config.elf.lz4
+tz.mbn.lz4
+hyp.mbn.lz4
+devcfg.mbn.lz4
+aop.mbn.lz4
+qupv3fw.elf.lz4
+NON-HLOS.bin.lz4
+dspso.bin.lz4
+storsec.mbn.lz4
+sec.elf.lz4
+bksecapp.mbn.lz4
+tz_iccc.mbn.lz4
+tz_hdm.mbn.lz4
+apdp.mbn.lz4
+uefi_sec.mbn.lz4
+vbmeta.img.lz4
+vaultkeeper.mbn.lz4
+recovery.img.lz4
+super.img.lz4
+dtbo.img.lz4
+vbmeta.img
+boot.img
+cache.img.lz4
+prism.img.lz4
+optics.img.lz4
+Close Connection
+```
+
+...maybe
+
+It's in a boot loop...
+
+Yep...
+Needed to factory reset.
+
+**UNSUCCESSFUL**!
+
+https://xdaforums.com/t/bootloop-android-10-enablefilecrypto_failed-boot-issue-after-recent-update.4063089/
+
+
+---
+
+Okay, factory-reset'd, which fixed the bootloop.
+
+- Magisk patch again
+- This time, `adb pull` the patched AP, rather than MTP transfer
+- Let's try again
+
+- ALSO, you INCORRECTLY selected `HOME_CSC` for the `-s` `CSC` option
+
+```
+./odin4 \
+-b BL_T970XXU4DWH3_T970XXU4DWH3_MQB69282250_REV00_user_low_ship_MULTI_CERT.tar.md5 \
+-a magisk_patched-26400_X5pFs.tar \
+-s CSC_OXM_T970OXM4DWH3_MQB69282250_REV00_user_low_ship_MULTI_CERT.tar.md5 \
+-d /dev/bus/usb/003/037
+```
+
+
+```
+(3116) ➜  Androidz ./odin4 \
+-b BL_T970XXU4DWH3_T970XXU4DWH3_MQB69282250_REV00_user_low_ship_MULTI_CERT.tar.md5 \
+-a magisk_patched-26400_X5pFs.tar \
+-s HOME_CSC_OXM_T970OXM4DWH3_MQB69282250_REV00_user_low_ship_MULTI_CERT.tar.md5 \
+-d /dev/bus/usb/003/042
+Check file : BL_T970XXU4DWH3_T970XXU4DWH3_MQB69282250_REV00_user_low_ship_MULTI_CERT.tar.md5
+Check file : magisk_patched-26400_X5pFs.tar
+Check file : HOME_CSC_OXM_T970OXM4DWH3_MQB69282250_REV00_user_low_ship_MULTI_CERT.tar.md5
+meta-data/download-list.txt
+/dev/bus/usb/003/042
+Setup Connection
+initializeConnection
+Receive PIT Info
+success getpit
+Upload Binaries
+abl.elf.lz4
+xbl.elf.lz4
+xbl_config.elf.lz4
+tz.mbn.lz4
+hyp.mbn.lz4
+devcfg.mbn.lz4
+aop.mbn.lz4
+qupv3fw.elf.lz4
+NON-HLOS.bin.lz4
+dspso.bin.lz4
+storsec.mbn.lz4
+sec.elf.lz4
+bksecapp.mbn.lz4
+tz_iccc.mbn.lz4
+tz_hdm.mbn.lz4
+apdp.mbn.lz4
+uefi_sec.mbn.lz4
+vbmeta.img.lz4
+vaultkeeper.mbn.lz4
+recovery.img.lz4
+super.img.lz4
+dtbo.img.lz4
+vbmeta.img
+boot.img
+cache.img.lz4
+prism.img.lz4
+optics.img.lz4
+Close Connection
+
+```
+
+IT WORKED! (?)
