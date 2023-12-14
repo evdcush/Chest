@@ -239,48 +239,6 @@ alias jbc='jupyter-book clean'
 alias jbm='jupyter-book myst'
 
 
-# TEMPLATE py file
-# ================
-# Could `date -u +%Y` for current year, as well.
-pyfile='# Copyright 2023 evdcush.
-"""
-"""
-
-from collections import defaultdict
-from functools import partial, wraps
-from glob import glob
-import math
-import os
-from pprint import pformat, pprint
-import random
-import sys
-
-from IPython import embed
-
-import numpy as np
-import matplotlib.pyplot as plt
-
-import torch
-from torch import nn
-import torch.nn.functional as F
-
-
-
-#-----------------------------------------------------------------------------#
-#                                     MAIN                                    #
-#-----------------------------------------------------------------------------#
-
-def main():
-    pass
-
-
-if __name__ == "__main__":
-    main()
-
-'
-alias mkpy="echo '$pyfile' > foo.py"
-
-
 #-----------------------------------------------------------------------------#
 #                                pip packages                                 #
 #-----------------------------------------------------------------------------#
@@ -330,6 +288,11 @@ alias pipupdate="pip list --outdated --format=freeze \
 
 # Typical stack
 # =============
+
+# WARNING:
+#   Malicious packages abound in pypi.
+#   Need to audit this stack and remove any non-swole doges.
+
 # work stuff
 cv='opencv-python imageio scikit-video open3d-python pycocotools albumentations'
 
