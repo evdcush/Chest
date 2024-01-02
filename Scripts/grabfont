@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Directory where the fonts will be downloaded.
+FONT_DIR="$HOME/.local/share/fonts"
+
+# Create the directory if it doesn't exist.
+mkdir -p $FONT_DIR
+
+# Function to download and install a font from google fonts.
+install_font() {
+    FONT_NAME=$1
+    echo "Installing '$FONT_NAME'..."
+
+    # Google Fonts URL.
+    URL="https://fonts.google.com/download?family=$FONT_NAME"
+
+    # Temporary directory for downloading.
+    TMP_DIR=$(mktemp -d)
+
+    # Download and decompress the font archive.
+    wget -q -O "$TMP_DIR/font.zip" "$URL"
+    unzip -q "$TMP_DIR/font.zip" -d "$FONT_DIR"
+
+    # Remove the temp dir.
+    rm -rf "$TMP_DIR"
+    echo "Finished installing '$FONT_NAME'!"
+}
+
+# Loop through each user-provided font name.
+for font in "$@"; do
+    install_font "$font"
+done
+
+# Finally, update the font cache.
+fc-cache -f
