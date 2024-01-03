@@ -1672,6 +1672,29 @@ xmodmap -pke | grep -i insert
 # Map ins key to null in ~/.Xmodmap
 echo "keycode 90 =" >> ~/.Xmodmap
 
+# It's different on Jammy/Wayland.
+# Here's the full walkthrough:
+#   Ref: https://askubuntu.com/a/1498911
+
+# Install `keyd`
+git clone --depth=1 https://github.com/rvaiya/keyd
+cd keyd
+make && sudo make install
+sudo systemctl enable keyd && sudo systemctl start keyd
+
+# Remap the insert key in `/etc/keyd/default.conf`:
+#[ids]
+#
+#*
+#
+#[main]
+#
+## Disable insert key.
+#insert = noop
+
+# Reload `keyd`:
+sudo keyd reload
+
 
 # Thunar custom actions
 # =====================
