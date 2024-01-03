@@ -765,6 +765,80 @@ sudo apt install -y texlive-xetex texlive-extra-utils \
 texlive-bibtex-extra texlive-fonts-extra texlive-font-utils texlive-lang-cjk \
 texlive-lang-japanese texlive-pstricks texlive-publishers texlive-science
 
+## ⚠️⚠️ WARNING ⚠️⚠️
+# installation attempts of `texlive*` were totally borked when I tried recently
+# on jammy
+# I kept getting the following bs:
+#  $ sudo apt install texlive-xetex
+#  Reading package lists... Done
+#  Building dependency tree... Done
+#  Reading state information... Done
+#  Some packages could not be installed. This may mean that you have
+#  requested an impossible situation or if you are using the unstable
+#  distribution that some required packages have not yet been created
+#  or been moved out of Incoming.
+#  The following information may help to resolve the situation:
+#
+#  The following packages have unmet dependencies:
+#   texlive-base : Depends: texlive-binaries (>= 2021.20210626)
+#   texlive-latex-base : Depends: texlive-binaries (>= 2021.20210626)
+#   texlive-latex-extra : Depends: texlive-binaries (>= 2021.20210626)
+#                         Recommends: texlive-plain-generic but it is not installable
+#   texlive-latex-recommended : Depends: texlive-binaries (>= 2021.20210626)
+#   texlive-pictures : Depends: texlive-binaries (>= 2021.20210626)
+#   texlive-xetex : Depends: texlive-binaries (>= 2021.20210626)
+#                   Depends: tipa (>= 2:1.2-2.1) but it is not installable
+#  E: Unable to correct problems, you have held broken packages.
+#
+####
+# TOTAL FUBAR
+# THE FIX:
+sudo apt install -y aptitude
+sudo aptitude install texlive-base
+
+# HERE'S WHAT IT LOOKED LIKE (WTF?? 🤷🏻‍♂️)
+#   sudo aptitude install texlive-base
+#   The following NEW packages will be installed:
+#     fonts-lmodern{a} lmodern{a} tex-common{a} texlive-base{b}
+#   0 packages upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+#   Need to get 35.1 MB of archives. After unpacking 87.9 MB will be used.
+#   The following packages have unmet dependencies:
+#    texlive-base : Depends: texlive-binaries (>= 2021.20210626) but it is not installable
+#   The following actions will resolve these dependencies:
+#
+#        Keep the following packages at their current version:
+#   1)     texlive-base [Not Installed]
+#
+#
+#
+#   Accept this solution? [Y/n/q/?] n
+#   The following actions will resolve these dependencies:
+#
+#        Install the following packages:
+#   1)     libptexenc1 [2021.20210626.59705-1build1 (jammy)]
+#   2)     libteckit0 [2.5.11+ds1-1 (jammy)]
+#   3)     libtexlua53 [2021.20210626.59705-1build1 (jammy)]
+#   4)     libtexluajit2 [2021.20210626.59705-1build1 (jammy)]
+#   5)     libzzip-0-13 [0.13.72+dfsg.1-1.1 (jammy)]
+#   6)     t1utils:i386 [1.41-4build2 (jammy)]
+#   7)     texlive-binaries [2021.20210626.59705-1build1 (jammy)]
+#
+#        Downgrade the following packages:
+#   8)     libkpathsea6 [2021.20210626.59705-1ubuntu0.1 (now) -> 2021.20210626.59705-1build1 (jammy)]
+#   9)     libsynctex2 [2021.20210626.59705-1ubuntu0.1 (now) -> 2021.20210626.59705-1build1 (jammy)]
+#
+#
+#
+#   Accept this solution? [Y/n/q/?]
+#   The following packages will be DOWNGRADED:
+#     libkpathsea6 libsynctex2
+#   The following NEW packages will be installed:
+#     fonts-lmodern{a} libptexenc1{a} libteckit0{a} libtexlua53{a} libtexluajit2{a} libzzip-0-13{a} lmodern{a} t1utils:i386{a} tex-common{a} texlive-base texlive-binaries{a}
+#   0 packages upgraded, 11 newly installed, 2 downgraded, 0 to remove and 0 not upgraded.
+#   Need to get 46.0 MB of archives. After unpacking 141 MB will be used.
+#   Do you want to continue? [Y/n/?]
+
+
 # Sphinx needs this to build `latexpdf`
 sudo apt install -y latexmk
 
