@@ -526,8 +526,8 @@ sudo apt update && \
 sudo apt install keepassxc
 
 #=== Pandoc
-curl https://api.github.com/repos/flameshot-org/flameshot/releases/latest | \
-jq '.assets[] | select(.name | startswith("pandoc-") and endswith(".amd64.deb")) | .browser_download_url' | \
+curl https://api.github.com/repos/jgm/pandoc/releases/latest | \
+jq '.assets[] | select(.name | startswith("pandoc-") and endswith("amd64.deb")) | .browser_download_url' | \
 xargs wget -O software.deb && \
 sudo dpkg -i software.deb \
 && rm software.deb;
