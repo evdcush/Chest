@@ -389,7 +389,8 @@ sudo apt install -y gnome-tweaks nautilus-extension-fma
 
 # SSH key
 # =======
-sudo apt install -y ssh && ssh-keygen -t ed25519 -C 'evdcush@protonmail.com'
+sudo apt install -y ssh && \
+ssh-keygen -t ed25519 -C 'evdcush@protonmail.com'
 eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_ed25519
 xclip -sel clip ~/.ssh/id_ed25519.pub
 
@@ -456,6 +457,31 @@ gnome-shell-timer
 #     windows are still functional, but the window in which the download
 #     completed is frozen and will stay frozen until killed.
 sudo apt install xdg-desktop-portal-gnome
+
+#=============================================================================#
+#                            NO SOUND, DUMMY OUTPUT                           #
+#=============================================================================#
+# A fucking nightmare, this one.
+# Consulted and tried all in:
+# https://askubuntu.com/questions/1406646/ubuntu-22-04-audio-output-not-working-dummy-audio
+# Didn't work.
+
+# What worked: Forcing the use of legacy HDA driver
+# Something to do with SOF (Sound Open Firmware) driver, a newer intel hardware
+# thing I guess.
+# Discovered by `sudo dmesg | grep snd`
+sudo vi /etc/default/grub
+
+# Add line:
+# GRUB_CMDLINE_LINUX_DEFAULT="quiet splash snd_hda_intel.dmic_detect=0"
+
+# update and reboot.
+sudo update-grub && reboot
+
+# Install SOF firmware
+sudo apt install -y sof-firmware
+reboot
+
 
 #=============================================================================#
 #                                                                             #
