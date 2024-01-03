@@ -513,7 +513,7 @@ sudo apt install -y nvme-cli
 # General
 # =======
 sudo apt install -y jq
-sudo apt install -y copyq deluge gparted redshift wkhtmltopdf inxi
+sudo apt install -y copyq deluge gparted redshift wkhtmltopdf inxi colordiff qalc
 
 # General Sourced
 # ---------------
@@ -641,12 +641,6 @@ sudo apt install -y nextcloud-desktop;
 ##  that of your login keyring"
 ## Or other keyring issues, here's what worked for me:
 ## rm -v ~/.local/share/keyrings/*.keyring && reboot
-
-
-
-#=== Misc CLI tools
-# currency conversion
-sudo apt install -y qalc
 
 
 #=== Terminal (GUAKE)
