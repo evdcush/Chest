@@ -6,6 +6,7 @@ FONT_DIR="$HOME/.local/share/fonts"
 # Create the directory if it doesn't exist.
 mkdir -p $FONT_DIR
 
+
 # Function to download and install a font from google fonts.
 install_font() {
     FONT_NAME=$1
@@ -19,16 +20,35 @@ install_font() {
 
     # Download and decompress the font archive.
     wget -q -O "$TMP_DIR/font.zip" "$URL"
-    unzip -q "$TMP_DIR/font.zip" -d "$FONT_DIR"
+    unzip -q -j "$TMP_DIR/font.zip" '*.ttf' '*.otf' -d "$FONT_DIR"
 
     # Remove the temp dir.
     rm -rf "$TMP_DIR"
     echo "Finished installing '$FONT_NAME'!"
 }
 
+
+# Function to process a file containing font names.
+process_fonts_list_file() {
+    FILE=$1
+    while IFS= read -r line
+    do
+        # Skip empty lines and lines starting with '#'.
+        [[ "$line" == "" || "$line" == \#* ]] && continue
+        install_font "$line"
+    done < "$FILE"
+}
+
+
 # Loop through each user-provided font name.
-for font in "$@"; do
-    install_font "$font"
+for arg in "$@"; do
+    if [ -f "$arg" ]; then
+        # If the argument is a file, process the file,
+        process_fonts_list_file "$arg"
+    else
+        # Otherwise, assume it's a valid font name.
+        install_font "$arg"
+    fi
 done
 
 # Finally, update the font cache.
