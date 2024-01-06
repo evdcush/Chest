@@ -124,7 +124,7 @@ sudo apt install -y libcudnn8
 #=============================================================================#
 
 # Generally needed.
-sudo apt install -y curl git git-crypt ffmpeg imagemagick python3-pip ssh xclip vim zsh
+sudo apt install -y curl git git-crypt ffmpeg imagemagick python3-pip ssh xclip vim zsh v4l-linux
 
 # Real shit.
 sudo apt install libboost-all-dev mpich swig liblapack-dev libblas-dev
