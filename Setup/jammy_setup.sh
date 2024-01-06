@@ -525,6 +525,11 @@ sudo add-apt-repository -y ppa:phoerious/keepassxc && \
 sudo apt update && \
 sudo apt install keepassxc
 
+# NB: `keepassxc-cli` is included in the `keepassxc` package!
+# You can use the CLI to retrieve totp codes and such.
+# Eg:
+keepassxc-cli show -t my_pwdb.kdbx myEntry
+
 #=== Pandoc
 curl https://api.github.com/repos/jgm/pandoc/releases/latest | \
 jq '.assets[] | select(.name | startswith("pandoc-") and endswith("amd64.deb")) | .browser_download_url' | \

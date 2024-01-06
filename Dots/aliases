@@ -527,6 +527,9 @@ https://github.com/cupy/cupy/releases/tag/v7.8.0"
 #=============================================================================#
 # All aliases that use installed packages
 
+#----- kdbx
+alias ghtp="keepassxc-cli clip -t $HOME/.otp.kdbx GHT"
+
 #----- FlatPak
 alias fpi='flatpak install flathub'  # WARNING: assumes flathub-published app!
 alias fpiy='flatpak install -y flathub'
