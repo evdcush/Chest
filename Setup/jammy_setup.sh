@@ -1132,6 +1132,20 @@ flatpak install flathub org.racket_lang.Racket
 #==== Scratch
 flatpak install flathub org.turbowarp.TurboWarp
 
+#==== Zeal
+flatpak install flathub org.zealdocs.Zeal
+sudo flatpak override --filesystem=home org.zealdocs.Zeal
+
+
+# Git guis
+# --------
+# I can never get used to using git through gui, but maybe someday I'll break through.
+#==== Gittyup
+flatpak install flathub com.github.Murmele.Gittyup
+
+#==== gitg
+flatpak install flathub org.gnome.gitg
+sudo flatpak override --filesystem=home org.gnome.gitg
 
 # System Stuff
 # ============
@@ -1142,21 +1156,34 @@ flatpak install flathub org.kde.filelight
 # Apps
 # ====
 
+#==== Evince
+flatpak install flathub org.gnome.Evince && \
+sudo flatpak override --filesystem=host org.gnome.Evince
+
+#==== Okular
+flatpak install flathub org.kde.okular && \
+sudo flatpak override --filesystem=host org.kde.okular
+
 #==== Zotero
 flatpak install flathub org.zotero.Zotero && \
-sudo flatpak override --filesystem=$HOME org.zotero.Zotero
+sudo flatpak override --filesystem=home org.zotero.Zotero
 
 #==== Joplin
 flatpak install flathub net.cozic.joplin_desktop && \
-sudo flatpak override --filesystem=$HOME net.cozic.joplin_desktop
-
-#==== Logseq
-flatpak install flathub com.logseq.Logseq && \
-sudo flatpak override --filesystem=$HOME com.logseq.Logseq
+sudo flatpak override --filesystem=home net.cozic.joplin_desktop
 
 #==== MarkText
 flatpak install flathub com.github.marktext.marktext && \
-sudo flatpak override --filesystem=$HOME com.github.marktext.marktext
+sudo flatpak override --filesystem=home com.github.marktext.marktext
+
+#==== Obsidian
+flatpak install flathub md.obsidian.Obsidian && \
+sudo flatpak override --filesystem=home md.obsidian.Obsidian
+
+#==== Logseq
+flatpak install flathub com.logseq.Logseq && \
+sudo flatpak override --filesystem=home com.logseq.Logseq
+
 
 #==== Zettlr
 flatpak install flathub com.zettlr.Zettlr
@@ -1165,19 +1192,23 @@ flatpak install flathub com.zettlr.Zettlr
 
 #==== Inkscape
 flatpak install flathub org.inkscape.Inkscape && \
-sudo flatpak override org.inkscape.Inkscape --filesystem=$HOME
+sudo flatpak override --filesystem=home org.inkscape.Inkscape
+
+#==== draw.io
+flatpak install flathub com.jgraph.drawio.desktop && \
+sudo flatpak override --filesystem=home com.jgraph.drawio.desktop
 
 #==== Nomacs
 flatpak install flathub org.nomacs.ImageLounge && \
-sudo flatpak override --filesystem=$HOME org.nomacs.ImageLounge
+sudo flatpak override --filesystem=home org.nomacs.ImageLounge
 
 #==== Lossless cut (video cut/clip software GUI)
 flatpak install flathub no.mifi.losslesscut
-sudo flatpak override no.mifi.losslesscut --filesystem=$HOME
+sudo flatpak override --filesystem=home no.mifi.losslesscut
 
 #==== Color-picker
 flatpak install flathub nl.hjdskes.gcolor3
-sudo flatpak override nl.hjdskes.gcolor3 --filesystem=$HOME
+sudo flatpak override --filesystem=home nl.hjdskes.gcolor3
 
 #==== Colorway (Color pairings)
 flatpak install flathub io.github.lainsce.Colorway
@@ -1213,7 +1244,7 @@ flatpak install flathub io.github.zhrexl.thisweekinmylife
 
 #==== SaveDesktop (saves gnome settings)
 flatpak install flathub io.github.vikdevelop.SaveDesktop
-sudo flatpak override --filesystem=$HOME io.github.vikdevelop.SaveDesktop
+sudo flatpak override --filesystem=home io.github.vikdevelop.SaveDesktop
 
 #==== Emoji-picker: smile
 flatpak install flathub it.mijorus.smile
@@ -1266,7 +1297,7 @@ flatpak install flathub me.iepure.devtoolbox
 ## TODO STUFF
 #==== Done (todo manager)
 flatpak install flathub dev.edfloreshz.Done
-sudo flatpak override dev.edfloreshz.Done --filesystem=$HOME
+sudo flatpak override dev.edfloreshz.Done --filesystem=home
 
 #==== Sleek (todo manager)
 flatpak install flathub com.github.ransome1.sleek
@@ -1490,14 +1521,6 @@ sudo apt update && sudo apt install -y brave-browser
 #=============================================================================#
 #                                     Dev                                     #
 #=============================================================================#
-
-# Zeal (offline docs)
-# ===================
-#sudo add-apt-repository -y ppa:zeal-developers/ppa
-#sudo apt update
-#sudo apt install
-## PPA IS OLD!
-wget https://launchpad.net/~zeal-developers/+archive/ubuntu/ppa/+files/zeal_0.6.1-3ppa1~eoan1_amd64.deb
 
 
 # ============ #
