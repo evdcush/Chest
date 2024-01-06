@@ -855,6 +855,37 @@ sudo apt install -y dict-freedict-eng-jpn dict-freedict-eng-lat
 wget http://kr.archive.ubuntu.com/ubuntu/pool/main/d/dict-moby-thesaurus/dict-moby-thesaurus_1.0-6.4_all.deb && sudo dpkg -i dict-moby-thesaurus_1.0-6.4_all.deb
 
 
+#=============================================================================#
+#                                    Docker                                   #
+#=============================================================================#
+# REF: https://docs.docker.com/engine/install/ubuntu/
+
+# Add Docker's official GPG key:
+sudo apt install ca-certificates curl gnupg
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+
+# Install it:
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+# Postinstall permissions shit.
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker # (or just logout)
+
+# Verify installation:
+docker run hello-world
+
+
+
 #█████████████████████████████████████████████████████████████████████████████#
 #                                    FONTS                                    #
 #█████████████████████████████████████████████████████████████████████████████#
