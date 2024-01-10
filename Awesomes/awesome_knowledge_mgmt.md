@@ -94,6 +94,11 @@ A collection of resources and software for knowledge management.
 
 (Nothing else comes close)
 
+## Scholarly Stuffs
+
+- https://zenodo.org/
+- https://www.semanticscholar.org/
+- https://www.connectedpapers.com/
 
 
 ---
