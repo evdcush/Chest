@@ -1,8 +1,6 @@
-# Knowledge Management 🧠💡📝
+# Knowledge Management
 
 A collection of resources and software for knowledge management.
-
-
 
 # Bookmarks
 
@@ -14,25 +12,17 @@ A collection of resources and software for knowledge management.
 
 - [nextcloud/bookmarks: Bookmark app for Nextcloud](https://github.com/nextcloud/bookmarks)
 
-
-
 ### CLI
 
 - [**jarun/buku**: Personal mini-web in text](https://github.com/jarun/buku)
 
-- [**xwmx/nb**: CLI and local web plain text note‑taking, bookmarking, and archiving with linking, tagging, filtering, search, Git versioning & syncing, Pandoc conversion, + more, in a single portable script.](https://github.com/xwmx/nb)
-
-
-
-
+- [**xwmx/nb**: CLI and local web plain text notetaking, bookmarking, and archiving with linking, tagging, filtering, search, Git versioning & syncing, Pandoc conversion, + more, in a single portable script.](https://github.com/xwmx/nb)
 
 ### Read Later
 
 - [omnivore-app/omnivore: Omnivore is a complete, open source read-it-later solution for people who like reading.](https://github.com/omnivore-app/omnivore)
 
 - 
-
-
 
 ### Sync
 
@@ -48,7 +38,7 @@ A collection of resources and software for knowledge management.
 
 - [laurent22/joplin: Joplin - the secure note taking and to-do app with synchronisation capabilities for Windows, macOS, Linux, Android and iOS.](https://github.com/laurent22/joplin)
 
-- 🔥[AppFlowy-IO/**AppFlowy**: AppFlowy is an open-source alternative to Notion. You are in charge of your data and customizations. Built with Flutter and Rust.](https://github.com/AppFlowy-IO/AppFlowy)
+- [AppFlowy-IO/**AppFlowy**: AppFlowy is an open-source alternative to Notion. You are in charge of your data and customizations. Built with Flutter and Rust.](https://github.com/AppFlowy-IO/AppFlowy)
 
 - [Zettlr/Zettlr: A Markdown Editor for the 21st century.](https://github.com/Zettlr/Zettlr)
 
@@ -58,7 +48,7 @@ A collection of resources and software for knowledge management.
 
 - [zadam/trilium: Build your personal knowledge base with Trilium Notes](https://github.com/zadam/trilium)
 
-- [toeverything/AFFiNE: There can be more than Notion and Miro. AFFiNE is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.](https://github.com/toeverything/AFFiNE)
+- [toeverything/AFFiNE: There can be more than Notion and Miro. AFFiNE is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.](https://github.com/toeverything/AFFiNE) 😳😳😳 amazing, and completely not ready for use yet
 
 - Extensions:
   
@@ -67,10 +57,6 @@ A collection of resources and software for knowledge management.
       - [dendronhq/dendron: The personal knowledge management (PKM) tool that grows as you do!](https://github.com/dendronhq/dendron)
      
       - [foambubble/foam: A personal knowledge management and sharing system for VSCode](https://github.com/foambubble/foam)
-
-
-
-
 
 ---
 
@@ -81,10 +67,6 @@ A collection of resources and software for knowledge management.
    - XMind 8
 
 - Freeplane
-
-
-
-
 
 ---
 
@@ -100,11 +82,10 @@ A collection of resources and software for knowledge management.
 - https://www.semanticscholar.org/
 - https://www.connectedpapers.com/
 
-
 ---
 
-
-
-# Archiving 💾
+# Archiving
 
 - [kanishka-linux/reminiscence: Self-Hosted Bookmark And Archive Manager](https://github.com/kanishka-linux/reminiscence)
+- [ArchiveBox/ArchiveBox: 🗃 Open source self-hosted web archiving. Takes URLs/browser history/bookmarks/Pocket/Pinboard/etc., saves HTML, JS, PDFs, media, and more...](https://github.com/ArchiveBox/ArchiveBox)
+- 

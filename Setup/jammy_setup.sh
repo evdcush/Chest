@@ -201,6 +201,10 @@ ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/gunstage
 # eg: like fzf, but with further contextual hints/ordering
 curl -fsSL https://raw.githubusercontent.com/curusarn/resh/master/scripts/rawinstall.sh | bash
 
+###############################################################################
+# Try atuin? https://github.com/atuinsh/atuin
+#################################################################################
+
 
 # ==== #
 # 𝗗𝗢𝗧𝗦 #
@@ -481,6 +485,30 @@ sudo update-grub && reboot
 # Install SOF firmware
 sudo apt install -y sof-firmware
 reboot
+
+
+#=============================================================================#
+#                          NO EXTERNAL DISPLAY (HDMI)                         #
+#=============================================================================#
+## PROBLEM:
+#  - connect external monitor to Lenovo ThinkPad T14, Buntu 22.04 6.2.0-37-generic
+#  - Unable to connect to display
+## CAUSE:
+#  This issue is caused by a bug in the T14 Gen3 BIOS
+#  Ref: https://askubuntu.com/questions/1421990/new-lenovo-ubuntu-22-04-hdmi-output-not-detected
+## FIX:
+#  Use `fwupmgr` to update firmware
+
+# Find update (unnecessary):
+fwupdmgr get-devices
+
+# Install update:
+fwupdmgr get-updates
+
+# ^ that didn't work for me, but this did:
+fwupdmgr refresh && fwupdmgr update
+
+# IF THIS DOESN'T WORK, CHANGE CONFIGURATION BIOS: from legacy to UEFI
 
 
 #=============================================================================#
@@ -1217,7 +1245,7 @@ flatpak install flathub md.obsidian.Obsidian && \
 sudo flatpak override --filesystem=home md.obsidian.Obsidian
 
 #==== Logseq
-flatpak install flathub com.logseq.Logseq && \
+flatpak install flathub com.logseq.Logseq
 sudo flatpak override --filesystem=home com.logseq.Logseq
 
 
@@ -1291,6 +1319,9 @@ flatpak install flathub org.gnome.Firmware
 
 #==== Calendar (Gnome)
 flatpak install flathub org.gnome.Calendar
+
+#==== Thunderbird
+flatpak install flathub org.mozilla.Thunderbird
 
 #==== Blanket (ambient sounds player)
 flatpak install flathub com.rafaelmardojai.Blanket
