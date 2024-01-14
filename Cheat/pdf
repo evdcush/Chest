@@ -47,6 +47,14 @@ sed -e "s/Downloaded from http:\/\/direct.mit.edu\/evco\/article-pdf\/31\/2\/81\
 pdftk unwatermarked_evco_a_00325.pdf output fixed_evco_a_00325.pdf
 
 
+# Export PDF page as an image
+# ---------------------------
+# Use `pdftoppm` (from apt pkg `poppler-utils`).
+# Export the first page (-f 1), and only the first page (-l 1) of a pdf
+# as a png (-png) or (-jpeg) image, output as `foo-001.png`
+pdftoppm -f 1 -l 1 -png foo.pdf foo
+
+
 
 # PANDOC
 # ======
@@ -80,3 +88,4 @@ deeplists.tex:
    \setlist[enumerate,9]{label=$\roman*.$}
    \renewlist{enumerate}{enumerate}{9}
 ```
+
