@@ -310,8 +310,14 @@ llm_stack='langchain chromadb "evadb[document,notebook]"' #llama-index chainforg
 ui_stack='gradio streamlit'
 docqa_stack='"nougat-ocr[api,dataset]"'
 
-mmlab_stack='mmengine mmcv "mmdet[tracking]" mmpretrain mmeval openmim' # mmtrack mmselfsup'  # mmselfsup has GPU (faiss-gpu) dep that is difficult to resolve
-alias pipimm="$piu $mmlab_stack"
+#mmlab_stack='mmengine mmcv "mmdet[tracking]" mmpretrain mmeval openmim' # mmtrack mmselfsup'  # mmselfsup has GPU (faiss-gpu) dep that is difficult to resolve
+#alias pipimm="$piu $mmlab_stack"
+mmcv_inst='pip install -U mmcv -f https://download.openmmlab.com/mmcv/dist/cu121/torch2.1/index.html'
+alias pipimm="\
+$mmcv_inst; \
+$piu mmengine 'mmdet[tracking]' mmpretrain mmeval mmsegmentation; \
+$piu numpy scipy scikit-learn; \
+"
 
 # NB: ray[all] installs gpu stuff too! How do we otherwise get all the stuff?
 
