@@ -538,6 +538,17 @@ alias fphome="sudo flatpak override --filesystem=$HOME"
 #----- PDF
 # NB: pdfjoin no longer part of pdfjam tool in texlive-extra-utils package anymore.
 alias pdfjoin='pdfjam --fitpaper true --rotateoversize true --suffix joined '
+pdfpng() {
+    # Get the pdf filename provided, eg `foo.pdf`
+    pdf_fname="$1"
+
+    # Get the filename without the `.pdf` extension.
+    pdf_bname=$(basename "$pdf_fname" .pdf)
+
+    # Export a 300 dpi png of the 1st page to `foo_preview-001.png`
+    pdftoppm -f 1 -l 1 -r 300 -png "$pdf_fname" "${pdf_bname}_preview"
+}
+
 
 # FART!
 # =====
@@ -806,6 +817,8 @@ alias gf="git fetch"
 alias gpull="git pull"
 alias gpush="git push"
 alias gpushset='git push --set-upstream origin master'
+
+alias gchkoutall='git branch -a | grep remotes | grep -v HEAD | cut -d'/' -f3- | xargs -I% git checkout %'
 
 # Setup git remote and push.
 function gitremotepush(){

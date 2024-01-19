@@ -541,7 +541,7 @@ sudo apt install -y nvme-cli
 # General
 # =======
 sudo apt install -y jq
-sudo apt install -y copyq deluge gparted redshift wkhtmltopdf inxi colordiff qalc
+sudo apt install -y copyq deluge gparted redshift wkhtmltopdf inxi colordiff qalc poppler-utils
 
 # General Sourced
 # ---------------
