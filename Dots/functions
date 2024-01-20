@@ -379,7 +379,7 @@ function initgitconfig() {
 
 
 # git clone && cd
-function gcd(){
+function gcncd(){
     REPO_URL=$1
     git clone --depth=1 $REPO_URL
     cdl "$(basename $1 .git)"
@@ -501,6 +501,35 @@ function spork(){
 
     # Clone it.
     cd $DIR_SPORKS && git clone $target;
+
+    # Log the Sporking.
+    _SPORK_LOG=$FILE_SPORK_LOG
+    echo "Adding $target_repo to the Sporks Log: $_SPORK_LOG"
+    _TIMESTAMP=$(date +%Y-%m-%d_%H%M%S)
+    echo "$_TIMESTAMP $target" >> $_SPORK_LOG;
+
+    # Go home.
+    cd -;
+}
+
+# Horrendous, deplorable, lazy copy-paste, whatever.
+# Exactly the same as `spork`, but with a shallow clone ayyyyyyyyyyyyyyyyyyy.
+function spork1(){
+    # Get spork target URL.
+    if [ "$#" -eq 0 ]; then
+        echo 'No target given; will attempt to get arg from clipboard'
+        target=`xclip -o -sel clip`
+    else
+        target=$1
+    fi
+
+    # Create the Sporks master dir.
+    mkdir -p $DIR_SPORKS
+
+    echo "TARGET REPO: $target"
+
+    # Clone it.
+    cd $DIR_SPORKS && git clone --depth=1 $target;  # Here's the diff!
 
     # Log the Sporking.
     _SPORK_LOG=$FILE_SPORK_LOG
