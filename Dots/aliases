@@ -212,6 +212,7 @@ alias py='python'
 alias ipy='ipython'
 alias nb="jupyter notebook"
 alias nbscrub='nbstripout --keep-output --drop-empty-cells'
+alias purgepycache="find . -name '__pycache__' -exec rm -rf {} +"
 
 # notebook extensions
 #  - jupyter_dashboards  <---- has NOT worked yet (maybe conflict with nbext?)
@@ -776,7 +777,7 @@ alias gnotrack='git config --local  status.showUntrackedFiles no'
 alias gs="git status"
 alias gd="git diff --ignore-all-space"
 alias gdma='git diff --diff-filter=MA master...'  # only show diffs made in files on the branch against compared to master.
-alias gdls='git diff --diff-filter=MA --name-only master...'  # List files modified in branch from master.
+alias gdls='git --no-pager diff --diff-filter=MA --name-only master...'  # List files modified in branch from master.
 alias gls="git ls-files"
 
 #--- LOG
