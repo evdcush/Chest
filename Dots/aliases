@@ -308,7 +308,7 @@ more_hpo_stack='ax-platform dragonfly-opt flaml nevergrad zoopt'
 hugging_stack='datasets diffusers huggingface_hub peft safetensors timm transformers xformers'
 openai_stack="openai 'openai[embeddings]' 'openai[wandb]' openai-whisper tiktoken"
 llm_stack='langchain chromadb "evadb[document,notebook]"' #llama-index chainforge'
-ui_stack='gradio streamlit'
+ui_stack='gradio streamlit taipy'
 docqa_stack='"nougat-ocr[api,dataset]"'
 
 #mmlab_stack='mmengine mmcv "mmdet[tracking]" mmpretrain mmeval openmim' # mmtrack mmselfsup'  # mmselfsup has GPU (faiss-gpu) dep that is difficult to resolve
@@ -316,7 +316,7 @@ docqa_stack='"nougat-ocr[api,dataset]"'
 mmcv_inst='pip install -U mmcv -f https://download.openmmlab.com/mmcv/dist/cu121/torch2.1/index.html'
 alias pipimm="\
 $mmcv_inst; \
-$piu mmengine 'mmdet[tracking]' mmpretrain mmeval mmsegmentation; \
+$piu mmengine 'mmdet[multimodal,tracking]' mmpretrain mmeval mmsegmentation; \
 $piu numpy scipy scikit-learn; \
 "
 
@@ -476,7 +476,7 @@ function pipitorch(){
     #torchrl \  # Didn't work?
 
     # Install other torch-related pkgs.
-    pip install -U torchinfo torchview torchmetrics
+    pip install -U torchfix torchinfo torchview torchmetrics
 }
 
 #=============================================================================#
