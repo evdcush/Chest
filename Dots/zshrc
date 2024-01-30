@@ -87,8 +87,8 @@ export NLTK_DATA='/home/evan/.Data/nltk_data'
 
 # hist
 HISTORY_IGNORE="(ls|cd|pwd|exit|cd ..|..|...|l|lk)"
-export HISTSIZE=-1
-export HISTFILESIZE=-1
+export HISTSIZE=-1 # Unlimited num of cmds in-memory history of current sess
+export HISTFILESIZE=-1 # No limit to num cmds kept in history file.
 
 # Preferred editor
 # ---------------

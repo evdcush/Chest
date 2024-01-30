@@ -968,3 +968,17 @@ mi sit amet vestibulum. Vivamus vel malesuada ligula."
     echo $LOREM | xclip -sel clip
     echo $LOREM
 }
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+function mdclicksection() {
+    md_click_section_template='<details>
+  <summary>Hello</summary>
+
+World!
+</details>
+'
+    echo $md_click_section_template | xclip -sel clip
+    echo $md_click_section_template
+    echo '(This was copied to your clipboard!)'
+}
