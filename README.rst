@@ -25,7 +25,7 @@ A place I keep stuff.
 ----
 
 **License**:
-Except where noted, original written content of the repo is licensed under `CC-BY-NC-ND-4.0`, while any software/code is licensed as `LGPL-3.0`. See LICENSE_.
+Except where noted, original written content of the repo is licensed under ``CC-BY-NC-ND-4.0``, while any software/code is licensed as ``LGPL-3.0``. See LICENSE_.
 
 
 Any logos, icons, or other assets in resources are not my property, and are only used as icons in custom ``*.desktop`` files or other personal use.
