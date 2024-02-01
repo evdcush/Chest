@@ -1,26 +1,18 @@
 # BDD100K
 
-
-
 ## Using the Data
 
 Reference: [bdd100k-models/PREPARE_DATASET.md at main · SysCV/bdd100k-models · GitHub](https://github.com/SysCV/bdd100k-models/blob/main/doc/PREPARE_DATASET.md)
 
-
-
 Once you have downloaded the data, you need to convert the labels from BDD100K's 'Scalabel' format to COCO-style.
 
 (Why they didn't just release in COCO, 🤷🏻‍♂️)
-
-
 
 ## Conversion to COCO-style
 
 First you'll need to clone the bdd100k repo.
 
 Since I only intend to use this repo to interact with BDD100K data, I clone it into the same parent directory as the `bdd100k/` data dir.
-
-
 
 **Prepare the `bdd100k` code repo**
 
@@ -34,8 +26,6 @@ cd bdd100k_code
 pip install scalabel
 ```
 
-
-
 After the above step, your directory tree should look like:
 
 ```
@@ -48,10 +38,7 @@ MyDataDir/
     ├── bdd100k/
     ├── doc/
     └── scripts/
-
 ```
-
-
 
 ### Convert the detection (`det20`) labels
 
@@ -76,8 +63,6 @@ python -m bdd100k.label.to_coco -m det \
 -o ../bdd100k/jsons/det_train_cocofmt.json
 ```
 
-
-
 ### Convert pose estimation labels
 
 ```shell
@@ -96,8 +81,6 @@ python -m bdd100k.label.to_coco -m pose \
 -o ../bdd100k/jsons/pose_train_cocofmt.json
 ```
 
-
-
 ### Convert panoptic segmentation labels
 
 For the dense tasks, labels are further distinguished by their representation format, ie rle or bitmask.
@@ -115,6 +98,7 @@ python -m bdd100k.label.to_coco_panseg \
 ```
 
 ---
+
 ---
 
 ### Convert MOT20 labels
@@ -131,7 +115,6 @@ pip install git+https://github.com/bdd100k/bdd100k.git
 
 Then, I ran the following command:
 
-
 ```shell
 python -m bdd100k.label.to_coco -m box_track \
 -i ~/.Data/bdd100k/labels/box_track_20/val \
@@ -140,11 +123,7 @@ python -m bdd100k.label.to_coco -m box_track \
 
 Looks like everything executed without error; next is using this data.
 
-
-
 ---
-
-
 
 # [Overview of Data Available](https://doc.bdd100k.com/download.html)
 
@@ -291,7 +270,9 @@ The GPUS/IMU info recorded along with the videos.
                 - ins_seg_val.json
 ```
 
-## ## Panoptic Segmentation
+## 
+
+## Panoptic Segmentation
 
 > Bitmasks, colormaps and original json files for panoptic segmentation. The bitmask format is explained at: [Panoptic Segmentation Format](https://doc.bdd100k.com/format.html#bitmask).
 
