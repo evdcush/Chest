@@ -316,7 +316,7 @@ docqa_stack='"nougat-ocr[api,dataset]"'
 mmcv_inst='pip install -U mmcv -f https://download.openmmlab.com/mmcv/dist/cu121/torch2.1/index.html'
 alias pipimm="\
 $mmcv_inst; \
-$piu mmengine 'mmdet[multimodal,tracking]' mmpretrain mmeval mmsegmentation; \
+$piu mmengine 'mmdet[multimodal,tracking]' 'mmpretrain[multimodal]' mmeval mmsegmentation; \
 $piu numpy scipy scikit-learn; \
 "
 
