@@ -311,12 +311,17 @@ llm_stack='langchain chromadb "evadb[document,notebook]"' #llama-index chainforg
 ui_stack='gradio streamlit taipy'
 docqa_stack='"nougat-ocr[api,dataset]"'
 
-#mmlab_stack='mmengine mmcv "mmdet[tracking]" mmpretrain mmeval openmim' # mmtrack mmselfsup'  # mmselfsup has GPU (faiss-gpu) dep that is difficult to resolve
-#alias pipimm="$piu $mmlab_stack"
-mmcv_inst='pip install -U mmcv -f https://download.openmmlab.com/mmcv/dist/cu121/torch2.1/index.html'
+# NB: if your torch version doesn't EXACTLY match the one mmcv is built against,
+#     mmcv will be broken.
+#     In such a case, there is no alternative except to build from source.
+mmcv_inst='pip install -U git+https://github.com/open-mmlab/mmcv.git'
+#mmcv_inst='pip install -U mmcv -f https://download.openmmlab.com/mmcv/dist/cu121/torch2.1/index.html'
+
+mmlab_stack="mmengine 'mmdet[multimodal,tracking]' 'mmpretrain[multimodal]' mmeval mmsegmentation"
+
 alias pipimm="\
 $mmcv_inst; \
-$piu mmengine 'mmdet[multimodal,tracking]' 'mmpretrain[multimodal]' mmeval mmsegmentation; \
+$piu $mmlab_stack; \
 $piu numpy scipy scikit-learn; \
 "
 
@@ -361,8 +366,9 @@ social='rainbowstream'  # twitter terminal client
 sphinx_stack='sphinx docutils restview rstcheck pytablewriter "pytablewriter[theme]"'
 # Theming docs: https://www.sphinx-doc.org/en/master/usage/theming.html
 sphinx_themes='sphinx-rtd-theme sphinx-book-theme furo sphinx-material \
-karma-sphinx-theme piccolo-theme sphinx-theme'
-writing_stack='ablog ghp-import jupyter-book'
+karma-sphinx-theme piccolo-theme sphinx-theme pydata-sphinx-theme'
+writing_stack='ablog ghp-import jupyter-book myst-parser jupyterlab_myst'
+alias pipisphinx="$piu $writing_stack; $piu $sphinx_stack; $piu $sphinx_themes;"
 
 
 # Static Code Analysis & QA
