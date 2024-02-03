@@ -125,6 +125,42 @@ alias lsdisk='sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL'
 #alias duh='du -h --max-depth=1 | sort -h;'
 function duh() { du -h --max-depth=1 $1 | sort -h }
 
+# Find stuff
+# ----------
+alias findzf='find * -type f | fzf'
+
+farg() {
+    sels=( "${(@f)$(fd "${fd_default[@]}" "${@:2}"| fzf)}" )
+    test -n "$sels" && print -z -- "$1 ${sels[@]:q:q}"
+}
+
+# cdf - cd into the directory of the selected file
+cdf() {
+   local file
+   local dir
+   file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+}
+
+fbr() {
+  local branches branch
+  branches=$(git --no-pager branch -vv) &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
+
+# fshow - git commit browser
+fshow() {
+  git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
+      --bind "ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {}
+FZF-EOF"
+}
+
+
 # wget
 # ====
 alias wg='wget'
@@ -297,7 +333,7 @@ alias pipupdate="pip list --outdated --format=freeze \
 # work stuff
 cv='opencv-python imageio scikit-video open3d-python pycocotools albumentations'
 
-data_stack='fiftyone docarray'  # docarray is a data format
+data_stack='fiftyone "docarray[full]"' #"docarray[torch,image]"'  # docarray is a data format
 tracking='lvis motmetrics'
 
 experiment_tools='tensorboard tensorboardX hydra-core omegaconf wandb'
@@ -543,10 +579,6 @@ https://github.com/cupy/cupy/releases/tag/v7.8.0"
 #----- kdbx
 alias ghtp="keepassxc-cli clip -t $HOME/.otp.kdbx GHT"
 
-#----- FlatPak
-alias fpi='flatpak install flathub'  # WARNING: assumes flathub-published app!
-alias fpiy='flatpak install -y flathub'
-alias fphome="sudo flatpak override --filesystem=$HOME"
 
 #----- PDF
 # NB: pdfjoin no longer part of pdfjam tool in texlive-extra-utils package anymore.
@@ -565,7 +597,10 @@ pdfpng() {
 
 # FART!
 # =====
-alias ftansi='fart -f ansi_regular'
+alias fansi='fart -f ansi_regular'
+alias fp='fart -p'
+alias fop='fart -op -l "-"'
+
 
 
 # DE
@@ -752,6 +787,12 @@ myougiden"
 alias bt='bat -pP'
 # ^: `bat --style=plain --paging never` (so no line nums and it spits output
 #    to stdout without pager like cat)
+
+
+
+########################
+# FLATPAK
+
 
 
 #=============================================================================#
