@@ -125,6 +125,8 @@ plugins=(
     gunstage
 )
 
+#export FORGIT_NO_ALIASES=true
+
 # Source zsh
 # ==========
 DISABLE_AUTO_UPDATE="true"
