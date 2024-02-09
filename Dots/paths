@@ -5,24 +5,16 @@
 PATH_DEFAULT="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 PATH_USER_BIN="$HOME/.local/bin"
 
-# env/library Paths
-# =================
-# Devtools
-PATH_PYENV="$HOME/.pyenv/bin"
-#PATH_RSTCARGO="$HOME/.cargo/bin"
-#PATH_RBENV="$HOME/.rbenv/bin" # unused!
-
-# Library/framework stuffs
-#SCIKIT_LEARN_DATA="$HOME/.Data/scikit_learn_data"
-
 # Directories
 # ===========
 DIR_DOTS="$HOME/.Dots"
 
 #---- HOME dirs
 # Data & model stuffs
-DIR_DATA="$HOME/.Data"
-DIR_EXPERIMENTS="$DIR_DATA/Experiments"
+DIR_DATA="$HOME/Data"
+#DIR_EXPERIMENTS="$DIR_DATA/Experiments"
+DIR_EXPERIMENTS="$$HOME/Experiments"
+DIR_MODELS="$HOME/Models"
 
 # Apps/software
 DIR_APPS="$HOME/.Apps"
@@ -54,8 +46,23 @@ DIR_CHEST_TEMPLATES="$DIR_CHEST_RESOURCES/Templates"
 #---- Crypt keys
 GCKEY_CHEST="$DIR_DOTS/Keys/chest_key"
 
+
+# env/library Paths
+# =================
+# Devtools
+PATH_PYENV="$HOME/.pyenv/bin"
+#PATH_RSTCARGO="$HOME/.cargo/bin"
+#PATH_RBENV="$HOME/.rbenv/bin" # unused!
+
+# Library/framework stuffs
+#SCIKIT_LEARN_DATA="$HOME/.Data/scikit_learn_data"
+TORCH_HOME="$DIR_MODELS/hubtorch"
+HF_HOME="$DIR_MODELS"
+
+
 # Misc
 # ====
 MINERL_DATA_ROOT="$DIR_DATA/MineRL"
 DETECTRON2_DATA="$DIR_DATA"
 #MUJOCO_PY_MUJOCO_PATH="$HOME/.mujoco/mujoco210"
+
