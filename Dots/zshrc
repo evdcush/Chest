@@ -116,13 +116,14 @@ ZSH_THEME="robbyrussell"
 # Plugins
 # =======
 plugins=(
-    history
     colored-man-pages
+    fzf_flatpak_widgets
+    gunstage
+    history
     #forgit
     zshmarks
     zsh-syntax-highlighting
     z
-    gunstage
 )
 
 #export FORGIT_NO_ALIASES=true
