@@ -890,6 +890,46 @@ DEVICE_MAPPING = BiDict({torch.device("cuda")})
 
 week_prior_start_date = datetime.datetime.now() - datetime.timedelta(days=7)
 
+
+#=============================================================================#
+#                                   pathing                                   #
+#=============================================================================#
+from pathlib import Path
+
+>>> Path.home()
+PosixPath('/home/evan')
+
+>>> p = Path('configs/mm_grounding_dino/grounding_dino_swin-t_pretrain_obj365.py')
+
+>>> p
+PosixPath('configs/mm_grounding_dino/grounding_dino_swin-t_pretrain_obj365.py')
+
+>>> p.absolute()
+PosixPath('/home/evan/Cloud/Projects/Enso/configs/mm_grounding_dino/grounding_dino_swin-t_pretrain_obj365.py')
+
+>>> p.absolute().as_uri()
+'file:///home/evan/Cloud/Projects/Enso/configs/mm_grounding_dino/grounding_dino_swin-t_pretrain_obj365.py'
+
+>>> p.parts
+('configs', 'mm_grounding_dino', 'grounding_dino_swin-t_pretrain_obj365.py')
+
+>>> p.parent
+PosixPath('configs/mm_grounding_dino')
+
+>>> p.name
+'grounding_dino_swin-t_pretrain_obj365.py'
+
+>>> p.stem
+'grounding_dino_swin-t_pretrain_obj365'
+
+>>> p.suffix
+'.py'
+
+>>> p.is_file()
+True
+
+
+
 #=============================================================================#
 #                                                                             #
 #             ███████ ████████ ██████         ██      ██ ██████               #
@@ -1288,3 +1328,20 @@ In [83]: for i in range(8):
      0
  -9999
 '''
+
+
+###############################################################################
+
+import pytablewriter as ptw
+
+writer = ptw.MarkdownTableWriter()
+writer.table_name = "zone"
+writer.headers = ["zone_id", "country_code", "zone_name"]
+writer.value_matrix = [
+    ["1", "AD", "Europe/Andorra"],
+    ["2", "AE", "Asia/Dubai"],
+    ["3", "AF", "Asia/Kabul"],
+    ["4", "AG", "America/Antigua"],
+    ["5", "AI", "America/Anguilla"],
+]
+writer.write_table()
