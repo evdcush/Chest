@@ -1,9 +1,12 @@
 from zipfile import ZipFile
 
 # add file to (existing) zip
-foo.zip: {foo.py, readme}
+## BEFORE: foo.zip: {foo.py, readme}
+
 with ZipFile('foo.zip', 'a') as myzip:
     myzip.write('bar.txt')
-foo.zip: {foo.py, readme, bar.txt}
+
+## AFTER: foo.zip: {foo.py, readme, bar.txt}
+
 
 
