@@ -649,6 +649,9 @@ alias dlmus='yt-dlp -x --audio-quality 0 -o "%(title)s.%(id)s.%(ext)s"'
 alias dlmus_thumb='yt-dlp -x --audio-quality 0 --embed-thumbnail -o "%(title)s.%(id)s'
 alias dlvid='yt-dlp -f bestvideo+bestaudio -o "%(title)s.%(id)s.%(ext)s" --restrict-filenames'
 
+#---- spotdl
+#alias sptdl='spotdl --format opus'
+
 #---- Inkscape
 # Convert svg icon --> png
 #alias ex_draw='inkscape --export-area-drawing --export-dpi=256 --export-type=png'

@@ -13,7 +13,7 @@ DIR_DOTS="$HOME/.Dots"
 # Data & model stuffs
 DIR_DATA="$HOME/Data"
 #DIR_EXPERIMENTS="$DIR_DATA/Experiments"
-DIR_EXPERIMENTS="$$HOME/Experiments"
+DIR_EXPERIMENTS="$HOME/Experiments"
 DIR_MODELS="$HOME/Models"
 
 # Apps/software
@@ -58,6 +58,7 @@ PATH_PYENV="$HOME/.pyenv/bin"
 #SCIKIT_LEARN_DATA="$HOME/.Data/scikit_learn_data"
 TORCH_HOME="$DIR_MODELS/hubtorch"
 HF_HOME="$DIR_MODELS"
+MMDET_DATASETS="$DIR_DATA"
 
 
 # Misc

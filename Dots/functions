@@ -56,16 +56,31 @@ tst() { touch "$1"; subl "$1" }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# I use this pattern everywhere.
+# Get an argument passed either directly to the func,
+#   or from the clipboard (if not provided).
+function get_arg() {
+    if [ "$#" -eq 0 ]; then
+        # No args given, get args from clipboard
+        _arg=$(xclip -o -sel clip)
+    else
+        # args given
+        _arg=$@
+    fi
+    echo "$_arg"
+}
+
 # Wrapper for wget from clipboard
 function get(){
-    if [ "$#" -eq 0 ]; then
-        # No arg given, get arg from clipboard
-        target=`xclip -o -sel clip`
-    else
-        # arg given
-        target=$1
-    fi
+    #if [ "$#" -eq 0 ]; then
+    #    # No arg given, get arg from clipboard
+    #    target=`xclip -o -sel clip`
+    #else
+    #    # arg given
+    #    target=$1
+    #fi
     #wget -P ~/.cache $target;
+    target=$(get_arg)
     wget $target;
 }
 
@@ -95,6 +110,13 @@ function ja(){
         lookup_arg=$1
     fi
     myougiden $lookup_arg
+}
+
+
+#===== spotdl
+function sptdl() {
+    target=$(get_arg)
+    spotdl --format opus $target
 }
 
 
