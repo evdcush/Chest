@@ -460,6 +460,7 @@ $piu $openai_stack; \
 $piu $llm_stack; \
 $pipigpu; \
 $piu feedparser requests lxml urllib3 bs4 PyGithub mpi4py; \
+$piu 'pypi-command-line[speedups]'; \
 $piu fart pyperclip unidecode python-slugify em-keyboard; \
 $piu twine pytest pip_search loguru pyzotero; \
 $piu $sphinx_stack $sphinx_themes grip docrepr; \
@@ -647,7 +648,8 @@ alias npmls='npm list -g --depth 0'  # list all globally installed packages
 #     --xattrs                        Write metadata to the video file's xattrs
 alias dlmus='yt-dlp -x --audio-quality 0 -o "%(title)s.%(id)s.%(ext)s"'
 alias dlmus_thumb='yt-dlp -x --audio-quality 0 --embed-thumbnail -o "%(title)s.%(id)s'
-alias dlvid='yt-dlp -f bestvideo+bestaudio -o "%(title)s.%(id)s.%(ext)s" --restrict-filenames'
+#alias dlvid='yt-dlp -f bestvideo+bestaudio -o "%(title)s.%(id)s.%(ext)s" --restrict-filenames'
+alias dlvid='yt-dlp -f bestvideo+bestaudio -o "%(channel)s - %(title)s.%(id)s.%(ext)s"'
 
 #---- spotdl
 #alias sptdl='spotdl --format opus'
@@ -795,6 +797,8 @@ alias bt='bat -pP'
 
 ########################
 # FLATPAK
+alias fl='flatpak'
+alias flup='flatpak update'
 
 
 
