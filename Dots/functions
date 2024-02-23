@@ -315,9 +315,11 @@ function f(){
 # TODO(evan): WIP, get "awesome" list (readme only, eventually).
 function getawe() {
     # THIS NEEDS TO BE A PY SCRIPT.
-
     # Exit if no git url provided.
-    if ! (( $# )); then return; fi
+    if ! (( $# )); then
+        echo 'No target provided!'
+        return
+    fi
 
     # Just log the timestamp and repo for now.
     mkdir -p $DIR_DOTS
