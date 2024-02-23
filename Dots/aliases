@@ -257,9 +257,9 @@ alias purgepycache="find . -name '__pycache__' -exec rm -rf {} +"
 # jupyter nbextension enable jupyter_dashboards --py --sys-prefix"
 
 # use this way too damn much
-alias cit="echo 'code.interact(local=dict(globals(), **locals()))' \
-| xclip -selection clipboard"
-alias pit="echo 'from IPython import embed; embed();' \
+#alias cit="echo 'code.interact(local=dict(globals(), **locals()))' \
+#| xclip -selection clipboard"
+alias iemb="echo 'from IPython import embed; embed();' \
 | xclip -sel clip"
 
 # Cython directives
@@ -460,9 +460,9 @@ $piu $openai_stack; \
 $piu $llm_stack; \
 $pipigpu; \
 $piu feedparser requests lxml urllib3 bs4 PyGithub mpi4py; \
-$piu 'pypi-command-line[speedups]'; \
+$piu 'pypi-command-line[speedups]' pip_search; \
 $piu fart pyperclip unidecode python-slugify em-keyboard; \
-$piu twine pytest pip_search loguru pyzotero; \
+$piu twine pytest loguru pyzotero; \
 $piu $sphinx_stack $sphinx_themes grip docrepr; \
 $piu termdown pdfCropMargins backgroundremover; \
 $piu snakeviz; \
