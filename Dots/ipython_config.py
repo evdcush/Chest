@@ -30,11 +30,11 @@
 
 ## lines of code to run at IPython startup.
 c.InteractiveShellApp.exec_lines = [
-    'import math',
+    #'import math',
     'import os',
     'import random',
     'from pprint import pformat, pprint',
-    'import cv2',
+    'from pathlib import Path',
     'import numpy as np',
     'import torch',
     'from torch import nn',
