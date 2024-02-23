@@ -59,6 +59,7 @@ PATH_PYENV="$HOME/.pyenv/bin"
 TORCH_HOME="$DIR_MODELS/hubtorch"
 HF_HOME="$DIR_MODELS"
 MMDET_DATASETS="$DIR_DATA"
+NLTK_DATA="$DIR_DATA/nltk_data"
 
 
 # Misc
