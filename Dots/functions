@@ -56,6 +56,23 @@ tst() { touch "$1"; subl "$1" }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+#==== myougiden, jp dictionary lookup
+# Lookup a word in myougiden dictionary
+#  will lookup given arg or from clipboard
+function ja(){
+    if [ "$#" -eq 0 ]; then
+        # No arg given, get arg from clipboard
+        lookup_arg=`xclip -o -sel clip`
+        # NB: wrapping bash statement in backticks makes var = statement ret ;]
+    else
+        # arg given
+        lookup_arg=$1
+    fi
+    myougiden $lookup_arg
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 # I use this pattern everywhere.
 # Get an argument passed either directly to the func,
 #   or from the clipboard (if not provided).
@@ -85,6 +102,8 @@ function get(){
 }
 
 function cget(){
+    # Same as `get`, but downloads to ~/.cache
+
     if [ "$#" -eq 0 ]; then
         # No arg given, get arg from clipboard
         target=`xclip -o -sel clip`
@@ -97,26 +116,76 @@ function cget(){
 }
 
 
-#==== myougiden, jp dictionary lookup
-# Lookup a word in myougiden dictionary
-#  will lookup given arg or from clipboard
-function ja(){
-    if [ "$#" -eq 0 ]; then
-        # No arg given, get arg from clipboard
-        lookup_arg=`xclip -o -sel clip`
-        # NB: wrapping bash statement in backticks makes var = statement ret ;]
-    else
-        # arg given
-        lookup_arg=$1
-    fi
-    myougiden $lookup_arg
-}
 
 
-#===== spotdl
+#-----------------------------------------------------------------------------#
+#                                    Media                                    #
+#-----------------------------------------------------------------------------#
+
+
+#==== spotdl
 function sptdl() {
     target=$(get_arg)
     spotdl --format opus $target
+}
+
+
+# youtube-dl
+# ==========
+# TODO: figure out how to write stuff like the YT id and artist etc to the
+#       file metadata (instead of writing id to filename.
+#       SEE:
+# yt-dlp -h | grep meta
+#     --force-overwrites              Overwrite all video and metadata files. This
+#     --write-info-json               Write video metadata to a .info.json file
+#     --no-write-info-json            Do not write video metadata (default)
+#     --write-playlist-metafiles      Write playlist metadata in addition to the
+#                                     video metadata when using --write-info-json,
+#     --no-write-playlist-metafiles   Do not write playlist metadata when using
+#                                     extracting metadata even if the videos are
+#     --embed-metadata                Embed metadata to the video file. Also
+#                                     used (Alias: --add-metadata)
+#     --no-embed-metadata             Do not add metadata to file (default)
+#                                     (Alias: --no-add-metadata)
+#     --parse-metadata FROM:TO        Parse additional metadata like title/artist
+#     --replace-in-metadata FIELDS REGEX REPLACE
+#                                     Replace text in a metadata field using the
+#     --xattrs                        Write metadata to the video file's xattrs
+
+alias dlmus='yt-dlp -x --audio-quality 0 -o "%(title)s.%(id)s.%(ext)s"'
+alias dlmus_thumb='yt-dlp -x --audio-quality 0 --embed-thumbnail -o "%(title)s.%(id)s'
+#alias dlvid='yt-dlp -f bestvideo+bestaudio -o "%(title)s.%(id)s.%(ext)s" --restrict-filenames'
+#alias dlvid='yt-dlp -f bestvideo+bestaudio -o "%(channel)s - %(title)s.%(id)s.%(ext)s"'
+
+
+#==== yt-dlp
+function dlvid(){
+    # Download a video in highest available formats.
+
+    # Get the target.
+    target=$(get_arg)
+
+    # Figure out the title of the target.
+    target_filename=$(yt-dlp --simulate --print "%(channel)s - %(title)s.%(ext)s" $target)
+
+    # Report the target info to the user.
+    echo "DOWNLOADING:\n$target\n\tTO:\n$target_filename"
+
+    # Log the event.
+    mkdir -p $DIR_DOTS
+    _log_file="$DIR_DOTS/yt.log"
+    _timestamp=$(date +%Y-%m-%d_%H%M%S)
+    _log_msg="$_timestamp: $target; '$target_filename'"
+    echo "LOGGING:\n$_log_msg"
+    echo "$_log_msg" >> $_log_file
+
+    # Now, actually get the thing.
+    yt-dlp \
+    --embed-thumbnail --embed-metadata --embed-chapters \
+    -f bestvideo+bestaudio \
+    -o "%(channel)s - %(title)s.%(ext)s" \
+    $target
+
 }
 
 
@@ -132,6 +201,26 @@ function sptdl() {
 #                88888888888  88      `888        `8'                         #
 #                                                                             #
 #=============================================================================#
+
+
+# Reset PATH to default
+function reset_path(){
+    echo "Resetting Path...\n--------------------------------------------------"
+    echo "  current path = $PATH\n"
+    PATH="$PATH_DEFAULT"  # in 'path' dots
+    #PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+    #PATH=$(getconf PATH)
+    echo "  reset path = $PATH\n"
+    source ~/.zshrc
+    echo "--------------------------------------------------"
+}
+
+
+
+#=============================================================================#
+#                                    Python                                   #
+#=============================================================================#
+
 
 # Cython
 # ======
@@ -161,17 +250,29 @@ function cycc(){
 }
 
 
-# Reset PATH to default
-function reset_path(){
-    echo "Resetting Path...\n--------------------------------------------------"
-    echo "  current path = $PATH\n"
-    PATH="$PATH_DEFAULT"  # in 'path' dots
-    #PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-    #PATH=$(getconf PATH)
-    echo "  reset path = $PATH\n"
-    source ~/.zshrc
-    echo "--------------------------------------------------"
+
+#-----------------------------------------------------------------------------#
+#                                     Pip                                     #
+#-----------------------------------------------------------------------------#
+
+
+function pipi(){
+    # Install/upgrade pip pkgs and save pkg names.
+
+    # Exit if no packages were provided.
+    if ! (( $# )); then return; fi
+
+    # Log the target packages.
+    mkdir -p $DIR_DOTS
+    _PIP_LOG="$DIR_DOTS/pipi.log"
+    _TIMESTAMP=$(date +%Y-%m-%d_%H%M%S)
+
+    echo "$_TIMESTAMP: $@" >> $_PIP_LOG
+
+    # Install packages.
+    pip install -U "$@"
 }
+
 
 
 

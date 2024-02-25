@@ -279,39 +279,6 @@ alias jbm='jupyter-book myst'
 #-----------------------------------------------------------------------------#
 #                                pip packages                                 #
 #-----------------------------------------------------------------------------#
-#---- pip stuff
-#alias pipi="pip install -U "
-
-# Install/upgrade pip pkgs and save pkg names
-function pipi(){
-    # Exit if no packages were provided.
-    if ! (( $# )); then return; fi
-
-    # Log the target packages.
-    mkdir -p $DIR_DOTS
-    _PIP_LOG="$DIR_DOTS/pipi.log"
-    _TIMESTAMP=$(date +%Y-%m-%d_%H%M%S)
-
-    echo "$_TIMESTAMP: $@" >> $_PIP_LOG
-
-    # Install packages.
-    pip install -U "$@"
-}
-
-function pipir() {
-    # Exit if no packages were provided.
-    if ! (( $# )); then return; fi
-
-    # Log the target packages.
-    mkdir -p $DIR_DOTS
-    _PIP_LOG="$DIR_DOTS/pipi.log"
-    _TIMESTAMP=$(date +%Y-%m-%d_%H%M%S)
-
-    echo "$_TIMESTAMP: $@" >> $_PIP_LOG
-
-    # Install packages.
-    pip install --no-deps -U "$@"
-}
 
 piu="pip install -U"
 
@@ -649,7 +616,7 @@ alias npmls='npm list -g --depth 0'  # list all globally installed packages
 alias dlmus='yt-dlp -x --audio-quality 0 -o "%(title)s.%(id)s.%(ext)s"'
 alias dlmus_thumb='yt-dlp -x --audio-quality 0 --embed-thumbnail -o "%(title)s.%(id)s'
 #alias dlvid='yt-dlp -f bestvideo+bestaudio -o "%(title)s.%(id)s.%(ext)s" --restrict-filenames'
-alias dlvid='yt-dlp -f bestvideo+bestaudio -o "%(channel)s - %(title)s.%(id)s.%(ext)s"'
+#alias dlvid='yt-dlp -f bestvideo+bestaudio -o "%(channel)s - %(title)s.%(id)s.%(ext)s"'
 
 #---- spotdl
 #alias sptdl='spotdl --format opus'
