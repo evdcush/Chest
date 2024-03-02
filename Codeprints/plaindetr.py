@@ -596,7 +596,8 @@ class SetCriterion(nn.Module):
 
     def loss_masks(self, outputs, targets, indices, num_boxes):
         """Compute the losses related to the masks: the focal loss and the dice loss.
-           targets dicts must contain the key "masks" containing a tensor of dim [nb_target_boxes, h, w]
+           targets dicts must contain the key "masks" containing a tensor of
+           dim [nb_target_boxes, h, w]
         """
         assert "pred_masks" in outputs
 
