@@ -116,7 +116,9 @@ ZSH_THEME="robbyrussell"
 # Plugins
 # =======
 plugins=(
+    #alias-finder
     colored-man-pages
+    extract
     fzf_flatpak_widgets
     gunstage
     history
@@ -208,3 +210,7 @@ export GPG_TTY=$(tty)
 ##source $HOME/.hishtory/config.zsh
 
 #[ -f ~/.resh/shellrc ] && source ~/.resh/shellrc # this line was added by RESH
+
+#autoload -Uz compinit
+#zstyle ':completion:*' menu select
+#fpath+=~/.zfunc
