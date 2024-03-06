@@ -1585,6 +1585,12 @@ sudo apt update && sudo apt install -y brave-browser
 ## You fix by assigning `arch=amd64` like:
 ## deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main ....ETC
 
+# ^ HAPPENED with Mojo source.
+# Fix:
+# sudo vi /etc/apt/sources.list.d/modular-installer.list
+## deb [arch=amd64 signed-by=/usr/share/keyrings/modular-installer-archive-keyring.gpg] https://dl.modular.com/public/installer/deb/ubuntu jammy main
+## deb-src [arch=amd64 signed-by=/usr/share/keyrings/modular-installer-archive-keyring.gpg] https://dl.modular.com/public/installer/deb/ubuntu jammy main
+
 
 #=============================================================================#
 #                                     Dev                                     #
