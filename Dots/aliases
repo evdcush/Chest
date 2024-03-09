@@ -247,6 +247,7 @@ alias akd="$ap-key del"
 alias py='python'
 alias ipy='ipython'
 alias nb="jupyter notebook"
+alias jlab='jupyter lab'
 alias nbscrub='nbstripout --keep-output --drop-empty-cells'
 alias purgepycache="find . -name '__pycache__' -exec rm -rf {} +"
 
