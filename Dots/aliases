@@ -377,7 +377,7 @@ sphinx_stack='sphinx docutils restview rstcheck pytablewriter "pytablewriter[the
 # Theming docs: https://www.sphinx-doc.org/en/master/usage/theming.html
 sphinx_themes='sphinx-rtd-theme sphinx-book-theme furo sphinx-material \
 karma-sphinx-theme piccolo-theme sphinx-theme pydata-sphinx-theme'
-writing_stack='ablog ghp-import jupyter-book myst-parser jupyterlab_myst'
+writing_stack='ablog ghp-import jupyter-book mystmd myst-parser jupyterlab_myst'
 alias pipisphinx="$piu $writing_stack; $piu $sphinx_stack; $piu $sphinx_themes;"
 
 
@@ -485,7 +485,6 @@ function pipitorch(){
     torch \
     torchvision \
     torchaudio \
-    torchdata \
     torcheval \
     torchrec \
     torchtext \
