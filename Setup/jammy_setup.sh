@@ -81,6 +81,8 @@ sudo apt autoremove
 # https://askubuntu.com/questions/1434512/how-to-get-rid-of-ubuntu-pro-advertisement-when-updating-apt
 sudo rm /etc/update-motd.d/88-esm-announce
 sudo rm /etc/apt/apt.conf.d/20apt-esm-hook.conf
+# NOTE: You will need to consistently remove this hook!
+#       Updates sometimes restore it!
 sudo systemctl disable ubuntu-advantage
 
 # """OFFICIAL""" solution from canonical.
