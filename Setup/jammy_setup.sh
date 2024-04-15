@@ -120,6 +120,98 @@ sudo apt install -y libcudnn8
 
 ###############################################################################
 
+# Unf*cking a CUDA installation that decides it wanted to be f*cked one day
+# -------------------------------------------------------------------------
+
+# Have you ever booted your machine, and it decides that it no longer has
+# working cuda driver and your display is stuck in low-res?
+#   > But I didn't even do anything! I didn't upgrade CUDA or change anything!
+#   > I tried to fix/update/downgrade CUDA through APT, but APT is totally
+#     borked! Holding "Broken packages"? But they're NVIDIA's damn packages!
+#     It's totally stuck in a broken deps loop, and `apt install --fix-broken`
+#     does nothing!
+#
+# My dear fren, this is the CUDA way.
+# We do not reason with CUDA.
+# We do not negotiate with CUDA.
+# Only scorched-earth methods are effective.
+# Probably good to make a backup at this point, because now we must
+# coldly commit to our MAD strategy.
+
+
+# Let's set the stage,
+# you're video display looks off, and you see there are an issue with your
+# (CUDA) video drivers.
+# You attempt to upgrade your packages,
+# you see some f'ing bullsh*t like:
+
+# > Reading package lists... Done
+# > Building dependency tree
+# > Reading state information... Done
+# > You might want to run 'apt --fix-broken install' to correct these.
+# > The following packages have unmet dependencies:
+# >  cuda-drivers : Depends: cuda-drivers-550 (= 550.54.15-1) but it is not installed
+# >  libnvidia-decode-545 : Depends: libnvidia-compute-545 (= 545.23.08-0ubuntu1) but it is not installed
+# > E: Unmet dependencies. Try 'apt --fix-broken install' with no packages (or specify a solution).
+
+# FIRST STEP!
+# ===========
+# Switch your video driver provider from nvidia garb to noveau.
+# This will allow you to rip and tear CUDA and nvidia in your system without
+# affecting your display.
+
+# SECOND STEP!
+# ============
+# Do not attempt to try and resolve the broken deps issue through apt.
+# It won't work.
+# It's now time to remove packages manually through `dpkg`, eg:
+# Start with the generic packagers,
+# the dpkg system will warn you which specific/versioned packages depend on it,
+# and then you just remove them, step-by-step.
+# For example:
+sudo dpkg -r cuda
+sudo dpkg -r cuda-drivers
+sudo dpkg -r cuda-runtime
+sudo dpkg -r cuda-12-3
+
+# sudo dpkg -r cuda-drivers
+# dpkg: dependency problems prevent removal of cuda-drivers:
+#  cuda-runtime-12-3 depends on cuda-drivers (>= 545.23.08).
+#
+# dpkg: error processing package cuda-drivers (--remove):
+#  dependency problems - not removing
+# Errors were encountered while processing:
+#  cuda-drivers
+# Here's an example trace::
+
+sudo dpkg -r cuda-runtime-12-3
+dpkg: dependency problems prevent removal of cuda-runtime-12-3:
+ cuda-demo-suite-12-3 depends on cuda-runtime-12-3.
+ cuda-12-3 depends on cuda-runtime-12-3 (>= 12.3.2).
+
+dpkg: error processing package cuda-runtime-12-3 (--remove):
+ dependency problems - not removing
+Errors were encountered while processing:
+ cuda-runtime-12-3
+sudo dpkg -r cuda-demo-suite-12-3
+dpkg: dependency problems prevent removal of cuda-demo-suite-12-3:
+ cuda-12-3 depends on cuda-demo-suite-12-3 (>= 12.3.101).
+
+dpkg: error processing package cuda-demo-suite-12-3 (--remove):
+ dependency problems - not removing
+Errors were encountered while processing:
+ cuda-demo-suite-12-3
+sudo dpkg -r cuda-12-3
+(Reading database ... 498017 files and directories currently installed.)
+Removing cuda-12-3 (12.3.2-1) ...
+sudo dpkg -r cuda-demo-suite-12-3
+(Reading database ... 498015 files and directories currently installed.)
+Removing cuda-demo-suite-12-3 (12.3.101-1) ...
+
+
+
+
+
 
 #=============================================================================#
 #                                     Deps                                    #
@@ -1754,6 +1846,16 @@ pipi --no-deps numpy scipy pytest pytest-benchmark autobahn Twisted vec-noise im
 #                                                                "Y8bbdP"               #
 #                                                                                       #
 #=======================================================================================#
+
+#=============================================================================#
+#                                   WAyland                                   #
+#=============================================================================#
+
+# Disable it; the cause of many pains.
+sudo vi /etc/gdm3/custom.conf
+# Uncomment the line:
+#WaylandEnable=False
+
 
 
 # Keyboard
