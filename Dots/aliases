@@ -319,7 +319,7 @@ hugging_stack='accelerate datasets diffusers huggingface_hub peft safetensors ti
 openai_stack="openai 'openai[embeddings]' 'openai[wandb]' openai-whisper tiktoken"
 llm_stack="chromadb deepspeed 'dspy-ai[chromadb,qdrant]' langchain" #"evadb[document,notebook]"' #llama-index chainforge'
 ui_stack='gradio streamlit taipy'
-docqa_stack='"nougat-ocr[api,dataset]"'
+#docqa_stack='"nougat-ocr[api,dataset]"'  # Nougat requires an OLD version of timm
 
 # NB: if your torch version doesn't EXACTLY match the one mmcv is built against,
 #     mmcv will be broken.
@@ -427,7 +427,6 @@ $piu $vis_stack; \
 $piu $experiment_tools; \
 $piu $hpo_stack; \
 $piu $more_hpo_stack; \
-$piu $docqa_stack; \
 $piu $hugging_stack; \
 $piu $jax_stack; \
 $piu $openai_stack; \
@@ -451,6 +450,7 @@ $piu $ui_stack; \
 $piu $core_ipy_stack; \
 $piu $core_sci_stack; \
 "
+#$piu $docqa_stack; \
 
 # ALWAYS open and CLOSE with core sci stack.
 # Many a dumbass pin their package dep to a ver or ver thresh needlessly,

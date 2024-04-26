@@ -48,17 +48,9 @@
 
 - [Sweet Home 3D download | SourceForge.net](https://sourceforge.net/projects/sweethome3d/)
 
-
-
-
-
 ---
 
-
-
 # AI / ML etc..
-
-
 
 - [GitHub - opendilab/awesome-RLHF: A curated list of reinforcement learning with human feedback resources (continually updated)](https://github.com/opendilab/awesome-RLHF)
 

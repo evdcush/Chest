@@ -249,6 +249,10 @@ sudo apt install -y make build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
+#---- system python
+sudo add-apt-repository -y ppa:deadsnakes/ppa
+sudo apt update && sudo apt upgrade
+
 # Snowflakes
 # ==========
 #=== AppImage
@@ -463,13 +467,6 @@ wget http://kr.archive.ubuntu.com/ubuntu/pool/universe/b/blueman/blueman_2.3.2-1
 # Processing triggers for man-db (2.9.1-1) ...
 # Errors were encountered while processing:
 #  blueman
-
-
-# Okay, let's install that version of Python then!
-# We'll of course need the deadsnakes ppa for this:
-sudo add-apt-repository -y ppa:deadsnakes/ppa
-sudo apt update
-
 
 
 #=============================================================================#
@@ -1094,9 +1091,17 @@ sudo sed -i 's/tree.getiterator/tree.iter/g' /usr/lib/python3/dist-packages/type
 
 sudo apt install -y \
 "fonts-aoyagi*" \
+"fonts-ebgaramond*" \
+"fonts-hack*" \
+"fonts-mathjax*" \
+"fonts-motoya*" \
+"fonts-sawarabi*" \
+"fonts-takao*" \
+"fonts-umeplu*" \
 fonts-bebas-neue \
 fonts-cabin \
 fonts-cantarell \
+fonts-cascadia-code \
 fonts-comfortaa \
 fonts-ebgaramond \
 fonts-firacode \
@@ -1104,6 +1109,9 @@ fonts-font-awesome \
 fonts-hack \
 fonts-ibm-plex \
 fonts-inter \
+fonts-inter-variable \
+fonts-jetbrains-mono \
+fonts-katex \
 fonts-lato \
 fonts-mathjax \
 fonts-mathjax-extras \
@@ -1113,19 +1121,25 @@ fonts-moe-standard-kai \
 fonts-mononoki \
 fonts-motoya-l-cedar \
 fonts-motoya-l-maruberi \
+fonts-mph-2b-damase \
 fonts-mplus \
 fonts-noto-cjk \
+fonts-noto-cjk-extra \
 fonts-noto-color-emoji \
+fonts-noto-mono \
 fonts-oxygen \
 fonts-roboto \
+fonts-roboto-hinted \
 fonts-roboto-slab \
-"fonts-sawarabi*" \
 fonts-seto \
 fonts-ubuntu \
 fonts-ubuntu-console \
+fonts-ubuntu-title \
 fonts-umeplus \
 fonts-vollkorn \
 ;
+
+
 
 
 #= EMOJI (unicode)
@@ -1364,6 +1378,10 @@ sudo flatpak override --filesystem=home org.nomacs.ImageLounge
 #==== Lossless cut (video cut/clip software GUI)
 flatpak install flathub no.mifi.losslesscut
 sudo flatpak override --filesystem=home no.mifi.losslesscut
+
+#==== Footage (sinple video crop software gui)
+flatpak install flathub io.gitlab.adhami3310.Footage
+
 
 #==== Color-picker
 flatpak install flathub nl.hjdskes.gcolor3
