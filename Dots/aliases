@@ -754,6 +754,7 @@ alias bt='bat -pP'
 # FLATPAK
 alias fl='flatpak'
 alias flup='flatpak update'
+alias flist='flatpak list --app --columns=application,name,description,version'
 
 
 
