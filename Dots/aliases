@@ -252,7 +252,7 @@ alias akd="$ap-key del"
 alias py='python'
 alias ipy='ipython'
 alias nb="jupyter notebook"
-alias jlab='jupyter lab'
+#alias jlab='jupyter lab'
 alias nbscrub='nbstripout --keep-output --drop-empty-cells'
 alias purgepycache="find . -name '__pycache__' -exec rm -rf {} +"
 
@@ -382,8 +382,8 @@ sphinx_stack='sphinx docutils restview rstcheck pytablewriter "pytablewriter[the
 # Theming docs: https://www.sphinx-doc.org/en/master/usage/theming.html
 sphinx_themes='sphinx-rtd-theme sphinx-book-theme furo sphinx-material \
 karma-sphinx-theme piccolo-theme sphinx-theme pydata-sphinx-theme'
-writing_stack='ablog ghp-import jupyter-book mystmd myst-parser jupyterlab_myst'
-alias pipisphinx="$piu $writing_stack; $piu $sphinx_stack; $piu $sphinx_themes;"
+#writing_stack='ablog ghp-import jupyter-book mystmd myst-parser jupyterlab_myst'
+#alias pipisphinx="$piu $writing_stack; $piu $sphinx_stack; $piu $sphinx_themes;"
 
 
 # Static Code Analysis & QA
@@ -411,12 +411,13 @@ function pipigpu(){
 core_py_dist='pip setuptools wheel'
 #core_static_stack='pre-commit pylint flake8 black isort ruff tomli yapf'
 core_sci_stack='cython numpy scipy scikit-learn matplotlib pandas opencv-python sympy'
+# You have to install nb 6.5.6 exactly because otherwise there is some
+# bonked traitlets thing.
 core_ipy_stack='\
 ipython \
-notebook \
-jupyterlab \
 jupytext \
 nbdime \
+notebook==6.5.6 \
 nbstripout'
 #jupyter_ai \
 
@@ -447,7 +448,6 @@ $piu snakeviz; \
 $piu tldr doitlive; \
 $piu $sphinx_stack; \
 $piu $sphinx_themes; \
-$piu $writing_stack; \
 $piu $sphinx_stack; \
 $piu $mediadl; \
 $piu $data_stack; \
