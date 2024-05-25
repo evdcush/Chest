@@ -68,7 +68,7 @@ done
 echo "BEGINNING DOWNLOAD..."
 aria2c \
 -i "$TARGET_LFS_FILES_LIST" \
---max-concurrent-downloads=3 \
+--max-concurrent-downloads=5 \
 --allow-overwrite
 
 echo "FINISHED DOWNLOADING LFS FILES!"

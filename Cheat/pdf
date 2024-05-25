@@ -16,6 +16,9 @@ pdf-crop-margins -u -p4 105 110 105 110 RLbook2020trimmed.pdf
 ##   (NB: still outputs all pages, but only the specified ones are cropped)
 pdf-crop-margins -s -u --pages 449-507 d2l-en.pd
 
+## Only crop the pages from page 2 on (USEFUL FOR ARXIV PAPERS).
+pdf-crop-margins -s -u --pages 2-19 'Wang et al - 2024 - N-Agent Ad Hoc Teamwork.pdf'
+
 
 # Extract PDF pages
 # -----------------
