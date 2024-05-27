@@ -1216,10 +1216,6 @@ wget -O grv https://github.com/rgburke/grv/releases/download/v0.3.2/grv_v0.3.2_l
 chmod +x grv
 # (then symlink it to local bin)
 
-#=== FreeTube
-# CHECK: https://github.com/FreeTubeApp/FreeTube/releases
-wget https://github.com/FreeTubeApp/FreeTube/releases/download/v0.17.1-beta/freetube_0.17.1_amd64.deb -O freetube.deb && sudo dpkg -i freetube.deb
-
 #=== Joplin
 # Execute the blessed master script.
 wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
@@ -1254,6 +1250,20 @@ wget https://github.com/hello-efficiency-inc/raven-reader/releases/download/v1.0
 
 # Stellarium
 wget https://github.com/Stellarium/stellarium/releases/download/v1.1/Stellarium-1.1.1-x86_64.AppImage
+
+
+# FreeTube
+# ========
+# CHECK: https://github.com/FreeTubeApp/FreeTube/releases
+wget https://github.com/FreeTubeApp/FreeTube/releases/download/v0.17.1-beta/freetube_0.17.1_amd64.deb -O freetube.deb && sudo dpkg -i freetube.deb
+
+## Config stuffs:
+# filename pattern:
+# cap_%Y-%M-%D_%H-%N-%S_%i_%s
+# %Y-%M-%D : YYYY-MM-DD
+# %H-%N-%S : HH-MM-SS
+# %i_%s : ID_vidsecond
+# eg: 'cap_2024-05-26_04-20-11_Bpgloy1dDn0_69'
 
 
 #=============================================================================#
