@@ -329,6 +329,18 @@ function paths(){
 # Symlink
 # =======
 
+# symlink a relpath source to destination.
+function lnr(){
+    # Init with cwd as the src, because it's me, and I know my assumptions.
+    SRC=$PWD
+    DST=$1
+    if [ "$#" -eq  2 ]; then
+        SRC=$1
+        DST=$2
+    fi
+    # Symlink that puppy.
+    ln -sf $(realpath $SRC) $DST
+}
 
 # symlink something to ~/.local/bin
 function lnbin(){
@@ -348,7 +360,7 @@ function lnbin(){
     ln -sf $SRC $DEST
 }
 
-
+# symlink something to projects dir
 function lnpro(){
     src="$PWD/$1"
     dst="$HOME/Projects"
