@@ -173,13 +173,17 @@ alias wg='wget'
 
 #---- misc
 #alias plz='sudo $(fc -ln -1)' # mmm inconsistent
-alias myip='inxi -i'
 alias tjst='TZ="Asia/Tokyo" date'
 alias tpst='TZ="America/Los_Angeles" date'
 alias tedt='TZ="America/New_York" date'
 alias tcet='TZ="Europe/Berlin" date'
 
+# Network Stuff
+# =============
+alias myip='inxi -i'
 alias pingu='ping github.com'
+alias wifipw='nmcli dev wifi show-password'
+
 
 
 #=============================================================================#
@@ -378,7 +382,7 @@ social='rainbowstream'  # twitter terminal client
 # find more cool stuff:
 #   https://github.com/ray-project/ray/blob/master/doc/requirements-doc.txt
 #   https://github.com/ray-project/ray/blob/master/doc/source/conf.py
-sphinx_stack='sphinx docutils restview rstcheck pytablewriter "pytablewriter[theme]"'
+sphinx_stack='sphinx docutils restview rstcheck rst2pdf pytablewriter "pytablewriter[theme]"'
 # Theming docs: https://www.sphinx-doc.org/en/master/usage/theming.html
 sphinx_themes='sphinx-rtd-theme sphinx-book-theme furo sphinx-material \
 karma-sphinx-theme piccolo-theme sphinx-theme pydata-sphinx-theme'
@@ -574,6 +578,12 @@ pdfpng() {
     # Export a 300 dpi png of the 1st page to `foo_preview-001.png`
     pdftoppm -f 1 -l 1 -r 300 -png "$pdf_fname" "${pdf_bname}_preview"
 }
+
+
+# yt-dlp
+# ======
+# A simplified version of our existing `dlvid` func; no embeds.
+alias dlvd='yt-dlp -f bestvideo+bestaudio -o "%(channel)s - %(title)s.%(ext)s"'
 
 
 # FART!
