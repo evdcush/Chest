@@ -308,3 +308,12 @@ Xorg & Display issues
 .. code-block:: bash
 
     sudo /etc/init.d/lightdm restart
+
+
+Monitors config not respected at boot login
+-------------------------------------------
+
+.. code-block:: bash
+
+    # You need to copy your user conf for monitors to the sys.
+    sudo cp ~/.config/monitors.xml /var/lib/gdm3/.config
