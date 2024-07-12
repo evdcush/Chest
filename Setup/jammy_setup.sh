@@ -603,6 +603,27 @@ fwupdmgr refresh && fwupdmgr update
 
 
 #=============================================================================#
+#                          FUCKING SNAP MOUNT FIREFOX                         #
+#=============================================================================#
+
+# You should have already uninstalled it earlier, but just for good measure:
+sudo apt remove --purge snapd
+
+# Unmount the firefox hunspell snap bullshit:
+sudo umount /var/snap/firefox/common/host-hunspell
+
+# But wait, you're not done yet you FOOL!
+# It will come back when you reboot!
+# Remove this turd as well:
+sudo rm /etc/systemd/system/multi-user.target.wants/var-snap-firefox-common-host\\x2dhunspell.mount
+
+# And this one:
+sudo rm /etc/systemd/system/multi-user.target.wants/var-snap-firefox-common-host\\x2dhunspell.mount
+
+# Fuck off snap ;]
+
+
+#=============================================================================#
 #                                                                             #
 #                        █████  ██████  ██████  ███████                       #
 #                       ██   ██ ██   ██ ██   ██ ██                            #
