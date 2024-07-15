@@ -2,6 +2,64 @@
 
 A collection of resources and software for knowledge management.
 
+# Paper Stuff
+
+WHAT can I use to **write** and **organize** and **share** notes on papers (and other cool stuff I find)?
+
+It needs to be something that can be blog-like, with daily entry and template.
+
+What's out there?
+
+- Huggingface collections
+  
+   - **HUGGINGFACE BLOG!!!!** 🔥🔥🔥🔥🔥🔥🔥🔥
+
+- W&B: reports? lol
+  
+   - Maybe not bad though!
+     
+      - Has progrommatic API!
+
+- Zotero has note-taking capability (per paper)
+
+- Google
+  
+   - Slides: can do side-by-side, pic of front page of paper, quick notes
+  
+   - Doc: Easiest possibly
+
+- Basic markdown stuff + marktext?
+  
+   - Obsidian
+     
+      - Has blog stuff too right?
+  
+   - Joplin
+
+- GH-pages?
+  
+   - **JUPYTER BOOK**
+   - Ablog
+   - Can also just use GH plain text, like one giant F'ing rST?
+
+- 
+
+- 
+
+- Online platforms
+  
+   - Substack
+  
+   - Medium
+  
+   - ??
+  
+   - X 🤔🤔🤔🤔🤔🤔🤔🤔
+
+-
+
+---
+
 # Bookmarks
 
 ### GUI

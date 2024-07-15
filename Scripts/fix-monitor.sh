@@ -40,3 +40,19 @@ xrandr --output HDMI-0 --off
 xrandr --output HDMI-0 --auto
 xrandr --output HDMI-1 --off
 xrandr --output HDMI-1 --auto
+
+
+# The content of the `fix-monitor-display.service`:
+#
+# [Unit]
+# Description=Fix Monitor No-signal Wake Issue from Display Power Management
+# After=display-manager.service
+#
+# [Service]
+# User=evan
+# Type=simple
+# ExecStart=/home/evan/.local/bin/fix-monitor.sh
+#
+# [Install]
+# WantedBy=multi-user.target
+#

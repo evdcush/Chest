@@ -892,6 +892,10 @@ sudo dpkg -i software.deb \
 ## Contextual information about your git projects, right on the command-line
 # https://github.com/muesli/gitty/releases/download/v0.7.0/gitty_0.7.0_linux_amd64.deb
 
+#=== bottom
+## way better sys mon
+# https://github.com/ClementTsang/bottom
+
 
 
 #=============================================================================#
