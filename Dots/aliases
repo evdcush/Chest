@@ -496,7 +496,7 @@ function pipitorch(){
     torch \
     torchvision \
     torchaudio \
-    torchtext
+    torchtext \
     --extra-index-url "$TORCH_URL/$TAG"
 
     # Install other torch-related pkgs.
