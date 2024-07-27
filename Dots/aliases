@@ -576,6 +576,28 @@ pdfpng() {
     pdftoppm -f 1 -l 1 -r 300 -png "$pdf_fname" "${pdf_bname}_preview"
 }
 
+numpgs() {
+    # Get the number of pages of a PDF file.
+    pdfinfo $1 | grep 'Pages:' | awk '{print $2}'
+}
+
+croparxpdf() {
+    # Crop the margins of a PDF downloaded from arXiv.
+    # NB: the reason we have this bespoke crop function for arXiv PDFs is that
+    #     arXiv preprints always have the arXiv ID marked on the extreme left
+    #     margin of the first page, which messes up the `pdfcropmargins`
+    #     uniform & same page size opts and creates a huge left-margin
+    #     for all pages because the crop-box is accommodating the arXiv ID.
+
+    # Get the number of pages first (unfortunately, pdfcropmargins must have
+    # explicitly specified end-page if you give it a range).
+    end_page=`pdfinfo $1 | grep 'Pages:' | awk '{print $2}'`
+
+    # As mentioned above, we always skip cropping the first page, due to the
+    # presence of the arXiv ID mark on the left margin.
+    pdfcropmargins --uniform --samePageSize --pages "2-$end_page" $1
+}
+
 
 # yt-dlp
 # ======
