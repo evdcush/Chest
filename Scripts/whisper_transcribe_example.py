@@ -1,4 +1,16 @@
-# coding: utf-8
+"""
+This script is from an IPython session where I quickly hacked together some
+stuff to generate a subtitle file for a Karpathy vid.
+The subtitles appear to be dead-on accurate.
+
+I saved this session to a py file for reference.
+
+I used the official `whisper-large-v3` HF repo README for reference,
+and an issue comment from GitHub (in distill-whisper, I believe), where
+the issue topic was how to generate an srt file from a whisper transcription.
+
+Should clean it up and make it a proper script!
+"""
 import torch
 from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
 from datasets import load_dataset
