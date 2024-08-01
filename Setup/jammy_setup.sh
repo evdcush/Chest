@@ -911,6 +911,9 @@ sudo apt install -y exfat-fuse exfat-utils f2fs-tools ntfs-3g zfs-fuse zfsutils-
 #== Archive
 sudo apt install -y p7zip-full unar
 
+#== Knowledge Management
+sudo apt install -y buku
+
 #== PDF stuff.
 sudo apt install -y texlive-xetex texlive-extra-utils \
 texlive-bibtex-extra texlive-fonts-extra texlive-font-utils texlive-lang-cjk \
