@@ -679,6 +679,10 @@ alias vpcf="$spvpn --fastest-connect"
 #---- journal
 alias jrnl=" jrnl" # alias for preventing hist from logging jrnl
 
+#---- todo-txt cli
+alias td='todo-txt'
+alias tda='todo-txt a'
+
 #---- percollate
 #alias perc='percollate pdf --output'
 alias perc='percollate pdf'
