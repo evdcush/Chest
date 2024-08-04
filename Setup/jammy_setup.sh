@@ -679,9 +679,6 @@ xargs wget -O software.deb && \
 sudo dpkg -i software.deb \
 && rm software.deb;
 
-#===
-
-
 #=== FLAMESHOT
 # https://github.com/flameshot-org/flameshot/releases
 
@@ -1002,6 +999,58 @@ sudo apt install -y dict-freedict-eng-jpn dict-freedict-eng-lat
 # `dict-moby-thesaurus` is only provided in bionic for some reason, so we have
 # to acquire the deb from a mirror.
 wget http://kr.archive.ubuntu.com/ubuntu/pool/main/d/dict-moby-thesaurus/dict-moby-thesaurus_1.0-6.4_all.deb && sudo dpkg -i dict-moby-thesaurus_1.0-6.4_all.deb
+
+
+#=============================================================================#
+#                                WebApp-Manager                               #
+#=============================================================================#
+# This tool is from Linuxmint and not available in official apt sources.
+# There are 3rd-party, unofficial PPAs that provide linuxmint software
+# for Ubuntu installation, such as:
+#   https://launchpad.net/~kelebek333/+archive/ubuntu/mint-tools
+#   ppa:kelebek333/mint-tools
+# These should be considered at some point if direct wget process becomes
+# tedious.
+# Otherwise,
+# Go here, get the latest: http://packages.linuxmint.com/pool/main/w/webapp-manager/
+wget http://packages.linuxmint.com/pool/main/w/webapp-manager/webapp-manager_1.3.7_all.deb
+sudo dpkg -i webapp-manager_1.3.7_all.deb
+sudo apt install -f
+
+# Adding Keyboard launch shortcuts
+# ================================
+# In order to launch the app directly without needing to open webapp-manager
+# or navigating through your apps dashboard, find the `exec` command
+# used in the webapp's `*.desktop` file. These should be located and identified
+# with the following pattern:
+# `$HOME/.local/share/applications/WebApp-*<app-name>*.desktop`
+# eg:
+cat $HOME/.local/share/applications/WebApp-ChatGPT1893.desktop
+# Returns:
+## [Desktop Entry]
+## Version=1.0
+## Name=ChatGPT
+## Comment=Web App
+## Exec=/var/lib/flatpak/exports/bin/io.github.ungoogled_software.ungoogled_chromium --app="https://chatgpt.com/" --class=WebApp-ChatGPT1893 --name=WebApp-ChatGPT1893 --user-data-dir=/home/evan/.local/share/ice/profiles/ChatGPT1893
+## Terminal=false
+## X-MultipleArgs=false
+## Type=Application
+## Icon=/path/to/your/selected/app/icon.svg
+## Categories=GTK;WebApps;
+## MimeType=text/html;text/xml;application/xhtml_xml;
+## StartupWMClass=WebApp-ChatGPT1893
+## StartupNotify=true
+## X-WebApp-Browser=Ungoogled Chromium (Flatpak)
+## X-WebApp-URL=https://chatgpt.com/
+## X-WebApp-CustomParameters=
+## X-WebApp-Navbar=false
+## X-WebApp-PrivateWindow=false
+## X-WebApp-Isolated=true
+#
+# Grab that exec command, and you can make a keyboard shortcut!
+
+
+
 
 
 #=============================================================================#
