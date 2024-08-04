@@ -455,6 +455,7 @@ $piu $sphinx_stack; \
 $piu $sphinx_themes; \
 $piu $sphinx_stack; \
 $piu $mediadl; \
+$piu starcli; \
 $piu $data_stack; \
 $piu $ui_stack; \
 $piu $core_ipy_stack; \
