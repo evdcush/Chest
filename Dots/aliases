@@ -950,6 +950,7 @@ alias gsize="git rev-list --objects --all \
 # =======
 #alias gcnlfs='GIT_LFS_SKIP_SMUDGE=1 git clone'
 alias getgitlfs='git-lfs fetch && git-lfs checkout'
+alias lfsls='git lfs ls-files | cut -d' ' -f 3'
 
 # Wrapper for `GIT_LFS_SKIP_SMUDGE=1 git clone`
 function gcnlfs(){
@@ -963,7 +964,22 @@ function gcnlfs(){
     GIT_LFS_SKIP_SMUDGE=1 git clone $target;
 }
 
+# A function/hack to get lfs files from a lfs target, without populating the
+# entire `.git/lfs/objects` along the way.
+function getlfstargets() {
+  # Create or overwrite the output file.
+  echo '#!/usr/bin/env bash' > get_lfs_targets.sh
 
+  # For each fpath returned by lfs ls, append the get pattern to the getter
+  # script.
+  git lfs ls-files | cut -d' ' -f 3 | while read -r LFS_FILEPATH; do
+    txtcmd="git-lfs pull --include='$LFS_FILEPATH' && rm -rf .git/lfs/objects;"
+    echo $txtcmd >> get_lfs_targets.sh
+  done
+
+  # Make that shit executable.
+  chmod +x get_lfs_targets.sh
+}
 
 
 #=============================================================================#

@@ -116,6 +116,37 @@ waymo:
     feed_url: http://feeds.feedburner.com/waymo
     url: https://blog.waymo.com/
 
+https://sebastianraschka.com/rss_feed.xml
+https://huyenchip.com/feed.xml
+https://generative.ink/posts/index.xml
+https://eugeneyan.com/rss/
+http://karpathy.github.io/feed.xml
+https://jalammar.github.io/feed.xml
+https://hamel.dev/index.xml
+https://www.lesswrong.com/feed.xml?view=curated-rss
+https://osanseviero.github.io/hackerllama/blog/index.xml
+https://syncedreview.com/feed/
+https://rss.beehiiv.com/feeds/UJIoBuf5BX.xml
+https://lethain.com/feeds.xml
+https://sammatla.com/feed/
+https://nautil.us/feed/
+https://api.quantamagazine.org/feed/
+https://sakana.ai/feed.xml
+https://deepmind.google/blog/rss.xml
+http://ai.stanford.edu/blog/feed.xml
+https://bair.berkeley.edu/blog/feed.xml
+https://blog.comma.ai/feed.xml
+https://www.libhunt.com/l/python/feed
+https://www.libhunt.com/l/jupyter-notebook/feed
+https://rsshub.app/huggingface/daily-papers
+https://boz.com/rss.xml
+https://blog.ml.cmu.edu/feed/
+http://feeds.feedburner.com/miriblog
+https://blog.arcee.ai/rss/
+https://python.libhunt.com/newsletter/feed
+https://www.reddit.com/r/localllama/.rss
+
+
 ---
 
 # NEWS/MISC

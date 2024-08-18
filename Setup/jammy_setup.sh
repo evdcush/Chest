@@ -617,8 +617,9 @@ sudo umount /var/snap/firefox/common/host-hunspell
 # Remove this turd as well:
 sudo rm /etc/systemd/system/multi-user.target.wants/var-snap-firefox-common-host\\x2dhunspell.mount
 
-# And this one:
-sudo rm /etc/systemd/system/multi-user.target.wants/var-snap-firefox-common-host\\x2dhunspell.mount
+# And these ones:
+sudo rm /etc/systemd/system/snapd.mounts.target.wants/var-snap-firefox-common-host\\x2dhunspell.mount
+sudo rm /etc/systemd/system/var-snap-firefox-common-host\\x2dhunspell.mount
 
 # Fuck off snap ;]
 
@@ -1776,6 +1777,15 @@ echo "deb [arch=amd64 signed-by=/usr/share/keyrings/brave-browser-archive-keyrin
 
 # Install.
 sudo apt update && sudo apt install -y brave-browser
+
+
+# Tampermonkey scripts
+# ====================
+# Pre-fucked GH feed:
+https://raw.githubusercontent.com/Gerrit0/old-github-feed/main/old-feed.user.js
+
+# Remove `?tab=readme-ov-file` bullshit:
+https://gist.github.com/vogler/74edff6de37c3a13eeff8c99c6bed910/raw/clean-url-readme-tab.github.com.tamper.js
 
 
 ## NB, If you ever see the error message:
