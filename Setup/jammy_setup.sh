@@ -533,6 +533,16 @@ gnome-shell-timer
 #                                     Misc                                    #
 #=============================================================================#
 
+# hist
+# ====
+# atuin: https://github.com/atuinsh/atuin
+# Syncs shell hist across devices.
+curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+
+# Login to your account (yknow the drill):
+atuin login -u USERNAM
+
+
 #=============================================================================#
 #                                                                             #
 #                      ██████  ██    ██  ██████  ███████                      #
