@@ -559,6 +559,10 @@ https://github.com/cupy/cupy/releases/tag/v7.8.0"
 #=============================================================================#
 # All aliases that use installed packages
 
+#----- rip
+# Safe alternative to `rm`.
+alias rem='rip'
+
 #----- kdbx
 alias ghtp="keepassxc-cli clip -t $HOME/.otp.kdbx GHT"
 
