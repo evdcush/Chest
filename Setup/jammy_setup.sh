@@ -527,6 +527,13 @@ gnome-shell-timer
 # gnome-shell-extension-gsconnect \
 # gnome-shell-extension-move-clock \
 
+# REMOVE THE DEFAULT BOOKMARKS IN NAUTILUS
+# ========================================
+# https://askubuntu.com/questions/762591/how-to-remove-unwanted-default-bookmarks-in-nautilus
+## Comment out the paths in both:
+##   ~/.config/user-dirs.dirs
+##   /etc/xdg/user-dirs.defaults
+
 
 
 #=============================================================================#
