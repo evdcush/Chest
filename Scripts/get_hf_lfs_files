@@ -21,6 +21,10 @@ HF_REPO_NAME=$(basename $HF_REPO_URL)
 PATH_TO_HF_REPO="$PWD/$HF_REPO_NAME"
 echo "HF_REPO_NAME: $HF_REPO_NAME"
 
+# Add the target to the log.
+HF_DOWNLOAD_LOG="$HOME/.hf_model_downloads.log"
+echo "$HF_REPO_URL" >> $HF_DOWNLOAD_LOG
+
 # Get the repo `user/repo-name`.
 # eg: `stabilityai/sdxl-turbo`
 HF_REPO_TARGET=$(echo $HF_REPO_URL | cut -d '/' -f4-5)
