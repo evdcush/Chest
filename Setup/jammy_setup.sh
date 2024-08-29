@@ -932,7 +932,7 @@ sudo apt install -y buku
 #== PDF stuff.
 sudo apt install -y texlive-xetex texlive-extra-utils \
 texlive-bibtex-extra texlive-fonts-extra texlive-font-utils texlive-lang-cjk \
-texlive-lang-japanese texlive-pstricks texlive-publishers texlive-science
+texlive-lang-japanese texlive-pstricks texlive-publishers texlive-science latexmk
 
 ## ⚠️⚠️ WARNING ⚠️⚠️
 # installation attempts of `texlive*` were totally borked when I tried recently
