@@ -255,7 +255,7 @@ alias akd="$ap-key del"
 # all aliases related to python stuff
 alias py='python'
 alias ipy='ipython'
-alias nb="jupyter notebook"
+alias jnb="jupyter notebook"
 #alias jlab='jupyter lab'
 alias nbscrub='nbstripout --keep-output --drop-empty-cells'
 alias purgepycache="find . -name '__pycache__' -exec rm -rf {} +"
@@ -359,7 +359,7 @@ sound_stuff='tts'
 
 
 # apps
-mediadl='yt-dlp youtube-dl gallery-dl spotdl papis weasyprint'
+mediadl='yt-dlp youtube-dl gallery-dl spotdl papis weasyprint arxiv-dl'
 imgutils='backgroundremover lama-cleaner'  # because rembg has strict version dependencies (must be 3.9)
 # lama-cleaner: Image inpainting tool powered by SOTA AI Model. Remove any unwanted object, defect, people from your pictures or erase and replace(powered by stable diffusion) any thing on your pictures.
 

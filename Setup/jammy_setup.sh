@@ -911,6 +911,10 @@ sudo dpkg -i software.deb \
 ## way better sys mon
 # https://github.com/ClementTsang/bottom
 
+#=== Kuro
+## (Linux front-end for MS Tasks)
+wget https://github.com/davidsmorais/kuro/releases/download/v9.0.0/kuro_9.0.0_amd64.deb
+
 
 
 #=============================================================================#
