@@ -184,32 +184,36 @@ sudo dpkg -r cuda-12-3
 #  cuda-drivers
 # Here's an example trace::
 
-sudo dpkg -r cuda-runtime-12-3
-dpkg: dependency problems prevent removal of cuda-runtime-12-3:
- cuda-demo-suite-12-3 depends on cuda-runtime-12-3.
- cuda-12-3 depends on cuda-runtime-12-3 (>= 12.3.2).
+#  sudo dpkg -r cuda-runtime-12-3
+#  dpkg: dependency problems prevent removal of cuda-runtime-12-3:
+#   cuda-demo-suite-12-3 depends on cuda-runtime-12-3.
+#   cuda-12-3 depends on cuda-runtime-12-3 (>= 12.3.2).
+#
+#  dpkg: error processing package cuda-runtime-12-3 (--remove):
+#   dependency problems - not removing
+#  Errors were encountered while processing:
+#   cuda-runtime-12-3
+#  sudo dpkg -r cuda-demo-suite-12-3
+#  dpkg: dependency problems prevent removal of cuda-demo-suite-12-3:
+#   cuda-12-3 depends on cuda-demo-suite-12-3 (>= 12.3.101).
+#
+#  dpkg: error processing package cuda-demo-suite-12-3 (--remove):
+#   dependency problems - not removing
+#  Errors were encountered while processing:
+#   cuda-demo-suite-12-3
+#  sudo dpkg -r cuda-12-3
+#  (Reading database ... 498017 files and directories currently installed.)
+#  Removing cuda-12-3 (12.3.2-1) ...
+#  sudo dpkg -r cuda-demo-suite-12-3
+#  (Reading database ... 498015 files and directories currently installed.)
+#  Removing cuda-demo-suite-12-3 (12.3.101-1) ...
 
-dpkg: error processing package cuda-runtime-12-3 (--remove):
- dependency problems - not removing
-Errors were encountered while processing:
- cuda-runtime-12-3
-sudo dpkg -r cuda-demo-suite-12-3
-dpkg: dependency problems prevent removal of cuda-demo-suite-12-3:
- cuda-12-3 depends on cuda-demo-suite-12-3 (>= 12.3.101).
+# --------------------------------------------------------------------------- #
 
-dpkg: error processing package cuda-demo-suite-12-3 (--remove):
- dependency problems - not removing
-Errors were encountered while processing:
- cuda-demo-suite-12-3
-sudo dpkg -r cuda-12-3
-(Reading database ... 498017 files and directories currently installed.)
-Removing cuda-12-3 (12.3.2-1) ...
-sudo dpkg -r cuda-demo-suite-12-3
-(Reading database ... 498015 files and directories currently installed.)
-Removing cuda-demo-suite-12-3 (12.3.101-1) ...
-
-
-
+# You will need this package to avoid GTK issues with Xorg and nvidia-drivers.
+## Without it, you will encounter errors like:
+##   `Gtk-Message: 06:59:57.789: Failed to load module "xapp-gtk3-module"`
+sudo apt install -y xapp xapps-common
 
 
 
