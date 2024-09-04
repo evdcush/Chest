@@ -606,8 +606,16 @@ croparxpdf() {
 
 # yt-dlp
 # ======
-# A simplified version of our existing `dlvid` func; no embeds.
+# Formats
+alias ytlsfmt='yt-dlp --list-formats'
+
+# Video
+## A simplified version of my existing `dlvid` func; no embeds.
 alias dlvd='yt-dlp -f bestvideo+bestaudio -o "%(channel)s - %(title)s.%(ext)s"'
+
+# Music
+alias dlmus='yt-dlp -x --audio-quality 0 -o "%(title)s.%(ext)s"'
+alias dlmus_thumb='yt-dlp -x --audio-quality 0 --embed-thumbnail -o "%(title)s.%(ext)s"'
 
 
 # FART!

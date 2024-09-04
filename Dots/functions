@@ -154,11 +154,8 @@ function sptdl() {
 
 #alias dlmus='yt-dlp -x --audio-quality 0 -o "%(title)s.%(id)s.%(ext)s"'
 #alias dlmus_thumb='yt-dlp -x --audio-quality 0 --embed-thumbnail -o "%(title)s.%(id)s'
-alias dlmus='yt-dlp -x --audio-quality 0 -o "%(title)s.%(ext)s"'
-alias dlmus_thumb='yt-dlp -x --audio-quality 0 --embed-thumbnail -o "%(title)s.%(ext)s"'
 #alias dlvid='yt-dlp -f bestvideo+bestaudio -o "%(title)s.%(id)s.%(ext)s" --restrict-filenames'
 #alias dlvid='yt-dlp -f bestvideo+bestaudio -o "%(channel)s - %(title)s.%(id)s.%(ext)s"'
-
 
 #==== yt-dlp
 function dlvid(){
@@ -166,6 +163,16 @@ function dlvid(){
 
     # Get the target.
     target=$(get_arg)
+    target_fmt='bestvideo+bestaudio'
+
+    arg_count=$(echo "$target" | wc -w)
+
+    if [ "$arg_count" -eq 2 ]; then
+        # If 2 args were given, assume the second is the format
+        # specifier (of the form '{int}+{int}').
+        target=$(    echo "$target" | awk '{print $1}')
+        target_fmt=$(echo "$target" | awk '{print $2}')
+    fi
 
     # Figure out the title of the target.
     target_filename=$(yt-dlp --simulate --print "%(channel)s - %(title)s.%(ext)s" $target)
@@ -184,7 +191,7 @@ function dlvid(){
     # Now, actually get the thing.
     yt-dlp \
     --embed-thumbnail --embed-metadata --embed-chapters \
-    -f bestvideo+bestaudio \
+    -f $target_fmt \
     -o "%(channel)s - %(title)s.%(ext)s" \
     $target
 
