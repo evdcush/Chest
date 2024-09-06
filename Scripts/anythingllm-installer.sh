@@ -1,4 +1,6 @@
 #!/bin/sh
+# REF:
+#   https://github.com/Mintplex-Labs/anything-llm/blob/9bfe477f10b188bfe3508ac29105df80d4522ece/linux_installer.sh
 # This script installs AnythingLLMDesktop on Linux.
 # Due to READ_ONLY issues on regular mounting of an AppImage
 # we need to download the file then unpack it so it can be run.
