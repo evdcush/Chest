@@ -2194,23 +2194,58 @@ gnome-control-center bluetooth
 
 #=============================================================================#
 #                                                                             #
-#                         db                                                  #
-#                        d88b                                                 #
-#                       d8'`8b                                                #
-#                      d8'  `8b       ,adPPYba,  ,adPPYba,                    #
-#                     d8YaaaaY8b     a8P_____88  I8[    ""                    #
-#                    d8""""""""8b    8PP"""""""   `"Y8ba,                     #
-#                   d8'        `8b   "8b,   ,aa  aa    ]8I                    #
-#                  d8'          `8b   `"Ybbd8"'  `"YbbdP"'                    #
+#       ,ggggggggggg,                                                         #
+#      dP"""88""""""Y8,                                                       #
+#      Yb,  88      `8b                                                       #
+#       `"  88      ,8P   gg              gg                                  #
+#           88aaaad8P"    ""              ""                                  #
+#           88""""Yb,     gg     ,gggg,   gg    ,ggg,,ggg,     ,gggg,gg       #
+#           88     "8b    88    dP"  "Yb  88   ,8" "8P" "8,   dP"  "Y8I       #
+#           88      `8i   88   i8'        88   I8   8I   8I  i8'    ,8I       #
+#           88       Yb,_,88,_,d8,_    __,88,_,dP   8I   Yb,,d8,   ,d8I       #
+#           88        Y88P""Y8P""Y8888PP8P""Y88P'   8I   `Y8P"Y8888P"888      #
+#                                                                  ,d8I'      #
+#                                                                ,dP'8I       #
+#                                                               ,8"  8I       #
+#                                                               I8   8I       #
+#                                                               `8, ,8I       #
+#                                                                `Y8P"        #
 #                                                                             #
 #=============================================================================#
-# who actually has time for this
+# who actually has time for this tho?
+# wait scratch that, what am I even saying
+# what higher calling is there than to be beautiful?
+# nothing says "this guy has a healthy and productive life" like running Arch or
+#   sporting a fcked-to-death custom DE and shell (´▽`ʃƪ)
 
-# Gnome/GTK themes
-# ================
+# GNOME themes
+# ============
+# Browse here: https://www.gnome-look.org/
+
+#==== DE/general
+# Arc theme looks nice.
+# Available through standard package manager:
 sudo apt install -y arc-theme
+# But latest would be in PPAs like:
+# https://launchpad.net/~fossfreedom/+archive/ubuntu/arc-gtk-theme-daily
+# ppa:fossfreedom/arc-gtk-theme-daily
+wget 'https://launchpad.net/~fossfreedom/+archive/ubuntu/arc-gtk-theme-daily/+files/arc-theme_20221218+202406130851~ubuntu22.04.1_all.deb'
+
+# Materia
+sudo apt install -y materia-gtk-theme
+
+#==== Icon
+# I generally go with paper-like themes.
+sudo add-apt-repository -y ppa:papirus/papirus # NB, maybe just grab the latest?
+sudo apt install papirus-icon-theme
+
+
+
+
+
 # TODO
 # Browsing: https://www.gnome-look.org/s/Gnome/browse/
+# https://launchpad.net/~fossfreedom/+archive/ubuntu/arc-gtk-theme-daily
 
 ###############################################################################
 
