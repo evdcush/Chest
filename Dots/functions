@@ -170,8 +170,8 @@ function dlvid(){
     if [ "$arg_count" -eq 2 ]; then
         # If 2 args were given, assume the second is the format
         # specifier (of the form '{int}+{int}').
-        target=$(    echo "$target" | awk '{print $1}')
         target_fmt=$(echo "$target" | awk '{print $2}')
+        target=$(    echo "$target" | awk '{print $1}')
     fi
 
     # Figure out the title of the target.
@@ -709,6 +709,10 @@ function sporklog(){
 
 # Given a url to upstream source, create a mirror of it in a priv repo.
 # (in other words; a more discreet fork that can be private)
+# example ssh: git@github.com:gpt-omni/mini-omni.git
+#       https: https://github.com/gpt-omni/mini-omni.git
+#      gh cli: gh repo clone gpt-omni/mini-omni
+#       https: https://github.com/gpt-omni/mini-omni
 function WIPWIPmirrorfork(){
     # Get spork target URL.
     if [ "$#" -eq 0 ]; then
@@ -718,8 +722,23 @@ function WIPWIPmirrorfork(){
         target=$1
     fi
 
+    # Logging stuffs.
+    GIT_MIRROR_LOG="$HOME/Chest/git_mirror.log"
+    _TIMESTAMP=$(date +%Y-%m-%d_%H%M%S)
+
+    # Formatting on target.
+    echo "MIRRORING: $target"
+    echo "$_TIMESTAMP $target" >> $GIT_MIRROR_LOG;
+    repo_name=$(basename "$target" .git)
+
     # Clone the target as bare.
-    git clone --bare $target
+    projects_dir="$HOME/Projects"
+    target_repo_path="$projects_dir/$repo_name"
+    git clone --bare $target $target_repo_path
+
+    # Create the mirror project
+    gh repo create $repo_name --private
+    mirror_dst="https://github.com/evdcush/$repo_name"
 
     # TODO!!!
 
