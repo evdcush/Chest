@@ -230,6 +230,13 @@ sudo apt install gcc-12 g++-12
 # Can optionally setup alternatives:
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 100 --slave /usr/bin/g++ g++ /usr/bin/g++-12
 
+# Pygame stuffs
+sudo apt install -y libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libportmidi-dev
+# Okay, so 'gym[box2d]' still fails on pygame error, so go for a pinned ver:
+#pip install pygame==2.6.1
+# Scratch that, `gym` is too heckin old, just go gymnasium
+pip install pygame 'gymnasium[box2d]'
+
 sudo apt install -y libhdf5-dev hdf5-tools
 
 # Graph.
