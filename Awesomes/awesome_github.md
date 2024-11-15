@@ -22,4 +22,6 @@ Cool stuff for `git` and `github`.
 
 - [evoluteur/meet-the-fans: Query and visualize the network graph of your GitHub repositories, followers, stargazers, and forks (using GraphQL and D3).](https://github.com/evoluteur/meet-the-fans)
 
+- 🔥 [nhtlongcs/StarListify: StarListify is a Python package that classifies GitHub stars history into organized category lists based on user-defined criteria.](https://github.com/nhtlongcs/StarListify) 
+
 - 

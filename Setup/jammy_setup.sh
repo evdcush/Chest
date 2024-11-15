@@ -313,6 +313,11 @@ curl -fsSL https://raw.githubusercontent.com/curusarn/resh/master/scripts/rawins
 ###############################################################################
 # Try atuin? https://github.com/atuinsh/atuin
 #################################################################################
+#--- atuin
+# shell history sync'd
+curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+# Symlink the config:
+ln -sf $HOME/.Dots/atuin_config.toml $HOME/.config/atuin/config.toml
 
 
 # ==== #
