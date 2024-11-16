@@ -422,16 +422,29 @@ function find_and_remove_all(){
 }
 
 # Shortcut find
-function f(){
-    # SH
+#function f(){
+#    # SH
+#    if [ "$#" -gt 1 ]; then
+#        #=== find location specified
+#        find "$1" -iname "*$2*"
+#    else
+#        #==== find from root
+#        sudo find / -iname "*$1*"
+#    fi
+#}
+
+# Shortcut find
+#   includes file modified date.
+f() {
     if [ "$#" -gt 1 ]; then
-        #=== find location specified
-        find "$1" -iname "*$2*"
+        #==== find from the path specified
+        find "$1" -iname "*$2*" -printf '%TY-%Tm-%Td %TH:%TM:%TS %p\n' | sed 's/\.[0-9]*/ /'    #| cut -d. -f1
     else
         #==== find from root
-        sudo find / -iname "*$1*"
+        sudo find / -iname "*$1*" -printf '%TY-%Tm-%Td %TH:%TM:%TS %p\n' | sed 's/\.[0-9]*/ /'  #| cut -d. -f1
     fi
 }
+
 
 
 #=============================================================================#
