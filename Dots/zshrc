@@ -117,6 +117,7 @@ ZSH_THEME="robbyrussell"
 # =======
 plugins=(
     #alias-finder
+    aliases  # use via cmd `als`
     colored-man-pages
     extract
     fzf_flatpak_widget
