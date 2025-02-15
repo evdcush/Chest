@@ -119,6 +119,7 @@ plugins=(
     #alias-finder
     aliases  # use via cmd `als`
     colored-man-pages
+    command-not-found
     extract
     fzf_flatpak_widget
     gunstage
