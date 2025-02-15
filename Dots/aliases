@@ -325,9 +325,10 @@ jax_stack='jax jaxlib evojax evosax flax'  # haiku?
 hpo_stack='optuna ray hyperopt niapy scikit-optimize pymoo' # HEBO' # HEBO has unresolvable GPy dep.
 more_hpo_stack='ax-platform dragonfly-opt flaml nevergrad zoopt'
 hugging_stack="accelerate 'datasets[vision]' diffusers evaluate huggingface_hub peft safetensors timm transformers" #xformers
-openai_stack="openai 'openai[embeddings]' 'openai[wandb]' openai-whisper tiktoken"
-llm_stack="chromadb deepspeed 'dspy-ai[chromadb,qdrant]' langchain" #"evadb[document,notebook]"' #llama-index chainforge'
+llm_app_stack="chromadb 'dspy-ai[chromadb,qdrant]' langchain aisuite" #"evadb[document,notebook]"' #llama-index chainforge'
+llm_dev_stack="openai 'openai[embeddings]' 'openai[wandb]' openai-whisper tiktoken anthropic axolotl"
 ui_stack='gradio streamlit taipy'
+osint_stack='sherlock-project maigret'
 #docqa_stack='"nougat-ocr[api,dataset]"'  # Nougat requires an OLD version of timm
 
 # NB: if your torch version doesn't EXACTLY match the one mmcv is built against,
@@ -440,8 +441,8 @@ $piu $hpo_stack; \
 $piu $more_hpo_stack; \
 $piu $hugging_stack; \
 $piu $jax_stack; \
-$piu $openai_stack; \
-$piu $llm_stack; \
+$piu $llm_dev_stack; \
+$piu $llm_app_stack; \
 $pipigpu; \
 $piu feedparser requests lxml urllib3 bs4 PyGithub mpi4py; \
 $piu 'pypi-command-line[speedups]' pip_search; \
