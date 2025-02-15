@@ -636,7 +636,8 @@ alias fm='nautilus'
 # =========
 #---- sys
 alias smi='nvidia-smi'
-alias gstat='gpustat -cup'
+alias gstat='gpustat -cp'
+alias gstatw='gpustat -acP --watch 1'
 
 #---- editors
 alias st="subl"    # open file with sublime
