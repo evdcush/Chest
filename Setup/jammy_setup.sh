@@ -222,7 +222,7 @@ sudo apt install -y xapp xapps-common
 #=============================================================================#
 
 # Generally needed.
-sudo apt install -y curl git git-crypt ffmpeg imagemagick python3-pip ssh xclip vim zsh v4l-linux
+sudo apt install -y curl git git-crypt ffmpeg imagemagick python3-pip ssh xclip vim zsh v4l-linux tree
 
 # Real shit.
 sudo apt install libboost-all-dev mpich swig liblapack-dev libblas-dev
@@ -244,6 +244,23 @@ sudo apt install -y graphviz graphviz-dev
 
 # Extras.
 sudo apt install -y flac git-extras lame x264 x265
+
+# HW, sensors, diagnostics, dash, status, magneto reluctance & capacitive duractance.
+## These packages are needed to keep an eye on the hydrocoptic marzel veins (no more f'ing side-fumbling!)
+sudo apt install -y duf psensor htop btop
+#--- GPU stuffs
+sudo apt install -y nvtop gpustat
+
+#--- fastfetch -- like neofetch, but f'ing fast (and maintained)
+curl https://api.github.com/repos/fastfetch-cli/fastfetch/releases/latest | \
+jq '.assets[] | select(.name | startswith("fastfetch-linux-") and endswith("amd64.deb")) | .browser_download_url' | \
+xargs wget -O software.deb && \
+sudo dpkg -i software.deb \
+&& rm software.deb;
+
+https://github.com/fastfetch-cli/fastfetch/releases/download/2.30.1/fastfetch-linux-amd64.deb
+
+sudo apt install -y aria2 delta duf jq neofetch screenfetch tree
 
 # Git
 # ===
