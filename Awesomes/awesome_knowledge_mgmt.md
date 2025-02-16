@@ -2,11 +2,15 @@
 
 A collection of resources and software for knowledge management.
 
-
-
 ---
 
 # Bookmarks
+
+### Organization
+
+- [WorldBrain/Memex: Browser extension to curate, annotate, and discuss the most valuable content and ideas on the web. As individuals, teams and communities.](https://github.com/WorldBrain/Memex)
+
+- 
 
 ### Self-hosted
 
@@ -24,7 +28,9 @@ A collection of resources and software for knowledge management.
 
 ### Read Later
 
-- [🌟**omnivore-app/omnivore**: Omnivore is a complete, open source read-it-later solution for people who like reading.](https://github.com/omnivore-app/omnivore)
+- **💀 DEAD 💀**[🌟**omnivore-app/omnivore**: Omnivore is a complete, open source read-it-later solution for people who like reading.](https://github.com/omnivore-app/omnivore)
+  
+   - Acquired and killed: https://blog.omnivore.app/p/omnivore-is-joining-elevenlabs
 
 - A bunch of "freemium" proprietary apps that I don't care to list or try
 
@@ -40,15 +46,11 @@ A collection of resources and software for knowledge management.
 
 ---
 
-
-
 # Notes
 
 Holy shit there are so many "note apps" out there.
 
 Here are a few, with a focus on FLOSS instead of crap like evernote.
-
-
 
 - [🥇 **laurent22/joplin**: Joplin - the secure note taking and to-do app with synchronisation capabilities for Windows, macOS, Linux, Android and iOS.](https://github.com/laurent22/joplin)
   
@@ -114,8 +116,6 @@ Here are a few, with a focus on FLOSS instead of crap like evernote.
      
       - [foambubble/foam: A personal knowledge management and sharing system for VSCode](https://github.com/foambubble/foam)
 
-
-
 ## Editors
 
 ### Markup
@@ -124,15 +124,11 @@ Almost all editors for markup are for markdown.
 
 And my goodness, there are a lot of markdown editors. I won't list them all here; just the ones I've used and liked.
 
-
-
 - [🏅 **marktext/marktext**: 📝A simple and elegant markdown editor, available for Linux, macOS and Windows.](https://github.com/marktext/marktext)
   
    - The best, but not without various bugs
 
 - Ghostwriter
-
-
 
 ---
 
@@ -184,8 +180,6 @@ FLOSS options I've tried are generally either too simple, or too complex and loo
 
 Nothing else comes close.
 
-
-
 ## Scholarly Stuffs
 
 - https://zenodo.org/
@@ -198,4 +192,4 @@ Nothing else comes close.
 
 - [kanishka-linux/reminiscence: Self-Hosted Bookmark And Archive Manager](https://github.com/kanishka-linux/reminiscence)
 - [ArchiveBox/ArchiveBox: 🗃 Open source self-hosted web archiving. Takes URLs/browser history/bookmarks/Pocket/Pinboard/etc., saves HTML, JS, PDFs, media, and more...](https://github.com/ArchiveBox/ArchiveBox)
-- 
+- [gildas-lormeau/SingleFile: Web Extension for saving a faithful copy of a complete web page in a single HTML file](https://github.com/gildas-lormeau/SingleFile)
