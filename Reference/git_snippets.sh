@@ -435,6 +435,24 @@ git rev-list --objects --all \
 | cut -c 1-12,41- \
 | numfmt --field=2 --to=iec-i --suffix=B --padding=7 --round=nearest
 
+# This will return something like:
+# BLOB-HASH  FILE_SIZE  FILE_NAME
+# ...
+#6a02a25d7f47   64MiB bigbrainmodel.pth
+#99bf17532bef   72MiB iamsmartdev/my_bigass_notebooks/huge_notebook_with_8kres_visualizations.ipynb
+
+
+# (NOT ALWAYS WORK) To find the branch that committed the blob,
+# e.g. `6a02b25d7f47 64MiB bigbrainmodel.pth`
+# First, find all commits for the file:
+git log --branches -- bigbrainmodel.pth
+# commit 56d40e9a9560c125f1ef2aba1dc2c8a68fa7977f
+# Author: Hugh Mongus (BigBrain Real ML Engs, Inc.) <ai_influencer420@hotmail.com>
+# Date:   Wed April 20 04:20:00 1969 +0300
+#
+#     Ayyy lmao!
+
+
 
 # Script/Cmd to replace all author
 # --------------------------------
