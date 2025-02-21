@@ -58,6 +58,14 @@ alias mn='man --page='  # man, but spits to stdout instead of getting captured i
 alias md='mkdir -p'   # mkdir all non-existing dirs in path
 alias cdln='cd -P'    # cd to physical path rather than symlinked
 
+# File stuff
+# ==========
+alias countlines='wc --lines'
+alias countwords='wc --words'
+alias countchars='wc --chars'
+
+
+
 # Path stuff
 # ==========
 alias pathof='readlink -e'
@@ -103,7 +111,7 @@ alias ldot='ls -dF --group-directories-first .*' # list dots only
 alias lk='ls -1SshX --file-type --group-directories-first' # list contents, sorted by size, grouped by ext
 alias lsz='ls -1shSr' # list files, 1-line each, show size in human-readable, sorted on size, reverse (biggest bottom)
 #alias lzf='ls | fzf' # list w/ fuzzy search
-alias countf='find . -type f -printf . | wc -c'
+alias countf='find . -type f -printf . | wc -c'  # counts the total num files from cur path
 
 lsm(){
     # List files sorted by modified date (reverse; most recent last).
