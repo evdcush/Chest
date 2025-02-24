@@ -1,4 +1,8 @@
 #!/bin/bash
+#
+# 𝗪𝗔𝗥𝗡𝗜𝗡𝗚: 𝗜𝗡𝗡𝗢𝗖𝗡 𝟯𝟮𝗠𝟮𝗩 𝗶𝘀 𝗡𝗢𝗧 𝗰𝗼𝗺𝗽𝗮𝘁𝗶𝗯𝗹𝗲 𝘄𝗶𝘁𝗵 𝗟𝗶𝗻𝘂𝘅!
+# I returned this turd.
+#
 # This script is a hack for an issue I've been experiencing on my system:
 #   - Jammy
 #   - 6.5.0-41-generic
