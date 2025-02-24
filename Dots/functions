@@ -98,7 +98,10 @@ function get(){
     #fi
     #wget -P ~/.cache $target;
     target=$(get_arg)
-    wget $target;
+    _log_file="$DIR_DOTS/wgetz.log"
+    _timestamp=$(date +%Y-%m-%d_%H:%M:%S_%Z)
+    _log_msg="$_timestamp: $target"
+    wget $target && echo "$_log_msg" >> $_log_file;
 }
 
 function cget(){
@@ -175,7 +178,8 @@ function dlvid(){
     fi
 
     # Figure out the title of the target.
-    target_filename=$(yt-dlp --simulate --print "%(channel)s - %(title)s.%(ext)s" $target)
+    filename_fmt="%(channel)s - %(title)s.%(id)s.%(ext)s"
+    target_filename=$(yt-dlp --simulate --print $filename_fmt $target)
 
     # Report the target info to the user.
     echo "DOWNLOADING:\n$target\n\tTO:\n$target_filename"
@@ -192,8 +196,9 @@ function dlvid(){
     yt-dlp \
     --embed-thumbnail --embed-metadata --embed-chapters \
     -f $target_fmt \
-    -o "%(channel)s - %(title)s.%(ext)s" \
+    -o $filename_fmt \
     $target
+    #-o "%(channel)s - %(title)s.%(ext)s" \
 
 }
 
