@@ -2,6 +2,9 @@
 
 Cool stuff for `git` and `github`.
 
+# Trending/Exploration/Finding
+https://github.com/GitHubDaily/GitHubDaily
+
 ### CLI
 
 - [GitHub - michaeldfallen/git-radar: A heads up display for git](https://github.com/michaeldfallen/git-radar)
