@@ -59,6 +59,14 @@ Here are a few, with a focus on FLOSS instead of crap like evernote.
 - [🌟 **AppFlowy-IO/AppFlowy**: AppFlowy is an open-source alternative to Notion. You are in charge of your data and customizations. Built with Flutter and Rust.](https://github.com/AppFlowy-IO/AppFlowy)
   
    - The **most promising app I've used**: boards, calendar, document, grid
+     
+      - I cannot escape the feel of being my content being locked-in to the app
+     
+      - Also, due to the bugginess, I have already once lost almost all my notes
+     
+      - **low trust of app, but really hope it continues to get developed and adopted!**
+  
+   - Multi-platform: Linux (deb, flatpak), Android
   
    - Still fairly "beta"
   
@@ -69,6 +77,7 @@ Here are a few, with a focus on FLOSS instead of crap like evernote.
    - ALPHA; deeply opinionated layout/view
      
       - Ridiculous note margin padding (this reason alone keeps me from pursuing this app further)
+   - Has zotero integration allegedly; and supposed to support latex and other scholarly writing needs
 
 - [**logseq/logseq**: A privacy-first, open-source platform for knowledge management and collaboration.](https://github.com/logseq/logseq)
   
@@ -87,6 +96,8 @@ Here are a few, with a focus on FLOSS instead of crap like evernote.
 - [🔖 **siyuan-note/siyuan**: A privacy-first, self-hosted, fully open source personal knowledge management software](https://github.com/siyuan-note/siyuan)
   
    - Really want to try this one out; has great looking features!
+   - **Multi-platform:** Linux (AppImage, flatpak, bin), Android, Windows
+   -  Has a web-clipper ([chromium](https://chromewebstore.google.com/detail/siyuan/hkcgjbeblifaincobbcfiffbpgoafepk))
 
 - [**toeverything/AFFiNE**: There can be more than Notion and Miro. AFFiNE is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.](https://github.com/toeverything/AFFiNE) 
   
@@ -105,6 +116,8 @@ Here are a few, with a focus on FLOSS instead of crap like evernote.
    - https://www.tangentnotes.com/
   
    - Looks amazing! (Haven't yet tried)
+
+- 
 
 - [**(DISCONTINUED)** **zadam/trilium**: Build your personal knowledge base with Trilium Notes](https://github.com/zadam/trilium)
 
@@ -127,8 +140,19 @@ And my goodness, there are a lot of markdown editors. I won't list them all here
 - [🏅 **marktext/marktext**: 📝A simple and elegant markdown editor, available for Linux, macOS and Windows.](https://github.com/marktext/marktext)
   
    - The best, but not without various bugs
+   - Has been unmaintained since 2022; no signs of change
+      - Has a best-effort attempt fork here: [GitHub - jacobwhall/marktext: fork of marktext, seeking to modernize our favorite markdown editor](https://github.com/jacobwhall/marktext)
+      - fdsa
 
-- Ghostwriter
+- [GitHub - KDE/ghostwriter: Text editor for Markdown](https://github.com/KDE/ghostwriter)
+  
+   - This use to be my main text editor for markdown way back in the day (2017)
+     
+      - It was awesome then, still awesome, still extremely minimal (in a good way)
+  
+   - This is more of a "zen"/"focus" mode kind of editor
+
+- 
 
 ---
 
@@ -170,6 +194,8 @@ FLOSS options I've tried are generally either too simple, or too complex and loo
   
    - Has a "free" plan, which sucks and you need to pay if you actually want to do anything with this
 
+- [TheBrain](https://thebrain.com/)
+
 - 
 
 ---
@@ -193,3 +219,18 @@ Nothing else comes close.
 - [kanishka-linux/reminiscence: Self-Hosted Bookmark And Archive Manager](https://github.com/kanishka-linux/reminiscence)
 - [ArchiveBox/ArchiveBox: 🗃 Open source self-hosted web archiving. Takes URLs/browser history/bookmarks/Pocket/Pinboard/etc., saves HTML, JS, PDFs, media, and more...](https://github.com/ArchiveBox/ArchiveBox)
 - [gildas-lormeau/SingleFile: Web Extension for saving a faithful copy of a complete web page in a single HTML file](https://github.com/gildas-lormeau/SingleFile)
+- [Y2Z/monolith: ⬛️ CLI tool for saving complete web pages as a single HTML file](https://github.com/Y2Z/monolith)
+
+---
+
+# Social
+
+## CRM & PRM Tools
+
+- 🔥 [**monicahq/monica**: Personal CRM. Remember everything about your friends, family and business relationships.](https://github.com/monicahq/monica)
+  
+   - https://www.monicahq.com/
+
+- Gnome Contacts (?)
+
+- Thunderbird
