@@ -73,9 +73,7 @@ Here are a few, with a focus on FLOSS instead of crap like evernote.
    - Buggy on Linux (enormous lag when opening grids or boards)
 
 - [**Zettlr/Zettlr**: A Markdown Editor for the 21st century.](https://github.com/Zettlr/Zettlr)
-  
    - ALPHA; deeply opinionated layout/view
-     
       - Ridiculous note margin padding (this reason alone keeps me from pursuing this app further)
    - Has zotero integration allegedly; and supposed to support latex and other scholarly writing needs
 
@@ -97,7 +95,7 @@ Here are a few, with a focus on FLOSS instead of crap like evernote.
   
    - Really want to try this one out; has great looking features!
    - **Multi-platform:** Linux (AppImage, flatpak, bin), Android, Windows
-   -  Has a web-clipper ([chromium](https://chromewebstore.google.com/detail/siyuan/hkcgjbeblifaincobbcfiffbpgoafepk))
+   - Has a web-clipper ([chromium](https://chromewebstore.google.com/detail/siyuan/hkcgjbeblifaincobbcfiffbpgoafepk))
 
 - [**toeverything/AFFiNE**: There can be more than Notion and Miro. AFFiNE is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.](https://github.com/toeverything/AFFiNE) 
   
@@ -117,7 +115,7 @@ Here are a few, with a focus on FLOSS instead of crap like evernote.
   
    - Looks amazing! (Haven't yet tried)
 
-- 
+- [LinwoodDev/Butterfly: 🎨 Powerful, minimalistic, cross-platform, opensource note-taking app](https://github.com/LinwoodDev/Butterfly)
 
 - [**(DISCONTINUED)** **zadam/trilium**: Build your personal knowledge base with Trilium Notes](https://github.com/zadam/trilium)
 
@@ -234,3 +232,15 @@ Nothing else comes close.
 - Gnome Contacts (?)
 
 - Thunderbird
+
+
+---
+
+# Databases
+DBs. Also, spreadsheets stuff (well, mostly "smart tables").
+
+- AIRTABLE
+  - FLOSS "alternatives" (typically a self-host deal):
+    - https://github.com/bram2w/baserow
+    - https://github.com/nocodb/nocodb
+
