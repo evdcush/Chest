@@ -116,15 +116,16 @@ ZSH_THEME="robbyrussell"
 # Plugins
 # =======
 plugins=(
-    #alias-finder
+    alias-finder
     aliases  # use via cmd `als`
     colored-man-pages
     command-not-found
     extract
     fzf_flatpak_widget
+    #forgit
     gunstage
     history
-    #forgit
+    tldr
     zshmarks
     zsh-syntax-highlighting
     z
