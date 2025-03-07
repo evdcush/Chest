@@ -466,31 +466,31 @@ f() {
 #=============================================================================#
 
 # TODO(evan): WIP, get "awesome" list (readme only, eventually).
-function getawe() {
-    # THIS NEEDS TO BE A PY SCRIPT.
-    # Exit if no git url provided.
-    if ! (( $# )); then
-        echo 'No target provided!'
-        return
-    fi
-
-    # Just log the timestamp and repo for now.
-    mkdir -p $DIR_DOTS
-    _AW_LOG="$DIR_DOTS/awesomes.log"
-    _TIMESTAMP=$(date +%Y-%m-%d_%H%M%S)
-
-    echo "$_TIMESTAMP: $@" >> $_AW_LOG
-
-    # Dst.
-    _AW_PATH=$HOME/RepoCloud/Sporks/AWESOMES
-    mkdir -p $_AW_PATH
-
-    cd $_AW_PATH
-    git clone --depth=1 $1
-
-    cd -
-}
-
+#function getawe() {
+#    # THIS NEEDS TO BE A PY SCRIPT.
+#    # Exit if no git url provided.
+#    if ! (( $# )); then
+#        echo 'No target provided!'
+#        return
+#    fi
+#
+#    # Just log the timestamp and repo for now.
+#    mkdir -p $DIR_DOTS
+#    _AW_LOG="$DIR_DOTS/awesomes.log"
+#    _TIMESTAMP=$(date +%Y-%m-%d_%H%M%S)
+#
+#    echo "$_TIMESTAMP: $@" >> $_AW_LOG
+#
+#    # Dst.
+#    _AW_PATH=$HOME/BigCloud/Sporks/AWESOMES
+#    mkdir -p $_AW_PATH
+#
+#    cd $_AW_PATH
+#    git clone --depth=1 $1
+#
+#    cd -
+#}
+#
 
 function getawerdme() {
     # ASSUMES A RAW GH URL GIVEN AS INPUT!
@@ -508,7 +508,7 @@ function getawerdme() {
     echo "$_TIMESTAMP: $@" >> $_AW_LOG
 
     # Dst.
-    _AW_PATH=$HOME/RepoCloud/Sporks/AWESOMES
+    _AW_PATH=$HOME/BigCloud/Sporks/AWESOMES
     mkdir -p $_AW_PATH
 
     cd $_AW_PATH
