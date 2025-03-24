@@ -3,6 +3,55 @@
 Resources for my android devices.
 All of which are currently samsung galaxy devices.
 
+
+## Apps
+
+### Sources
+
+- FDroid
+- Aurora Store
+- GH:
+  - Look for stuff in "Kotlin" (such as trending, etc.)
+  - maybe topics like: `android`, `android-app`, `fdroid`, `apk`, `magisk`,
+    etc.
+
+New one:
+https://www.openapk.net/
+
+### APKs
+(What actual apps I use/get)
+
+#### Normal
+
+- newpipe
+- antennapod
+- Feeder
+- VLC
+- Fennec
+- Brave
+- DAVx5
+- Nextcloud
+- Amaze
+- Joplin
+- lawnchair: https://github.com/LawnchairLauncher/lawnchair
+
+
+- LINE
+- Mega
+- OneNote
+- Goog: maps, gmail, calendar, Keep, drive
+-
+-
+
+
+#### Root
+
+- magisk
+- Viper4Android
+- BCR
+- App Manager
+
+
 ## Firmware
 
 ### `samloader`

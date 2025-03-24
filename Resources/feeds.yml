@@ -8,15 +8,15 @@ bair:
     feed_url: http://bair.berkeley.edu/blog/feed.xml
     url: http://bair.berkeley.edu/blog/
 
-comma.ai:
-    description: comma.ai blog
-    feed_url: https://blog.comma.ai/feed.xml
-    url: https://blog.comma.ai
-
 cmu:
     description: CMU ML research blog
     feed_url: https://blog.ml.cmu.edu/feed/
     url: https://blog.ml.cmu.edu/
+
+comma.ai:
+    description: comma.ai blog
+    feed_url: https://blog.comma.ai/feed.xml
+    url: https://blog.comma.ai
 
 deepmind:
     description: DeepMind blog
