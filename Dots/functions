@@ -202,6 +202,48 @@ function dlvid(){
 
 }
 
+#==== yt-dlp
+function dlvid1080(){
+    # Download a video in 1080p vid format and best audio.
+
+    # Get the target.
+    target=$(get_arg)
+    target_fmt='bestvideo[height=1080]+bestaudio/best'
+
+    arg_count=$(echo "$target" | wc -w)
+
+    if [ "$arg_count" -eq 2 ]; then
+        # If 2 args were given, assume the second is the format
+        # specifier (of the form '{int}+{int}').
+        target_fmt=$(echo "$target" | awk '{print $2}')
+        target=$(    echo "$target" | awk '{print $1}')
+    fi
+
+    # Figure out the title of the target.
+    filename_fmt="%(channel)s - %(title)s.%(id)s.%(ext)s"
+    target_filename=$(yt-dlp --simulate --print $filename_fmt $target)
+
+    # Report the target info to the user.
+    echo "DOWNLOADING:\n$target\n\tTO:\n$target_filename"
+
+    # Log the event.
+    mkdir -p $DIR_DOTS
+    _log_file="$DIR_DOTS/yt.log"
+    _timestamp=$(date +%Y-%m-%d_%H%M%S)
+    _log_msg="$_timestamp: $target; '$target_filename'"
+    echo "LOGGING:\n$_log_msg"
+    echo "$_log_msg" >> $_log_file
+
+    # Now, actually get the thing.
+    yt-dlp \
+    --embed-thumbnail --embed-metadata --embed-chapters \
+    -f $target_fmt \
+    -o $filename_fmt \
+    $target
+    #-o "%(channel)s - %(title)s.%(ext)s" \
+
+}
+
 
 #=============================================================================#
 #                                                                             #
