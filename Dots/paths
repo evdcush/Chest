@@ -17,18 +17,17 @@ DIR_EXPERIMENTS="$HOME/Experiments"
 DIR_MODELS="$HOME/Models"
 
 # Apps/software
-DIR_APPS="$HOME/.Apps"
-DIR_APPIMAGES="$DIR_APPS/AppImages"
+#DIR_APPS="$HOME/.Apps"
+#DIR_APPIMAGES="$DIR_APPS/AppImages"
 
 
 # Nextcloud
 # =========
-DIR_CLOUD="$HOME/Cloud"
-CLOUD_RESOURCES="$DIR_CLOUD/Resources"
-DIR_REPOCLOUD="$HOME/RepoCloud"
-
-DIR_SPORKS="$DIR_REPOCLOUD/Sporks"
-FILE_SPORK_LOG="$DIR_SPORKS/sporks.log"
+#DIR_CLOUD="$HOME/Cloud"
+#CLOUD_RESOURCES="$DIR_CLOUD/Resources"
+#DIR_REPOCLOUD="$HOME/RepoCloud"
+#DIR_SPORKS="$DIR_REPOCLOUD/Sporks"
+#FILE_SPORK_LOG="$DIR_SPORKS/sporks.log"
 
 # Chest paths
 # ===========
@@ -44,7 +43,7 @@ DIR_CHEST_TEMPLATES="$DIR_CHEST_RESOURCES/Templates"
 #PATH_INBOX_READ="$CLOUD_RESOURCES/inbox_read.yml"
 #PATH_INBOX_HOARD="$CLOUD_RESOURCES/inbox_hoard.yml"
 #---- Crypt keys
-GCKEY_CHEST="$DIR_DOTS/Keys/chest_key"
+#GCKEY_CHEST="$DIR_DOTS/Keys/chest_key"
 
 
 # env/library Paths
@@ -67,4 +66,4 @@ NLTK_DATA="$DIR_DATA/nltk_data"
 MINERL_DATA_ROOT="$DIR_DATA/MineRL"
 DETECTRON2_DATA="$DIR_DATA"
 #MUJOCO_PY_MUJOCO_PATH="$HOME/.mujoco/mujoco210"
-
+HF_DOWNLOAD_LOG="$HOME/.hf_model_downloads.log"
