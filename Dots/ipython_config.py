@@ -710,14 +710,16 @@ is:
 
 So now we have to include this code execution snippet in a config file.
 '''
-from IPython.utils.PyColorize import linux_theme, theme_table
-from copy import deepcopy
+#from IPython.utils.PyColorize import linux_theme, theme_table
+#from copy import deepcopy
+#my_theme = deepcopy(linux_theme)
+#my_theme.base = 'piodine'
+#theme_table[my_theme.base] = my_theme
+#c.TerminalInteractiveShell.colors = my_theme.base
 
-my_theme = deepcopy(linux_theme)
-my_theme.base = 'piodine'
-theme_table[my_theme.base] = my_theme
-c.TerminalInteractiveShell.colors = my_theme.base
-
+#  Actually nah, I'll just use ipy 8
+# pip install ipython==8.34.0
+c.TerminalInteractiveShell.highlighting_style = 'piodine'
 
 
 
