@@ -1061,12 +1061,16 @@ mi sit amet vestibulum. Vivamus vel malesuada ligula."
 
 function mdclicksection() {
     md_click_section_template='<details>
-  <summary>Hello</summary>
+  <summary>Screencap📸</summary>
 
-World!
+
 </details>
 '
     echo $md_click_section_template | xclip -sel clip
     echo $md_click_section_template
     echo '(This was copied to your clipboard!)'
 }
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+alias gn='gennames'
