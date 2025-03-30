@@ -67,7 +67,7 @@ source $HOME/.Dots/gpu_dot
 export PATH="${PATH:+${PATH}:}$PATH_USER_BIN"
 
 #---- nltk data
-export NLTK_DATA='/home/evan/.Data/nltk_data'
+export NLTK_DATA="$HOME/Data/nltk_data"
 
 
 #------------------------------------------------------------------------------
@@ -100,8 +100,9 @@ export EDITOR="$VISUAL"
 
 # jrnl prevent hist
 # -----------------
-HISTIGNORE="$HISTIGNORE:jrnl *"
+#HISTIGNORE="$HISTIGNORE:jrnl *"  # This was for bash zsh has opt
 setopt HIST_IGNORE_SPACE
+#alias jrnl=' jrnl'  # Disabled until we use jrnl again.
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -116,7 +117,6 @@ ZSH_THEME="robbyrussell"
 # Plugins
 # =======
 plugins=(
-    alias-finder
     aliases  # use via cmd `als`
     colored-man-pages
     command-not-found
@@ -158,10 +158,6 @@ source $ZSH/oh-my-zsh.sh
 # ===
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
-# ROS
-# ===
-#source /opt/ros/melodic/setup.zsh
 
 # Source aliases and funcs
 # ========================
