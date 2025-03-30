@@ -1841,6 +1841,9 @@ https://raw.githubusercontent.com/Gerrit0/old-github-feed/main/old-feed.user.js
 # Remove `?tab=readme-ov-file` bullshit:
 https://gist.github.com/vogler/74edff6de37c3a13eeff8c99c6bed910/raw/clean-url-readme-tab.github.com.tamper.js
 
+# Export GPT:
+https://raw.githubusercontent.com/pionxzh/chatgpt-exporter/master/dist/chatgpt.user.js
+
 
 ## NB, If you ever see the error message:
 # `N: Skipping acquire of configured file 'main/binary-i386/Packages' etc...
