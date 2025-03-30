@@ -2,6 +2,76 @@
 troubleshooting
 ===============
 
+Dev Stuff
+=========
+
+Python
+------
+
+Jupyter nb/lab
+^^^^^^^^^^^^^^
+It's become increasingly difficult to setup and use jupyter notebook over the
+years.
+It used to be simply: ``pip install ipython notebook``
+
+Now, due to the "sunsetting" of "classic" jupyter notebooks in favor of
+jupyter lab, you have to do some major version-fu to get the normal jupyter
+notebook. **Even if you don't use jupyterlab, you will suffer from it!**
+This is because they tried to force notebook users to use the jupyter lab
+interface and style after some major version of jupyter notebook.
+
+Also, it is not simply possible to not experience some breakage for the
+"inclusive" and bold changes unreviewed and pushed to master from ``a796b95``
+for ``ipython >= 9``.
+
+I have no idea about lab and ipython garb, and they don't want to support the
+keyboard shortcuts and such in lab that all notebook users have depended on for
+their workflows in notebook.
+
+I don't have a solution for the version spaghett, but here's what I have now
+that allows one to have a working ``jupyter notebook`` and ``ipython``
+experience:
+
+.. code-block::sh
+
+    # First, versions:
+    $ jupyter --version
+    Selected Jupyter core packages...
+    IPython          : 8.34.0
+    ipykernel        : 6.29.4
+    ipywidgets       : 8.1.5
+    jupyter_client   : 7.4.9
+    jupyter_core     : 5.7.2
+    jupyter_server   : 1.24.0
+    jupyterlab       : not installed
+    nbclient         : 0.10.0
+    nbconvert        : 7.16.3
+    nbformat         : 5.10.4
+    notebook         : 6.5.6
+    qtconsole        : not installed
+    traitlets        : 5.14.3
+
+    # How I ended up here:
+    ## ipython to latest version available below 9 (latest at time is 8.34.0)
+    $ pip install -U 'ipython<9'
+
+    ## notebook to the actual working normal version (pre lab-ified):
+    $ pip install 'notebook==6.5.6'
+
+    ### extra garb you gotta do to not get clapped by lab crap
+    ###   (I don't remember why, you just do it to avoid a stack of errors
+    ###   and grievances reported to you from jupyter)
+    $ pip install -U 'jupyter-server<2'
+
+    ###   For some reason, even though you don't use lab in notebook
+    ###   jupyter can't help itself trying to load it as an extension.
+    ###   After wasting a lot of time searching online and trying shit out,
+    ###   it is simply less pain to just remove that sucker.
+    $ pip uninstall jupyterlab
+
+
+Good luck! YMMV!
+
 
 Applications
 ============
