@@ -700,6 +700,11 @@ sudo rm /etc/systemd/system/var-snap-firefox-common-host\\x2dhunspell.mount
 # ============
 # HDD check (for nvme)
 sudo apt install -y nvme-cli
+sudo apt install -y pulseeffects
+
+# Desktop utils
+# -------------
+sudo apt install -y menulibre  # GUI for easy editing of .desktop files
 
 # General
 # =======
@@ -964,7 +969,7 @@ sudo apt install -y exfat-fuse exfat-utils f2fs-tools ntfs-3g zfs-fuse zfsutils-
 sudo apt install -y p7zip-full unar
 
 #== Knowledge Management
-sudo apt install -y buku
+#sudo apt install -y buku
 
 #== PDF stuff.
 sudo apt install -y texlive-xetex texlive-extra-utils \
