@@ -11,6 +11,7 @@
 if [ "$#" -eq 0 ]
 then
     HF_REPO_URL=`xclip -o -sel clip`
+    echo "Read URL from clip: $HF_REPO_URL"
 else
     HF_REPO_URL=$1
 fi
