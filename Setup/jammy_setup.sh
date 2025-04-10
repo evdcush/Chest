@@ -709,7 +709,7 @@ sudo apt install -y menulibre  # GUI for easy editing of .desktop files
 # General
 # =======
 sudo apt install -y fd-find locate
-sudo apt install -y jq
+sudo apt install -y jq ripgrep
 sudo apt install -y copyq deluge gparted redshift wkhtmltopdf inxi colordiff qalc poppler-utils
 sudo apt install -y units  # unit converter
 
