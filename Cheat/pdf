@@ -20,6 +20,42 @@ pdf-crop-margins -s -u --pages 449-507 d2l-en.pd
 pdf-crop-margins -s -u --pages 2-19 'Wang et al - 2024 - N-Agent Ad Hoc Teamwork.pdf'
 
 
+## APPLY CROP BOX
+# Sometimes, the typical `croparxpdf` doesn't work because of a few snowflake
+# pages. These pages can ruin the entire cropped pdf.
+# In these use-cases, it is often necessary to crop to a hard-coded BBOX.
+# Here's how you do it!
+
+### First, get the boxes for the file to find the snowflakes:
+# *REMEMBER, BOXES ARE ALWAYS: left, bottom, right, top; origin at left-bottom.
+pdfcropmargins --writeCropDataToFile galaxybrain2049.txt GalaxyBrain-2049.pdf
+
+## You will see a txt file with one array of floats per page, eg:
+###    1    [16.19994668, 12.59996796, 548.09819614, 757.79807281]
+###    2    [64.79978674, 12.59996796, 548.09819614, 694.79823303]
+###    3    [64.79978674, 12.59996796, 548.09819614, 757.79807281]
+###    4    [64.79978674, 12.59996796, 548.09819614, 757.79807281]
+###    5    [64.79978674, 12.59996796, 547.1981991, 757.79807281]
+###    6    [64.79978674, 12.59996796, 548.09819614, 757.79807281]
+###    7    [64.79978674, 12.59996796, 547.1981991, 757.79807281]
+###    8    [64.79978674, 12.59996796, 547.1981991, 757.79807281]
+###    9    [64.79978674, 12.59996796, 547.1981991, 757.79807281]
+
+## Figure out the snowflakes, and decide on a crop box that will work for all.
+## Keep in mind: these crop boxes are TIGHT; much tighter than a typical
+## pdfcropmargins crop! So you must pad as well!
+##    REMEMBER:
+##      LEFT:   pad by *reducing* L number
+##      BOTTOM: pad by *reducing* B number
+##      RIGHT:  pad by *adding* R number
+##      TOP:    pad by *adding* T number
+
+### Crop that shit (adding padding, ESPECIALLY Left & RIGHT!):
+pdfcropmargins --uniform -ssp 80 20 560 730 --pages 2-56 Thomas\ et\ al\ -\ 2024\ -\ STAR.pdf
+
+DID NOT WORK! STILL HAVEN'T GOTTEN THIS BS DOWN!
+
+
 # Extract PDF pages
 # -----------------
 pdfjam <input file> <page ranges> -o <output file>
