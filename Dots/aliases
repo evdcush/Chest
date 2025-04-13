@@ -807,6 +807,7 @@ myougiden"
 alias bt='bat -pP'
 # ^: `bat --style=plain --paging never` (so no line nums and it spits output
 #    to stdout without pager like cat)
+alias bth='bat -pP -r ":10"'  # like 'head'
 
 
 
