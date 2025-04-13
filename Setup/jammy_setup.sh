@@ -513,6 +513,13 @@ sudo apt install -y gnome-tweaks nautilus-extension-fma
 #=== Extensions
 # SYSTEM-MONITOR: https://extensions.gnome.org/extension/3010/system-monitor-next/
 #                 https://github.com/mgalgs/gnome-shell-system-monitor-applet
+# Nah this got canned.
+# Get Freon instead:
+https://github.com/UshakovVasilii/gnome-shell-extension-freon
+https://extensions.gnome.org/extension/841/freon/
+
+
+
 
 
 # SSH key

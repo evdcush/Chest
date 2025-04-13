@@ -2,18 +2,7 @@
 
 [GH topics/zotero](https://github.com/topics/zotero)
 
-
-
-
-
-
-
-
-
-
 # Installation & Setup
-
-
 
 #### Zotero's official Linux distribution (bin)
 
@@ -35,8 +24,6 @@
 > 
 > You may need to re-run `set_launcher_icon` after certain Zotero updates. If something isn't working, it may help to remove the current symlink (`~/.local/share/applications/zotero.desktop`), wait a few seconds for Zotero to disappear from the launcher, and recreate it.
 
-
-
 #### Flatpak (preferred)
 
 **Flathub page**: https://flathub.org/apps/org.zotero.Zotero
@@ -53,8 +40,6 @@ flatpak install flathub org.zotero.Zotero
 sudo flatpak override --filesystem=home org.zotero.Zotero
 ```
 
-
-
 #### Deb
 
 - **Package src**: [retorquere/zotero-deb: Packaged versions of Zotero for Debian-based systems](https://github.com/retorquere/zotero-deb)
@@ -67,11 +52,7 @@ sudo apt update
 sudo apt install zotero
 ```
 
-
-
 ----
-
-
 
 # Plugins
 
@@ -125,4 +106,72 @@ sudo apt install zotero
 
 - [avram/zandy: Zotero on Android](https://github.com/avram/zandy)
 
+
+
+---
+
+
+
+# Community
+
+## Swole Doges
+
+
+
+#### windingwind (Xiangyu Wang)
+
+- Page: https://windingwind.github.io/
+- GH: [windingwind](https://github.com/windingwind)
+
+
+
+##### Works
+
+- [**windingwind/zotero-plugin-template**: A plugin template for Zotero.](https://github.com/windingwind/zotero-plugin-template)
+   - [**windingwind/zotero-plugin-toolkit**: Toolkit for Zotero Plugin Developers.](https://github.com/windingwind/zotero-plugin-toolkit)
+- 🔥 [**<mark>windingwind/zotero-better-notes</mark>**: Everything about note management. All in Zotero.](https://github.com/windingwind/zotero-better-notes)
+- [**windingwind/zotero-pdf-translate**: Translate PDF, EPub, webpage, metadata, annotations, notes to the target language. Support 20+ translate services.](https://github.com/windingwind/zotero-pdf-translate)
+- [**windingwind/zotero-actions-tags**: Customize your Zotero workflow.](https://github.com/windingwind/zotero-actions-tags)
+
+
+
+
+
+#### MuiseDestiny
+
+[MuiseDestiny (Polygon)](https://github.com/MuiseDestiny)
+
+
+
+##### Works
+
+- [MuiseDestiny/zotero-reference: PDF references add-on for Zotero.](https://github.com/MuiseDestiny/zotero-reference)
+- [MuiseDestiny/zotero-citation: Make Zotero&#39;s citation in Word easier and clearer.](https://github.com/MuiseDestiny/zotero-citation)
+- [MuiseDestiny/zotero-gpt: GPT Meet Zotero.](https://github.com/MuiseDestiny/zotero-gpt)
+- [MuiseDestiny/zotero-attanger: Attachment Manager for Zotero](https://github.com/MuiseDestiny/zotero-attanger)
+   - **THIS IS ALLEGEDLY SOMETHING LIKE A "ZOTFILE" FOR Zotero 7 (zotfile only supports Zotero 6)**
+- 
+
+
+
+
+
+#### Retorquere
+
+- [retorquere (Emiliano Heyns)](https://github.com/retorquere)
+   - [Better BibTeX for Zotero](https://retorque.re/zotero-better-bibtex/)
+      - [retorquere/zotero-better-bibtex: Make Zotero effective for us LaTeX holdouts](https://github.com/retorquere/zotero-better-bibtex)
+   - [retorquere/zotero-date-from-last-modified](https://github.com/retorquere/zotero-date-from-last-modified)
+
+
+
+----
+
+
+
+Other cool plugins:
+
+
+
+- [GitHub - volatile-static/Chartero: Chart in Zotero](https://github.com/volatile-static/Chartero)
 - 
