@@ -48,6 +48,17 @@ A collection of resources and software for knowledge management.
 
 # Notes
 
+
+
+### Taking Good Notes
+
+- Andy Matuschak on Note-writing systems: https://notes.andymatuschak.org/zEZi3ytBhZHHweRYNAosQ1g
+- 
+
+
+
+## Note Apps
+
 Holy shit there are so many "note apps" out there.
 
 Here are a few, with a focus on FLOSS instead of crap like evernote.
@@ -73,6 +84,7 @@ Here are a few, with a focus on FLOSS instead of crap like evernote.
    - Buggy on Linux (enormous lag when opening grids or boards)
 
 - [**Zettlr/Zettlr**: A Markdown Editor for the 21st century.](https://github.com/Zettlr/Zettlr)
+  
    - ALPHA; deeply opinionated layout/view
       - Ridiculous note margin padding (this reason alone keeps me from pursuing this app further)
    - Has zotero integration allegedly; and supposed to support latex and other scholarly writing needs
@@ -233,14 +245,13 @@ Nothing else comes close.
 
 - Thunderbird
 
-
 ---
 
 # Databases
+
 DBs. Also, spreadsheets stuff (well, mostly "smart tables").
 
 - AIRTABLE
-  - FLOSS "alternatives" (typically a self-host deal):
-    - https://github.com/bram2w/baserow
-    - https://github.com/nocodb/nocodb
-
+   - FLOSS "alternatives" (typically a self-host deal):
+      - https://github.com/bram2w/baserow
+      - https://github.com/nocodb/nocodb
