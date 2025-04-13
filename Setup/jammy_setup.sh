@@ -2166,6 +2166,12 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-3 "['<Primary><
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-4 "['<Primary><Alt>4']" && \
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-5 "['<Primary><Alt>5']";
 
+#=== UNSET OTHER UNDESIREABLE HARD-CODED BINDIGS:
+# gnome display switcher garb `/org/gnome/mutter/keybindings/switch-monitor`
+#   default binding: ['<Super>p', 'XF86Display']
+gsettings set org.gnome.mutter.keybindings switch-monitor "[]"
+
+
 
 # Bluetooth (or other settings in gnome gui):
 gnome-control-center bluetooth
