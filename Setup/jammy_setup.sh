@@ -717,7 +717,8 @@ sudo apt install -y menulibre  # GUI for easy editing of .desktop files
 # =======
 sudo apt install -y fd-find locate
 sudo apt install -y jq ripgrep
-sudo apt install -y copyq deluge gparted redshift wkhtmltopdf inxi colordiff qalc poppler-utils
+sudo apt install -y pandoc wkhtmltopdf weasyprint poppler-utils
+sudo apt install -y copyq deluge gparted redshift inxi colordiff qalc
 sudo apt install -y units  # unit converter
 
 # General Sourced
