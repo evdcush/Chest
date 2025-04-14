@@ -450,6 +450,28 @@ function lnpro(){
     ln -sf $src $dst
 }
 
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+function lsnew() {
+    # USAGE: `lsnew {N} {path}`
+    #   $ lsnew                 # will default to `lsnew 30 .`
+    #                           # "show the 30 newest files in the curdir"
+    #   $ lsnew 100 ~/.cache    # "show the 100 newest files in the cache dir"
+    #
+    # Print a date-sorted list of the oldest (top) --> newest (bot).
+    local N="${1:-30}"
+    local DIR="${2:-.}"
+    TZ=Asia/Tokyo \
+    find "$DIR" -type f -printf '%TY-%Tm-%Td %TH:%TM:%.2TS %p\n' | \
+    sort -n | \
+    tail -n "$N" | \
+    sort -n
+}
+
+
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Finding stuff
