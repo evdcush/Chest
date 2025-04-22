@@ -518,6 +518,10 @@ sudo apt install -y gnome-tweaks nautilus-extension-fma
 https://github.com/UshakovVasilii/gnome-shell-extension-freon
 https://extensions.gnome.org/extension/841/freon/
 
+# Freon seems to only capture the GPUs.
+# For other components, use Vitals:
+https://github.com/corecoding/Vitals
+
 
 
 
