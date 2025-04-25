@@ -36,6 +36,8 @@ A collection of resources and software for knowledge management.
 
 - Floss stuff is generally self-hosted or paid (like wallabag)
 
+- Raindrop.io
+
 ### Sync
 
 - XBrowserSync (Discontinued??)
@@ -85,59 +87,71 @@ Here are a few, with a focus on FLOSS instead of crap like evernote.
 
 - [**Zettlr/Zettlr**: A Markdown Editor for the 21st century.](https://github.com/Zettlr/Zettlr)
   
-   - ALPHA; deeply opinionated layout/view
-      - Ridiculous note margin padding (this reason alone keeps me from pursuing this app further)
-   - Has zotero integration allegedly; and supposed to support latex and other scholarly writing needs
+   - ALPHA; deeply opinionated layout/view; more of a "shiny thing" fad than a legit tool
 
 - [**logseq/logseq**: A privacy-first, open-source platform for knowledge management and collaboration.](https://github.com/logseq/logseq)
   
-   - Too bigbrain; need to learn to use
+   - Too bigbrain; need to learn to use; you spend more time in tinkering and config and "workflow" than actual notes
   
    - seems like its for the Arch-like tribe, who like to configure and spend their time on process instead of content or doing stuff
 
 - [**Obsidian** is a personal knowledge base and note-taking software application that operates on Markdown files.](https://obsidian.md/)
   
-   - (Proprietary)
+   - **(Proprietary)**
   
    - Arguably the most popular; huge community; massive ecosystem of plugins
+     - Re: plugins, and the community turbo nerds and zealots, wow... the dream for a closed-source platform: you get all the FLOSS support and dev for fucking free!
   
    - Business model basically forces you to pay, since there is otherwise no note sync
+     - (just sync your "vault" through nextcloud, etc.)
 
-- [🔖 **siyuan-note/siyuan**: A privacy-first, self-hosted, fully open source personal knowledge management software](https://github.com/siyuan-note/siyuan)
-  
+- [**siyuan-note/siyuan**: A privacy-first, self-hosted, fully open source personal knowledge management software](https://github.com/siyuan-note/siyuan)
+
+   - kind of a dark horse to me; it's an old name in the game; nothing like Jop, but more established than obsidian or "logseq" or appflowy, etc.
+     - I've always passed on it since they have "freemium" model on basic features, and that it seems to be primarily chinese-market focused
    - Really want to try this one out; has great looking features!
    - **Multi-platform:** Linux (AppImage, flatpak, bin), Android, Windows
    - Has a web-clipper ([chromium](https://chromewebstore.google.com/detail/siyuan/hkcgjbeblifaincobbcfiffbpgoafepk))
 
 - [**toeverything/AFFiNE**: There can be more than Notion and Miro. AFFiNE is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.](https://github.com/toeverything/AFFiNE) 
   
-   - Is super interesting looking, but pre-alpha
+   - Is super interesting looking, but *painfully* pre-alpha
      
       - was hella buggy and broken for me when I tried it
+        - initially (early 2024)
+        - again (mid 2025)
+    - I truly hope AFFiNE continues to mature! I think they are providing an essential service or product that isn't otherwise found in FLOSS
 
-- [🔖 **Traverse.link**: "*Traverse is the only app with mind mapping, note-taking and spaced repetition flashcards in one place.*"](https://traverse.link)
+- [**Traverse.link**: "*Traverse is the only app with mind mapping, note-taking and spaced repetition flashcards in one place.*"](https://traverse.link)
   
-   - (Proprietary)
+   - (Proprietary)😐️
   
    - Neat integrations of linked/mapped knowledge and learning
 
-- [🔖 **suchnsuch/Tangent**: *Tangent is designed to let you write the way you think. Your thoughts are connected; Tangent lets you link to existing notes and make new ones with ease.*.](https://github.com/suchnsuch/Tangent)
+- [**suchnsuch/Tangent**: *Tangent is designed to let you write the way you think. Your thoughts are connected; Tangent lets you link to existing notes and make new ones with ease.*.](https://github.com/suchnsuch/Tangent)
   
    - https://www.tangentnotes.com/
   
-   - Looks amazing! (Haven't yet tried)
+   - Amazing work by the developer!!
+   - I've used played around with it a bit, but due to my severe "shiny note-taking thing" syndrome, I haven't gone deeper, but I'm amazed at how polished the (single dev) app is
 
-- [LinwoodDev/Butterfly: 🎨 Powerful, minimalistic, cross-platform, opensource note-taking app](https://github.com/LinwoodDev/Butterfly)
+- [LinwoodDev/Butterfly: Powerful, minimalistic, cross-platform, opensource note-taking app](https://github.com/LinwoodDev/Butterfly)
+  - ?? handwriting, that's why I added this. Otherwise don't care.
 
 - [**(DISCONTINUED)** **zadam/trilium**: Build your personal knowledge base with Trilium Notes](https://github.com/zadam/trilium)
 
 - Extensions:
   
-   - VSCode:
+   - VSCode (some of these might be defunct now):
      
       - [dendronhq/dendron: The personal knowledge management (PKM) tool that grows as you do!](https://github.com/dendronhq/dendron)
      
       - [foambubble/foam: A personal knowledge management and sharing system for VSCode](https://github.com/foambubble/foam)
+
+- [Tana](https://tana.inc/): "AI-Native workspace..." 🤮
+
+- [Kinopio](https://kinopio.club/): actually kind of great! Looks cheap but is a fairly featured mapping thing!
+
 
 ## Editors
 
@@ -152,7 +166,6 @@ And my goodness, there are a lot of markdown editors. I won't list them all here
    - The best, but not without various bugs
    - Has been unmaintained since 2022; no signs of change
       - Has a best-effort attempt fork here: [GitHub - jacobwhall/marktext: fork of marktext, seeking to modernize our favorite markdown editor](https://github.com/jacobwhall/marktext)
-      - fdsa
 
 - [GitHub - KDE/ghostwriter: Text editor for Markdown](https://github.com/KDE/ghostwriter)
   
@@ -181,6 +194,7 @@ And my goodness, there are a lot of markdown editors. I won't list them all here
 # Mapping
 
 Most actually useable mapping software is proprietary and paid.
+This space is brutal and desperately needs more development.
 
 FLOSS options I've tried are generally either too simple, or too complex and look and feel like shit, and require a lot of "how to use" learning.
 
@@ -191,6 +205,9 @@ FLOSS options I've tried are generally either too simple, or too complex and loo
 - Freeplane
   
    - No, I don't feel like learning how to use this
+   - Looks like shit (not in a good way)
+   - UI looks like shit and is overcrowded
+
 
 - Heimer
 
@@ -198,7 +215,7 @@ FLOSS options I've tried are generally either too simple, or too complex and loo
 
 - [coggle](https://coggle.it)
   
-   - Pretty decent, fairly limited, customizeability (in a good way)
+   - Pretty decent, fairly limited, customizability (in a good way)
   
    - I love that you can actually have a node with full markdown support
   
@@ -206,7 +223,7 @@ FLOSS options I've tried are generally either too simple, or too complex and loo
 
 - [TheBrain](https://thebrain.com/)
 
-- 
+- Heptabase looks dope (proprietary; paid)
 
 ---
 
