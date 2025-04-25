@@ -871,6 +871,9 @@ sudo apt install -y guake
 # (Patch guake if `Could not parse file "/usr/share/applications/guake.desktop": No such file or directory`)
 sudo ln -sf /usr/share/guake/autostart-guake.desktop /usr/share/applications/guake.desktop
 
+# KONSOLE
+sudo apt install -y konsole
+
 # NB, edit line:
 subl --new-window --wait %(file_path)s:%(line_number)s
 
