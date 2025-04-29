@@ -488,7 +488,7 @@ alias pipigpu="$piu gpustat nvitop"
 function pipitorch(){
     # Wheel targets.
     tag_cpu='cpu'
-    tag_cuda='cu124'  # current latest cuda build available for torch
+    tag_cuda='cu126'
     TORCH_URL='https://download.pytorch.org/whl'
     # https://download.pytorch.org/whl/torch/
 
