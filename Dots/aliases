@@ -122,8 +122,8 @@ lsm(){
     # https://unix.stackexchange.com/a/561675
     ## NOT used, but helpful: `column -t` # from https://stackoverflow.com/a/6262979
     # https://unix.stackexchange.com/questions/22218/linux-ls-to-show-only-filename-date-and-size
-
 }
+alias lsdate='lsm'
 
 lzf(){
     # list with fuzzy search
