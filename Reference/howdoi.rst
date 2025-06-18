@@ -451,6 +451,88 @@ I had a boot time < 4s on 16.04. With 18.04, boot-times are consistently around 
     sudo systemctl disable NetworkManager-wait-online.service
 
 
+---
+
+
+Updated (2025)
+--------------
+My ``22.04`` dual NVIDIA GPU rig is a turd lately in boot time.
+Let's trim this bish.
+
+The deetz::
+
+    $ systemd-analyze blame
+    3.294s udisks2.service
+    2.988s apport-autoreport.service
+    2.732s networkd-dispatcher.service
+    2.556s gpu-manager.service
+    1.988s apparmor.service
+    1.781s accounts-daemon.service
+    1.734s nvidia-persistenced.service
+    1.710s tailscaled.service
+    1.644s containerd.service
+    1.384s ModemManager.service
+    1.354s redis-server.service
+    1.324s avahi-daemon.service
+    1.323s bluetooth.service
+    1.305s NetworkManager.service
+    1.299s polkit.service
+    1.299s power-profiles-daemon.service
+    1.289s switcheroo-control.service
+    1.197s systemd-logind.service
+    1.196s thermald.service
+    1.194s wpa_supplicant.service
+    1.044s gdm.service
+     947ms rsyslog.service
+     944ms secureboot-db.service
+     937ms e2scrub_reap.service
+     868ms systemd-tmpfiles-setup.service
+     727ms cups.service
+     709ms systemd-journal-flush.service
+     691ms lm-sensors.service
+     619ms smartmontools.service
+     605ms ssh.service
+     594ms grub-common.service
+     436ms apport.service
+     #(snipped)
+
+     # NVIDIA Driver Version: 575.57.08
+     # CUDA Version: 12.9
+
+
+The (tentative) fixes::
+
+    # Don't need (for LTE stuff):
+    sudo systemctl mask --now ModemManager.service
+
+    # Ubuntu bug reporting service:
+    sudo systemctl mask --now apport.service apport-autoreport.service
+
+    # Hot-plugging USB drive service: boot it on demand (disable, not mask)
+    sudo systemctl disable udisks2.service
+
+    # Don't use this.
+    sudo systemctl disable networkd-dispatcher.service
+
+    # Don't need or dev with Redis server, disable (can be socket act too):
+    sudo systemctl disable redis-server.service
+
+    # Don't need mDNS scheisse (mDNS/AirPrint/Chromecast/ssh hostnames):
+    sudo systemctl mask --now avahi-daemon.service
+
+    # cups socket activ. instead of service:
+    sudo systemctl enable cups.socket
+    sudo systemctl disable cups.service
+
+    #==== SKIP!
+    # Tailscale: convert it to socket activation (starts only on first
+    # Tailscale packet)
+    ## (you must make your own socket unit on buntu), look it up.
+    sudo systemctl enable --now tailscaled.socket
+    sudo disable tailscaled.service
+
+
+
 Black screen on boot
 ====================
 The primary issue is a **hanging black screen** on boot. This phenomenon is apparently **NOT** logged by any of the typical system processes--eg ``systemd-analyze`` won't register this boot lag for any process.
