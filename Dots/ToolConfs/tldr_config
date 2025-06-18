@@ -1,0 +1,3 @@
+# Caching: tldr is a turd on lookup due to default caching settings.
+export TLDR_CACHE_ENABLED=1    # default
+export TLDR_CACHE_MAX_AGE=720  # default: 24 (hours)
