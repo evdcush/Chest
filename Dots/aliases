@@ -488,7 +488,8 @@ alias pipigpu="$piu gpustat nvitop"
 function pipitorch(){
     # Wheel targets.
     tag_cpu='cpu'
-    tag_cuda='cu126'
+    #tag_cuda='cu126'
+    tag_cuda='cu128'
     TORCH_URL='https://download.pytorch.org/whl'
     # https://download.pytorch.org/whl/torch/
 
@@ -502,7 +503,7 @@ function pipitorch(){
     fi
 
     # Install pytorch.
-    pip install -U --no-cache-dir \
+    pip install -U --no-cache-dir --force-reinstall \
     torch \
     torchvision \
     torchaudio \
@@ -858,6 +859,16 @@ alias glog1="git log --graph --decorate --oneline --all"
 alias glogdiffs='git cherry -v master'  # see commit history for just the current branch.
 
 alias glogp='git log -p'  # Show changes over time for a specific file.
+
+function glogtop() {
+    # Print the last N commits; default 7.
+    if [ "$#" -eq 0 ]; then
+        num_commits_show=7
+    else
+        num_commits_show=$1
+    fi
+    git --no-pager log --abbrev-commit --show-signature --max-count $num_commits_show
+}
 
 
 # Navigation
