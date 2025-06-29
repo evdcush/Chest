@@ -1,0 +1,34 @@
+# GET git-lfs OBJECT FROM REPO
+# ----------------------------
+# Clone the repo:
+git clone https://huggingface.co/openai/whisper-large-v2 && \
+cd whisper-large-v2;
+
+# List (the relative paths to) all git-lfs blobs in the repo:
+git-lfs ls-files -n
+git-lfs ls-files --name-only
+
+# List all git-lfs blob paths along with their true human-readable filesize:
+git-lfs ls-files -ns
+git-lfs ls-files --name-only --size
+
+# Fetch the git-lfs objects:
+git-lfs fetch
+
+# Retrieve the contents of the git-lfs objects:
+git-lfs checkout
+
+## "There are multiple git-lfs objects; I only want `foo.bin`"
+git-lfs fetch --include='foo.bin'
+
+##  ALTERNATIVELY  ##
+git-lfs pull --include='foo.bin'  # This will do the fetch and checkout.
+
+## "Oh, I guess `foo.bin` has dependencies to other `git-lfs` objects.
+##  But I only want `foo.bin`, nothing else."
+git-lfs fetch --include='foo.bin' --no-recursive
+
+## "Okay, I actually want `foo.bin` and `bar.h5`"
+git-lfs fetch --include='foo.bin,bar.h5'
+
+
