@@ -32,3 +32,11 @@ git-lfs fetch --include='foo.bin' --no-recursive
 git-lfs fetch --include='foo.bin,bar.h5'
 
 
+
+
+# COPY-PASTE HACK TO DL ALL LFS TARGETS
+# -------------------------------------
+# To mitigate the duplicated filesize from git-lfs on disk,
+# remove the lfs objs dir after each pull.
+## nb: the `--include=<path_to_lfs_blob>` path is from `git-lfs ls-files -n`.
+git-lfs pull --include='tokenizer.json' && rm -rf .git/lfs/objects;
