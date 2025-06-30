@@ -92,6 +92,8 @@ scroll_context_lines = 3
 
 ## default history list format - can also be specified with the --format arg
 # history_format = "{time}\t{command}\t{duration}"
+history_format = "{time}:{directory}: {command}"
+
 
 ## prevent commands matching any of these regexes from being written to history.
 ## Note that these regular expressions are unanchored, i.e. if they don't start
