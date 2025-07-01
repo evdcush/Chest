@@ -34,34 +34,21 @@ path_prepend() {
 
 export XDG_DATA_DIRS="${XDG_DATA_DIRS:+${XDG_DATA_DIRS}:}$HOME/.local/share/flatpak/exports/share"
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="${PATH:+${PATH}:}$PYENV_ROOT/bin"
+
+
 
 # Add to path
 # ===========
 #---- Pyenv
 #path_prepend "$PATH_PYENV"
+#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="${PATH:+${PATH}:}$PYENV_ROOT/bin"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-# PYENV
-#export PYENV_ROOT="$HOME/.pyenv"
-#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-#eval "$(pyenv init -)"
-#eval "$(pyenv virtualenv-init -)"
-
-
 
 ##---- CUDA, cuDNN
 source $HOME/.Dots/gpu_dot
-
-#---- MKL
-#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-#export LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}/usr/local/lib"
-
-#---- rbenv
-#path_append "$PATH_RBENV"
-#eval "$(rbenv init -)"
-
 
 #---- User bin path
 export PATH="${PATH:+${PATH}:}$PATH_USER_BIN"
@@ -93,6 +80,7 @@ export HISTFILESIZE=-1 # No limit to num cmds kept in history file.
 # Preferred editor
 # ---------------
 #export VISUAL=vim
+# sublime
 ## '-n : --new-window; -w : --wait'
 ##  (open in new window and wait for file to close before returning)
 export VISUAL='subl -n -w'
@@ -157,6 +145,15 @@ source $ZSH/oh-my-zsh.sh
 # fzf
 # ===
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# broot
+# =====
+# meh... use when use.
+#br_bin_path="$HOME/.config/broot/launcher/bash/br"
+#if [ -f "$br_bin_path" ]; then
+#    source $br_bin_path
+#fi
+
 
 # tldr
 # ====
