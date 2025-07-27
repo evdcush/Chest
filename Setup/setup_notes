@@ -1815,14 +1815,15 @@ vi __init__.py
 # Colorsublime
 # Cython+
 # ExportHtml
-# Licence Snippets
 # Material Theme
 # Package Control
 # PackageResourceViewer
 # RestructuredText Improved
 # Restructured Text (RST) Snippets
 # SidebarEnhancements
-# UnicodeMath  (WHERE HAVE YOU BEEN MY WHOLE LIFE)
+# Path Tools
+## https://github.com/pjdietz/sublime-path-tools
+
 
 #=============================================================================#
 #             88b           d88  88   ad88888ba     ,ad8888ba,                #
