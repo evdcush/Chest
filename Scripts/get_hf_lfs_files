@@ -20,17 +20,19 @@ fi
 # eg: `sdxl-turbo`
 HF_REPO_NAME=$(basename $HF_REPO_URL)
 PATH_TO_HF_REPO="$PWD/$HF_REPO_NAME"
+_dst="$PWD/$HF_REPO_NAME"
 echo "HF_REPO_NAME: $HF_REPO_NAME"
 
 # Add the target to the log.
 HF_DOWNLOAD_LOG="$HOME/.hf_model_downloads.log"
-echo "$HF_REPO_URL" >> $HF_DOWNLOAD_LOG
+_timestamp=$(date +%Y-%m-%d\ %a\ %H:%M:%S:%z)
+echo "$_timestamp $_dst: $HF_REPO_URL" >> $HF_DOWNLOAD_LOG
 
 # Get the repo `user/repo-name`.
 # eg: `stabilityai/sdxl-turbo`
 HF_REPO_TARGET=$(echo $HF_REPO_URL | cut -d '/' -f4-5)
 
-echo "Now cloning: $HF_REPO_URL into: $PWD/$HF_REPO_NAME"
+echo "Now cloning: $HF_REPO_URL into: $_dst"
 
 # Clone the repo.
 GIT_LFS_SKIP_SMUDGE=1 git clone $HF_REPO_URL
