@@ -224,6 +224,10 @@ sudo apt install -y xapp xapps-common
 # Generally needed.
 sudo apt install -y curl git git-crypt ffmpeg imagemagick python3-pip ssh xclip vim zsh v4l-linux tree
 
+# Change the sudo editor asap so you don't get nano'd
+sudo update-alternatives --install /usr/bin/editor editor /usr/bin/vim 100 --force
+sudo update-alternatives --set editor /usr/bin/vim
+
 # Real shit.
 sudo apt install libboost-all-dev mpich swig liblapack-dev libblas-dev
 sudo apt install gcc-12 g++-12
@@ -1914,7 +1918,11 @@ wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | 
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 
 # Install.
-sudo apt update && sudo apt install -y sublime-text
+#sudo apt update && sudo apt install -y sublime-text
+# UPDATE: their 4200 turbo encabulator build f'cked up the syntax highlighting
+#         all over the place.
+# So specify the previous working build 4189:
+sudo apt update && sudo apt install -y sublime-text=4189
 
 # SETTINGS
 #{
@@ -1999,6 +2007,28 @@ sudo apt install -y libhdf5-dev hdf5-tools
 
 #=== Install pip packages
 pipi --no-deps numpy scipy pytest pytest-benchmark autobahn Twisted vec-noise imageio ordered-set pettingzoo gym pylint psutil py tqdm dill nmmo
+
+
+# TAILSCALE
+# =========
+# Install Tailscale
+curl -fsSL https://tailscale.com/install.sh | sh
+
+# we ate shit hard on this before because of a race condition where
+# tailscale started *before* networkmanager service, fucked up the ipv4 n shit
+# Fix it here:
+# Configure systemd to start after NetworkManager
+echo "Configuring systemd service dependencies..."
+sudo mkdir -p /etc/systemd/system/tailscaled.service.d
+sudo tee /etc/systemd/system/tailscaled.service.d/override.conf > /dev/null << 'EOF'
+[Unit]
+After=NetworkManager.service network-online.target
+Wants=network-online.target
+EOF
+
+# Reload systemd and restart tailscale
+sudo systemctl daemon-reload
+sudo systemctl restart tailscaled
 
 
 #=============================================================================#
