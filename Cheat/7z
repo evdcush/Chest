@@ -1,0 +1,14 @@
+
+
+# Encrypt directory
+7z a foobar.7z dirA dirB -p
+
+# Encrypt a directory AND its filenames:
+## a: add
+## -p: password
+## -mhe:
+## -m  he = on
+## │   │    └─ turn header encryption on (1/true/on)
+## │   └─ “he” → header encryption
+## └─ introduce a method/option
+7z a -p -mhe=on foobar.7z dirA dirB foo.txt
