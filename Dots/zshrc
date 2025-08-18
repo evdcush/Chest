@@ -1,5 +1,4 @@
 #zmodload zsh/zprof
-
 #=============================================================================#
 #                                                                             #
 #                      ██████   █████  ████████ ██   ██                       #
@@ -46,6 +45,9 @@ export PATH="${PATH:+${PATH}:}$PATH_USER_BIN"
 #---- nltk data
 export NLTK_DATA="$HOME/Data/nltk_data"
 
+#---- ollama stuff
+export OLLAMA_CONTEXT_LENGTH=8192
+
 
 #------------------------------------------------------------------------------
 
@@ -61,6 +63,8 @@ export NLTK_DATA="$HOME/Data/nltk_data"
 
 # MISC CONF
 # =========
+
+
 
 # hist
 HISTORY_IGNORE="(ls|cd|pwd|exit|cd ..|..|...|l|lk)"
@@ -98,10 +102,10 @@ plugins=(
     aliases  # use via cmd `als`
     colored-man-pages
     command-not-found
-    extract
+    #extract
     fzf_flatpak_widget
     #forgit
-    gunstage
+    #gunstage
     history
     tldr
     zshmarks
@@ -208,3 +212,4 @@ export GPG_TTY=$(tty)
 . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"
+elap
