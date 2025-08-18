@@ -1,10 +1,29 @@
-# Install pdfjam (part of the texlive pkg)
-# --------------
-sudo apt intall --no-install-recommends --no-install-suggests texlive-extra-utils
+#==================================  tools  ==================================#
 
-# Crop PDF margins
-# ----------------
+# Install pdfjam (part of the texlive pkg)
+# ----------------------------------------
+## pdfjam provides many other aliased functions: pdfjoin, pdftoppm, etc.
+sudo apt install --no-install-recommends --no-install-suggests texlive-extra-utils
+
+## others
+sudo apt install -y pandoc wkhtmltopdf weasyprint inkscape
+
+
+# PDF cropping
+# ============
+## primary tool: pdfCropMargins (primarily CLI, but also has GUI)
 pip install -U pdfCropMargins
+
+## GUI app: PDF Arranger
+##   honestly, this makes life so much easier here
+##   https://github.com/pdfarranger/pdfarranger
+flatpak install flathub com.github.jeromerobert.pdfarranger
+
+
+#==================================  usage  ==================================#
+
+#-----------------------------------  CROP  ----------------------------------#
+
 pdf-crop-margins -s -u myfile.pdf
 
 # Examples
@@ -53,8 +72,10 @@ pdfcropmargins --writeCropDataToFile galaxybrain2049.txt GalaxyBrain-2049.pdf
 ### Crop that shit (adding padding, ESPECIALLY Left & RIGHT!):
 pdfcropmargins --uniform -ssp 80 20 560 730 --pages 2-56 Thomas\ et\ al\ -\ 2024\ -\ STAR.pdf
 
-DID NOT WORK! STILL HAVEN'T GOTTEN THIS BS DOWN!
+DID NOT WORK! STILL HAVEN'T GOTTEN THIS BS DOWN!  # <--- UPDATE: flatpak run com.github.jeromerobert.pdfarranger
 
+
+#------------------------------  Extract, Join  ------------------------------#
 
 # Extract PDF pages
 # -----------------
@@ -70,7 +91,16 @@ pdfjoin file1 file2 2- file3 '3,7-9,14-' -o joined.pdf
 # what actually worked (pdfjoin no like no spec page for file1)
 pdfjoin pnet2.pdf 1 pnet2_full.pdf 2- -o pointnet2.pdf
 
+# Export PDF page as an image
+# ---------------------------
+# Use `pdftoppm` (from apt pkg `poppler-utils`).
+# Export the first page (-f 1), and only the first page (-l 1) of a pdf
+# as a png (-png) or (-jpeg) image, output as `foo-001.png`
+pdftoppm -f 1 -l 1 -png foo.pdf foo
 
+
+
+#-----------------------------------  hax  -----------------------------------#
 
 # Remove a watermark
 # ------------------
@@ -86,14 +116,8 @@ sed -e "s/Downloaded from http:\/\/direct.mit.edu\/evco\/article-pdf\/31\/2\/81\
 pdftk unwatermarked_evco_a_00325.pdf output fixed_evco_a_00325.pdf
 
 
-# Export PDF page as an image
-# ---------------------------
-# Use `pdftoppm` (from apt pkg `poppler-utils`).
-# Export the first page (-f 1), and only the first page (-l 1) of a pdf
-# as a png (-png) or (-jpeg) image, output as `foo-001.png`
-pdftoppm -f 1 -l 1 -png foo.pdf foo
 
-
+#==============================  TOOL-SPECIFIC  ==============================#
 
 # PANDOC
 # ======
