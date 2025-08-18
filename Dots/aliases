@@ -26,6 +26,11 @@ alias nvidia_driver_ver='nvidia-smi --query-gpu=driver_version --format=csv,nohe
 # python -c 'import torch; assert torch.cuda.is_available()'
 
 
+# Buntu/gnome keyboard shortcuts
+# ==============================
+alias kbhotkeys='dconf dump /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/'
+
+
 
 #=============================================================================#
 #                  ███████╗██╗  ██╗███████╗██╗     ██╗                        #
@@ -142,23 +147,20 @@ function duh() { du -h --max-depth=1 $1 | sort -h }
 # ----------
 alias findzf='find * -type f | fzf'
 
-farg() {
-    sels=( "${(@f)$(fd "${fd_default[@]}" "${@:2}"| fzf)}" )
-    test -n "$sels" && print -z -- "$1 ${sels[@]:q:q}"
+cdf() {
+    # fuzzy list/search files from cur path, cd into the selected one.
+    local file
+    local dir
+    file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
 }
 
-# cdf - cd into the directory of the selected file
-cdf() {
-   local file
-   local dir
-   file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
-}
 
 fbr() {
-  local branches branch
-  branches=$(git --no-pager branch -vv) &&
-  branch=$(echo "$branches" | fzf +m) &&
-  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+    # show/fuzz local branches and check it out
+    local branches branch
+    branches=$(git --no-pager branch -vv) &&
+    branch=$(echo "$branches" | fzf +m) &&
+    git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
 
 # fshow - git commit browser
@@ -569,6 +571,15 @@ https://github.com/cupy/cupy/releases/tag/v7.8.0"
 #=============================================================================#
 # All aliases that use installed packages
 
+# Archiving utils
+# ===============
+
+# zip
+alias zipls='unzip -l'
+
+
+# --------------------------------------------------------
+
 #----- rip
 # Safe alternative to `rm`.
 alias rem='rip'
@@ -622,10 +633,15 @@ alias ytlsfmt='yt-dlp --list-formats'
 # Video
 ## A simplified version of my existing `dlvid` func; no embeds.
 alias dlvd='yt-dlp -f bestvideo+bestaudio -o "%(channel)s - %(title)s.%(ext)s"'
+# same thing, but no assumption on video origin being YT:
+alias dlv='yt-dlp -f bestvideo+bestaudio'
 
 # Music
 alias dlmus='yt-dlp -x --audio-quality 0 -o "%(channel)s - %(title)s.%(ext)s"'
 alias dlmus_thumb='yt-dlp -x --audio-quality 0 --embed-thumbnail -o "%(title)s.%(ext)s"'
+
+# audio
+alias dlaudio='yt-dlp -f bestaudio --extract-audio --audio-format flac --audio-quality 0'
 
 
 # FART!
@@ -693,15 +709,16 @@ function expage(){
 
 
 #---- vpn
-spvpn='sudo pvpn'
-alias vp="$spvpn"
-alias vpi="$spvpn --status"
-alias vpc="$spvpn --connect"
-alias vpd="$spvpn --disconnect"
-alias vprc="$spvpn --reconnect"
-alias vpcc="$spvpn --country-connect"
-alias vpjp="$spvpn --country-connect JP udp"
-alias vpcf="$spvpn --fastest-connect"
+### (AUG25): DON'T USE
+#spvpn='sudo pvpn'
+#alias vp="$spvpn"
+#alias vpi="$spvpn --status"
+#alias vpc="$spvpn --connect"
+#alias vpd="$spvpn --disconnect"
+#alias vprc="$spvpn --reconnect"
+#alias vpcc="$spvpn --country-connect"
+#alias vpjp="$spvpn --country-connect JP udp"
+#alias vpcf="$spvpn --fastest-connect"
 
 #---- journal
 alias jrnl=" jrnl" # alias for preventing hist from logging jrnl
@@ -716,17 +733,19 @@ alias perc='percollate pdf'
 
 #---- zsh-marks
 alias g="jump"
-alias s="bookmark"
-alias d="deletemark"
-alias p="showmarks"
+alias s="bookmark"   # save
+alias d="deletemark" # del
+alias p="showmarks"  # show
 
 #---- tree
 #  -d    List directories only.
-#  -h    Print the size in a more human readable way.
 #  -s    Print the size in bytes of each file.
+#  -h    Print the size in a more human readable way.
 #  -L i  Descend only i directories deep.
 #  -A    Print ANSI lines graphic indentation lines.
 #  -F    Appends '/', '=', '*', '@', '|'  or '>' as per ls -F.
+#  -f    Print the full path prefix for each file.
+#  -i    Don't print indentation
 alias tre='tree --dirsfirst -AF'  # 'DEFAULT' tree command. (tried alias `ki`, before but of course never remember)
 alias treed='tree -dA'  # Only show dirs.
 alias treesz='tree --dirsfirst -s -hAF'  # Show filesizes for everything.
@@ -734,21 +753,22 @@ alias treesz='tree --dirsfirst -s -hAF'  # Show filesizes for everything.
 #---- Copy
 alias clip="xclip -selection clipboard"
 #alias clipo="xclip -o -sel clip"
-alias delclip="xclip -o | xargs sudo rm -rf"
+#alias delclip="xclip -o | xargs sudo rm -rf"  # wow this one's pretty risky dawg wtf
+#alias delclip="xclip -o | xargs sudo rm -rfI"  # at least confirm before
 alias clipo='xclip -o'
-alias pst='xclip -o >'
 
-alias symble="echo '≤' | xclip -sel clip"
-alias symbge="echo '≥' | xclip -sel clip"
+#alias symble="echo '≤' | xclip -sel clip"  # lol truly necessary?
+#alias symbge="echo '≥' | xclip -sel clip"  #
 
 # copy previous command (is this really the only sol? stupidly verbose)
 # if you dont translate, there is newline?
 # if you dont cut, there is CMD number
 # if you dont selection clipboard, xclip copies to who the f knows
-alias cph='echo $(fc -l -1) \
+alias cplast='echo $(fc -l -1) \
 | cut -d" " -f2- \
 | tr -d "\n" \
 | xclip -selection clipboard'
+
 
 #---- joplin
 # alias get_jop="wget -O - \
