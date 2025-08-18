@@ -30,6 +30,8 @@ This all seems to be proprietary stuff...
 
 - [**xwmx/nb**: CLI and local web plain text notetaking, bookmarking, and archiving with linking, tagging, filtering, search, Git versioning & syncing, Pandoc conversion, + more, in a single portable script.](https://github.com/xwmx/nb)
 
+
+
 ### Read Later
 
 - **💀 DEAD 💀**[🌟**omnivore-app/omnivore**: Omnivore is a complete, open source read-it-later solution for people who like reading.](https://github.com/omnivore-app/omnivore)
@@ -192,13 +194,7 @@ And my goodness, there are a lot of markdown editors. I won't list them all here
 
 - [GitHub - jackyzha0/quartz: 🌱 a fast, batteries-included static-site generator that transforms Markdown content into fully functional websites](https://github.com/jackyzha0/quartz)
 
-
-
-
-
 ----
-
-
 
 # Blog
 
@@ -214,10 +210,6 @@ And my goodness, there are a lot of markdown editors. I won't list them all here
 
 - foo
 
-
-
-
-
 ## Inspo:
 
 - (we have a bunch of bookmarks here for bloginspos)
@@ -225,8 +217,6 @@ And my goodness, there are a lot of markdown editors. I won't list them all here
 - Andy guy
 
 - janus guy
-
-
 
 ---
 
@@ -286,6 +276,20 @@ Nothing else comes close.
 - [gildas-lormeau/SingleFile: Web Extension for saving a faithful copy of a complete web page in a single HTML file](https://github.com/gildas-lormeau/SingleFile)
 - [Y2Z/monolith: ⬛️ CLI tool for saving complete web pages as a single HTML file](https://github.com/Y2Z/monolith)
 
+
+
+## EXTRACTORS
+
+<mark>Shit that do: **URL** --> {`html`, `pdf`, `md`, `txt`, etc.}</mark>
+
+
+
+- Soft/apps I've used that have extractors (varying from "not bad" to "almost perfect"):
+   - [GitHub - patchedsoul/news-flash](https://github.com/patchedsoul/news-flash)
+   -
+
+
+
 ---
 
 # Social
@@ -311,13 +315,7 @@ DBs. Also, spreadsheets stuff (well, mostly "smart tables").
       - https://github.com/bram2w/baserow
       - https://github.com/nocodb/nocodb
 
-
-
-
-
 ----
-
-
 
 # "Productivity"
 
@@ -337,11 +335,7 @@ DBs. Also, spreadsheets stuff (well, mostly "smart tables").
 
 -
 
-
-
 ## UI or Tool thing
-
-
 
 - Widget menu thing:
 
