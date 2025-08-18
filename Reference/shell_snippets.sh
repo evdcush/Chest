@@ -101,22 +101,6 @@ sort file | uniq -d  # duplicates only
 hostname
 #-----> T4
 
-
-# mv stuff
-# -------------------
-#====== Rename file, without retyping dir path:
-mv very/long/path/to/filename.{old,new}
-#----  vs
-mv very/long/path/to/filename.old very/long/path/to/filename.new
-
-#==== move multiple things
-# of course, typical wildcard match
-mv *.ipynb notebook_dir/
-# but for non-matching...
-mv -t DESTINATION file1 file2 file3 ...
-mv file1 file2 file3 -t DESTINATION
-
-
 # Manipulating Strings
 # --------------------
 str=https://github.com/willsALMANJ/Zutilo
@@ -148,6 +132,49 @@ sudo timedatectl set-timezone Asia/Tokyo # painless
 # painful way
 sudo unlink /etc/localtime
 sudo ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+
+
+
+
+#=================================  pathing  =================================#
+
+# readlink
+# ========
+# get abspath of something (file or dir)
+# --------------------------------------
+# (nb: this is very similar to the non-coreutils readpath)
+#
+## ~/.cache/MyFooDir/
+## ├── ayy.txt
+## └── foo.pdf -> /home/foobar/Documents/foo.pdf
+# in ~/.cache
+#==== get abspath to dir
+readlink -f MyFooDir
+# /home/foobar/.cache/MyFooDir
+#==== get abspath to normal file
+readlink -f MyFooDir/ayy.txt
+# /home/foobar/.cache/MyFooDir/ayy.txt
+#==== get abspath to a symlinked file
+readlink -f MyFooDir/foo.pdf
+# /home/foobar/Documents/foo.pdf
+
+dirname
+
+
+
+# mv stuff
+# -------------------
+#====== Rename file, without retyping dir path:
+mv very/long/path/to/filename.{old,new}
+#----  vs
+mv very/long/path/to/filename.old very/long/path/to/filename.new
+
+#==== move multiple things
+# of course, typical wildcard match
+mv *.ipynb notebook_dir/
+# but for non-matching...
+mv -t DESTINATION file1 file2 file3 ...
+mv file1 file2 file3 -t DESTINATION
 
 
 
