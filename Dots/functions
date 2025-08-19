@@ -28,6 +28,71 @@ function lnpyg(){
     ln -sf $PYGSRC $PYGDST
 }
 
+# Memento Mori
+# ============
+function elap(){
+    _pycode='
+import os, subprocess
+from datetime import datetime, timedelta
+
+n = datetime(*eval(os.environ.get("LANDMARKDATE", "(1969,4,20)")))
+b = datetime(*eval(os.environ.get("INITDATE", "(1969,4,20)")))
+
+# ANSI colors
+RED     = "\033[91m"
+GREEN   = "\033[92m"
+YELLOW  = "\033[93m"
+BLUE    = "\033[94m"
+MAGENTA = "\033[95m"
+CYAN    = "\033[96m"
+WHITE   = "\033[97m"
+
+# === ANSI Text Styles ===
+RESET         = "\033[0m"
+BOLD          = "\033[1m"
+FAINT         = "\033[2m"
+ITALIC        = "\033[3m"
+UNDERLINE     = "\033[4m"
+BLINK         = "\033[5m"
+INVERSE       = "\033[7m"
+HIDDEN        = "\033[8m"
+STRIKETHROUGH = "\033[9m"
+
+# n
+now = datetime.now()
+delta_n = now - n
+days = delta_n.days
+hours = delta_n.seconds // 3600
+minutes = (delta_n.seconds // 60) % 60
+seconds = delta_n.seconds % 60
+
+elapsed_str = f"{BOLD}{RED}LANDMARK: {days} DAYS, {hours} HOURS {minutes} MINUTES{RESET}"
+
+
+# b
+delta_b = now - b
+y = delta_b.days / 365.2425
+useful = 63
+percent_used = y / useful
+y_str = f"{BOLD}{YELLOW}init: {y:.7f}; {percent_used:.2%} expended{RESET}"
+
+boot_time_str = subprocess.check_output(["uptime", "-s"], text=True).strip()
+
+# updtime
+with open("/proc/uptime", "r") as upfile:
+    up_sec = float(upfile.readline().split()[0])
+up_h, up_m, _ = str(timedelta(seconds=up_sec)).split(":")
+uptime = f"Uptime: {up_h}h {up_m}m"
+
+# REMIND
+print(f"{BOLD}{CYAN}TIME SINCE:{RESET}")
+print(elapsed_str)
+print(y_str)
+print(uptime)
+print()
+'
+    python -c "$_pycode"
+}
 
 
 #=============================================================================#
@@ -403,6 +468,7 @@ function c() {
         builtin cd "$dir" &> /dev/null
     done
 }
+
 
 
 
