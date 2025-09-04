@@ -152,3 +152,67 @@ deeplists.tex:
    \renewlist{enumerate}{enumerate}{9}
 ```
 
+
+
+
+
+
+------------------------------------------------------------------------------
+
+
+
+# on fucking printing to paper, okular always massive padding and shit
+
+
+
+
+----
+
+## self notes to fucking A/B test god-damned okular printing
+
+> PDF Options:
+> Scale Mode:
+"fit to full page"
+
+> advanced > Print Scaling
+None
+
+
+
+
+
+
+
+
+
+---
+
+
+#==================================================================================================#
+#   _______   _    _   _____    _____    __          __   ____    _____    _  __  ______   _____   #
+#  |__   __| | |  | | |_   _|  / ____|   \ \        / /  / __ \  |  __ \  | |/ / |  ____| |  __ \  #
+#     | |    | |__| |   | |   | (___      \ \  /\  / /  | |  | | | |__) | | ' /  | |__    | |  | | #
+#     | |    |  __  |   | |    \___ \      \ \/  \/ /   | |  | | |  _  /  |  <   |  __|   | |  | | #
+#     | |    | |  | |  _| |_   ____) |      \  /\  /    | |__| | | | \ \  | . \  | |____  | |__| | #
+#     |_|    |_|  |_| |_____| |_____/        \/  \/      \____/  |_|  \_\ |_|\_\ |______| |_____/  #
+#                                                                                                  #
+#==================================================================================================#
+
+
+
+evince
+
+
+page setup:
+
+- pages per side: 4
+- scale: 100%
+
+Page Handling:
+- Page Scaling: None
+(nothing else checked)
+
+
+Advanced:
+General > Print Scaling:
+None  (why the fuck is there yet another scaling shit)
