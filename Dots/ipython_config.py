@@ -39,10 +39,11 @@ c.InteractiveShellApp.exec_lines = [
     'import os',
     'import random',
     'from pathlib import Path',
-    'import numpy as np',
-    'import torch',
-    'from torch import nn',
-    'import torch.nn.functional as F',
+    'import pandas as pd',
+    #'import numpy as np',
+    #'import torch',
+    #'from torch import nn',
+    #'import torch.nn.functional as F',
 ]
 
 ## A list of dotted module names of IPython extensions to load.
