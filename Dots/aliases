@@ -30,6 +30,13 @@ alias nvidia_driver_ver='nvidia-smi --query-gpu=driver_version --format=csv,nohe
 # ==============================
 alias kbhotkeys='dconf dump /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/'
 
+# sys info
+# ========
+## this is not a builtin/core "system" tool, but it's easier to use than, etc..:
+## uname -a; lscpu; lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL; lspci, lsusb;
+alias ffetch='fastfetch --logo none'  # disable the stupid logo shit
+#alias neofetch=ffetch      # eventuall these are needed I guess
+#alias screenfetch=ffetch   # eventuall these are needed I guess
 
 
 #=============================================================================#
@@ -42,6 +49,9 @@ alias kbhotkeys='dconf dump /org/gnome/settings-daemon/plugins/media-keys/custom
 #                                                                             #
 #=============================================================================#
 # All aliases that use coreutils and stuff is in this section
+
+#==== alias itself
+alias aliasf='alias | grep -i'
 
 # Process stuff
 # =============
@@ -64,7 +74,7 @@ alias md='mkdir -p'   # mkdir all non-existing dirs in path
 alias cdln='cd -P'    # cd to physical path rather than symlinked
 
 # File stuff
-# ==========
+# =========
 alias countlines='wc --lines'
 alias countwords='wc --words'
 alias countchars='wc --chars'
@@ -363,9 +373,11 @@ $piu numpy scipy scikit-learn; \
 #gym_stuff="pybullet 'gym[atari, box2d, classic_control]' gym-super-mario-bros"
 gym_stuff='gym gymnasium'
 
-# Stable diffusion / Generative etc.....
+
+# Audio/STT/TTS/etc. voice
+# ========================
 #whisper='yt-whisper'  # pip install git+https://github.com/m1guelpf/yt-whisper.git
-sound_stuff='tts'
+sound_stuff='tts whisperlivekit'
 
 
 
@@ -648,9 +660,15 @@ alias dlaudio='yt-dlp -f bestaudio --extract-audio --audio-format flac --audio-q
 # =====
 alias fansi='fart -f ansi_regular'
 alias fp='fart -p'
-alias fop='fart -op -l "-"'
+alias fop='fart -op -l "█"'
 
-
+#alias blok='#███████████████████████████████████████████████████████████████████████████████#'
+blok() {
+    _charline='#███████████████████████████████████████████████████████████████████████████████#'
+    echo $_charline
+    echo $_charline | xclip -selection clip
+    echo '(copied to clipboard)'
+}
 
 # DE
 # ==
@@ -837,6 +855,10 @@ alias bth='bat -pP -r ":10"'  # like 'head'
 alias frun='flatpak run'
 alias flup='flatpak update'
 alias flist='flatpak list --app --columns=name,application,description,version'
+
+
+#==== zola
+alias zola='flatpak run org.getzola.zola'
 
 
 
