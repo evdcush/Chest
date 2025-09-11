@@ -264,7 +264,26 @@ sudo dpkg -i software.deb \
 
 https://github.com/fastfetch-cli/fastfetch/releases/download/2.30.1/fastfetch-linux-amd64.deb
 
-sudo apt install -y aria2 delta duf jq neofetch screenfetch tree
+# Handy (essential, actually) Stuff
+# =================================
+sudo apt install -y \
+aria2 delta duf jq tree \
+espeak \
+"mbrola-us*" \
+"mbrola-sw*" \
+"mbrola-jp*" \
+"mbrola-fr*" \
+"mbrola-en*" \
+"mbrola-de*" \
+"mbrola-nl*"
+
+# NB: espeak has a bunch of voices that require mbrola*, but this isn't
+# mentioned or installed as a dep, so you have to install them!
+
+#neofetch screenfetch ## lol naw dawg, both *fetchs are dead bra
+## ---> it's just fastfetch now; SEE ABOVE
+##      (and the usu pleb core/builtins: uname, lsb_release, lscpu, lsblk, lspci, lsusb etc.)
+
 
 # Git
 # ===
@@ -999,7 +1018,7 @@ sudo apt install -y htop stacer
 wget https://github.com/ClementTsang/bottom/releases/download/0.6.8/bottom_0.6.8_amd64.deb && sudo dpkg -i bottom_0.6.8_amd64.deb
 
 #== File-system
-sudo apt install -y exfat-fuse exfat-utils f2fs-tools ntfs-3g zfs-fuse zfsutils-linux
+sudo apt install -y exfat-fuse exfat-utils f2fs-tools ntfs-3g zfs-fuse zfsutils-linux iotop rsync udisks2 pv sysstat
 
 #== Archive
 sudo apt install -y p7zip-full unar
@@ -1979,6 +1998,26 @@ sudo apt update && sudo apt install -y sublime-text=4189
 # VSCode
 # ======
 # whatever, just download it and sync, its deb does everything for you.
+## UPDATE: SEPT 2025
+## - vscode keeps shoving copilot down your throat
+## - i never liked the ui changes
+## - so now we have to install the last known version of code that wasn't
+##   turbo-ultra copilot and UI garb
+## see: https://code.visualstudio.com/updates/v1_81
+##   - this is July 2023 release
+##   - AFTER THIS, THEY CHANGE UI, COPILOT GARB, ETC.
+##
+#====  install the version
+sudo apt install code=1.81.1-1691620686
+
+# then, hold it from updates
+sudo apt-mark hold code
+
+# NB: you may need to now also install and deal with extension issues
+#     after downgrading the vscode py extension whined
+#     and jupyter notebooks are borked
+#     but you can click to install another ver
+
 
 #=============================================================================#
 #                                                                             #
@@ -2233,6 +2272,62 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-5 "['<Primary><
 #   default binding: ['<Super>p', 'XF86Display']
 gsettings set org.gnome.mutter.keybindings switch-monitor "[]"
 
+
+#=========  nautilus is garb
+# you cannot configure these preferences
+# nautilus won't respect or remember them
+# they get reset every dir
+# so we have to hard code this....
+
+# Here's how you see the shit:
+gsettings list-recursively org.gnome.nautilus
+# org.gnome.nautilus.compression default-compression-format 'zip'
+# org.gnome.nautilus.icon-view captions ['date_modified', 'date_created', 'size']
+# org.gnome.nautilus.icon-view default-zoom-level 'larger'
+# org.gnome.nautilus.icon-view text-ellipsis-limit ['3']
+# org.gnome.nautilus.list-view default-column-order ['name', 'size', 'type', 'owner', 'group', 'permissions', 'mime_type', 'where', 'date_modified', 'date_modified_with_time', 'date_accessed', 'date_created', 'recency', 'starred']
+# org.gnome.nautilus.list-view default-visible-columns ['name', 'size', 'date_modified', 'starred']
+# org.gnome.nautilus.list-view default-zoom-level 'small'
+# org.gnome.nautilus.list-view use-tree-view true
+# org.gnome.nautilus.preferences always-use-location-entry false
+# org.gnome.nautilus.preferences click-policy 'double'
+# org.gnome.nautilus.preferences default-folder-viewer 'list-view'
+# org.gnome.nautilus.preferences default-sort-in-reverse-order false
+# org.gnome.nautilus.preferences default-sort-order 'name'
+# org.gnome.nautilus.preferences fts-enabled true
+# org.gnome.nautilus.preferences install-mime-activation true
+# org.gnome.nautilus.preferences mouse-back-button 8
+# org.gnome.nautilus.preferences mouse-forward-button 9
+# org.gnome.nautilus.preferences mouse-use-extra-buttons true
+# org.gnome.nautilus.preferences open-folder-on-dnd-hover false
+# org.gnome.nautilus.preferences recursive-search 'local-only'
+# org.gnome.nautilus.preferences search-filter-time-type 'last_modified'
+# org.gnome.nautilus.preferences search-view 'list-view'
+# org.gnome.nautilus.preferences show-create-link true
+# org.gnome.nautilus.preferences show-delete-permanently false
+# org.gnome.nautilus.preferences show-directory-item-counts 'local-only'
+# org.gnome.nautilus.preferences show-hidden-files false
+# org.gnome.nautilus.preferences show-image-thumbnails 'local-only'
+# org.gnome.nautilus.preferences tabs-open-position 'after-current-tab'
+# org.gnome.nautilus.preferences thumbnail-limit uint64 50
+# org.gnome.nautilus.preferences use-experimental-views false
+# org.gnome.nautilus.window-state initial-size (1752, 865)
+# org.gnome.nautilus.window-state maximized false
+# org.gnome.nautilus.window-state sidebar-width 188
+# org.gnome.nautilus.window-state start-with-location-bar true
+# org.gnome.nautilus.window-state start-with-sidebar true
+gsettings list-recursively org.gnome.nautilus.list-view
+org.gnome.nautilus.list-view default-column-order ['name', 'size', 'type', 'owner', 'group', 'permissions', 'mime_type', 'where', 'date_modified', 'date_modified_with_time', 'date_accessed', 'date_created', 'recency', 'starred']
+org.gnome.nautilus.list-view default-visible-columns ['name', 'size', 'date_modified', 'starred']
+org.gnome.nautilus.list-view default-zoom-level 'small'
+org.gnome.nautilus.list-view use-tree-view true
+
+#==== Now hardcode it because it's GNOME
+# cols to shown
+#"['name','size','date_modified']"
+gsettings set org.gnome.nautilus.list-view \
+default-visible-columns \
+"['name', 'size', 'type', 'date_modified_with_time', 'starred']"
 
 
 # Bluetooth (or other settings in gnome gui):
