@@ -95,6 +95,33 @@ print()
 }
 
 
+
+function deadl(){
+    # timer for optional($1) minutes (default 10m) with `termdown`
+    # deps:
+    #   pip install -U termdown
+    #   sudo apt install -y espeak
+    #   sudo apt install -y konsole
+    # just to make life easy, just get the abspath to the command
+    termdown_bin_path=$(which termdown)
+    # get countdown min from stdin if provided; default 10m
+    _deadline="${1:-10}m"
+    # termdown args ref:
+    #   --critical N:    Draw final N seconds in red and announce them
+    #   --font FONT:     figlet font to use
+    #   --blink:         flash terminal at end of countdown
+    #   --voice VOICE:   spoken countdown (at fixed intervals; per s from crit)
+    #   --no-text-magic: Don't try to replace non-ASCII characters
+    _termdown_args="$_deadline \
+    --critical 60 \
+    --font roman \
+    --blink \
+    --voice en-uk-wmids \
+    --no-text-magic"
+    konsole -e "$termdown_bin_path $_termdown_args"
+    #konsole -e "$termdown_bin_path $_deadline -c 60 -f roman -b -v en-uk-wmids --no-text-magic"
+}
+
 #=============================================================================#
 #                                                                             #
 #           ,ad8888ba,          db         88           88                    #
@@ -615,13 +642,33 @@ function find_and_remove_all(){
 
 # Shortcut find
 #   includes file modified date.
-f() {
+function f() {
     if [ "$#" -gt 1 ]; then
         #==== find from the path specified
-        find "$1" -iname "*$2*" -printf '%TY-%Tm-%Td %TH:%TM:%TS %p\n' | sed 's/\.[0-9]*/ /'    #| cut -d. -f1
+        find "$1" \
+        -path /proc -prune -o \
+        -path /sys  -prune -o \
+        -path /dev  -prune -o \
+        -path /run  -prune -o \
+        -path /tmp  -prune -o \
+        -path /boot -prune -o \
+        -path /var/spool -prune -o \
+        -iname "*$2*" \
+        -printf '%TY-%Tm-%Td %TH:%TM:%TS %p\n' 2>/dev/null | \
+        sed 's/\.[0-9]*/ /'    #| cut -d. -f1
     else
         #==== find from root
-        sudo find / -iname "*$1*" -printf '%TY-%Tm-%Td %TH:%TM:%TS %p\n' | sed 's/\.[0-9]*/ /'  #| cut -d. -f1
+        sudo find / \
+        -path /proc -prune -o \
+        -path /sys  -prune -o \
+        -path /dev  -prune -o \
+        -path /run  -prune -o \
+        -path /tmp  -prune -o \
+        -path /boot -prune -o \
+        -path /var/spool -prune -o \
+        -iname "*$1*" \
+        -printf '%TY-%Tm-%Td %TH:%TM:%TS %p\n' 2>/dev/null | \
+        sed 's/\.[0-9]*/ /'  #| cut -d. -f1
     fi
 }
 
