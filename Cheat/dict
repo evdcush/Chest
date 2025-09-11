@@ -1,0 +1,20 @@
+
+# show avail dictionaries (databases)
+dict -D
+
+Databases available:
+ gcide          The Collaborative International Dictionary of English v.0.48
+ wn             WordNet (r) 3.0 (2006)
+ vera           V.E.R.A. -- Virtual Entity of Relevant Acronyms (August 2020)
+ fd-eng-jpn     English-日本語 (にほんご) FreeDict+WikDict dictionary ver. 2020.10.04
+ moby-thesaurus Moby Thesaurus II by Grady Ward, 1.0
+ fd-eng-lat     English-Latin FreeDict Dictionary ver. 0.1.2
+
+
+# tool to convert a file into a dict db
+apt-cache show dictfmt
+
+utility to format a file for use by a dictd server
+This package provides dictfmt. This utility can convert an input file
+to a dictionary database that conforms to the DICT protocol, and create
+a corresponding index file.
