@@ -51,7 +51,11 @@ alias ffetch='fastfetch --logo none'  # disable the stupid logo shit
 # All aliases that use coreutils and stuff is in this section
 
 #==== alias itself
-alias aliasf='alias | grep -i'
+function aliasf(){
+    #="echo 'alias | grep -i'
+    alias | grep -i $1;
+    echo 'hint: try `als` (omz ext you have enabled)'
+}
 
 # Process stuff
 # =============
@@ -80,6 +84,17 @@ alias countwords='wc --words'
 alias countchars='wc --chars'
 
 
+function cprd() {
+    _dst=$1
+    _src=$2
+    cp -r $_src $_dst;
+}
+
+function cpd() {
+    _dst=$1
+    _src=$2
+    cp $_src $_dst;
+}
 
 # Path stuff
 # ==========
@@ -278,7 +293,7 @@ alias ipy='ipython'
 alias jnb="jupyter notebook"
 #alias jlab='jupyter lab'
 alias nbscrub='nbstripout --keep-output --drop-empty-cells'
-alias purgepycache="find . -name '__pycache__' -exec rm -rf {} +"
+#alias purgepycache="find . -name '__pycache__' -exec rm -rf {} +"
 
 # notebook extensions
 #  - jupyter_dashboards  <---- has NOT worked yet (maybe conflict with nbext?)
@@ -293,7 +308,8 @@ alias iemb="echo 'from IPython import embed; embed();' \
 | xclip -sel clip"
 
 # Cython directives
-alias cyd="echo '# distutils: language = c++\n# cython: language_level=3' | xclip"
+# +cruft (been a damn minute since we did cython)
+#alias cyd="echo '# distutils: language = c++\n# cython: language_level=3' | xclip"
 
 # Completely legitimately download educational material.
 course_lecture_dl='coursera-dl khan-dl'
@@ -336,7 +352,7 @@ alias pipupdate="pip list --outdated --format=freeze \
 # work stuff
 cv='opencv-python imageio scikit-video open3d-python pycocotools albumentations'
 
-data_stack='fiftyone "docarray[full]"' #"docarray[torch,image]"'  # docarray is a data format
+data_stack='fiftyone' # docaray is dead "docarray[full]"' #"docarray[torch,image]"'  # docarray is a data format
 tracking='lvis motmetrics'
 
 experiment_tools='tensorboard tensorboardX hydra-core omegaconf wandb fiddle'
@@ -689,7 +705,7 @@ alias subw='subl --new-window --wait'      # open file and wait on edits
 alias ssubw='sudo subl -new-window --wait' # w/ sudo; eg `ssubw /etc/profile`
 
 #---- quarto
-alias qrt='quarto'
+#alias qrt='quarto'  # +cruft (don't use anymore)
 
 #---- npm
 alias npmls='npm list -g --depth 0'  # list all globally installed packages
