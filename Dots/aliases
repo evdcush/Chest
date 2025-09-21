@@ -519,7 +519,8 @@ function pipitorch(){
     # Wheel targets.
     tag_cpu='cpu'
     #tag_cuda='cu126'
-    tag_cuda='cu128'
+    #tag_cuda='cu128'
+    tag_cuda='cu129'
     TORCH_URL='https://download.pytorch.org/whl'
     # https://download.pytorch.org/whl/torch/
 
