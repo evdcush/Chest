@@ -151,6 +151,7 @@ source $ZSH/oh-my-zsh.sh
 # tldr
 # ====
 source $DIR_DOTS/ToolConfs/tldr_config
+source $DIR_DOTS/ToolConfs/aider_conf
 
 
 # Source aliases and funcs
@@ -188,7 +189,7 @@ export PIP_DISABLE_PIP_VERSION_CHECK=1
 
 # Stuff automatically added by other software:
 
-export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+export N_PREFIX="$HOME/.n-node_env_mgr"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 #zprof
 
@@ -212,3 +213,4 @@ export GPG_TTY=$(tty)
 
 eval "$(atuin init zsh)"
 elap
+
