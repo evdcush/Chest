@@ -1,0 +1,15 @@
+# WHAT:  Perform operations on multiple images, such as resizing, cropping,
+#        flipping, and adding effects. Part of the imagemagick kit.
+
+# MAKE SMOL  -  reduce the jpeg quality of all "*.JPG" files
+## make this dst dir for the modified imgs, else files get OVERWRITTEN!
+mkdir -p compressed
+## run cmd
+mogrify -path compressed -auto-orient -quality 85 -strip *.JPG
+
+## explain:
+##   '-path compressed': output path of the modified files
+##   '-auto-orient':     keep any meta info on orientation of the photo
+##   '-quality 85':      reduce jpeg quality to 85
+##   '-strip':           strip all metadata (except the orientation)
+##   '*.JPG':            all target files for this command
