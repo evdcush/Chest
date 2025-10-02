@@ -471,7 +471,7 @@ c.InteractiveShell.display_page = True
 
 ## Total length of command history
 #  Default: 10000
-# c.InteractiveShell.history_length = 10000
+c.InteractiveShell.history_length = 200000
 
 ## The number of saved history entries to be loaded into the history buffer at
 #  startup.
