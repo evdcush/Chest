@@ -636,6 +636,8 @@ numpgs() {
     pdfinfo $1 | grep 'Pages:' | awk '{print $2}'
 }
 
+alias croppdf='pdfcropmargins --uniform --samePageSize'
+
 croparxpdf() {
     # Crop the margins of a PDF downloaded from arXiv.
     # NB: the reason we have this bespoke crop function for arXiv PDFs is that
@@ -651,6 +653,14 @@ croparxpdf() {
     # As mentioned above, we always skip cropping the first page, due to the
     # presence of the arXiv ID mark on the left margin.
     pdfcropmargins --uniform --samePageSize --pages "2-$end_page" $1
+}
+
+function pdf4print() {
+    # Uses ghostscript to make a pdf file print clean af on paper.
+    #_input_fname=$1
+    #_output_fname="$(basename $_input_fname .pdf)_spooky.pdf"
+    echo "ghostscript on $1; look for spooky version:"
+    ghostscript -dNoOutputFonts -sDEVICE=pdfwrite -o "$(basename $1 .pdf)_spooky.pdf" $1
 }
 
 
