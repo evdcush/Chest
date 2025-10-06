@@ -189,7 +189,7 @@ function get(){
     #    target=$1
     #fi
     #wget -P ~/.cache $target;
-    target=$(get_arg)
+    target=$(get_arg $@)
     _log_file="$DIR_DOTS/wgetz.log"
     _timestamp=$(date +%Y-%m-%d_%H:%M:%S_%Z)
     _log_msg="$_timestamp: $target"
@@ -220,7 +220,7 @@ function cget(){
 
 #==== spotdl
 function sptdl() {
-    target=$(get_arg)
+    target=$(get_arg $@)
     spotdl --format opus $target
 }
 
@@ -257,7 +257,7 @@ function dlvid(){
     # Download a video in highest available formats.
 
     # Get the target.
-    target=$(get_arg)
+    target=$(get_arg $@)
     target_fmt='bestvideo+bestaudio'
 
     arg_count=$(echo "$target" | wc -w)
@@ -299,7 +299,7 @@ function dlvid1080(){
     # Download a video in 1080p vid format and best audio.
 
     # Get the target.
-    target=$(get_arg)
+    target=$(get_arg $@)
     target_fmt='bestvideo[height=1080]+bestaudio/best'
 
     arg_count=$(echo "$target" | wc -w)
@@ -341,7 +341,7 @@ function dlkoe(){
     # Download the audio track from a video.
 
     # Get the target.
-    target=$(get_arg)
+    target=$(get_arg $@)
     target_fmt='bestaudio'
 
     arg_count=$(echo "$target" | wc -w)
