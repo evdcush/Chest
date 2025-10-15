@@ -16,14 +16,15 @@ on:
     # - some-subfolder/**
     paths:
     - Docs/**
+    - .github/**
 
 # This job installs dependencies, builds the book, and pushes it to `gh-pages`
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: chest-gh-pages
+    #permissions:
+    #  pages: write
+    #  id-token: chest-gh-pages
     steps:
     - uses: actions/checkout@v4
     #- uses: actions/checkout@v3
@@ -38,7 +39,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt
+        pip install -r Docs/requirements.txt
 
     # (optional) Cache your executed notebooks between runs
     # if you have config:
@@ -62,10 +63,13 @@ jobs:
       uses: actions/upload-pages-artifact@v3
       #uses: actions/upload-pages-artifact@v2
       with:
-        path: "_build/html"
+        path: "Docs/_build/html"
 
     # Deploy the book's HTML to GitHub Pages
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
+      with:
+        github_token: ${{ secrets.GH_PAT_PAGES }}
+        publish_dir: ./Docs/_build/html
       #uses: actions/deploy-pages@v2
