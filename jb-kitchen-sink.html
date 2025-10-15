@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Markdown Files &#8212; Chest</title>
+    <title>JupyterBook Kitchen Sink &#8212; Chest</title>
   
   
   
@@ -57,12 +57,12 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'markdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'jb-kitchen-sink';</script>
     <link rel="icon" href="_static/favicon180x.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Notebooks with MyST Markdown" href="markdown-notebooks.html" />
-    <link rel="prev" title="JupyterBook Kitchen Sink" href="jb-kitchen-sink.html" />
+    <link rel="next" title="Markdown Files" href="markdown.html" />
+    <link rel="prev" title="Operator Protocols" href="operator.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,13 +182,13 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="operator.html"><em>Operator Protocols</em></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="jb-kitchen-sink.html">JupyterBook Kitchen Sink</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="operator.html"><em>Operator Protocols</em></a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">JupyterBook Kitchen Sink</a></li>
 
 </ul>
 </details></li>
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
 </ul>
@@ -260,7 +260,7 @@
       
       
       
-      <li><a href="_sources/markdown.md" target="_blank"
+      <li><a href="_sources/jb-kitchen-sink.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -344,7 +344,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Markdown Files</h1>
+    <h1>JupyterBook Kitchen Sink</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -354,9 +354,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-myst">What is MyST?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-roles-and-directives">Sample Roles and Directives</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">JupyterBook Kitchen Sink</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#admonitions">Admonitions</a></li>
 </ul>
+
             </nav>
         </div>
     </div>
@@ -367,43 +368,74 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="markdown-files">
-<h1>Markdown Files<a class="headerlink" href="#markdown-files" title="Link to this heading">#</a></h1>
-<p>Whether you write your book’s content in Jupyter Notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) or
-in regular markdown files (<code class="docutils literal notranslate"><span class="pre">.md</span></code>), you’ll write in the same flavor of markdown
-called <strong>MyST Markdown</strong>.
-This is a simple file to help you get started and show off some syntax.</p>
-<section id="what-is-myst">
-<h2>What is MyST?<a class="headerlink" href="#what-is-myst" title="Link to this heading">#</a></h2>
-<p>MyST stands for “Markedly Structured Text”. It
-is a slight variation on a flavor of markdown called “CommonMark” markdown,
-with small syntax extensions to allow you to write <strong>roles</strong> and <strong>directives</strong>
-in the Sphinx ecosystem.</p>
-<p>For more about MyST, see <a class="reference external" href="https://jupyterbook.org/content/myst.html">the MyST Markdown Overview</a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="jupyterbook-kitchen-sink">
+<h1>JupyterBook Kitchen Sink<a class="headerlink" href="#jupyterbook-kitchen-sink" title="Link to this heading">#</a></h1>
 </section>
-<section id="sample-roles-and-directives">
-<h2>Sample Roles and Directives<a class="headerlink" href="#sample-roles-and-directives" title="Link to this heading">#</a></h2>
-<p>Roles and directives are two of the most powerful tools in Jupyter Book. They
-are kind of like functions, but written in a markup language. They both
-serve a similar purpose, but <strong>roles are written in one line</strong>, whereas
-<strong>directives span many lines</strong>. They both accept different kinds of inputs,
-and what they do with those inputs depends on the specific role or directive
-that is being called.</p>
-<p>Here is a “note” directive:</p>
+<section class="tex2jax_ignore mathjax_ignore" id="admonitions">
+<h1>Admonitions<a class="headerlink" href="#admonitions" title="Link to this heading">#</a></h1>
+<div class="admonition-my-arbitrary-title admonition">
+<p class="admonition-title">My Arbitrary Title</p>
+<p>This is a generic admonition with a (optional) title.</p>
+<p>You can make an adomition with a title AND admon. class/style, e.g.:</p>
+<div class="warning admonition">
+<p class="admonition-title">Yo Dawg</p>
+<p>ayyyyyyyy
+I heard you like admos</p>
+</div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Here is a note</p>
+<p>Here is a note admon.</p>
+<h3 class="rubric" id="h3-header">H3 header</h3>
+<p>Some arbitrary markup in the note.
+List:</p>
+<ul class="simple">
+<li><p>item 0</p></li>
+<li><p>item 1</p></li>
+<li><p>item 2</p></li>
+</ul>
 </div>
-<p>It will be rendered in a special box when you build your book.</p>
-<p>Here is an inline directive to refer to a document: <a class="reference internal" href="markdown-notebooks.html"><span class="doc">Notebooks with MyST Markdown</span></a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>OH NO!</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 </div>
-<p>Learn more</p>
-<p>This is just a simple starter to get you started.
-You can learn a lot more at <a class="reference external" href="https://jupyterbook.org">jupyterbook.org</a>.</p>
-</section>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Vivamus varius eleifend porttitor. Proin commodo, velit at molestie eleifend, odio lectus vehicula sem, vel suscipit quam urna quis dolor.</p>
+<p><em>Nulla quis lorem massa.</em></p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="n">bar</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">bar</span> <span class="o">==</span> <span class="s1">&#39;bar&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Curabitur tincidunt lorem sed nisi aliquet, at molestie arcu viverra. Aliquam vitae metus nulla. Sed gravida egestas ex, id elementum justo congue a. Maecenas sed nulla in metus pulvinar ultrices.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Ut mollis, lacus id convallis rutrum, quam mauris consectetur mauris, volutpat tincidunt lacus felis sit amet lectus.</p>
+</div>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p>Vestibulum congue condimentum neque in efficitur. Phasellus suscipit orci a dolor aliquam, eget facilisis felis dictum. Sed sodales erat vel bibendum egestas. Proin scelerisque eget augue non rhoncus. Mauris dictum tortor ut mauris lobortis feugiat. Curabitur malesuada commodo mi sit amet vestibulum. Vivamus vel malesuada ligula.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Proin scelerisque eget augue non rhoncus. Mauris dictum tortor ut mauris lobortis feugiat. Curabitur malesuada commodo mi sit amet vestibulum. Vivamus vel malesuada ligula.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Curabitur malesuada commodo mi sit amet vestibulum. Vivamus <strong>vel malesuada</strong> ligula!!</p>
+</div>
+<hr class="docutils" />
+<p>fucking cards, grids, tables,
+all that ui shit</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -437,20 +469,20 @@ You can learn a lot more at <a class="reference external" href="https://jupyterb
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="jb-kitchen-sink.html"
+       href="operator.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">JupyterBook Kitchen Sink</p>
+        <p class="prev-next-title"><em>Operator Protocols</em></p>
       </div>
     </a>
     <a class="right-next"
-       href="markdown-notebooks.html"
+       href="markdown.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Notebooks with MyST Markdown</p>
+        <p class="prev-next-title">Markdown Files</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -470,9 +502,10 @@ You can learn a lot more at <a class="reference external" href="https://jupyterb
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-myst">What is MyST?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-roles-and-directives">Sample Roles and Directives</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">JupyterBook Kitchen Sink</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#admonitions">Admonitions</a></li>
 </ul>
+
   </nav></div>
 
 </div></div>
