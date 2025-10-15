@@ -1,9 +1,6 @@
 name: deploy-book
 
-# FROM: https://jupyterbook.org/en/stable/publish/gh-pages.html
-# AT: 2024/02/25
-
-# Run this when the master or main branch changes
+# Only run this when the master branch changes
 on:
   push:
     branches:
@@ -14,62 +11,34 @@ on:
     #
     # paths:
     # - some-subfolder/**
-    paths:
-    - Docs/**
-    - .github/**
 
 # This job installs dependencies, builds the book, and pushes it to `gh-pages`
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
-    #permissions:
-    #  pages: write
-    #  id-token: chest-gh-pages
     steps:
-    - uses: actions/checkout@v4
-    #- uses: actions/checkout@v3
+    - uses: actions/checkout@v2
 
     # Install dependencies
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v5
-      #uses: actions/setup-python@v4
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
       with:
-        python-version: '3.11'
-        cache: pip
+        python-version: 3.8
 
     - name: Install dependencies
       run: |
-        pip install -r Docs/requirements.txt
-
-    # (optional) Cache your executed notebooks between runs
-    # if you have config:
-    # execute:
-    #   execute_notebooks: cache
-    #- name: cache executed notebooks
-    #  uses: actions/cache@v3
-    #  with:
-    #    path: _build/.jupyter_cache
-    #    key: jupyter-book-cache-${{ hashFiles('requirements.txt') }}
+        pip install jupyter-book
 
     # Build the book
     - name: Build the book
       run: |
         jupyter-book build Docs
-      #run: |
-      #  jupyter-book build .
 
-    # Upload the book's HTML as an artifact
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      #uses: actions/upload-pages-artifact@v2
+    # Push the book's HTML to github-pages
+    - name: GitHub Pages action
+      #uses: peaceiris/actions-gh-pages@v3.6.1
+      uses: peaceiris/actions-gh-pages@v4.0.0
       with:
-        path: "Docs/_build/html"
-
-    # Deploy the book's HTML to GitHub Pages
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
-      with:
-        github_token: ${{ secrets.GH_PAT_PAGES }}
-        publish_dir: ./Docs/_build/html
-      #uses: actions/deploy-pages@v2
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        #publish_dir: ./_build/html
+        publish_dir: .Docs/_build/html
