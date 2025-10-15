@@ -4,7 +4,6 @@ Sounds cooler than "Notes on How to Do/Operate Stuff". 😎
 ```{tableofcontents}
 ```
 
-
 # Misc
 
 

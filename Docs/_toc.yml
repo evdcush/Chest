@@ -49,7 +49,7 @@ chapters:
 - file: glossary
 - file: operator
   sections:
-    - jb-kitchen-sink
+    - file: jb-kitchen-sink
 - file: markdown
 - file: markdown-notebooks
 - file: notebooks.ipynb
