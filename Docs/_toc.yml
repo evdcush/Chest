@@ -40,7 +40,11 @@ format: jb-book
 
 # first page of book; landing page for HTML.
 # all paths for chap/sec will be relative to this root doc.
-root: home
+
+# WARNING: no matter what, it want's to path to `intro.html`
+#          no idea why. fuck it.
+#root: home
+root: intro
 
 chapters:
 - file: glossary
