@@ -1,13 +1,46 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
+# Table of contents
+
+# 'format': defines structure of toc.
+#     CHOICES:
+#         'jb-book': expect `chapters` and `parts`, e.g.:
+#             chapters:
+#             - file: foo
+#             - file: bar
+#               sections:
+#               - file: baz
+#             OR
+#             parts:
+#                 - caption: Name of Part 1
+#                   chapters:
+#                   - file: path/to/part1/chapter1
+#                   - file: path/to/part1/chapter2
+#                     sections:
+#                     - file: path/to/part1/chapter2/section1
+#                 - caption: Name of Part 2
+#                   chapters:
+#                   - file: path/to/part2/chapter1
+#                   - file: path/to/part2/chapter2
+#                     sections:
+#                     - file: path/to/part2/chapter2/section1
+#
+#         'jb-article': single-page thing
+#         - can build from single file, e.g.:
+#           `jupyter-book build path/to/mypage.ipynb`
+#           or
+#         - multiple files, e.g.:
+#               format: jb-article
+#               root: index
+#               sections:
+#               - file: path/to/chapter1
+#               - file: path/to/chapter2
 
 format: jb-book
-root: intro
-#chapters:
-#- file: markdown
-#- file: notebooks
-#- file: markdown-notebooks
+
+# first page of book; landing page for HTML.
+# all paths for chap/sec will be relative to this root doc.
+root: home
 
 chapters:
-  - file: awesomes/awesome_LLM
-  - file: framework_obs
+- file: glossary
