@@ -1992,7 +1992,9 @@ sudo apt update && sudo apt install -y sublime-text=4189
 #    { "keys": ["ctrl+b"], "command": "noop" },
 #    { "keys": ["ctrl+shift+b"], "command": "noop", "args": {"select": true} },
 #    { "keys": ["ctrl+break"], "command": "noop" },
+#    { "keys": ["alt+shift+s"], "command": "reveal_in_side_bar" },
 #]
+
 
 
 # VSCode

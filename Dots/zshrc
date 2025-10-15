@@ -183,6 +183,8 @@ export PIP_DISABLE_PIP_VERSION_CHECK=1
 # pip config set global.disable-pip-version-check true
 
 
+#=== prevent default OPT-OUT next.js telemetry shit
+export NEXT_TELEMETRY_DISABLED=1  # @next.js:  shame, shame, shame 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

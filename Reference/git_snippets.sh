@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # NICE RESOURCES?
-https://github.com/wyntau/dotfiles
+# https://github.com/wyntau/dotfiles
 
 
 # push a local branch
