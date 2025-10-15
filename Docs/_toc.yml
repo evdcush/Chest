@@ -1,9 +1,8 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
-# Table of contents
-
 # 'format': defines structure of toc.
-#     CHOICES:
+#     CHOICES: jb-book or jb-article
+#
 #         'jb-book': expect `chapters` and `parts`, e.g.:
 #             chapters:
 #             - file: foo
@@ -48,6 +47,9 @@ root: intro
 
 chapters:
 - file: glossary
+- file: operator
+  sections:
+    - jb-kitchen-sink
 - file: markdown
 - file: markdown-notebooks
 - file: notebooks.ipynb
