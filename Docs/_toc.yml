@@ -50,6 +50,7 @@ chapters:
 - file: operator
   sections:
     - file: jb-kitchen-sink
+- file: undocumented
 - file: markdown
 - file: markdown-notebooks
 - file: notebooks.ipynb
