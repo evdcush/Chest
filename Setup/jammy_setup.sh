@@ -92,6 +92,14 @@ sudo pro config set apt_news=false
 sudo vi /etc/default/motd-news
 #---> change `ENABLED=1` to `ENABLED=0`
 
+# shit still barnacled to your sys
+# just keep oblit until it gone.
+sudo rm /etc/update-motd.d/91-contract-ua-esm-status
+sudo rm /etc/update-motd.d/00-header
+sudo rm /etc/update-motd.d/50-motd-news
+sudo rm /etc/update-motd.d/91-release-upgrade
+sudo rm /etc/update-motd.d/90-updates-available
+
 #-----------------------------------------------------------------------------#
 #                           ___   _   _   ___      _                          #
 #                          / __| | | | | |   \    /_\                         #
