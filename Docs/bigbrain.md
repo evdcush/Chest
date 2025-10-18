@@ -13,8 +13,12 @@ Resources for ingesting a codebase.
 - [**ahmedkhaleel2004/gitdiagram** - Turn any GitHub repository into an interactive diagram for visualization in seconds. Replace `hub` with `diagram` for any GH url to access its diagram.](https://github.com/ahmedkhaleel2004/gitdiagram)
   - Site: https://gitdiagram.com/
 
+- [**ozyyshr/RepoGraph** - Generate repository-level code graph.](https://github.com/ozyyshr/RepoGraph)
+
 
 ## Repo to File
+
+- [**jimmc414/onefilellm** - Specify a github or local repo, github pull request, arXiv or Sci-Hub paper, Youtube transcript or documentation URL on the web and scrape into a text file and clipboard for easier LLM ingestion](https://github.com/jimmc414/onefilellm)
 
 - [**yamadashy/repomix** - Repomix is a powerful tool that packs your entire repository into a single, AI-friendly file.](https://github.com/yamadashy/repomix)
   - **Handy site:** https://repomix.com/
