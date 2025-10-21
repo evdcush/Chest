@@ -31,7 +31,7 @@ GHORG_CLONE_PROTOCOL: https
 # This is where your ghorg directory will be created, use absolute pathing, shell expansions will not work
 # default: YOUR_HOME_DIR/ghorg
 # flag (--path, -p) eg: --path=/tmp/ghorg
-GHORG_ABSOLUTE_PATH_TO_CLONE_TO:
+GHORG_ABSOLUTE_PATH_TO_CLONE_TO: /home/evan/Projects/ForTheHoard
 
 # Branch ghorg resets and leaves checked out
 # default: default branch

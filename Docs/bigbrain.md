@@ -10,6 +10,8 @@ Resources for ingesting a codebase.
     - docs: https://tree-sitter.github.io/py-tree-sitter/
     - install: `pip install tree-sitter`
 
+### Graphical
+
 - [**ahmedkhaleel2004/gitdiagram** - Turn any GitHub repository into an interactive diagram for visualization in seconds. Replace `hub` with `diagram` for any GH url to access its diagram.](https://github.com/ahmedkhaleel2004/gitdiagram)
   - Site: https://gitdiagram.com/
 
@@ -45,6 +47,11 @@ Resources for ingesting a codebase.
 
 - [**kamilstanuch/codebase-digest** - Codebase-digest is your AI-friendly codebase packer and analyzer. Features 60+ coding prompts and generates structured overviews with metrics. Ideal for feeding](https://github.com/kamilstanuch/codebase-digest)
   - install: `pip install codebase-digest`
+
+- [**khromov/ai-digest** - A CLI tool to aggregate your codebase into a single Markdown file for use with Claude Projects or custom ChatGPTs.](https://github.com/khromov/ai-digest)
+
+- [**emcd/python-mimeogram** - A command-line tool for exchanging collections of files with Large Language Models - bundle multiple files into a single clipboard-ready document while preserving directory structure and metadata](https://github.com/emcd/python-mimeogram)
+-
 
 -----
 
