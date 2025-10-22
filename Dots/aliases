@@ -64,7 +64,7 @@ function aliasf(){
 # 15 TERM    16 STKFLT  17 CHLD    18 CONT    19 STOP    20 TSTP    21 TTIN
 # 22 TTOU    23 URG     24 XCPU    25 XFSZ    26 VTALRM  27 PROF    28 WINCH
 # 29 POLL    30 PWR     31 SYS
-alias kill9='kill -9'    # SIGKILL
+#alias kill9='kill -9'    # SIGKILL
 alias killnow='kill -9'  # because I may not remember kill9
 
 # Help, man, etc.
@@ -200,18 +200,12 @@ fshow() {
 FZF-EOF"
 }
 
-
-# wget
-# ====
-alias wg='wget'
-
-
 #---- misc
 #alias plz='sudo $(fc -ln -1)' # mmm inconsistent
 alias tjst='TZ="Asia/Tokyo" date'
 alias tpst='TZ="America/Los_Angeles" date'
-alias tedt='TZ="America/New_York" date'
-alias tcet='TZ="Europe/Berlin" date'
+#alias tedt='TZ="America/New_York" date'
+#alias tcet='TZ="Europe/Berlin" date'
 
 # Network Stuff
 # =============
@@ -240,20 +234,23 @@ alias deps='apt-cache rdepends'
 
 #==== Apt cleanup
 # Clear apt lock
-alias getlock="sudo rm /var/lib/apt/lists/lock; \
-sudo rm /var/cache/apt/archives/lock; \
-sudo rm /var/lib/dpkg/lock;
-"
+#alias getlock="sudo rm /var/lib/apt/lists/lock; \
+#sudo rm /var/cache/apt/archives/lock; \
+#sudo rm /var/lib/dpkg/lock;
+#"
+# ^ wow that looks risky
 
 # Regenerate apt list cache (troubleshooting for 'Waiting at headers' crap)
-alias regen_apt_list="sudo apt clean; \
-sudo mv /var/lib/apt/lists{,.old}; \
-sudo mkdir -p /var/lib/apt/lists/partial; \
-sudo apt clean; sudo apt update;
-"
+##  wow this looks risky
+#alias regen_apt_list="sudo apt clean; \
+#sudo mv /var/lib/apt/lists{,.old}; \
+#sudo mkdir -p /var/lib/apt/lists/partial; \
+#sudo apt clean; sudo apt update;
+#"
 
 #==== deborphan
-alias rmorph="sudo deborphan | xargs sudo apt remove --purge -y" # careful with -y
+#alias rmorph="sudo deborphan | xargs sudo apt remove --purge" # careful with -y
+# ^ this really isn't needed or used so frequently
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -261,18 +258,18 @@ alias rmorph="sudo deborphan | xargs sudo apt remove --purge -y" # careful with 
 ap='sudo apt'
 alias atu="$ap update"
 alias atg="$ap upgrade"
-alias atfg="$ap full-upgrade"
+#alias atfg="$ap full-upgrade"
 alias atug="$ap update && $ap upgrade"
 alias ati="$ap install"
-alias atr="$ap remove"
+#alias atr="$ap remove"
 alias atrp="$ap remove --purge"
 alias ata="$ap autoremove"
-alias atay="$ap autoremove -y"
+#alias atay="$ap autoremove -y"
 alias atc="$ap clean && $ap autoclean && $ap purge"
 alias atl="$ap list"
 alias atlu='apt list --upgradable'
 
-alias akd="$ap-key del"
+#alias akd="$ap-key del"
 
 
 
@@ -312,7 +309,7 @@ alias iemb="echo 'from IPython import embed; embed();' \
 #alias cyd="echo '# distutils: language = c++\n# cython: language_level=3' | xclip"
 
 # Completely legitimately download educational material.
-course_lecture_dl='coursera-dl khan-dl'
+#course_lecture_dl='coursera-dl khan-dl'
 
 # Jupyter
 # =======
@@ -336,10 +333,12 @@ piu="pip install -U"
 
 
 # UPDATE PIP PACKAGES
-alias pipupdate="pip list --outdated --format=freeze \
-| grep -v '^\-e' \
-| cut -d = -f 1  \
-| xargs -n1 pip install -U"
+###  hoooo dawgy, this would fuck your shit up so bad wth lol
+###  ahh those were the days. just numpy, scipy, skl, ipy, nb, chainer, tf
+#alias pipupdate="pip list --outdated --format=freeze \
+#| grep -v '^\-e' \
+#| cut -d = -f 1  \
+#| xargs -n1 pip install -U"
 
 
 # Typical stack
@@ -352,18 +351,18 @@ alias pipupdate="pip list --outdated --format=freeze \
 # work stuff
 cv='opencv-python imageio scikit-video open3d-python pycocotools albumentations'
 
-data_stack='fiftyone' # docaray is dead "docarray[full]"' #"docarray[torch,image]"'  # docarray is a data format
-tracking='lvis motmetrics'
+data_stack='fiftyone'
+#tracking='lvis motmetrics'
 
 experiment_tools='tensorboard tensorboardX hydra-core omegaconf wandb fiddle'
 vis_stack='matplotlib bokeh seaborn plotly pyvista hiplot graphviz altair ipyvizzu pygwalker'
-jax_stack='jax jaxlib evojax evosax flax'  # haiku?
-hpo_stack='optuna ray hyperopt niapy scikit-optimize pymoo' # HEBO' # HEBO has unresolvable GPy dep.
-more_hpo_stack='ax-platform dragonfly-opt flaml nevergrad zoopt'
-hugging_stack="accelerate 'datasets[vision]' diffusers evaluate huggingface_hub peft safetensors timm transformers" #xformers
-llm_app_stack="chromadb 'dspy-ai[chromadb,qdrant]' langchain aisuite" #"evadb[document,notebook]"' #llama-index chainforge'
-llm_dev_stack="openai 'openai[embeddings]' 'openai[wandb]' openai-whisper tiktoken anthropic axolotl"
-ui_stack='gradio streamlit taipy'
+jax_stack='jax jaxlib evojax evosax flax'
+hpo_stack='optuna ray' # hyperopt niapy scikit-optimize pymoo' # HEBO' # HEBO has unresolvable GPy dep.
+#more_hpo_stack='ax-platform dragonfly-opt flaml nevergrad zoopt'
+hugging_stack="transformers diffusers 'datasets[vision]' accelerate evaluate huggingface_hub peft safetensors timm" #xformers
+llm_app_stack="chromadb 'dspy[chromadb,qdrant]' 'langchain[community,huggingface,groq]'" #aisuite" #"evadb[document,notebook]"' #llama-index chainforge'
+llm_dev_stack="openai 'openai[embeddings,wandb]' openai-whisper tiktoken axolotl"
+ui_stack='gradio streamlit' #taipy'
 osint_stack='sherlock-project maigret'
 #docqa_stack='"nougat-ocr[api,dataset]"'  # Nougat requires an OLD version of timm
 
@@ -373,7 +372,7 @@ osint_stack='sherlock-project maigret'
 mmcv_inst='pip install -U git+https://github.com/open-mmlab/mmcv.git'
 #mmcv_inst='pip install -U mmcv -f https://download.openmmlab.com/mmcv/dist/cu121/torch2.1/index.html'
 
-mmlab_stack="mmengine 'mmdet[multimodal,tracking]' 'mmpretrain[multimodal]' mmeval mmsegmentation"
+mmlab_stack="mmengine 'mmdet[multimodal]'" #,tracking]'" #'mmpretrain[multimodal]' mmeval mmsegmentation"  # nb: each of these libs have hardcore deps; keep it just mme and det for now
 
 alias pipimm="\
 $mmcv_inst; \
@@ -398,7 +397,7 @@ sound_stuff='tts whisperlivekit'
 
 
 # apps
-mediadl='yt-dlp youtube-dl gallery-dl spotdl papis weasyprint arxiv-dl'
+mediadl='yt-dlp gallery-dl spotdl papis weasyprint arxiv-dl'
 imgutils='backgroundremover lama-cleaner'  # because rembg has strict version dependencies (must be 3.9)
 # lama-cleaner: Image inpainting tool powered by SOTA AI Model. Remove any unwanted object, defect, people from your pictures or erase and replace(powered by stable diffusion) any thing on your pictures.
 
@@ -408,12 +407,12 @@ packaging_stack='flit hatch'
 
 # Misc/experimental
 # =================
-staticstuff='MonkeyType code2flow'  # meh: vulture
-gitty='starcli'
-pro='slack-export-viewer'
+#staticstuff='MonkeyType code2flow'  # meh: vulture
+#gitty='starcli'
+#pro='slack-export-viewer'
 profiling='vprof'
 
-social='rainbowstream'  # twitter terminal client
+#social='rainbowstream'  # twitter terminal client
 
 # Media
 # -----
@@ -431,16 +430,17 @@ karma-sphinx-theme piccolo-theme sphinx-theme pydata-sphinx-theme'
 
 # Static Code Analysis & QA
 # =========================
-static_analysis_stack='code2flow'
+#static_analysis_stack='code2flow'
 formatters_stack='absolufy-imports black isort usort yapf mdformat mdformat-myst tomli "docformatter[tomli]"'
 typing_stack='mypy pytype MonkeyType'
 linting_stack='codespell flake8 pylint pre-commit ruff tomli'
 
-static_stack="$static_analysis_stack $formatters_stack $typing_stack $linting_stack"
+static_stack="$formatters_stack $typing_stack $linting_stack"
 
 function pipigpu(){
     # Packages
-    gpu_pkgs='cupy gpustat nvitop triton'
+    #gpu_pkgs='cupy gpustat triton' #nvitop'  #nvitop beeen FUBAR'd so hard in recent releases; fig out which one useable
+    gpu_pkgs='cupy gpustat tritop nvitop==1.3.0'
     if nvidia-smi &>/dev/null; then
         pip install -U $gpu_pkgs
         echo 'CUDA AVAILABLE; downloading cuda builds!'
@@ -462,7 +462,6 @@ jupytext \
 nbdime \
 notebook==6.5.6 \
 nbstripout'
-#jupyter_ai \
 
 
 alias pipinew="\
@@ -476,7 +475,6 @@ $piu imageio scikit-video open3d-python; \
 $piu $vis_stack; \
 $piu $experiment_tools; \
 $piu $hpo_stack; \
-$piu $more_hpo_stack; \
 $piu $hugging_stack; \
 $piu $jax_stack; \
 $piu $llm_dev_stack; \
@@ -494,7 +492,6 @@ $piu $sphinx_stack; \
 $piu $sphinx_themes; \
 $piu $sphinx_stack; \
 $piu $mediadl; \
-$piu starcli; \
 $piu $data_stack; \
 $piu $ui_stack; \
 $piu $core_ipy_stack; \
@@ -509,10 +506,6 @@ $piu $core_sci_stack; \
 # dudes are always there.
 
 # NB: if you get an error with mpi4py --> `sudo apt install -y mpich`
-
-# GPU Utils
-# =========
-alias pipigpu="$piu gpustat nvitop"
 
 #== pytorch
 function pipitorch(){
@@ -542,7 +535,10 @@ function pipitorch(){
     --extra-index-url "$TORCH_URL/$TAG"
 
     # Install other torch-related pkgs.
-    pip install -U torchfix torchinfo torchview torchmetrics
+    ## careful with these, we don't know how maintained they are, they may downgrade the torch you just installed
+    #pip install -U torchfix torchinfo torchview torchmetrics
+
+    pip install -U torchtune
 }
 
 #=============================================================================#
@@ -550,43 +546,13 @@ function pipitorch(){
 #=============================================================================#
 # The packages that require extra setup, or have iniquitous dependencies.
 
-
-#-----------------------------------------------------------------------------#
-#                 "You thought `pip install` was enough? lol"                 #
-#-----------------------------------------------------------------------------#
-
 alias pipimyg="$piu myougiden; updatedb-myougiden -f"
-alias pipijupynb="$piu \
-jupyter_contrib_nbextensions jupyter_nbextensions_configurator; \
-jupyter contrib nbextension install --user; \
-jupyter nbextensions_configurator enable --user;"
+#alias pipijupynb="$piu \
+#jupyter_contrib_nbextensions jupyter_nbextensions_configurator; \
+#jupyter contrib nbextension install --user; \
+#jupyter nbextensions_configurator enable --user;"
 
 
-
-
-#-----------------------------------------------------------------------------#
-#                               Dep Drama Queens                              #
-#-----------------------------------------------------------------------------#
-# Who doesn't like a good dependency conflict soap opera?? 🥲
-
-im_on_an_ancient_version_of_some_extremely_common_core_dep_lol=(\
-'HEBO' \
-'vissl' \
-'mmselfsup' \
-'mmtrack' \
-)
-
-
-# Not necessarily deserved of "drama queen" since it's GPU/CUDA but,
-# nonetheless, complicate things because GPU.
-
-#== CuPy
-# `pip install cupy` just doesnt seem to work, so use whl
-alias pipicupy="pip install cupy-cuda110 -f \
-https://github.com/cupy/cupy/releases/tag/v7.8.0"
-
-# Dont even remember:
-## 'pix2tex[gui]'
 
 #=============================================================================#
 #                                                                             #
@@ -667,7 +633,7 @@ function pdf4print() {
 # yt-dlp
 # ======
 # Formats
-alias ytlsfmt='yt-dlp --list-formats'
+alias ytfmts='yt-dlp --list-formats'
 
 # Video
 ## A simplified version of my existing `dlvid` func; no embeds.
@@ -798,12 +764,7 @@ alias treesz='tree --dirsfirst -s -hAF'  # Show filesizes for everything.
 #---- Copy
 alias clip="xclip -selection clipboard"
 #alias clipo="xclip -o -sel clip"
-#alias delclip="xclip -o | xargs sudo rm -rf"  # wow this one's pretty risky dawg wtf
-#alias delclip="xclip -o | xargs sudo rm -rfI"  # at least confirm before
 alias clipo='xclip -o'
-
-#alias symble="echo '≤' | xclip -sel clip"  # lol truly necessary?
-#alias symbge="echo '≥' | xclip -sel clip"  #
 
 # copy previous command (is this really the only sol? stupidly verbose)
 # if you dont translate, there is newline?
@@ -814,11 +775,6 @@ alias cplast='echo $(fc -l -1) \
 | tr -d "\n" \
 | xclip -selection clipboard'
 
-
-#---- joplin
-# alias get_jop="wget -O - \
-# https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_install_and_update.sh \
-# | bash"
 
 #---- cheat & tldr
 #alias cht='cheat'  # I want to use this alias for cheat.sh instead.
@@ -887,7 +843,7 @@ alias flist='flatpak list --app --columns=name,application,description,version'
 
 
 #==== zola
-alias zola='flatpak run org.getzola.zola'
+#alias zola='flatpak run org.getzola.zola'
 
 
 
