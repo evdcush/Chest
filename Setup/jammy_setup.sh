@@ -539,7 +539,7 @@ wget http://kr.archive.ubuntu.com/ubuntu/pool/universe/b/blueman/blueman_2.3.2-1
 
 # Gnome stuff
 # ===========
-sudo apt install -y gnome-tweaks nautilus-extension-fma
+sudo apt install -y gnome-tweaks #nautilus-extension-fma
 
 #=== Extensions
 # SYSTEM-MONITOR: https://extensions.gnome.org/extension/3010/system-monitor-next/
@@ -755,6 +755,17 @@ sudo apt install -y jq ripgrep
 sudo apt install -y pandoc wkhtmltopdf weasyprint poppler-utils
 sudo apt install -y copyq deluge gparted redshift inxi colordiff qalc
 sudo apt install -y units  # unit converter
+
+sudo apt install -y nemo  # file manager (nautilus is buggy garb)
+# change the fm to nemo
+# first, confirm the default fm:
+xdg-mime query default inode/directory
+# will probably say: org.gnome.Nautilus.desktop
+# set it to nemo:
+xdg-mime default nemo.desktop inode/directory
+# for other file amnagers or apps n shit, find them in
+# ls /usr/share/applications
+
 
 # General Sourced
 # ---------------
@@ -1794,7 +1805,7 @@ ln -sf $HOME/.Dots/cheat_conf.yml $HOME/.config/cheat/conf.yml
 # ========
 ## https://github.com/chubin/cheat.sh
 # First, dependencies:
-sudo apt install -y rlwrap
+sudo apt install -y rlwrap xsel
 
 # Download to local bin.
 curl https://cht.sh/:cht.sh > $HOME/.local/bin/cht.sh
