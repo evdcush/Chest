@@ -10,6 +10,9 @@
 #=============================================================================#
 # System stuff
 
+#==== power etc.
+alias poff='systemctl poweroff'
+
 # Display
 # =======
 #alias fixdisplay='sudo /etc/init.d/lightdm restart'
@@ -39,6 +42,13 @@ alias ffetch='fastfetch --logo none'  # disable the stupid logo shit
 #alias screenfetch=ffetch   # eventuall these are needed I guess
 
 
+# DOCKER
+# ======
+function dockerkillall() {
+    docker kill $(docker ps -aq)
+}
+
+
 #=============================================================================#
 #                  ███████╗██╗  ██╗███████╗██╗     ██╗                        #
 #                  ██╔════╝██║  ██║██╔════╝██║     ██║                        #
@@ -54,7 +64,7 @@ alias ffetch='fastfetch --logo none'  # disable the stupid logo shit
 function aliasf(){
     #="echo 'alias | grep -i'
     alias | grep -i $1;
-    echo 'hint: try `als` (omz ext you have enabled)'
+    echo 'hint: `als` shows aliases grouped by aliased cmds (omz extension)'
 }
 
 # Process stuff
@@ -162,7 +172,7 @@ lzf(){
 }
 
 
-alias h='history'
+#alias h='history'
 alias hzf='history | fzf'
 alias lsdisk='sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL'
 #alias duh='du -h --max-depth=1 | sort -h;'
@@ -666,7 +676,8 @@ blok() {
 # DE
 # ==
 #---- nav
-alias fm='nautilus'
+#alias fm='nautilus'
+#alias fm='flatpak run org.kde.dolphin'
 
 # Dev stuff
 # =========
@@ -732,15 +743,18 @@ function expage(){
 #alias vpcf="$spvpn --fastest-connect"
 
 #---- journal
-alias jrnl=" jrnl" # alias for preventing hist from logging jrnl
+## dont use currently
+#alias jrnl=" jrnl" # alias for preventing hist from logging jrnl
 
 #---- todo-txt cli
-alias td='todo-txt'
-alias tda='todo-txt a'
+# dont use
+#alias td='todo-txt'
+#alias tda='todo-txt a'
 
 #---- percollate
 #alias perc='percollate pdf --output'
-alias perc='percollate pdf'
+#alias perc='percollate pdf'
+alias perc='percollate pdf --no-toc --no-amp --no-cover --no-hyphenate --style=percollate_style.css'
 
 #---- zsh-marks
 alias g="jump"
@@ -760,6 +774,20 @@ alias p="showmarks"  # show
 alias tre='tree --dirsfirst -AF'  # 'DEFAULT' tree command. (tried alias `ki`, before but of course never remember)
 alias treed='tree -dA'  # Only show dirs.
 alias treesz='tree --dirsfirst -s -hAF'  # Show filesizes for everything.
+
+#---- fd
+# -l, --list-details  :  like ls -l
+# -L, --follow        :  descend into symlinked dirs
+# -u, --unrestricted  :  include ignored and hidden files in search
+# -i, --ignore-case
+# -E, --exclude <pattern>  e.g.: --exclude '*.pyc'
+# --changed-within  <timething>  e.g.: 10h, 1d, 45min, 2weeks, 1969-04-20
+# --changed-before  <timething>
+# -g, --glob
+# -tf : --type file
+# -td : --type dir
+alias fdf='fd -Lluig -tf'
+alias fdd='fd -Lluig -td'
 
 #---- Copy
 alias clip="xclip -selection clipboard"
@@ -840,6 +868,11 @@ alias bth='bat -pP -r ":10"'  # like 'head'
 alias frun='flatpak run'
 alias flup='flatpak update'
 alias flist='flatpak list --app --columns=name,application,description,version'
+
+# APPS
+# ----
+#alias dolphin='flatpak run org.kde.dolphin'  # just install the deb one; too many qt problem bs
+
 
 
 #==== zola
@@ -1014,7 +1047,7 @@ alias gsize="git rev-list --objects --all \
 # =======
 #alias gcnlfs='GIT_LFS_SKIP_SMUDGE=1 git clone'
 alias getgitlfs='git-lfs fetch && git-lfs checkout'
-alias lfsls='git lfs ls-files | cut -d' ' -f 3'
+alias lfsls="git lfs ls-files | cut -d' ' -f 3"
 
 # Wrapper for `GIT_LFS_SKIP_SMUDGE=1 git clone`
 function gcnlfs(){
