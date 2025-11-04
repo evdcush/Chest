@@ -1,4 +1,18 @@
 #zmodload zsh/zprof
+
+# hist
+#HISTORY_IGNORE="(ls|cd|pwd|exit| ..|..|...|l|lk)"
+export HISTFILE=$HOME/.zsh_history
+# we use max val for signed i32 (eg: 2^31 - 1)
+HISTSIZE=2147483647       # in-memory size
+SAVEHIST=2147483647       # how many lines to keep in file
+#export HISTSIZE=-1 # Unlimited num of cmds in-memory history of current sess
+#export HISTFILESIZE=-1 # No limit to num cmds kept in history file.
+setopt HIST_APPEND
+setopt INC_APPEND_HISTORY  # write each command immediately
+setopt HIST_IGNORE_SPACE
+setopt EXTENDED_HISTORY
+
 #=============================================================================#
 #                                                                             #
 #                      ██████   █████  ████████ ██   ██                       #
@@ -65,10 +79,7 @@ export NLTK_DATA="$HOME/Data/nltk_data"
 # MISC CONF
 # =========
 
-# hist
-HISTORY_IGNORE="(ls|cd|pwd|exit| ..|..|...|l|lk)"
-export HISTSIZE=-1 # Unlimited num of cmds in-memory history of current sess
-export HISTFILESIZE=-1 # No limit to num cmds kept in history file.
+
 
 # Preferred editor
 # ---------------
@@ -82,7 +93,7 @@ export EDITOR="$VISUAL"
 # jrnl prevent hist
 # -----------------
 #HISTIGNORE="$HISTIGNORE:jrnl *"  # This was for bash zsh has opt
-setopt HIST_IGNORE_SPACE
+#setopt HIST_IGNORE_SPACE
 #alias jrnl=' jrnl'  # Disabled until we use jrnl again.
 
 
@@ -105,7 +116,6 @@ plugins=(
     fzf_flatpak_widget
     #forgit
     gunstage
-    history
     #tldr
     zshmarks
     zsh-syntax-highlighting
@@ -137,6 +147,7 @@ source $ZSH/oh-my-zsh.sh
 
 # fzf
 # ===
+export FZF_DEFAULT_OPTS='--history-size=15000'  # default is 1000
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # broot
