@@ -165,6 +165,37 @@ git-crypt status
 
 # Furthermore, the repo is in a "locked" state
 
+#-----------------------------------------------------------------------------#
+#                                  NOTE(2025)                                 #
+#
+#
+#
+# before you rely on git-crypt again, do make sure that you refamiliarize
+# yourself with the git-crypt workflow--specifically the sequence of
+# commands.
+#
+# one thing that is crucially missing from my notes here (which were otherwise
+# pretty dec) is A COMMIT.
+#
+# E.g.:
+#   - do you git-crypt lock *before* commit?
+#   - is it automatically crypted (matched from .gitattribs)?
+#   - because git commit on git-crypt target files will still show the files
+#     in clear text locally.
+#     - so, does this mean if it was remote, it would be crypted?
+#     - or do I need to manually make sure I `git-crypt lock`
+#       (after I have already committed the files)
+#
+#
+#   - surely, git-crypt doesn't rely on explicit cmds on target files from the
+#     user.
+#   - even if so, there should be a simple git-hook integration to make this
+#     whole op simple.
+#
+#
+#-----------------------------------------------------------------------------#
+
+
 # WARNING:
 #  you MUST commit changes to .gitattributes before target files
 #  are encrypted
