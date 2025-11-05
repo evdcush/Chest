@@ -204,8 +204,13 @@ devel_isolated/
 #-----------------------------------------------------------------------------#
 
 # Env setting
+.env
 .vscode/
 .obsidian/
+
+#===  webdev
+node_modules
+playwright-report
 
 # Julia
 *.jl.cov
