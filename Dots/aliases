@@ -1078,6 +1078,27 @@ function getlfstargets() {
   chmod +x get_lfs_targets.sh
 }
 
+# -----------------------
+# gh cli stuff
+# ============
+# (gh has alias stuff, but whatev)
+function list_gh_repos() {
+    # list all repos of some target user
+    if [ "$#" -eq 0 ]; then
+        # No arg given, get arg from clipboard
+        target=`xclip -o -sel clip`
+    else
+        # arg given
+        target=$1
+    fi
+    echo "retrieving all repos for user: $target"
+    GH_PAGER=''
+    target_repos=$(gh repo list $target --json name,sshUrl --jq '.[] | [.sshUrl] | @tsv')
+    echo "REPOS FOUND FOR $target:"
+    echo $target_repos
+    echo $target_repos > "$target.gh_repos_list.txt"
+}
+
 
 #=============================================================================#
 #                                                                             #
