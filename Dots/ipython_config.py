@@ -489,6 +489,8 @@ c.InteractiveShell.history_length = 200000
 #  file to **overwrite** logs to.
 #  Default: ''
 # c.InteractiveShell.logappend = ''
+log_file = '/home/evan/.Dots/ipython.log.py'
+c.InteractiveShell.logappend = log_file
 
 ## The name of the logfile to use.
 #  Default: ''
@@ -498,6 +500,7 @@ c.InteractiveShell.history_length = 200000
 #  specify a log file to **append** logs to.
 #  Default: False
 # c.InteractiveShell.logstart = False
+c.InteractiveShell.logstart = True
 
 ## Select the loop runner that will be used to execute top-level asynchronous
 #  code
