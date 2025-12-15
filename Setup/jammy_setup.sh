@@ -2241,8 +2241,13 @@ sudo vi /etc/gdm3/custom.conf
 #---- misc/app
 flameshot gui    # Print
 # Filename:
-# screencap_%Y-%m-%d_%H-%M-%S
+# XXX OLD: screencap_%Y-%m-%d_%H-%M-%S
+# CUR: screencap_%Y-%m-%d__%H.%M.%S_%A_%b-%d
 #   - with png extension
+#
+# eg:  screencap_2025-12-14__16.20.11__Friday_Apr-20.png
+#
+
 
 #---- Disable insert
 # Figure out what is mapped to insert key
