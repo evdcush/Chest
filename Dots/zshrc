@@ -158,6 +158,11 @@ export FZF_DEFAULT_OPTS='--history-size=15000'  # default is 1000
 #    source $br_bin_path
 #fi
 
+# zoom level for QT apps (specifically for kasts, which is tiny on 4k)
+#export QT_SCALE_FACTOR=1.5
+##  NB: never mind; env var only respected by flatpak app when launched
+#       via CLI--not .desktop use flatseal instead
+
 
 # tldr
 # ====
@@ -227,3 +232,13 @@ export GPG_TTY=$(tty)
 eval "$(atuin init zsh)"
 elap
 
+
+# opencode
+export PATH=/home/evan/.opencode/bin:$PATH
+
+# >>> b2 autocomplete >>>
+# This section is managed by b2 . Manual edit may break automated updates.
+if [[ -z "$_comps" ]] && [[ -t 0 ]]; then autoload -Uz compinit && compinit -i -D; fi
+source /home/evan/.zsh/completion/_b2
+
+# <<< b2 autocomplete <<<
