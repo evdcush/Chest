@@ -1167,3 +1167,8 @@ function mdclicksection() {
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 alias gn='gennames'
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# show the hf dl log
+alias hflog="bat -pP $HF_DOWNLOAD_LOG"
