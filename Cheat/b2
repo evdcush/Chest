@@ -1,0 +1,108 @@
+b2: command-line access to the B2 service
+# DOCS: https://b2-command-line-tool.readthedocs.io/en/master/index.html
+
+
+#=== INSTALL
+wget https://github.com/Backblaze/B2_Command_Line_Tool/releases/latest/download/b2-linux \
+-O $HOME/.local/bin/b2
+
+chmod +x $HOME/.local/bin/b2
+
+
+#=== INIT
+b2 account authorize
+
+# usages
+# ======
+  b2 account                Account management subcommands.
+  b2 bucket                 Bucket management subcommands.
+  b2 file                   File management subcommands.
+  b2 install-autocomplete   Install autocomplete for supported shells.
+  b2 key                    Application keys management subcommands.
+  b2 license                Print the license information for this tool.
+  b2 ls                     List files in a given folder.
+  b2 replication            Replication rule management subcommands.
+  b2 rm                     Remove a "folder" or a set of files matching a pattern.
+  b2 sync                   Copy multiple files from source to destination.
+  b2 version                Print the version number of this tool.
+
+#=== BUCKETS
+usages:
+  b2 bucket create              Create a new bucket.
+  b2 bucket delete              Delete the bucket with the given name.
+  b2 bucket get                 Display bucket info
+  b2 bucket get-download-auth   Display authorization token for downloading files
+  b2 bucket list                List all of the buckets in the current account.
+  b2 bucket notification-rule   Bucket notification rules management subcommands.
+  b2 bucket update              Updates the bucketType of an existing bucket.
+
+#---- LIST
+b2 bucket list
+
+#---- CREATE
+b2 bucket create ayylmao-b2-justblaze420 allPrivate
+
+#---- DELETE
+b2 bucket delete 'ayylmao-b2-justblaze420'
+
+#----------------------------------  FILES  ----------------------------------#
+
+#===  UPLOAD FILE
+# PATTERN:
+# b2 file upload BUCKETNAME LOCAL_FILE_PATH BUCKET_FILE_PATH
+# e.g.:
+b2 file upload tanuki SwoleDoge.png swoledoge.png
+
+SwoleDoge.png:  15%|...| 16.4k/107k [00:00<00:03, 25.7kB/s]
+URL by file name: https://f420.backblazeb2.com/file/tanuki/swoledoge.png
+URL by fileId: https://f420.backblazeb2.com/b2api/v4/b2_download_file_by_id?fileId=4_XXXXXd9f4XXXXXd892b1051f_f11XXXXXXXX5b0_d20XXXX215_mXXX300_cXXX_v0XXXXX14_XXXXX_XXXXX778XX
+{
+    "accountId": "42069bigppman",
+    "action": "upload",
+    "bucketId": "45438asdfhjayyLMAO69",
+    "contentMd5": "b868529294f3574d048ba0ab44b40a02",
+    "contentSha1": "7a9f689fb6275e433e4e5ebd6d12c6428416acd5",
+    "contentType": "image/png",
+    "fileId": "4_XXXXXd9f4XXXXXd892b1051f_f11XXXXXXXX5b0_d20XXXX215_mXXX300_cXXX_v0XXXXX14_XXXXX_XXXXX778XX",
+    "fileInfo": {
+        "src_last_modified_millis": "1765767648248"
+    },
+    "fileName": "swoledoge.png",
+    "fileRetention": {
+        "mode": null,
+        "retainUntilTimestamp": null
+    },
+    "legalHold": null,
+    "replicationStatus": null,
+    "serverSideEncryption": {
+        "algorithm": "AES256",
+        "mode": "SSE-B2"
+    },
+    "size": 106892,
+    "uploadTimestamp": 1765767780929
+}
+SwoleDoge.png: 100%|....| 107k/107k [00:01<00:00, 71.5kB/s]
+
+#-----  CONFIRM
+b2 ls b2://tanuki
+swoledoge.png
+
+#----------------------------------
+
+# SYNC
+# ====
+# PATTERN:
+#   b2 sync <src> <dst>
+# LOCAL --> B2
+#   b2 sync goodboyes/doges b2://tanuki/media/images/frens
+# B2 --> LOCAL
+#   b2 sync b2://tanuki/topsecret/agi_god $HOME/ai_overlord_master_godking
+#
+# can do b2 to b2, etc.
+
+
+
+
+
+# FURTHER SETUP STUFFS!
+# nextcloud: https://www.backblaze.com/docs/en/cloud-storage-integrate-nextcloud-with-backblaze-b2?highlight=nextcloud
