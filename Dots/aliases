@@ -67,6 +67,8 @@ function aliasf(){
     echo 'hint: `als` shows aliases grouped by aliased cmds (omz extension)'
 }
 
+alias hist='bat -pP ~/.zsh_history'
+
 # Process stuff
 # =============
 #  1 HUP      2 INT      3 QUIT     4 ILL      5 TRAP     6 ABRT     7 BUS
@@ -492,7 +494,7 @@ $piu $llm_app_stack; \
 $pipigpu; \
 $piu feedparser requests lxml urllib3 bs4 PyGithub mpi4py; \
 $piu 'pypi-command-line[speedups]' pip_search; \
-$piu fart pyperclip unidecode python-slugify em-keyboard; \
+$piu fart pyperclip unidecode python-slugify em-keyboard num2words; \
 $piu twine pytest loguru pyzotero; \
 $piu $sphinx_stack $sphinx_themes grip docrepr; \
 $piu termdown pdfCropMargins backgroundremover; \
@@ -523,7 +525,8 @@ function pipitorch(){
     tag_cpu='cpu'
     #tag_cuda='cu126'
     #tag_cuda='cu128'
-    tag_cuda='cu129'
+    #tag_cuda='cu129'
+    tag_cuda='cu130'
     TORCH_URL='https://download.pytorch.org/whl'
     # https://download.pytorch.org/whl/torch/
 
@@ -541,14 +544,13 @@ function pipitorch(){
     torch \
     torchvision \
     torchaudio \
-    torchtext \
     --extra-index-url "$TORCH_URL/$TAG"
 
     # Install other torch-related pkgs.
     ## careful with these, we don't know how maintained they are, they may downgrade the torch you just installed
     #pip install -U torchfix torchinfo torchview torchmetrics
 
-    pip install -U torchtune
+    pip install -U torchtune torchforge torchtitan
 }
 
 #=============================================================================#
@@ -678,6 +680,7 @@ blok() {
 #---- nav
 #alias fm='nautilus'
 #alias fm='flatpak run org.kde.dolphin'
+alias fm='dolphin'
 
 # Dev stuff
 # =========
@@ -776,17 +779,20 @@ alias treed='tree -dA'  # Only show dirs.
 alias treesz='tree --dirsfirst -s -hAF'  # Show filesizes for everything.
 
 #---- fd
-# -l, --list-details  :  like ls -l
 # -L, --follow        :  descend into symlinked dirs
+# -l, --list-details  :  like ls -l
 # -u, --unrestricted  :  include ignored and hidden files in search
 # -i, --ignore-case
+# -g, --glob
+#
+# -tf : --type file
+# -td : --type dir
+#
 # -E, --exclude <pattern>  e.g.: --exclude '*.pyc'
 # --changed-within  <timething>  e.g.: 10h, 1d, 45min, 2weeks, 1969-04-20
 # --changed-before  <timething>
-# -g, --glob
-# -tf : --type file
-# -td : --type dir
-alias fdf='fd -Lluig -tf'
+#alias fdf='fd -Lluig -tf'
+alias fdf='fd --follow --list-details --unrestricted --ignore-case --glob --type file'
 alias fdd='fd -Lluig -td'
 
 #---- Copy
