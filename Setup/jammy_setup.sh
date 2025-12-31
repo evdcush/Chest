@@ -84,6 +84,12 @@ sudo rm /etc/apt/apt.conf.d/20apt-esm-hook.conf
 # NOTE: You will need to consistently remove this hook!
 #       Updates sometimes restore it!
 sudo systemctl disable ubuntu-advantage
+sudo systemctl disable --now ubuntu-advantage-desktop-daemon.service
+
+sudo rm /etc/apt/apt.conf.d/20apt-esm-hook.conf.dpkg-dist
+
+sudo rm /etc/apt/preferences.d/ubuntu-pro-esm-infra /etc/apt/preferences.d/ubuntu-pro-esm-apps
+
 
 # """OFFICIAL""" solution from canonical.
 sudo pro config set apt_news=false
@@ -99,6 +105,21 @@ sudo rm /etc/update-motd.d/00-header
 sudo rm /etc/update-motd.d/50-motd-news
 sudo rm /etc/update-motd.d/91-release-upgrade
 sudo rm /etc/update-motd.d/90-updates-available
+
+#------------
+
+
+# PREVENT i386 PACKAGE INSTALLS (usually recos or whatver, never true dep)
+sudo tee /etc/apt/preferences.d/99-no-i386 <<'EOF'
+Package: *
+Pin: release a=*
+Pin-Priority: -10
+
+Package: *:i386
+Pin: release a=*
+Pin-Priority: -1
+EOF
+
 
 #-----------------------------------------------------------------------------#
 #                           ___   _   _   ___      _                          #
@@ -125,6 +146,21 @@ sudo apt update && sudo apt install -y cuda
 
 # CUDA SDK packages (after reboot!).
 sudo apt install -y libcudnn8
+
+#--------------------------------------------------------------
+
+# UPDATED FOR LATEST NVIDIA BULLSHIT:
+# meta-packages like cuda and cuda-toolkit come with so much fucking garb
+# like nsight and other shit that can cause dep probs now it's an absolute
+# nightmare.
+#
+# now, we have to select the targeted leaf packages ONLY!
+# (NB: no cudnn; sys cudnn can conflict with your usu stack; which bundles their own cudnn)
+# firstg et driver
+sudo apt install nvidia-driver-560;
+
+# then the core deps
+sudo apt install cuda-cudart-13-1 cuda-libraries-13-1 cuda-libraries-dev-13-1 cuda-nvcc-13-1 cuda-gdb-13-1;
 
 ###############################################################################
 
