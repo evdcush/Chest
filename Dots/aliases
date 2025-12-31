@@ -936,6 +936,29 @@ function glogtop() {
     git --no-pager log --abbrev-commit --show-signature --max-count $num_commits_show
 }
 
+function glogs() {
+    # Print the last N commits; default
+    if [ "$#" -eq 0 ]; then
+        num_commits_show=7
+    else
+        num_commits_show=$1
+    fi
+
+    #date_fmt="format-local:'%m/%d/%Y %H:%M:%S'"
+    #pretty_fmt="format:'%C(auto)%h%Creset  %C(blue)%ad%Creset |%s'"
+    date_fmt=format-local:'%m/%d/%Y %H:%M:%S'
+    pretty_fmt=format:'%C(auto)%h%Creset  %C(blue)%ad%Creset |%s'
+
+    git --no-pager log --graph --stat \
+    --max-count $num_commits_show \
+    --date=$date_fmt \
+    --pretty=$pretty_fmt
+
+    #git --no-pager log --graph --max-count $num_commits_show \
+    #--date=format-local:'%m/%d/%Y %H:%M:%S' \
+    #--pretty=format:'%C(auto)%h%Creset  %C(blue)%ad%Creset |%s' \
+    #--stat
+}
 
 # Navigation
 # ==========
