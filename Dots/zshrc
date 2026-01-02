@@ -59,10 +59,6 @@ export PATH="${PATH:+${PATH}:}$PATH_USER_BIN"
 #---- nltk data
 export NLTK_DATA="$HOME/Data/nltk_data"
 
-#---- ollama stuff
-# i really cannot stand ollama
-#export OLLAMA_CONTEXT_LENGTH=8192
-
 
 #------------------------------------------------------------------------------
 
