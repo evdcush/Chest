@@ -1,6 +1,34 @@
+# 🛑 SECHEDU?LED FOR REMOVAL
+
+
 #--- Pathing for machines with CUDA
-PATH_CUDA="/usr/local/cuda"
-export PATH="${PATH:+${PATH}:}$PATH_CUDA"
-export LD_LIBRARY_PATH="$PATH_CUDA/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
+#PATH_CUDA="/usr/local/cuda"
+#export PATH="${PATH:+${PATH}:}$PATH_CUDA"
+#export LD_LIBRARY_PATH="$PATH_CUDA/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
+# DEBUGGING a500 (DEC 2025): why the f is cuda locked to 12.6?
+
+
+#==== UPDATE (JAN 2026):
+#     it appears this whole claptrap CUDA-related pathing nonsense is maybe
+#     no longer necessary?
+#     I've been doin the same shit with CUDA, cuDNN, and libs for so long now
+#     i don't yactually recall why we needed this in first place.
+#     you likely have a note either in:
+#     - `Chest/Setup/*`: (setup notes prob)
+#     - `Chest/Reference/*`: (troubleshit.rst, howdoi.rst,
+#                          cuda_happy_fun_time.rst, etc.)
+#     - `Projects/tensorflow-wheels/`: guide
+#
+#    SPAGHETT --> WALL GUESS:
+#        this was for cuDNN primarily (esp. `LD_LIBRARY_PATH`), and maybe bc
+#        we used to have to do more arcane shit to setup cuda on rig
+#
+#    TODO(evo, JAN 5 2026): del this bish
+#
+#        **IF YOU OPEN THIS MF AGAIN IN FUT, AND YOU'VE OTHERWISE EXPERIENCED
+#          NO NVIDIA-RELATED くだらん POPPYCOCK SHIT ---> DEL THIS DOT**
+
+
+
 
 ## NB: non-gpu machines have dummy `gpu_dot`
