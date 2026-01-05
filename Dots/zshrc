@@ -106,6 +106,7 @@ ZSH_THEME="robbyrussell"
 # =======
 plugins=(
     aliases  # use via cmd `als`
+    #alias-finder
     colored-man-pages
     command-not-found
     #extract
@@ -113,6 +114,8 @@ plugins=(
     #forgit
     gunstage
     #tldr
+    you-should-use
+    zsh-autosuggestions
     zshmarks
     zsh-syntax-highlighting
     z
@@ -159,17 +162,22 @@ export FZF_DEFAULT_OPTS='--history-size=15000'  # default is 1000
 ##  NB: never mind; env var only respected by flatpak app when launched
 #       via CLI--not .desktop use flatseal instead
 
-
-# tldr
-# ====
-source $DIR_DOTS/ToolConfs/tldr_config
-#source $DIR_DOTS/ToolConfs/aider_conf
-
-
 # Source aliases and funcs
 # ========================
 source $DIR_DOTS/aliases
 source $DIR_DOTS/functions
+
+# tldr
+# Misc tools
+# ==========
+# tldr
+source $DIR_DOTS/ToolConfs/tldr_config
+# aider
+#source $DIR_DOTS/ToolConfs/aider_conf
+# ripgrep
+export RIPGREP_CONFIG_PATH="$DIR_DOTS/ToolConfs/ripgreprc"
+
+
 
 if [ -f "$HOME/.work_aliases" ]; then
     source $HOME/.work_aliases
