@@ -29,7 +29,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install jupyter-book matplotlib numpy
+        pip install jupyter-book==1.0.4.post1 matplotlib numpy
 
     # Build the book
     - name: Build the book
