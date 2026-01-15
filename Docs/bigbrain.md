@@ -1,5 +1,7 @@
 # Processing Codebases
 
+**here you go: https://github.com/patrickloeber/llm-data-scrapers**
+
 Resources for ingesting a codebase.
 
 ## Code structure and understanding
@@ -165,4 +167,3 @@ echo -e "src/index.ts\nsrc/utils.ts" | repomix --stdin
 
 
 - [**mishushakov/llm-scraper** - Turn any webpage into structured data using LLMs](https://github.com/mishushakov/llm-scraper)
-

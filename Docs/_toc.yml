@@ -47,9 +47,10 @@ root: intro
 
 chapters:
 - file: glossary
+- file: ssg_resources
 - file: operator
-  sections:
-    - file: jb-kitchen-sink
+  #sections:
+  #  - file: jb-kitchen-sink  # nah shit's broke u need lal the referenced shit at least
 - file: undocumented
 - file: markdown
 - file: markdown-notebooks
