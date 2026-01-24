@@ -188,6 +188,7 @@
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><em>Operator Protocols</em></a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="undocumented.html">UNDOCUMENTED WORK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
@@ -356,6 +357,17 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><em>Operator Protocols</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-book">jupyter book</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sphinx-book-theme"><code class="docutils literal notranslate"><span class="pre">sphinx-book-theme</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-their-styles">in their styles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydata-theme-stuff">PyData theme stuff</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#font">FONT</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#misc">Misc</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#myst-editor">MyST-editor</a></li>
 </ul>
@@ -375,6 +387,171 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="operator-protocols">
 <h1><em>Operator Protocols</em><a class="headerlink" href="#operator-protocols" title="Link to this heading">#</a></h1>
 <p>Sounds cooler than “Notes on How to Do/Operate Stuff”. 😎</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="jupyter-book">
+<h1>jupyter book<a class="headerlink" href="#jupyter-book" title="Link to this heading">#</a></h1>
+<section id="sphinx-book-theme">
+<h2><code class="docutils literal notranslate"><span class="pre">sphinx-book-theme</span></code><a class="headerlink" href="#sphinx-book-theme" title="Link to this heading">#</a></h2>
+<p>src: <a class="github reference external" href="https://github.com/executablebooks/sphinx-book-theme">executablebooks/sphinx-book-theme</a></p>
+<p>Here are the knobs you get for the theme (<strong>i think</strong>), from
+<code class="docutils literal notranslate"><span class="pre">sphinx-book-theme/src/sphinx_book_theme/theme/sphinx_book_theme/theme.conf</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">theme</span><span class="p">]</span>
+<span class="n">inherit</span> <span class="o">=</span> <span class="n">pydata_sphinx_theme</span>
+<span class="n">pygments_style</span> <span class="o">=</span> <span class="n">tango</span>
+<span class="n">sidebars</span> <span class="o">=</span> <span class="n">navbar</span><span class="o">-</span><span class="n">logo</span><span class="o">.</span><span class="n">html</span><span class="p">,</span> <span class="n">icon</span><span class="o">-</span><span class="n">links</span><span class="o">.</span><span class="n">html</span><span class="p">,</span> <span class="n">search</span><span class="o">-</span><span class="n">button</span><span class="o">-</span><span class="n">field</span><span class="o">.</span><span class="n">html</span><span class="p">,</span> <span class="n">sbt</span><span class="o">-</span><span class="n">sidebar</span><span class="o">-</span><span class="n">nav</span><span class="o">.</span><span class="n">html</span>
+<span class="n">stylesheet</span> <span class="o">=</span> <span class="n">styles</span><span class="o">/</span><span class="n">sphinx</span><span class="o">-</span><span class="n">book</span><span class="o">-</span><span class="n">theme</span><span class="o">.</span><span class="n">css</span>
+
+<span class="p">[</span><span class="n">options</span><span class="p">]</span>
+<span class="c1"># Announcement bar (empty by default)</span>
+<span class="n">announcement</span> <span class="o">=</span>
+
+<span class="c1"># Secondary sidebar: Removes the extra page-specific links from sidebar</span>
+<span class="n">secondary_sidebar_items</span> <span class="o">=</span> <span class="n">page</span><span class="o">-</span><span class="n">toc</span><span class="o">.</span><span class="n">html</span>
+<span class="n">toc_title</span> <span class="o">=</span> <span class="n">Contents</span>
+
+<span class="c1"># Article header: The top bar that is displayed on most pages</span>
+<span class="n">article_header_start</span> <span class="o">=</span> <span class="n">toggle</span><span class="o">-</span><span class="n">primary</span><span class="o">-</span><span class="n">sidebar</span><span class="o">.</span><span class="n">html</span>
+<span class="n">article_header_end</span> <span class="o">=</span> <span class="n">article</span><span class="o">-</span><span class="n">header</span><span class="o">-</span><span class="n">buttons</span><span class="o">.</span><span class="n">html</span>
+<span class="n">use_download_button</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">use_fullscreen_button</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">use_issues_button</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">use_source_button</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">use_repository_button</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="c1"># Note: We also inherit use_edit_page_button from the PyData theme</span>
+
+<span class="c1"># Configuration for GitHub / GitLab repo buttons</span>
+<span class="n">path_to_docs</span> <span class="o">=</span>
+<span class="n">repository_url</span> <span class="o">=</span>
+<span class="n">repository_branch</span> <span class="o">=</span>
+<span class="n">repository_provider</span> <span class="o">=</span>
+<span class="n">launch_buttons</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># Header / navbar.</span>
+<span class="c1"># Over-ride the PST navbar components (users could provide their own if they wish)</span>
+<span class="n">navbar_start</span> <span class="o">=</span>
+<span class="n">navbar_center</span> <span class="o">=</span>
+<span class="n">navbar_end</span> <span class="o">=</span>
+<span class="n">navbar_persistent</span> <span class="o">=</span>
+
+<span class="c1"># Primary sidebar behavior</span>
+<span class="n">home_page_in_toc</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">show_navbar_depth</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">max_navbar_depth</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">collapse_navbar</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># Footer at the bottom of the content</span>
+<span class="n">extra_footer</span> <span class="o">=</span>
+<span class="n">footer_content_items</span> <span class="o">=</span> <span class="n">author</span><span class="o">.</span><span class="n">html</span><span class="p">,</span> <span class="n">copyright</span><span class="o">.</span><span class="n">html</span><span class="p">,</span> <span class="n">last</span><span class="o">-</span><span class="n">updated</span><span class="o">.</span><span class="n">html</span><span class="p">,</span> <span class="n">extra</span><span class="o">-</span><span class="n">footer</span><span class="o">.</span><span class="n">html</span>
+
+<span class="c1"># Footer at the bottom of the site (PST over-ride)</span>
+<span class="n">footer_start</span> <span class="o">=</span>
+<span class="n">footer_end</span> <span class="o">=</span>
+
+<span class="c1"># Content and directive flags</span>
+<span class="n">use_sidenotes</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># DEPRECATE after a few release cycles</span>
+<span class="n">expand_toc_sections</span> <span class="o">=</span> <span class="p">[]</span>
+
+</pre></div>
+</div>
+<p>Of potential interest:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">use_sidenotes</span></code> ?</p></li>
+<li><p>the sidebar behavior stuff (<code class="docutils literal notranslate"><span class="pre">home_page_in_toc</span></code>, <code class="docutils literal notranslate"><span class="pre">max_navbar_depth</span></code>, etc.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">use_download_button</span> <span class="pre">=</span> <span class="pre">True</span></code> &lt;– you probably want this false?</p></li>
+<li><p>“we also inherit … from PyData theme”: <strong>many more knobs here maybe</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">use_edit_page_button</span></code></p></li>
+</ul>
+</li>
+</ul>
+<section id="in-their-styles">
+<h3>in their styles<a class="headerlink" href="#in-their-styles" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">sphinx-book-theme/src/sphinx_book_theme/assets/styles/</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">base/_base.scss</span></code>:</p>
+<p><strong>PRINT CONTROL SETTINGS</strong>:</p>
+<div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Printing behavior</span>
+<span class="cm"> */</span>
+<span class="c1">// Only display upon printing</span>
+<span class="nc">.onlyprint</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">display</span><span class="nd">:</span><span class="w"> </span><span class="nt">none</span><span class="o">;</span>
+
+<span class="w">  </span><span class="o">@</span><span class="nt">media</span><span class="w"> </span><span class="nt">print</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">display</span><span class="nd">:</span><span class="w"> </span><span class="nt">block</span><span class="w"> </span><span class="o">!</span><span class="nt">important</span><span class="o">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Prevent an item from being printed</span>
+<span class="nc">.noprint</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">@media</span><span class="w"> </span><span class="n">print</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">display</span><span class="nd">:</span><span class="w"> </span><span class="nt">none</span><span class="w"> </span><span class="o">!</span><span class="nt">important</span><span class="o">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="pydata-theme-stuff">
+<h3>PyData theme stuff<a class="headerlink" href="#pydata-theme-stuff" title="Link to this heading">#</a></h3>
+<section id="font">
+<h4>FONT<a class="headerlink" href="#font" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">bt</span> <span class="pre">src/pydata_sphinx_theme/assets/styles/variables/_fonts.scss</span></code></p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">html</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c">/*****************************************************************************</span>
+<span class="c">  * Font features used in this theme</span>
+<span class="c">  */</span>
+
+<span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">base</span><span class="w"> </span><span class="err">font</span><span class="w"> </span><span class="err">size</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">applied</span><span class="w"> </span><span class="err">at</span><span class="w"> </span><span class="err">body/html</span><span class="w"> </span><span class="err">level</span>
+<span class="w">  </span><span class="nv">--pst-font-size-base</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+
+<span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">heading</span><span class="w"> </span><span class="err">font</span><span class="w"> </span><span class="err">sizes</span><span class="w"> </span><span class="err">based</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">medium</span><span class="w"> </span><span class="err">contrast</span><span class="w"> </span><span class="err">type</span><span class="w"> </span><span class="err">scale</span>
+<span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="n">see</span><span class="p">:</span><span class="w"> </span><span class="n">https</span><span class="o">://</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Quansight-Labs</span><span class="o">/</span><span class="n">czi-scientific-python-mgmt</span><span class="o">/</span><span class="n">issues</span><span class="o">/</span><span class="mi">97</span><span class="mh">#issuec</span><span class="n">omment-2310531483</span>
+<span class="w">  </span><span class="o">--</span><span class="n">pst-font-size-h1</span><span class="o">:</span><span class="w"> </span><span class="mf">2.625</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--pst-font-size-h2</span><span class="p">:</span><span class="w"> </span><span class="mf">2.125</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--pst-font-size-h3</span><span class="p">:</span><span class="w"> </span><span class="mf">1.75</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--pst-font-size-h4</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--pst-font-size-h5</span><span class="p">:</span><span class="w"> </span><span class="mf">1.25</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--pst-font-size-h6</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+
+<span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">smaller</span><span class="w"> </span><span class="err">than</span><span class="w"> </span><span class="err">heading</span><span class="w"> </span><span class="err">font</span><span class="w"> </span><span class="err">sizes</span>
+<span class="w">  </span><span class="nv">--pst-font-size-milli</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9</span><span class="kt">rem</span><span class="p">;</span>
+
+<span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">Sidebar</span><span class="w"> </span><span class="err">styles</span>
+<span class="w">  </span><span class="nv">--pst-sidebar-font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--pst-sidebar-font-size-mobile</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--pst-sidebar-header-font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--pst-sidebar-header-font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">;</span>
+
+<span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">Admonition</span><span class="w"> </span><span class="err">styles</span>
+<span class="w">  </span><span class="nv">--pst-admonition-font-weight-heading</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">;</span>
+
+<span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">Font</span><span class="w"> </span><span class="err">weights</span>
+<span class="w">  </span><span class="nv">--pst-font-weight-caption</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--pst-font-weight-heading</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">;</span>
+
+<span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">Font</span><span class="w"> </span><span class="err">family</span>
+<span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">modernfontstacks</span><span class="o">.</span><span class="n">com</span><span class="o">/?</span><span class="n">stack</span><span class="o">=</span><span class="n">system-ui</span>
+<span class="w">  </span><span class="o">--</span><span class="n">pst-font-family-base-system</span><span class="o">:</span>
+<span class="w">    </span><span class="n">system-ui</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Apple Color Emoji&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Segoe UI Emoji&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Segoe UI Symbol&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Noto Color Emoji&quot;</span><span class="p">;</span>
+
+<span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">modernfontstacks</span><span class="o">.</span><span class="n">com</span><span class="o">/?</span><span class="n">stack</span><span class="o">=</span><span class="kc">monospace</span><span class="o">-</span><span class="n">code</span>
+<span class="w">  </span><span class="o">--</span><span class="n">pst-font-family-monospace-system</span><span class="o">:</span>
+<span class="w">    </span><span class="n">ui-monospace</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Cascadia Code&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Source Code Pro&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Menlo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Consolas&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;DejaVu Sans Mono&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">monospace</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--pst-font-family-base</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--pst-font-family-base-system</span><span class="p">);</span>
+<span class="w">  </span><span class="nv">--pst-font-family-heading</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--pst-font-family-base-system</span><span class="p">);</span>
+<span class="w">  </span><span class="nv">--pst-font-family-monospace</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--pst-font-family-monospace-system</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="o">$</span><span class="nt">line-height-body</span><span class="o">:</span><span class="w"> </span><span class="nt">1</span><span class="p">.</span><span class="nc">65</span><span class="o">;</span>
+<span class="o">$</span><span class="nt">fa-font-path</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;vendor/fontawesome/webfonts/&quot;</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="misc">
 <h1>Misc<a class="headerlink" href="#misc" title="Link to this heading">#</a></h1>
@@ -469,6 +646,17 @@ http://localhost:5173/
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><em>Operator Protocols</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-book">jupyter book</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sphinx-book-theme"><code class="docutils literal notranslate"><span class="pre">sphinx-book-theme</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-their-styles">in their styles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydata-theme-stuff">PyData theme stuff</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#font">FONT</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#misc">Misc</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#myst-editor">MyST-editor</a></li>
 </ul>
