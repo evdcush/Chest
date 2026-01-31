@@ -1,16 +1,21 @@
 #zmodload zsh/zprof
 
-# hist
+#===================================  HIST  ==================================#
+
 #HISTORY_IGNORE="(ls|cd|pwd|exit| ..|..|...|l|lk)"
 export HISTFILE=$HOME/.zsh_history
+HISTSIZE=200000       # MEM: size on ram
 # we use max val for signed i32 (eg: 2^31 - 1)
-HISTSIZE=2147483647       # in-memory size
-SAVEHIST=2147483647       # how many lines to keep in file
+SAVEHIST=2147483647       # DISK: how many lines to keep in file
 #export HISTSIZE=-1 # Unlimited num of cmds in-memory history of current sess
 #export HISTFILESIZE=-1 # No limit to num cmds kept in history file.
 setopt HIST_APPEND
 setopt INC_APPEND_HISTORY  # write each command immediately
-setopt HIST_IGNORE_SPACE
+setopt HIST_IGNORE_SPACE  # don't write anything to hist that starts with a space
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_REDUCE_BLANKS  # normalizes    whitespace  --> 'normalizes whitespace'
+#setopt HIST_FCNTL_LOCK  # protect collisions from concurrent writes
+
 setopt EXTENDED_HISTORY
 
 #=============================================================================#
@@ -131,6 +136,34 @@ source $ZSH/oh-my-zsh.sh
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 
+# completion caching; since completions become a slow turd after long time.
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.cache/zsh/completion
+
+
+#===================================  HIST  ==================================#
+# WE RE-RUN OUR HIST CONFIG AFTER SOURCING omz
+# SINCE omz MIGHT FUCK AROUND
+#
+# DON'T TOUCH SHIT HERE, STRICTLY EDIT IN THE OG BLOCK,
+# COPY-PASTE here
+
+#HISTORY_IGNORE="(ls|cd|pwd|exit| ..|..|...|l|lk)"
+export HISTFILE=$HOME/.zsh_history
+HISTSIZE=200000       # MEM: size on ram
+# we use max val for signed i32 (eg: 2^31 - 1)
+SAVEHIST=2147483647       # DISK: how many lines to keep in file
+#export HISTSIZE=-1 # Unlimited num of cmds in-memory history of current sess
+#export HISTFILESIZE=-1 # No limit to num cmds kept in history file.
+setopt HIST_APPEND
+setopt INC_APPEND_HISTORY  # write each command immediately
+setopt HIST_IGNORE_SPACE  # don't write anything to hist that starts with a space
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_REDUCE_BLANKS  # normalizes    whitespace  --> 'normalizes whitespace'
+#setopt HIST_FCNTL_LOCK  # protect collisions from concurrent writes
+
+setopt EXTENDED_HISTORY
+
 
 
 #=============================================================================#
@@ -146,7 +179,8 @@ source $ZSH/oh-my-zsh.sh
 
 # fzf
 # ===
-export FZF_DEFAULT_OPTS='--history-size=15000'  # default is 1000
+#export FZF_DEFAULT_OPTS='--history-size=15000'  # default is 1000
+# ^ not sure about this actually..
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # broot
@@ -205,6 +239,7 @@ export PIP_DISABLE_PIP_VERSION_CHECK=1
 
 #=== prevent default OPT-OUT next.js telemetry shit
 export NEXT_TELEMETRY_DISABLED=1  # @next.js:  shame, shame, shame 
+export HF_HUB_DISABLE_TELEMETRY=1 # hf hub pulls: shame!
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -231,14 +266,30 @@ export GPG_TTY=$(tty)
 #zstyle ':completion:*' menu select
 #fpath+=~/.zfunc
 
-. "$HOME/.atuin/bin/env"
+#==== ATUIN STUFF
+#. "$HOME/.atuin/bin/env"
+# do your own controlled, idempotent pathing; dont trust other mfs
+path_prepend "$HOME/.atuin/bin"
 
-eval "$(atuin init zsh)"
+# NB: we DO NOT use atuin's bizarre, claptrap search
+#     - fuzzy search is case-sensitive (lol)
+#     - i'm used to "smart":
+#       all lowercase queries matches insensitive, any upper is case-sensitive
+#   see relevant OPEN issue for deetz:
+#     "Case insensitive fuzzy search mode #625"
+#     https://github.com/atuinsh/atuin/issues/625
+#
+#eval "$(atuin init zsh)"
+
+#eval "$(atuin init zsh --disable-key-bindings)"  # ideally, but
+eval "$(atuin init zsh --disable-ctrl-r)"
+
+
 elap
 
 
 # opencode
-export PATH=/home/evan/.opencode/bin:$PATH
+#export PATH=/home/evan/.opencode/bin:$PATH  # <--- the fuck is this shit? oepncode autoadded this ?
 
 ## >>> b2 autocomplete >>>
 ## This section is managed by b2 . Manual edit may break automated updates.
