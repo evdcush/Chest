@@ -1,0 +1,13 @@
+# include hidden files & dirs
+--hidden
+
+# include files listed in gitignore
+--no-ignore
+
+# no line numbers
+--no-line-number
+
+# pattern.islower() ? ignore case : case-sensitive;
+#   e.g.: "rg zotero" will match on 'zotero' and 'Zotero'
+#         "rg Zotero" will match on 'Zotero'
+--smart-case
