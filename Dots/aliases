@@ -11,7 +11,7 @@
 # System stuff
 
 #==== power etc.
-alias poff='systemctl poweroff'
+alias poff='echo "poweroff in 1.5s" && sleep 1.5 && systemctl poweroff'
 
 # Display
 # =======
