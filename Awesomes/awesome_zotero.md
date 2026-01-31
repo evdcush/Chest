@@ -52,6 +52,10 @@ sudo apt update
 sudo apt install zotero
 ```
 
+You can also just grab the deb from the host: https://mirror.mwt.me/zotero/deb/
+
+
+
 ----
 
 # Plugins
@@ -101,29 +105,24 @@ sudo apt install zotero
 # Clients
 
 ### Android
+Zotero now has an *OFFICIAL* android app:
 
-- [mickstar/Zoo-For-Zotero: This is an Android app for viewing Zotero libraries.](https://github.com/mickstar/Zoo-For-Zotero)
-
-- [avram/zandy: Zotero on Android](https://github.com/avram/zandy)
+`org.zotero.android`:
+- Big Brother Store: https://play.google.com/store/apps/details?id=org.zotero.android
+- Source (no builds): https://github.com/zotero/zotero-android
 
 
 
 ---
 
-
-
 # Community
 
 ## Swole Doges
-
-
 
 #### windingwind (Xiangyu Wang)
 
 - Page: https://windingwind.github.io/
 - GH: [windingwind](https://github.com/windingwind)
-
-
 
 ##### Works
 
@@ -133,15 +132,9 @@ sudo apt install zotero
 - [**windingwind/zotero-pdf-translate**: Translate PDF, EPub, webpage, metadata, annotations, notes to the target language. Support 20+ translate services.](https://github.com/windingwind/zotero-pdf-translate)
 - [**windingwind/zotero-actions-tags**: Customize your Zotero workflow.](https://github.com/windingwind/zotero-actions-tags)
 
-
-
-
-
 #### MuiseDestiny
 
 [MuiseDestiny (Polygon)](https://github.com/MuiseDestiny)
-
-
 
 ##### Works
 
@@ -152,10 +145,6 @@ sudo apt install zotero
    - **THIS IS ALLEGEDLY SOMETHING LIKE A "ZOTFILE" FOR Zotero 7 (zotfile only supports Zotero 6)**
 - 
 
-
-
-
-
 #### Retorquere
 
 - [retorquere (Emiliano Heyns)](https://github.com/retorquere)
@@ -163,15 +152,9 @@ sudo apt install zotero
       - [retorquere/zotero-better-bibtex: Make Zotero effective for us LaTeX holdouts](https://github.com/retorquere/zotero-better-bibtex)
    - [retorquere/zotero-date-from-last-modified](https://github.com/retorquere/zotero-date-from-last-modified)
 
-
-
 ----
 
-
-
 Other cool plugins:
-
-
 
 - [GitHub - volatile-static/Chartero: Chart in Zotero](https://github.com/volatile-static/Chartero)
 - 
