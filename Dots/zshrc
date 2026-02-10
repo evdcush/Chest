@@ -120,7 +120,7 @@ plugins=(
     gunstage
     #tldr
     you-should-use
-    zsh-autosuggestions
+    #zsh-autosuggestions
     zshmarks
     zsh-syntax-highlighting
     z
