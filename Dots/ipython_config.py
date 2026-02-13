@@ -254,6 +254,7 @@ c.InteractiveShellApp.extensions = [
 #          usual traceback
 #  Default: False
 # c.BaseIPythonApplication.verbose_crash = False
+c.BaseIPythonApplication.verbose_crash = True
 
 #------------------------------------------------------------------------------
 # TerminalIPythonApp(BaseIPythonApplication, InteractiveShellApp) configuration
