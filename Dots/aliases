@@ -17,6 +17,28 @@ alias poff='echo "poweroff in 1.5s" && sleep 1.5 && systemctl poweroff'
 # =======
 #alias fixdisplay='sudo /etc/init.d/lightdm restart'
 
+#==== pathing
+function lnsf() {
+    # handle the fucking full-path bullshit for symlink
+    # ASSUMES DESTINATION TARGET IS PARENT OF DESTINATION ARG ($2)
+    if [[ "$#" != 2 ]]; then
+        echo "need 2 args (todo, assume pwd or some shit maybe).use like:"
+        echo "lnsf src dst"
+        return
+    fi
+    _src=$(readlink -e $1)
+    _dst=$(readlink -e $2)
+    echo "COMMAND TO BE EXEC:"
+    echo "ln -sf $1 $2"
+    echo "ln -sf $_src $_dst"
+    echo ""
+    ln -sf $_src $_dst
+    echo "CONFIRM LINK: (rememb, dst $2 is parent path, not the symlinked name)!"
+    echo "-------------------"
+    src_name=$(basename $_src)
+    ls -la "$_dst/$src_name"
+}
+
 # Trackpoint sensitivity
 # ======================
 #alias trk="xinput --set-prop `xinput | grep -i trackpoint | cut -d'=' -f2 | cut -c -2` 'libinput Accel Speed' -0.7"
