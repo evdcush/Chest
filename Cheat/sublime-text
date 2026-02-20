@@ -1,0 +1,69 @@
+
+
+#=================================  SNIPPETS  ================================#
+
+#
+
+# SNIPPETS
+# Wow......... using ST for 12+ years, and i just discover this "Snippets" thing....
+# amazing util
+
+# NOTA BENE:
+#   - WHAT Snippets are available for insertion is CONTEXT-dependent on the
+#     CURRENTLY ACTIVE file
+#     - `swoldoge.py` ---> shows stuff like "__magic__", try/except/{etc.} block
+#       class/fun def, `if __name__ == '__main__'` etc...
+#   - YOU CAN TAB AUTO-COMPLETE/SELECT!
+#   - CAN MAKE SNIPPETS!
+
+
+#==============================  TIPS & TRICKS  ==============================#
+
+
+
+#----------------------------  WINDOW LAYOUT/VIEW  ---------------------------#
+
+##  NB:
+##      "ALT + SHIFT + 1"  to return to normal layout
+
+
+#====  VERTICAL SPLIT  ("columns" in ST layout view)
+
+## 1 col (default view)
+"alt + shift + 1"
+
+## 2 col (expected half & half "vertical split" )
+"alt + shift + 2"
+
+## 3 col (split vert 3 window)
+"alt + shift + 3"
+
+## 4 col
+"alt + shift + 4"
+
+
+#====  GRID SPLIT
+
+## 4-cell grid
+"alt + shift + 5"
+
+
+#====  HORIZONTAL SPLIT  ("rows" in ST layout view)
+
+## 2 rows  (half & half horizontal split)
+"alt + shift + 8"
+
+## 3 rows
+"alt + shift + 9"
+
+
+
+
+#--------------------------------  NAVIGATION  -------------------------------#
+##  SEEK/FIND, GO TO, etc.
+
+
+#====  Find in files
+"ctrl + shift + f"
+
+
