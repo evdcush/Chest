@@ -278,6 +278,11 @@ sudo apt install gcc-12 g++-12
 # Can optionally setup alternatives:
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 100 --slave /usr/bin/g++ g++ /usr/bin/g++-12
 
+# actually no yea you do need the PPA--jammy doesn't go > 12 default.
+sudo apt-add-repository ppa:ubuntu-toolchain-r/test
+sudo apt install gcc-13 g++-13
+update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 130 --slave /usr/bin/g++ g++ /usr/bin/g++-13
+
 # Pygame stuffs
 sudo apt install -y libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libportmidi-dev
 # Okay, so 'gym[box2d]' still fails on pygame error, so go for a pinned ver:
@@ -368,35 +373,68 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/u
 ## (no snap, home bin)
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/evan/.local/bin"
 
-# Oh-my-zsh
-# =========
-sudo apt install -y git zsh && sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-# (It's worth starting a new sess after install)
-# Install zsh plugins:
-git clone --depth=1 https://github.com/jocelynmallon/zshmarks.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zshmarks
-git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# SYMLINK YOUR DOTS!
+# ==================
+ln -sf $HOME/Chest/Dots $HOME/.Dots
+
+
+#==============================  ZSH & ohmyzsh  ==============================#
+
+#====  INSTALL
+# first install zshell
+sudo apt install -y git zsh
+# then omz
+# NB (FEB 2026): consider that you may want to pin this mf to a version.
+#                same with the plugins (at least core/required ones).
+#                the silent side-effects from installing latest when you don't
+#                know some shit changed since using the tool forever, it has
+#                been brutal to debug in past...
+#
+#                ALTERNATIVELY:
+#                  simply just get the install script and check that puppy in
+#                  Chest/Setup or Scripts.
+#                  actually i liek idea. at least for omz. plugins, it PITA(?)
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+#-----------------------------  ZSH/OMZ PLUGINS  -----------------------------#
 
 # The general "add zsh plugin to oh-my-zsh" snippet:
 ## Clone repo into zsh custom plugins:
 git clone --depth=1 https://github.com/<owner>/<repo>.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/<repo>
 
-## Add it to .zshrc plugins
+## then Add it to .zshrc plugins
 #plugins=( history colored-man-pages zsh-syntax-highlighting etc... )
 
 
-#--- Experimental
-git clone --depth=1 \
-https://github.com/LucasLarson/gunstage.git \
-${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/gunstage
+# (It's worth starting a new sess after install)
+#==== CORE MFs
+git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone --depth=1 https://github.com/jocelynmallon/zshmarks.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zshmarks
 
-#--- resh
+
+#--- good
+# gunstage
+git clone --depth=1 https://github.com/LucasLarson/gunstage.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/gunstage
+
+#==== rice
+# ACTUALLY, these are both kind of annoying...
+# autosuggestions
+#git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+## you should use (reminds of aliases defined)
+#git clone --depth=1 https://github.com/MichaelAquilina/zsh-you-should-use ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/you-should-use
+
+
+
+#--- resh  (NO, for now)
 # "Shell history in context"
 # eg: like fzf, but with further contextual hints/ordering
-curl -fsSL https://raw.githubusercontent.com/curusarn/resh/master/scripts/rawinstall.sh | bash
+#curl -fsSL https://raw.githubusercontent.com/curusarn/resh/master/scripts/rawinstall.sh | bash
 
-###############################################################################
-# Try atuin? https://github.com/atuinsh/atuin
-#################################################################################
+
+#========================  Addditional MISC env setup  =======================#
+
+
 #--- atuin
 # shell history sync'd
 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
@@ -404,10 +442,6 @@ curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
 ln -sf $HOME/.Dots/atuin_config.toml $HOME/.config/atuin/config.toml
 
 
-# ==== #
-# 𝗗𝗢𝗧𝗦 #
-# ==== #
-ln -sf $HOME/Chest/Dots $HOME/.Dots
 
 
 #-----------------------------------------------------------------------------#
@@ -800,7 +834,7 @@ xdg-mime query default inode/directory
 # set it to nemo:
 xdg-mime default nemo.desktop inode/directory
 # for other file amnagers or apps n shit, find them in
-# ls /usr/share/applications
+ls /usr/share/applications
 
 
 # General Sourced
@@ -2125,6 +2159,17 @@ EOF
 # Reload systemd and restart tailscale
 sudo systemctl daemon-reload
 sudo systemctl restart tailscaled
+
+#==== ollama
+# hard block with a poisoned stub
+sudo tee /usr/local/bin/ollama >/dev/null <<'EOF'
+#!/bin/sh
+echo "ollama is fucking garb; miss me with that shit" >&2
+exit 1
+EOF
+sudo chmod +x /usr/local/bin/ollama
+
+
 
 
 #=============================================================================#
