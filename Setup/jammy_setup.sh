@@ -826,7 +826,12 @@ sudo apt install -y pandoc wkhtmltopdf weasyprint poppler-utils
 sudo apt install -y copyq deluge gparted redshift inxi colordiff qalc
 sudo apt install -y units  # unit converter
 
-sudo apt install -y nemo  # file manager (nautilus is buggy garb)
+# FILE MANAGER
+# ============
+# bc nautilus is ASS
+#====  Nemo
+## actually, dolphin is preferred
+sudo apt install -y nemo
 # change the fm to nemo
 # first, confirm the default fm:
 xdg-mime query default inode/directory
@@ -835,6 +840,21 @@ xdg-mime query default inode/directory
 xdg-mime default nemo.desktop inode/directory
 # for other file amnagers or apps n shit, find them in
 ls /usr/share/applications
+
+#====  Dolphin
+# apt over flatpak bc flatpak alway end up having bizarre issues (pathing probab)
+sudo apt install -y dolphin
+
+# NB: dolphin (like all KDE anything) installs a million other pkgs as deps.
+#     one you will need to immediately remove is "baloo"
+#     what is baloo? some kidn of indexing shit i think. it doesn't work
+#     (at least well) outside of kde DE however, and it will slam your CPU
+#     usage indefinitely (who knows why).
+#     so disable and remove
+balooctl disable
+rm -rf ~/.local/share/baloo
+# i think you can just uninstall (watch out for rem of dolphin tho)
+sudo apt remove --purge baloo-kf5
 
 
 # General Sourced
