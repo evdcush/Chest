@@ -1,3 +1,11 @@
 # fukcing don't page, shit..
 ##  NO OTHER SHIT WORKS OKAY, DON'T ATTEMPT IT! JUST DO THIS PIPE HACK!
 man ffmpeg | cat
+
+# no, wait, this work
+# (bespoke/snowflake man thing ??)
+man --page= date
+# you have this as alias:
+alias mn='man --page='
+
+#==== still, have no idea how to otherwise disable paging for man
