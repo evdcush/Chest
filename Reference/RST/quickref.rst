@@ -1,5 +1,7 @@
 .. role:: small
 
+FROM: https://github.com/ralsina/rst-cheatsheet
+
 Inline Markup
 -------------
 
