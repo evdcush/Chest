@@ -15,3 +15,21 @@ xdg-mime query default $(xdg-mime query filetype path/to/file)
 # Set imv as the default application for opening PNG and JPEG images:
 xdg-mime default imv.desktop image/png image/jpeg
 
+#-----------------
+
+# actualy usage
+
+#====  what is default filemanager?
+xdg-mime query default inode/directory
+
+# OUT --> 'org.kde.dolphin.desktop'
+
+
+
+#  BUT where are these desktop files that xdg-mime silently paths to?
+/usr/share/applications/
+
+
+#====  set defualt for directories (i.e., setyg your default filemanager)
+## like dolphin:
+xdg-mime default org.kde.dolphin.desktop inode/directory
