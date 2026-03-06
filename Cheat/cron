@@ -1,15 +1,27 @@
 
 
 # crontab format
-M H D M 
+# ==============
+M H D M d
 * * * * *  command_to_execute
-- - - - -
 | | | | |
 | | | | +- day of week (0 - 7) (where sunday is 0 and 7)
 | | | +--- month (1 - 12)
 | | +----- day (1 - 31)
 | +------- hour (0 - 23)
 +--------- minute (0 - 59)
+
+# MINE
+# ====
+
+# weekly
+## "at 00:00 on Sunday"
+0 0 * * 0 path/to/cmd.sh
+
+## EQUIVALENT:
+@weekly path/to/cmd.sh
+
+
 
 
 
@@ -20,6 +32,9 @@ M H D M
 # every 15 min
 */15 * * * * /home/user/command.sh
 
+# every week??
+*/15 * * * */1 /home/user/command.sh
+
 # every midnight
 0 0 * * * /home/user/command.sh
 
@@ -29,7 +44,8 @@ M H D M
 # compute your crontab periodicity format online
 https://crontab.guru/
 
-# be careful with % sign (percent), it has special meaning, see https://crontab.guru/ for explanation
+# be careful with % sign (percent), it has special meaning,
+# see https://crontab.guru/ for explanation
 % signs must be escaped such as \%
 
 # view log
