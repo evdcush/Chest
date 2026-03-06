@@ -1,20 +1,32 @@
 # Knowledge Management
 
-A collection of resources and software for knowledge management.
+A collection of tools and resources for knowledge management.
+
+
+
+----
+
+
+
+# Schedule
+
+TODOs, calendar, scheduling, etc.
+
+
+
+| Name                                         | Description                             | Src                                  | Desktop | Android | Web | Extension      | Tasks | Calendar | Schedule | Sync | FLOSS | Notes | Extension | Exportable |
+| -------------------------------------------- | --------------------------------------- | ------------------------------------ | ------- | ------- | --- | -------------- | ----- | -------- | -------- | ---- | ----- | ----- | --------- | ---------- |
+| foo | bar | url here | ✅️      |         |     | ayy |       |          |          |      |       |       |           |            |
+|                                              |                                         |                                      |         |         |     |                |       |          |          |      |       |       |           |            |
+|                                              |                                         |                                      |         |         |     |                |       |          |          |      |       |       |           |            |
+|                                              |                                         |                                      |         |         |     |                |       |          |          |      |       |       |           |            |
+|                                              |                                         |                                      |         |         |     |                |       |          |          |      |       |       |           |            |
+
+
 
 ---
 
 # Bookmarks
-
-### Organization
-
-This all seems to be proprietary stuff...
-
-- [WorldBrain/Memex: Browser extension to curate, annotate, and discuss the most valuable content and ideas on the web. As individuals, teams and communities.](https://github.com/WorldBrain/Memex)
-
-- Raindrop maybe?
-
--
 
 ### Self-hosted
 
@@ -30,9 +42,7 @@ This all seems to be proprietary stuff...
 
 - [**xwmx/nb**: CLI and local web plain text notetaking, bookmarking, and archiving with linking, tagging, filtering, search, Git versioning & syncing, Pandoc conversion, + more, in a single portable script.](https://github.com/xwmx/nb)
 
-
-
-### Read Later
+### Read "Later"
 
 - **💀 DEAD 💀**[🌟**omnivore-app/omnivore**: Omnivore is a complete, open source read-it-later solution for people who like reading.](https://github.com/omnivore-app/omnivore)
 
@@ -46,11 +56,13 @@ This all seems to be proprietary stuff...
 
 ### Sync
 
-- XBrowserSync (Discontinued??)
+- ~~XBrowserSync (Discontinued??)~~ been dead for an eternity bra
 
 - [floccusaddon/floccus: :cloud: Sync your bookmarks privately across browsers and devices](https://github.com/floccusaddon/floccus)
 
-- raindrop?
+- raindrop.io
+
+-
 
 ---
 
@@ -69,9 +81,10 @@ Holy shit there are so many "note apps" out there.
 
 Here are a few, with a focus on FLOSS instead of crap like evernote.
 
-- [🥇 **laurent22/joplin**: Joplin - the secure note taking and to-do app with synchronisation capabilities for Windows, macOS, Linux, Android and iOS.](https://github.com/laurent22/joplin)
+- [**laurent22/joplin**: Joplin - the secure note taking and to-do app with synchronisation capabilities for Windows, macOS, Linux, Android and iOS.](https://github.com/laurent22/joplin)
 
-   - The CHAMP 💯
+   - used for the longest.
+   - i've never foudn any note i've written after it closes. things go here to die
 
 - [🌟 **AppFlowy-IO/AppFlowy**: AppFlowy is an open-source alternative to Notion. You are in charge of your data and customizations. Built with Flutter and Rust.](https://github.com/AppFlowy-IO/AppFlowy)
 
@@ -276,19 +289,13 @@ Nothing else comes close.
 - [gildas-lormeau/SingleFile: Web Extension for saving a faithful copy of a complete web page in a single HTML file](https://github.com/gildas-lormeau/SingleFile)
 - [Y2Z/monolith: ⬛️ CLI tool for saving complete web pages as a single HTML file](https://github.com/Y2Z/monolith)
 
-
-
 ## EXTRACTORS
 
 <mark>Shit that do: **URL** --> {`html`, `pdf`, `md`, `txt`, etc.}</mark>
 
-
-
 - Soft/apps I've used that have extractors (varying from "not bad" to "almost perfect"):
    - [GitHub - patchedsoul/news-flash](https://github.com/patchedsoul/news-flash)
    -
-
-
 
 ---
 
@@ -296,9 +303,11 @@ Nothing else comes close.
 
 ## CRM & PRM Tools
 
-- 🔥 [**monicahq/monica**: Personal CRM. Remember everything about your friends, family and business relationships.](https://github.com/monicahq/monica)
+- [**monicahq/monica**: Personal CRM. Remember everything about your friends, family and business relationships.](https://github.com/monicahq/monica)
 
    - https://www.monicahq.com/
+   - actually tried this puppy out; wasn't that great 🫤
+   - (also, it has effectively been abandoned)
 
 - Gnome Contacts (?)
 
