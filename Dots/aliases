@@ -160,6 +160,16 @@ alias shx='chmod +x'
 # h:human-readable (eg, file size 6378230 -> 6.1M)
 # F:indicate entries by file-type (eg, sym: foo.py@, dir: Documents/)
 
+# -H --dereference-command-line : follow symbolic links listed
+#   NB: the default `ls` already does this! But `ls` w/ opts sometimes doesn't.
+#   EXAMPLE:
+#     ls -l normal-boring-text-files
+#     ---------x 69 evan evan  49  4月  20 13:37  normal-boring-text-files -> /home/evan/Media/Pictures/.PRIVATE/Naked/MoleRats
+#
+#     ls -lH normal-boring-text-files
+#     # (lists verbosely the contents of /home/evan/Media/Pictures/.PRIVATE/Naked/MoleRats)
+
+
 #=== ALIASES
 #alias l='ls -FHX --group-directories-first'
 alias l='ls -FH --group-directories-first'
@@ -188,6 +198,7 @@ lsm(){
     # https://unix.stackexchange.com/questions/22218/linux-ls-to-show-only-filename-date-and-size
 }
 alias lsdate='lsm'
+
 
 lzf(){
     # list with fuzzy search
