@@ -913,9 +913,52 @@ alias flist='flatpak list --app --columns=name,application,description,version'
 #alias dolphin='flatpak run org.kde.dolphin'  # just install the deb one; too many qt problem bs
 
 
+#===========================  UNGOOG chromium APPS  ==========================#
+
+# RAINDROP.io APP LAUNCH
+
+function drp() {
+    # launches Raidnrop.io "app" (web app 'installed' in my ungoog chromium)
+    flatpak run \
+    --command=chromium \
+    io.github.ungoogled_software.ungoogled_chromium \
+    --profile-directory=$UNGOOG_PROFILE_ID_APPS \
+    --app-id=$UNGOOG_APP_ID_Raindrop \
+    & disown;
+}
+
+
 
 #==== zola
 #alias zola='flatpak run org.getzola.zola'
+
+
+#=============================================================================#
+#                                                                             #
+#  88888888ba,                             88                                 #
+#  88      `"8b                            88                                 #
+#  88        `8b                           88                                 #
+#  88         88   ,adPPYba,    ,adPPYba,  88   ,d8    ,adPPYba,  8b,dPPYba,  #
+#  88         88  a8"     "8a  a8"     ""  88 ,a8"    a8P_____88  88P'   "Y8  #
+#  88         8P  8b       d8  8b          8888[      8PP"""""""  88          #
+#  88      .a8P   "8a,   ,a8"  "8a,   ,aa  88`"Yba,   "8b,   ,aa  88          #
+#  88888888Y"'     `"YbbdP"'    `"Ybbd8"'  88   `Y8a   `"Ybbd8"'  88          #
+#                                                                             #
+#=============================================================================#
+
+
+#=============================================================================#
+#                                docker compose                               #
+#=============================================================================#
+
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
+alias dcl='docker compose logs --no-log-prefix -f vllm'
+alias dcps='docker compose ps'
+
+
+
+
 
 
 
