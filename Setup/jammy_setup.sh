@@ -2098,12 +2098,14 @@ sudo apt update && sudo apt install -y sublime-text=4189
 #==== KEYBINDINGS
 # in Preferences/Key Bindings:
 #[
-#    { "keys": ["alt+z"], "command": "toggle_setting", "args": {"setting": "word_wrap"} },
 #    { "keys": ["f7"], "command": "noop" },
 #    { "keys": ["ctrl+b"], "command": "noop" },
-#    { "keys": ["ctrl+shift+b"], "command": "noop", "args": {"select": true} },
 #    { "keys": ["ctrl+break"], "command": "noop" },
+#    { "keys": ["ctrl+shift+b"], "command": "noop", "args": {"select": true} },
+#
 #    { "keys": ["alt+shift+s"], "command": "reveal_in_side_bar" },
+#    { "keys": ["alt+z"], "command": "toggle_setting", "args": {"setting": "word_wrap"} },
+#    { "keys": ["ctrl+alt+l"], "command": "show_overlay", "args": {"overlay": "command_palette", "text": "Set Syntax: "} },
 #]
 
 
