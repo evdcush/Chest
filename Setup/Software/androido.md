@@ -454,3 +454,30 @@ HOME_CSC_OXM_F946BOXM5FYI8_MQB101334611_REV00_user_low_ship_MULTI_CERT.tar.md5
 
 
 zf5_DEC2025/HOME_CSC_OXM_F946BOXM5FYI8_MQB101334611_REV00_user_low_ship_MULTI_CERT.tar.md5
+
+
+----
+
+
+
+---
+
+
+
+
+
+
+
+
+
+
+# NOTE 9 SM-N960F
+
+### current (FEB 2026): `U9FVG2`
+The current installed FW is:
+- `N960FXXU9FVG2`, Q
+- DATE: 2022-08-18
+
+
+
+### TARGET: `SAFWB3`
