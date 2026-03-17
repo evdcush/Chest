@@ -158,3 +158,69 @@ babylonbee:
     feed_url: https://babylonbee.com/feed
     url: https://babylonbee.com
 
+
+
+---
+
+#=============================================================================#
+#                                   ARCHIVED                                  #
+#=============================================================================#
+# NB: many/most of these feeds or casts were subscribed-to during large-scale
+#     data/info trawling sess, where I'd add topical sources that had a
+#     "hmm", "maybe", "okay", "oh this is popular?" kind of mild novelty feel.
+#     Many, were never listened to.
+#     I cannot speak to their quality, but I presume they all have their
+#     merits.
+
+
+ARCHIVED:
+
+  PODCASTS:
+
+    name:
+      description:
+      feed_url:
+      url:
+      revisit:
+      note:
+
+    Signals_and_Threads:
+      description: >
+        By Jane Street; their "Ron Minsky" has convos with various engs
+      feed_url: https://signals-threads.simplecast.com
+      url: https://feeds.simplecast.com/L9810DOa
+      revisit: no
+      note:
+        - never listened
+        - not sure why added (maybe because it was Jane Street)
+        - episodes not appeal
+
+    Crucible_Moments:
+      description: >
+        by Sequoia Capital, "about inflection points that shaped some of the
+        most significant companies of our time".
+      feed_url: https://feeds.megaphone.fm/VMP5587961509
+      url:
+      revisit: no
+      note:
+        - never listen
+        - dgaf
+        - maybe added because it was by "sequoia capital"
+
+    AIMinds:
+      description: >
+        By deepgram, "explore how the companies of tomorrow are built with an
+        AI-first approach."
+      feed_url: https://feeds.transistor.fm/aiminds
+      url: https://deepgram.com/
+      revisit: no
+      note:
+        - never listne
+        - zero interest
+
+    name:
+      description:
+      feed_url:
+      url:
+      note:
+
