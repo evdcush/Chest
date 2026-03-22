@@ -1,11 +1,29 @@
 """
-Ripped from an answer in stackoverflow: "Backward search in ipython via FZF"
+SOURCE
+======
+stackoverflow Q: "Backward search in ipython via FZF"
 https://stackoverflow.com/a/62964346
 
-This file should be placed somewhere in:
+answer (this script): Credit to user
+`'SleepyBag' <https://stackoverflow.com/users/6798714/sleepybag>`_
+
+
+HOW TO USE
+==========
+This file should be placed in::
+
     ~/.ipython/profile_default/startup/
 
-Credit to user 'SleepyBag': https://stackoverflow.com/users/6798714/sleepybag
+e.g.::
+
+    ~/.ipython/profile_default/startup/20-fzf-reverse-search.py
+
+
+ref::
+
+    ln -sf /home/evan/.Dots/python_configs/ipy_fzf_hist.py \
+    /home/evan/.ipython/profile_default/startup/20-fzf-reverse-search.py
+
 """
 
 from prompt_toolkit.enums import DEFAULT_BUFFER                                                                                                                                   
