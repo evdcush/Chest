@@ -907,6 +907,7 @@ alias bth='bat -pP -r ":10"'  # like 'head'
 alias frun='flatpak run'
 alias flup='flatpak update'
 alias flist='flatpak list --app --columns=name,application,description,version'
+alias flst='flatpak list --app --columns=name,application,description,version | grep -i'
 
 # APPS
 # ----
