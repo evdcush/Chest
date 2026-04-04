@@ -58,7 +58,7 @@ def clear_session_files(profile_path):
             f.unlink()
 
 def main():
-    user_data_path = get_user_data_path()
+    user_data_path = get_linux_user_data_path()
     print(f"Brave User Data Path: {user_data_path}")
 
     src_profile_name = input("Enter source profile name (e.g., Default, Profile 1): ")

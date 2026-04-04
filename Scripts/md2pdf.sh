@@ -41,7 +41,7 @@ html, body {
   padding: 0;
   font-family: "Noto Serif", "Noto Serif CJK JP", serif;
   font-size: 12pt;
-  line-height: 1.5;
+  line-height: 1.3;
   color: #000;
   background: #fff;
 }

@@ -24,8 +24,10 @@ _dst="$PWD/$HF_REPO_NAME"
 echo "HF_REPO_NAME: $HF_REPO_NAME"
 
 # Add the target to the log.
-HF_DOWNLOAD_LOG="$HOME/.hf_model_downloads.log"
+#HF_DOWNLOAD_LOG="$HOME/.hf_model_downloads.log"  # it's exported in paths
+HF_DOWNLOAD_LOG="$HOME/.hf_model_downloads.log"  # UPATE: it is, but it not always defined in this scope...
 _timestamp=$(date +%Y-%m-%d\ %a\ %H:%M:%S:%z)
+echo "$_timestamp $_dst: $HF_REPO_URL"
 echo "$_timestamp $_dst: $HF_REPO_URL" >> $HF_DOWNLOAD_LOG
 
 # Get the repo `user/repo-name`.
