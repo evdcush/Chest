@@ -36,7 +36,8 @@ import os, subprocess
 from datetime import datetime, timedelta
 
 n = datetime(*eval(os.environ.get("LANDMARKDATE", "(1969,4,20)")))
-b = datetime(*eval(os.environ.get("INITDATE", "(1969,4,20)")))
+b = datetime(*eval(os.environ.get("INITDATE",     "(1969,4,20)")))
+m = datetime(*eval(os.environ.get("TGTDATE",      "(2069,4,20)")))
 
 # ANSI colors
 RED     = "\033[91m"
@@ -61,12 +62,16 @@ STRIKETHROUGH = "\033[9m"
 # n
 now = datetime.now()
 delta_n = now - n
+# NB: timedelta is days, and seconds SINCE those days (not total seconds)
+#     so:
+#     days, seconds = divmod(delta.total_seconds(), 3600 * 24)
+#                   = delta.days, delta.seconds
 days = delta_n.days
-hours = delta_n.seconds // 3600
-minutes = (delta_n.seconds // 60) % 60
-seconds = delta_n.seconds % 60
+seconds = delta_n.seconds  # remaining seconds after days
+hours   = seconds // 3600
+minutes = (seconds // 60) % 60  # minutes after hour
 
-elapsed_str = f"{BOLD}{RED}LANDMARK: {days} DAYS, {hours} HOURS {minutes} MINUTES{RESET}"
+elapsed_str = f"{BOLD}{YELLOW}LANDMARK: {days} DAYS, {hours} HOURS {minutes} MINUTES{RESET}"
 
 
 # b
@@ -74,7 +79,13 @@ delta_b = now - b
 y = delta_b.days / 365.2425
 useful = 63
 percent_used = y / useful
-y_str = f"{BOLD}{YELLOW}init: {y:.7f}; {percent_used:.2%} expended{RESET}"
+y_str = f"{BOLD}{MAGENTA}init: {y:.7f}; {percent_used:.2%} expended{RESET}"
+
+# m
+delta_m = m - now
+weeks, sub_days = divmod(delta_m.days, 7)
+m_str = f"{BOLD}{RED}UNTIL: {weeks} WEEKS, {sub_days} DAYS{RESET}"
+
 
 boot_time_str = subprocess.check_output(["uptime", "-s"], text=True).strip()
 
@@ -88,6 +99,7 @@ uptime = f"Uptime: {up_h}h {up_m}m"
 print(f"{BOLD}{CYAN}TIME SINCE:{RESET}")
 print(elapsed_str)
 print(y_str)
+print(m_str)
 print(uptime)
 print()
 '
@@ -210,7 +222,22 @@ function cget(){
     wget $target;
 }
 
+# --------------------------------------------------------------------------- #
 
+# Termdown stuffs
+# ===============
+# DOES NOT FUCKING WRITE TO FILE!
+#function stopw() {
+#    # runs stopwatch with termdown; log time and splits to file.
+#    # format the filename.
+#    stopwatch_filename="stopwatch_$(date +'%F_%H%M').txt"  # eg: stopwatch_2026-03-07_0922.txt
+#    stopwatch_output_path="$HOME/Chest/Iota/TimeLog/$stopwatch_filename"
+#    echo "About to stopwatch, writing to: $stopwatch_output_path\n"
+#
+#    # format the stopwatch title and launch stopwatch.
+#    stopwatch_title=$(date +'%H : %M')
+#    termdown --title $stopwatch_title -o $stopwatch_output_path
+#}
 
 
 #-----------------------------------------------------------------------------#
@@ -283,6 +310,12 @@ function dlvid(){
     _log_msg="$_timestamp: $target; '$target_filename'"
     echo "LOGGING:\n$_log_msg"
     echo "$_log_msg" >> $_log_file
+
+    # print the final cmd used for ref:
+    ytdlp_cmd="yt-dlp --embed-thumbnail --embed-metadata --embed-chapters -f $target_fmt -o $filename_fmt $target"
+    echo "REFERENCE COMMAND:\n------------------\n"
+    echo "$ytdlp_cmd"
+    echo "------------------\n"
 
     # Now, actually get the thing.
     yt-dlp \
@@ -953,7 +986,7 @@ function sporklog(){
 #       https: https://github.com/gpt-omni/mini-omni.git
 #      gh cli: gh repo clone gpt-omni/mini-omni
 #       https: https://github.com/gpt-omni/mini-omni
-function WIPWIPmirrorfork(){
+function mirror-gh-repo(){
     # Get spork target URL.
     if [ "$#" -eq 0 ]; then
         # No target given, get arg from clipboard.
@@ -975,10 +1008,22 @@ function WIPWIPmirrorfork(){
     projects_dir="$HOME/Projects"
     target_repo_path="$projects_dir/$repo_name"
     git clone --bare $target $target_repo_path
+    echo 'finished clone, entering dir.'
 
+    cd $target_repo_path
+    git branch -M master
+    ls -la --file-type --group-directories-first
+
+    echo 'now creating mrirror repo in remote....'
     # Create the mirror project
     gh repo create $repo_name --private
-    mirror_dst="https://github.com/evdcush/$repo_name"
+    #mirror_dst="https://github.com/evdcush/$repo_name"
+    echo 'created remote repo; now pushing the bare to the mirror'
+
+    mirror_dst="git@github.com:evdcush/$repo_name"
+
+    git push --mirror $mirror_dst
+
 
     # TODO!!!
 
