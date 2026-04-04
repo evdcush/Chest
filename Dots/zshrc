@@ -119,7 +119,7 @@ plugins=(
     #forgit
     gunstage
     #tldr
-    you-should-use
+    #you-should-use
     #zsh-autosuggestions
     zshmarks
     zsh-syntax-highlighting
