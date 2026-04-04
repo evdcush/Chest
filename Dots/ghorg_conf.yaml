@@ -6,8 +6,32 @@
 # Add your GitHub token
 # Defaults to using key returned by
 # $ security find-internet-password -s github.com  | grep "acct" | awk -F\" '{ print $4 }'
-# flag (--token, -t) eg: --token=bGVhdmUgYSBjb21tZW50IG9uIGlzc3VlIDY2
+# flag (--token, -t) eg:
+#   --token=bGVhdmUgYSBjb21tZW50IG9uIGlzc3VlIDY2
+# or
+#   --token=~/path/to/file/containing/token
 GHORG_GITHUB_TOKEN:
+
+# Allows you to run ghorg with no token (GHORG_<SCM>_TOKEN),
+# SCM server needs to specify no auth required for api calls.
+# flag (--no-token)
+#
+# NOTE(evan): aren't `ssh` clones not rate-limited? or at least
+#             do not use API calls?
+#             TRY THIS OUT WITH THE FLAG (`--no-token`)!
+GHORG_NO_TOKEN: false
+
+# A comma separated list of topics to filter by, currently github/gitlab/gitea
+# only.
+# If any topics exist here, ghorg will only clone repos that
+# match at least one of these topics.
+# flag (--topics) eg: --topics=frontend
+GHORG_TOPICS:
+
+# Filter repos by a language
+# Can be a comma separated value with no spaces
+# falg (--github-filter-language) e.g.: --github-filter-language=go,ruby,elixir
+GHORG_GITHUB_FILTER_LANGUAGE:
 
 # +-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+-+-+-+-+
 # |G|E|N|E|R|A|L| |C|O|N|F|I|G|U|R|A|T|I|O|N|
@@ -26,7 +50,8 @@ GHORG_SCM_TYPE: github
 # How you'd like to clone the repos (https or ssh)
 # default: https
 # flag (--protocol) eg: --protocol=https
-GHORG_CLONE_PROTOCOL: https
+#GHORG_CLONE_PROTOCOL: https
+GHORG_CLONE_PROTOCOL: ssh
 
 # This is where your ghorg directory will be created, use absolute pathing, shell expansions will not work
 # default: YOUR_HOME_DIR/ghorg
@@ -41,16 +66,16 @@ GHORG_BRANCH:
 
 # Type of entity to clone (user or org)
 # flag (--clone-type, -c) eg: --clone-type=user
-GHORG_CLONE_TYPE: org
+#GHORG_CLONE_TYPE: org
+GHORG_CLONE_TYPE: user
 
-# Color output (enabled, disabled)
-# flag (--color) eg: --color=disabled
-GHORG_COLOR: disabled
 
-# A comma separated list of topics to filter by, currently github/gitlab/gitea only
-# flag (--topics) eg: --topics=frontend
-# If any topics exist here, ghorg will only clone repos that match at least one of these topics
-GHORG_TOPICS:
+
+# Path to file with list of repo names to clone, file should contain one repo name per line
+# This allows you to only clone a specific list of repos
+# flag (--target-repos-path)
+GHORG_TARGET_REPOS_PATH:
+
 
 # Skip archived repos, currently github/gitlab/gitea only
 # flag (--skip-archived)
@@ -68,7 +93,33 @@ GHORG_BACKUP: false
 # flag (--concurrency)
 GHORG_CONCURRENCY: 25
 
-# Folder ghorg will clone all repos into. Cloning will result in: GHORG_ABSOLUTE_PATH_TO_CLONE_TO/GHORG_OUTPUT_DIR/*
+# Delay in seconds between cloning repos. Useful for rate limiting
+# flag (--clone-delay-seconds) eg: --clone-delay-seconds=5
+# NOTE: When set to > 0, GHORG_CONCURRENCY is automatically set to 1
+GHORG_CLONE_DELAY_SECONDS: 0
+
+# Skips the calculation of the output directory size at the end of a clone operation.
+# This can save time, especially when cloning a large number of repositories.
+# This is enabled by default
+# flag (--no-dir-size)
+#GHORG_NO_DIR_SIZE: false
+# NOTE(evan): you GENERALLY clone a large num of repos (reason why we use
+#             ghorg in the first place).
+GHORG_NO_DIR_SIZE: true
+
+# Creates a CSV in the GHORG_ABSOLUTE_PATH_TO_CLONE_TO called _ghorg_stats.csv
+# with info about each clone This allows you to track clone data over time
+# such as number of commits and size in megabytes of the clone directory. If
+# the header of the CSV changes, it will create a new file
+# of _ghorg_stats_new_header_${sha256HashOfHeader}.csv this is how we will
+# handle breaking changes to the CSV over time More information at
+# https://github.com/gabrie30/ghorg?tab=readme-ov-file#tracking-clone-data-over-time
+# flag (--stats-enabled)
+# GHORG_STATS_ENABLED: false
+GHORG_STATS_ENABLED: true
+
+# Folder ghorg will clone all repos into.
+# Cloning will result in: GHORG_ABSOLUTE_PATH_TO_CLONE_TO/GHORG_OUTPUT_DIR/*
 # default: {org/user you are cloning}
 # flag (--output-dir) eg: --output-dir=testing
 GHORG_OUTPUT_DIR:
@@ -89,38 +140,50 @@ GHORG_MATCH_REGEX:
 # flag (--exclude-match-regex) eg: --exclude-match-regex=^foo
 GHORG_EXCLUDE_MATCH_REGEX:
 
-# Only clones new repos and does not perform a git clean on existing repos. Useful if you don't want to lose changes made to repos in the org/user directory.
+# Only clones new repos and does not perform a git clean on existing repos.
+# Useful if you don't want to lose changes made to repos in the org/user directory.
 # flag (--no-clean)
 GHORG_NO_CLEAN: false
 
 # Additionally clone the wiki page for repo
 # flag (--clone-wiki)
-GHORG_CLONE_WIKI: false
+#GHORG_CLONE_WIKI: false
+GHORG_CLONE_WIKI: true
 
 # Perform a dry run of the clone; fetches repos but does not clone them.
 # flag (--dry-run)
 GHORG_DRY_RUN: false
 
-# Deletes all files/directories found in your local clone directory that are not found on the remote (e.g., after remote deletion).  With GHORG_SKIP_ARCHIVED set, archived repositories will also be pruned from your local clone.
-# Will prompt before deleting any files unless used in combination with --prune-no-confirm
+# Deletes all files/directories found in your local clone directory that are
+# not found on the remote (e.g., after remote deletion).
+# With GHORG_SKIP_ARCHIVED set, archived repositories will also be pruned
+# from your local clone.
+# Will prompt before deleting any files UNLESS --prune-no-confirm is also defined.
 # flag (--prune)
 GHORG_PRUNE: false
 
-# Skip interactive y/n prompt when pruning clones (can only be used in combination with --prune).
+# Skip interactive y/n prompt when pruning clones (can only be used in
+# combination with --prune).
 # flag (--prune-no-confirm)
 GHORG_PRUNE_NO_CONFIRM: false
 
+
+# NOTE(evan): *GENERALLY* want this for MOST repos. But there are too many
+#             cases where you would not, such as org clone that has huge
+#             projects, like pytorch. In which case, there are too many branches.
+#
+#   DO: keep this false; use the `--fetch-all` flag instead for this.
+#
 # Fetches all remote branches for each repo by running a git fetch --all
 # flag (--fetch-all)
 GHORG_FETCH_ALL: false
 
-# If you want to set a path other than $HOME/.config/ghorg/ghorgignore for your ghorgignore
-# flag (--ghorgignore-path)
-GHORG_IGNORE_PATH:
+# Include submodules in all clone and pull operations.
+# flag (--include-submodules)
+#GHORG_INCLUDE_SUBMODULES: false
+GHORG_INCLUDE_SUBMODULES: true
 
-# Only emit critical output.
-# flag (--quiet)
-GHORG_QUIET: false
+
 
 # Allows you to control the exit code when ghorg runs into a problem (info level message) cloning a repo from the remote.
 # Info messages will appear after a clone is complete, similar to success messages
@@ -137,3 +200,16 @@ GHORG_EXIT_CODE_ON_CLONE_ISSUES: 1
 # NOTE: this cannot be set in the configuration file and only available in ghorg v1.7.0+
 # flag (--config)
 # GHORG_CONFIG:
+
+# If you want to set a path other than $HOME/.config/ghorg/ghorgignore for your ghorgignore
+# flag (--ghorgignore-path)
+GHORG_IGNORE_PATH:
+
+# Only emit critical output.
+# flag (--quiet)
+GHORG_QUIET: false
+
+# Color output (enabled, disabled)
+# flag (--color) eg: --color=disabled
+#GHORG_COLOR: disabled
+GHORG_COLOR: enabled
