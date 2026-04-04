@@ -1838,6 +1838,8 @@ flatpak install flathub net.rpdev.OpenTodoList
 sudo apt install -y catimg gpick mediainfo mpv nautilus-image-converter \
 sox vlc mkvtoolnix webp
 
+sudo apt install -y libimage-size-perl  # provides the handy `imgsize` bin
+
 #=== OBS Studio
 # Ref: https://obsproject.com/download
 sudo add-apt-repository -y ppa:obsproject/obs-studio && \
