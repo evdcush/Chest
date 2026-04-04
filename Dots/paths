@@ -16,6 +16,24 @@ DIR_DATA="$HOME/Data"
 DIR_EXPERIMENTS="$HOME/Experiments"
 DIR_MODELS="$HOME/Models"
 
+
+
+
+DATA_DIR="$DIR_DATA"  # <--- some soft looks for this env var name lol
+
+CHROMA_DIR="$DIR_DATA/chroma"
+
+
+
+
+
+
+# LLAMA CPP STUFF
+#LLAMA_ARG_MODELS_DIR="$DIR_MODELS/GGUFZ"
+#LLAMA_ARG_HOST=0.0.0.0
+#LAMA_ARG_PORT=fillmein
+
+
 # Apps/software
 #DIR_APPS="$HOME/.Apps"
 #DIR_APPIMAGES="$DIR_APPS/AppImages"
@@ -68,3 +86,10 @@ NLTK_DATA="$DIR_DATA/nltk_data"
 #DETECTRON2_DATA="$DIR_DATA"
 #MUJOCO_PY_MUJOCO_PATH="$HOME/.mujoco/mujoco210"
 HF_DOWNLOAD_LOG="$HOME/.hf_model_downloads.log"
+
+
+# applications
+# ============
+export UNGOOG_PROFILE_ID_APPS='Profile 3'
+export UNGOOG_APP_ID_Raindrop='bndmnggfngpgmmijcogkkgglhalbpomk'
+
