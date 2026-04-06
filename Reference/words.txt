@@ -104,3 +104,241 @@ From Moby Thesaurus II by Grady Ward, 1.0 [moby-thesaurus]:
      withstanding, wrangling
 
 -------------------------------------------------------------------------------
+
+inchoate
+5 definitions found
+
+From The Collaborative International Dictionary of English v.0.48 [gcide]:
+
+  Inchoate \In"cho*ate\, a. [L. inchoatus, better incohatus, p. p.
+     of incohare to begin.]
+     Recently, or just, begun; beginning; partially but not fully
+     in existence or operation; existing in its elements;
+     incomplete. -- {In"cho*ate*ly}, adv.
+     [1913 Webster]
+
+           Neither a substance perfect, nor a substance inchoate.
+                                                    --Raleigh.
+     [1913 Webster]
+
+From The Collaborative International Dictionary of English v.0.48 [gcide]:
+
+  Inchoate \In"cho*ate\, v. t.
+     To begin. [Obs.] --Dr. H. More.
+     [1913 Webster]
+
+From WordNet (r) 3.0 (2006) [wn]:
+
+  inchoate
+      adj 1: only partly in existence; imperfectly formed; "incipient
+             civil disorder"; "an incipient tumor"; "a vague inchoate
+             idea" [syn: {incipient}, {inchoate}]
+
+From English-日本語 (にほんご) FreeDict+WikDict dictionary ver. 2020.10.04 [fd-eng-jpn]:
+
+  inchoate //ɪnˈkoʊeɪt// //ɪnˈkoʊət// //ɪnˈkəʊeɪt// //ɪnˈkəʊət// <adj>
+  無感性な
+  not fully formed
+
+From Moby Thesaurus II by Grady Ward, 1.0 [moby-thesaurus]:
+
+  152 Moby Thesaurus words for "inchoate":
+     abecedarian, aboriginal, aimless, aleatoric, aleatory, amorphic,
+     amorphous, anarchic, antenatal, autochthonous, baggy, beginning,
+     blobby, blurred, blurry, broad, budding, capricious, casual,
+     chance, chancy, chaotic, characterless, confused, creative,
+     desultory, disarticulated, disconnected, discontinuous, disjointed,
+     disjunct, disordered, disorderly, dispersed, disproportionate,
+     elemental, elementary, embryonic, erratic, featureless, fetal,
+     fitful, foggy, formative, formless, foundational, frivolous,
+     fundamental, fuzzy, general, gestatory, gratuitous, haphazard,
+     hazy, hit-or-miss, ill-defined, immethodical, imprecise, in embryo,
+     in its infancy, in the bud, inaccurate, inaugural, inceptive,
+     inchoative, incipient, incoherent, incunabular, indecisive,
+     indefinable, indefinite, indeterminable, indeterminate,
+     indiscriminate, indistinct, inexact, infant, infantile, inform,
+     initial, initiative, initiatory, introductory, inventive,
+     irregular, kaleidoscopic, kindred, lax, loose, lumpen, meaningless,
+     misshapen, misty, nascent, natal, nondescript, nonspecific,
+     nonsymmetrical, nonsystematic, nonuniform, obscure, orderless,
+     original, parturient, planless, postnatal, pregnant, prenatal,
+     primal, primary, prime, primeval, primitive, primogenial,
+     procreative, promiscuous, random, rudimental, rudimentary,
+     senseless, shadowed forth, shadowy, shapeless, spasmodic, sporadic,
+     stochastic, straggling, straggly, sweeping, systemless, unarranged,
+     unclassified, unclear, undefined, undestined, undetermined,
+     undirected, ungraded, unjoined, unmethodical, unordered,
+     unorganized, unplain, unsorted, unspecified, unsymmetrical,
+     unsystematic, ununiform, ur, vague, veiled, wandering
+
+
+-------------------------------------------------------------------------------
+
+
+chaff
+7 definitions found
+
+From The Collaborative International Dictionary of English v.0.48 [gcide]:
+
+  Chaff \Chaff\, n. [AC. ceaf; akin to D. kaf, G. kaff.]
+     [1913 Webster]
+     1. The glumes or husks of grains and grasses separated from
+        the seed by threshing and winnowing, etc.
+        [1913 Webster]
+
+              So take the corn and leave the chaff behind.
+                                                    --Dryden.
+        [1913 Webster]
+
+              Old birds are not caught with caff.   --Old Proverb.
+        [1913 Webster]
+
+     2. Anything of a comparatively light and worthless character;
+        the refuse part of anything.
+        [1913 Webster]
+
+              The chaff and ruin of the times.      --Shak.
+        [1913 Webster]
+
+     3. Straw or hay cut up fine for the food of cattle.
+        [1913 Webster]
+
+              By adding chaff to his corn, the horse must take
+              more time to eat it. In this way chaff is very
+              useful.                               --Ywatt.
+        [1913 Webster]
+
+     4. Light jesting talk; banter; raillery.
+        [1913 Webster]
+
+     5. (Bot.) The scales or bracts on the receptacle, which
+        subtend each flower in the heads of many Composit[ae], as
+        the sunflower. --Gray.
+        [1913 Webster]
+
+     {Chaff cutter}, a machine for cutting, up straw, etc., into
+        "chaff" for the use of cattle.
+        [1913 Webster]
+
+From The Collaborative International Dictionary of English v.0.48 [gcide]:
+
+  Chaff \Chaff\, v. i. [imp. & p. p. {Chaffed}; p. pr. & vb. n.
+     {Chaffing}.]
+     To use light, idle language by way of fun or ridicule; to
+     banter.
+     [1913 Webster]
+
+From The Collaborative International Dictionary of English v.0.48 [gcide]:
+
+  Chaff \Chaff\, v. t.
+     To make fun of; to turn into ridicule by addressing in
+     ironical or bantering language; to quiz.
+     [1913 Webster]
+
+           Morgan saw that his master was chaffing him.
+                                                    --Thackeray.
+     [1913 Webster]
+
+           A dozen honest fellows . . . chaffed each other about
+           their sweethearts.                       --C. Kingsley.
+     [1913 Webster]
+
+From WordNet (r) 3.0 (2006) [wn]:
+
+  chaff
+      n 1: material consisting of seed coverings and small pieces of
+           stem or leaves that have been separated from the seeds
+           [syn: {chaff}, {husk}, {shuck}, {stalk}, {straw},
+           {stubble}]
+      2: foil in thin strips; ejected into the air as a radar
+         countermeasure
+      v 1: be silly or tease one another; "After we relaxed, we just
+           kidded around" [syn: {kid}, {chaff}, {jolly}, {josh},
+           {banter}]
+
+From English-日本語 (にほんご) FreeDict+WikDict dictionary ver. 2020.10.04 [fd-eng-jpn]:
+
+  chaff //tʃæf// <n>
+  1. 滓
+  excess or unwanted material
+  2. もみがら, 籾殻
+  inedible parts of grain plant
+
+From English-日本語 (にほんご) FreeDict+WikDict dictionary ver. 2020.10.04 [fd-eng-jpn]:
+
+  chaff //tʃæf// <v>
+  からかう 2.
+  to make fun of
+   3.
+  to use idle language to ridicule
+
+From Moby Thesaurus II by Grady Ward, 1.0 [moby-thesaurus]:
+
+  198 Moby Thesaurus words for "chaff":
+     afterglow, afterimage, air, aluminum foil, badinage, balance,
+     banter, bark, barrack, bones, bran, bric-a-brac, bubble, butt,
+     butt end, candle ends, capsule, case, cattle, chicken feed,
+     chickenshit, chip, cobweb, cork, corn shuck, cornhusk, culm,
+     cut at, deadwood, debris, details, detritus, dig at, dishwater,
+     down, draff, dregs, dregs of society, dump on, dust, end, ether,
+     exchange, fag end, fairy, feather, filings, fleer, flout, flue,
+     fluff, foam, fooling, fooling around, fossil, froth, fun, fuzz,
+     garbage, gash, gibe, gimcrackery, give-and-take,
+     good-natured banter, gossamer, harmless teasing, haze, hogwash,
+     holdover, hull, husk, husks, jab, jab at, jacket, jape, jeer, jest,
+     jive, joke, joking, jolly, josh, joshing, kid, kidding,
+     kidding around, knickknackery, leavings, lees, leftovers, minutiae,
+     mock, mote, needle, odds and ends, offal, offscourings, offscum,
+     orts, palea, parings, peanuts, peel, persiflage, pleasantry, pod,
+     pooh, pooh-pooh, potsherds, put down, put on, raff, rag, ragging,
+     rags, rail at, raillery, rally, rallying, rank out, raspings, razz,
+     refuse, relics, remainder, remains, remnant, residue, residuum,
+     rest, revile, rib, ride, ridicule, riffraff, rind, roach, roast,
+     rubbish, ruins, rump, sawdust, scoff, scourings, scout, scrap iron,
+     scraps, scum, shadow, shards, shavings, shell, shuck, skin, slack,
+     slag, slam, slap at, slop, slops, small beer, small change, sneer,
+     sneer at, sordes, sponge, sport, spume, straw, stubble, stump,
+     survival, sweepings, swill, swinish multitude, swipe, tares, taunt,
+     tease, teasing, thistledown, tinfoil, trace, trash, trifles,
+     trivia, trumpery, twit, twitting, vermin, vestige, wastage, waste,
+     waste matter, wastepaper, weeds, window
+
+
+-------------------------------------------------------------------------------
+
+scree
+3 definitions found
+
+From The Collaborative International Dictionary of English v.0.48 [gcide]:
+
+  Scree \Scree\ (skr[=e]), n.
+     A pebble; a stone; also, a heap of stones or rocky d['e]bris.
+     [Prov. Eng.] --Southey.
+     [1913 Webster]
+
+From WordNet (r) 3.0 (2006) [wn]:
+
+  scree
+      n 1: a sloping mass of loose rocks at the base of a cliff [syn:
+           {talus}, {scree}]
+
+From Moby Thesaurus II by Grady Ward, 1.0 [moby-thesaurus]:
+
+  52 Moby Thesaurus words for "scree":
+     aa, abyssal rock, alluvion, alluvium, basalt, bedrock, block lava,
+     brash, breccia, conglomerate, crag, debris, deposit, detritus,
+     diluvium, drift, druid stone, festooned pahoehoe, gneiss, granite,
+     igneous rock, lava, limestone, living rock, loess, magma,
+     mantlerock, metamorphic rock, monolith, moraine, pahoehoe,
+     pillow lava, porphyry, pudding stone, regolith, rock, ropy lava,
+     rubble, rubblestone, sandstone, sarsen, schist, scoria, sediment,
+     sedimentary rock, shelly pahoehoe, silt, sinter, stone, talus,
+     tufa, tuff
+
+
+-------------------------------------------------------------------------------
+
+
+
+
+-------------------------------------------------------------------------------
