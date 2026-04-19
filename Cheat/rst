@@ -1,15 +1,97 @@
 
-# Code with syntax-highlighting
+Sections
+--------
+
+Doctree elements: section, title.
+
+Sections are identified through their titles, which are marked up with
+adornment: "underlines" below the title text, or underlines and
+matching "overlines" above the title.  An underline/overline is a
+single repeated punctuation character that begins in column 1 and
+forms a line extending at least as far as the right edge of the title
+text.  Specifically, an underline/overline character may be any
+non-alphanumeric printable 7-bit ASCII character [#]_.  When an
+overline is used, the length and character used must match the
+underline.  Underline-only adornment styles are distinct from
+overline-and-underline styles that use the same character.  There may
+be any number of levels of section titles, although some output
+formats may have limits (HTML has 6 levels).
+
+.. [#] The following are all valid section title adornment
+   characters::
+
+       ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~
+
+   Some characters are more suitable than others.  The following are
+   recommended::
+
+       = - ` : . ' " ~ ^ _ * + #
+
+Rather than imposing a fixed number and order of section title
+adornment styles, the order enforced will be the order as encountered.
+The first style encountered will be an outermost title (like HTML H1),
+the second style will be a subtitle, the third will be a subsubtitle,
+and so on.
+
+Below are examples of section title styles::
+
+    ===============
+     Section Title
+    ===============
+
+    ---------------
+     Section Title
+    ---------------
+
+    Section Title
+    =============
+
+    Section Title
+    -------------
+
+    Section Title
+    `````````````
+
+    Section Title
+    '''''''''''''
+
+    Section Title
+    .............
+
+    Section Title
+    ~~~~~~~~~~~~~
+
+    Section Title
+    *************
+
+    Section Title
+    +++++++++++++
+
+    Section Title
+    ^^^^^^^^^^^^^
+
+**Sphinx additionally suggests:**
+
+- ``#`` with overline, for parts
+- ``*`` with overline, for chapters
+- ``=`` for sections
+- ``-`` for subsections
+- ``^`` for subsubsections
+- ``"`` for paragraphs
+
+
+
+.. Code with syntax-highlighting
 .. code-block:: python
 
     def say_hello(target="World"):
         print(f"Hello {target}!")
 
-# ToC
+.. ToC
 .. contents:: Table of Contents
 .. section-numbering::
 
-# Replacement
+.. Replacement
 I recommend you try |Python|_.
 
 .. |Python| replace:: Python, *the* best language around
