@@ -117,7 +117,7 @@ plugins=(
     #extract
     fzf_flatpak_widget
     #forgit
-    gunstage
+    #gunstage  # it's just a func, ripped to your functions dot
     #tldr
     #you-should-use
     #zsh-autosuggestions
@@ -243,6 +243,13 @@ export HF_HUB_DISABLE_TELEMETRY=1 # hf hub pulls: shame!
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# WHY?
+# > Failed to create GDM buffer
+# seen a million times
+#   a known issue with WebKitGTK + NVIDIA + X11 that affects many
+#   Tauri/WebKitGTK apps. Setting the env var has no negative side effects,
+#   it simply uses software compositing.
+export WEBKIT_DISABLE_COMPOSITING_MODE=1
 
 # Stuff automatically added by other software:
 
@@ -269,7 +276,10 @@ export GPG_TTY=$(tty)
 #==== ATUIN STUFF
 #. "$HOME/.atuin/bin/env"
 # do your own controlled, idempotent pathing; dont trust other mfs
-path_prepend "$HOME/.atuin/bin"
+#path_prepend "$HOME/.atuin/bin"
+#   UPDATE: don't nede this shit eaither.
+#           just link to ~/.local/bin
+#           no need to treat it snowlfa
 
 # NB: we DO NOT use atuin's bizarre, claptrap search
 #     - fuzzy search is case-sensitive (lol)
