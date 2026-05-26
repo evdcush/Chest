@@ -13,3 +13,6 @@ mogrify -path compressed -auto-orient -quality 85 -strip *.JPG
 ##   '-quality 85':      reduce jpeg quality to 85
 ##   '-strip':           strip all metadata (except the orientation)
 ##   '*.JPG':            all target files for this command
+
+
+mogrify -path resized -resize 1134x638! -units PixelsPerInch -density 300 frame_*.jpg
