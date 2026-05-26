@@ -1,3 +1,63 @@
+#=============================================================================#
+#                                     REF                                     #
+#=============================================================================#
+
+
+# At a glance
+# ===========
+parser = argparse.ArgumentParser(description='Processing integers.') # description of program
+parser.add_argument('integers',  # arg name; if prefixed '-', becomes optional
+                    metavar='N', # how the arg is referred in help msg
+                    type=int,    # type conversion
+                    nargs='+',   # indicates 1 or more vals to be passed to arg
+                    help='integer args') # help msg
+
+# parser
+# ======
+parser = argparse.ArgumentParser(description=__doc__) # uses file __doc__
+
+# arguments
+# =========
+# an action-like option with a default
+add_args('-b', '--baz', nargs='?', default=None, const='x', type=str)
+
+#    Nothing                 Default                        Option
+parser.parse_args();  parser.parse_args(['-b']);  parser.parse_args(['-b', '$'])
+Namespace(baz=None);  Namespace(baz='x');         Namespace(baz='$')
+
+# 'nargs' arg
+nargs='?' # 1 or None values; atomic; can fall back on default if no arg
+nargs='*' # 0 or more values;   list; can fall back on default if no arg
+nargs='+' # 1 or more values;   list; cannot fall back on default
+
+# restricting choices
+add_args('--color', default='green', choices=['red', 'blue', 'yellow', 'green'])
+
+# append
+# ======
+parser.add_argument('--baz', action='append')
+# >>> python aparse.py
+# aparse.py: error: argument -b/--baz: expected one argument
+# >>> python aparse.py --baz 'hello'
+# Namespace(baz=['hello'])
+# >>> python aparse.py --baz 'hello' --baz 'there' --baz 'friend'
+# Namespace(baz=['hello', 'there', 'friend'])
+
+
+
+#=============================================================================#
+#                                   EXTENDED                                  #
+#=============================================================================#
+
+
+
+
+#--------------------------------  subparsers  -------------------------------#
+
+
+
+
+
 # Subparser
 # =========
 cli = argparse.ArgumentParser()
@@ -86,49 +146,67 @@ if __name__ == '__main__':
         args.func(args)
 
 
-# At a glance
-# ===========
-parser = argparse.ArgumentParser(description='Processing integers.') # description of program
-parser.add_argument('integers',  # arg name; if prefixed '-', becomes optional
-                    metavar='N', # how the arg is referred in help msg
-                    type=int,    # type conversion
-                    nargs='+',   # indicates 1 or more vals to be passed to arg
-                    help='integer args') # help msg
+#===============================  IN THE WILD  ===============================#
 
-# parser
-# ======
-parser = argparse.ArgumentParser(description=__doc__) # uses file __doc__
 
-# arguments
-# =========
-# an action-like option with a default
-add_args('-b', '--baz', nargs='?', default=None, const='x', type=str)
+def _parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        prog="enfancy.py",
+        description="Enfancies unicode text",
+    )
+    parser.add_argument(
+        "text",
+        nargs="?",
+        help="text to stylize",
+    )
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument(
+        "--all",
+        action="store_true",
+        help="output all styles (default)",
+    )
+    mode.add_argument(
+        "--style",
+        help="output a single style by name",
+    )
 
-#    Nothing                 Default                        Option
-parser.parse_args();  parser.parse_args(['-b']);  parser.parse_args(['-b', '$'])
-Namespace(baz=None);  Namespace(baz='x');         Namespace(baz='$')
+    parser.add_argument(
+        "--list-styles",
+        action="store_true",
+        help="list available styles",
+    )
+    parser.add_argument(
+        "--labels",
+        action="store_true",
+        help="prefix each line with its style name",
+    )
+    parser.add_argument(
+        '-g', "--gui",
+        action="store_true",
+        help="launch the Tkinter GUI",
+    )
+    return parser.parse_args(argv)
 
-# 'nargs' arg
-nargs='?' # 1 or None values; atomic; can fall back on default if no arg
-nargs='*' # 0 or more values;   list; can fall back on default if no arg
-nargs='+' # 1 or more values;   list; cannot fall back on default
 
-# restricting choices
-add_args('--color', default='green', choices=['red', 'blue', 'yellow', 'green'])
 
-# append
-# ======
-parser.add_argument('--baz', action='append')
-# >>> python aparse.py
-# aparse.py: error: argument -b/--baz: expected one argument
-# >>> python aparse.py --baz 'hello'
-# Namespace(baz=['hello'])
-# >>> python aparse.py --baz 'hello' --baz 'there' --baz 'friend'
-# Namespace(baz=['hello', 'there', 'friend'])
 
-####  OTHER ARGPARSERS  ####
-# Fire
-# ====
+#=============================================================================#
+#                                 ALTERNATIVES                                #
+#=============================================================================#
+
+#=================================  built-in  ================================#
+
+
+#=================================  external  ================================#
+
+
+#-----------------------------------  fire  ----------------------------------#
+"""
+:src: https://github.com/google/python-fire
+:install:
+    ``pip install fire``
+"""
+raise Exception('THIS EXAMPLE CODE IS ANCIENT AND OUTDATED')
 from fire import Fire
 
 def neg(num):
@@ -137,6 +215,6 @@ def neg(num):
 def foo(location='floor'):
     return f'foo on the {location}'
 
-#if __name__ == '__main__':
-  # Fire()      # both neg and foo available at CLI, but can only use one :[
-  # Fire(foo)  # 'fire_example.py airplane' ---> `foo on the airplane`
+if __name__ == '__main__':
+    Fire()      # both neg and foo available at CLI, but can only use one :[
+    Fire(foo)  # 'fire_example.py airplane' ---> `foo on the airplane`
