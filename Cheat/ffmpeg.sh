@@ -26,6 +26,43 @@ my_big_4k60hz_vid.mp4 \
 -c:a aac -b:a 128k \
 my_big_vid_compressed_to_1080p30hz.mp4
 
+ffmpeg -i my_big_4k60hz_vid.mp4 \
+-vf "scale=1920:-2,fps=30" \
+-c:v libx265 \
+-crf 30 \
+-preset slow \
+-c:a aac \
+-b:a 128k \
+my_big_vid_compressed_to_1080p30hz.mp4
+
+ffmpeg -i 1730229834787.mp4 \
+-c:v libx265 \
+-crf 23 \
+-preset slow \
+-acodec copy \
+scouty_balloon.mp4
+
+ffmpeg -i '1883 - do you know why im here.mp4' \
+-c:v libx265 \
+-crf 23 \
+-acodec copy \
+1883_do-you-know-why-im-here.mp4
+
+ffmpeg -i '1883 - do you know why im here.mp4' \
+-c:v libx265 \
+-crf 23 \
+-acodec copy \
+1883_do-you-know-why-im-here.mp4
+
+
+
+ffmpeg -i tsutsutsutsutsu.mkv \
+-vf "scale=1920:-2" \
+-c:v libx265 \
+-crf 23 \
+-acodec: copy \
+tsutsutsutsutsu_smol.mkv
+
 
 #=============================================================================#
 #                                     DUMP                                    #
@@ -119,3 +156,294 @@ my_big_vid_compressed_to_1080p30hz.mp4
  9836  ffmpeg -f concat -safe 0 -i bc_files.txt -c copy battlecruiser.opus
  9841  ffmpeg -f concat -i bc_files.txt -c copy battlecruiser2.opus
 10079  man ffmpeg | cat | grep --context 5 -i preset
+
+
+
+
+
+# FOR COMPILING W/ SUPPORT FOR NVIDIA CUDA GPU
+
+sudo apt update
+sudo apt install autoconf automake build-essential cmake git libass-dev libfreetype6-dev libgnutls28-dev libmp3lame-dev libopus-dev librtmfp-dev libsdl2-dev libtool libva-dev libvdpau-dev libvorbis-dev libvpx-dev libx264-dev libx265-dev libnuma-dev libunistring-dev libaom-dev libdav1d-dev texinfo wget yasm zlib1g-dev pkg-config libssl-dev libdrm-dev libgbm-dev nvidia-cuda-toolkit
+
+
+git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
+cd nv-codec-headers
+sudo make install
+cd ..
+
+
+git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg
+cd ffmpeg
+./configure --enable-gpl --enable-nonfree --enable-cuda-nvcc --enable-libnpp --enable-cuvid --enable-nvdec --enable-nvenc --enable-libass --enable-libfreetype --enable-libmp3lame --enable-libopus --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libx265 --enable-libdav1d --enable-libaom --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64 --nvccflags="-gencode arch=compute_75,code=sm_75 -O2"
+make -j$(nproc)
+sudo make install
+
+
+ffmpeg -version  # Should show newer version with cuda/nvenc/nvdec in the configuration.
+ffmpeg -hwaccels  # Should list 'cuda'.
+ffmpeg -encoders | grep nvenc  # Should show h264_nvenc, hevc_nvenc, etc.
+ffmpeg -decoders | grep -E 'cuvid|nvdec'  # Should show hardware decoders like hevc_nvdec.
+ffmpeg -filters | grep cuda  # Should show filters like scale_cuda.
+
+00:47:28
+00:48:13
+
+ffmpeg \
+-ss 00:47:28 \
+-to 00:48:13 \
+-i /home/evan/Media/1883.S01E01.mp4 \
+/home/evan/Media/1883-do-you-know-why-im-here.mp4
+
+
+ffmpeg \
+-ss 00:47:28 \
+-to 00:48:13 \
+-i /home/evan/Media/1883.S01E01.mp4 \
+/home/evan/Media/1883-do-you-know-why-im-here.mp4
+
+
+-crf 28 justbuilt2jzthings.mp4
+
+
+ffprobe -hide_banner -show_format -show_streams 1883-do-you-know-why-im-here.mp4
+
+
+ffprobe -v error \
+-select_streams v:0 \
+-show_entries stream=codec_name,profile,level,pix_fmt,r_frame_rate,avg_frame_rate \
+-of default=noprint_wrappers=1 \
+1883-do-you-know-why-im-here.mp4
+
+
+ffmpeg -i 1883-do-you-know-why-im-here.mp4 \
+-map 0:v:0 -map 0:a:0 \
+-c:v libx264 \
+-profile:v baseline \
+-level 3.1 \
+-pix_fmt yuv420p \
+-r 30 \
+-vsync cfr \
+-g 60 \
+-movflags +faststart \
+-c:a aac \
+-ac 2 \
+-ar 48000 \
+-b:a 128k \
+line-preview.mp4
+
+
+
+ffmpeg -i 1883-do-you-know-why-im-here.mp4 \
+  -t 30 \
+  -vf "scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2" \
+  -c:v libx264 \
+  -profile:v baseline \
+  -level 3.0 \
+  -pix_fmt yuv420p \
+  -r 30 \
+  -movflags +faststart \
+  -c:a aac \
+  -ac 2 \
+  -b:a 96k \
+  line-preview-final.mp4
+
+
+ffmpeg -ss 00:00:13 -t 00:00:44 -i 1883-do-you-know-why-im-here.mp4 \
+  -vf "scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2" \
+  -c:v libx264 \
+  -profile:v baseline \
+  -level 3.0 \
+  -pix_fmt yuv420p \
+  -r 30 \
+  -vsync cfr \
+  -movflags +faststart \
+  -c:a aac \
+  -ac 2 \
+  -b:a 96k \
+  line-preview-final.mp4
+
+
+# ---
+
+
+ffmpeg -ss 00:00:11 -to 00:00:16 -i 20251126_092536.mp4 shuffle_imgs/frame_%06d.png
+
+
+
+#/home/evan/Media/Pictures/WWOOF/flipbook/20251126_092536.mp4
+
+
+ffmpeg -ss 00:00:11 -to 00:00:16 -i 20251126_092536.mp4 frame_%06d.png
+
+
+ffmpeg -ss 00:00:11 -to 00:00:16 -i 20251126_092536.mp4 \
+-vf "zscale=transfer=smpte2084:primaries=bt2020:matrix=bt2020nc,\
+zscale=t=linear:npl=100,\
+tonemap=mobius:desat=0,\
+zscale=transfer=bt709:primaries=bt709:matrix=bt709:range=tv" \
+-vsync 0 \
+-q:v 2 \
+shuffle_imgs/jpg_versions/frame_%06d.jpg
+
+
+ffmpeg -ss 00:00:11 -to 00:00:16 -i 20251126_092536.mp4 \
+-vf "fps=12, \
+zscale=transfer=smpte2084:primaries=bt2020:matrix=bt2020nc,\
+zscale=t=linear:npl=100,\
+tonemap=mobius,\
+zscale=transfer=bt709:primaries=bt709:matrix=bt709:range=tv" \
+-q:v 2 \
+shuffle_imgs/12hz_anim/frame_%03d.jpg
+
+ffmpeg -ss 00:00:11 -to 00:00:16 -i 20251126_092536.mp4 \
+-vf "fps=12, \
+zscale=transfer=smpte2084:primaries=bt2020:matrix=bt2020nc,\
+zscale=t=linear:npl=100,\
+tonemap=hable:desat=0,\
+zscale=transfer=bt709:primaries=bt709:matrix=bt709:range=tv" \
+-q:v 2 \
+shuffle_imgs/12hz_anim/q1/hable/frame_%03d.jpg
+
+ffmpeg -ss 00:00:11 -to 00:00:16 -i 20251126_092536.mp4 \
+-vf "fps=12,\
+zscale=transfer=smpte2084:primaries=bt2020:matrix=bt2020nc,\
+zscale=t=linear:npl=100,\
+tonemap=hable:desat=0,\
+gblur=sigma=0.3,\
+zscale=transfer=bt709:primaries=bt709:matrix=bt709,\
+format=yuv444p" \
+-q:v 2 \
+shuffle_imgs/12hz_anim/q1/hable/frame_%03d.jpg
+
+
+ffmpeg -ss 00:00:11 -to 00:00:16 -i 20251126_092536.mp4 \
+-vf "fps=12,\
+zscale=transfer=smpte2084:primaries=bt2020:matrix=bt2020nc,\
+zscale=t=linear:npl=100,\
+tonemap=hable:desat=0,\
+gblur=sigma=0.3,\
+zscale=transfer=bt709:primaries=bt709:matrix=bt709,\
+format=yuv444p" \
+-q:v 1 \
+shuffle_imgs/12hz_anim/q1/mobius/frame_%03d.jpg
+
+
+
+ffmpeg -ss 00:00:11 -to 00:00:16 -i 20251126_092536.mp4 \
+-vf "fps=12,\
+zscale=transfer=smpte2084:primaries=bt2020:matrix=bt2020nc,\
+zscale=t=linear:npl=100,\
+tonemap=mobius:desat=0,\
+gblur=sigma=0.3,\
+zscale=transfer=bt709:primaries=bt709:matrix=bt709,\
+format=yuv444p" \
+-q:v 1 \
+shuffle_imgs/12hz_anim/q1/mobius2/frame_%03d.jpg
+
+
+
+
+
+ffmpeg -ss 00:00:11 -to 00:00:16 -i 20251126_092536.mp4 \
+-vf "fps=12,\
+zscale=transfer=smpte2084:primaries=bt2020:matrix=bt2020nc,\
+zscale=t=linear:npl=60,\
+tonemap=hable,\
+gblur=sigma=0.3,\
+zscale=transfer=bt709:primaries=bt709:matrix=bt709,\
+format=yuv444p" \
+-q:v 1 \
+shuffle_imgs/12hz_anim/q1/mobius/frame_%03d.jpg
+
+
+tonemap=mobius,
+gblur=sigma=0.3,
+zscale=transfer=bt709:primaries=bt709:matrix=bt709
+
+
+montage frame_*.jpg \
+-tile 2x5 \
+-geometry 1134x638+0+0 \
+-units PixelsPerInch -density 300 \
+-background white \
+-page A4 \
+print_page_%02d.jpg
+
+#```
+#montage frame_*.jpg \
+#-tile 2x5 \
+#-geometry 1134x638+0+0 \
+#-units PixelsPerInch -density 300 \
+#-background white \
+#-page A4 \
+#print_page_%02d.jpg
+#montage-im6.q16: cache resources exhausted `frame_021.jpg' @ error/cache.c/OpenPixelCache/4095.
+#```
+
+#export MAGICK_MEMORY_LIMIT=2GiB
+#export MAGICK_MAP_LIMIT=4GiB
+#export MAGICK_DISK_LIMIT=8GiB
+
+export MAGICK_MEMORY_LIMIT=6GiB
+export MAGICK_MAP_LIMIT=8GiB
+export MAGICK_DISK_LIMIT=12GiB
+
+ MAGICK_MEMORY_LIMIT=6GiB MAGICK_MAP_LIMIT=8GiB MAGICK_DISK_LIMIT=12GiB
+
+MAGICK_MEMORY_LIMIT=12GiB MAGICK_MAP_LIMIT=16GiB MAGICK_DISK_LIMIT=24GiB montage frame_*.jpg \
+-tile 2x5 \
+-geometry 1134x638+0+0 \
+-units PixelsPerInch -density 300 \
+-background white \
+-page A4 \
+print_page_%02d.jpg
+
+
+mkdir resized
+
+mogrify \
+-path resized \
+-resize 1134x638! \
+-units PixelsPerInch -density 300 \
+frame_*.jpg
+
+
+montage frame_*.jpg \
+-tile 2x5 \
+-geometry +0+0 \
+-background white \
+-page A4 \
+print_page_%02d.jpg
+
+
+identify -verbose print_page_01.jpg | grep Density
+
+
+
+
+
+
+
+
+
+
+
+#ffmpeg -ss 00:00:04 -to 00:00:16 -i 20251126_092536.mp4 \
+ffmpeg -ss 00:00:04 -i 20251126_092846.mp4 \
+-vf "fps=12,\
+zscale=transfer=smpte2084:primaries=bt2020:matrix=bt2020nc,\
+zscale=t=linear:npl=100,\
+tonemap=hable,\
+zscale=transfer=bt709:primaries=bt709:matrix=bt709,\
+format=yuv444p" \
+-q:v 1 \
+shuffle_imgs/frame_%03d.jpg
+
+
+
+mogrify \
+-path resized \
+-resize 1134x638! \
+-units PixelsPerInch -density 300 \
+frame_*.jpg
