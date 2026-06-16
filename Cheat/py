@@ -431,6 +431,25 @@ def gen_passphrase(num_words=4, sep=' ', charset=None):
     return passphrase
 
 
+british-english
+
+def get_words_composed_from_charset(charset: set, min_len=4):
+    valid_words = None
+    with open('/usr/share/dict/british-english') as dwords:
+        words = [w.strip().lower() for w in dwords]
+        valid_words = []
+        for word in words:
+            if min_len and len(word) < min_len:
+                continue
+            chars = set(word)
+            if chars <= charset:
+                valid_words.append(word)
+    # longest word first
+    valid_words.sort(key=len, reverse=True)
+    return valid_words
+
+
+
 def get_valid_subset_words(charset: set):
     valid_words = None
     with open('/usr/share/dict/words') as dwords:
