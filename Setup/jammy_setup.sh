@@ -1604,7 +1604,48 @@ flatpak install flathub com.github.tchx84.Flatseal
 ########### LOL DONT! Flatpak distributes it's software GUI as a snapd 🤣
 # sudo apt install gnome-software-plugin-flatpak
 
-#------------------------
+
+#----------------------------------  CONFIG  ---------------------------------#
+
+# FUCKING nvidia BULLSHIT
+# FUCK
+# ALWAYS! it always silently fucks your shit up, everywhere, including FLATPAK
+# so here's how u do it:
+#   --> disable nvidia by default for apps
+#       - this means: use opengl, mesa
+#   --> enable nvidia for those few apps that actually use it
+#
+# DEFAULT DISABLED:
+flatpak override --user \
+--env=LIBGL_ALWAYS_SOFTWARE=1 \
+--env=__GLX_VENDOR_LIBRARY_NAME=mesa \
+--env=MESA_LOADER_DRIVER_OVERRIDE=llvmpipe \
+--env=QT_OPENGL=software \
+--env=QT_QUICK_BACKEND=software
+
+# DISABLE FOR APP:
+# for example:
+flatpak override --user \
+--env=LIBGL_ALWAYS_SOFTWARE=1 \
+--env=__GLX_VENDOR_LIBRARY_NAME=mesa \
+--env=MESA_LOADER_DRIVER_OVERRIDE=llvmpipe \
+--env=QT_OPENGL=software \
+--env=QT_QUICK_BACKEND=software \
+org.kde.ghostwriter
+
+# ENABLE IT FOR APPS THAT NEED:
+# for example:
+flatpak override --user \
+--unset-env=LIBGL_ALWAYS_SOFTWARE \
+--unset-env=__GLX_VENDOR_LIBRARY_NAME \
+--unset-env=MESA_LOADER_DRIVER_OVERRIDE \
+--unset-env=QT_OPENGL \
+--unset-env=QT_QUICK_BACKEND \
+APP.ID.HERE
+
+
+#===================================  APPS  ==================================#
+
 
 # Dev
 # ===
