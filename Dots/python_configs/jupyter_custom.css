@@ -1,0 +1,16 @@
+/* make notebook use full browser width */
+.container {
+    width: 100% !important;
+}
+
+/* remove the deeply stupid gutter width (who the f would merge this) */
+div.prompt {
+    min-width: 0 !important;
+    padding-left: 0 !important;
+}
+
+/* remove notebook page outer inset */
+#notebook-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
