@@ -1,5 +1,20 @@
 # 🛑 SECHEDU?LED FOR REMOVAL
 
+#==== UPDATE (MAY 1 2026):
+#  you stated earlier:
+#    > **IF YOU OPEN THIS MF AGAIN IN FUT, AND YOU'VE OTHERWISE EXPERIENCED
+#    >   NO NVIDIA-RELATED くだらん POPPYCOCK SHIT ---> DEL THIS DOT**
+#
+#  but you didn't actually change anything; so there was no A/B dawg.
+#  HOWEVER!
+#  THE NEXT TIME YOU FIND YOURSELF LOOKING AT THIS FILE,
+#  AND HAVE SUFFERED NO CUDA-RELATED SHIT
+#  YOU MAY DEL IT!
+#
+#  WHY: because on may 1 2026, I actually
+#       commented-out the path and export below.
+#       this file is now essentially cruft artifact.
+
 
 #--- Pathing for machines with CUDA
 #PATH_CUDA="/usr/local/cuda"
@@ -35,6 +50,6 @@
 
 #==== UPDATE (JAN 2026):
 # to compile shit that has gpu hw accel (like ffmpeg) you do need the cuda path
-PATH_CUDA="/usr/local/cuda"
-export PATH="${PATH:+${PATH}:}$PATH_CUDA"
+#PATH_CUDA="/usr/local/cuda"
+#export PATH="${PATH:+${PATH}:}$PATH_CUDA"
 #export LD_LIBRARY_PATH="$PATH_CUDA/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
