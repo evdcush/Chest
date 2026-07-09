@@ -598,6 +598,14 @@ alias pipimyg="$piu myougiden; updatedb-myougiden -f"
 #jupyter nbextensions_configurator enable --user;"
 
 
+function hf() {
+    latest_hf_cli=/home/evan/.pyenv/versions/3.13.12/envs/precioushf/bin/hf
+    echo "WARNING:"
+    echo "bypassing current venv's huggingface_hub ver for latest at:\n\t$latest_hf_cli)"
+    $latest_hf_cli $@
+}
+
+
 
 #=============================================================================#
 #                                                                             #
@@ -828,6 +836,14 @@ alias treesz='tree --dirsfirst -s -hAF'  # Show filesizes for everything.
 alias fdf='fd --follow --list-details --unrestricted --ignore-case --glob --type file'
 alias fdd='fd -Lluig -td'
 
+function fdff() {
+    fd --follow --list-details --unrestricted --ignore-case --glob --type file "*$1*"
+}
+
+function fddd() {
+    fd -Lluig -td "*$1*"
+}
+
 #---- Copy
 alias clip="xclip -selection clipboard"
 #alias clipo="xclip -o -sel clip"
@@ -914,8 +930,7 @@ alias flst='flatpak list --app --columns=name,application,description,version | 
 #alias dolphin='flatpak run org.kde.dolphin'  # just install the deb one; too many qt problem bs
 
 
-#===========================  UNGOOG chromium APPS  ==========================#
-
+#=====  UNGOOG CHROM APP
 # RAINDROP.io APP LAUNCH
 
 function drp() {
@@ -932,6 +947,43 @@ function drp() {
 
 #==== zola
 #alias zola='flatpak run org.getzola.zola'
+
+
+#====  tailscale
+
+alias tst='tailscale serve status'
+alias tsr='tailscale serve reset'
+#alias tss='tailscale serve --bg --https=443 http://127.0.0.1:8080' # okay this is a hjacky one
+#alias tss='tailscale serve --bg --https=443 http://127.0.0.1:'
+
+
+function tss(){
+    tailscale serve --bg --https=443 "http://127.0.0.1:$1"
+}
+
+function dcup(){
+    dfile=docker-compose.yml
+    if [ "$#" -eq 1 ]; then
+        docker compose -f $1 up -d
+    else
+        docker compose up -d
+    fi
+}
+
+function ddow(){
+    dfile=docker-compose.yml
+    if [ "$#" -eq 1 ]; then
+        docker compose -f $1 down
+    else
+        docker compose down
+    fi
+}
+
+# ======================================
+
+#====  hermes agent
+alias hermes='docker exec -it hermes /opt/hermes/.venv/bin/hermes'
+alias hermez='docker exec -it hermes /opt/hermes/.venv/bin/hermes -z' # "zero" shot
 
 
 #=============================================================================#
@@ -954,9 +1006,10 @@ function drp() {
 
 alias dcu='docker compose up -d'
 alias dcd='docker compose down'
-alias dcl='docker compose logs --no-log-prefix -f vllm'
+alias dcl='docker compose logs --no-log-prefix -f'
 alias dcps='docker compose ps'
 
+alias dkl='docker logs -f'
 
 
 
@@ -991,13 +1044,14 @@ alias gnotrack='git config --local  status.showUntrackedFiles no'
 # ======
 alias gs="git status"
 alias gd="git diff --ignore-all-space"
+alias gdd="git --no-pager diff --ignore-all-space"
 alias gdma='git diff --diff-filter=MA master...'  # only show diffs made in files on the branch against compared to master.
 alias gdls='git --no-pager diff --diff-filter=MA --name-only master...'  # List files modified in branch from master.
 alias gls="git ls-files"
 
 #--- LOG
 alias glog="git log --abbrev-commit --show-signature"
-alias glognp="git --no-pager log --abbrev-commit --show-signature"
+alias glogg="git --no-pager log --abbrev-commit --show-signature"
 alias glog1="git log --graph --decorate --oneline --all"
 alias glogdiffs='git cherry -v master'  # see commit history for just the current branch.
 
@@ -1053,8 +1107,8 @@ alias gau="git add -u"
 alias gaa="git add -A"
 alias gr="git restore"
 alias gcm="git commit -m"
-alias gcms='git commit -S -m'
-alias gcnm="git commit -n -m"
+#alias gcms='git commit -S -m'  # redundant, global git conf already set
+alias gcnm="git commit --no-verify -m"
 alias gucm="git add -u && git commit -m"
 alias gcam="git commit -a -m"
 alias gcmd="git commit --amend --no-edit"
@@ -1073,50 +1127,53 @@ alias gpull="git pull"
 alias gpush="git push"
 alias gpushset='git push --set-upstream origin master'
 
-alias gchkoutall='git branch -a | grep remotes | grep -v HEAD | cut -d'/' -f3- | xargs -I% git checkout %'
+alias gchkoutall="git branch -a | grep remotes | grep -v HEAD | cut -d'/' -f3- | xargs -I% git checkout %"
 
+
+#=========================== CRUFT
 # Setup git remote and push.
-function gitremotepush(){
-    echo 'Setting up remote for local repo...'
-
-    # Get the remote target.
-    if [ "$#" -eq 0 ]; then
-        # If no target passed, then assume it is in clipboard.
-        target=`xclip -o -sel clip`
-    else
-        # Otherwise assume it was passed as first arg.
-        target=$1
-    fi
-
-    # Confirm remote url.
-    user_confirm='Y'
-    echo -n "\n$target\nIs this your target remote? (Y/n): "
-    read user_input
-    user_confirm=${user_input:-$user_confirm}
-    if [ "$user_confirm" = "${user_confirm#[Yy]}" ] ; then
-        echo 'Then please specify the git remote target. Cancelling.'
-        exit;
-    fi
-
-    # Add the remote origin.
-    echo "\nAdding remote origin:\ngit remote add origin $target\n"
-    git remote add origin $target
-
-    # Set upstream.
-    echo "Setting the remote as upstream and pushing:"
-    echo 'git push --set-upstream origin master'
-    git push --set-upstream origin master
-
-    echo "\nFinished!"
-    echo 'Check it out:'
-
-    # 'git@github.com:evdcush/Docsets.git' --> 'github.com/evdcush/Docsets.git'
-    target_tr=`echo $target | cut -c 5- | tr ':' '/'`
-    # 'github.com/evdcush/Docsets.git' --> 'https://github.com/evdcush/Docsets.git'
-    target_url="https://$target_tr"
-
-    echo $target_url
-}
+#function gitremotepush(){
+#    echo 'Setting up remote for local repo...'
+#
+#    # Get the remote target.
+#    if [ "$#" -eq 0 ]; then
+#        # If no target passed, then assume it is in clipboard.
+#        target=`xclip -o -sel clip`
+#    else
+#        # Otherwise assume it was passed as first arg.
+#        target=$1
+#    fi
+#
+#    # Confirm remote url.
+#    user_confirm='Y'
+#    echo -n "\n$target\nIs this your target remote? (Y/n): "
+#    read user_input
+#    user_confirm=${user_input:-$user_confirm}
+#    if [ "$user_confirm" = "${user_confirm#[Yy]}" ] ; then
+#        echo 'Then please specify the git remote target. Cancelling.'
+#        exit;
+#    fi
+#
+#    # Add the remote origin.
+#    echo "\nAdding remote origin:\ngit remote add origin $target\n"
+#    git remote add origin $target
+#
+#    # Set upstream.
+#    echo "Setting the remote as upstream and pushing:"
+#    echo 'git push --set-upstream origin master'
+#    git push --set-upstream origin master
+#
+#    echo "\nFinished!"
+#    echo 'Check it out:'
+#
+#    # 'git@github.com:evdcush/Docsets.git' --> 'github.com/evdcush/Docsets.git'
+#    target_tr=`echo $target | cut -c 5- | tr ':' '/'`
+#    # 'github.com/evdcush/Docsets.git' --> 'https://github.com/evdcush/Docsets.git'
+#    target_url="https://$target_tr"
+#
+#    echo $target_url
+#}
+#################################
 
 
 # git extras stuff
@@ -1189,17 +1246,10 @@ function getlfstargets() {
 # ============
 # (gh has alias stuff, but whatev)
 function list_gh_repos() {
-    # list all repos of some target user
-    if [ "$#" -eq 0 ]; then
-        # No arg given, get arg from clipboard
-        target=`xclip -o -sel clip`
-    else
-        # arg given
-        target=$1
-    fi
+    target=$1
     echo "retrieving all repos for user: $target"
     GH_PAGER=''
-    target_repos=$(gh repo list $target --json name,sshUrl --jq '.[] | [.sshUrl] | @tsv')
+    target_repos=$(gh repo list -L 120 $target --json name,sshUrl --jq '.[] | [.sshUrl] | @tsv')
     echo "REPOS FOUND FOR $target:"
     echo $target_repos
     echo $target_repos > "$target.gh_repos_list.txt"
