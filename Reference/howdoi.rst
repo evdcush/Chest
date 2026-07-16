@@ -184,6 +184,19 @@ Conversion
 
     ``inkscape -z -e test.png -w 1024 -h 1024 test.svg``
 
+The flags have changed for more recent versions of inkscape.
+(I don't know when, but current is ``1.4.3``, and via flatpak)
+Ref commands::
+
+    # export the drawing (bbox of all obj in img)
+    # with (optional) dpi of 900
+    #   SVG: 109 x 90  (h, w)
+    #   PNG: 1023 x 845  @ 900 dpi
+    flatpak run org.inkscape.Inkscape pytorch-icon.svg \
+    --export-filename pytorch-logo.png \
+    --export-area-drawing \
+    --export-dpi 900
+
 **convert to monochrome**:
 
     ``convert input_image.png -monochrome output.png``
