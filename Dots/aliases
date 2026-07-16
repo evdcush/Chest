@@ -1106,7 +1106,11 @@ alias ga="git add"
 alias gau="git add -u"
 alias gaa="git add -A"
 alias gr="git restore"
-alias gcm="git commit -m"
+#alias gcm="git commit -m"
+function gcm(){
+    msg="$@";
+    git commit -m "$msg";
+}
 #alias gcms='git commit -S -m'  # redundant, global git conf already set
 alias gcnm="git commit --no-verify -m"
 alias gucm="git add -u && git commit -m"
