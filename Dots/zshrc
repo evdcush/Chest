@@ -196,6 +196,10 @@ setopt EXTENDED_HISTORY
 ##  NB: never mind; env var only respected by flatpak app when launched
 #       via CLI--not .desktop use flatseal instead
 
+# git
+# ===
+export FILTER_BRANCH_SQUELCH_WARNING=1 # disables the stupid "WARNING"
+
 # Source aliases and funcs
 # ========================
 source $DIR_DOTS/aliases
@@ -222,6 +226,10 @@ if [ -f "$HITEM" ]; then
     source $HITEM
 fi
 
+# disable the auto-cd shit
+#export ZSHZ_CD=false
+#unset zshz_cd
+
 #=============================================================================#
 #                                    Python 🐍                                #
 #=============================================================================#
@@ -240,6 +248,11 @@ export PIP_DISABLE_PIP_VERSION_CHECK=1
 #=== prevent default OPT-OUT next.js telemetry shit
 export NEXT_TELEMETRY_DISABLED=1  # @next.js:  shame, shame, shame 
 export HF_HUB_DISABLE_TELEMETRY=1 # hf hub pulls: shame!
+
+#=== more OPT-OUT bullshit
+# oh-my-opencode
+export OMO_SEND_ANONYMOUS_TELEMETRY=0
+export OMO_DISABLE_POSTHOG=1
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -295,15 +308,24 @@ export GPG_TTY=$(tty)
 eval "$(atuin init zsh --disable-ctrl-r)"
 
 
+#rubberducky_asshole_nagger
 elap
+
 
 
 # opencode
 #export PATH=/home/evan/.opencode/bin:$PATH  # <--- the fuck is this shit? oepncode autoadded this ?
 
-## >>> b2 autocomplete >>>
+# >>> b2 autocomplete >>>
 ## This section is managed by b2 . Manual edit may break automated updates.
 #if [[ -z "$_comps" ]] && [[ -t 0 ]]; then autoload -Uz compinit && compinit -i -D; fi
 #source /home/evan/.zsh/completion/_b2
 #
 ## <<< b2 autocomplete <<<
+
+# bun completions
+[ -s "/home/evan/.local/share/reflex/bun/_bun" ] && source "/home/evan/.local/share/reflex/bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.local/share/reflex/bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
