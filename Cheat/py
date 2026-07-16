@@ -411,6 +411,16 @@ def gen_passphrase(num_words=4, sep=' '):
         passphrase = re.sub(r'[^\w\s]', '', pwords).lower()
     return passphrase
 
+#==== XKCD-style passhrase
+def gen_passphrase(num_words=4, sep=' '):
+    import re
+    from secrets import choice
+    with open('/usr/share/dict/british-english') as dwords:
+        words = [w.strip() for w in dwords]
+        pwords = sep.join(choice(words) for i in range(num_words))
+        passphrase = re.sub(r'[^\w\s]', '', pwords).lower()
+    return passphrase
+
 # same, but with a charset specified
 def gen_passphrase(num_words=4, sep=' ', charset=None):
     import re
@@ -430,8 +440,6 @@ def gen_passphrase(num_words=4, sep=' ', charset=None):
         passphrase = re.sub(r'[^\w\s]', '', pwords).lower()
     return passphrase
 
-
-british-english
 
 def get_words_composed_from_charset(charset: set, min_len=4):
     valid_words = None
