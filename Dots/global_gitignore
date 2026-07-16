@@ -208,6 +208,9 @@ devel_isolated/
 .vscode/
 .obsidian/
 
+# Logging
+wandb/
+
 #===  webdev
 node_modules
 playwright-report
