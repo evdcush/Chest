@@ -36,6 +36,50 @@ function lnpyg(){
     ln -sf $PYGSRC $PYGDST
 }
 
+function rubberducky_asshole_nagger(){
+    _pycode='
+rubberducky_msg_lst = [
+    """\
+ ██╗    ██╗██╗  ██╗ █████╗ ████████╗
+ ██║    ██║██║  ██║██╔══██╗╚══██╔══╝
+ ██║ █╗ ██║███████║███████║   ██║
+ ██║███╗██║██╔══██║██╔══██║   ██║
+ ╚███╔███╔╝██║  ██║██║  ██║   ██║
+  ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝
+""",
+"""\
+  █████╗ ██████╗ ███████╗    ██╗   ██╗ ██████╗ ██╗   ██╗
+ ██╔══██╗██╔══██╗██╔════╝    ╚██╗ ██╔╝██╔═══██╗██║   ██║
+ ███████║██████╔╝█████╗       ╚████╔╝ ██║   ██║██║   ██║
+ ██╔══██║██╔══██╗██╔══╝        ╚██╔╝  ██║   ██║██║   ██║
+ ██║  ██║██║  ██║███████╗       ██║   ╚██████╔╝╚██████╔╝
+ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝       ╚═╝    ╚═════╝  ╚═════╝
+""",
+"""\
+ ██████╗  ██████╗ ██╗███╗   ██╗ ██████╗ ██████╗
+ ██╔══██╗██╔═══██╗██║████╗  ██║██╔════╝ ╚════██╗
+ ██║  ██║██║   ██║██║██╔██╗ ██║██║  ███╗  ▄███╔╝
+ ██║  ██║██║   ██║██║██║╚██╗██║██║   ██║  ▀▀══╝
+ ██████╔╝╚██████╔╝██║██║ ╚████║╚██████╔╝  ██╗
+ ╚═════╝  ╚═════╝ ╚═╝╚═╝  ╚═══╝ ╚═════╝   ╚═╝
+""",
+"""\
+                    ██╗    ██╗██╗  ██╗██╗   ██╗██████╗
+                    ██║    ██║██║  ██║╚██╗ ██╔╝╚════██╗
+                    ██║ █╗ ██║███████║ ╚████╔╝   ▄███╔╝
+                    ██║███╗██║██╔══██║  ╚██╔╝    ▀▀══╝
+                    ╚███╔███╔╝██║  ██║   ██║     ██╗
+                     ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝     ╚═╝
+""",
+]
+
+rubberducky_asshole_nagger_msg = "\n\n".join(rubberducky_msg_lst)
+print(rubberducky_asshole_nagger_msg)
+print()
+'
+    python -c "$_pycode"
+}
+
 # Memento Mori
 # ============
 function elap(){
@@ -74,25 +118,28 @@ delta_n = now - n
 #     so:
 #     days, seconds = divmod(delta.total_seconds(), 3600 * 24)
 #                   = delta.days, delta.seconds
-days = delta_n.days
-seconds = delta_n.seconds  # remaining seconds after days
-hours   = seconds // 3600
-minutes = (seconds // 60) % 60  # minutes after hour
+mon, day = divmod(delta_n.days, 30)
+#seconds = delta_n.seconds  # remaining seconds after days
+#hours   = seconds // 3600
+#minutes = (seconds // 60) % 60  # minutes after hour
 
-elapsed_str = f"{BOLD}{YELLOW}LANDMARK: {days} DAYS, {hours} HOURS {minutes} MINUTES{RESET}"
+elapsed_str = f"{BOLD}{YELLOW}LANDMARK: {mon} MONTHS, {day} DAYS{RESET}"
 
 
 # b
 delta_b = now - b
 y = delta_b.days / 365.2425
-useful = 63
+useful = 63  # adjusted based on current stats for profile demo
 percent_used = y / useful
-y_str = f"{BOLD}{MAGENTA}init: {y:.7f}; {percent_used:.2%} expended{RESET}"
+y_str = f"{BOLD}{MAGENTA}init:     {y:.7f}; {percent_used:.2%} expended{RESET}"
 
 # m
 delta_m = m - now
-weeks, sub_days = divmod(delta_m.days, 7)
-m_str = f"{BOLD}{RED}UNTIL: {weeks} WEEKS, {sub_days} DAYS{RESET}"
+
+#weeks, sub_days = divmod(delta_m.days, 7)
+#m_str = f"{BOLD}{RED}UNTIL: {weeks} WEEKS, {sub_days} DAYS{RESET}"
+hours = delta_m.seconds // 3600
+m_str = f"{BLINK}{BOLD}{RED}   UNTIL: {delta_m.days} DAYS, {hours} HOURS{RESET}"
 
 # updtime
 with open("/proc/uptime", "r") as upfile:
@@ -101,11 +148,11 @@ up_h, up_m, _ = str(timedelta(seconds=up_sec)).split(":")
 uptime = f"Uptime: {up_h}h {up_m}m"
 
 # REMIND
-print(f"{BOLD}{CYAN}TIME SINCE:{RESET}")
-print(elapsed_str)
-print(y_str)
-print(m_str)
 print(uptime)
+print(f"{UNDERLINE}{BOLD}{CYAN}TIME SINCE:{RESET}")
+print(y_str)
+print(elapsed_str)
+print(m_str)
 print()
 '
     python -c "$_pycode"
@@ -1118,4 +1165,3 @@ gunstage() {
   unset top_level_directory file return_value
 #gunstage "$@"   # this was outside the fn in the src script
 }
-
