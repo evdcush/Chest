@@ -106,6 +106,7 @@ pdftoppm -f 1 -l 1 -png foo.pdf foo
 # ------------------
 #=== cut watermark text from pdf code
 sed -e "s/watermarktextstring/ /g" <input.pdf >unwatermarked.pdf
+sed -e "s/watermarktextstring/ /g" <input.pdf >unwatermarked.pdf
 
 #=== fix modified pdf
 pdftk unwatermarked.pdf output fixed.pdf && mv fixed.pdf unwatermarked.pdf
@@ -113,7 +114,30 @@ pdftk unwatermarked.pdf output fixed.pdf && mv fixed.pdf unwatermarked.pdf
 Downloaded from http://direct.mit.edu/evco/article-pdf/31/2/81/2133989/evco_a_00325.pdf by guest on 26 June 2023
 sed -e "s/Downloaded from http:\/\/direct.mit.edu\/evco\/article-pdf\/31\/2\/81\/2133989\/evco_a_00325.pdf by guest on 26 June 2023/ /g" evco_a_00325.pdf > unwatermarked_evco_a_00325.pdf
 
+Downloaded from http://royalsocietypublishing.org/rsta/article-pdf/doi/10.1098/rsta.2024.0533/6138007/rsta.2024.0533.pdf by guest on 09 July 2026
+sed -e "s/Downloaded from http:\/\/royalsocietypublishing.org\/rsta\/article-pdf\/doi\/10.1098\/rsta.2024.0533\/6138007\/rsta.2024.0533.pdf by guest on 09 July 2026/ /g" rsta.2024.0533.pdf > unwater_rsta.2024.0533.pdf
 pdftk unwatermarked_evco_a_00325.pdf output fixed_evco_a_00325.pdf
+
+
+
+# uncompresse
+pdftk rsta.2024.0533.pdf output uncompressed.pdf uncompress
+
+# 2. Remove the entire watermark blocks
+sed -E '/\/Artifact << \/Type \/Watermark \/Subtype \/Watermark >> BDC/,/EMC/ s/.*//' uncompressed.pdf > temp.pdf
+
+# 3. Clean up extra newlines and fix
+sed '/^$/N;/^\n$/D' temp.pdf > no_watermark.pdf
+
+# 4. Repair the PDF
+pdftk no_watermark.pdf output clean.pdf
+
+
+
+### WAAYYYYYYYYYYYYYYYYYYYYY SIMPLER:
+ghostscript -sDEVICE=pdfwrite -dCompatibilityLevel=1.7 -dPDFSETTINGS=/prepress \
+   -dDetectDuplicateImages=true -dNOPAUSE -dQUIET -dBATCH \
+   -sOutputFile=clean.pdf rsta.2024.0533.pdf
 
 
 
