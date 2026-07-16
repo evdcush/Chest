@@ -13,6 +13,13 @@
 #                                                                             #
 #=============================================================================#
 
+# datetime: ms or whatever the f since epoch
+# ---------
+python -c "import datetime; print(datetime.datetime.fromtimestamp(1768126886))"
+# --> 2026-01-11 19:21:26
+
+
+
 # FYI, if you want to use 1/0 as True/False in your code, then:
 # if ((  $x )); then echo "Hello"; fi
 # shows the message for x=1 but not for x=0 or x= (undefined).
@@ -480,6 +487,75 @@ cat file1 file2 > target_file # >> will append
 # Display contents with line numbers (blank lines excluded)
 cat -b /path/to/foo
 
+#=============================================================================#
+#                               PERMISSIONS SHIT                              #
+#=============================================================================#
+
+# ALL RELEVANT AND ADJACENT PERMISSIONS COMMANDS
+# ==============================================
+# check file shit
+ls -l foo.txt  # permissions, group, owner etc.
+stat foo.txt   # displays file/filesys info
+
+# oh wait, even if file is all g, *directory permissions* can fuck you shit up
+# so check relevant parent dir, e.g. `naked_molerats/foo.txt`
+ls -ld naked_molerats
+
+# now the cmds and shit about files for chang
+chmod    # modify permissions
+chown    # modify ownership
+chattr   # change attributes of file, e.g. a: append-only; i: immutable (*THIS IS DIFF FROM PERMISSIONS)
+usermod  # can add/remove/change user group
+groups | groupadd | groupdel   # list groups, do stuff
+
+
+
+# less likely, but within possible worlds
+lsof   # file lock
+mount  # filesystem might be mounted read-only (ro, nosuid, nodev, noexec, ...)
+sudo mount -o remount,rw /that/fs
+# also certain fs, more admin type shit etc.
+
+# her eis ordered "why cant write dump"
+ls -l foo.txt
+ls -ld .
+lsattr foo.txt
+getfacl foo.txt
+mount | grep "$(df foo.txt | tail -1 | awk '{print $1}')"
+getenforce
+df -h
+df -i
+
+
+
+#-----------------------------------------------------------------------------#
+#                                  ATTRIBUTES                                 #
+#-----------------------------------------------------------------------------#
+
+# YOU: "why can't i write file?"
+#     > $ sudo chmod u+w .zsh_history
+#     > chmod: changing permissions of '.zsh_history': Operation not permitted
+# WHY?
+#     it's not a permissions thing. it's a linux file attribute lock.
+#     yes. it's another dimension/axis of doing shit (like write) to files,
+#     like permissions.
+# WHAT DO?
+#     check the attributes of the file; look for:
+#       a: append-only
+#       i: immutable
+#     then change attributes as desired
+#
+# list attributes of file
+lsattr -a ~/.zsh_history
+# -----a--------e------- /home/evan/.zsh_history
+#   a: append-only
+#   i: immutable
+
+# change attrib
+sudo chattr -a ~/.zsh_history
+
+# (relock it)
+sudo chattr +a ~/.zsh_history
 
 #-----------------------------------------------------------------------------#
 #                                    chmod                                    #
