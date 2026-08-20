@@ -1,0 +1,1011 @@
+[tool.yapf]
+
+# ------------------------------------------------------------------------------
+# YAPF source-reference config
+#
+# This file is based on the actual upstream YAPF source, primarily:
+#   yapf/yapflib/style.py
+#
+# That source defines:
+# - the full supported option set
+# - the built-in base styles
+# - default values
+# - accepted value types / converters
+# - config parsing behavior
+#
+# Built-in base styles accepted by `based_on_style`:
+# - "pep8"
+# - "google"
+# - "facebook"
+# - "yapf"
+#
+# YAPF also supports config in:
+# - .style.yapf     -> [style]
+# - setup.cfg       -> [yapf]
+# - pyproject.toml  -> [tool.yapf]
+#
+# Notes:
+# - Option names are handled case-insensitively by YAPF's parser.
+# - In TOML, use lowercase keys for sanity.
+# - Most booleans accept normal true/false TOML boolean values.
+# - Some values are parsed by YAPF from strings after TOML serialization.
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# based_on_style
+#
+# Special option handled by YAPF before normal option conversion.
+#
+# Allowed values:
+# - "pep8"
+# - "google"
+# - "facebook"
+# - "yapf"
+#
+# Meaning:
+# Start from one of YAPF's built-in style dictionaries, then override from here.
+#
+# Practical guidance:
+# - "pep8"     -> best neutral base
+# - "google"   -> slightly more vertical, less line-joining
+# - "facebook" -> dedented closing brackets, more distinct multiline structure
+# - "yapf"     -> YAPF's own style; notably uses indent_width = 2
+# ------------------------------------------------------------------------------
+based_on_style = "pep8"
+
+# ------------------------------------------------------------------------------
+# column_limit
+#
+# Type: integer
+#
+# Meaning:
+# Target maximum line length.
+#
+# Typical values:
+# - 79
+# - 88
+# - 100
+# - 120
+#
+# Behavior:
+# Lower values force more line wrapping.
+# Higher values preserve more single-line expressions.
+# ------------------------------------------------------------------------------
+column_limit = 100
+
+# ------------------------------------------------------------------------------
+# indent_width
+#
+# Type: integer
+#
+# Meaning:
+# Number of columns to use for normal indentation.
+#
+# Typical values:
+# - 4  -> standard Python
+# - 2  -> YAPF built-in "yapf" style
+# ------------------------------------------------------------------------------
+indent_width = 4
+
+# ------------------------------------------------------------------------------
+# continuation_indent_width
+#
+# Type: integer
+#
+# Meaning:
+# Indentation used for wrapped continuation lines.
+#
+# Typical values:
+# - 4
+# - 8
+#
+# Behavior:
+# Larger values make wrapped expressions more visually obvious.
+# ------------------------------------------------------------------------------
+continuation_indent_width = 4
+
+# ------------------------------------------------------------------------------
+# use_tabs
+#
+# Type: boolean
+#
+# Meaning:
+# Use literal tab characters for indentation.
+#
+# Typical:
+# - false
+# ------------------------------------------------------------------------------
+use_tabs = false
+
+# ------------------------------------------------------------------------------
+# continuation_align_style
+#
+# Type: string
+#
+# Allowed values:
+# - "SPACE"
+# - "FIXED"
+# - "VALIGN-RIGHT"
+#
+# Meaning:
+# Controls how continuation lines are aligned.
+#
+# Behavior:
+# - SPACE:
+#     Use spaces for continuation alignment. Most normal choice.
+# - FIXED:
+#     Use fixed indentation based on continuation_indent_width.
+# - VALIGN-RIGHT:
+#     Try to vertically align continuation lines to indentation boundaries.
+# ------------------------------------------------------------------------------
+continuation_align_style = "SPACE"
+
+# ------------------------------------------------------------------------------
+# align_closing_bracket_with_visual_indent
+#
+# Type: boolean
+#
+# Meaning:
+# Align closing bracket with the visual indentation level instead of dedenting
+# to the outer block indentation level.
+#
+# Behavior:
+# Changes the look of multiline function calls and literals.
+# ------------------------------------------------------------------------------
+align_closing_bracket_with_visual_indent = true
+
+# ------------------------------------------------------------------------------
+# dedent_closing_brackets
+#
+# Type: boolean
+#
+# Meaning:
+# Put closing brackets on a separate line and dedent them if the expression
+# cannot fit on one line.
+#
+# Example style:
+#     call(
+#         x,
+#         y,
+#     )
+#
+# Notes:
+# Often used as an alternative to indent_closing_brackets.
+# Do not usually combine with indent_closing_brackets = true.
+# ------------------------------------------------------------------------------
+dedent_closing_brackets = false
+
+# ------------------------------------------------------------------------------
+# indent_closing_brackets
+#
+# Type: boolean
+#
+# Meaning:
+# Put closing brackets on a separate line, but keep them indented rather than
+# dedented.
+#
+# Example style:
+#     call(
+#         x,
+#         y,
+#         )
+#
+# Notes:
+# Usually leave false unless you explicitly want this look.
+# ------------------------------------------------------------------------------
+indent_closing_brackets = false
+
+# ------------------------------------------------------------------------------
+# coalesce_brackets
+#
+# Type: boolean
+#
+# Meaning:
+# Do not split consecutive brackets apart.
+#
+# Especially relevant when dedent_closing_brackets is enabled.
+#
+# Example:
+# Instead of:
+#     func(
+#         {
+#             "a": 1,
+#         }
+#     )
+#
+# Prefer:
+#     func({
+#         "a": 1,
+#     })
+# ------------------------------------------------------------------------------
+coalesce_brackets = false
+
+# ------------------------------------------------------------------------------
+# split_before_closing_bracket
+#
+# Type: boolean
+#
+# Meaning:
+# Allow a split before the closing bracket if a list/dict/call cannot fit on one
+# line.
+# ------------------------------------------------------------------------------
+split_before_closing_bracket = true
+
+# ------------------------------------------------------------------------------
+# space_between_ending_comma_and_closing_bracket
+#
+# Type: boolean
+#
+# Meaning:
+# Insert a space between an ending comma and the closing bracket.
+#
+# Usually left at default unless you are matching an existing style.
+# ------------------------------------------------------------------------------
+space_between_ending_comma_and_closing_bracket = true
+
+# ------------------------------------------------------------------------------
+# space_inside_brackets
+#
+# Type: boolean
+#
+# Meaning:
+# Add spaces inside (), [], and {} delimiters.
+#
+# Example when true:
+#     func( 1 )
+#     [ 1, 2 ]
+#     { 1: 2 }
+#
+# Usually false.
+# ------------------------------------------------------------------------------
+space_inside_brackets = false
+
+# ------------------------------------------------------------------------------
+# spaces_around_dict_delimiters
+#
+# Type: boolean
+#
+# Meaning:
+# Add spaces after "{" and before "}".
+#
+# Example when true:
+#     { 1: 2 }
+# ------------------------------------------------------------------------------
+spaces_around_dict_delimiters = false
+
+# ------------------------------------------------------------------------------
+# spaces_around_list_delimiters
+#
+# Type: boolean
+#
+# Meaning:
+# Add spaces after "[" and before "]".
+#
+# Example when true:
+#     [ 1, 2 ]
+# ------------------------------------------------------------------------------
+spaces_around_list_delimiters = false
+
+# ------------------------------------------------------------------------------
+# spaces_around_tuple_delimiters
+#
+# Type: boolean
+#
+# Meaning:
+# Add spaces after "(" and before ")" for tuple delimiters.
+#
+# Example when true:
+#     ( 1, 2, 3 )
+# ------------------------------------------------------------------------------
+spaces_around_tuple_delimiters = false
+
+# ------------------------------------------------------------------------------
+# spaces_around_default_or_named_assign
+#
+# Type: boolean
+#
+# Meaning:
+# Add spaces around "=" used in:
+# - function default values
+# - named arguments
+#
+# Example when false:
+#     def f(x=1): ...
+#     g(x=1)
+#
+# Example when true:
+#     def f(x = 1): ...
+#     g(x = 1)
+# ------------------------------------------------------------------------------
+spaces_around_default_or_named_assign = false
+
+# ------------------------------------------------------------------------------
+# spaces_around_power_operator
+#
+# Type: boolean
+#
+# Meaning:
+# Add spaces around "**".
+#
+# Example:
+# - false -> a**b
+# - true  -> a ** b
+# ------------------------------------------------------------------------------
+spaces_around_power_operator = false
+
+# ------------------------------------------------------------------------------
+# spaces_around_subscript_colon
+#
+# Type: boolean
+#
+# Meaning:
+# Add spaces around slice colons.
+#
+# Example when true:
+#     a[1 : 10 : 2]
+#
+# Usually false.
+# ------------------------------------------------------------------------------
+spaces_around_subscript_colon = false
+
+# ------------------------------------------------------------------------------
+# arithmetic_precedence_indication
+#
+# Type: boolean
+#
+# Meaning:
+# Let spacing indicate operator precedence by removing spaces around
+# higher-precedence operations in some expressions.
+#
+# Example intent:
+#     1*2 + 3/4
+#     (1+2) * (3-4)
+#
+# Usually false unless you intentionally want this style.
+# ------------------------------------------------------------------------------
+arithmetic_precedence_indication = false
+
+# ------------------------------------------------------------------------------
+# no_spaces_around_selected_binary_operators
+#
+# Type: comma-separated set of operator strings
+#
+# Meaning:
+# Remove spaces around only the selected binary operators.
+#
+# Example values:
+# - ""
+# - "*,/"
+# - "%,@"
+#
+# Example behavior with "*,/":
+#     1 + 2*3 - 4/5
+#
+# Notes:
+# This is niche. Leave empty unless you strongly prefer this style.
+# ------------------------------------------------------------------------------
+no_spaces_around_selected_binary_operators = ""
+
+# ------------------------------------------------------------------------------
+# each_dict_entry_on_separate_line
+#
+# Type: boolean
+#
+# Meaning:
+# In multiline dictionaries, place each entry on its own line.
+#
+# Usually true.
+# ------------------------------------------------------------------------------
+each_dict_entry_on_separate_line = true
+
+# ------------------------------------------------------------------------------
+# force_multiline_dict
+#
+# Type: boolean
+#
+# Meaning:
+# Force dictionaries to be multiline even if they would fit on one line.
+#
+# Example when true:
+#     config = {
+#         "a": 1,
+#     }
+#
+# Usually false.
+# ------------------------------------------------------------------------------
+force_multiline_dict = false
+
+# ------------------------------------------------------------------------------
+# allow_multiline_dictionary_keys
+#
+# Type: boolean
+#
+# Meaning:
+# Allow complex dictionary keys to span multiple lines.
+#
+# Useful only for unusual / complex keys.
+# ------------------------------------------------------------------------------
+allow_multiline_dictionary_keys = false
+
+# ------------------------------------------------------------------------------
+# allow_split_before_dict_value
+#
+# Type: boolean
+#
+# Meaning:
+# Allow YAPF to split before a dictionary value.
+#
+# Can help with long keys or long expressions.
+# ------------------------------------------------------------------------------
+allow_split_before_dict_value = true
+
+# ------------------------------------------------------------------------------
+# indent_dictionary_value
+#
+# Type: boolean
+#
+# Meaning:
+# If a dictionary value cannot fit on the same line as the key, indent the value
+# on the following line.
+#
+# Example when true:
+#     {
+#         "key":
+#             some_long_value,
+#     }
+#
+# This can make long dict entries easier to scan.
+# ------------------------------------------------------------------------------
+indent_dictionary_value = false
+
+# ------------------------------------------------------------------------------
+# allow_multiline_lambdas
+#
+# Type: boolean
+#
+# Meaning:
+# Allow lambdas to be formatted across multiple lines.
+#
+# Usually false.
+# ------------------------------------------------------------------------------
+allow_multiline_lambdas = false
+
+# ------------------------------------------------------------------------------
+# allow_split_before_default_or_named_assigns
+#
+# Type: boolean
+#
+# Meaning:
+# Allow splitting before "=" in function defaults or named arguments.
+#
+# This affects how aggressively long signatures / calls may break.
+# ------------------------------------------------------------------------------
+allow_split_before_default_or_named_assigns = true
+
+# ------------------------------------------------------------------------------
+# split_before_named_assigns
+#
+# Type: boolean
+#
+# Meaning:
+# Split named assignments onto individual lines when wrapping.
+# ------------------------------------------------------------------------------
+split_before_named_assigns = true
+
+# ------------------------------------------------------------------------------
+# split_arguments_when_comma_terminated
+#
+# Type: boolean
+#
+# Meaning:
+# Prefer splitting before arguments if the argument list is terminated by a
+# trailing comma.
+#
+# Similar in spirit to Black's trailing-comma multiline signal.
+# ------------------------------------------------------------------------------
+split_arguments_when_comma_terminated = false
+
+# ------------------------------------------------------------------------------
+# split_before_first_argument
+#
+# Type: boolean
+#
+# Meaning:
+# If an argument or parameter list is going multiline, split before the first
+# argument.
+#
+# Example when true:
+#     func(
+#         a,
+#         b,
+#     )
+#
+# Example when false:
+#     func(a,
+#          b)
+#
+# Actual output depends on other settings and penalties.
+# ------------------------------------------------------------------------------
+split_before_first_argument = false
+
+# ------------------------------------------------------------------------------
+# split_all_comma_separated_values
+#
+# Type: boolean
+#
+# Meaning:
+# Aggressively split comma-separated values, recursively.
+#
+# This is strong / noisy. Usually false.
+# ------------------------------------------------------------------------------
+split_all_comma_separated_values = false
+
+# ------------------------------------------------------------------------------
+# split_all_top_level_comma_separated_values
+#
+# Type: boolean
+#
+# Meaning:
+# Split top-level comma-separated values, but do not recursively split all
+# subexpressions unless needed.
+#
+# Less aggressive than split_all_comma_separated_values, but still strong.
+# ------------------------------------------------------------------------------
+split_all_top_level_comma_separated_values = false
+
+# ------------------------------------------------------------------------------
+# split_before_arithmetic_operator
+#
+# Type: boolean
+#
+# Meaning:
+# Prefer splitting before arithmetic operators (+, -, *, /, //, @) instead of
+# after them when wrapping arithmetic expressions.
+# ------------------------------------------------------------------------------
+split_before_arithmetic_operator = false
+
+# ------------------------------------------------------------------------------
+# split_before_bitwise_operator
+#
+# Type: boolean
+#
+# Meaning:
+# Prefer splitting before bitwise operators (&, |, ^) instead of after.
+# ------------------------------------------------------------------------------
+split_before_bitwise_operator = true
+
+# ------------------------------------------------------------------------------
+# split_before_logical_operator
+#
+# Type: boolean
+#
+# Meaning:
+# Prefer splitting before logical operators ("and", "or") instead of after.
+# ------------------------------------------------------------------------------
+split_before_logical_operator = true
+
+# ------------------------------------------------------------------------------
+# split_before_dot
+#
+# Type: boolean
+#
+# Meaning:
+# If a long dotted expression must wrap, split before the ".".
+#
+# Example when true:
+#     value = (
+#         something_long
+#         .method()
+#         .other_method()
+#     )
+#
+# Example when false:
+#     value = something_long.method(
+#     ).other_method()
+#
+# Actual exact layout depends on other heuristics.
+#
+# If you dislike leading-dot wrapped chains, keep this false.
+# ------------------------------------------------------------------------------
+split_before_dot = false
+
+# ------------------------------------------------------------------------------
+# split_before_dict_set_generator
+#
+# Type: boolean
+#
+# Meaning:
+# Allow splitting before the "for" clause in a dict or set comprehension.
+#
+# Example:
+#     {
+#         k: v
+#         for k, v in items
+#     }
+# ------------------------------------------------------------------------------
+split_before_dict_set_generator = true
+
+# ------------------------------------------------------------------------------
+# split_before_expression_after_opening_paren
+#
+# Type: boolean
+#
+# Meaning:
+# Split after the opening parenthesis that surrounds an expression if it does
+# not fit on one line.
+#
+# Usually false unless you prefer earlier vertical splitting.
+# ------------------------------------------------------------------------------
+split_before_expression_after_opening_paren = false
+
+# ------------------------------------------------------------------------------
+# split_complex_comprehension
+#
+# Type: boolean
+#
+# Meaning:
+# Split complex comprehensions and generators with non-trivial expressions and/or
+# multiple clauses before the `for` / `if` components.
+#
+# Helps readability in heavy comprehension code.
+# ------------------------------------------------------------------------------
+split_complex_comprehension = false
+
+# ------------------------------------------------------------------------------
+# disable_ending_comma_heuristic
+#
+# Type: boolean
+#
+# Meaning:
+# Disable the heuristic that places each list element on a separate line when
+# the list is comma-terminated.
+#
+# Important source note:
+# In YAPF v0.40.3, behavior changed. Splitting lists with comments is now
+# controlled separately by disable_split_list_with_comment.
+# ------------------------------------------------------------------------------
+disable_ending_comma_heuristic = false
+
+# ------------------------------------------------------------------------------
+# disable_split_list_with_comment
+#
+# Type: boolean
+#
+# Meaning:
+# Do not put every element on a new line within a list that contains
+# interstitial comments.
+# ------------------------------------------------------------------------------
+disable_split_list_with_comment = false
+
+# ------------------------------------------------------------------------------
+# join_multiple_lines
+#
+# Type: boolean
+#
+# Meaning:
+# Join short lines into one line when possible.
+#
+# Example:
+# - true  -> more compact output
+# - false -> preserves more existing vertical structure
+#
+# This is one of the biggest "feel" knobs in YAPF.
+# ------------------------------------------------------------------------------
+join_multiple_lines = true
+
+# ------------------------------------------------------------------------------
+# blank_line_before_class_docstring
+#
+# Type: boolean
+#
+# Meaning:
+# Insert a blank line before a class-level docstring.
+# ------------------------------------------------------------------------------
+blank_line_before_class_docstring = false
+
+# ------------------------------------------------------------------------------
+# blank_line_before_module_docstring
+#
+# Type: boolean
+#
+# Meaning:
+# Insert a blank line before a module-level docstring.
+# ------------------------------------------------------------------------------
+blank_line_before_module_docstring = false
+
+# ------------------------------------------------------------------------------
+# blank_line_before_nested_class_or_def
+#
+# Type: boolean
+#
+# Meaning:
+# Insert a blank line before a def or class immediately nested inside another
+# def or class.
+# ------------------------------------------------------------------------------
+blank_line_before_nested_class_or_def = true
+
+# ------------------------------------------------------------------------------
+# blank_lines_around_top_level_definition
+#
+# Type: integer
+#
+# Meaning:
+# Number of blank lines surrounding top-level function and class definitions.
+#
+# Typical:
+# - 2
+# ------------------------------------------------------------------------------
+blank_lines_around_top_level_definition = 2
+
+# ------------------------------------------------------------------------------
+# blank_lines_between_top_level_imports_and_variables
+#
+# Type: integer
+#
+# Meaning:
+# Number of blank lines between top-level imports and top-level variable
+# definitions.
+#
+# Typical:
+# - 1
+# ------------------------------------------------------------------------------
+blank_lines_between_top_level_imports_and_variables = 1
+
+# ------------------------------------------------------------------------------
+# indent_blank_lines
+#
+# Type: boolean
+#
+# Meaning:
+# Indent blank lines to match surrounding indentation.
+#
+# Usually false.
+# ------------------------------------------------------------------------------
+indent_blank_lines = false
+
+# ------------------------------------------------------------------------------
+# spaces_before_comment
+#
+# Type:
+# - integer
+# - or list of integers
+#
+# Meaning:
+# Number of spaces before a trailing comment, or alignment columns for trailing
+# comment blocks.
+#
+# Examples:
+# - 2
+# - [15, 20]
+#
+# Behavior:
+# - Single integer:
+#     Fixed number of spaces before each trailing comment.
+# - List of integers:
+#     Align trailing comments in a block to the first column value that is
+#     greater than the longest line in that block.
+# ------------------------------------------------------------------------------
+spaces_before_comment = 2
+
+# ------------------------------------------------------------------------------
+# i18n_comment
+#
+# Type: string / regex
+#
+# Meaning:
+# Regex for i18n comments that must stay adjacent to the strings they annotate.
+#
+# If present on a line, YAPF avoids moving the associated string away from the
+# comment.
+#
+# Leave empty unless your project uses this pattern.
+# ------------------------------------------------------------------------------
+i18n_comment = ""
+
+# ------------------------------------------------------------------------------
+# i18n_function_call
+#
+# Type: comma-separated string list
+#
+# Meaning:
+# Function names treated as i18n wrappers, so YAPF preserves adjacency with i18n
+# comments.
+#
+# Example values:
+# - ""
+# - "_,N_"
+# - "gettext,ngettext"
+# ------------------------------------------------------------------------------
+i18n_function_call = ""
+
+# ------------------------------------------------------------------------------
+# split_penalty_after_opening_bracket
+#
+# Type: integer
+#
+# Meaning:
+# Penalty for splitting immediately after an opening bracket.
+#
+# Higher value:
+# - discourages early splitting right after "(" / "[" / "{"
+#
+# Lower value:
+# - allows more aggressive vertical formatting
+# ------------------------------------------------------------------------------
+split_penalty_after_opening_bracket = 500
+
+# ------------------------------------------------------------------------------
+# split_penalty_after_unary_operator
+#
+# Type: integer
+#
+# Meaning:
+# Penalty for splitting after a unary operator.
+#
+# Usually left high.
+# ------------------------------------------------------------------------------
+split_penalty_after_unary_operator = 10000
+
+# ------------------------------------------------------------------------------
+# split_penalty_arithmetic_operator
+#
+# Type: integer
+#
+# Meaning:
+# Penalty for splitting around arithmetic operators.
+#
+# Higher value discourages splitting around + - * / // % @.
+# ------------------------------------------------------------------------------
+split_penalty_arithmetic_operator = 300
+
+# ------------------------------------------------------------------------------
+# split_penalty_before_if_expr
+#
+# Type: integer
+#
+# Meaning:
+# Penalty for splitting before an inline if-expression.
+# ------------------------------------------------------------------------------
+split_penalty_before_if_expr = 0
+
+# ------------------------------------------------------------------------------
+# split_penalty_bitwise_operator
+#
+# Type: integer
+#
+# Meaning:
+# Penalty for splitting around bitwise operators (& | ^).
+# ------------------------------------------------------------------------------
+split_penalty_bitwise_operator = 300
+
+# ------------------------------------------------------------------------------
+# split_penalty_comprehension
+#
+# Type: integer
+#
+# Meaning:
+# Penalty for splitting a list comprehension or generator expression.
+# ------------------------------------------------------------------------------
+split_penalty_comprehension = 80
+
+# ------------------------------------------------------------------------------
+# split_penalty_excess_character
+#
+# Type: integer
+#
+# Meaning:
+# Penalty for characters beyond the column limit.
+#
+# Higher value makes YAPF work harder to stay under column_limit.
+# ------------------------------------------------------------------------------
+split_penalty_excess_character = 7000
+
+# ------------------------------------------------------------------------------
+# split_penalty_for_added_line_split
+#
+# Type: integer
+#
+# Meaning:
+# General penalty for each additional line split added to a logical line.
+#
+# Higher value:
+# - discourages excessive wrapping
+#
+# This is one of the most useful tuning knobs if you want YAPF to avoid ugly
+# over-splitting.
+# ------------------------------------------------------------------------------
+split_penalty_for_added_line_split = 40
+
+# ------------------------------------------------------------------------------
+# split_penalty_import_names
+#
+# Type: integer
+#
+# Meaning:
+# Penalty for splitting a list of imported names.
+#
+# Higher value:
+# - discourages breaking up import name lists
+# ------------------------------------------------------------------------------
+split_penalty_import_names = 20
+
+# ------------------------------------------------------------------------------
+# split_penalty_logical_operator
+#
+# Type: integer
+#
+# Meaning:
+# Penalty for splitting around logical operators ("and", "or").
+# ------------------------------------------------------------------------------
+split_penalty_logical_operator = 300
+
+# ------------------------------------------------------------------------------
+# Built-in base style notes from upstream source
+#
+# pep8:
+# - column_limit = 79
+# - indent_width = 4
+# - join_multiple_lines = true
+# - each_dict_entry_on_separate_line = true
+# - split_before_bitwise_operator = true
+# - split_before_logical_operator = true
+#
+# google (relative to pep8):
+# - column_limit = 80
+# - indent_dictionary_value = true
+# - join_multiple_lines = false
+# - space_between_ending_comma_and_closing_bracket = false
+# - split_before_bitwise_operator = false
+# - split_before_dict_set_generator = false
+# - split_before_logical_operator = false
+# - split_complex_comprehension = true
+# - split_penalty_comprehension = 2100
+#
+# yapf (relative to google):
+# - allow_multiline_dictionary_keys = true
+# - allow_split_before_default_or_named_assigns = false
+# - indent_width = 2
+# - split_before_bitwise_operator = true
+# - split_before_dot = true
+# - split_before_expression_after_opening_paren = true
+#
+# facebook (relative to pep8):
+# - align_closing_bracket_with_visual_indent = false
+# - blank_line_before_nested_class_or_def = false
+# - column_limit = 80
+# - dedent_closing_brackets = true
+# - indent_dictionary_value = true
+# - join_multiple_lines = false
+# - split_penalty_after_opening_bracket = 0
+# - split_penalty_before_if_expr = 30
+# - split_penalty_for_added_line_split = 30
+# - split_before_bitwise_operator = false
+# - split_before_logical_operator = false
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Practical tuning guidance
+#
+# If you dislike Black-style forced multiline wrapping, these are the most useful
+# knobs to tune first:
+#
+# - column_limit
+# - join_multiple_lines
+# - split_before_dot
+# - split_before_first_argument
+# - split_arguments_when_comma_terminated
+# - split_all_comma_separated_values
+# - split_all_top_level_comma_separated_values
+# - dedent_closing_brackets
+# - indent_closing_brackets
+# - split_penalty_after_opening_bracket
+# - split_penalty_for_added_line_split
+# - split_penalty_import_names
+#
+# A good practical starting point is exactly what this file currently sets:
+# - neutral pep8 base
+# - wider column limit
+# - normal 4-space indentation
+# - no Black-like trailing-comma-driven argument explosion
+# - slightly increased split penalties to resist ugly over-wrapping
+# ------------------------------------------------------------------------------
