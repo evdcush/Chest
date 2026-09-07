@@ -305,11 +305,13 @@ export GPG_TTY=$(tty)
 #eval "$(atuin init zsh)"
 
 #eval "$(atuin init zsh --disable-key-bindings)"  # ideally, but
+#eval "$(atuin pty-proxy init zsh --disable-ctrl-r)" # fucking bugged
 eval "$(atuin init zsh --disable-ctrl-r)"
 
-
-#rubberducky_asshole_nagger
 elap
+
+echo '"That which we persist in doing becomes easier for us to do; not that the nature of the thing itself is changed, but that our power to do is increased." - RWE'
+
 
 
 
@@ -322,10 +324,3 @@ elap
 #source /home/evan/.zsh/completion/_b2
 #
 ## <<< b2 autocomplete <<<
-
-# bun completions
-[ -s "/home/evan/.local/share/reflex/bun/_bun" ] && source "/home/evan/.local/share/reflex/bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.local/share/reflex/bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
