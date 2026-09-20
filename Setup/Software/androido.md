@@ -481,3 +481,111 @@ The current installed FW is:
 
 
 ### TARGET: `SAFWB3`
+
+
+----------
+
+
+
+# TAB S9FE
+
+get the paths to files
+```
+$ tree -if TabS9FE
+TabS9FE/X510XXS8CYG1_X510OXM8CYG1_XAR/BL_X510XXS8CYG1_X510XXS8CYG1_MQB97993195_REV00_user_low_ship_MULTI_CERT.tar.md5
+TabS9FE/X510XXS8CYG1_X510OXM8CYG1_XAR/CSC_OXM_X510OXM8CYG1_MQB97993195_REV00_user_low_ship_MULTI_CERT.tar.md5
+TabS9FE/X510XXS8CYG1_X510OXM8CYG1_XAR/HOME_CSC_OXM_X510OXM8CYG1_MQB97993195_REV00_user_low_ship_MULTI_CERT.tar.md5
+TabS9FE/X510XXS8CYG1_X510OXM8CYG1_XAR/magisk_patched-30700_NVoVZ.tar
+```
+
+figure out which usb dev it is
+```
+$ ./odin4 -l
+/dev/bus/usb/003/007
+```
+
+let'er rip
+```
+./odin4 \
+-b TabS9FE/X510XXS8CYG1_X510OXM8CYG1_XAR/BL_X510XXS8CYG1_X510XXS8CYG1_MQB97993195_REV00_user_low_ship_MULTI_CERT.tar.md5 \
+-a TabS9FE/X510XXS8CYG1_X510OXM8CYG1_XAR/magisk_patched-30700_NVoVZ.tar \
+-s TabS9FE/X510XXS8CYG1_X510OXM8CYG1_XAR/HOME_CSC_OXM_X510OXM8CYG1_MQB97993195_REV00_user_low_ship_MULTI_CERT.tar.md5 \
+-d /dev/bus/usb/003/007
+Check file : TabS9FE/X510XXS8CYG1_X510OXM8CYG1_XAR/BL_X510XXS8CYG1_X510XXS8CYG1_MQB97993195_REV00_user_low_ship_MULTI_CERT.tar.md5
+Check file : TabS9FE/X510XXS8CYG1_X510OXM8CYG1_XAR/magisk_patched-30700_NVoVZ.tar
+Check file : TabS9FE/X510XXS8CYG1_X510OXM8CYG1_XAR/HOME_CSC_OXM_X510OXM8CYG1_MQB97993195_REV00_user_low_ship_MULTI_CERT.tar.md5
+meta-data/download-list.txt
+/dev/bus/usb/003/007
+Setup Connection
+initializeConnection
+Receive PIT Info
+success getpit
+Upload Binaries
+fld.bin.lz4
+sboot.bin.lz4
+up_param.bin.lz4
+ldfw.img.lz4
+dtp.bin.lz4
+tzsw.img.lz4
+tzar.img.lz4
+harx.bin.lz4
+keystorage.bin.lz4
+vbmeta.img.lz4
+uh.bin.lz4
+vendor_boot.img.lz4
+dtbo.img.lz4
+recovery.img.lz4
+super.img.lz4
+vbmeta.img
+vbmeta_system.img.lz4
+modem.bin.lz4
+boot.img
+init_boot.img
+Fail request receive -107
+FAIL!
+Fail uploadBinaries
+```
+
+### `CUSTOM BINARY(VBMETA) BLOCKED BY OEM LOCK`
+
+ahh this fucking shit.
+how the fuck did i resolve this before?
+
+## "OEM UNLOCK" =X= "BOOTLOADER UNLOCKED"!
+bootloader unlocking is another step AFTER OEM unlocking (in dev sett).
+
+you have to unlock the bootloader by:
+- boot into download mode (same as before: vol up + down --> USB connect)
+- **BUT, instead of "PRESS" up, "HOLD" up**
+  - long-hold up and that unlocks the bootloader
+  - **and also wipes the device**
+
+
+### Okay fixed it (2026.09.17)
+I did the "hold up" unlock thing documented above.
+
+```
+gts9fewifi
+
+# the full rom (with magisk-patched AP)
+8 GB:
+storage/emulated/0/Download/X510XXS8CYG1_X510OXM8CYG1_EUX.zip
+
+# STATE for important apps
+~100 MB:
+storage/emulated/0/Download/Softs.zip
+
+# MISC
+16 GB:
+storage/emulated/0/KEEP.zip
+
+
+R52X200E8XR
+
+# final working cmd:
+./odin4 \
+-a S9FE_data/X510XXS8CYG1_X510OXM8CYG1_EUX/magisk_patched-30700_6Xi7E.tar \
+-b S9FE_data/X510XXS8CYG1_X510OXM8CYG1_EUX/BL_X510XXS8CYG1_X510XXS8CYG1_MQB97993195_REV00_user_low_ship_MULTI_CERT.tar.md5 \
+-s S9FE_data/X510XXS8CYG1_X510OXM8CYG1_EUX/CSC_OXM_X510OXM8CYG1_MQB97993195_REV00_user_low_ship_MULTI_CERT.tar.md5 \
+-d /dev/bus/usb/003/014
+```
