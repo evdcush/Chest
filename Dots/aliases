@@ -600,8 +600,9 @@ alias pipimyg="$piu myougiden; updatedb-myougiden -f"
 
 function hf() {
     latest_hf_cli=/home/evan/.pyenv/versions/3.13.12/envs/precioushf/bin/hf
-    echo "WARNING:"
-    echo "bypassing current venv's huggingface_hub ver for latest at:\n\t$latest_hf_cli)"
+    # can't echo this stuff, it'll f up json outputs
+    #echo "WARNING:"
+    #echo "bypassing current venv's huggingface_hub ver for latest at:\n\t$latest_hf_cli)"
     $latest_hf_cli $@
 }
 
@@ -742,6 +743,9 @@ alias ssubw='sudo subl -new-window --wait' # w/ sudo; eg `ssubw /etc/profile`
 #---- npm
 alias npmls='npm list -g --depth 0'  # list all globally installed packages
 
+#---- jq
+alias jqq='jq ".[]"'
+
 # Software
 # ========
 
@@ -798,7 +802,7 @@ function expage(){
 #---- percollate
 #alias perc='percollate pdf --output'
 #alias perc='percollate pdf'
-alias perc='percollate pdf --no-toc --no-amp --no-cover --no-hyphenate --style=percollate_style.css'
+alias perc='percollate pdf --no-toc --no-amp --no-cover --no-hyphenate --style="$HOME/.Dots/percollate_style.css"'
 
 #---- zsh-marks
 alias g="jump"
@@ -849,14 +853,26 @@ alias clip="xclip -selection clipboard"
 #alias clipo="xclip -o -sel clip"
 alias clipo='xclip -o'
 
+alias cpth='pwd | tr -d "\n" | xclip -sel clip'
+
 # copy previous command (is this really the only sol? stupidly verbose)
 # if you dont translate, there is newline?
 # if you dont cut, there is CMD number
 # if you dont selection clipboard, xclip copies to who the f knows
-alias cplast='echo $(fc -l -1) \
-| cut -d" " -f2- \
-| tr -d "\n" \
-| xclip -selection clipboard'
+##  NB: this dones't always work; it'll choke on cmds with the newline char,
+##      e.g., this:
+##          pwd | tr -d '\n' | xclip -sel clip
+##      becomes (via cplast):
+##          pwd | tr -d '| xclip -sel clip
+# lets' try a function then
+#alias cplast='echo $(fc -l -1) \
+#| cut -d" " -f2- \
+#| tr -d "\n" \
+#| xclip -selection clipboard'
+
+function cplast(){
+    echo $(fc -l -1) | cut -d" " -f2- | tr -d "\n" | xclip -selection clipboard
+}
 
 
 #---- cheat & tldr
@@ -955,6 +971,9 @@ alias tst='tailscale serve status'
 alias tsr='tailscale serve reset'
 #alias tss='tailscale serve --bg --https=443 http://127.0.0.1:8080' # okay this is a hjacky one
 #alias tss='tailscale serve --bg --https=443 http://127.0.0.1:'
+alias tsf='tailscale file'
+alias tsfg='tailscale file get .'
+alias tsfcp='tailscale file cp'
 
 
 function tss(){
@@ -1128,8 +1147,8 @@ alias gcn="git clone"
 alias gcn1="git clone --depth=1"
 alias gf="git fetch"
 alias gpull="git pull"
-alias gpush="git push"
-alias gpushset='git push --set-upstream origin master'
+#alias gpush="git push"
+#alias gpushset='git push --set-upstream origin master'
 
 alias gchkoutall="git branch -a | grep remotes | grep -v HEAD | cut -d'/' -f3- | xargs -I% git checkout %"
 
@@ -1332,3 +1351,7 @@ alias gn='gennames'
 
 # show the hf dl log
 alias hflog="bat -pP $HF_DOWNLOAD_LOG"
+
+
+# ----------------------------------------
+
