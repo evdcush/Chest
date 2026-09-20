@@ -772,6 +772,14 @@ function f() {
 #                                                                             #
 #=============================================================================#
 
+function gpush() {
+    # gpush: push current branch to remote, `--set-upstream` if it does no exist.
+    branch=$(git branch --show-current) || return
+
+    git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1 && \
+      git push || git push --set-upstream origin "$branch"
+}
+
 # TODO(evan): WIP, get "awesome" list (readme only, eventually).
 #function getawe() {
 #    # THIS NEEDS TO BE A PY SCRIPT.
