@@ -971,9 +971,9 @@ alias tst='tailscale serve status'
 alias tsr='tailscale serve reset'
 #alias tss='tailscale serve --bg --https=443 http://127.0.0.1:8080' # okay this is a hjacky one
 #alias tss='tailscale serve --bg --https=443 http://127.0.0.1:'
-alias tsf='tailscale file'
+#alias tsf='tailscale file'
 alias tsfg='tailscale file get .'
-alias tsfcp='tailscale file cp'
+#alias tsfcp='tailscale file cp'  # MOVED TO PRIV FNS
 
 
 function tss(){
